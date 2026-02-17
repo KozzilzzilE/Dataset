@@ -1,0 +1,10 @@
+{
+  "docPath": "topics/2/notions/3",
+  "data": {
+    "pageNo": 3,
+    "title": "배열 코드",
+    "point": "빈도수 계산",
+    "detail": "[코드 설명]\n- 값 범위(0..max)가 작을 때 freq 배열 사용\n- freq[value]++ 로 카운트\n- 시간복잡도: O(n)\n- 실수: 범위 밖 값 처리",
+    "imgUrl": ""
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "docPath": "topics/1/notions/2",
+  "data": {
+    "pageNo": 2,
+    "title": "스택 심화",
+    "point": "push/pop O(1)",
+    "detail": "top 인덱스를 관리합니다. push/pop은 O(1)입니다.\n언더플로우/오버플로우 처리가 필요합니다.",
+    "imgUrl": ""
+  }
+}

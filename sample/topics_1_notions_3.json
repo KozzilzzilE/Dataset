@@ -1,0 +1,10 @@
+{
+  "docPath": "topics/1/notions/3",
+  "data": {
+    "pageNo": 3,
+    "title": "스택 코드",
+    "point": "배열 구현",
+    "detail": "[코드 설명]\n- 배열과 top 변수 사용\n- push: top 증가 후 저장\n- pop: 반환 후 top 감소\n- 시간복잡도: O(1)\n- 실수: empty 체크 누락",
+    "imgUrl": ""
+  }
+}

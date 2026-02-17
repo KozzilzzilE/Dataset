@@ -1,0 +1,10 @@
+{
+  "docPath": "topics/2/notions/2",
+  "data": {
+    "pageNo": 2,
+    "title": "배열 심화",
+    "point": "삽입/삭제 O(n)",
+    "detail": "중간 삽입/삭제는 요소 이동 때문에 O(n)입니다.\n값 범위가 작으면 카운팅 배열 패턴이 유용합니다.",
+    "imgUrl": ""
+  }
+}

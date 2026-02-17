@@ -1,0 +1,5 @@
+[
+  { "docPath": "topics/1", "data": { "title": "스택", "order": 1 } },
+  { "docPath": "topics/2", "data": { "title": "배열", "order": 2 } },
+  { "docPath": "topics/3", "data": { "title": "해시", "order": 3 } }
+]
