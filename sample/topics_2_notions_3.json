@@ -4,7 +4,13 @@
     "pageNo": 3,
     "title": "배열 코드",
     "point": "빈도수 계산",
-    "detail": "[코드 설명]\n- 값 범위(0..max)가 작을 때 freq 배열 사용\n- freq[value]++ 로 카운트\n- 시간복잡도: O(n)\n- 실수: 범위 밖 값 처리",
-    "imgUrl": ""
+    "detail": "[코드 설명]\n- 값 범위가 작은 경우 카운팅 배열 사용\n- freq[value]++ 방식으로 개수 증가\n- 시간복잡도: O(n)\n- 실수: 배열 범위 초과 접근",
+    "imgUrl": "",
+    "codes": [
+      {
+        "languageId": 1,
+        "content": "public class Main {\n    public static void main(String[] args) {\n        int[] nums = {1, 3, 3, 2, 5, 3};\n        int maxVal = 5;\n\n        int[] freq = new int[maxVal + 1];\n\n        for (int i = 0; i < nums.length; i++) {\n            int value = nums[i];\n            if (value >= 0 && value <= maxVal) {\n                freq[value]++;\n            }\n        }\n\n        for (int i = 0; i <= maxVal; i++) {\n            System.out.println(i + \" : \" + freq[i]);\n        }\n    }\n}\n"
+      }
+    ]
   }
 }

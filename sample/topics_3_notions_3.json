@@ -1,7 +1,16 @@
 {
-  "docPath": "topics/3/notions/3/codes/1",
+  "docPath": "topics/3/notions/3",
   "data": {
-    "languageId": 1,
-    "content": "fun twoSum(nums: IntArray, target: Int): IntArray {\n    val map = HashMap<Int, Int>()\n\n    for (i in nums.indices) {\n        val need = target - nums[i]\n        val j = map[need]\n        if (j != null) return intArrayOf(j, i)\n        map[nums[i]] = i\n    }\n\n    return intArrayOf(-1, -1)\n}\n"
+    "pageNo": 3,
+    "title": "해시 코드",
+    "point": "Two Sum (Java)",
+    "detail": "[코드 설명]\n- 보수(need = target - nums[i]) 계산\n- HashMap에서 존재 여부 확인\n- 존재하면 즉시 반환\n- 없으면 현재 값을 map에 저장\n- 시간복잡도: 평균 O(n)\n- 자주 나오는 실수: 먼저 찾고 나중에 put",
+    "imgUrl": "",
+    "codes": [
+      {
+        "languageId": 1,
+        "content": "import java.util.HashMap;\nimport java.util.Map;\n\npublic class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        Map<Integer, Integer> map = new HashMap<Integer, Integer>();\n\n        for (int i = 0; i < nums.length; i++) {\n            int need = target - nums[i];\n\n            if (map.containsKey(need)) {\n                int[] answer = { map.get(need), i };\n                return answer;\n            }\n\n            map.put(nums[i], i);\n        }\n\n        return new int[]{-1, -1};\n    }\n}\n"
+      }
+    ]
   }
 }

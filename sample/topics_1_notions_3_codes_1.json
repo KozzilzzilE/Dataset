@@ -1,7 +1,0 @@
-{
-  "docPath": "topics/1/notions/3/codes/1",
-  "data": {
-    "languageId": 1,
-    "content": "class IntStack(private val capacity: Int) {\n    private val arr = IntArray(capacity)\n    private var top = -1\n\n    fun isEmpty() = top == -1\n\n    fun push(x: Int) {\n        arr[++top] = x\n    }\n\n    fun pop(): Int {\n        if (isEmpty()) throw NoSuchElementException(\"underflow\")\n        return arr[top--]\n    }\n}\n"
-  }
-}

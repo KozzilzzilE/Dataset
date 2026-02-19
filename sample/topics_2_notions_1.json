@@ -5,6 +5,6 @@
     "title": "배열이란?",
     "point": "인덱스 O(1)",
     "detail": "배열은 연속된 메모리에 저장되며 인덱스로 빠르게 접근합니다.",
-    "imgUrl": ""
+    "imgUrl": "https://raw.githubusercontent.com/hs-2171395-seungyoonkim/kim/main/DATASET/images/arrayimg.jpg"
   }
 }

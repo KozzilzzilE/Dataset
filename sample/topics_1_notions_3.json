@@ -5,6 +5,12 @@
     "title": "스택 코드",
     "point": "배열 구현",
     "detail": "[코드 설명]\n- 배열과 top 변수 사용\n- push: top 증가 후 저장\n- pop: 반환 후 top 감소\n- 시간복잡도: O(1)\n- 실수: empty 체크 누락",
-    "imgUrl": ""
+    "imgUrl": "",
+    "codes": [
+      {
+        "languageId": 1,
+        "content": "import java.util.NoSuchElementException;\n\nclass IntStack {\n    private final int capacity;\n    private final int[] arr;\n    private int top;\n\n    public IntStack(int capacity) {\n        this.capacity = capacity;\n        this.arr = new int[capacity];\n        this.top = -1;\n    }\n\n    public boolean isEmpty() {\n        return top == -1;\n    }\n\n    public boolean isFull() {\n        return top == capacity - 1;\n    }\n\n    public void push(int x) {\n        if (isFull()) throw new IllegalStateException(\"overflow\");\n        arr[++top] = x;\n    }\n\n    public int pop() {\n        if (isEmpty()) throw new NoSuchElementException(\"underflow\");\n        return arr[top--];\n    }\n}\n"
+      }
+    ]
   }
 }

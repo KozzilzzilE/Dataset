@@ -1,7 +1,0 @@
-{
-  "docPath": "topics/3/notions/3/codes/1",
-  "data": {
-    "languageId": 1,
-    "content": "fun twoSum(nums: IntArray, target: Int): IntArray {\n    val map = HashMap<Int, Int>()\n\n    for (i in nums.indices) {\n        val need = target - nums[i]\n        val j = map[need]\n        if (j != null) return intArrayOf(j, i)\n        map[nums[i]] = i\n    }\n\n    return intArrayOf(-1, -1)\n}\n"
-  }
-}
