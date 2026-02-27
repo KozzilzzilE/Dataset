@@ -2,13 +2,13 @@
   "topicId": 3,
   "pageNo": 3,
   "title": "해시 코드",
-  "point": "Two Sum (Java)",
-  "detail": "[코드 설명]\n- 보수(need = target - nums[i]) 계산\n- HashMap에서 존재 여부 확인\n- 존재하면 즉시 반환\n- 없으면 현재 값을 map에 저장\n- 시간복잡도: 평균 O(n)\n- 자주 나오는 실수: 먼저 찾고 나중에 put하는 경우\n- 예외 처리: 없는 경우 [-1, -1] 반환",
+  "point": "두 수의 합 찾기 (Java)",
+  "detail": "[코드 설명]\n- 현재 값에 대해 보수(complement = target - nums[i])를 계산\n- HashMap에서 보수 값 존재 여부 확인\n- 존재하면 해당 인덱스와 현재 인덱스를 반환\n- 존재하지 않으면 현재 값을 map에 저장\n- 배열을 한 번만 순회하므로 시간복잡도: 평균 O(n)\n- 자주 나오는 실수: 먼저 map에 저장하면 같은 인덱스를 사용할 수 있음\n- 조건을 만족하는 쌍이 없는 경우 [-1, -1] 반환",
   "imgUrl": null,
   "codes": [
     {
       "languageId": 1,
-      "content": "```java\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        Map<Integer, Integer> map = new HashMap<>();\n\n        for (int i = 0; i < nums.length; i++) {\n            int need = target - nums[i];\n\n            if (map.containsKey(need)) {\n                return new int[]{ map.get(need), i };\n            }\n\n            map.put(nums[i], i);\n        }\n\n        return new int[]{-1, -1};\n    }\n}\n```"
+      "content": "```java\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class Solution {\n    public int[] findPair(int[] nums, int target) {\n        Map<Integer, Integer> map = new HashMap<>();\n\n        for (int i = 0; i < nums.length; i++) {\n            int complement = target - nums[i];\n\n            if (map.containsKey(complement)) {\n                return new int[]{ map.get(complement), i };\n            }\n\n            map.put(nums[i], i);\n        }\n\n        return new int[]{ -1, -1 };\n    }\n}\n```"
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "requests": [
+    {
+      "topicId": 2,
+      "orderNo": 2,
+      "title": "누적합 계산",
+      "description": "배열의 누적합(prefix sum)을 계산합니다. 빈칸에 들어갈 코드를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] arr = {1, 2, 3, 4};\n        int[] prefix = new int[arr.length];\n\n        prefix[0] = arr[0];\n        for (int i = 1; i < arr.length; i++) {\n            prefix[i] = prefix[i - 1] _____ arr[i];\n        }\n\n        for (int v : prefix) {\n            System.out.print(v + \" \");\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "+",
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

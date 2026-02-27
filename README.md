@@ -30,3 +30,28 @@
 ## 이미지 처리 방식
 
 - 아직 연동상태를 몰라서 일단 이미지 파일을 github에 포함시켰음.
+
+# 2026-2-27 수정, 추가 사항
+
+## Notion 스키마 통일
+
+- imgUrl: "" → imgUrl: null
+- 코드 없는 페이지 → "codes": null 명시
+- 코드 있는 페이지 → "codes": [ ... ]
+- docPath 제거 (API에서 불필요)
+
+## 코드 작성 규칙
+
+- Java만 사용
+- 들여쓰기 스타일 통일
+- escape 문자 문제 없도록 `\n` 유지
+- content 내부는 반드시 ```java
+
+## 폴더명 변경
+
+- sample -> notions로 폴더명 변경
+
+## 문제 추가
+
+- 이름으로만 하면 파일 정렬이 어려울 것 같아 NN_topic_level_index.json
+- orderNo는 난이도 별로 테이블이 나눠져있는지 몰라서 1씩 증가하게 함

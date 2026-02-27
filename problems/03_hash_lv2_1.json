@@ -1,0 +1,22 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 2,
+      "title": "중복 문자 찾기",
+      "description": "문자열에서 처음으로 중복되는 문자를 찾습니다. 빈칸에 들어갈 메서드를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        String s = \"banana\";\n        Set<Character> set = new HashSet<>();\n\n        for (char c : s.toCharArray()) {\n            if (!set.add(c)) {\n                System.out.println(c);\n                break;\n            }\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "add",
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

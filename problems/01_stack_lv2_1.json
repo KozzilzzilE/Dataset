@@ -1,0 +1,22 @@
+{
+  "requests": [
+    {
+      "topicId": 1,
+      "orderNo": 2,
+      "title": "스택으로 문자열 뒤집기",
+      "description": "Stack을 사용하여 문자열을 뒤집습니다. 빈칸에 들어갈 메서드를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        String s = \"hello\";\n        Stack<Character> stack = new Stack<>();\n\n        for (char c : s.toCharArray()) {\n            stack.push(c);\n        }\n\n        String result = \"\";\n        while (!stack.isEmpty()) {\n            result += stack._____();\n        }\n\n        System.out.println(result);\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "pop",
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
