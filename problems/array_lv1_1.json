@@ -1,0 +1,22 @@
+{
+  "requests": [
+    {
+      "topicId": 2,
+      "orderNo": 1,
+      "title": "배열 인덱스 접근",
+      "description": "배열에서 첫 번째 요소를 출력하는 코드의 빈칸을 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] arr = {10, 20, 30};\n        System.out.println(arr[_____]);\n    }\n}",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

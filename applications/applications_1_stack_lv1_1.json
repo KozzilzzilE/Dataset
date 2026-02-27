@@ -1,0 +1,22 @@
+{
+  "requests": [
+    {
+      "topicId": 1,
+      "orderNo": 1,
+      "title": "스택 push 이해하기",
+      "description": "정수 스택을 생성하는 코드에서 빈칸을 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.Stack;\n\npublic class Main {\n    public static void main(String[] args) {\n        Stack<Integer> stack = new _____<>();\n        stack.push(10);\n        System.out.println(stack.pop());\n    }\n}",
+          "blanks": [
+            {
+              "content": "Stack",
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,6 @@
   "title": "스택 코드",
   "point": "배열 구현",
   "detail": "[코드 설명]\n- 배열과 top 변수를 이용해 구현\n- push: top 증가 후 값 저장\n- pop: 현재 값 반환 후 top 감소\n- 시간복잡도: O(1)\n- 자주 나오는 실수: overflow / underflow 체크 필수",
-  "imgUrl": null,
   "codes": [
     {
       "languageId": 1,

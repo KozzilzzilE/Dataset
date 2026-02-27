@@ -1,0 +1,22 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 1,
+      "title": "HashMap 생성",
+      "description": "HashMap 객체를 생성하는 코드의 빈칸을 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, Integer> map = new _____<>();\n        map.put(\"apple\", 1);\n    }\n}",
+          "blanks": [
+            {
+              "content": "HashMap",
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
