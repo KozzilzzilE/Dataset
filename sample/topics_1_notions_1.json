@@ -1,9 +1,0 @@
-{
-  "topicId": 1,
-  "pageNo": 1,
-  "title": "스택이란?",
-  "point": "LIFO 구조",
-  "detail": "스택은 마지막에 넣은 데이터가 먼저 나오는(LIFO: Last In First Out) 자료구조입니다.\npush(삽입), pop(삭제)을 사용합니다. 사진 속 맥주병처럼 쌓이는 형태입니다.",
-  "imgUrl": null,
-  "codes": null
-}
