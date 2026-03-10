@@ -10,10 +10,11 @@
           "languageId": 1,
           "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        String s = \"hello\";\n        Stack<Character> stack = new Stack<>();\n\n        for (char c : s.toCharArray()) {\n            stack.push(c);\n        }\n\n        String result = \"\";\n        while (!stack.isEmpty()) {\n            result += stack._____();\n        }\n\n        System.out.println(result);\n    }\n}\n```",
           "blanks": [
-            {
-              "content": "pop",
-              "answer": 1
-            }
+            { "content": "pop", "answer": 1 },
+            { "content": "peek", "answer": 0 },
+            { "content": "remove", "answer": 0 },
+            { "content": "poll", "answer": 0 },
+            { "content": "get", "answer": 0 }
           ]
         }
       ]

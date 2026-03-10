@@ -10,10 +10,11 @@
           "languageId": 1,
           "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, Integer> map = new _____<>();\n        map.put(\"apple\", 1);\n    }\n}",
           "blanks": [
-            {
-              "content": "HashMap",
-              "answer": 1
-            }
+            { "content": "HashMap", "answer": 1 },
+            { "content": "ArrayList", "answer": 0 },
+            { "content": "LinkedList", "answer": 0 },
+            { "content": "HashSet", "answer": 0 },
+            { "content": "TreeMap", "answer": 0 }
           ]
         }
       ]

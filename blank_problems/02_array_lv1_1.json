@@ -10,10 +10,11 @@
           "languageId": 1,
           "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] arr = {10, 20, 30};\n        System.out.println(arr[_____]);\n    }\n}",
           "blanks": [
-            {
-              "content": "0",
-              "answer": 1
-            }
+            { "content": "0", "answer": 1 },
+            { "content": "1", "answer": 0 },
+            { "content": "2", "answer": 0 },
+            { "content": "arr.length", "answer": 0 },
+            { "content": "arr.length - 1", "answer": 0 }
           ]
         }
       ]

@@ -1,0 +1,24 @@
+{
+  "topicId": 3,
+  "title": "올바른 괄호 문자열",
+  "difficulty": "medium",
+  "difficultyOrder": 3,
+  "description": "괄호 문자열이 주어졌을 때 올바른 괄호 문자열인지 판단하세요.\n\n괄호는 (), {}, [] 세 종류가 존재합니다.\n\n올바른 괄호 문자열이면 true, 아니면 false를 출력합니다.",
+  "constraints": "1 ≤ 문자열 길이 ≤ 10^5",
+  "lineSolution": "스택을 사용하여 괄호의 짝을 검사합니다.",
+  "solutionText": "### 핵심 아이디어\n스택을 이용해 여는 괄호를 저장하고 닫는 괄호가 나오면 짝을 검사합니다.\n\n### 알고리즘\n1. 여는 괄호는 스택에 push합니다.\n2. 닫는 괄호가 나오면 스택의 top을 확인합니다.\n3. 짝이 맞지 않거나 스택이 비어 있으면 false입니다.\n4. 문자열 처리 후 스택이 비어 있으면 올바른 괄호입니다.\n\n### 시간복잡도\nO(n)\n\n### 공간복잡도\nO(n)",
+  "testCases": [
+    { "input": "()[]{}", "output": "true" },
+    { "input": "(]", "output": "false" },
+    { "input": "([{}])", "output": "true" },
+    { "input": "(((", "output": "false" },
+    { "input": "{[()]}", "output": "true" },
+    { "input": "", "output": "true" }
+  ],
+  "solutionCodes": [
+    {
+      "languageId": 1,
+      "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n\n    public static boolean isValid(String s) {\n        Stack<Character> stack = new Stack<>();\n\n        for (char c : s.toCharArray()) {\n            if (c == '(' || c == '{' || c == '[')\n                stack.push(c);\n            else {\n                if (stack.isEmpty()) return false;\n\n                char top = stack.pop();\n\n                if (c == ')' && top != '(') return false;\n                if (c == '}' && top != '{') return false;\n                if (c == ']' && top != '[') return false;\n            }\n        }\n\n        return stack.isEmpty();\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine();\n        if (s == null) s = \"\";\n\n        System.out.println(isValid(s));\n    }\n}"
+    }
+  ]
+}

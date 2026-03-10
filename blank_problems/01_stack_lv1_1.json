@@ -10,10 +10,11 @@
           "languageId": 1,
           "codeTemplate": "```java\nimport java.util.Stack;\n\npublic class Main {\n    public static void main(String[] args) {\n        Stack<Integer> stack = new _____<>();\n        stack.push(10);\n        System.out.println(stack.pop());\n    }\n}",
           "blanks": [
-            {
-              "content": "Stack",
-              "answer": 1
-            }
+            { "content": "Stack", "answer": 1 },
+            { "content": "ArrayList", "answer": 0 },
+            { "content": "LinkedList", "answer": 0 },
+            { "content": "Vector", "answer": 0 },
+            { "content": "Deque", "answer": 0 }
           ]
         }
       ]

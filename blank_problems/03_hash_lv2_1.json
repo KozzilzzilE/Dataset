@@ -10,10 +10,11 @@
           "languageId": 1,
           "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        String s = \"banana\";\n        Set<Character> set = new HashSet<>();\n\n        for (char c : s.toCharArray()) {\n            if (!set.add(c)) {\n                System.out.println(c);\n                break;\n            }\n        }\n    }\n}\n```",
           "blanks": [
-            {
-              "content": "add",
-              "answer": 1
-            }
+            { "content": "add", "answer": 1 },
+            { "content": "contains", "answer": 0 },
+            { "content": "remove", "answer": 0 },
+            { "content": "put", "answer": 0 },
+            { "content": "get", "answer": 0 }
           ]
         }
       ]

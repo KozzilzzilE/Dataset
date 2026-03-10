@@ -55,3 +55,19 @@
 
 - 이름으로만 하면 파일 정렬이 어려울 것 같아 NN_topic_level_index.json
 - orderNo는 난이도 별로 테이블이 나눠져있는지 몰라서 1씩 증가하게 함
+
+# 2026-3-9 수정, 추가 사항
+
+## code_problems 폴더, 코드 빈칸 문제 추가
+- testcase 5개 정도로 생성
+- topicid는 기준을 모르겠어서 일단 123 형식으로 linear하게 증가
+
+## 폴더명 변경
+- problems -> basic_problems 개념 예제라서 수정하는 것이 용이해보여 변경
+
+## detail 부분 markdown
+- 가독성 높이기위해 내용 추가와 markdown형식으로 변경하였음
+
+## 문제 부분에서 선택지 추가
+- contents가 하나만 있는 것으로 알았는데 객관식 선택지가 더 필요하다는 이야기를 듣고 수정
+
