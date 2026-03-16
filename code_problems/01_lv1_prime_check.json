@@ -1,0 +1,38 @@
+{
+  "topicId": 1,
+  "title": "소수 판별",
+  "difficulty": "easy",
+  "difficultyOrder": 1,
+  "description": "정수 n이 주어졌을 때, n이 소수이면 true, 아니면 false를 출력하세요.",
+  "constraints": "1 ≤ n ≤ 10^6",
+  "lineSolution": "2부터 √n까지 나누어 떨어지는 수가 없으면 소수입니다.",
+  "solutionText": "### 💡 핵심 아이디어\n소수는 **1과 자기 자신 외에 약수가 없는 수** 입니다. `2` 부터 `√n` 까지만 검사하면 **O(√n)** 에 판별할 수 있습니다.\n\n> **왜 √n 까지만?** 약수는 항상 쌍으로 존재하므로 한 약수가 `√n` 보다 작으면 다른 약수는 `√n` 보다 큽니다. 따라서 `√n` 까지만 확인하면 충분합니다.\n\n---\n\n### 🔍 알고리즘\n1. `n < 2` 이면 **false** 를 반환합니다.\n2. `i = 2` 부터 `i * i <= n` 인 동안 순회합니다.\n3. `n % i == 0` 이면 약수가 존재하므로 **false** 를 반환합니다.\n4. 끝까지 통과하면 **true** 를 반환합니다.\n\n---\n\n### ⚠️ 주의사항\n- `i * i <= n` 계산 시 `i` 가 클 경우 **정수 오버플로우** 가 발생할 수 있습니다. `(long) i * i <= n` 으로 캐스팅하는 것이 안전합니다.\n\n---\n\n### 📊 복잡도 분석\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(√n)** | √n 까지만 순회 |\n| 공간 | **O(1)** | 추가 자료구조 없음 |",
+  "testCases": [
+    {
+      "input": "2",
+      "output": "true"
+    },
+    {
+      "input": "1",
+      "output": "false"
+    },
+    {
+      "input": "17",
+      "output": "true"
+    },
+    {
+      "input": "100",
+      "output": "false"
+    },
+    {
+      "input": "97",
+      "output": "true"
+    }
+  ],
+  "solutionCodes": [
+    {
+      "languageId": 1,
+      "code": "import java.io.*;\n\npublic class Main {\n\n    public static boolean isPrime(int n) {\n        if (n < 2) return false;\n        for (int i = 2; (long) i * i <= n; i++)\n            if (n % i == 0) return false;\n        return true;\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        System.out.println(isPrime(n));\n    }\n}"
+    }
+  ]
+}

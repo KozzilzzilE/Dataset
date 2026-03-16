@@ -1,0 +1,14 @@
+{
+  "topicId": 7,
+  "pageNo": 3,
+  "title": "완전 탐색 코드",
+  "point": "부분집합 열거 (비트마스크)",
+  "detail": "### 📋 코드 설명 — 비트마스크 부분집합\n\nn개의 원소로 만들 수 있는 **모든 부분집합**을 비트마스크로 열거합니다.\n\n- 정수 `i`의 `j`번째 비트가 `1`이면 `j`번 원소가 부분집합에 포함됩니다.\n- 부분집합의 수는 **2ⁿ** 개입니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(2ⁿ × n)** | 2ⁿ개 부분집합 × 각 n개 원소 확인 |\n| 공간 | **O(1)** | 비트 연산만 사용 |\n\n---\n\n### 💡 활용\n\n- 합이 특정 값이 되는 부분집합 탐색\n- 가능한 조합 중 최적값 탐색",
+  "imgUrl": null,
+  "codes": [
+    {
+      "languageId": 1,
+      "content": "```java\npublic class SubsetSearch {\n\n    public static void main(String[] args) {\n        int[] arr = {1, 2, 3};\n        int n = arr.length;\n        int target = 3;\n\n        for (int mask = 0; mask < (1 << n); mask++) {\n            int sum = 0;\n            for (int j = 0; j < n; j++) {\n                if ((mask & (1 << j)) != 0)\n                    sum += arr[j];\n            }\n            if (sum == target) {\n                System.out.print(\"{ \");\n                for (int j = 0; j < n; j++)\n                    if ((mask & (1 << j)) != 0)\n                        System.out.print(arr[j] + \" \");\n                System.out.println(\"}\");\n            }\n        }\n        // 출력: { 3 }  { 1 2 }\n    }\n}\n```"
+    }
+  ]
+}

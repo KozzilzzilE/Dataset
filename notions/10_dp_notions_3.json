@@ -1,0 +1,14 @@
+{
+  "topicId": 10,
+  "pageNo": 3,
+  "title": "동적 프로그래밍 코드",
+  "point": "배낭 문제(0/1 Knapsack)",
+  "detail": "### 📋 코드 설명 — 0/1 배낭 문제\n\n**배낭 문제** : 무게 제한 `W`가 있는 배낭에 물건을 담을 때 가치의 합을 최대화합니다.\n\n- `dp[i][w]` = `i`번째 물건까지 고려했을 때 무게 `w` 이하로 담을 수 있는 **최대 가치**\n\n---\n\n### 🔍 점화식\n\n| 경우 | 식 |\n|------|-----|\n| 물건을 **담지 않는** 경우 | `dp[i][w] = dp[i-1][w]` |\n| 물건을 **담는** 경우 | `dp[i][w] = dp[i-1][w - weight[i]] + value[i]` |\n| 최종 | `dp[i][w] = max(두 경우)` |\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n × W)** | n: 물건 수, W: 무게 제한 |\n| 공간 | **O(n × W)** | 2차원 DP 테이블 |",
+  "imgUrl": null,
+  "codes": [
+    {
+      "languageId": 1,
+      "content": "```java\npublic class Knapsack {\n\n    public static int knapsack(int[] weight, int[] value, int W) {\n        int n = weight.length;\n        int[][] dp = new int[n + 1][W + 1];\n\n        for (int i = 1; i <= n; i++) {\n            for (int w = 0; w <= W; w++) {\n                dp[i][w] = dp[i - 1][w]; // 담지 않는 경우\n                if (w >= weight[i - 1]) {\n                    dp[i][w] = Math.max(dp[i][w],\n                        dp[i - 1][w - weight[i - 1]] + value[i - 1]); // 담는 경우\n                }\n            }\n        }\n\n        return dp[n][W];\n    }\n\n    public static void main(String[] args) {\n        int[] weight = {2, 3, 4, 5};\n        int[] value  = {3, 4, 5, 6};\n        int W = 8;\n        System.out.println(knapsack(weight, value, W)); // 10\n    }\n}\n```"
+    }
+  ]
+}

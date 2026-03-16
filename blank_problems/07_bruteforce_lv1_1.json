@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 7,
+      "orderNo": 1,
+      "title": "부분집합 순회 범위",
+      "description": "n개 원소의 모든 부분집합을 순회하는 반복 범위 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\nint n = 3;\nfor (int mask = 0; mask < (_____ << _____); mask++) {\n    // 부분집합 처리\n}\n            // 부분집합 처리\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "n",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 0
+            },
+            {
+              "content": "0",
+              "answer": 0
+            },
+            {
+              "content": "n-1",
+              "answer": 0
+            },
+            {
+              "content": "n+1",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

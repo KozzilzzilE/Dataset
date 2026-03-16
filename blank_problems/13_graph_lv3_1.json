@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 13,
+      "orderNo": 3,
+      "title": "다익스트라 거리 갱신",
+      "description": "다익스트라에서 더 짧은 경로를 발견했을 때 거리를 갱신하는 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        int n = 4;\n        List<int[]>[] graph = new ArrayList[n + 1];\n        for (int i = 1; i <= n; i++) graph[i] = new ArrayList<>();\n        graph[1].add(new int[]{2, 3}); graph[1].add(new int[]{3, 1});\n        int[] dist = new int[n + 1];\n        java.util.Arrays.fill(dist, Integer.MAX_VALUE);\n        dist[1] = 0;\n        int curNode = 1;\n        for (int[] edge : graph[curNode]) {\nfor (int[] edge : graph[curNode]) {\n    int next = edge[0], weight = edge[1];\n    if (dist[curNode] + weight _____ dist[next]) {\n        dist[next] = dist[curNode] + _____;\n        pq.offer(new int[]{dist[next], next});\n    }\n}\n        }\n        System.out.println(java.util.Arrays.toString(dist));\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "<",
+              "answer": 1
+            },
+            {
+              "content": "weight",
+              "answer": 1
+            },
+            {
+              "content": ">",
+              "answer": 0
+            },
+            {
+              "content": "1",
+              "answer": 0
+            },
+            {
+              "content": "<=",
+              "answer": 0
+            },
+            {
+              "content": "next",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

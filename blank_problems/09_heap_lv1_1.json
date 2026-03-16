@@ -1,0 +1,38 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 1,
+      "title": "최소 힙 생성",
+      "description": "Java에서 최소 힙으로 동작하는 우선순위 큐를 생성하는 빈칸을 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\nPriorityQueue<Integer> minHeap = new _____<>();\nminHeap.offer(5);\nminHeap.offer(1);\nSystem.out.println(minHeap.poll()); // 1\n        System.out.println(minHeap.poll()); // 1\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "PriorityQueue",
+              "answer": 1
+            },
+            {
+              "content": "LinkedList",
+              "answer": 0
+            },
+            {
+              "content": "TreeMap",
+              "answer": 0
+            },
+            {
+              "content": "ArrayDeque",
+              "answer": 0
+            },
+            {
+              "content": "Stack",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

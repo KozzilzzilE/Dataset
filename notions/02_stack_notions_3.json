@@ -1,0 +1,14 @@
+{
+  "topicId": 2,
+  "pageNo": 3,
+  "title": "스택 코드",
+  "point": "배열 구현",
+  "detail": "### 📋 코드 설명\n\n- 배열과 **`top` 변수**를 이용해 스택을 구현합니다.\n- **`push`** : `top`을 증가시킨 후 해당 위치에 값을 저장합니다.\n- **`pop`** : 현재 `top` 위치의 값을 반환한 뒤 `top`을 감소시킵니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 연산 | 시간복잡도 | 이유 |\n|------|-----------|------|\n| `push` | **O(1)** | 특정 인덱스에 바로 접근 |\n| `pop` | **O(1)** | 특정 인덱스에 바로 접근 |\n| `peek` | **O(1)** | `top` 인덱스 직접 접근 |\n\n---\n\n### ⚠️ 자주 나오는 실수\n\n| 상황 | 결과 |\n|------|------|\n| **오버플로우** : 가득 찬 스택에 `push` | `RuntimeException` |\n| **언더플로우** : 빈 스택에서 `pop` | `RuntimeException` |\n\n`isEmpty()` 와 `isFull()` 상태 확인 로직을 **반드시 함께** 구현해야 합니다.",
+  "imgUrl": null,
+  "codes": [
+    {
+      "languageId": 1,
+      "content": "```java\npublic class IntStack {\n    private int[] arr;\n    private int top;\n\n    public IntStack(int capacity) {\n        arr = new int[capacity];\n        top = -1;\n    }\n\n    public boolean isEmpty() {\n        return top == -1;\n    }\n\n    public boolean isFull() {\n        return top == arr.length - 1;\n    }\n\n    public void push(int value) {\n        if (isFull()) {\n            throw new RuntimeException(\"Stack Overflow\");\n        }\n        top++;\n        arr[top] = value;\n    }\n\n    public int pop() {\n        if (isEmpty()) {\n            throw new RuntimeException(\"Stack Underflow\");\n        }\n        int value = arr[top];\n        top--;\n        return value;\n    }\n\n    public int peek() {\n        if (isEmpty()) {\n            throw new RuntimeException(\"Stack is Empty\");\n        }\n        return arr[top];\n    }\n}\n```"
+    }
+  ]
+}

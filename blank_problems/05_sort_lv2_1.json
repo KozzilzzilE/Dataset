@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 5,
+      "orderNo": 2,
+      "title": "병합 정렬 분할",
+      "description": "병합 정렬에서 중간 인덱스를 올바르게 계산하는 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\npublic static void mergeSort(int[] arr, int left, int right) {\n    if (left >= right) return;\n    int mid = (_____ + _____) / 2;\n    mergeSort(arr, left, mid);\n    mergeSort(arr, mid + 1, right);\n    merge(arr, left, mid, right);\n}\n\n    public static void main(String[] args) {\n        int[] arr = {5, 3, 8, 1, 2};\n        mergeSort(arr, 0, arr.length - 1);\n        System.out.println(Arrays.toString(arr));\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "left",
+              "answer": 1
+            },
+            {
+              "content": "right",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 0
+            },
+            {
+              "content": "mid",
+              "answer": 0
+            },
+            {
+              "content": "left-1",
+              "answer": 0
+            },
+            {
+              "content": "right+1",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

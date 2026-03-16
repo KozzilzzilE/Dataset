@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 3,
+      "title": "힙 조회 vs 제거",
+      "description": "힙에서 최솟값을 제거 없이 조회하고, 이후 제거하는 빈칸 3개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\nPriorityQueue<Integer> pq = new PriorityQueue<>();\npq.offer(2); pq.offer(5); pq.offer(1);\nSystem.out.println(pq._____());  // 1 (제거 안 함)\nSystem.out.println(pq._____());  // 1 (제거)\nSystem.out.println(pq._____());  // 2 (다음 최솟값)\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "peek",
+              "answer": 1
+            },
+            {
+              "content": "poll",
+              "answer": 1
+            },
+            {
+              "content": "poll",
+              "answer": 1
+            },
+            {
+              "content": "poll",
+              "answer": 0
+            },
+            {
+              "content": "peek",
+              "answer": 0
+            },
+            {
+              "content": "pop",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

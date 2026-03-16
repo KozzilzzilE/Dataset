@@ -1,0 +1,38 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 1,
+      "title": "큐 생성하기",
+      "description": "Java에서 Queue 인터페이스를 구현하는 빈칸을 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Queue<Integer> queue = new _____<>();\n        queue.offer(1);\n        System.out.println(queue.poll());\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "LinkedList",
+              "answer": 1
+            },
+            {
+              "content": "ArrayList",
+              "answer": 0
+            },
+            {
+              "content": "Stack",
+              "answer": 0
+            },
+            {
+              "content": "TreeSet",
+              "answer": 0
+            },
+            {
+              "content": "HashSet",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

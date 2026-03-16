@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 2,
+      "title": "큐 삽입 메서드",
+      "description": "큐에 원소를 삽입하고 front 원소를 제거 없이 조회하는 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Queue<Integer> queue = new LinkedList<>();\nQueue<Integer> queue = new LinkedList<>();\nqueue._____(5);\nSystem.out.println(queue._____()); // 5 출력, 제거 안 함\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "offer",
+              "answer": 1
+            },
+            {
+              "content": "peek",
+              "answer": 1
+            },
+            {
+              "content": "push",
+              "answer": 0
+            },
+            {
+              "content": "poll",
+              "answer": 0
+            },
+            {
+              "content": "add",
+              "answer": 0
+            },
+            {
+              "content": "pop",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

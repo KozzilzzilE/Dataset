@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 13,
+      "orderNo": 1,
+      "title": "다익스트라 초기화",
+      "description": "다익스트라 알고리즘에서 dist 배열을 올바르게 초기화하는 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        int n = 5, start = 1;\nint[] dist = new int[n + 1];\nArrays.fill(dist, _____._______);\ndist[start] = 0;\n        System.out.println(java.util.Arrays.toString(dist));\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "Integer",
+              "answer": 1
+            },
+            {
+              "content": "MAX_VALUE",
+              "answer": 1
+            },
+            {
+              "content": "Integer",
+              "answer": 0
+            },
+            {
+              "content": "MIN_VALUE",
+              "answer": 0
+            },
+            {
+              "content": "Math",
+              "answer": 0
+            },
+            {
+              "content": "MAX_INT",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

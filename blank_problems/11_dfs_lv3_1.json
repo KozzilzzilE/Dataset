@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 11,
+      "orderNo": 3,
+      "title": "DFS 스택 구현",
+      "description": "재귀 대신 스택을 사용한 DFS에서 노드를 꺼내는 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        int n = 4, start = 1;\n        List<Integer>[] graph = new ArrayList[n + 1];\n        boolean[] visited = new boolean[n + 1];\n        for (int i = 1; i <= n; i++) graph[i] = new ArrayList<>();\n        graph[1].add(2); graph[2].add(3); graph[3].add(4);\nStack<Integer> stack = new Stack<>();\nstack.push(start);\nvisited[start] = true;\nwhile (!stack._____()) {\n    int cur = stack._____();\n    for (int next : graph[cur]) {\n        if (!visited[next]) {\n            visited[next] = true;\n            stack.push(next);\n        }\n    }\n}\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "isEmpty",
+              "answer": 1
+            },
+            {
+              "content": "pop",
+              "answer": 1
+            },
+            {
+              "content": "isFull",
+              "answer": 0
+            },
+            {
+              "content": "poll",
+              "answer": 0
+            },
+            {
+              "content": "isNull",
+              "answer": 0
+            },
+            {
+              "content": "peek",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

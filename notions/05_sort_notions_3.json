@@ -1,0 +1,14 @@
+{
+  "topicId": 5,
+  "pageNo": 3,
+  "title": "정렬 코드",
+  "point": "병합 정렬 구현",
+  "detail": "### 📋 코드 설명 — 병합 정렬\n\n병합 정렬은 **분할 정복(Divide and Conquer)** 방식을 사용합니다.\n\n1. 배열을 절반으로 **분할**합니다.\n2. 각 절반을 재귀적으로 정렬합니다.\n3. 정렬된 두 배열을 **병합**합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n log n)** | 항상 보장 |\n| 공간 | **O(n)** | 임시 배열 필요 |\n| 안정 정렬 | **✅** | 동일 값 순서 유지 |\n\n---\n\n### ⚠️ 자주 나오는 실수\n\n- `merge` 함수에서 **임시 배열(`tmp`)** 을 사용하지 않고 원본에 바로 쓰면 값이 덮어써집니다.\n- `mid = (left + right) / 2` 계산 시 `left`, `right`가 클 경우 오버플로우가 발생할 수 있습니다. `left + (right - left) / 2` 를 사용하는 것이 안전합니다.",
+  "imgUrl": null,
+  "codes": [
+    {
+      "languageId": 1,
+      "content": "```java\npublic class MergeSort {\n\n    public static void mergeSort(int[] arr, int left, int right) {\n        if (left >= right) return;\n        int mid = (left + right) / 2;\n        mergeSort(arr, left, mid);\n        mergeSort(arr, mid + 1, right);\n        merge(arr, left, mid, right);\n    }\n\n    private static void merge(int[] arr, int left, int mid, int right) {\n        int[] tmp = new int[right - left + 1];\n        int i = left, j = mid + 1, k = 0;\n\n        while (i <= mid && j <= right) {\n            if (arr[i] <= arr[j]) tmp[k++] = arr[i++];\n            else tmp[k++] = arr[j++];\n        }\n        while (i <= mid) tmp[k++] = arr[i++];\n        while (j <= right) tmp[k++] = arr[j++];\n\n        for (int l = 0; l < tmp.length; l++)\n            arr[left + l] = tmp[l];\n    }\n\n    public static void main(String[] args) {\n        int[] arr = {5, 3, 8, 1, 2};\n        mergeSort(arr, 0, arr.length - 1);\n        for (int v : arr) System.out.print(v + \" \"); // 1 2 3 5 8\n    }\n}\n```"
+    }
+  ]
+}

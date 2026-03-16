@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 2,
+      "title": "최대 힙 생성",
+      "description": "최대 힙으로 동작하는 우선순위 큐를 생성하는 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\nPriorityQueue<Integer> maxHeap = \n    new PriorityQueue<>(_____._____());\nmaxHeap.offer(3);\nmaxHeap.offer(7);\nSystem.out.println(maxHeap.poll()); // 7\n        System.out.println(maxHeap.poll()); // 7\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "Collections",
+              "answer": 1
+            },
+            {
+              "content": "reverseOrder",
+              "answer": 1
+            },
+            {
+              "content": "Arrays",
+              "answer": 0
+            },
+            {
+              "content": "naturalOrder",
+              "answer": 0
+            },
+            {
+              "content": "Comparator",
+              "answer": 0
+            },
+            {
+              "content": "reverse",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

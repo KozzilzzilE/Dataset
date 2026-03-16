@@ -1,0 +1,42 @@
+{
+  "requests": [
+    {
+      "topicId": 7,
+      "orderNo": 3,
+      "title": "순열 생성 재귀",
+      "description": "visited 배열을 이용한 순열 생성에서 방문 처리 빈칸 2개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    static int[] arr = {1, 2, 3};\n    static int n = 3;\n    static boolean[] visited = new boolean[n];\n    static int[] chosen = new int[n];\n\nvoid permute(int depth) {\n    if (depth == n) { print(); return; }\n    for (int i = 0; i < n; i++) {\n        if (visited[i]) continue;\n        visited[i] = _____;\n        chosen[depth] = arr[i];\n        permute(depth + 1);\n        visited[i] = _____;\n    }\n}\n\n    public static void print() {\n        for (int v : chosen) System.out.print(v + \" \");\n        System.out.println();\n    }\n    public static void main(String[] args) { permute(0); }\n}\n```",
+          "blanks": [
+            {
+              "content": "true",
+              "answer": 1
+            },
+            {
+              "content": "false",
+              "answer": 1
+            },
+            {
+              "content": "false",
+              "answer": 0
+            },
+            {
+              "content": "true",
+              "answer": 0
+            },
+            {
+              "content": "1",
+              "answer": 0
+            },
+            {
+              "content": "0",
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
