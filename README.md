@@ -81,6 +81,9 @@
 
 # 2026-3-16 수정, 추가 사항
 
+## notion 파일 추가
+- array, hash, stack에서 알고리즘 책 참고하여 queue, sort, binarysearch, bruteforce, greedy, heap, dp, dfs, bfs, graph 추가
+
 ## notion detail 마크다운 전면 개선
 - 전체 40개 notion 파일 (array, stack, hash, queue, sort, binarysearch, bruteforce, greedy, heap, dp, dfs, bfs, graph) detail 마크다운 가시성 개선
 - 볼드(`**`), 인라인 코드(`` ` ``), 표(`|`), 구분선(`---`), 이모지(💡🔍⚠️📊) 적용
