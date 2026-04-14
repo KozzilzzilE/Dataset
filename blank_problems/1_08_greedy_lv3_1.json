@@ -1,0 +1,30 @@
+{
+  "requests": [
+    {
+      "topicId": 8,
+      "orderNo": 3,
+      "title": "그리디 - 회의실 최소 개수",
+      "description": "최소 회의실 개수를 구하는 그리디 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        int[][] meetings = {{0,30},{5,10},{15,20}};\n        int[] starts = new int[meetings._____];\n        int[] ends   = new int[meetings.length];\n        for (int i = 0; i < meetings.length; i++) {\n            starts[i] = meetings[i][_____];\n            ends[i]   = meetings[i][1];\n        }\n        Arrays.sort(_____); Arrays.sort(ends);\n        int rooms = 0, endIdx = 0;\n        for (int s : starts) {\n            if (s < ends[endIdx]) rooms_____;\n            else _____++;\n        }\n        System.out.println(_____);\n    }\n}\n```",
+          "blanks": [
+            { "content": "length", "answer": 1 },
+            { "content": "0", "answer": 2 },
+            { "content": "starts", "answer": 3 },
+            { "content": "++", "answer": 4 },
+            { "content": "endIdx", "answer": 5 },
+            { "content": "rooms", "answer": 6 },
+            { "content": "size()", "answer": null },
+            { "content": "1", "answer": null },
+            { "content": "ends", "answer": null },
+            { "content": "--", "answer": null },
+            { "content": "rooms++", "answer": null },
+            { "content": "endIdx + 1", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

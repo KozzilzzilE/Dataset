@@ -1,0 +1,45 @@
+{
+  "topicId": 2,
+  "title": "올바른 괄호 문자열",
+  "difficulty": "medium",
+  "difficultyOrder": 2,
+  "description": "괄호 문자열이 주어졌을 때 올바른 괄호 문자열인지 판단하세요.\n\n괄호는 (), {}, [] 세 종류가 존재합니다.\n\n올바른 괄호 문자열이면 true, 아니면 false를 출력합니다.",
+  "constraints": "1 ≤ 문자열 길이 ≤ 10^5",
+  "lineSolution": "스택을 사용하여 괄호의 짝을 검사합니다.",
+  "solutionText": "### 💡 핵심 아이디어\n\n**스택(Stack)** 을 이용해 여는 괄호를 저장하고, 닫는 괄호가 나오면 스택의 `top`과 짝이 맞는지 검사합니다.\n\n---\n\n### 🔍 알고리즘\n\n1. 여는 괄호 `(`, `{`, `[` 는 스택에 **push** 합니다.\n2. 닫는 괄호가 나오면 스택이 비어있으면 **즉시 false** 를 반환합니다.\n3. 스택에서 `pop` 한 값과 현재 닫는 괄호의 **짝이 맞지 않으면 false** 입니다.\n4. 문자열을 모두 처리한 후 스택이 **비어있으면 true**, 아니면 false 입니다.\n\n---\n\n### ⚠️ 주의사항\n\n- 빈 문자열 입력 시 스택이 비어있으므로 `true` 를 반환합니다.\n- 닫는 괄호가 나왔을 때 **스택이 비어있는지 먼저 확인** 해야 합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 문자열을 한 번 순회 |\n| 공간 | **O(n)** | 최악의 경우 스택에 n개 저장 |",
+  "testCases": [
+    {
+      "input": "()[]{}",
+      "output": "true"
+    },
+    {
+      "input": "(]",
+      "output": "false"
+    },
+    {
+      "input": "([{}])",
+      "output": "true"
+    },
+    {
+      "input": "(((",
+      "output": "false"
+    },
+    {
+      "input": "{[()]}",
+      "output": "true"
+    },
+    {
+      "input": "",
+      "output": "true"
+    }
+  ],
+  "timeLimits": [
+    { "languageId": 1, "timeLimit": 1000 }
+  ],
+  "solutionCodes": [
+    {
+      "languageId": 1,
+      "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n\n    public static boolean isValid(String s) {\n        Stack<Character> stack = new Stack<>();\n\n        for (char c : s.toCharArray()) {\n            if (c == '(' || c == '{' || c == '[')\n                stack.push(c);\n            else {\n                if (stack.isEmpty()) return false;\n\n                char top = stack.pop();\n\n                if (c == ')' && top != '(') return false;\n                if (c == '}' && top != '{') return false;\n                if (c == ']' && top != '[') return false;\n            }\n        }\n\n        return stack.isEmpty();\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine();\n        if (s == null) s = \"\";\n\n        System.out.println(isValid(s));\n    }\n}"
+    }
+  ]
+}

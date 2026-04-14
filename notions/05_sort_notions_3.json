@@ -9,6 +9,18 @@
     {
       "languageId": 1,
       "content": "```java\npublic class MergeSort {\n\n    public static void mergeSort(int[] arr, int left, int right) {\n        if (left >= right) return;\n        int mid = (left + right) / 2;\n        mergeSort(arr, left, mid);\n        mergeSort(arr, mid + 1, right);\n        merge(arr, left, mid, right);\n    }\n\n    private static void merge(int[] arr, int left, int mid, int right) {\n        int[] tmp = new int[right - left + 1];\n        int i = left, j = mid + 1, k = 0;\n\n        while (i <= mid && j <= right) {\n            if (arr[i] <= arr[j]) tmp[k++] = arr[i++];\n            else tmp[k++] = arr[j++];\n        }\n        while (i <= mid) tmp[k++] = arr[i++];\n        while (j <= right) tmp[k++] = arr[j++];\n\n        for (int l = 0; l < tmp.length; l++)\n            arr[left + l] = tmp[l];\n    }\n\n    public static void main(String[] args) {\n        int[] arr = {5, 3, 8, 1, 2};\n        mergeSort(arr, 0, arr.length - 1);\n        for (int v : arr) System.out.print(v + \" \"); // 1 2 3 5 8\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid merge(vector<int>& arr, int left, int mid, int right) {\n    vector<int> tmp(right - left + 1);\n    int i = left, j = mid + 1, k = 0;\n\n    while (i <= mid && j <= right) {\n        if (arr[i] <= arr[j]) tmp[k++] = arr[i++];\n        else tmp[k++] = arr[j++];\n    }\n    while (i <= mid) tmp[k++] = arr[i++];\n    while (j <= right) tmp[k++] = arr[j++];\n\n    for (int l = 0; l < tmp.size(); l++)\n        arr[left + l] = tmp[l];\n}\n\nvoid mergeSort(vector<int>& arr, int left, int right) {\n    if (left >= right) return;\n    int mid = (left + right) / 2;\n    mergeSort(arr, left, mid);\n    mergeSort(arr, mid + 1, right);\n    merge(arr, left, mid, right);\n}\n\nint main() {\n    vector<int> arr = {5, 3, 8, 1, 2};\n    mergeSort(arr, 0, arr.size() - 1);\n    for (int v : arr) cout << v << \" \"; // 1 2 3 5 8\n    return 0;\n}\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\ndef merge(arr, left, mid, right):\n    tmp = []\n    i, j = left, mid + 1\n\n    while i <= mid and j <= right:\n        if arr[i] <= arr[j]:\n            tmp.append(arr[i])\n            i += 1\n        else:\n            tmp.append(arr[j])\n            j += 1\n    while i <= mid:\n        tmp.append(arr[i])\n        i += 1\n    while j <= right:\n        tmp.append(arr[j])\n        j += 1\n\n    for l in range(len(tmp)):\n        arr[left + l] = tmp[l]\n\ndef merge_sort(arr, left, right):\n    if left >= right:\n        return\n    mid = (left + right) // 2\n    merge_sort(arr, left, mid)\n    merge_sort(arr, mid + 1, right)\n    merge(arr, left, mid, right)\n\narr = [5, 3, 8, 1, 2]\nmerge_sort(arr, 0, len(arr) - 1)\nprint(*arr)  # 1 2 3 5 8\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nfunction merge(arr, left, mid, right) {\n    const tmp = [];\n    let i = left, j = mid + 1, k = 0;\n\n    while (i <= mid && j <= right) {\n        if (arr[i] <= arr[j]) tmp[k++] = arr[i++];\n        else tmp[k++] = arr[j++];\n    }\n    while (i <= mid) tmp[k++] = arr[i++];\n    while (j <= right) tmp[k++] = arr[j++];\n\n    for (let l = 0; l < tmp.length; l++)\n        arr[left + l] = tmp[l];\n}\n\nfunction mergeSort(arr, left, right) {\n    if (left >= right) return;\n    const mid = Math.floor((left + right) / 2);\n    mergeSort(arr, left, mid);\n    mergeSort(arr, mid + 1, right);\n    merge(arr, left, mid, right);\n}\n\nconst arr = [5, 3, 8, 1, 2];\nmergeSort(arr, 0, arr.length - 1);\nconsole.log(arr.join(\" \")); // 1 2 3 5 8\n```"
     }
   ]
 }

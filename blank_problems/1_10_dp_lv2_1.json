@@ -1,0 +1,29 @@
+{
+  "requests": [
+    {
+      "topicId": 10,
+      "orderNo": 2,
+      "title": "계단 오르기 - DP",
+      "description": "한 번에 1칸 또는 2칸을 오를 수 있을 때 n번째 계단에 오르는 경우의 수를 구하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int n = 5;\n        int[] dp = new int[n + 1];\n        dp[1] = _____;\n        dp[2] = _____;\n        for (int i = 3; i _____ n; i++) {\n            dp[i] = dp[i - _____] + dp[i - 2];\n        }\n        System.out.println(dp[_____]);\n    }\n}\n```",
+          "blanks": [
+            { "content": "1", "answer": 1 },
+            { "content": "2", "answer": 2 },
+            { "content": "<=", "answer": 3 },
+            { "content": "1", "answer": 4 },
+            { "content": "n", "answer": 5 },
+            { "content": "0", "answer": null },
+            { "content": "1", "answer": null },
+            { "content": "<", "answer": null },
+            { "content": "2", "answer": null },
+            { "content": "n - 1", "answer": null },
+            { "content": "3", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

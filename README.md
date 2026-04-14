@@ -142,4 +142,25 @@
  - 11. dfs
  - 12. bfs
  - 13. 그래프
- 
+
+---
+
+# 2026-4-14 수정, 추가 사항
+
+## languageId 정의
+- 1: Java
+- 2: C++
+- 3: Python
+- 4: JavaScript
+
+## 파일명 규칙 변경 (blank_problems, code_problems)
+- 기존: `{topicId:02d}_{topicName}_...` (앞 번호 = 토픽 ID)
+- 변경: `{languageId}_{topicId:02d}_{topicName}_...` (앞 번호 = 언어 ID)
+- 현재 모든 파일이 Java(languageId=1) 기준이므로 `1_` 접두사 추가
+- 예시: `01_array_lv1_1.json` → `1_01_array_lv1_1.json`
+
+## notions 파일 다국어 코드 추가
+- `*_notions_3.json` 파일(코드 페이지)의 `codes` 배열에 languageId 2~4 코드 추가
+- 기존에는 Java(languageId=1)만 존재했으나, C++ / Python / JavaScript 번역 코드 추가
+- 대상: 13개 토픽 전체 (array, stack, queue, hash, sort, binarysearch, bruteforce, greedy, heap, dp, dfs, bfs, graph)
+- notions 파일명은 변경 없음 (파일 내부 languageId로 구분)

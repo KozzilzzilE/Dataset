@@ -1,0 +1,29 @@
+{
+  "requests": [
+    {
+      "topicId": 4,
+      "orderNo": 3,
+      "title": "HashMap으로 두 수의 합",
+      "description": "HashMap을 사용하여 합이 target인 두 원소의 인덱스를 찾는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        int[] nums = {2, 7, 11, 15};\n        int target = 9;\n        Map<Integer, Integer> map = new _____<>();\n        for (int i = 0; i < nums._____; i++) {\n            int need = _____ - nums[i];\n            if (map._____(need)) {\n                System.out.println(map.get(need) + \" \" + i);\n                return;\n            }\n            map.put(nums[i], _____); \n        }\n    }\n}\n```",
+          "blanks": [
+            { "content": "HashMap", "answer": 1 },
+            { "content": "length", "answer": 2 },
+            { "content": "target", "answer": 3 },
+            { "content": "containsKey", "answer": 4 },
+            { "content": "i", "answer": 5 },
+            { "content": "HashSet", "answer": null },
+            { "content": "size", "answer": null },
+            { "content": "nums[i]", "answer": null },
+            { "content": "containsValue", "answer": null },
+            { "content": "0", "answer": null },
+            { "content": "TreeMap", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

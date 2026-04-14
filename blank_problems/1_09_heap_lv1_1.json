@@ -1,0 +1,29 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 1,
+      "title": "PriorityQueue 기본 - 최소 힙",
+      "description": "PriorityQueue로 최소 힙을 사용하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        PriorityQueue<Integer> pq = new _____<>();  // 최소 힙\n        pq._____(5);\n        pq.offer(1);\n        pq.offer(3);\n        System.out.println(pq._____());  // 1 (최솟값 조회)\n        System.out.println(pq._____());  // 1 (최솟값 제거)\n        System.out.println(pq.peek());   // 3\n        System.out.println(pq._____()); // 2\n    }\n}\n```",
+          "blanks": [
+            { "content": "PriorityQueue", "answer": 1 },
+            { "content": "offer", "answer": 2 },
+            { "content": "peek", "answer": 3 },
+            { "content": "poll", "answer": 4 },
+            { "content": "size", "answer": 5 },
+            { "content": "Queue", "answer": null },
+            { "content": "push", "answer": null },
+            { "content": "pop", "answer": null },
+            { "content": "remove", "answer": null },
+            { "content": "isEmpty", "answer": null },
+            { "content": "length", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

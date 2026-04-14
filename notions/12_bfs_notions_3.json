@@ -1,14 +1,26 @@
 {
-  "topicId": 11,
+  "topicId": 12,
   "pageNo": 3,
-  "title": "DFS 코드",
-  "point": "재귀 구현",
-  "detail": "### 📋 코드 설명\n\n- 그래프를 **인접 리스트**로 표현합니다.\n- `visited[]` 배열로 방문 여부를 관리합니다.\n- 재귀 호출로 연결된 노드를 깊이 우선으로 탐색합니다.\n\n---\n\n### ⚠️ 주의사항\n\n- 그래프가 **비연결 그래프**일 경우 모든 노드를 탐색하려면 모든 노드에서 DFS를 시작해야 합니다.\n- 재귀 깊이가 매우 깊으면 **스택 오버플로우**가 발생할 수 있습니다. 이때는 `Stack` 자료구조로 직접 구현합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 |\n|------|--------|\n| 시간 | **O(V + E)** |\n| 공간 | **O(V)** |",
+  "title": "BFS 코드",
+  "point": "큐 반복문 구현",
+  "detail": "### 📋 코드 설명\n\n- 그래프를 **인접 리스트**로 표현합니다.\n- `visited[]` 배열로 방문 여부를 관리합니다.\n- **큐(Queue)** 를 이용해 연결된 노드를 너비 우선으로 탐색합니다.\n\n---\n\n### ⚠️ 주의사항\n\n- 큐에 넣을 때 **바로 방문 처리**를 해야 중복 삽입을 방지할 수 있습니다.\n- 그래프가 **비연결 그래프**일 경우 모든 노드에서 BFS를 시작해야 합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 |\n|------|--------|\n| 시간 | **O(V + E)** |\n| 공간 | **O(V)** |",
   "imgUrl": null,
   "codes": [
     {
       "languageId": 1,
-      "content": "```java\nimport java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static List<Integer>[] graph;\n    static boolean[] visited;\n\n    public static void dfs(int node) {\n        visited[node] = true;\n        System.out.print(node + \" \");\n\n        for (int next : graph[node]) {\n            if (!visited[next]) {\n                dfs(next);\n            }\n        }\n    }\n\n    public static void main(String[] args) throws IOException {\n        int n = 5; // 노드 수\n        graph = new ArrayList[n + 1];\n        visited = new boolean[n + 1];\n\n        for (int i = 1; i <= n; i++)\n            graph[i] = new ArrayList<>();\n\n        // 간선 추가\n        graph[1].add(2); graph[2].add(1);\n        graph[1].add(3); graph[3].add(1);\n        graph[2].add(4); graph[4].add(2);\n        graph[2].add(5); graph[5].add(2);\n\n        dfs(1); // 출력: 1 2 4 5 3\n    }\n}\n```"
+      "content": "```java\nimport java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static List<Integer>[] graph;\n    static boolean[] visited;\n\n    public static void bfs(int start) {\n        Queue<Integer> queue = new LinkedList<>();\n        queue.offer(start);\n        visited[start] = true;\n\n        while (!queue.isEmpty()) {\n            int node = queue.poll();\n            System.out.print(node + \" \");\n\n            for (int next : graph[node]) {\n                if (!visited[next]) {\n                    visited[next] = true;\n                    queue.offer(next);\n                }\n            }\n        }\n    }\n\n    public static void main(String[] args) throws IOException {\n        int n = 5; // 노드 수\n        graph = new ArrayList[n + 1];\n        visited = new boolean[n + 1];\n\n        for (int i = 1; i <= n; i++)\n            graph[i] = new ArrayList<>();\n\n        // 간선 추가\n        graph[1].add(2); graph[2].add(1);\n        graph[1].add(3); graph[3].add(1);\n        graph[2].add(4); graph[4].add(2);\n        graph[2].add(5); graph[5].add(2);\n\n        bfs(1); // 출력: 1 2 3 4 5\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nvector<int> graph[6];\nbool visited[6];\n\nvoid bfs(int start) {\n    queue<int> q;\n    q.push(start);\n    visited[start] = true;\n\n    while (!q.empty()) {\n        int node = q.front();\n        q.pop();\n        cout << node << \" \";\n\n        for (int next : graph[node]) {\n            if (!visited[next]) {\n                visited[next] = true;\n                q.push(next);\n            }\n        }\n    }\n}\n\nint main() {\n    int n = 5; // 노드 수\n\n    // 간선 추가\n    graph[1].push_back(2); graph[2].push_back(1);\n    graph[1].push_back(3); graph[3].push_back(1);\n    graph[2].push_back(4); graph[4].push_back(2);\n    graph[2].push_back(5); graph[5].push_back(2);\n\n    bfs(1); // 출력: 1 2 3 4 5\n    return 0;\n}\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\nfrom collections import deque\n\ngraph = [[] for _ in range(6)]\nvisited = [False] * 6\n\ndef bfs(start):\n    queue = deque([start])\n    visited[start] = True\n\n    while queue:\n        node = queue.popleft()\n        print(node, end=\" \")\n\n        for next_node in graph[node]:\n            if not visited[next_node]:\n                visited[next_node] = True\n                queue.append(next_node)\n\ndef main():\n    n = 5  # 노드 수\n\n    # 간선 추가\n    graph[1].append(2); graph[2].append(1)\n    graph[1].append(3); graph[3].append(1)\n    graph[2].append(4); graph[4].append(2)\n    graph[2].append(5); graph[5].append(2)\n\n    bfs(1)  # 출력: 1 2 3 4 5\n\nmain()\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nconst graph = Array.from({ length: 6 }, () => []);\nconst visited = new Array(6).fill(false);\n\nfunction bfs(start) {\n    const queue = [start];\n    visited[start] = true;\n    let head = 0;\n\n    while (head < queue.length) {\n        const node = queue[head++];\n        process.stdout.write(node + \" \");\n\n        for (const next of graph[node]) {\n            if (!visited[next]) {\n                visited[next] = true;\n                queue.push(next);\n            }\n        }\n    }\n}\n\nfunction main() {\n    const n = 5; // 노드 수\n\n    // 간선 추가\n    graph[1].push(2); graph[2].push(1);\n    graph[1].push(3); graph[3].push(1);\n    graph[2].push(4); graph[4].push(2);\n    graph[2].push(5); graph[5].push(2);\n\n    bfs(1); // 출력: 1 2 3 4 5\n}\n\nmain();\n```"
     }
   ]
 }

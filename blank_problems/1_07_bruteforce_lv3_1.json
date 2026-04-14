@@ -1,0 +1,30 @@
+{
+  "requests": [
+    {
+      "topicId": 7,
+      "orderNo": 3,
+      "title": "조합 탐색",
+      "description": "재귀로 n개 중 r개를 선택하는 모든 조합을 생성하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    static int n = 4, r = 2;\n    static void combine(int[] arr, int start, List<Integer> cur) {\n        if (cur._____ == r) {\n            System.out.println(cur);\n            return;\n        }\n        for (int i = _____; i < arr.length; i++) {\n            if (r - cur.size() > arr.length - _____) break; // 가지치기\n            cur.add(arr[i]);\n            combine(arr, i + _____, cur);\n            cur.remove(cur.size() - _____); \n        }\n    }\n    public static void main(String[] args) {\n        int[] arr = {1, 2, 3, _____};\n        combine(arr, 0, new ArrayList<>());\n    }\n}\n```",
+          "blanks": [
+            { "content": "size()", "answer": 1 },
+            { "content": "start", "answer": 2 },
+            { "content": "i", "answer": 3 },
+            { "content": "1", "answer": 4 },
+            { "content": "1", "answer": 5 },
+            { "content": "4", "answer": 6 },
+            { "content": "size", "answer": null },
+            { "content": "0", "answer": null },
+            { "content": "start", "answer": null },
+            { "content": "0", "answer": null },
+            { "content": "0", "answer": null },
+            { "content": "3", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "requests": [
+    {
+      "topicId": 12,
+      "orderNo": 3,
+      "title": "BFS로 섬의 개수 세기",
+      "description": "BFS를 사용하여 격자에서 섬의 개수를 세는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    static int R, C;\n    static char[][] grid;\n    static boolean[][] _____;\n    static int[] dr = {-1, 1, 0, 0};\n    static int[] dc = {0, 0, -1, 1};\n\n    static void bfs(int r, int c) {\n        Queue<int[]> q = new LinkedList<>();\n        q.offer(new int[]{r, c});\n        visited[r][c] = _____;\n        while (!q.isEmpty()) {\n            int[] cur = q._____();\n            for (int d = 0; d < 4; d++) {\n                int nr = cur[0] + dr[d];\n                int nc = cur[1] + dc[d];\n                if (nr >= 0 && nr < R && nc >= 0 && nc < C\n                        && grid[nr][nc] == _____ && !visited[nr][nc]) {\n                    visited[nr][nc] = true;\n                    q.offer(new int[]{nr, _____});\n                }\n            }\n        }\n    }\n    public static void main(String[] args) {\n        R = 3; C = 4;\n        grid = new char[][]{{1,1,0,0},{0,1,0,0},{0,0,0,1}}; // 예시\n        visited = new boolean[R][_____];\n        int count = 0;\n        for (int r = 0; r < R; r++)\n            for (int c = 0; c < C; c++)\n                if (grid[r][c] == '1' && !visited[r][c]) { bfs(r,c); count++; }\n        System.out.println(count);\n    }\n}\n```",
+          "blanks": [
+            { "content": "visited", "answer": 1 },
+            { "content": "true", "answer": 2 },
+            { "content": "poll", "answer": 3 },
+            { "content": "'1'", "answer": 4 },
+            { "content": "nc", "answer": 5 },
+            { "content": "C", "answer": 6 },
+            { "content": "checked", "answer": null },
+            { "content": "false", "answer": null },
+            { "content": "peek", "answer": null },
+            { "content": "'0'", "answer": null },
+            { "content": "nr", "answer": null },
+            { "content": "R", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

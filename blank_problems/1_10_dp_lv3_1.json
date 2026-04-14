@@ -1,0 +1,30 @@
+{
+  "requests": [
+    {
+      "topicId": 10,
+      "orderNo": 3,
+      "title": "0/1 배낭 문제 - DP",
+      "description": "0/1 배낭 문제를 2차원 DP로 푸는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] weight = {2, 3, 4, 5};\n        int[] value  = {3, 4, 5, 6};\n        int W = 5, n = weight._____;\n        int[][] dp = new int[n + 1][W + 1];\n        for (int i = 1; i <= n; i++) {\n            for (int w = 0; w _____ W; w++) {\n                dp[i][w] = dp[i-1][w];  // 현재 아이템 미포함\n                if (weight[i-1] <= w) {\n                    dp[i][w] = _____._____(\n                        dp[i][w],\n                        dp[i-1][w - weight[i-1]] + value[_____]\n                    );\n                }\n            }\n        }\n        System.out.println(dp[n][_____]);\n    }\n}\n```",
+          "blanks": [
+            { "content": "length", "answer": 1 },
+            { "content": "<=", "answer": 2 },
+            { "content": "Math", "answer": 3 },
+            { "content": "max", "answer": 4 },
+            { "content": "i-1", "answer": 5 },
+            { "content": "W", "answer": 6 },
+            { "content": "size", "answer": null },
+            { "content": "<", "answer": null },
+            { "content": "Arrays", "answer": null },
+            { "content": "min", "answer": null },
+            { "content": "i", "answer": null },
+            { "content": "W - 1", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

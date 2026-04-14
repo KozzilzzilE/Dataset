@@ -1,0 +1,30 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 3,
+      "title": "큐를 이용한 BFS 순회",
+      "description": "큐를 사용하여 그래프를 BFS로 순회하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    static List<List<Integer>> graph = new ArrayList<>();\n    static boolean[] visited;\n\n    public static void bfs(int start) {\n        Queue<Integer> queue = new _____<>();\n        queue._____(start);\n        _____[start] = true;\n        while (!queue.isEmpty()) {\n            int node = queue._____();\n            System.out.print(node + \" \");\n            for (int next : graph.get(_____)) {\n                if (!visited[next]) {\n                    visited[next] = _____;\n                    queue.offer(next);\n                }\n            }\n        }\n    }\n    public static void main(String[] args) {\n        int n = 5;\n        for (int i = 0; i <= n; i++) graph.add(new ArrayList<>());\n        graph.get(1).addAll(Arrays.asList(2, 3));\n        graph.get(2).addAll(Arrays.asList(4, 5));\n        visited = new boolean[n + 1];\n        bfs(1);\n    }\n}\n```",
+          "blanks": [
+            { "content": "LinkedList", "answer": 1 },
+            { "content": "offer", "answer": 2 },
+            { "content": "visited", "answer": 3 },
+            { "content": "poll", "answer": 4 },
+            { "content": "node", "answer": 5 },
+            { "content": "true", "answer": 6 },
+            { "content": "ArrayDeque", "answer": null },
+            { "content": "push", "answer": null },
+            { "content": "graph", "answer": null },
+            { "content": "peek", "answer": null },
+            { "content": "start", "answer": null },
+            { "content": "false", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

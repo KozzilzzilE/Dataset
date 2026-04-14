@@ -9,6 +9,18 @@
     {
       "languageId": 1,
       "content": "```java\npublic class IntStack {\n    private int[] arr;\n    private int top;\n\n    public IntStack(int capacity) {\n        arr = new int[capacity];\n        top = -1;\n    }\n\n    public boolean isEmpty() {\n        return top == -1;\n    }\n\n    public boolean isFull() {\n        return top == arr.length - 1;\n    }\n\n    public void push(int value) {\n        if (isFull()) {\n            throw new RuntimeException(\"Stack Overflow\");\n        }\n        top++;\n        arr[top] = value;\n    }\n\n    public int pop() {\n        if (isEmpty()) {\n            throw new RuntimeException(\"Stack Underflow\");\n        }\n        int value = arr[top];\n        top--;\n        return value;\n    }\n\n    public int peek() {\n        if (isEmpty()) {\n            throw new RuntimeException(\"Stack is Empty\");\n        }\n        return arr[top];\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <stdexcept>\nusing namespace std;\n\nclass IntStack {\nprivate:\n    int* arr;\n    int top;\n    int capacity;\n\npublic:\n    IntStack(int capacity) : capacity(capacity), top(-1) {\n        arr = new int[capacity];\n    }\n\n    ~IntStack() {\n        delete[] arr;\n    }\n\n    bool isEmpty() {\n        return top == -1;\n    }\n\n    bool isFull() {\n        return top == capacity - 1;\n    }\n\n    void push(int value) {\n        if (isFull()) {\n            throw runtime_error(\"Stack Overflow\");\n        }\n        arr[++top] = value;\n    }\n\n    int pop() {\n        if (isEmpty()) {\n            throw runtime_error(\"Stack Underflow\");\n        }\n        return arr[top--];\n    }\n\n    int peek() {\n        if (isEmpty()) {\n            throw runtime_error(\"Stack is Empty\");\n        }\n        return arr[top];\n    }\n};\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\nclass IntStack:\n    def __init__(self, capacity):\n        self.arr = [0] * capacity\n        self.top = -1\n        self.capacity = capacity\n\n    def is_empty(self):\n        return self.top == -1\n\n    def is_full(self):\n        return self.top == self.capacity - 1\n\n    def push(self, value):\n        if self.is_full():\n            raise RuntimeError(\"Stack Overflow\")\n        self.top += 1\n        self.arr[self.top] = value\n\n    def pop(self):\n        if self.is_empty():\n            raise RuntimeError(\"Stack Underflow\")\n        value = self.arr[self.top]\n        self.top -= 1\n        return value\n\n    def peek(self):\n        if self.is_empty():\n            raise RuntimeError(\"Stack is Empty\")\n        return self.arr[self.top]\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nclass IntStack {\n    constructor(capacity) {\n        this.arr = new Array(capacity);\n        this.top = -1;\n        this.capacity = capacity;\n    }\n\n    isEmpty() {\n        return this.top === -1;\n    }\n\n    isFull() {\n        return this.top === this.capacity - 1;\n    }\n\n    push(value) {\n        if (this.isFull()) {\n            throw new Error(\"Stack Overflow\");\n        }\n        this.arr[++this.top] = value;\n    }\n\n    pop() {\n        if (this.isEmpty()) {\n            throw new Error(\"Stack Underflow\");\n        }\n        return this.arr[this.top--];\n    }\n\n    peek() {\n        if (this.isEmpty()) {\n            throw new Error(\"Stack is Empty\");\n        }\n        return this.arr[this.top];\n    }\n}\n```"
     }
   ]
 }

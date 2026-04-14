@@ -1,0 +1,29 @@
+{
+  "requests": [
+    {
+      "topicId": 6,
+      "orderNo": 2,
+      "title": "이진 탐색으로 조건 만족하는 최솟값 찾기",
+      "description": "이진 탐색으로 조건을 만족하는 최솟값을 찾는 파라메트릭 서치 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    // 떡의 높이 h로 잘랐을 때 얻는 길이의 합이 target 이상인지\n    static boolean canGet(int[] heights, long h, long target) {\n        long sum = 0;\n        for (int ht : heights)\n            if (ht > h) sum _____ (ht - h);\n        return sum _____ target;\n    }\n    public static void main(String[] args) {\n        int[] heights = {19, 15, 10, 17};\n        long target = 6;\n        long lo = 0, hi = 19;\n        long ans = 0;\n        while (lo _____ hi) {\n            long mid = (lo + _____) / 2;\n            if (canGet(heights, mid, target)) {\n                ans = mid;\n                lo = mid + 1;\n            } else hi = mid - _____;\n        }\n        System.out.println(ans);\n    }\n}\n```",
+          "blanks": [
+            { "content": "+=", "answer": 1 },
+            { "content": ">=", "answer": 2 },
+            { "content": "<=", "answer": 3 },
+            { "content": "hi", "answer": 4 },
+            { "content": "1", "answer": 5 },
+            { "content": "-=", "answer": null },
+            { "content": ">", "answer": null },
+            { "content": "<", "answer": null },
+            { "content": "lo", "answer": null },
+            { "content": "0", "answer": null },
+            { "content": "2", "answer": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

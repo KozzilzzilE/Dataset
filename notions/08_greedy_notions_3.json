@@ -9,6 +9,18 @@
     {
       "languageId": 1,
       "content": "```java\nimport java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        int[][] meetings = new int[n][2];\n        for (int i = 0; i < n; i++) {\n            StringTokenizer st = new StringTokenizer(br.readLine());\n            meetings[i][0] = Integer.parseInt(st.nextToken()); // 시작\n            meetings[i][1] = Integer.parseInt(st.nextToken()); // 종료\n        }\n\n        // 종료 시간 기준 정렬, 같으면 시작 시간 기준\n        Arrays.sort(meetings, (a, b) -> a[1] != b[1] ? a[1] - b[1] : a[0] - b[0]);\n\n        int count = 0, end = 0;\n        for (int[] m : meetings) {\n            if (m[0] >= end) {\n                count++;\n                end = m[1];\n            }\n        }\n\n        System.out.println(count);\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    vector<pair<int, int>> meetings(n);\n    for (int i = 0; i < n; i++) {\n        cin >> meetings[i].first >> meetings[i].second; // 시작, 종료\n    }\n\n    // 종료 시간 기준 정렬, 같으면 시작 시간 기준\n    sort(meetings.begin(), meetings.end(), [](const pair<int,int>& a, const pair<int,int>& b) {\n        if (a.second != b.second) return a.second < b.second;\n        return a.first < b.first;\n    });\n\n    int count = 0, end = 0;\n    for (auto& m : meetings) {\n        if (m.first >= end) {\n            count++;\n            end = m.second;\n        }\n    }\n\n    cout << count << \"\\n\";\n    return 0;\n}\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\nimport sys\ninput = sys.stdin.readline\n\ndef main():\n    n = int(input())\n    meetings = []\n    for _ in range(n):\n        start, end = map(int, input().split())\n        meetings.append((end, start))  # 종료 시간 기준 정렬을 위해 (end, start)\n\n    # 종료 시간 기준 정렬, 같으면 시작 시간 기준\n    meetings.sort()\n\n    count = 0\n    end = 0\n    for e, s in meetings:\n        if s >= end:\n            count += 1\n            end = e\n\n    print(count)\n\nmain()\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nconst readline = require('readline');\nconst rl = readline.createInterface({ input: process.stdin });\nconst lines = [];\nrl.on('line', line => lines.push(line.trim()));\nrl.on('close', () => {\n    const n = parseInt(lines[0]);\n    const meetings = [];\n    for (let i = 1; i <= n; i++) {\n        const [start, end] = lines[i].split(' ').map(Number);\n        meetings.push([start, end]);\n    }\n\n    // 종료 시간 기준 정렬, 같으면 시작 시간 기준\n    meetings.sort((a, b) => a[1] !== b[1] ? a[1] - b[1] : a[0] - b[0]);\n\n    let count = 0, end = 0;\n    for (const m of meetings) {\n        if (m[0] >= end) {\n            count++;\n            end = m[1];\n        }\n    }\n\n    console.log(count);\n});\n```"
     }
   ]
 }

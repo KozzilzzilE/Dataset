@@ -9,6 +9,18 @@
     {
       "languageId": 1,
       "content": "```java\nimport java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static List<Integer>[] graph;\n    static boolean[] visited;\n\n    public static void dfs(int node) {\n        visited[node] = true;\n        System.out.print(node + \" \");\n\n        for (int next : graph[node]) {\n            if (!visited[next]) {\n                dfs(next);\n            }\n        }\n    }\n\n    public static void main(String[] args) throws IOException {\n        int n = 5; // 노드 수\n        graph = new ArrayList[n + 1];\n        visited = new boolean[n + 1];\n\n        for (int i = 1; i <= n; i++)\n            graph[i] = new ArrayList<>();\n\n        // 간선 추가\n        graph[1].add(2); graph[2].add(1);\n        graph[1].add(3); graph[3].add(1);\n        graph[2].add(4); graph[4].add(2);\n        graph[2].add(5); graph[5].add(2);\n\n        dfs(1); // 출력: 1 2 4 5 3\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> graph[6];\nbool visited[6];\n\nvoid dfs(int node) {\n    visited[node] = true;\n    cout << node << \" \";\n\n    for (int next : graph[node]) {\n        if (!visited[next]) {\n            dfs(next);\n        }\n    }\n}\n\nint main() {\n    int n = 5; // 노드 수\n\n    // 간선 추가\n    graph[1].push_back(2); graph[2].push_back(1);\n    graph[1].push_back(3); graph[3].push_back(1);\n    graph[2].push_back(4); graph[4].push_back(2);\n    graph[2].push_back(5); graph[5].push_back(2);\n\n    dfs(1); // 출력: 1 2 4 5 3\n    return 0;\n}\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\nimport sys\nsys.setrecursionlimit(10000)\n\ngraph = [[] for _ in range(6)]\nvisited = [False] * 6\n\ndef dfs(node):\n    visited[node] = True\n    print(node, end=\" \")\n\n    for next_node in graph[node]:\n        if not visited[next_node]:\n            dfs(next_node)\n\ndef main():\n    n = 5  # 노드 수\n\n    # 간선 추가\n    graph[1].append(2); graph[2].append(1)\n    graph[1].append(3); graph[3].append(1)\n    graph[2].append(4); graph[4].append(2)\n    graph[2].append(5); graph[5].append(2)\n\n    dfs(1)  # 출력: 1 2 4 5 3\n\nmain()\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nconst graph = Array.from({ length: 6 }, () => []);\nconst visited = new Array(6).fill(false);\n\nfunction dfs(node) {\n    visited[node] = true;\n    process.stdout.write(node + \" \");\n\n    for (const next of graph[node]) {\n        if (!visited[next]) {\n            dfs(next);\n        }\n    }\n}\n\nfunction main() {\n    const n = 5; // 노드 수\n\n    // 간선 추가\n    graph[1].push(2); graph[2].push(1);\n    graph[1].push(3); graph[3].push(1);\n    graph[2].push(4); graph[4].push(2);\n    graph[2].push(5); graph[5].push(2);\n\n    dfs(1); // 출력: 1 2 4 5 3\n}\n\nmain();\n```"
     }
   ]
 }
