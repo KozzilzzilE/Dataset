@@ -79,6 +79,30 @@
             {
               "content": "<",
               "answer": null
+            },
+            {
+              "content": "-",
+              "answer": null
+            },
+            {
+              "content": "*",
+              "answer": null
+            },
+            {
+              "content": "/",
+              "answer": null
+            },
+            {
+              "content": "%",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
             }
           ]
         },
@@ -109,6 +133,26 @@
             {
               "content": "<",
               "answer": null
+            },
+            {
+              "content": "find",
+              "answer": null
+            },
+            {
+              "content": "fetch",
+              "answer": null
+            },
+            {
+              "content": "retrieve",
+              "answer": null
+            },
+            {
+              "content": "access",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
             }
           ]
         },
@@ -130,6 +174,34 @@
             },
             {
               "content": "<",
+              "answer": null
+            },
+            {
+              "content": "-",
+              "answer": null
+            },
+            {
+              "content": "*",
+              "answer": null
+            },
+            {
+              "content": "/",
+              "answer": null
+            },
+            {
+              "content": "%",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "===",
               "answer": null
             }
           ]

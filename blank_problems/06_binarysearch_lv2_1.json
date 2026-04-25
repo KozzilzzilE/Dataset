@@ -83,6 +83,26 @@
             {
               "content": "<",
               "answer": null
+            },
+            {
+              "content": "*=",
+              "answer": null
+            },
+            {
+              "content": "=",
+              "answer": null
+            },
+            {
+              "content": "/=",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
             }
           ]
         },
@@ -113,6 +133,26 @@
             {
               "content": "<",
               "answer": null
+            },
+            {
+              "content": "*=",
+              "answer": null
+            },
+            {
+              "content": "=",
+              "answer": null
+            },
+            {
+              "content": "/=",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
             }
           ]
         },
@@ -142,6 +182,26 @@
             },
             {
               "content": "<",
+              "answer": null
+            },
+            {
+              "content": "*=",
+              "answer": null
+            },
+            {
+              "content": "=",
+              "answer": null
+            },
+            {
+              "content": "/=",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "===",
               "answer": null
             }
           ]

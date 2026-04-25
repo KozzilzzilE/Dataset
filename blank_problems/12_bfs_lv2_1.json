@@ -87,6 +87,22 @@
             {
               "content": "next",
               "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "INT_MIN",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "top",
+              "answer": null
             }
           ]
         },
@@ -125,6 +141,18 @@
             {
               "content": "next",
               "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
             }
           ]
         },
@@ -158,6 +186,22 @@
             },
             {
               "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "Infinity",
+              "answer": null
+            },
+            {
+              "content": "cur",
               "answer": null
             }
           ]

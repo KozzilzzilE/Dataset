@@ -79,6 +79,34 @@
             {
               "content": "false",
               "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
             }
           ]
         },
@@ -109,6 +137,26 @@
             {
               "content": "add",
               "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "end",
+              "answer": null
+            },
+            {
+              "content": "target",
+              "answer": null
+            },
+            {
+              "content": "goal",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
             }
           ]
         },
@@ -138,6 +186,26 @@
             },
             {
               "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "undefined",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
               "answer": null
             }
           ]

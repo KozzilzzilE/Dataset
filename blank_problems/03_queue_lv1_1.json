@@ -83,6 +83,26 @@
             {
               "content": "back",
               "answer": null
+            },
+            {
+              "content": "push_back",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "begin",
+              "answer": null
             }
           ]
         },
@@ -105,6 +125,34 @@
             {
               "content": "pop",
               "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "extend",
+              "answer": null
+            },
+            {
+              "content": "pop()",
+              "answer": null
+            },
+            {
+              "content": "remove()",
+              "answer": null
+            },
+            {
+              "content": "dequeue()",
+              "answer": null
+            },
+            {
+              "content": "shift()",
+              "answer": null
             }
           ]
         },
@@ -126,6 +174,34 @@
             },
             {
               "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "dequeue",
+              "answer": null
+            },
+            {
+              "content": "splice",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "0",
               "answer": null
             }
           ]

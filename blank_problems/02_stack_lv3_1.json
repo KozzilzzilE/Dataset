@@ -87,6 +87,22 @@
             {
               "content": "pop",
               "answer": null
+            },
+            {
+              "content": "push_back",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
             }
           ]
         },
@@ -112,6 +128,30 @@
             },
             {
               "content": "True",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "extend",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "None",
               "answer": null
             }
           ]
@@ -142,6 +182,26 @@
             },
             {
               "content": "shift",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "true",
               "answer": null
             }
           ]

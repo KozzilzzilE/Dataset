@@ -83,6 +83,26 @@
             {
               "content": "back",
               "answer": null
+            },
+            {
+              "content": "push_back",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
             }
           ]
         },
@@ -104,6 +124,34 @@
             },
             {
               "content": "/",
+              "answer": null
+            },
+            {
+              "content": "//",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
               "answer": null
             }
           ]
@@ -130,6 +178,30 @@
             },
             {
               "content": "shift",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "dequeue",
+              "answer": null
+            },
+            {
+              "content": "remove",
               "answer": null
             }
           ]

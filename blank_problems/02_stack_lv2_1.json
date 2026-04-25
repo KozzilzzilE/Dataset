@@ -79,6 +79,30 @@
             {
               "content": "pop_back",
               "answer": null
+            },
+            {
+              "content": "push_back",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "front",
+              "answer": null
+            },
+            {
+              "content": "back",
+              "answer": null
             }
           ]
         },
@@ -105,6 +129,30 @@
             {
               "content": "len(stack) > 0",
               "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "extend",
+              "answer": null
+            },
+            {
+              "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "*=",
+              "answer": null
+            },
+            {
+              "content": "=",
+              "answer": null
             }
           ]
         },
@@ -130,6 +178,30 @@
             },
             {
               "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "*=",
+              "answer": null
+            },
+            {
+              "content": "=",
               "answer": null
             }
           ]

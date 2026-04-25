@@ -83,6 +83,30 @@
             {
               "content": "pop_front",
               "answer": null
+            },
+            {
+              "content": "length",
+              "answer": null
+            },
+            {
+              "content": "count()",
+              "answer": null
+            },
+            {
+              "content": "capacity()",
+              "answer": null
+            },
+            {
+              "content": "len()",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
             }
           ]
         },
@@ -105,6 +129,34 @@
             {
               "content": "popleft",
               "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
             }
           ]
         },
@@ -126,6 +178,34 @@
             },
             {
               "content": "arr.length - 1",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "===",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "null",
               "answer": null
             }
           ]

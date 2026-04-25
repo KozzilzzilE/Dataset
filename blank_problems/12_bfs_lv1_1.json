@@ -91,6 +91,18 @@
             {
               "content": "pop",
               "answer": null
+            },
+            {
+              "content": "top",
+              "answer": null
+            },
+            {
+              "content": "begin",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
             }
           ]
         },
@@ -125,6 +137,22 @@
             {
               "content": "node",
               "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "extend",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
             }
           ]
         },
@@ -158,6 +186,22 @@
             },
             {
               "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "dequeue",
               "answer": null
             }
           ]

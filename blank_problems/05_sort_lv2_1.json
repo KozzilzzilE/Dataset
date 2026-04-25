@@ -75,6 +75,34 @@
             {
               "content": "==",
               "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
             }
           ]
         },
@@ -101,6 +129,30 @@
             {
               "content": "0",
               "answer": null
+            },
+            {
+              "content": "*",
+              "answer": null
+            },
+            {
+              "content": "/",
+              "answer": null
+            },
+            {
+              "content": "//",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
             }
           ]
         },
@@ -118,6 +170,38 @@
             },
             {
               "content": "*",
+              "answer": null
+            },
+            {
+              "content": "/",
+              "answer": null
+            },
+            {
+              "content": "%",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
               "answer": null
             }
           ]

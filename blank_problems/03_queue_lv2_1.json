@@ -83,6 +83,26 @@
             {
               "content": "<",
               "answer": null
+            },
+            {
+              "content": "back",
+              "answer": null
+            },
+            {
+              "content": "begin",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
             }
           ]
         },
@@ -109,6 +129,30 @@
             {
               "content": "<",
               "answer": null
+            },
+            {
+              "content": "pop()",
+              "answer": null
+            },
+            {
+              "content": "remove()",
+              "answer": null
+            },
+            {
+              "content": "dequeue()",
+              "answer": null
+            },
+            {
+              "content": "shift()",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
             }
           ]
         },
@@ -134,6 +178,30 @@
             },
             {
               "content": "<",
+              "answer": null
+            },
+            {
+              "content": "dequeue",
+              "answer": null
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "splice",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "===",
               "answer": null
             }
           ]

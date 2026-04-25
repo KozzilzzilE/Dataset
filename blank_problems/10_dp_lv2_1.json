@@ -87,6 +87,22 @@
             {
               "content": "<",
               "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "INT_MAX",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
             }
           ]
         },
@@ -116,6 +132,26 @@
             },
             {
               "content": "3",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
               "answer": null
             }
           ]
@@ -150,6 +186,22 @@
             },
             {
               "content": "<",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "undefined",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": ">=",
               "answer": null
             }
           ]

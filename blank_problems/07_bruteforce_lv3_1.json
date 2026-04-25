@@ -71,6 +71,42 @@
             {
               "content": "permutation logic",
               "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
             }
           ]
         },
@@ -85,6 +121,42 @@
             {
               "content": "permutation logic",
               "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
             }
           ]
         },
@@ -98,6 +170,42 @@
             },
             {
               "content": "permutation logic",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "false",
               "answer": null
             }
           ]

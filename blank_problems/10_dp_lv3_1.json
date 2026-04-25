@@ -87,6 +87,26 @@
             {
               "content": "i",
               "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
+            },
+            {
+              "content": "i+1",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
             }
           ]
         },
@@ -112,6 +132,30 @@
             },
             {
               "content": "len(weight)",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "True",
               "answer": null
             }
           ]
@@ -146,6 +190,22 @@
             },
             {
               "content": "i",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "===",
+              "answer": null
+            },
+            {
+              "content": "i+1",
               "answer": null
             }
           ]

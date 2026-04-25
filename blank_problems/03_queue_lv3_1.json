@@ -91,6 +91,22 @@
             {
               "content": "start",
               "answer": null
+            },
+            {
+              "content": "push_back",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
             }
           ]
         },
@@ -125,6 +141,22 @@
             {
               "content": "False",
               "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "extend",
+              "answer": null
             }
           ]
         },
@@ -158,6 +190,22 @@
             },
             {
               "content": "false",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "append",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "unshift",
               "answer": null
             }
           ]

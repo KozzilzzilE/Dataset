@@ -91,6 +91,18 @@
             {
               "content": "count+=2",
               "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "INT_MAX",
+              "answer": null
             }
           ]
         },
@@ -120,6 +132,26 @@
             },
             {
               "content": "count -= 1",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "v",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "None",
               "answer": null
             }
           ]
@@ -158,6 +190,18 @@
             },
             {
               "content": "count--",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "v",
+              "answer": null
+            },
+            {
+              "content": "i",
               "answer": null
             }
           ]
