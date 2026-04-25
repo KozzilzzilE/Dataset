@@ -1,0 +1,144 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 3,
+      "title": "힙으로 K번째 큰 수 찾기",
+      "description": "최소 힙으로 배열에서 K번째로 큰 수를 찾는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static int kthLargest(int[] nums, int k) {\n        PriorityQueue<Integer> minHeap = new _____<>();  // 크기 k의 최소 힙\n        for (int v : nums) {\n            minHeap._____(v);\n            if (minHeap._____ > k)\n                minHeap._____();\n        }\n        return minHeap._____();\n    }\n    public static void main(String[] args) {\n        int[] nums = {3, 2, 1, 5, 6, 4};\n        System.out.println(kthLargest(nums, _____));  // 5 (2번째로 큰 수)\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "PriorityQueue",
+              "answer": 1
+            },
+            {
+              "content": "offer",
+              "answer": 2
+            },
+            {
+              "content": "size()",
+              "answer": 3
+            },
+            {
+              "content": "poll",
+              "answer": 4
+            },
+            {
+              "content": "peek",
+              "answer": 5
+            },
+            {
+              "content": "2",
+              "answer": 6
+            },
+            {
+              "content": "Queue",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\npriority_queue<int, vector<int>, greater<int>> minHeap; \nminHeap._____(v); \nif(minHeap.size() > k) minHeap._____(); \nreturn minHeap._____();\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "pop",
+              "answer": 2
+            },
+            {
+              "content": "top",
+              "answer": 3
+            },
+            {
+              "content": "front",
+              "answer": null
+            },
+            {
+              "content": "back",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nimport heapq \nminHeap = [] \nheapq._____(minHeap, v) \nif len(minHeap) > k: \n    heapq._____(minHeap) \nreturn minHeap[_____] \n```",
+          "blanks": [
+            {
+              "content": "heappush",
+              "answer": 1
+            },
+            {
+              "content": "heappop",
+              "answer": 2
+            },
+            {
+              "content": "0",
+              "answer": 3
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet minHeap = new MinHeap(); \nminHeap._____(v); \nif(minHeap.size() > k) minHeap._____(); \nreturn minHeap._____(); \n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "pop",
+              "answer": 2
+            },
+            {
+              "content": "peek",
+              "answer": 3
+            },
+            {
+              "content": "top",
+              "answer": null
+            },
+            {
+              "content": "shift",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

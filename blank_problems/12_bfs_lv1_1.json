@@ -1,0 +1,168 @@
+{
+  "requests": [
+    {
+      "topicId": 12,
+      "orderNo": 1,
+      "title": "BFS 기본 - 레벨별 탐색",
+      "description": "BFS로 그래프를 레벨별로 탐색하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        List<List<Integer>> graph = new ArrayList<>();\n        int n = 5;\n        for (int i = 0; i <= n; i++) graph.add(new ArrayList<>());\n        graph.get(1).addAll(Arrays.asList(2, 3));\n        graph.get(2).addAll(Arrays.asList(4, 5));\n\n        boolean[] visited = new boolean[n + 1];\n        Queue<Integer> queue = new LinkedList<>();\n        queue.offer(_____);  visited[1] = true;\n        while (!queue._____()) {\n            int node = queue._____();\n            System.out.print(node + \" \");\n            for (int next : graph.get(node)) {\n                if (!_____[next]) {\n                    visited[next] = true;\n                    queue._____(next);\n                }\n            }\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "isEmpty",
+              "answer": 2
+            },
+            {
+              "content": "poll",
+              "answer": 3
+            },
+            {
+              "content": "visited",
+              "answer": 4
+            },
+            {
+              "content": "offer",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "isFull",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "checked",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nqueue<int> q; \nq.push(_____); \nwhile(!q._____()) { \n    int node = q._____(); \n    for(int next : graph[node]) { \n        if(!visited[_____]) { \n            visited[next] = true; \n            q._____(next); \n        } \n    } \n}\n```",
+          "blanks": [
+            {
+              "content": "start",
+              "answer": 1
+            },
+            {
+              "content": "empty",
+              "answer": 2
+            },
+            {
+              "content": "front",
+              "answer": 3
+            },
+            {
+              "content": "next",
+              "answer": 4
+            },
+            {
+              "content": "push",
+              "answer": 5
+            },
+            {
+              "content": "back",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque \nq = deque() \nq._____(start) \nwhile q: \n    node = q._____ \n    for next in graph[node]: \n        if not visited[_____]: \n            visited[next] = True \n            q._____(next) \n```",
+          "blanks": [
+            {
+              "content": "append",
+              "answer": 1
+            },
+            {
+              "content": "popleft",
+              "answer": 2
+            },
+            {
+              "content": "next",
+              "answer": 3
+            },
+            {
+              "content": "append",
+              "answer": 4
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet q = []; \nq._____(start); \nwhile(q.length > 0) { \n    let node = q._____(); \n    for(let next of graph[node]) { \n        if(!visited[_____]) { \n            visited[next] = true; \n            q._____(next); \n        } \n    } \n}\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "shift",
+              "answer": 2
+            },
+            {
+              "content": "next",
+              "answer": 3
+            },
+            {
+              "content": "push",
+              "answer": 4
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

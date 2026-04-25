@@ -1,0 +1,112 @@
+{
+  "requests": [
+    {
+      "topicId": 13,
+      "orderNo": 1,
+      "title": "인접 리스트 그래프 구성",
+      "description": "인접 리스트로 무방향 그래프를 구성하고 이웃 노드를 출력하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        int n = 5;\n        List<List<Integer>> graph = new _____<>();\n        for (int i = 0; i _____ n; i++) graph.add(new ArrayList<>());\n\n        int[][] edges = {{1,2},{1,3},{2,4},{3,5}};\n        for (int[] e : edges) {\n            graph.get(e[0])._____(e[1]);  // 무방향\n            graph.get(e[1]).add(_____);\n        }\n        for (int i = 1; i <= n; i++)\n            System.out.println(i + \": \" + graph.get(_____));\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "ArrayList",
+              "answer": 1
+            },
+            {
+              "content": "<=",
+              "answer": 2
+            },
+            {
+              "content": "add",
+              "answer": 3
+            },
+            {
+              "content": "e[0]",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
+            },
+            {
+              "content": "LinkedList",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "offer",
+              "answer": null
+            },
+            {
+              "content": "e[1]",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "HashMap",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint n; \nvector<vector<int>> graph(n); \nfor(int i = 0; i < n; i++) \n    graph[i] = vector<int>(); \nfor(auto& e : edges) { \n    graph[e[0]].push_back(e[1]); \n    graph[e[1]].push_back(e[0]); \n} \nvector<int> neighbors = graph[0]; \n```",
+          "blanks": [
+            {
+              "content": "correct graph construction",
+              "answer": 1
+            },
+            {
+              "content": "adjacency matrix",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nn = ... \ngraph = [[] for _ in range(n)] \nfor e in edges: \n    graph[e[0]]._____(e[1]) \n    graph[e[1]].append(e[0]) \nneighbors = graph[0] \n```",
+          "blanks": [
+            {
+              "content": "append",
+              "answer": 1
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "extend",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet n = ... \nlet graph = Array.from({length: n}, () => []); \nfor(let e of edges) { \n    graph[e[0]]._____(e[1]); \n    graph[e[1]].push(e[0]); \n} \nlet neighbors = graph[0]; \n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

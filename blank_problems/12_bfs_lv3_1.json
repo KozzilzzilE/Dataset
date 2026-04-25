@@ -1,0 +1,156 @@
+{
+  "requests": [
+    {
+      "topicId": 12,
+      "orderNo": 3,
+      "title": "BFS로 섬의 개수 세기",
+      "description": "BFS를 사용하여 격자에서 섬의 개수를 세는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    static int R, C;\n    static char[][] grid;\n    static boolean[][] _____;\n    static int[] dr = {-1, 1, 0, 0};\n    static int[] dc = {0, 0, -1, 1};\n\n    static void bfs(int r, int c) {\n        Queue<int[]> q = new LinkedList<>();\n        q.offer(new int[]{r, c});\n        visited[r][c] = _____;\n        while (!q.isEmpty()) {\n            int[] cur = q._____();\n            for (int d = 0; d < 4; d++) {\n                int nr = cur[0] + dr[d];\n                int nc = cur[1] + dc[d];\n                if (nr >= 0 && nr < R && nc >= 0 && nc < C\n                        && grid[nr][nc] == _____ && !visited[nr][nc]) {\n                    visited[nr][nc] = true;\n                    q.offer(new int[]{nr, _____});\n                }\n            }\n        }\n    }\n    public static void main(String[] args) {\n        R = 3; C = 4;\n        grid = new char[][]{{1,1,0,0},{0,1,0,0},{0,0,0,1}}; // 예시\n        visited = new boolean[R][_____];\n        int count = 0;\n        for (int r = 0; r < R; r++)\n            for (int c = 0; c < C; c++)\n                if (grid[r][c] == '1' && !visited[r][c]) { bfs(r,c); count++; }\n        System.out.println(count);\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "visited",
+              "answer": 1
+            },
+            {
+              "content": "true",
+              "answer": 2
+            },
+            {
+              "content": "poll",
+              "answer": 3
+            },
+            {
+              "content": "'1'",
+              "answer": 4
+            },
+            {
+              "content": "nc",
+              "answer": 5
+            },
+            {
+              "content": "C",
+              "answer": 6
+            },
+            {
+              "content": "checked",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "'0'",
+              "answer": null
+            },
+            {
+              "content": "nr",
+              "answer": null
+            },
+            {
+              "content": "R",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nbool visited[R][C]; \nvoid bfs(int sr, int sc) { \n    queue<pair<int,int>> q; \n    q.push({sr, sc}); \n    visited[sr][sc] = _____; \n    while(!q.empty()) { \n        auto cur = q.front(); \n        q.pop(); \n        int r = cur.first, c = cur.second; \n        for(int d = 0; d < 4; d++) { \n            int nr = r + dr[d], nc = c + dc[d]; \n            if(nr>=0 && nr<R && nc>=0 && nc<C && grid[nr][nc]=='1' && !visited[nr][nc]) { \n                visited[nr][nc] = _____; \n                q.push({nr, _____}); \n            } \n        } \n    } \n}\n```",
+          "blanks": [
+            {
+              "content": "true",
+              "answer": 1
+            },
+            {
+              "content": "true",
+              "answer": 2
+            },
+            {
+              "content": "nc",
+              "answer": 3
+            },
+            {
+              "content": "false",
+              "answer": null
+            },
+            {
+              "content": "nr",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nvisited = [[False] * C for _ in range(R)] \ndef bfs(sr, sc): \n    q = deque([(sr, sc)]) \n    visited[sr][sc] = _____ \n    while q: \n        r, c = q._____ \n        for dr, dc in directions: \n            nr, nc = r + dr, c + dc \n            if 0 <= nr < R and 0 <= nc < C and grid[nr][nc] == '1' and not visited[nr][nc]: \n                visited[nr][nc] = _____ \n                q._____(nr, nc)) \n```",
+          "blanks": [
+            {
+              "content": "True",
+              "answer": 1
+            },
+            {
+              "content": "popleft",
+              "answer": 2
+            },
+            {
+              "content": "True",
+              "answer": 3
+            },
+            {
+              "content": "append",
+              "answer": 4
+            },
+            {
+              "content": "False",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet visited = Array.from({length: R}, () => new Array(C).fill(false)); \nfunction bfs(sr, sc) { \n    let q = [[sr, sc]]; \n    visited[sr][sc] = _____; \n    let idx = 0; \n    while(idx < q.length) { \n        let [r, c] = q[idx++]; \n        for(let [dr, dc] of directions) { \n            let nr = r + dr, nc = c + dc; \n            if(nr>=0 && nr<R && nc>=0 && nc<C && grid[nr][nc]==='1' && !visited[nr][nc]) { \n                visited[nr][nc] = _____; \n                q._____(new Array(nr, nc)); \n            } \n        } \n    } \n}\n```",
+          "blanks": [
+            {
+              "content": "true",
+              "answer": 1
+            },
+            {
+              "content": "true",
+              "answer": 2
+            },
+            {
+              "content": "push",
+              "answer": 3
+            },
+            {
+              "content": "false",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

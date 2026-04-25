@@ -1,0 +1,136 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 1,
+      "title": "큐 기본 연산",
+      "description": "큐를 생성하고 offer, poll, peek, isEmpty 연산을 수행하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Queue<Integer> queue = new _____<>();\n        queue._____(1);\n        queue.offer(2);\n        queue.offer(3);\n        System.out.println(queue._____());  // 1 (제거 없이 조회)\n        System.out.println(queue._____());  // 1 (제거)\n        System.out.println(queue._____()); // false\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "LinkedList",
+              "answer": 1
+            },
+            {
+              "content": "offer",
+              "answer": 2
+            },
+            {
+              "content": "peek",
+              "answer": 3
+            },
+            {
+              "content": "poll",
+              "answer": 4
+            },
+            {
+              "content": "isEmpty",
+              "answer": 5
+            },
+            {
+              "content": "ArrayList",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "isFull",
+              "answer": null
+            },
+            {
+              "content": "Stack",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\n#include <queue>\nqueue<int> q; \nq._____(1); \nint x = q._____(); \nq._____(); \nbool empty = q._____();\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "front",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": 3
+            },
+            {
+              "content": "empty",
+              "answer": 4
+            },
+            {
+              "content": "top",
+              "answer": null
+            },
+            {
+              "content": "back",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque \nq = deque() \nq._____(1) \nx = q[0] \nq._____ \nbool_empty = len(q) == 0\n```",
+          "blanks": [
+            {
+              "content": "append",
+              "answer": 1
+            },
+            {
+              "content": "popleft()",
+              "answer": 2
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet queue = []; \nqueue._____(1); \nlet x = queue[0]; \nqueue._____(); \nlet isEmpty = queue.length === 0;\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "shift",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

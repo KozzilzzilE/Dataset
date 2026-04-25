@@ -1,0 +1,140 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 2,
+      "title": "PriorityQueue 최대 힙",
+      "description": "PriorityQueue로 최대 힙을 구성하고 힙 정렬을 수행하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        // 최대 힙: Comparator.reverseOrder() 사용\n        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(_____._____());\n        int[] arr = {3, 1, 4, 1, 5, 9, 2, 6};\n        for (int v : arr) maxHeap._____(v);\n\n        List<Integer> sorted = new ArrayList<>();\n        while (!maxHeap._____())\n            sorted.add(maxHeap._____());\n        System.out.println(sorted);\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "Comparator",
+              "answer": 1
+            },
+            {
+              "content": "reverseOrder",
+              "answer": 2
+            },
+            {
+              "content": "offer",
+              "answer": 3
+            },
+            {
+              "content": "isEmpty",
+              "answer": 4
+            },
+            {
+              "content": "poll",
+              "answer": 5
+            },
+            {
+              "content": "Collections",
+              "answer": null
+            },
+            {
+              "content": "naturalOrder",
+              "answer": null
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "isFull",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\npriority_queue<int> maxHeap; \nmaxHeap._____(v); \nwhile(!maxHeap._____()) { \n    sorted.push_back(maxHeap._____); \n    maxHeap._____(); \n}\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "empty",
+              "answer": 2
+            },
+            {
+              "content": "top",
+              "answer": 3
+            },
+            {
+              "content": "pop",
+              "answer": 4
+            },
+            {
+              "content": "front",
+              "answer": null
+            },
+            {
+              "content": "back",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nimport heapq \nmaxHeap = [] \nheapq.heappush(maxHeap, _____v) \nwhile maxHeap: \n    sorted.append(heapq.heappop(maxHeap) _____ 1) \n```",
+          "blanks": [
+            {
+              "content": "-",
+              "answer": 1
+            },
+            {
+              "content": "*",
+              "answer": 2
+            },
+            {
+              "content": "+",
+              "answer": null
+            },
+            {
+              "content": "/",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet maxHeap = new MaxHeap(); \nmaxHeap._____(v); \nwhile(maxHeap.size() > 0) { \n    sorted.push(maxHeap._____); \n    maxHeap._____(); \n}\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "peek",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": 3
+            },
+            {
+              "content": "top",
+              "answer": null
+            },
+            {
+              "content": "shift",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

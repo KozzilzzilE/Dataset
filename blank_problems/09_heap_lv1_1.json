@@ -1,0 +1,136 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 1,
+      "title": "PriorityQueue 기본 - 최소 힙",
+      "description": "PriorityQueue로 최소 힙을 사용하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        PriorityQueue<Integer> pq = new _____<>();  // 최소 힙\n        pq._____(5);\n        pq.offer(1);\n        pq.offer(3);\n        System.out.println(pq._____());  // 1 (최솟값 조회)\n        System.out.println(pq._____());  // 1 (최솟값 제거)\n        System.out.println(pq.peek());   // 3\n        System.out.println(pq._____()); // 2\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "PriorityQueue",
+              "answer": 1
+            },
+            {
+              "content": "offer",
+              "answer": 2
+            },
+            {
+              "content": "peek",
+              "answer": 3
+            },
+            {
+              "content": "poll",
+              "answer": 4
+            },
+            {
+              "content": "size",
+              "answer": 5
+            },
+            {
+              "content": "Queue",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "isEmpty",
+              "answer": null
+            },
+            {
+              "content": "length",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\n#include <queue>\npriority_queue<int, vector<int>, greater<int>> pq; \npq._____(5); \nint x = pq._____(); \npq._____(); \nbool empty = pq._____();\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "top",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": 3
+            },
+            {
+              "content": "empty",
+              "answer": 4
+            },
+            {
+              "content": "front",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nimport heapq \npq = [] \nheapq._____(pq, 5) \nx = pq[_____] \nheapq.heappop(pq) \nbool_empty = len(pq) == 0 \n```",
+          "blanks": [
+            {
+              "content": "heappush",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nclass MinHeap { \n    constructor() { this.heap = []; } \n    push(val) { \n        this.heap._____(val); \n        this._bubbleUp(this.heap.length - 1); \n    } \n    peek() { return this.heap[_____]; } \n    pop() { \n        let min = this.heap[0]; \n        this.heap[0] = this.heap[this.heap.length - 1]; \n        this.heap.pop(); \n        this._bubbleDown(0); \n        return min; \n    } \n}\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "shift",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
