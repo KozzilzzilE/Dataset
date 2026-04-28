@@ -3,7 +3,7 @@
   "pageNo": 3,
   "title": "힙 코드",
   "point": "PriorityQueue 활용",
-  "detail": "### 📋 Java `PriorityQueue` 사용법\n\nJava의 `PriorityQueue` 는 내부적으로 **최소 힙**으로 구현되어 있습니다.\n\n| 메서드 | 설명 | 시간복잡도 |\n|--------|------|-----------|\n| `offer(v)` | 힙에 값 삽입 | **O(log n)** |\n| `poll()` | 최솟값 꺼내기 | **O(log n)** |\n| `peek()` | 최솟값 조회 (제거 없음) | **O(1)** |\n\n**최대 힙**이 필요하면 `Collections.reverseOrder()` 를 생성자에 전달합니다.\n\n---\n\n### ⚠️ 자주 나오는 실수\n\n- 빈 큐에서 `poll()` 을 호출하면 **`null` 을 반환**합니다. NPE에 주의하세요.\n- 정렬 기준을 바꾸려면 **`Comparator`** 를 직접 정의해야 합니다.",
+  "detail": "### Java `PriorityQueue` 사용법\n\nJava의 `PriorityQueue` 는 내부적으로 **최소 힙**으로 구현되어 있습니다.\n\n| 메서드 | 설명 | 시간복잡도 |\n|--------|------|-----------|\n| `offer(v)` | 힙에 값 삽입 | **O(log n)** |\n| `poll()` | 최솟값 꺼내기 | **O(log n)** |\n| `peek()` | 최솟값 조회 (제거 없음) | **O(1)** |\n\n**최대 힙**이 필요하면 `Collections.reverseOrder()` 를 생성자에 전달합니다.\n\n### 자주 나오는 실수\n\n- 빈 큐에서 `poll()` 을 호출하면 **`null` 을 반환**합니다. NPE에 주의하세요.\n- 정렬 기준을 바꾸려면 **`Comparator`** 를 직접 정의해야 합니다.",
   "imgUrl": null,
   "codes": [
     {

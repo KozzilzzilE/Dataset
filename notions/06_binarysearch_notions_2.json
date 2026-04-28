@@ -3,7 +3,7 @@
   "pageNo": 2,
   "title": "이진 탐색 심화",
   "point": "lo, mid, hi 포인터",
-  "detail": "### 🔍 동작 원리 — `lo`, `mid`, `hi` 포인터\n\n세 개의 포인터를 사용합니다.\n\n1. `lo = 0`, `hi = n - 1` 로 초기화합니다.\n2. `mid = lo + (hi - lo) / 2` 로 중간 인덱스를 구합니다.\n3. `arr[mid] == target` 이면 탐색 성공입니다.\n4. `arr[mid] < target` 이면 `lo = mid + 1` 로 오른쪽 절반을 탐색합니다.\n5. `arr[mid] > target` 이면 `hi = mid - 1` 로 왼쪽 절반을 탐색합니다.\n6. `lo > hi` 가 되면 탐색 실패 (`-1` 반환) 입니다.\n\n---\n\n### ⚠️ 오버플로우 주의\n\n`mid = (lo + hi) / 2` 는 `lo`와 `hi`가 매우 클 때 **정수 오버플로우**가 발생할 수 있습니다.\n\n```\n// 위험\nint mid = (lo + hi) / 2;\n\n// 안전\nint mid = lo + (hi - lo) / 2;\n```\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 |\n|------|--------|\n| 시간 | **O(log n)** |\n| 공간 | **O(1)** |",
+  "detail": "### 동작 원리 — `lo`, `mid`, `hi` 포인터\n\n세 개의 포인터를 사용합니다.\n\n1. `lo = 0`, `hi = n - 1` 로 초기화합니다.\n2. `mid = lo + (hi - lo) / 2` 로 중간 인덱스를 구합니다.\n3. `arr[mid] == target` 이면 탐색 성공입니다.\n4. `arr[mid] < target` 이면 `lo = mid + 1` 로 오른쪽 절반을 탐색합니다.\n5. `arr[mid] > target` 이면 `hi = mid - 1` 로 왼쪽 절반을 탐색합니다.\n6. `lo > hi` 가 되면 탐색 실패 (`-1` 반환) 입니다.\n\n### 오버플로우 주의\n\n`mid = (lo + hi) / 2` 는 `lo`와 `hi`가 매우 클 때 **정수 오버플로우**가 발생할 수 있습니다.\n\n```\n// 위험\nint mid = (lo + hi) / 2;\n\n// 안전\nint mid = lo + (hi - lo) / 2;\n```\n\n### 복잡도 분석\n\n| 구분 | 복잡도 |\n|------|--------|\n| 시간 | **O(log n)** |\n| 공간 | **O(1)** |",
   "imgUrl": null,
   "codes": null
 }
