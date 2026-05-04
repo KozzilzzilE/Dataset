@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 2,
+      "title": "우선순위 큐 (최소 힙)",
+      "description": "최소 힙(Min-Heap) 기반 우선순위 큐를 사용하는 코드의 빈칸 5개를 채우세요.\n최소 힙에서는 항상 가장 작은 값이 먼저 꺼내집니다.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util._____;\n\npublic class Main {\n    public static void main(String[] args) {\n        PriorityQueue<Integer> minHeap = new PriorityQueue<>();\n        minHeap._____(5);\n        minHeap.offer(3);\n        minHeap.offer(7);\n        System.out.println(minHeap._____());  // 3 (조회)\n        System.out.println(minHeap._____());  // 3 (제거)\n        System.out.println(minHeap._____());  // false\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "PriorityQueue",
+              "answer": 1
+            },
+            {
+              "content": "offer",
+              "answer": 2
+            },
+            {
+              "content": "peek",
+              "answer": 3
+            },
+            {
+              "content": "poll",
+              "answer": 4
+            },
+            {
+              "content": "isEmpty",
+              "answer": 5
+            },
+            {
+              "content": "Queue",
+              "answer": null
+            },
+            {
+              "content": "Stack",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "top",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\n#include <queue>\n#include <vector>\nusing namespace std;\n// 최소 힙: greater<int> 비교자 사용\npriority_queue<int, vector<int>, _____> pq;\npq._____(5);\npq.push(3);\ncout << pq._____();\npq._____();\ncout << pq._____();\n```",
+          "blanks": [
+            {
+              "content": "greater<int>",
+              "answer": 1
+            },
+            {
+              "content": "push",
+              "answer": 2
+            },
+            {
+              "content": "top",
+              "answer": 3
+            },
+            {
+              "content": "pop",
+              "answer": 4
+            },
+            {
+              "content": "size",
+              "answer": 5
+            },
+            {
+              "content": "less<int>",
+              "answer": null
+            },
+            {
+              "content": "offer",
+              "answer": null
+            },
+            {
+              "content": "front",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nimport _____\nheap = []\nheapq.heappush(heap, 5)\nheapq.heappush(heap, 3)\nheapq.heappush(heap, 7)\nprint(heap[_____])              # 3 (최솟값 조회)\nprint(heapq._____(heap))        # 3 (제거)\nprint(_____(heap))              # 남은 개수\n```",
+          "blanks": [
+            {
+              "content": "heapq",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "heappop",
+              "answer": 3
+            },
+            {
+              "content": "len",
+              "answer": 4
+            },
+            {
+              "content": "queue",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "heappush",
+              "answer": null
+            },
+            {
+              "content": "heapify",
+              "answer": null
+            },
+            {
+              "content": "min",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\n// JS: 배열 + 정렬로 최소 힙 시뮬레이션\nlet heap = [];\nheap._____(5, 3, 7);\nheap.sort((a, b) => _____);\nlet min = heap._____(0, 1)[_____];\nconsole.log(min);         // 3\nconsole.log(heap._____);  // 남은 개수\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "a - b",
+              "answer": 2
+            },
+            {
+              "content": "splice",
+              "answer": 3
+            },
+            {
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "b - a",
+              "answer": null
+            },
+            {
+              "content": "slice",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

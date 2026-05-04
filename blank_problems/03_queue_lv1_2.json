@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 2,
+      "title": "큐 기본 연산 (FIFO)",
+      "description": "큐에서 enqueue, dequeue 연산을 수행하고 FIFO 특성을 확인하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.Queue;\nimport java.util._____;\n\npublic class Main {\n    public static void main(String[] args) {\n        Queue<Integer> queue = new LinkedList<>();\n        queue._____(10);\n        queue.offer(20);\n        queue.offer(30);\n        System.out.println(queue._____());  // 10 (조회만)\n        System.out.println(queue._____());  // 10 (제거)\n        System.out.println(queue._____());  // false\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "LinkedList",
+              "answer": 1
+            },
+            {
+              "content": "offer",
+              "answer": 2
+            },
+            {
+              "content": "peek",
+              "answer": 3
+            },
+            {
+              "content": "poll",
+              "answer": 4
+            },
+            {
+              "content": "isEmpty",
+              "answer": 5
+            },
+            {
+              "content": "Stack",
+              "answer": null
+            },
+            {
+              "content": "ArrayDeque",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\n#include <queue>\nusing namespace std;\nqueue<int> q;\nq._____(10);\nq.push(20);\ncout << q._____();\nq._____();\ncout << (q._____() ? \"empty\" : \"not empty\");\ncout << q._____();\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "front",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": 3
+            },
+            {
+              "content": "empty",
+              "answer": 4
+            },
+            {
+              "content": "size",
+              "answer": 5
+            },
+            {
+              "content": "top",
+              "answer": null
+            },
+            {
+              "content": "back",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "enqueue",
+              "answer": null
+            },
+            {
+              "content": "dequeue",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque\nq = _____()\nq.append(10)\nq.append(20)\nfront = q[_____]\nq._____()  \nis_empty = _____(q) == 0\n```",
+          "blanks": [
+            {
+              "content": "deque",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "popleft",
+              "answer": 3
+            },
+            {
+              "content": "len",
+              "answer": 4
+            },
+            {
+              "content": "list",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "queue",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet queue = [];\nqueue._____(10);\nqueue.push(20);\nlet front = queue[_____];\nqueue._____();\nlet isEmpty = queue._____ === 0;\n```",
+          "blanks": [
+            {
+              "content": "push",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "shift",
+              "answer": 3
+            },
+            {
+              "content": "length",
+              "answer": 4
+            },
+            {
+              "content": "unshift",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "splice",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

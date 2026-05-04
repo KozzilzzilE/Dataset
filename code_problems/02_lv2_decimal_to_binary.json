@@ -1,0 +1,39 @@
+{
+  "topicId": 2,
+  "title": "10진수를 2진수로 변환",
+  "difficulty": "medium",
+  "difficultyOrder": 2,
+  "description": "양의 정수 n을 2진수 문자열로 변환하여 출력하세요.\n\n스택을 이용해 구현합니다.\n\n첫 번째 줄에 n이 주어집니다.",
+  "constraints": "1 ≤ n ≤ 10^9",
+  "lineSolution": "n을 2로 나눈 나머지를 스택에 push하고, n이 0이 될 때까지 반복한 뒤 스택을 pop하여 이어 붙입니다.",
+  "solutionText": "### 💡 핵심 아이디어\n\nn을 2로 계속 나누면서 나머지(0 또는 1)를 스택에 쌓습니다.\n스택에서 꺼내면 역순으로 출력되어 올바른 2진수가 됩니다.\n\n---\n\n### 🔍 알고리즘\n\n1. n > 0인 동안 `n % 2`를 스택에 push하고 `n /= 2`합니다.\n2. 스택이 빌 때까지 pop하여 결과 문자열에 추가합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(log n)** | 비트 수만큼 반복 |\n| 공간 | **O(log n)** | 스택 크기 |",
+  "testCases": [
+    {
+      "input": "10",
+      "output": "1010"
+    },
+    {
+      "input": "1",
+      "output": "1"
+    },
+    {
+      "input": "255",
+      "output": "11111111"
+    },
+    {
+      "input": "8",
+      "output": "1000"
+    },
+    {
+      "input": "100",
+      "output": "1100100"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": 1,
+      "timeLimitMs": 1000,
+      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        Deque<Integer> stack = new ArrayDeque<>();\n        while (n > 0) {\n            stack.push(n % 2);\n            n /= 2;\n        }\n\n        StringBuilder sb = new StringBuilder();\n        while (!stack.isEmpty()) sb.append(stack.pop());\n        System.out.println(sb.toString());\n    }\n}"
+    }
+  ]
+}

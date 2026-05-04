@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 4,
+      "orderNo": 2,
+      "title": "단어 빈도 계산",
+      "description": "HashMap을 사용해 단어별 등장 횟수를 세는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        String[] words = {\"apple\", \"banana\", \"apple\", \"cherry\", \"banana\", \"apple\"};\n        Map<String, Integer> freq = new _____<>();\n        for (String w : words) {\n            freq.put(w, freq._____(w, 0) + 1);\n        }\n        for (Map.Entry<String, Integer> e : freq._____()) {\n            if (e._____ >= 2) {\n                System.out.println(e.getKey() + \": \" + e._____);\n            }\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "HashMap",
+              "answer": 1
+            },
+            {
+              "content": "getOrDefault",
+              "answer": 2
+            },
+            {
+              "content": "entrySet",
+              "answer": 3
+            },
+            {
+              "content": "getValue()",
+              "answer": 4
+            },
+            {
+              "content": "getValue()",
+              "answer": 5
+            },
+            {
+              "content": "TreeMap",
+              "answer": null
+            },
+            {
+              "content": "get",
+              "answer": null
+            },
+            {
+              "content": "keySet",
+              "answer": null
+            },
+            {
+              "content": "getKey()",
+              "answer": null
+            },
+            {
+              "content": "containsKey",
+              "answer": null
+            },
+            {
+              "content": "values",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\n#include <map>\n#include <string>\nusing namespace std;\nmap<string, int> freq;\nstring words[] = {\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"};\nfor (auto& w : words) _____[w]_____;\nfor (auto& p : freq) {\n    if (p._____ >= 2)\n        cout << p.first << \": \" << p._____;\n}\ncout << freq._____;\n```",
+          "blanks": [
+            {
+              "content": "freq",
+              "answer": 1
+            },
+            {
+              "content": "++",
+              "answer": 2
+            },
+            {
+              "content": "second",
+              "answer": 3
+            },
+            {
+              "content": "second",
+              "answer": 4
+            },
+            {
+              "content": "size()",
+              "answer": 5
+            },
+            {
+              "content": "map",
+              "answer": null
+            },
+            {
+              "content": "--",
+              "answer": null
+            },
+            {
+              "content": "first",
+              "answer": null
+            },
+            {
+              "content": "count()",
+              "answer": null
+            },
+            {
+              "content": "length()",
+              "answer": null
+            },
+            {
+              "content": "empty()",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nwords = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"]\nfreq = {}\nfor w in words:\n    freq[w] = freq._____(w, _____) + 1\nfor word, cnt in freq._____():\n    if cnt >= 2:\n        print(f\"{word}: {_____}\")\n```",
+          "blanks": [
+            {
+              "content": "get",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "items",
+              "answer": 3
+            },
+            {
+              "content": "cnt",
+              "answer": 4
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "keys",
+              "answer": null
+            },
+            {
+              "content": "values",
+              "answer": null
+            },
+            {
+              "content": "word",
+              "answer": null
+            },
+            {
+              "content": "setdefault",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nconst words = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"];\nconst freq = _____;\nfor (const w of words) {\n    freq[w] = (freq[w] _____ 0) + 1;\n}\nfor (const [word, cnt] of Object._____(freq)) {\n    if (cnt >= 2)\n        console.log(`${word}: ${_____}`);\n}\nconsole.log(Object._____(freq).length);\n```",
+          "blanks": [
+            {
+              "content": "{}",
+              "answer": 1
+            },
+            {
+              "content": "|| ",
+              "answer": 2
+            },
+            {
+              "content": "entries",
+              "answer": 3
+            },
+            {
+              "content": "cnt",
+              "answer": 4
+            },
+            {
+              "content": "keys",
+              "answer": 5
+            },
+            {
+              "content": "new Map()",
+              "answer": null
+            },
+            {
+              "content": "&&",
+              "answer": null
+            },
+            {
+              "content": "values",
+              "answer": null
+            },
+            {
+              "content": "word",
+              "answer": null
+            },
+            {
+              "content": "??",
+              "answer": null
+            },
+            {
+              "content": "freeze",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

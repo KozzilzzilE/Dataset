@@ -1,0 +1,1502 @@
+[
+  {
+    "chapter": 1,
+    "title": "자료구조와 알고리즘",
+    "problems": [
+      {
+        "id": "ch01_01",
+        "number": 1,
+        "type": "short_answer",
+        "question": "2개의 정수를 서로 교환하는 알고리즘을 의사 코드로 작성해보자.",
+        "answer": null
+      },
+      {
+        "id": "ch01_02",
+        "number": 2,
+        "type": "short_answer",
+        "question": "사용자로부터 받은 2개의 정수 중에서 더 큰 수를 찾는 알고리즘을 의사코드로 작성해보자.",
+        "answer": null
+      },
+      {
+        "id": "ch01_03",
+        "number": 3,
+        "type": "short_answer",
+        "question": "1부터 n까지의 합을 계산하는 알고리즘을 의사 코드로 작성해보자.",
+        "answer": null
+      },
+      {
+        "id": "ch01_04",
+        "number": 4,
+        "type": "short_answer",
+        "question": "Set(집합) 추상 자료형을 정의하라. 다음과 같은 연산자들을 포함시켜라: Create, Insert, Remove, Is_In, Union, Intersection, Difference.",
+        "answer": null
+      },
+      {
+        "id": "ch01_05",
+        "number": 5,
+        "type": "short_answer",
+        "question": "Boolean 추상 자료형을 정의하고 다음과 같은 연산자들을 포함시켜라: And, Or, Not, Xor",
+        "answer": null
+      },
+      {
+        "id": "ch01_06",
+        "number": 6,
+        "type": "multiple_choice",
+        "question": "다음과 같은 코드의 시간 복잡도는? 여기서 n이 프로그램의 입력이라고 가정하자.\n\nfor(i = 1; i < n ; i *= 2)\n    printf(\"Hello\");",
+        "choices": ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+        "answer": "O(log n)"
+      },
+      {
+        "id": "ch01_07",
+        "number": 7,
+        "type": "multiple_choice",
+        "question": "다음과 같은 코드의 시간 복잡도는? 여기서 n이 프로그램의 입력이라고 가정하자.\n\nfor(i = 0; i < n; i++)\n    for(j = 1; j < n; j *= 2)\n        printf(\"Hello\");",
+        "choices": ["O(1)", "O(n)", "O(n log n)", "O(n²)"],
+        "answer": "O(n log n)"
+      },
+      {
+        "id": "ch01_08",
+        "number": 8,
+        "type": "multiple_choice",
+        "question": "시간 복잡도 함수 n² + 10n + 8를 빅오 표기법으로 나타내면?",
+        "choices": ["O(n)", "O(n log₂n)", "O(n²)", "O(n² log₂n)"],
+        "answer": "O(n²)"
+      },
+      {
+        "id": "ch01_09",
+        "number": 9,
+        "type": "multiple_choice",
+        "question": "시간 복잡도 함수가 7n + 10이라면 이것이 나타내는 것은 무엇인가?",
+        "choices": ["연산의 횟수", "프로그램의 수행시간", "프로그램이 차지하는 메모리의 양", "입력 데이터의 총개수"],
+        "answer": "연산의 횟수"
+      },
+      {
+        "id": "ch01_10",
+        "number": 10,
+        "type": "multiple_choice",
+        "question": "O(n²)의 시간복잡도를 가지는 알고리즘에서 입력의 개수가 2배로 되었다면 실행시간은 어떤 추세로 증가하는가?",
+        "choices": ["변함없다.", "2배", "4배", "8배"],
+        "answer": "4배"
+      },
+      {
+        "id": "ch01_11",
+        "number": 11,
+        "type": "multiple_choice",
+        "question": "f(n)에 대하여 엄격한 상한을 제공하는 표기법은 무엇인가?",
+        "choices": ["빅오메가", "빅오", "빅세타", "존재하지 않는다."],
+        "answer": "빅오"
+      },
+      {
+        "id": "ch01_12",
+        "number": 12,
+        "type": "ordering",
+        "question": "다음의 빅오표기법들을 수행시간이 적게 걸리는 것부터 나열하라.\n\nO(1), O(n), O(log n), O(n²), O(n log n), O(n!), O(2ⁿ)",
+        "answer": "O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)"
+      },
+      {
+        "id": "ch01_13",
+        "number": 13,
+        "type": "short_answer",
+        "question": "두 함수 30n + 4와 n²를 여러 가지 n값으로 비교하라. 언제 30n + 4가 n²보다 작은 값을 갖는지를 구하라. 그래프를 그려보라.",
+        "answer": null
+      },
+      {
+        "id": "ch01_14",
+        "number": 14,
+        "type": "short_answer",
+        "question": "다음은 실제로 프로그램의 수행시간을 측정하여 도표로 나타낸 것이다. 도표로부터 이 프로그램의 시간 복잡도를 예측하여 빅오 표기법으로 나타내라.\n\n| 입력의 개수 n | 수행시간 (초) |\n|---|---|\n| 2 | 2 |\n| 4 | 8 |\n| 8 | 25 |\n| 16 | 63 |\n| 32 | 162 |",
+        "answer": "O(n log n)"
+      },
+      {
+        "id": "ch01_15",
+        "number": 15,
+        "type": "proof",
+        "question": "빅오표기법의 정의를 사용하여 다음을 증명하라.\n\n5n² + 3 = O(n²)",
+        "answer": null
+      },
+      {
+        "id": "ch01_16",
+        "number": 16,
+        "type": "proof",
+        "question": "빅오 표기법의 정의를 이용하여 6n² + 3n이 O(n)이 될 수 없음을 보여라.",
+        "answer": null
+      },
+      {
+        "id": "ch01_17",
+        "number": 17,
+        "type": "short_answer",
+        "question": "배열에 정수가 들어 있다고 가정하고 다음의 작업의 최악, 최선의 시간복잡도를 빅오 표기법으로 말하라.\n\n(1) 배열의 n번째 숫자를 화면에 출력한다.\n(2) 배열안의 숫자 중에서 최솟값을 찾는다.\n(3) 배열의 모든 숫자를 더한다.",
+        "answer": "(1) 최악: O(1), 최선: O(1)\n(2) 최악: O(n), 최선: O(n)\n(3) 최악: O(n), 최선: O(n)"
+      }
+    ]
+  },
+  {
+    "chapter": 2,
+    "title": "순환",
+    "problems": [
+      {
+        "id": "ch02_01",
+        "number": 1,
+        "type": "short_answer",
+        "question": "팩토리얼을 계산하는 순환호출 함수 factorial에서 매개 변수로 5를 주었다면 최대 몇 개의 factorial 함수의 활성 레코드가 동시에 존재할 수 있는가?",
+        "answer": "6개 (factorial(5), factorial(4), ..., factorial(0))"
+      },
+      {
+        "id": "ch02_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "순환 호출을 하였을 경우에 활성 레코드들이 저장되는 위치는 어디인가?",
+        "choices": ["순환호출 함수내부", "변수", "배열", "스택"],
+        "answer": "스택"
+      },
+      {
+        "id": "ch02_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "다음 중 활성 레코드에 저장되지 않는 것은 무엇인가?",
+        "choices": ["매개변수의 값", "함수호출이 끝나고 복귀할 주소", "지역변수", "순환호출의 순차번호"],
+        "answer": "순환호출의 순차번호"
+      },
+      {
+        "id": "ch02_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "하나의 함수가 호출할 수 있는 순환호출의 개수는?",
+        "choices": ["1번", "2번", "스택이 허용하는 한도", "무제한"],
+        "answer": "스택이 허용하는 한도"
+      },
+      {
+        "id": "ch02_05",
+        "number": 5,
+        "type": "short_answer",
+        "question": "다음의 순환호출 함수에서 잘못된 점은 무엇인가?\n\nint recursive(int n)\n{\n    if( n==1 ) return 0;\n    return n*recursive(n);\n}",
+        "answer": "순환 조건이 해결한 수록 n값이 감소하는 형태여야 하므로 return n*recursive(n-1)의 형식으로 바꾸어야 한다."
+      },
+      {
+        "id": "ch02_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "다음의 순환호출 함수에서 잘못된 점은 무엇인가?\n\nint recursive(int n)\n{\n    printf(\"recursive(%d)\\n\", n);\n    return n*recursive(n-1);\n}",
+        "answer": "if (n<=1) return 1; 과 같은 종료 조건이 없어야 한다."
+      },
+      {
+        "id": "ch02_07",
+        "number": 7,
+        "type": "short_answer",
+        "question": "다음 함수를 sum(5)로 호출하였을 때, 화면에 출력되는 내용과 함수의 반환값을 구하라.\n\nint sum(int n)\n{\n    printf(\"%d\\n\", n);\n    if( n<1) return 1;\n    else return( n+sum(n-1) );\n}",
+        "answer": "출력: 5, 4, 3, 2, 1 / 반환값: 5+4+3+2+1+1 = 16"
+      },
+      {
+        "id": "ch02_08",
+        "number": 8,
+        "type": "short_answer",
+        "question": "다음 함수를 recursive(5)로 호출하였을 때, 화면에 출력되는 내용과 함수의 반환값을 구하라.\n\nint recursive(int n)\n{\n    printf(\"%d\\n\", n);\n    if( n<1) return 2;\n    else return( 2*recursive(n-1)+1 );\n}",
+        "answer": "출력: 5, 4, 3, 2, 1 / 반환값: 45"
+      },
+      {
+        "id": "ch02_09",
+        "number": 9,
+        "type": "short_answer",
+        "question": "다음 함수를 recursive(10)으로 호출하였을 때, 화면에 출력되는 내용과 함수의 반환값을 구하라.\n\nint recursive(int n)\n{\n    printf(\"%d\\n\", n);\n    if( n<1) return -1;\n    else return( recursive(n-3)+1 );\n}",
+        "answer": "출력: 10, 7, 4, 1 / 무한재귀(종료조건 n<1에서 n=1이면 recursive(-2)로 이어짐)"
+      },
+      {
+        "id": "ch02_10",
+        "number": 10,
+        "type": "short_answer",
+        "question": "다음 함수를 recursive(5)로 호출하였을 때, 화면에 출력되는 내용을 쓰시오.\n\nint recursive(int n)\n{\n    if(n != 1) recursive(n-1);\n    printf(\"%d\\n\", n);\n}",
+        "answer": "출력: 1, 2, 3, 4, 5"
+      },
+      {
+        "id": "ch02_11",
+        "number": 11,
+        "type": "short_answer",
+        "question": "다음 함수에서 asterisk(5)를 호출할 때 출력되는 *의 갯수는?\n\nvoid asterisk(int i)\n{\n    if( i > 1 ){\n        asterisk(i/2);\n        asterisk(i/2);\n    }\n    printf(\"*\");\n}",
+        "answer": null
+      },
+      {
+        "id": "ch02_12",
+        "number": 12,
+        "type": "short_answer",
+        "question": "다음과 같은 함수를 호출하고 \"recursive\" 문자열을 입력한 다음, 엔터키를 눌렀다면 화면에 출력되는 것은?\n\nunknown()\n{\n    int ch;\n    if( (ch=getchar()) != '\\n')\n        unknown();\n    putchar(ch);\n}",
+        "answer": "evisrucer (입력된 문자열의 역순 출력)"
+      },
+      {
+        "id": "ch02_13",
+        "number": 13,
+        "type": "coding",
+        "question": "다음을 계산하는 순환적인 프로그램을 작성하시오.\n\n1 + 2 + 3 + ... + n",
+        "answer": null
+      },
+      {
+        "id": "ch02_14",
+        "number": 14,
+        "type": "coding",
+        "question": "다음을 계산하는 순환적인 프로그램을 작성하시오.\n\n1 + 1/2 + 1/3 + ... + 1/n",
+        "answer": null
+      },
+      {
+        "id": "ch02_15",
+        "number": 15,
+        "type": "short_answer",
+        "question": "순환 호출되는 것을 이해하기 위하여 fib 함수를 다음과 같이 바꾸어서 실행하여 보라. fib(6)을 호출할 때 화면에 출력되는 내용을 쓰시오.\n\nint fib(int n)\n{\n    printf(\"fib(%d) is called\\n\", n);\n    if( n==0 ) return 0;\n    if( n==1 ) return 1;\n    return (fib(n-1) + fib(n-2));\n}",
+        "answer": null
+      },
+      {
+        "id": "ch02_16",
+        "number": 16,
+        "type": "coding",
+        "question": "다음의 순환적인 프로그램을 반복 구조를 사용한 비순환적 프로그램으로 바꾸시오.\n\nint sum(int n)\n{\n    if( n == 1 ) return 1;\n    else return (n + sum(n-1));\n}",
+        "answer": null
+      },
+      {
+        "id": "ch02_17",
+        "number": 17,
+        "type": "coding",
+        "question": "이항계수(binomial coefficient)를 계산하는 순환함수를 작성하라. 이항계수는 다음과 같이 순환적으로 정의된다. 반복함수로도 구현해보라.\n\nnCk = n-1Ck-1 + n-1Ck  (if 0 < k < n)\nnCk = 1  (if k=0 or k=n)",
+        "answer": null
+      },
+      {
+        "id": "ch02_18",
+        "number": 18,
+        "type": "short_answer",
+        "question": "Ackermann 함수는 다음과 같이 순환적으로 정의된다.\n\nA(0, n) = n+1\nA(m, 0) = A(m-1, 1)\nA(m, n) = A(m-2, A(m, n-1))   m, n ≥ 1\n\n(a) A(3, 2)와 A(2, 3)의 값을 구하시오.\n(b) Ackermann 함수를 구하는 순환적인 프로그램을 작성하시오.\n(c) 위의 순환적인 프로그램을 for, while, do와 같은 반복구조를 사용한 비순환적 프로그램으로 바꾸시오.",
+        "answer": null
+      },
+      {
+        "id": "ch02_19",
+        "number": 19,
+        "type": "short_answer",
+        "question": "본문의 순환적인 피보나치 수열 프로그램과 반복적인 피보나치 수열 프로그램의 수행 시간을 측정하여 비교하라. 어떤 결론을 내릴 수 있는가?",
+        "answer": null
+      },
+      {
+        "id": "ch02_20",
+        "number": 20,
+        "type": "short_answer",
+        "question": "순환호출에서는 순환호출을 할때마다 문제의 크기가 작아져야 한다.\n\n(1) 팩토리얼 계산 문제에서 순환호출이 일어날 때마다 문제가 어떻게 작아지는가?\n(2) 하노이의 탑에서 순환호출이 일어날 때마다 문제의 어떻게 작아지는가?",
+        "answer": null
+      },
+      {
+        "id": "ch02_21",
+        "number": 21,
+        "type": "coding",
+        "question": "컴퓨터 그래픽에서의 영역 채우기 알고리즘은 순환 기법을 사용한다. 영역 채우기란 흰색 영역이 있을 때 이 영역을 특정한 색으로 채우는 것이다. 2차원 배열이 다음과 같이 되어 있다고 가정하고 영역안의 한 점의 좌표가 주어졌을 경우에 안쪽을 채우는 순환호출 함수를 작성하여 보라.",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 3,
+    "title": "배열, 구조체, 포인터",
+    "problems": [
+      {
+        "id": "ch03_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "int a[10][20]에서 배열이 차지하는 메모리 공간의 크기는 얼마인가? int형은 4바이트라고 하자.",
+        "choices": ["200바이트", "400바이트", "600바이트", "800바이트"],
+        "answer": "800바이트"
+      },
+      {
+        "id": "ch03_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "float a[100]으로 선언된 배열의 시작 주소를 1000번지라고 할 때, 배열의 10번째 요소의 주소는 몇 번지인가?",
+        "choices": ["1010번지", "1020번지", "1030번지", "1040번지"],
+        "answer": "1040번지"
+      },
+      {
+        "id": "ch03_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "다음 배열 중에서 크기가 가장 큰 배열은?",
+        "choices": ["int array1[10];", "double array2[10];", "char array3[40];", "float array4[10];"],
+        "answer": "double array2[10]; (80바이트)"
+      },
+      {
+        "id": "ch03_04",
+        "number": 4,
+        "type": "coding",
+        "question": "크기가 10인 배열 two[]를 선언하고 여기에 2의 제곱 값들을 저장해보자. 즉 배열의 첫 번째 요소에는 2⁰을 저장하고 두 번째 요소에는 2¹값을 저장한다. 마지막 요소에는 2⁹값을 저장한다. for 루프를 이용하여 two[] 배열의 전체 요소의 값을 출력하는 프로그램을 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch03_05",
+        "number": 5,
+        "type": "coding",
+        "question": "person이라는 구조체를 만들어보자. 이 구조체에는 문자 배열로 된 이름, 사람의 나이를 나타내는 정수 값, 각 개인의 월급을 나타내는 float 값 등이 변수로 들어가야 한다.",
+        "answer": null
+      },
+      {
+        "id": "ch03_06",
+        "number": 6,
+        "type": "coding",
+        "question": "C언어의 typedef을 이용하여 complex라고 하는 새로운 자료형을 정의하라. complex 자료형은 구조체로서 float형인 real 변수와 역시 float형인 imaginary 변수를 갖는다. complex 자료형으로 변수 c1과 c2를 선언하여보라.",
+        "answer": null
+      },
+      {
+        "id": "ch03_07",
+        "number": 7,
+        "type": "coding",
+        "question": "복소수를 구조체로 표현해보자. 복소수 a와 복소수 b를 받아서 a+b를 계산하는 함수를 작성해보자. 함수는 구조체를 반환할 수 있다. 알다시피 복소수는 real+imag*i와 같은 형태를 갖는다.\n\nComplex complex_add(Complex a, Complex b) {\n    ...\n}",
+        "answer": null
+      },
+      {
+        "id": "ch03_08",
+        "number": 8,
+        "type": "coding",
+        "question": "크기가 n인 배열 array에서 임의의 위치 loc에 정수 value를 삽입하는 함수 insert()를 작성하라. 정수가 삽입되면 그 뒤에 있는 정수들은 한 칸씩 뒤로 밀려야 한다. 현재 배열에 들어있는 원소의 개수는 items개라고 하자. (여기서 items << n라고 가정)\n\nvoid insert(int array[], int loc, int value){\n    ....\n}",
+        "answer": null
+      },
+      {
+        "id": "ch03_09",
+        "number": 9,
+        "type": "short_answer",
+        "question": "앞의 문제에서 구현한 insert() 함수의 시간 복잡도는?",
+        "answer": "O(n)"
+      },
+      {
+        "id": "ch03_10",
+        "number": 10,
+        "type": "coding",
+        "question": "크기가 n인 배열 array에서 임의의 위치 loc에 있는 정수를 삭제하는 함수 delete()를 작성하라. 정수가 삭제되면 그 뒤에 있는 정수들은 한 칸씩 앞으로 이동하여야 한다. 현재 배열에 들어있는 원소의 개수는 items개라고 하자. (여기서 items << n라고 가정)\n\nint delete(int array[], int loc){\n    ....\n}",
+        "answer": null
+      },
+      {
+        "id": "ch03_11",
+        "number": 11,
+        "type": "short_answer",
+        "question": "앞의 문제에서 구현한 delete() 함수의 시간 복잡도는?",
+        "answer": "O(n)"
+      },
+      {
+        "id": "ch03_12",
+        "number": 12,
+        "type": "coding",
+        "question": "1개의 정수와 최대 크기가 20인 문자열로 이루어진 구조체를 저장할 수 있도록 동적 메모리를 할당받고 여기에 정수 100과 문자열 \"just testing\"을 저장한 다음, 동적 메모리를 반납하는 프로그램을 작성하라.",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 4,
+    "title": "스택",
+    "problems": [
+      {
+        "id": "ch04_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "스택에서 삽입작업이 발생하면 top의 값은 어떻게 변경되는가?",
+        "choices": ["top=0", "top=1", "top = top-1", "top = top+1"],
+        "answer": "top = top+1"
+      },
+      {
+        "id": "ch04_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "문자 A, B, C, D, E를 스택에 넣었다가 다시 꺼내어 출력하면 어떻게 되는가?",
+        "choices": ["A, B, C, D, E", "E, D, C, B, A", "A, B, C, E, D", "B, A, C, D, E"],
+        "answer": "E, D, C, B, A"
+      },
+      {
+        "id": "ch04_03",
+        "number": 3,
+        "type": "short_answer",
+        "question": "10, 20, 30, 40, 50을 스택에 넣었다가 3개의 항목을 삭제하였다. 남아 있는 항목은?",
+        "answer": "10, 20 (나중에 넣은 50, 40, 30이 먼저 삭제됨)"
+      },
+      {
+        "id": "ch04_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "배열로 구현된 스택에서 top가 3이면 현재 스택에 저장된 요소들의 개수는?",
+        "choices": ["1", "2", "3", "4"],
+        "answer": "4"
+      },
+      {
+        "id": "ch04_05",
+        "number": 5,
+        "type": "multiple_choice",
+        "question": "다음 중 배열로 구현된 스택에서 공백상태에 해당하는 조건은? 또 포화상태에 해당되는 조건은?",
+        "choices": ["top == -1", "top == 0", "top == (MAX_STACK_SIZE-1)", "top == MAX_STACK_SIZE"],
+        "answer": "공백상태: top == -1, 포화상태: top == (MAX_STACK_SIZE-1)"
+      },
+      {
+        "id": "ch04_06",
+        "number": 6,
+        "type": "multiple_choice",
+        "question": "스택에 항목들을 삽입하고 삭제하는 연산은 시간 복잡도가 어떻게 되는가?",
+        "choices": ["O(1)", "O(log₂n)", "O(n)", "O(n²)"],
+        "answer": "O(1)"
+      },
+      {
+        "id": "ch04_07",
+        "number": 7,
+        "type": "multiple_choice",
+        "question": "다음은 어떤 수식의 후위 표기이다. 이 때 최초로 수행되는 연산은 어느 것인가?\n\nA B E + D * -",
+        "choices": ["B + E", "E + A", "D * B", "B * E"],
+        "answer": "B + E"
+      },
+      {
+        "id": "ch04_08",
+        "number": 8,
+        "type": "short_answer",
+        "question": "크기가 5인, 배열로 구현된 스택 A에 다음과 같이 삽입과 삭제가 되풀이되었을 경우에 각 단계에서의 스택의 내용(1차원 배열의 내용, top의 값)을 나타내시오.\n\npush(A, 1);\npush(A, 2);\npush(A, 3);\npop(A);\npush(A, 4);\npush(A, 5);\npop(A);",
+        "answer": null
+      },
+      {
+        "id": "ch04_09",
+        "number": 9,
+        "type": "short_answer",
+        "question": "A와 B가 스택이라고 하고, a, b, c, d가 객체라고 하자. 다음의 일련의 스택 연산을 수행한 뒤의 각각의 스택을 그려라.\n\npush(A, a);\npush(A, b);\npush(A, c);\npush(B, d);\npush(B, pop(A));\npush(A, pop(B));\npop(B)",
+        "answer": null
+      },
+      {
+        "id": "ch04_10",
+        "number": 10,
+        "type": "coding",
+        "question": "배열에 들어 있는 정수의 순서를 거꾸로 하는 프로그램을 작성해보자. 스택을 사용한다.\n\n실행결과\n정수 배열의 크기: 6\n정수를 입력하시오: 1 2 3 4 5 6\n반전된 정수 배열: 6 5 4 3 2 1",
+        "answer": null
+      },
+      {
+        "id": "ch04_11",
+        "number": 11,
+        "type": "coding",
+        "question": "수식에 있는 괄호의 번호를 출력하는 프로그램을 작성하라. 왼쪽 괄호가 나올 때마다 괄호 번호는 하나씩 증가한다. 오른쪽 괄호가 나오면 매칭되는 왼쪽 괄호 번호를 출력한다.\n\n실행결과\n수식: (())(())\n괄호 수: 1 2 3 3 2 4 5 5 4 1",
+        "answer": null
+      },
+      {
+        "id": "ch04_12",
+        "number": 12,
+        "type": "coding",
+        "question": "다음과 같이 문자열을 압축하는 프로그램을 작성하라. \"4a3b\"는 'a'가 4개, 'b'가 3개 있다는 의미이다. 이러한 압축 방법을 런길이(run length) 압축이라고 한다. 소문자와 대문자는 구별하지 않는다. 압축된 문자열에서는 소문자로 출력한다. 스택의 peek() 연산을 고려해보자.\n\n실행결과\n문자열을 입력하시오: aaaAbBb\n압축된 문자열: 4a3b",
+        "answer": null
+      },
+      {
+        "id": "ch04_13",
+        "number": 13,
+        "type": "coding",
+        "question": "주어진 정수에서 반복되는 숫자를 제거하는 프로그램을 작성해보자. 스택 사용을 고려해보자.\n\n실행결과\n정수를 입력하시오: 122233\n출력: 123",
+        "answer": null
+      },
+      {
+        "id": "ch04_14",
+        "number": 14,
+        "type": "coding",
+        "question": "배열로 구현된 스택에 저장된 요소의 수를 반환하는 size 연산을 구현하여 보라.",
+        "answer": null
+      },
+      {
+        "id": "ch04_15",
+        "number": 15,
+        "type": "coding",
+        "question": "미로 탐색 프로그램에서 탐색 성공 시에 입구부터 출구까지의 경로를 출력하도록 수정하라.",
+        "answer": null
+      },
+      {
+        "id": "ch04_16",
+        "number": 16,
+        "type": "coding",
+        "question": "회문(palindrome)이란 앞뒤 어느 쪽에서 읽어도 같은 단어를 의미한다. 예를 들면 \"eye\", \"madam, I'm Adam\", \"race car\" 등이다. 여기서 물론 구두점이나 스페이스, 대소문자 등은 무시하여야 한다. 스택을 이용하여 주어진 문자열이 회문인지 아닌지를 결정하는 프로그램을 작성하라.\n\n실행결과\n문자열을 입력하시오: madam\n회문입니다.",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 5,
+    "title": "큐",
+    "problems": [
+      {
+        "id": "ch05_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "문자 A, B, C, D, E를 큐에 넣었다가 다시 꺼내어 출력하면 어떻게 되는가?",
+        "choices": ["A, B, C, D, E", "E, D, C, B, A", "A, B, C, E, D", "B, A, C, D, E"],
+        "answer": "A, B, C, D, E"
+      },
+      {
+        "id": "ch05_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "원형큐에서 front가 3이고 rear가 5라고 하면 현재 원형큐에 저장된 요소들의 개수는? (단, MAX_QUEUE_SIZE는 8이다.)",
+        "choices": ["1", "2", "3", "4"],
+        "answer": "2"
+      },
+      {
+        "id": "ch05_03",
+        "number": 3,
+        "type": "short_answer",
+        "question": "10, 20, 30, 40, 50을 큐에 넣었다고 가정하고 3개의 항목을 삭제하였다. 남아 있는 항목은?",
+        "answer": "40, 50 (먼저 넣은 10, 20, 30이 먼저 삭제됨)"
+      },
+      {
+        "id": "ch05_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "다음 중 원형큐에서 공백상태에 해당하는 조건은?",
+        "choices": ["front ==0 && rear == 0", "front == (MAX_QUEUE_SIZE-1) && rear == (MAX_QUEUE_SIZE-1)", "front == rear", "front == (rear+1) % MAX_QUEUE_SIZE"],
+        "answer": "front == rear"
+      },
+      {
+        "id": "ch05_05",
+        "number": 5,
+        "type": "multiple_choice",
+        "question": "크기가 10이고 front가 3, rear가 5인 원형큐에서 새로운 항목이 삽입되었을 경우, front와 rear의 새로운 값은?",
+        "choices": ["front은 4, rear는 5", "front은 3, rear는 6", "front은 4, rear는 6", "포화상태가 된다."],
+        "answer": "front은 3, rear는 6"
+      },
+      {
+        "id": "ch05_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "다음과 같은 원형큐에서 (a)에서 (c)까지의 연산을 차례로 수행한다고 하자. 수행이 완료된 후의 큐의 상태를 그려라. 현재 front는 0이고 rear는 2라고 하자.\n\n[0] [1] [2] [3] [4]\n     B   C\n\n(a) A 추가\n(b) D 추가\n(c) 삭제",
+        "answer": null
+      },
+      {
+        "id": "ch05_07",
+        "number": 7,
+        "type": "multiple_choice",
+        "question": "큐에 항목들을 삽입하고 삭제하는 연산은 시간 복잡도가 어떻게 되는가?",
+        "choices": ["O(1)", "O(log₂n)", "O(n)", "O(n²)"],
+        "answer": "O(1)"
+      },
+      {
+        "id": "ch05_08",
+        "number": 8,
+        "type": "coding",
+        "question": "원형큐에 큐에 존재하는 요소의 개수를 반환하는 연산 get_count를 추가하여 보라. C언어를 이용하여 구현하여 보라.",
+        "answer": null
+      },
+      {
+        "id": "ch05_09",
+        "number": 9,
+        "type": "coding",
+        "question": "2개의 스택을 사용하여 큐를 구현할 수 있을까? 2개의 스택을 사용하여 큐를 구현해보자. 입력이 들어오면 스택 #1에 넣는다. 출력 요청이 들어보면 스택 #2에서 요소를 꺼낸다. 스택 #2가 비어 있을 때는 스택 #1의 모든 요소를 꺼내서 스택 #2에 넣는다. 프로그램으로 작성해보자.",
+        "answer": null
+      },
+      {
+        "id": "ch05_10",
+        "number": 10,
+        "type": "coding",
+        "question": "피보나치 수열을 효과적으로 계산하기 위하여 큐를 이용할 수 있다. 큐를 이용하여 피보나치 수열을 계산하는 프로그램을 작성하라.\n\nF(0)=0, F(1)=1\nF(n) = F(n-1) + F(n-2)",
+        "answer": null
+      },
+      {
+        "id": "ch05_11",
+        "number": 11,
+        "type": "coding",
+        "question": "회문(palindrome)이란 앞뒤 어느 쪽에서 읽어도 같은 말·구·문 등을 의미한다. 예를 들면 \"eye\", \"madam\", \"radar\" 등이다. 여기서 물론 구두점이나 스페이스, 대소문자 등은 무시하여야 한다. 덱을 이용하여 주어진 문자열이 회문인지 아닌지를 결정하는 프로그램을 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch05_12",
+        "number": 12,
+        "type": "coding",
+        "question": "태스크 스케줄링 알고리즘으로 A-Steal 알고리즘이 있다. A-Steal 알고리즘에서 각각의 CPU는 자신이 실행할 태스크가 저장된 덱을 가지고 있다. 하나의 CPU가 자신의 태스크를 종료했다면 다른 CPU가 실행할 태스크를 훔쳐서 실행할 수 있다. 이때 다른 CPU의 덱의 끝에 있는 요소를 가져온다. 간단하게 A-Steal 알고리즘을 구현해보자.",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 6,
+    "title": "연결 리스트 I",
+    "problems": [
+      {
+        "id": "ch06_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "다음 중 NULL 포인터(NULL pointer)가 존재하지 않는 구조는 어느 것인가?",
+        "choices": ["단순 연결 리스트", "원형 연결 리스트", "이중 연결 리스트", "헤더 노드를 가지는 단순 연결리스트"],
+        "answer": "원형 연결 리스트"
+      },
+      {
+        "id": "ch06_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "리스트의 n번째 요소를 가장 빠르게 찾을 수 있는 구현 방법은 무엇인가?",
+        "choices": ["배열", "단순 연결 리스트", "원형 연결 리스트", "이중 연결 리스트"],
+        "answer": "배열"
+      },
+      {
+        "id": "ch06_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "단순 연결 리스트에서 포인터 last가 마지막 노드를 가리킨다고 할 때 다음 수식 중, 참인 것은?",
+        "choices": ["last == NULL", "last->data == NULL", "last->link == NULL", "last->link->link == NULL"],
+        "answer": "last->link == NULL"
+      },
+      {
+        "id": "ch06_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "단순 연결 리스트의 노드들을 포인터 p로 방문하고자 한다. 현재 p가 가리키는 노드에서 다음 노드로 가려면 어떤 코드를 사용해야 하는가?",
+        "choices": ["p++;", "p--;", "p=p->link;", "p=p->data;"],
+        "answer": "p=p->link;"
+      },
+      {
+        "id": "ch06_05",
+        "number": 5,
+        "type": "short_answer",
+        "question": "다음과 같이 변수 p가 2를 저장하는 노드를 가리키도록 하는 문장을 작성하라.\n\np -> 1 -> 2 -> 3 /",
+        "answer": "p = p->link;"
+      },
+      {
+        "id": "ch06_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "다음과 같이 변수 q가 1을 저장하는 노드를 가리키도록 하는 문장을 작성하라.",
+        "answer": "q = p;"
+      },
+      {
+        "id": "ch06_07",
+        "number": 7,
+        "type": "short_answer",
+        "question": "다음과 같은 연결 리스트에 아래와 같은 코드를 실행한다고 하자. 실행이 끝난 후에 포인터 p가 가리키는 노드는 어떤 노드인가?\n\nlist->head -> A -> B -> C -> D NULL\n\nfor(p=list->head; p->link!= NULL; p=p->link)\n    ;",
+        "answer": "D 노드 (마지막 노드)"
+      },
+      {
+        "id": "ch06_08",
+        "number": 8,
+        "type": "multiple_choice",
+        "question": "덱(deque: double-ended queue)은 삽입과 삭제가 양끝에서 임의로 수행되는 자료 구조이다. 다음 그림과 같이 단순 연결 리스트(singly linked list)로 덱을 구현한다고 할 때 O(1) 시간 내에 수행할 수 없는 연산은? (단, first와 last는 각각 덱의 첫 번째 원소와 마지막 원소를 가리키며, 연산이 수행된 후에도 덱의 원형이 유지되어야 한다) (국가시험 기출문제)",
+        "choices": ["insertFirst 연산: 덱의 첫 번째 원소로 삽입", "insertLast 연산: 덱의 마지막 원소로 삽입", "deleteFirst 연산: 덱의 첫 번째 원소를 삭제", "deleteLast 연산: 덱의 마지막 원소를 삭제"],
+        "answer": "deleteLast 연산"
+      },
+      {
+        "id": "ch06_09",
+        "number": 9,
+        "type": "coding",
+        "question": "다음과 같이 단순 연결 리스트에 사용자가 입력하는 값을 저장했다가 출력하는 프로그램을 작성하라.\n\n노드의 개수 : 3\n노드 #1 데이터 : 5\n노드 #2 데이터 : 6\n노드 #3 데이터 : 7\n생성된 연결 리스트: 5->6->7",
+        "answer": null
+      },
+      {
+        "id": "ch06_10",
+        "number": 10,
+        "type": "coding",
+        "question": "다음과 같이 단순 연결 리스트의 노드들의 개수를 계산하는 프로그램을 작성해보자.",
+        "answer": null
+      },
+      {
+        "id": "ch06_11",
+        "number": 11,
+        "type": "coding",
+        "question": "단순 연결 리스트에 정수가 저장되어 있다. 연결 리스트에 있는 모든 노드의 데이터 값을 합한 결과를 출력하는 프로그램을 작성하시오.",
+        "answer": null
+      },
+      {
+        "id": "ch06_12",
+        "number": 12,
+        "type": "coding",
+        "question": "연결 리스트에서 특정한 데이터 값을 갖는 노드의 개수를 계산하는 함수를 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_13",
+        "number": 13,
+        "type": "coding",
+        "question": "단순 연결 리스트에서의 탐색함수를 참고하여 특정한 데이터값을 갖는 노드를 삭제하는 함수를 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_14",
+        "number": 14,
+        "type": "coding",
+        "question": "다음 그림과 같은 데이터를 저장할 수 있는 단순 연결 리스트를 생성하는 프로그램을 작성해보자.\n\nName: kim, Age: 34, Heigh: 1.7\nName: park, Age: 27, Heigh: 1.2\nName: lee, Age: 48, Heigh: 1.4\nName: choi, Age: 30, Heigh: 1.3",
+        "answer": null
+      },
+      {
+        "id": "ch06_15",
+        "number": 15,
+        "type": "coding",
+        "question": "단순 연결 리스트가 정렬되지 않은 정수들의 리스트를 저장하고 있다. 리스트에서 최대값과 최솟값을 찾는 프로그램을 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_16",
+        "number": 16,
+        "type": "coding",
+        "question": "단순 연결 리스트의 헤드 포인터가 주어져 있을 때 첫 번째노드에서부터 하나씩 건너서 있는 노드들을 전부 삭제하는 함수를 작성하라. 즉 홀수번째 있는 노드들이 전부 삭제된다.",
+        "answer": null
+      },
+      {
+        "id": "ch06_17",
+        "number": 17,
+        "type": "coding",
+        "question": "두 개의 단순연결 리스트 A, B가 주어져 있을 경우, alternate 함수를 작성하라. alternate 함수는 A와 B로부터 노드를 번갈아 가져와서 새로운 리스트 C를 만드는 연산이다. 만약 입력리스트 중에서 하나가 끝나게 되면 나머지 노드들을 전부 C로 옮긴다. 함수를 구현하여 올바르게 동작하는지 테스트하라. 작성된 알고리즘의 시간 복잡도를 구하라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_18",
+        "number": 18,
+        "type": "coding",
+        "question": "2개의 단순 연결 리스트를 병합하는 함수를 조금 변경하여 보자. 두 개의 연결리스트 a, b가 데이터값의 오름차순으로 노드들이 정렬되어 있는 경우, 이러한 정렬상태를 유지하면서 합병을 하여 새로운 연결리스트를 만드는 알고리즘 merge를 작성하라. 작성된 알고리즘의 시간복잡도도 구하라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_19",
+        "number": 19,
+        "type": "coding",
+        "question": "단순 연결 리스트 C를 두 개의 단순 연결 리스트 A와 B로 분리하는 함수 split를 작성하여 보자. C의 홀수 번째 노드들은 모두 A로 이동되고 C의 짝수 번째 노드들은 모두 B로 이동된다. 이 함수가 C를 변경하여서는 안 된다. 작성된 알고리즘의 시간 복잡도를 구하고 구현하여 수행하여 보라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_20",
+        "number": 20,
+        "type": "coding",
+        "question": "두개의 다항식이 다음과 같이 주어졌다. 이들을 연결 리스트를 이용하여 나타내고 본문의 프로그램을 이용하여 두 다항식의 합을 구해보시오.\n\nA(x) = 3x⁶ + 7x³ - 2x² - 9\nB(x) = -2x⁶ - 4x⁴ + 6x² + 6x + 1",
+        "answer": null
+      },
+      {
+        "id": "ch06_21",
+        "number": 21,
+        "type": "coding",
+        "question": "다항식이 연결 리스트로 표현되어 있다. 다항식이 연결 리스트로 표현되어 있고, p를 다항식을 가리키는 포인터라고 할 때, 어떤 실수 x에 대하여 이 다항식의 값을 계산하는 함수 poly_eval을 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_22",
+        "number": 22,
+        "type": "coding",
+        "question": "배열을 이용하여 숫자들을 입력 받아 항상 오름차순으로 정렬된 상태로 유지하는 리스트 SortedList를 구현하여 보라.",
+        "answer": null
+      },
+      {
+        "id": "ch06_23",
+        "number": 23,
+        "type": "coding",
+        "question": "단순 연결 리스트를 이용하여 숫자들을 항상 오름차순으로 정렬된 상태로 유지하는 리스트 SortedList를 구현하여 보라.",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 7,
+    "title": "연결 리스트 II",
+    "problems": [
+      {
+        "id": "ch07_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "다음은 연결 리스트를 이용하여 스택을 표현한 것이다. 이에 대한 설명으로 옳지 않은 것은? (단, push는 스택에 자료를 삽입하는 연산이고, pop은 스택에서 자료를 삭제하는 연산이다) (국가시험 기출문제)",
+        "choices": ["스택에 가장 최근에 입력된 자료는 top이 지시한다.", "스택에 입력된 자료 중 d가 가장 오래된 자료이다.", "(ㄴ)에서 자료 c를 가져오려면 pop 연산이 2회 필요하다.", "(ㄱ)에서 자료의 입력된 순서는 d, c, b이다."],
+        "answer": "(ㄴ)에서 자료 c를 가져오려면 pop 연산이 2회 필요하다."
+      },
+      {
+        "id": "ch07_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "삽입과 삭제작업이 자주 발생할 때 실행시간이 가장 많이 소요되는 자료구조는?",
+        "choices": ["배열로 구현된 리스트", "단순 연결 리스트", "원형 연결 리스트", "이중 연결 리스트"],
+        "answer": "배열로 구현된 리스트"
+      },
+      {
+        "id": "ch07_03",
+        "number": 3,
+        "type": "coding",
+        "question": "원형 연결 리스트에서 특정한 값을 탐색하는 함수 search()를 작성하고 테스트하라. search()는 다음과 같은 원형을 가진다.\n\n// 원형 연결 리스트 L에서 data를 가지고 있는 노드를 찾아서 반환한다.\nListNode *search(ListNode *L, element data);",
+        "answer": null
+      },
+      {
+        "id": "ch07_04",
+        "number": 4,
+        "type": "coding",
+        "question": "원형 연결 리스트에 저장된 데이터의 개수를 반환하는 함수 get_size()를 작성하고 테스트하라. get_size()는 다음과 같은 원형을 가진다.\n\n// 원형 연결 리스트 L에 저장된 데이터의 개수를 반환한다.\nint get_size(ListNode *L);",
+        "answer": null
+      },
+      {
+        "id": "ch07_05",
+        "number": 5,
+        "type": "short_answer",
+        "question": "이중 연결 리스트의 장점과 단점은 무엇인가?",
+        "answer": "장점: 특정 노드에서 양방향으로 자유롭게 움직일 수 있다. / 단점: 공간을 많이 차지하고 코드가 복잡해진다."
+      },
+      {
+        "id": "ch07_06",
+        "number": 6,
+        "type": "coding",
+        "question": "이중 연결 리스트를 역순으로 순회하면서 저장된 데이터 값을 출력하는 프로그램을 작성해보자.\n\n실행결과\n데이터를 역순으로 출력: 9 6 2",
+        "answer": null
+      },
+      {
+        "id": "ch07_07",
+        "number": 7,
+        "type": "coding",
+        "question": "이중 연결 리스트에서 특정한 값을 탐색하는 함수 search()를 작성하고 테스트하라. search()는 다음과 같은 원형을 가진다.\n\n// 이중 연결 리스트 L에서 data를 가지고 있는 노드를 찾아서 반환한다.\nDListNode *search(DListNode *L, element data);",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 8,
+    "title": "트리",
+    "problems": [
+      {
+        "id": "ch08_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "다음 트리에 대한 중위 순회 결과는? [정보처리기사 기출문제]\n\n        A\n       / \\\n      B   C\n     /   / \\\n    D   E   F",
+        "choices": ["ABDCEF", "ABCDEF", "DBECFA", "DBAECF"],
+        "answer": "DBAECF"
+      },
+      {
+        "id": "ch08_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "다음 트리를 전위 순회로 운행할 경우 다섯 번째로 탐색되는 것은? [정보처리기사 기출문제]\n\n        A\n       / \\\n      B   C\n     /   / \\\n    D   E   F\n       / \\\n      G   H",
+        "choices": ["C", "E", "G", "H"],
+        "answer": "E"
+      },
+      {
+        "id": "ch08_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "다음 그림과 같은 이진트리를 후위 순회(postorder traversal)한 결과는? [정보처리기사 기출문제]",
+        "choices": ["+ * * / ABCDE", "A / B * C * D + E", "+ * AB / CDE", "AB / C * D * E +"],
+        "answer": "AB / C * D * E +"
+      },
+      {
+        "id": "ch08_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "다음 트리에서 단말 노드 수는? [정보처리기사 기출문제]\n\n트리: A(B(D), C(E,F(G,H)))",
+        "choices": ["2", "3", "4", "8"],
+        "answer": "4"
+      },
+      {
+        "id": "ch08_05",
+        "number": 5,
+        "type": "multiple_choice",
+        "question": "다음 그림에서 트리의 차수는? [정보처리기사 기출문제]\n\n트리: A(B(D,E,F(H)), C(G))",
+        "choices": ["3", "4", "6", "8"],
+        "answer": "3"
+      },
+      {
+        "id": "ch08_06",
+        "number": 6,
+        "type": "multiple_choice",
+        "question": "Y = A * B + C / D를 전위 표기 수식으로 표기하면?",
+        "choices": ["A * B C D / +", "+ * C D / A B", "+ * A B / C D", "* + / A B C D"],
+        "answer": "+ * A B / C D"
+      },
+      {
+        "id": "ch08_07",
+        "number": 7,
+        "type": "multiple_choice",
+        "question": "이진 트리에서 높이가 5일 때, 이 트리는 최대 몇 개의 노드를 가질 수 있는가?",
+        "choices": ["26개", "8개", "32개", "31개"],
+        "answer": "31개"
+      },
+      {
+        "id": "ch08_08",
+        "number": 8,
+        "type": "multiple_choice",
+        "question": "NULL 포인터를 트리의 순회에 이용하는 트리를 무엇이라 하는가?",
+        "choices": ["완전 이진 트리(complete binary tree)", "포화 이진 트리(full binary tree)", "스레드 이진 트리(threaded binary tree)", "경사 트리(skewed tree)"],
+        "answer": "스레드 이진 트리(threaded binary tree)"
+      },
+      {
+        "id": "ch08_09",
+        "number": 9,
+        "type": "short_answer",
+        "question": "크기가 n인 이진 탐색 트리에서 다음 표를 채워보자.\n\n| 알고리즘 | 평균의 시간복잡도 | 최악의 시간복잡도 |\n|---|---|---|\n| 탐색연산 | O(logn) | O(n) |\n| 삽입연산 | ? | ? |",
+        "answer": "삽입연산 평균: O(logn), 최악: O(n)"
+      },
+      {
+        "id": "ch08_10",
+        "number": 10,
+        "type": "short_answer",
+        "question": "다음의 이진트리에 대하여 다음 질문에 답하라.\n\n이진트리 (루트=6, 왼쪽=4(2(1,3),5), 오른쪽=9(7,10(8,11)))\n\n(1) 위의 트리를 1차원 배열로 표현하시오.\n(2) 위의 트리를 전위 순회한 결과를 쓰시오.\n(3) 위의 트리를 후위 순회한 결과를 쓰시오.\n(4) 위의 트리를 중위 순회한 결과를 쓰시오.\n(5) 위의 트리를 레벨 순회한 결과를 쓰시오.\n(6) 위의 트리는 이진 탐색 트리인가? 그 이유는?",
+        "answer": "(4) 1 2 3 4 5 6 7 8 9 10 11 (중위 순회)"
+      },
+      {
+        "id": "ch08_11",
+        "number": 11,
+        "type": "short_answer",
+        "question": "다음 순서로 자료가 입력되었다고 가정하여 이진 탐색 트리를 생성하라.\n\n11, 6, 8, 19, 4, 10, 5, 17, 43, 49, 31\n\n(1) 생성된 이진탐색트리를 그리시오.\n(2) 여기서 11를 삭제하면 어떻게 변경되는가?\n(3) 여기에 12를 추가하면 어떻게 변경되는가?\n(4) 생성된 이진탐색트리에서 8을 탐색할 때 거치는 노드들을 나열하시오.\n(5) 생성된 이진탐색트리를 1차원 배열을 이용하여 저장하여 보시오.",
+        "answer": null
+      },
+      {
+        "id": "ch08_12",
+        "number": 12,
+        "type": "short_answer",
+        "question": "다음과 같은 함수가 아래에 표시된 이진트리의 루트 노드에 대해 호출된다고 하자. 함수가 반환하는 값은 무엇인가?\n\nint mystery(TreeNode* p) {\n    if (p == NULL) return 0;\n    else if (p->left == NULL && p->right == NULL)\n        return p->data;\n    else\n        return max(mystery(p->left), mystery(p->right));\n}",
+        "answer": "단말 노드 중 최댓값을 반환하는 함수 (8)"
+      },
+      {
+        "id": "ch08_13",
+        "number": 13,
+        "type": "coding",
+        "question": "이진 트리의 서브 트리 높이가 최대 1 차이나는 트리를 \"균형 트리(balanced tree)\"라고 한다. 주어진 이진 트리가 균형 트리인지를 검사하는 함수 isBalanced()를 작성하고 테스트하라.",
+        "answer": null
+      },
+      {
+        "id": "ch08_14",
+        "number": 14,
+        "type": "coding",
+        "question": "주어진 이진트리에서 노드가 가지고 있는 값의 합을 계산하는 프로그램을 작성해보자.",
+        "answer": null
+      },
+      {
+        "id": "ch08_15",
+        "number": 15,
+        "type": "coding",
+        "question": "주어진 이진트리에서 노드가 가지고 있는 값이 주어진 value보다 작으면 노드의 값을 출력하는 프로그램을 작성해보자.",
+        "answer": null
+      },
+      {
+        "id": "ch08_16",
+        "number": 16,
+        "type": "coding",
+        "question": "주어진 이진 트리에서 자식이 하나만 있는 노드의 개수를 반환하는 함수를 작성하라.",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 9,
+    "title": "우선순위 큐",
+    "problems": [
+      {
+        "id": "ch09_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "히프트리에서 노드가 삭제되는 위치는 어디인가?",
+        "choices": ["루트", "마지막 노드", "가장 최근에 삽입된 노드", "가장 먼저 삽입된 노드"],
+        "answer": "루트"
+      },
+      {
+        "id": "ch09_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "히프를 배열로 표현할 수 있는 이유는 무엇인가?",
+        "choices": ["완전 이진 트리이기 때문에", "어느 정도 정렬되어 있기 때문에", "이진 트리이기 때문에", "히프 조건을 만족하기 때문에"],
+        "answer": "완전 이진 트리이기 때문에"
+      },
+      {
+        "id": "ch09_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "히프 연산 중에서 하나의 노드가 삽입되거나 삭제되는 시간은 무엇에 비례하는가?",
+        "choices": ["노드의 개수", "트리의 높이", "항상 일정하다.", "예측 불가능하다."],
+        "answer": "트리의 높이"
+      },
+      {
+        "id": "ch09_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "다음 중 히프 정렬이 특히 유용하게 사용될 수 있는 경우는?",
+        "choices": ["데이터 100개 중에서 오름차순으로 20개만 뽑고자 할때", "비교적 데이터의 개수가 적을 때", "정렬의 대상이 되는 레코드의 크기가 클 때", "데이터가 역순으로 정렬되어 있을 때"],
+        "answer": "데이터 100개 중에서 오름차순으로 20개만 뽑고자 할때"
+      },
+      {
+        "id": "ch09_05",
+        "number": 5,
+        "type": "multiple_choice",
+        "question": "최소 히프에서 가장 작은 데이터가 있는 노드는?",
+        "choices": ["마지막 노드", "첫 번째 노드", "간 노드", "알 수 없다."],
+        "answer": "첫 번째 노드"
+      },
+      {
+        "id": "ch09_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "최소 히프에서 2번째로 작은 데이터가 있는 노드는?",
+        "answer": "루트의 왼쪽 또는 오른쪽 자식 중 하나 (2번째 레벨의 노드 중 하나)"
+      },
+      {
+        "id": "ch09_07",
+        "number": 7,
+        "type": "short_answer",
+        "question": "10개의 데이터를 저장하고 있는 히프트리의 높이는?",
+        "answer": "3 (⌊log₂10⌋ = 3)"
+      },
+      {
+        "id": "ch09_08",
+        "number": 8,
+        "type": "short_answer",
+        "question": "최소 히프를 구현한 배열의 내용이 다음과 같을 때 해당하는 히프트리를 그려라.\n\na[i]: 2, 9, 18, 6, 15, 7, 3, 14\n\n(1) 이 힙에서 삭제 연산을 한번 수행한 후의 배열의 내용을 적어라.\n(2) 이 힙에서 데이터 7을 삽입한 후의 배열의 내용을 적어라.",
+        "answer": null
+      },
+      {
+        "id": "ch09_09",
+        "number": 9,
+        "type": "short_answer",
+        "question": "다음의 최소 히프트리에서 답하라.\n\n히프: 3(6(12,13), 7(15,20))\n\n(1) 2를 삽입하였을 경우, 히프트리를 재구성하는 과정을 보여라.\n(2) 삭제연산이 한번 이루어진 다음에 히프를 재구성하는 과정을 보여라.",
+        "answer": null
+      },
+      {
+        "id": "ch09_10",
+        "number": 10,
+        "type": "short_answer",
+        "question": "다음의 파일에 대하여 다음 물음에 답하시오.\n\n10, 40, 30, 5, 12, 6, 15, 9, 60\n\n(1) 위의 파일을 순차적으로 읽어서 최대 히프트리를 구성하라. 공백 트리에서 최대 히프트리가 만들어지는 과정을 보여라.\n(2) 구성된 최대 히프트리가 저장된 배열의 내용을 표시하라.\n(3) 구성된 최대 히프트리에서 최댓값을 제거한 다음 재정비하는 과정을 설명하라.",
+        "answer": null
+      },
+      {
+        "id": "ch09_11",
+        "number": 11,
+        "type": "coding",
+        "question": "자신의 할일에 우선순위를 매겨서 힙에 저장했다가 우선순위 순으로 꺼내서 출력하는 프로그램을 작성하여 보자.",
+        "answer": null
+      },
+      {
+        "id": "ch09_12",
+        "number": 12,
+        "type": "short_answer",
+        "question": "아래의 이진트리는 최소 히프트리인가? 그 이유는?\n\n트리: 1(2(4(6,7),6(5,9)), 10(11,12))",
+        "answer": "최소 히프가 아님 - 노드 2의 오른쪽 자식(6)의 왼쪽 자식(5)이 부모(6)보다 작기 때문"
+      }
+    ]
+  },
+  {
+    "chapter": 10,
+    "title": "그래프 I",
+    "problems": [
+      {
+        "id": "ch10_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "인접 행렬 adj_mat[][]에서 어떤 정점 v의 진출 차수를 알고 싶으면 어떻게 하면 되는가?",
+        "choices": ["인접 행렬의 v번째 행의 값들을 전부 더한다.", "인접 행렬의 v번째 열의 값들을 전부 더한다.", "인접 행렬의 v번째 행의 값들을 전부 더해서 2로 나눈다.", "인접 행렬의 v번째 열의 값들을 전부 더해서 2로 나눈다."],
+        "answer": "인접 행렬의 v번째 행의 값들을 전부 더한다."
+      },
+      {
+        "id": "ch10_02",
+        "number": 2,
+        "type": "short_answer",
+        "question": "인접 행렬이 {0,1,0,0}, {1,0,1,1}, {0,1,0,0}, {0,1,0,0} 이라면 여기에 대응되는 인접 리스트를 그려라.",
+        "answer": null
+      },
+      {
+        "id": "ch10_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "정점의 개수를 n, 간선의 개수를 e라고 할 때, 인접 행렬에서 특정 정점의 차수를 계산하는 연산의 시간 복잡도는?",
+        "choices": ["O(log₂n)", "O(n)", "O(n+e)", "O(e)"],
+        "answer": "O(n)"
+      },
+      {
+        "id": "ch10_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "정점의 개수를 n, 간선의 개수가 e인 그래프를 인접 리스트로 표현하였을 경우, 인접 리스트 상의 총 노드의 개수는?",
+        "choices": ["e개", "2e개", "n개", "2n개"],
+        "answer": "2e개"
+      },
+      {
+        "id": "ch10_05",
+        "number": 5,
+        "type": "multiple_choice",
+        "question": "다음 중 큐를 사용하는 알고리즘은?",
+        "choices": ["깊이 우선 탐색", "너비 우선 탐색", "최단 거리 알고리즘", "최소 비용 신장 트리"],
+        "answer": "너비 우선 탐색"
+      },
+      {
+        "id": "ch10_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "다음 그래프를 인접 행렬과 인접 리스트로 표현해보자.\n\n정점: V0~V4, 간선: e0~e5",
+        "answer": null
+      },
+      {
+        "id": "ch10_07",
+        "number": 7,
+        "type": "short_answer",
+        "question": "다음의 방향 그래프에 대하여 다음 질문에 답하라.\n\n(1) 각 정점의 진입차수와 진출차수\n(2) 각 정점에 인접한 정점들의 집합\n(3) 인접 행렬 표현\n(4) 인접 리스트 표현\n(5) 모든 사이클과 그 길이",
+        "answer": null
+      },
+      {
+        "id": "ch10_08",
+        "number": 8,
+        "type": "short_answer",
+        "question": "정점 V={1,2,3,4,5}이고, 간선 E={<1,2>, <1,3>, <1,4>, <2,1>, <2,3>, <2,5>, <3,1>, <3,2>, <3,4>, <3,5>, <4,2>, <5,1>, <5,3>}으로 정의되는 방향 그래프를 그려라.",
+        "answer": null
+      },
+      {
+        "id": "ch10_09",
+        "number": 9,
+        "type": "coding",
+        "question": "크기가 n×n인 방향 그래프 a가 n×n 인접 배열을 사용하여 표현되어 있다.\n\n(1) 주어진 정점의 진출차수(out-degree)를 계산하는 함수를 작성하라. 이 함수의 시간 복잡도는?\n(2) 주어진 정점의 진입차수(in-degree)를 계산하는 함수를 작성하라. 이 함수의 시간 복잡도는?\n(3) 그래프 안에 있는 간선들의 개수를 계산하는 함수를 작성하라. 이 함수의 시간 복잡도는?",
+        "answer": null
+      },
+      {
+        "id": "ch10_10",
+        "number": 10,
+        "type": "coding",
+        "question": "만약 그래프가 인접 리스트로 표현되어 있다고 가정하고 앞의 문제를 다시 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch10_11",
+        "number": 11,
+        "type": "short_answer",
+        "question": "3개, 4개, 5개의 정점으로 된 무방향 완전 그래프를 그려보라. n개의 정점을 갖는 완전 그래프의 간선의 개수가 n(n-1)/2인지를 확인하라.",
+        "answer": null
+      },
+      {
+        "id": "ch10_12",
+        "number": 12,
+        "type": "coding",
+        "question": "하드 디스크에 파일로 그래프의 인접 행렬이 저장되어 있다고 가정하고 다음과 같은 함수를 작성하라.\n\nread_graph_mat(GraphType* g, char *name): 이름이 name인 그래프 파일을 읽어서 그래프 g의 인접행렬에 저장\nwrite_graph_mat(GraphType* g, char *name): 그래프 g의 인접 행렬을 이름이 name인 그래프 파일에 저장",
+        "answer": null
+      },
+      {
+        "id": "ch10_13",
+        "number": 13,
+        "type": "short_answer",
+        "question": "다음의 그래프에 대하여 답하라. 그래프는 인접행렬로 표현되어 있다고 가정하라.\n\n(1) 정점 3에서 출발하여 깊이 우선탐색했을 경우의 방문순서\n(2) 정점 6에서 출발하여 깊이 우선탐색했을 경우의 방문순서\n(3) 정점 3에서 출발하여 너비 우선탐색했을 경우의 방문순서\n(4) 정점 6에서 출발하여 너비 우선탐색했을 경우의 방문순서",
+        "answer": null
+      },
+      {
+        "id": "ch10_14",
+        "number": 14,
+        "type": "coding",
+        "question": "연결된 그래프 G의 간선들 중에서 그 간선을 제거하면 연결이 끊어지는 간선 (u, v)를 브리지(bridge)라고 한다. 주어진 그래프에서 브리지를 찾아내는 함수를 작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch10_15",
+        "number": 15,
+        "type": "short_answer",
+        "question": "다음의 인접 리스트는 어떤 그래프를 표현한 것이다. 이 그래프를 정점 A에서부터 깊이 우선 탐색할 때, 정점이 방문되는 순서로 옳은 것은?",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 11,
+    "title": "그래프 II",
+    "problems": [
+      {
+        "id": "ch11_01",
+        "number": 1,
+        "type": "short_answer",
+        "question": "다음의 그래프에서 가능한 신장 트리를 모두 나열하라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_02",
+        "number": 2,
+        "type": "short_answer",
+        "question": "아래의 네트워크에 대하여 Kruskal의 MST 알고리즘을 이용해서 최소비용 신장 트리가 구성되는 과정을 보여라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_03",
+        "number": 3,
+        "type": "short_answer",
+        "question": "앞의 네트워크에 대하여 Prim의 MST 알고리즘을 이용해서 최소비용 신장 트리가 구성되는 과정을 보여라(A번 정점으로 시작할 것).",
+        "answer": null
+      },
+      {
+        "id": "ch11_04",
+        "number": 4,
+        "type": "coding",
+        "question": "Prim의 함수에서 distance[]와 selected[]의 값을 출력하는 문장을 삽입하여 출력하여 보고 이들의 의미를 설명하라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_05",
+        "number": 5,
+        "type": "short_answer",
+        "question": "다음의 방향그래프에서 정점 0에서 다른 모든 정점까지의 최단경로의 길이를 구하여라. 각 단계에서의 distance 배열의 값과 선택된 정점들을 나타내어라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "5번의 그래프에 대하여 Floyd 알고리즘을 적용하고 배열 A의 내용을 매 단계마다 출력하라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_07",
+        "number": 7,
+        "type": "coding",
+        "question": "Dijkstra의 최단 경로 함수를 그래프가 인접 리스트로 표현되어 있다고 가정하고 재작성하라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_08",
+        "number": 8,
+        "type": "coding",
+        "question": "최단 경로 함수를 최단 경로의 길이 뿐만 아니라 그 경로까지 출력할 수 있도록 수정하라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_09",
+        "number": 9,
+        "type": "coding",
+        "question": "최단 경로 함수에서 distance[] 배열의 내용을 각 단계마다 출력하라. distance[] 배열의 내용의 역할을 설명하라.",
+        "answer": null
+      },
+      {
+        "id": "ch11_10",
+        "number": 10,
+        "type": "short_answer",
+        "question": "다음의 그래프에 대하여 위상 정렬을 적용하고 그 결과를 구하라.\n\n그래프: cs1→cs2→(cs3, cs4, cs5)→(cs6, cs7)→cs8",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 12,
+    "title": "정렬",
+    "problems": [
+      {
+        "id": "ch12_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "다음 초기 자료에 대하여 삽입 정렬(Insertion Sort)을 이용하여 오름차순 정렬한 경우 PASS 1의 결과는?(기사 시험 기출 문제)\n\n초기 자료 : 8, 3, 4, 9, 7",
+        "choices": ["3, 4, 8, 7, 9", "3, 4, 9, 7, 8", "7, 8, 3, 4, 9", "3, 8, 4, 9, 7"],
+        "answer": "3, 8, 4, 9, 7"
+      },
+      {
+        "id": "ch12_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "다음 자료를 버블 정렬을 이용하여 오름차순으로 정렬할 경우 PASS 1의 결과는?(기사 시험 기출 문제)\n\n9, 6, 7, 3, 5",
+        "choices": ["3, 5, 6, 7, 9", "6, 7, 3, 5, 9", "3, 5, 9, 6, 7", "6, 3, 5, 7, 9"],
+        "answer": "6, 7, 3, 5, 9"
+      },
+      {
+        "id": "ch12_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "다음 자료에 대하여 \"선택 정렬\"을 사용하여 오름차순으로 정렬할 경우 PASS 3의 결과는?(기사 시험 기출 문제)\n\n초기상태 : 8, 3, 4, 9, 7",
+        "choices": ["3, 4, 7, 9, 8", "3, 4, 8, 9, 7", "3, 8, 4, 9, 7", "3, 4, 7, 8, 9"],
+        "answer": "3, 4, 7, 8, 9"
+      },
+      {
+        "id": "ch12_04",
+        "number": 4,
+        "type": "multiple_choice",
+        "question": "삽입 정렬 알고리즘 코드에서 빈칸 ㉠과 ㉡에 들어갈 내용으로 옳은 것은?(공무원 시험 기출 문제)\n\nfor (j=i-1; ㉠; j--)\n    ㉡\nA[j+1]=key;",
+        "choices": ["j>0 && key > A[j] / A[j+1]=A[j];", "j>0 && key >= A[j] / A[j-1]=A[j];", "j>=0 && key < A[j] / A[j]=A[j+1];", "j>=0 && key < A[j] / A[j+1]=A[j];"],
+        "answer": "j>=0 && key < A[j] / A[j+1]=A[j];"
+      },
+      {
+        "id": "ch12_05",
+        "number": 5,
+        "type": "short_answer",
+        "question": "다음의 정렬기법을 이용하여 다음의 정수 배열을 오름차순으로 정렬하라. 각 단계에서의 배열의 내용을 나타내어라.\n\n7, 4, 9, 6, 3, 8, 7, 5\n\n(1) 선택 정렬\n(2) 삽입 정렬\n(3) 버블 정렬\n(4) 쉘 정렬",
+        "answer": null
+      },
+      {
+        "id": "ch12_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "다음의 정렬기법을 이용하여 다음의 정수 배열을 오름차순으로 정렬하라. 각 단계에서의 배열의 내용을 나타내어라.\n\n71, 49, 92, 55, 38, 82, 72, 53\n\n(1) 퀵 정렬\n(2) 합병 정렬\n(3) 히프 정렬",
+        "answer": null
+      },
+      {
+        "id": "ch12_07",
+        "number": 7,
+        "type": "short_answer",
+        "question": "다음과 같은 입력 배열을 퀵 정렬을 이용하여 정렬할 때, 피봇을 선택하는 방법을 다르게 하여 각 단계별 내용을 나타내어라.\n\n1, 2, 3, 4, 5, 6, 7, 8\n\n(1) 왼쪽 첫 번째 요소를 피봇으로 하는 방법\n(2) 왼쪽, 중간, 오른쪽 가운데 중간값(median of three) 방법",
+        "answer": null
+      },
+      {
+        "id": "ch12_08",
+        "number": 8,
+        "type": "coding",
+        "question": "퀵정렬에서 함수가 수행되면서 정렬의 매 패스마다 다음과 같은 형식으로 화면에 출력하도록 함수를 수정하여 보라.",
+        "answer": null
+      },
+      {
+        "id": "ch12_09",
+        "number": 9,
+        "type": "multiple_choice",
+        "question": "다음 중 안정적인 정렬 방법이 아닌 것은 무엇인가?",
+        "choices": ["삽입 정렬", "선택 정렬", "히프 정렬", "쉘 정렬"],
+        "answer": "히프 정렬"
+      },
+      {
+        "id": "ch12_10",
+        "number": 10,
+        "type": "multiple_choice",
+        "question": "다음 중 삽입 정렬이 가장 효율적으로 적용될 수 있는 때는?",
+        "choices": ["역순으로 정렬되어 있다.", "어느 정도 정렬이 되어 있다.", "레코드들의 크기가 클 때", "메모리 공간이 여유가 있을 때"],
+        "answer": "어느 정도 정렬이 되어 있다."
+      },
+      {
+        "id": "ch12_11",
+        "number": 11,
+        "type": "short_answer",
+        "question": "퀵정렬을 이용하여 다음의 정수 배열을 정렬하고자 한다.\n\n5, 7, 4, 9, 8, 5, 6, 3\n\n(a) 첫 번째 분할이 끝난 후의 배열의 내용을 나타내라.\n(b) 이 첫 번째 분할에서 몇 번의 비교연산이 수행되었는가?\n(c) 분할이 이루어지면 피봇값은, 피봇값보다 더 작은 서브배열과 피봇값보다 더 큰 서브배열, 2개의 서브배열의 중간에 위치하게 된다. 이 피봇값의 위치는 다음 단계가 진행되었을 때 변경이 되는가 아니면 되지 않는가? 그 이유는?\n(d) 첫 번째 분할 다음에 호출되는 순환호출들은 무엇인가?",
+        "answer": null
+      },
+      {
+        "id": "ch12_12",
+        "number": 12,
+        "type": "short_answer",
+        "question": "다음의 정수배열을 기수정렬을 이용하여 정렬하고자 한다 기수정렬의 각 단계를 보여라.\n\n123, 398, 210, 409, 528, 003, 513, 129, 220, 294",
+        "answer": null
+      },
+      {
+        "id": "ch12_13",
+        "number": 13,
+        "type": "coding",
+        "question": "삽입 정렬의 코드를 수정하여 숫자가 아니고 레코드를 삽입 정렬하는 프로그램을 구성해보자. 즉 정렬이 되는 단위가 숫자가 아니고 레코드이다.",
+        "answer": null
+      },
+      {
+        "id": "ch12_14",
+        "number": 14,
+        "type": "coding",
+        "question": "삽입 정렬의 코드를 수정하여 삽입 정렬의 각 단계를 출력하도록 하라.",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 13,
+    "title": "탐색",
+    "problems": [
+      {
+        "id": "ch13_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "이진 탐색 알고리즘의 특징이 아닌 것은?(기사 시험 기출 문제)",
+        "choices": ["탐색 효율이 좋고 탐색 시간이 적게 소요된다.", "검색할 데이터가 정렬되어 있어야 한다.", "피보나치 수열에 따라 다음에 비교할 대상을 선정하여 검색한다.", "비교를 거듭할 때마다 검색 대상이 되는 데이터의 수가 절반으로 줄어든다."],
+        "answer": "피보나치 수열에 따라 다음에 비교할 대상을 선정하여 검색한다."
+      },
+      {
+        "id": "ch13_02",
+        "number": 2,
+        "type": "short_answer",
+        "question": "키 값 28을 가지고 아래의 리스트를 탐색할 때 다음의 탐색 방법에 따른 탐색 과정을 그리고 탐색 시에 필요한 비교 연산 횟수를 구하여라.\n\n8, 11, 12, 15, 16, 19, 20, 23, 25, 28, 29, 31, 33, 35, 38, 40\n\n(1) 순차 탐색\n(2) 이진 탐색\n(3) 보간 탐색",
+        "answer": null
+      },
+      {
+        "id": "ch13_03",
+        "number": 3,
+        "type": "multiple_choice",
+        "question": "AVL 트리에서 회전은 언제 이루어지는가?",
+        "choices": ["삽입 전", "삽입 후", "탐색 중", "탐색 후"],
+        "answer": "삽입 후"
+      },
+      {
+        "id": "ch13_04",
+        "number": 4,
+        "type": "short_answer",
+        "question": "정렬된 100,000,000개의 원소가 있다. 이진 탐색 알고리즘을 사용했을 때 최악의 경우에 대하여 비교 횟수를 구하라.",
+        "answer": "약 27번 (log₂(100,000,000) ≈ 26.5)"
+      },
+      {
+        "id": "ch13_05",
+        "number": 5,
+        "type": "short_answer",
+        "question": "데이터 (60, 50, 20, 80, 90, 70, 55, 10, 40, 35)를 차례대로 삽입하면서 다음과 같은 균형트리를 구축하는 과정을 그림으로 설명하고 이들 3가지의 트리를 사용한 결과를 서로 비교하라.\n\n(a) 이진탐색트리\n(b) AVL 트리\n(c) 2-3 트리",
+        "answer": null
+      },
+      {
+        "id": "ch13_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "데이터 (10, 20, 30, 40, 50, 60, 70, 80, 90, 100)를 차례대로 삽입했을 때의 결과 트리를 그려라. 어떤 트리가 탐색을 가장 효율적으로 수행하는가?\n\n(a) 이진탐색트리\n(b) AVL 트리\n(c) 2-3 트리",
+        "answer": "AVL 트리와 2-3 트리가 항상 균형을 유지하므로 탐색이 가장 효율적임"
+      },
+      {
+        "id": "ch13_07",
+        "number": 7,
+        "type": "coding",
+        "question": "난수발생기를 이용하여 1부터 n까지의 정수를 생성하라. 이들 정수를 공백 상태의 AVL 트리에 차례대로 넣어서 생성되는 트리의 높이를 측정한다. 이 실험을 서로 다른 난수들의 집합에 대하여 되풀이하여 평균적인 높이를 계산하라. 이 값을 2[log₂(n+1)]와 비교하라. n=100; 500; 1000; 10,000; 50,000이라고 가정하라.",
+        "answer": null
+      },
+      {
+        "id": "ch13_08",
+        "number": 8,
+        "type": "coding",
+        "question": "이진 탐색 트리는 숫자들을 정렬시키는데 이용이 가능하다. 배열 a[]에 저장된 n개의 정수를 받아서 비어있는 이진탐색트리에 삽입하고 중위 순회 순서대로 다시 배열에 넣으면 정렬된 숫자를 얻을 수 있다. 이 정렬 방법을 구현하고 이 방법의 시간 복잡도를 삽입 정렬과 히프 정렬과 비교하라.",
+        "answer": null
+      },
+      {
+        "id": "ch13_09",
+        "number": 9,
+        "type": "short_answer",
+        "question": "탐색키가 정수가 아닌 알파벳으로 되어 있는 경우에 공백 트리에서 시작하여 다음과 같은 순서로 AVL 트리에 삽입될 때, 각 단계에서의 AVL 트리를 그려라. 또 각 단계에서 회전의 유형을 표시하라.\n\nDec, Jan, Apr, Mar, July, Aug, Oct, Feb, Sept, Nov, June, May",
+        "answer": null
+      }
+    ]
+  },
+  {
+    "chapter": 14,
+    "title": "해싱",
+    "problems": [
+      {
+        "id": "ch14_01",
+        "number": 1,
+        "type": "multiple_choice",
+        "question": "해싱에서 충돌은 언제 발생하는가?",
+        "choices": ["키가 같은 경우", "해시 함수의 값이 같은 경우", "같은 해시 함수를 사용하는 경우", "키의 길이가 같은 경우"],
+        "answer": "해시 함수의 값이 같은 경우"
+      },
+      {
+        "id": "ch14_02",
+        "number": 2,
+        "type": "multiple_choice",
+        "question": "크기가 13인 해쉬 테이블에서 입력 자료 27과 130은 어떤 인덱스로 매핑되는가? 해싱 함수는 h(key)=key%13이라고 하자.",
+        "choices": ["1, 10", "13, 0", "1, 0", "2, 3"],
+        "answer": "1, 0"
+      },
+      {
+        "id": "ch14_03",
+        "number": 3,
+        "type": "short_answer",
+        "question": "크기가 11인 해싱테이블을 가정하자. 해시함수로는 다음을 사용한다.\n\nh(k) = k mod 11\n\n입력 자료가 다음과 같은 순서로 입력된다고 하면 아래의 각 경우에 대하여 해시테이블의 내용을 그려라.\n\n12, 44, 13, 88, 23, 94, 11, 39, 20, 16, 5\n\n(1) 충돌을 선형조사법을 사용하여 처리한다.\n(2) 충돌을 이차조사법을 사용하여 처리한다.\n(3) 충돌을 이중해시법을 사용하여 처리한다. h'(k) = 7 - (k mod 7)\n(4) 충돌을 체인법을 사용하여 처리한다.",
+        "answer": null
+      },
+      {
+        "id": "ch14_04",
+        "number": 4,
+        "type": "coding",
+        "question": "\"cat\", \"dog\", \"lion\"과 같은 동물 이름을 해쉬 테이블에 저장하고자 한다. 어떤 해싱 함수를 사용하는 것이 좋을까? 동물의 이름을 사용자로부터 받아서 해쉬 테이블에 저장하는 프로그램을 직접 구현하여 보자.",
+        "answer": null
+      },
+      {
+        "id": "ch14_05",
+        "number": 5,
+        "type": "multiple_choice",
+        "question": "체이닝에서 새로운 키를 삽입하는 시간은 무엇에 비례하는가?",
+        "choices": ["적재율", "테이블에 있는 전체 항목의 개수", "버킷의 연결 리스트의 항목의 개수", "테이블의 크기"],
+        "answer": "적재율"
+      },
+      {
+        "id": "ch14_06",
+        "number": 6,
+        "type": "short_answer",
+        "question": "만약 1000개의 조그마한 영상을 해싱을 사용하여 사전 구조에 저장하고 싶다고 가정해보자. 각각의 영상은 20픽셀×20픽셀이다. 각 픽셀은 256색중의 하나이다. 즉 하나의 픽셀은 하나의 바이트로 표시된다. 여기에 사용될 수 있는 가능한 해시 함수를 생각해보라.",
+        "answer": null
+      },
+      {
+        "id": "ch14_07",
+        "number": 7,
+        "type": "short_answer",
+        "question": "이차 조사법(quadratic probing)이란 다음의 식에 의하여 인덱스를 조사하는 것이다.\n\n(k + i²)%M  for i≥0\n\n(1) 만일 해시 테이블의 크기가 17이고 해시 주소 k가 3이라면 다음에 조사되는 인덱스들을 처음부터 6개만 나열하라.\n(2) 다음에 조사할 인덱스를 다음의 순환식을 이용하여 보다 효율적으로 계산할 수 있음을 보여라.\n\nk_{i+1} = (k_i + 2i + 1) mod M\n\n(3) (2)의 결과를 이용하여 본문에 있는 소스처럼 다음과 같은 문장을 도출하여 보라.",
+        "answer": null
+      },
+      {
+        "id": "ch14_08",
+        "number": 8,
+        "type": "coding",
+        "question": "선형 조사법에서 키를 삭제하는 함수 hash_lp_delete(element item, element ht[])를 구현해보라. 삭제가 허용되는 경우에도 올바른 탐색을 할 수 있도록 hash_lp_search 알고리즘을 수정하라.",
+        "answer": null
+      },
+      {
+        "id": "ch14_09",
+        "number": 9,
+        "type": "coding",
+        "question": "체인법을 사용하는 해싱소스에도 삭제함수가 없다. 실제로는 키를 삭제할 수도 있어야 한다. hash_chain_delete(element item, ListNodePtr ht[])함수를 구현해보라.",
+        "answer": null
+      },
+      {
+        "id": "ch14_10",
+        "number": 10,
+        "type": "coding",
+        "question": "선형 조사법과 이중 조사법을 비교하는 실험을 해보자. 먼저 500개의 사용자 이름이 들어 있는 리스트를 만든다. 그리고 크기가 1000인 해시 테이블을 선형 조사법과 이중 조사법으로 구현하여 500개의 이름이 해시 테이블에 추가될 때 충돌이 얼마나 일어나는 지를 기록하라. 동일한 실험을 테이블 크기가 950, 900, 850, 800, 750, 700, 650, 600일 때 수행해본다.",
+        "answer": null
+      }
+    ]
+  }
+]

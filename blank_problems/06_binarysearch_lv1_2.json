@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 6,
+      "orderNo": 2,
+      "title": "이진 탐색 구현",
+      "description": "정렬된 배열에서 이진 탐색으로 target을 찾는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nstatic int binarySearch(int[] arr, int target) {\n    int lo = _____, hi = arr.length - 1;\n    while (lo _____ hi) {\n        int mid = (lo + hi) / _____;\n        if (arr[mid] == target) return mid;\n        else if (arr[mid] < target) lo = _____;\n        else hi = _____;\n    }\n    return -1;\n}\n```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "<=",
+              "answer": 2
+            },
+            {
+              "content": "2",
+              "answer": 3
+            },
+            {
+              "content": "mid + 1",
+              "answer": 4
+            },
+            {
+              "content": "mid - 1",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "mid",
+              "answer": null
+            },
+            {
+              "content": "mid + 2",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint lo = 0, hi = n - 1;\nwhile (lo _____ hi) {\n    int mid = (lo + hi) / _____;\n    if (arr[mid] == target) return mid;\n    else if (arr[mid] < target) lo = _____;\n    else hi = _____;\n}\nreturn -1;\n```",
+          "blanks": [
+            {
+              "content": "<=",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "mid + 1",
+              "answer": 3
+            },
+            {
+              "content": "mid - 1",
+              "answer": 4
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "mid",
+              "answer": null
+            },
+            {
+              "content": "lo + 1",
+              "answer": null
+            },
+            {
+              "content": "hi - 1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\ndef binary_search(arr, target):\n    lo, hi = _____, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // _____\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = _____\n        else:\n            hi = _____\n    return -1\n```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "mid + 1",
+              "answer": 3
+            },
+            {
+              "content": "mid - 1",
+              "answer": 4
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "mid",
+              "answer": null
+            },
+            {
+              "content": "lo + 1",
+              "answer": null
+            },
+            {
+              "content": "hi - 1",
+              "answer": null
+            },
+            {
+              "content": "mid + 2",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nfunction binarySearch(arr, target) {\n    let lo = 0, hi = arr.length - _____;\n    while (lo _____ hi) {\n        let mid = Math.floor((lo + hi) / _____);\n        if (arr[mid] === target) return mid;\n        else if (arr[mid] < target) lo = _____;\n        else hi = mid - 1;\n    }\n    return -1;\n}\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "<=",
+              "answer": 2
+            },
+            {
+              "content": "2",
+              "answer": 3
+            },
+            {
+              "content": "mid + 1",
+              "answer": 4
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "mid",
+              "answer": null
+            },
+            {
+              "content": "mid - 1",
+              "answer": null
+            },
+            {
+              "content": "hi",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

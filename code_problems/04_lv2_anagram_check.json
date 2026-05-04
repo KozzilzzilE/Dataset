@@ -1,0 +1,39 @@
+{
+  "topicId": 4,
+  "title": "애너그램 판별",
+  "difficulty": "medium",
+  "difficultyOrder": 2,
+  "description": "두 문자열이 서로 애너그램(anagram)인지 판별하세요.\n\n애너그램이란 두 문자열에 사용된 문자의 종류와 개수가 모두 같은 경우입니다.\n대소문자를 구분하며, 공백은 포함되지 않습니다.\n\n첫 번째 줄에 문자열 A, 두 번째 줄에 문자열 B가 주어집니다.\n애너그램이면 YES, 아니면 NO를 출력합니다.",
+  "constraints": "1 ≤ |A|, |B| ≤ 10^5\n알파벳 대소문자로만 구성됩니다.",
+  "lineSolution": "각 문자의 빈도를 HashMap으로 세어 두 맵이 같으면 애너그램입니다.",
+  "solutionText": "### 💡 핵심 아이디어\n\nHashMap으로 문자열 A의 문자 빈도를 증가시키고, 문자열 B의 문자 빈도를 감소시킵니다.\n모든 값이 0이면 애너그램입니다.\n\n---\n\n### 🔍 알고리즘\n\n1. 길이가 다르면 NO 출력 후 종료합니다.\n2. A의 각 문자에 대해 map[c]++를 합니다.\n3. B의 각 문자에 대해 map[c]--를 합니다.\n4. 모든 value가 0이면 YES, 아니면 NO를 출력합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 두 문자열 각 1회 순회 |\n| 공간 | **O(1)** | 알파벳 52자 고정 |",
+  "testCases": [
+    {
+      "input": "listen\nsilent",
+      "output": "YES"
+    },
+    {
+      "input": "hello\nworld",
+      "output": "NO"
+    },
+    {
+      "input": "abc\ncba",
+      "output": "YES"
+    },
+    {
+      "input": "aab\naba",
+      "output": "YES"
+    },
+    {
+      "input": "abc\nabcd",
+      "output": "NO"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": 1,
+      "timeLimitMs": 1000,
+      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String a = br.readLine().trim();\n        String b = br.readLine().trim();\n\n        if (a.length() != b.length()) {\n            System.out.println(\"NO\");\n            return;\n        }\n\n        Map<Character, Integer> map = new HashMap<>();\n        for (char c : a.toCharArray()) map.merge(c, 1, Integer::sum);\n        for (char c : b.toCharArray()) map.merge(c, -1, Integer::sum);\n\n        for (int v : map.values()) {\n            if (v != 0) {\n                System.out.println(\"NO\");\n                return;\n            }\n        }\n        System.out.println(\"YES\");\n    }\n}"
+    }
+  ]
+}

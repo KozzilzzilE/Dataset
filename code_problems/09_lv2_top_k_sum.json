@@ -1,0 +1,39 @@
+{
+  "topicId": 9,
+  "title": "상위 K개 합",
+  "difficulty": "medium",
+  "difficultyOrder": 2,
+  "description": "n개의 정수 중 가장 큰 k개의 합을 출력하세요.\n\n첫 번째 줄에 n과 k, 두 번째 줄에 n개의 정수가 주어집니다.",
+  "constraints": "1 ≤ k ≤ n ≤ 10^5\n-10^9 ≤ arr[i] ≤ 10^9",
+  "lineSolution": "크기 k짜리 최소 힙을 유지하며 배열을 순회한 뒤, 힙에 남은 k개의 합을 구합니다.",
+  "solutionText": "### 💡 핵심 아이디어\n\n크기 k의 최소 힙을 유지합니다.\n- 힙 크기 < k이면 무조건 삽입\n- 힙 top보다 크면 top 제거 후 삽입\n\n힙에 남은 k개가 상위 k개입니다.\n\n---\n\n### 🔍 알고리즘\n\n1. 각 원소를 순회하며 최소 힙에 추가합니다.\n2. 힙 크기가 k를 초과하면 힙 top(최솟값)을 제거합니다.\n3. 힙의 모든 원소를 합산합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n log k)** | 힙 연산 |\n| 공간 | **O(k)** | 힙 크기 |",
+  "testCases": [
+    {
+      "input": "5 3\n3 1 4 1 5",
+      "output": "12"
+    },
+    {
+      "input": "4 2\n10 20 30 40",
+      "output": "70"
+    },
+    {
+      "input": "5 5\n1 2 3 4 5",
+      "output": "15"
+    },
+    {
+      "input": "3 1\n5 3 7",
+      "output": "7"
+    },
+    {
+      "input": "6 3\n-1 -2 3 4 -5 6",
+      "output": "13"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": 1,
+      "timeLimitMs": 2000,
+      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int k = Integer.parseInt(st.nextToken());\n\n        st = new StringTokenizer(br.readLine());\n        PriorityQueue<Long> pq = new PriorityQueue<>();\n        for (int i = 0; i < n; i++) {\n            long x = Long.parseLong(st.nextToken());\n            pq.offer(x);\n            if (pq.size() > k) pq.poll();\n        }\n\n        long sum = 0;\n        while (!pq.isEmpty()) sum += pq.poll();\n        System.out.println(sum);\n    }\n}"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "topicId": 5,
+  "title": "선택 정렬 교환 횟수",
+  "difficulty": "easy",
+  "difficultyOrder": 1,
+  "description": "정수 배열이 주어졌을 때, 선택 정렬(Selection Sort)로 오름차순 정렬할 때 발생하는 교환(swap) 횟수를 출력하세요.\n\n선택 정렬은 각 패스에서 남은 구간의 최솟값을 찾아 현재 위치와 교환합니다.\n최솟값이 이미 현재 위치에 있으면 교환하지 않습니다.",
+  "constraints": "1 ≤ n ≤ 10^3\n-10^9 ≤ arr[i] ≤ 10^9",
+  "lineSolution": "각 패스에서 최솟값 위치가 현재 인덱스와 다를 때만 swap 카운트를 증가시킵니다.",
+  "solutionText": "### 💡 핵심 아이디어\n\n선택 정렬은 패스마다 미정렬 구간에서 최솟값을 찾아 맨 앞과 교환합니다.\n최솟값이 이미 제 위치에 있으면 교환 불필요 → 실제 swap 횟수를 정확히 셉니다.\n\n---\n\n### 🔍 알고리즘\n\n1. i = 0부터 n-2까지 순회합니다.\n2. arr[i..n-1] 구간에서 최솟값의 인덱스 `minIdx`를 찾습니다.\n3. `minIdx != i`이면 swap하고 카운트를 증가합니다.\n4. 카운트를 출력합니다.\n\n---\n\n### ⚠️ 주의사항\n\n- 선택 정렬의 swap 횟수는 최대 n-1번입니다 (매 패스마다 최대 1번).\n- 이미 정렬된 배열의 경우 swap이 0번 발생합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n²)** | 이중 반복문 |\n| 공간 | **O(1)** | 추가 공간 불필요 |",
+  "testCases": [
+    {
+      "input": "5\n8 3 4 9 7",
+      "output": "4"
+    },
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "0"
+    },
+    {
+      "input": "5\n5 4 3 2 1",
+      "output": "2"
+    },
+    {
+      "input": "4\n3 1 4 2",
+      "output": "3"
+    },
+    {
+      "input": "1\n7",
+      "output": "0"
+    },
+    {
+      "input": "3\n2 1 3",
+      "output": "1"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": 1,
+      "timeLimitMs": 2000,
+      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        int swaps = 0;\n        for (int i = 0; i < n - 1; i++) {\n            int minIdx = i;\n            for (int j = i + 1; j < n; j++) {\n                if (arr[j] < arr[minIdx]) minIdx = j;\n            }\n            if (minIdx != i) {\n                int tmp = arr[i];\n                arr[i] = arr[minIdx];\n                arr[minIdx] = tmp;\n                swaps++;\n            }\n        }\n        System.out.println(swaps);\n    }\n}"
+    }
+  ]
+}

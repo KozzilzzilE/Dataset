@@ -1,0 +1,39 @@
+{
+  "topicId": 1,
+  "title": "배열 특정 위치 삭제",
+  "difficulty": "easy",
+  "difficultyOrder": 1,
+  "description": "크기 n인 정수 배열과 삭제 위치 loc이 주어졌을 때, loc 위치의 원소를 삭제한 결과를 출력하세요.\n\nloc은 0-based 인덱스이며 삭제 후 뒤쪽 원소들은 한 칸씩 앞으로 이동합니다.\n\n첫 번째 줄에 n과 loc, 두 번째 줄에 n개의 정수가 주어집니다.",
+  "constraints": "2 ≤ n ≤ 10^3\n0 ≤ loc ≤ n-1\n-10^9 ≤ arr[i] ≤ 10^9",
+  "lineSolution": "loc 이후 원소를 앞으로 한 칸씩 이동하면 삭제가 완료됩니다.",
+  "solutionText": "### 💡 핵심 아이디어\n\n삽입과 반대로, loc 이후 원소를 **앞에서부터** 한 칸씩 앞으로 당기면 됩니다.\n\n---\n\n### 🔍 알고리즘\n\n1. i = loc부터 n-2까지 `arr[i] = arr[i+1]`을 수행합니다.\n2. n-1개 원소를 출력합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 최악의 경우 n-1번 이동 |\n| 공간 | **O(1)** | 제자리 연산 |",
+  "testCases": [
+    {
+      "input": "5 2\n10 20 30 40 50",
+      "output": "10 20 40 50"
+    },
+    {
+      "input": "5 0\n1 2 3 4 5",
+      "output": "2 3 4 5"
+    },
+    {
+      "input": "5 4\n1 2 3 4 5",
+      "output": "1 2 3 4"
+    },
+    {
+      "input": "2 0\n7 8",
+      "output": "8"
+    },
+    {
+      "input": "4 1\n10 99 20 30",
+      "output": "10 20 30"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": 1,
+      "timeLimitMs": 1000,
+      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int loc = Integer.parseInt(st.nextToken());\n\n        int[] arr = new int[n];\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        for (int i = loc; i < n - 1; i++) arr[i] = arr[i + 1];\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n - 1; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(arr[i]);\n        }\n        System.out.println(sb.toString());\n    }\n}"
+    }
+  ]
+}

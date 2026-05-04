@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 1,
+      "orderNo": 2,
+      "title": "배열 최댓값 탐색",
+      "description": "정수 배열에서 최댓값을 찾는 코드의 빈칸 5개를 채우세요.\n배열을 순회하며 현재 최댓값보다 큰 원소를 만나면 갱신합니다.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] arr = {3, 7, 1, 9, 4};\n        int max = _____;\n        for (int i = 0; i < _____; i++) {\n            if (arr[i] _____ max) {\n                max = _____;\n            }\n        }\n        System.out.println(\"최댓값: \" + _____);\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "arr[0]",
+              "answer": 1
+            },
+            {
+              "content": "arr.length",
+              "answer": 2
+            },
+            {
+              "content": ">",
+              "answer": 3
+            },
+            {
+              "content": "arr[i]",
+              "answer": 4
+            },
+            {
+              "content": "max",
+              "answer": 5
+            },
+            {
+              "content": "Integer.MIN_VALUE",
+              "answer": null
+            },
+            {
+              "content": "arr.size()",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "sum",
+              "answer": null
+            },
+            {
+              "content": "arr[0]",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\n#include <climits>\nusing namespace std;\nint arr[] = {3, 7, 1, 9, 4};\nint n = _____;\nint max_val = _____;\nfor (int i = 0; i < n; i++) {\n    if (arr[i] _____ max_val)\n        max_val = _____;\n}\ncout << \"최댓값: \" << _____;\n```",
+          "blanks": [
+            {
+              "content": "5",
+              "answer": 1
+            },
+            {
+              "content": "INT_MIN",
+              "answer": 2
+            },
+            {
+              "content": ">",
+              "answer": 3
+            },
+            {
+              "content": "arr[i]",
+              "answer": 4
+            },
+            {
+              "content": "max_val",
+              "answer": 5
+            },
+            {
+              "content": "arr[0]",
+              "answer": null
+            },
+            {
+              "content": "INT_MAX",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "sum",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\narr = [3, 7, 1, 9, 4]\nmax_val = _____\nfor x in arr:\n    if x _____ max_val:\n        max_val = _____\nprint(\"최댓값:\", _____)\n```",
+          "blanks": [
+            {
+              "content": "arr[0]",
+              "answer": 1
+            },
+            {
+              "content": ">",
+              "answer": 2
+            },
+            {
+              "content": "x",
+              "answer": 3
+            },
+            {
+              "content": "max_val",
+              "answer": 4
+            },
+            {
+              "content": "float('-inf')",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "arr[0]",
+              "answer": null
+            },
+            {
+              "content": "sum",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "len(arr)",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nconst arr = [3, 7, 1, 9, 4];\nlet max = _____;\nfor (let i = 0; i < _____; i++) {\n    if (arr[i] _____ max) {\n        max = _____;\n    }\n}\nconsole.log(\"최댓값:\", _____);\n```",
+          "blanks": [
+            {
+              "content": "arr[0]",
+              "answer": 1
+            },
+            {
+              "content": "arr.length",
+              "answer": 2
+            },
+            {
+              "content": ">",
+              "answer": 3
+            },
+            {
+              "content": "arr[i]",
+              "answer": 4
+            },
+            {
+              "content": "max",
+              "answer": 5
+            },
+            {
+              "content": "-Infinity",
+              "answer": null
+            },
+            {
+              "content": "arr.size",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "sum",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

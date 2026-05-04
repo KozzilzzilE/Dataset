@@ -1,0 +1,39 @@
+{
+  "topicId": 3,
+  "title": "큐 연산 시뮬레이션",
+  "difficulty": "easy",
+  "difficultyOrder": 1,
+  "description": "빈 큐에 n개의 연산을 순서대로 수행한 결과를 출력하세요.\n\n연산은 다음과 같습니다:\n- `push x`: x를 큐에 넣습니다.\n- `pop`: 큐의 앞 원소를 제거하고 출력합니다. 큐가 비어있으면 -1을 출력합니다.\n- `front`: 큐의 앞 원소를 출력합니다. 비어있으면 -1을 출력합니다.\n- `size`: 큐의 크기를 출력합니다.\n- `empty`: 큐가 비어있으면 1, 아니면 0을 출력합니다.\n\n첫 번째 줄에 n, 이후 n개의 줄에 연산이 주어집니다.",
+  "constraints": "1 ≤ n ≤ 10^4\n-10^9 ≤ x ≤ 10^9",
+  "lineSolution": "LinkedList(또는 ArrayDeque) 기반 큐를 사용해 각 연산을 처리합니다.",
+  "solutionText": "### 💡 핵심 아이디어\n\nJava의 LinkedList나 ArrayDeque를 이용해 큐 연산을 직접 구현합니다.\n각 명령어를 파싱하여 해당 연산을 수행합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 각 연산 O(1) |\n| 공간 | **O(n)** | 큐 크기 |",
+  "testCases": [
+    {
+      "input": "8\npush 1\npush 2\nfront\nsize\npop\npop\npop\nempty",
+      "output": "1\n2\n1\n2\n-1\n1"
+    },
+    {
+      "input": "4\npush 10\npop\nempty\nsize",
+      "output": "10\n1\n0"
+    },
+    {
+      "input": "3\npop\nfront\nsize",
+      "output": "-1\n-1\n0"
+    },
+    {
+      "input": "5\npush 5\npush 3\npush 1\npop\nfront",
+      "output": "5\n3"
+    },
+    {
+      "input": "6\npush 7\npush 8\nsize\npop\nsize\nempty",
+      "output": "2\n7\n1\n0"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": 1,
+      "timeLimitMs": 1000,
+      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        Deque<Integer> queue = new ArrayDeque<>();\n        StringBuilder sb = new StringBuilder();\n\n        for (int i = 0; i < n; i++) {\n            String line = br.readLine().trim();\n            if (line.startsWith(\"push\")) {\n                queue.offerLast(Integer.parseInt(line.split(\" \")[1]));\n            } else if (line.equals(\"pop\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.pollFirst()).append('\\n');\n            } else if (line.equals(\"front\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.peekFirst()).append('\\n');\n            } else if (line.equals(\"size\")) {\n                sb.append(queue.size()).append('\\n');\n            } else if (line.equals(\"empty\")) {\n                sb.append(queue.isEmpty() ? 1 : 0).append('\\n');\n            }\n        }\n        System.out.print(sb.toString().trim());\n    }\n}"
+    }
+  ]
+}
