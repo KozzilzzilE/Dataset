@@ -38,6 +38,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n\n    public static boolean isValid(String s) {\n        Stack<Character> stack = new Stack<>();\n\n        for (char c : s.toCharArray()) {\n            if (c == '(' || c == '{' || c == '[')\n                stack.push(c);\n            else {\n                if (stack.isEmpty()) return false;\n\n                char top = stack.pop();\n\n                if (c == ')' && top != '(') return false;\n                if (c == '}' && top != '{') return false;\n                if (c == ']' && top != '[') return false;\n            }\n        }\n\n        return stack.isEmpty();\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine();\n        if (s == null) s = \"\";\n\n        System.out.println(isValid(s));\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    string s; getline(cin,s);\n    stack<char> st;\n    for(char c:s){\n        if(c=='('||c=='{'||c=='[') st.push(c);\n        else{\n            if(st.empty()){cout<<\"false\\n\";return 0;}\n            char t=st.top();st.pop();\n            if(c==')'&&t!='('){cout<<\"false\\n\";return 0;}\n            if(c=='}'&&t!='{'){cout<<\"false\\n\";return 0;}\n            if(c==']'&&t!='['){cout<<\"false\\n\";return 0;}\n        }\n    }\n    cout<<(st.empty()?\"true\":\"false\")<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ns=sys.stdin.readline().rstrip('\\n')\nstack=[]\npairs={')':'(','}':'{',']':'['}\nfor c in s:\n    if c in '({[': stack.append(c)\n    elif c in ')}]':\n        if not stack or stack[-1]!=pairs[c]:\n            print('false'); exit()\n        stack.pop()\nprint('true' if not stack else 'false')"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const s=require('fs').readFileSync('/dev/stdin','utf8').replace(/\\n$/,'');\nconst stack=[],p={')':'(','}':('{',']':'['};\nfor(const c of s){\n    if('({['.includes(c)) stack.push(c);\n    else if(')}]'.includes(c)){\n        if(!stack.length||stack[stack.length-1]!==p[c]){console.log('false');process.exit();}\n        stack.pop();\n    }\n}\nconsole.log(stack.length===0?'true':'false');"
     }
   ]
 }

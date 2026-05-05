@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] arr;\n    static int n;\n    static StringBuilder sb = new StringBuilder();\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        n = Integer.parseInt(br.readLine().trim());\n        arr = new int[n + 1];\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        for (int i = 1; i <= n; i++) arr[i] = Integer.parseInt(st.nextToken());\n        inorder(1);\n        System.out.println(sb.toString().trim());\n    }\n\n    static void inorder(int i) {\n        if (i > n || arr[i] == 0) return;\n        inorder(2 * i);\n        if (sb.length() > 0) sb.append(' ');\n        sb.append(arr[i]);\n        inorder(2 * i + 1);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint arr[100001],n;\nstring res=\"\";\nvoid inorder(int i){\n    if(i>n||arr[i]==0) return;\n    inorder(2*i);\n    if(!res.empty()) res+=\" \";\n    res+=to_string(arr[i]);\n    inorder(2*i+1);\n}\nint main(){\n    cin>>n;\n    for(int i=1;i<=n;i++) cin>>arr[i];\n    inorder(1);\n    cout<<res<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn=int(input())\narr=[0]+list(map(int,input().split()))\nres=[]\ndef inorder(i):\n    if i>n or arr[i]==0: return\n    inorder(2*i); res.append(arr[i]); inorder(2*i+1)\ninorder(1)\nprint(*res)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=[0,...lines[1].split(' ').map(Number)];\nconst res=[];\nfunction inorder(i){if(i>n||arr[i]===0)return;inorder(2*i);res.push(arr[i]);inorder(2*i+1);}\ninorder(1);\nconsole.log(res.join(' '));"
     }
   ]
 }

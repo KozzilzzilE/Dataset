@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        Deque<Integer> stack = new ArrayDeque<>();\n        while (n > 0) {\n            stack.push(n % 2);\n            n /= 2;\n        }\n\n        StringBuilder sb = new StringBuilder();\n        while (!stack.isEmpty()) sb.append(stack.pop());\n        System.out.println(sb.toString());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n==0){cout<<0;return 0;}\n    string res=\"\";\n    while(n>0){res=(char)('0'+n%2)+res;n/=2;}\n    cout<<res<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nn=int(sys.stdin.readline())\nprint(bin(n)[2:])"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\nconsole.log(n.toString(2));"
     }
   ]
 }

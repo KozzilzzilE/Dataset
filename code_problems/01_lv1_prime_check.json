@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\n\npublic class Main {\n\n    public static boolean isPrime(int n) {\n        if (n < 2) return false;\n        for (int i = 2; (long) i * i <= n; i++)\n            if (n % i == 0) return false;\n        return true;\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        System.out.println(isPrime(n));\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n<2){cout<<\"false\\n\";return 0;}\n    for(int i=2;(long long)i*i<=n;i++)\n        if(n%i==0){cout<<\"false\\n\";return 0;}\n    cout<<\"true\\n\";\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nn=int(sys.stdin.readline())\nif n<2:print('false')\nelse:\n    ok=True\n    i=2\n    while i*i<=n:\n        if n%i==0:ok=False;break\n        i+=1\n    print('true' if ok else 'false')"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\nfunction isPrime(n){\n    if(n<2)return false;\n    for(let i=2;i*i<=n;i++) if(n%i===0)return false;\n    return true;\n}\nconsole.log(String(isPrime(n)));"
     }
   ]
 }

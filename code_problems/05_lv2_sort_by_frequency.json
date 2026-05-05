@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        Integer[] arr = new Integer[n];\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        Map<Integer, Integer> freq = new HashMap<>();\n        for (int x : arr) freq.merge(x, 1, Integer::sum);\n\n        Arrays.sort(arr, (a, b) -> {\n            int fa = freq.get(a), fb = freq.get(b);\n            if (fa != fb) return fb - fa;\n            return a - b;\n        });\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(arr[i]);\n        }\n        System.out.println(sb.toString());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    map<int,int> freq;\n    for(int x:arr) freq[x]++;\n    sort(arr.begin(),arr.end(),[&](int a,int b){\n        if(freq[a]!=freq[b]) return freq[a]>freq[b];\n        return a<b;\n    });\n    for(int i=0;i<n;i++){if(i) cout<<' ';cout<<arr[i];}\n    cout<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nfrom collections import Counter\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\ncnt=Counter(arr)\narr.sort(key=lambda x:(-cnt[x],x))\nprint(*arr)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=lines[1].split(' ').map(Number);\nconst freq={};\nfor(const v of arr) freq[v]=(freq[v]||0)+1;\narr.sort((a,b)=>freq[b]!==freq[a]?freq[b]-freq[a]:a-b);\nconsole.log(arr.join(' '));"
     }
   ]
 }

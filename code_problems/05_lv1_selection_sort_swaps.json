@@ -38,6 +38,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        int swaps = 0;\n        for (int i = 0; i < n - 1; i++) {\n            int minIdx = i;\n            for (int j = i + 1; j < n; j++) {\n                if (arr[j] < arr[minIdx]) minIdx = j;\n            }\n            if (minIdx != i) {\n                int tmp = arr[i];\n                arr[i] = arr[minIdx];\n                arr[minIdx] = tmp;\n                swaps++;\n            }\n        }\n        System.out.println(swaps);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    int swaps=0;\n    for(int i=0;i<n-1;i++){\n        int mi=i;\n        for(int j=i+1;j<n;j++) if(arr[j]<arr[mi]) mi=j;\n        if(mi!=i){swap(arr[i],arr[mi]);swaps++;}\n    }\n    cout<<swaps<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\nswaps=0\nfor i in range(n-1):\n    mi=i\n    for j in range(i+1,n):\n        if arr[j]<arr[mi]: mi=j\n    if mi!=i: arr[i],arr[mi]=arr[mi],arr[i]; swaps+=1\nprint(swaps)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=lines[1].split(' ').map(Number);\nlet swaps=0;\nfor(let i=0;i<n-1;i++){\n    let mi=i;\n    for(let j=i+1;j<n;j++) if(arr[j]<arr[mi]) mi=j;\n    if(mi!==i){[arr[i],arr[mi]]=[arr[mi],arr[i]];swaps++;}\n}\nconsole.log(swaps);"
     }
   ]
 }

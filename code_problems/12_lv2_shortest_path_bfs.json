@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        st = new StringTokenizer(br.readLine());\n        int src = Integer.parseInt(st.nextToken());\n        int dst = Integer.parseInt(st.nextToken());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            adj.get(v).add(u);\n        }\n\n        int[] dist = new int[n + 1];\n        Arrays.fill(dist, -1);\n        dist[src] = 0;\n        Queue<Integer> queue = new LinkedList<>();\n        queue.offer(src);\n\n        while (!queue.isEmpty()) {\n            int v = queue.poll();\n            for (int next : adj.get(v)) {\n                if (dist[next] == -1) {\n                    dist[next] = dist[v] + 1;\n                    queue.offer(next);\n                }\n            }\n        }\n        System.out.println(dist[dst]);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m,src,dst; cin>>n>>m>>src>>dst;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    vector<int> dist(n+1,-1); dist[src]=0;\n    queue<int> q; q.push(src);\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        for(int u:adj[v]) if(dist[u]==-1){dist[u]=dist[v]+1;q.push(u);}\n    }\n    cout<<dist[dst]<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nsrc,dst=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\ndist=[-1]*(n+1); dist[src]=0\nq=deque([src])\nwhile q:\n    v=q.popleft()\n    for u in adj[v]:\n        if dist[u]==-1: dist[u]=dist[v]+1; q.append(u)\nprint(dist[dst])"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst [src,dst]=lines[1].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nconst dist=new Array(n+1).fill(-1); dist[src]=0;\nconst q=[src]; let head=0;\nwhile(head<q.length){const v=q[head++];for(const u of adj[v])if(dist[u]===-1){dist[u]=dist[v]+1;q.push(u);}}\nconsole.log(dist[dst]);"
     }
   ]
 }

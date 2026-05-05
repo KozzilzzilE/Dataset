@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] arr;\n    static int n;\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        n = Integer.parseInt(st.nextToken());\n        int target = Integer.parseInt(st.nextToken());\n\n        arr = new int[n];\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        int lb = lowerBound(target);\n        if (lb == n || arr[lb] != target) {\n            System.out.println(\"-1 -1\");\n            return;\n        }\n        int ub = upperBound(target);\n        System.out.println((lb + 1) + \" \" + ub);\n    }\n\n    static int lowerBound(int target) {\n        int lo = 0, hi = n;\n        while (lo < hi) {\n            int mid = (lo + hi) / 2;\n            if (arr[mid] < target) lo = mid + 1;\n            else hi = mid;\n        }\n        return lo;\n    }\n\n    static int upperBound(int target) {\n        int lo = 0, hi = n;\n        while (lo < hi) {\n            int mid = (lo + hi) / 2;\n            if (arr[mid] <= target) lo = mid + 1;\n            else hi = mid;\n        }\n        return lo;\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=lower_bound(arr.begin(),arr.end(),target)-arr.begin();\n    if(lo==n||arr[lo]!=target){cout<<\"-1 -1\\n\";return 0;}\n    int hi=upper_bound(arr.begin(),arr.end(),target)-arr.begin();\n    cout<<lo+1<<' '<<hi<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys,bisect\ninput=sys.stdin.readline\nn,target=map(int,input().split())\narr=list(map(int,input().split()))\nlb=bisect.bisect_left(arr,target)\nif lb==n or arr[lb]!=target: print('-1 -1')\nelse: print(lb+1, bisect.bisect_right(arr,target))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nfunction lb(t){let lo=0,hi=n;while(lo<hi){const m=(lo+hi)>>1;if(arr[m]<t)lo=m+1;else hi=m;}return lo;}\nfunction ub(t){let lo=0,hi=n;while(lo<hi){const m=(lo+hi)>>1;if(arr[m]<=t)lo=m+1;else hi=m;}return lo;}\nconst l=lb(target);\nif(l===n||arr[l]!==target) console.log('-1 -1');\nelse console.log((l+1)+' '+ub(target));"
     }
   ]
 }

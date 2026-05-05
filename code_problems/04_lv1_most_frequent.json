@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        StringTokenizer st = new StringTokenizer(br.readLine());\n\n        Map<Integer, Integer> freq = new HashMap<>();\n        for (int i = 0; i < n; i++) {\n            int v = Integer.parseInt(st.nextToken());\n            freq.put(v, freq.getOrDefault(v, 0) + 1);\n        }\n\n        int maxFreq = Collections.max(freq.values());\n        int result = Integer.MAX_VALUE;\n        for (Map.Entry<Integer, Integer> e : freq.entrySet()) {\n            if (e.getValue() == maxFreq) result = Math.min(result, e.getKey());\n        }\n        System.out.println(result);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    map<int,int> freq;\n    for(int i=0;i<n;i++){int v;cin>>v;freq[v]++;}\n    int mx=0; for(auto&p:freq) mx=max(mx,p.second);\n    int res=INT_MAX;\n    for(auto&p:freq) if(p.second==mx) res=min(res,p.first);\n    cout<<res<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nfrom collections import Counter\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\ncnt=Counter(arr)\nmx=max(cnt.values())\nprint(min(k for k,v in cnt.items() if v==mx))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=lines[1].split(' ').map(Number);\nconst freq={};\nfor(const v of arr) freq[v]=(freq[v]||0)+1;\nconst mx=Math.max(...Object.values(freq));\nconst res=Object.keys(freq).filter(k=>freq[k]===mx).map(Number).sort((a,b)=>a-b)[0];\nconsole.log(res);"
     }
   ]
 }

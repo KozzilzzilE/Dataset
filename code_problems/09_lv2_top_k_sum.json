@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int k = Integer.parseInt(st.nextToken());\n\n        st = new StringTokenizer(br.readLine());\n        PriorityQueue<Long> pq = new PriorityQueue<>();\n        for (int i = 0; i < n; i++) {\n            long x = Long.parseLong(st.nextToken());\n            pq.offer(x);\n            if (pq.size() > k) pq.poll();\n        }\n\n        long sum = 0;\n        while (!pq.isEmpty()) sum += pq.poll();\n        System.out.println(sum);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    priority_queue<long long,vector<long long>,greater<long long>> pq;\n    for(int i=0;i<n;i++){\n        long long x; cin>>x; pq.push(x);\n        if((int)pq.size()>k) pq.pop();\n    }\n    long long sum=0;\n    while(!pq.empty()){sum+=pq.top();pq.pop();}\n    cout<<sum<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys,heapq\ninput=sys.stdin.readline\nn,k=map(int,input().split())\narr=list(map(int,input().split()))\nh=[]\nfor x in arr:\n    heapq.heappush(h,x)\n    if len(h)>k: heapq.heappop(h)\nprint(sum(h))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,k]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number).sort((a,b)=>b-a).slice(0,k);\nconsole.log(arr.reduce((s,v)=>s+v,0));"
     }
   ]
 }

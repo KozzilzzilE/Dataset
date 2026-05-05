@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n\n        int cur = Integer.MIN_VALUE, maxSum = Integer.MIN_VALUE;\n        for (int i = 0; i < n; i++) {\n            int v = Integer.parseInt(st.nextToken());\n            cur = (cur == Integer.MIN_VALUE) ? v : Math.max(v, cur + v);\n            maxSum = Math.max(maxSum, cur);\n        }\n        System.out.println(maxSum);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    long long cur=LLONG_MIN,mx=LLONG_MIN;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        cur=(cur==LLONG_MIN)?v:max((long long)v,cur+v);\n        mx=max(mx,cur);\n    }\n    cout<<mx<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\ncur=mx=arr[0]\nfor v in arr[1:]:\n    cur=max(v,cur+v); mx=max(mx,cur)\nprint(mx)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\nconst n=Number(data[0]),arr=data.slice(1).map(Number);\nlet cur=arr[0],mx=arr[0];\nfor(let i=1;i<n;i++){cur=Math.max(arr[i],cur+arr[i]);mx=Math.max(mx,cur);}\nconsole.log(mx);"
     }
   ]
 }

@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        long k = Long.parseLong(st.nextToken());\n\n        long[] arr = new long[n];\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) arr[i] = Long.parseLong(st.nextToken());\n\n        int count = 0;\n        for (int i = 0; i < n - 1; i++) {\n            for (int j = i + 1; j < n; j++) {\n                if (arr[i] + arr[j] == k) count++;\n            }\n        }\n        System.out.println(count);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    long long n,k; cin>>n>>k;\n    vector<long long> arr(n); for(auto&x:arr) cin>>x;\n    int cnt=0;\n    for(int i=0;i<n-1;i++)\n        for(int j=i+1;j<n;j++)\n            if(arr[i]+arr[j]==k) cnt++;\n    cout<<cnt<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\ndata=list(map(int,input().split()))\nn,k=data[0],data[1]\narr=list(map(int,input().split()))\ncnt=0\nfor i in range(n-1):\n    for j in range(i+1,n):\n        if arr[i]+arr[j]==k: cnt+=1\nprint(cnt)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,k]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nlet cnt=0;\nfor(let i=0;i<n-1;i++) for(let j=i+1;j<n;j++) if(arr[i]+arr[j]===k) cnt++;\nconsole.log(cnt);"
     }
   ]
 }

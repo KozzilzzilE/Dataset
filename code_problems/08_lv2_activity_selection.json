@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        int[][] acts = new int[n][2];\n        for (int i = 0; i < n; i++) {\n            StringTokenizer st = new StringTokenizer(br.readLine());\n            acts[i][0] = Integer.parseInt(st.nextToken());\n            acts[i][1] = Integer.parseInt(st.nextToken());\n        }\n        Arrays.sort(acts, Comparator.comparingInt(a -> a[1]));\n\n        int count = 0, lastEnd = 0;\n        for (int[] a : acts) {\n            if (a[0] >= lastEnd) {\n                count++;\n                lastEnd = a[1];\n            }\n        }\n        System.out.println(count);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<pair<int,int>> acts(n);\n    for(auto&[s,e]:acts) cin>>s>>e;\n    sort(acts.begin(),acts.end(),[](auto&a,auto&b){return a.second<b.second;});\n    int cnt=0,last=0;\n    for(auto&[s,e]:acts) if(s>=last){cnt++;last=e;}\n    cout<<cnt<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\nn=int(input())\nacts=[tuple(map(int,input().split())) for _ in range(n)]\nacts.sort(key=lambda x:x[1])\ncnt=last=0\nfor s,e in acts:\n    if s>=last: cnt+=1;last=e\nprint(cnt)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst acts=lines.slice(1).map(l=>l.split(' ').map(Number));\nacts.sort((a,b)=>a[1]-b[1]);\nlet cnt=0,last=0;\nfor(const[s,e]of acts) if(s>=last){cnt++;last=e;}\nconsole.log(cnt);"
     }
   ]
 }

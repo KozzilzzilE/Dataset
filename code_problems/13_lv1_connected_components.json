@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] parent;\n\n    static int find(int x) {\n        if (parent[x] != x) parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    static void union(int a, int b) {\n        parent[find(a)] = find(b);\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n\n        parent = new int[n + 1];\n        for (int i = 1; i <= n; i++) parent[i] = i;\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            union(u, v);\n        }\n\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            if (find(i) == i) count++;\n        }\n        System.out.println(count);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nvoid unite(int a,int b){parent[find(a)]=find(b);}\nint main(){\n    int n,m; cin>>n>>m;\n    for(int i=1;i<=n;i++) parent[i]=i;\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;unite(u,v);}\n    int cnt=0;\n    for(int i=1;i<=n;i++) if(find(i)==i) cnt++;\n    cout<<cnt<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nparent=list(range(n+1))\ndef find(x):\n    if parent[x]!=x: parent[x]=find(parent[x])\n    return parent[x]\ndef union(a,b): parent[find(a)]=find(b)\nfor _ in range(m):\n    u,v=map(int,input().split()); union(u,v)\nprint(sum(1 for i in range(1,n+1) if find(i)==i))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst p=Array.from({length:n+1},(_,i)=>i);\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\nfunction union(a,b){p[find(a)]=find(b);}\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);union(u,v);}\nlet cnt=0;\nfor(let i=1;i<=n;i++) if(find(i)===i) cnt++;\nconsole.log(cnt);"
     }
   ]
 }

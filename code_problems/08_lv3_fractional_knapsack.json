@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        double C = Double.parseDouble(st.nextToken());\n\n        double[][] items = new double[n][2];\n        for (int i = 0; i < n; i++) {\n            st = new StringTokenizer(br.readLine());\n            items[i][0] = Double.parseDouble(st.nextToken());\n            items[i][1] = Double.parseDouble(st.nextToken());\n        }\n        Arrays.sort(items, (a, b) -> Double.compare(b[1] / b[0], a[1] / a[0]));\n\n        double total = 0;\n        double remain = C;\n        for (double[] item : items) {\n            if (remain <= 0) break;\n            double take = Math.min(item[0], remain);\n            total += take * (item[1] / item[0]);\n            remain -= take;\n        }\n        System.out.printf(\"%.2f%n\", total);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; double C; cin>>n>>C;\n    vector<pair<double,double>> items(n);\n    for(auto&[w,v]:items) cin>>w>>v;\n    sort(items.begin(),items.end(),[](auto&a,auto&b){return a.second/a.first>b.second/b.first;});\n    double total=0,remain=C;\n    for(auto&[w,v]:items){\n        if(remain<=0) break;\n        double take=min(w,remain);\n        total+=take*(v/w); remain-=take;\n    }\n    printf(\"%.2f\\n\",total);\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\nn,C=map(float,input().split())\nn=int(n)\nitems=[tuple(map(float,input().split())) for _ in range(n)]\nitems.sort(key=lambda x:-x[1]/x[0])\ntotal=remain=0.0; remain=C\nfor w,v in items:\n    if remain<=0: break\n    take=min(w,remain); total+=take*(v/w); remain-=take\nprint(f'{total:.2f}')"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,C]=lines[0].split(' ').map(Number);\nconst items=lines.slice(1).map(l=>l.split(' ').map(Number));\nitems.sort((a,b)=>b[1]/b[0]-a[1]/a[0]);\nlet total=0,remain=C;\nfor(const[w,v]of items){\n    if(remain<=0)break;\n    const take=Math.min(w,remain);total+=take*(v/w);remain-=take;\n}\nconsole.log(total.toFixed(2));"
     }
   ]
 }

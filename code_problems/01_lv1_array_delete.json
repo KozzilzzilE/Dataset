@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int loc = Integer.parseInt(st.nextToken());\n\n        int[] arr = new int[n];\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        for (int i = loc; i < n - 1; i++) arr[i] = arr[i + 1];\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n - 1; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(arr[i]);\n        }\n        System.out.println(sb.toString());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,loc; cin>>n>>loc;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    arr.erase(arr.begin()+loc);\n    for(int i=0;i<(int)arr.size();i++){\n        if(i) cout<<' ';\n        cout<<arr[i];\n    }\n    cout<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\nn,loc=map(int,input().split())\narr=list(map(int,input().split()))\narr.pop(loc)\nprint(*arr)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,loc]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\narr.splice(loc,1);\nconsole.log(arr.join(' '));"
     }
   ]
 }

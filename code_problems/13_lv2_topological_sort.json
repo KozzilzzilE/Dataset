@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n        int[] indegree = new int[n + 1];\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            indegree[v]++;\n        }\n\n        PriorityQueue<Integer> pq = new PriorityQueue<>();\n        for (int i = 1; i <= n; i++) {\n            if (indegree[i] == 0) pq.offer(i);\n        }\n\n        StringBuilder sb = new StringBuilder();\n        while (!pq.isEmpty()) {\n            int v = pq.poll();\n            if (sb.length() > 0) sb.append(' ');\n            sb.append(v);\n            for (int next : adj.get(v)) {\n                if (--indegree[next] == 0) pq.offer(next);\n            }\n        }\n        System.out.println(sb.toString());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> adj(n+1); vector<int> ind(n+1,0);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);ind[v]++;}\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=1;i<=n;i++) if(ind[i]==0) pq.push(i);\n    string res=\"\";\n    while(!pq.empty()){\n        int v=pq.top();pq.pop();\n        if(!res.empty()) res+=\" \";\n        res+=to_string(v);\n        for(int u:adj[v]) if(--ind[u]==0) pq.push(u);\n    }\n    cout<<res<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nimport heapq\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nind=[0]*(n+1)\nfor _ in range(m):\n    u,v=map(int,input().split()); adj[u].append(v); ind[v]+=1\npq=[i for i in range(1,n+1) if ind[i]==0]; heapq.heapify(pq)\nres=[]\nwhile pq:\n    v=heapq.heappop(pq); res.append(v)\n    for u in adj[v]:\n        ind[u]-=1\n        if ind[u]==0: heapq.heappush(pq,u)\nprint(*res)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]),ind=new Array(n+1).fill(0);\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);ind[v]++;}\nconst q=[];\nfor(let i=1;i<=n;i++) if(ind[i]===0) q.push(i);\nq.sort((a,b)=>a-b);\nconst res=[];let head=0;\nwhile(head<q.length){\n    const v=q[head++];res.push(v);\n    for(const u of adj[v]){if(--ind[u]===0){let lo=head,hi=q.length;while(lo<hi){const m=(lo+hi)>>1;if(q[m]<u)lo=m+1;else hi=m;}q.splice(lo,0,u);}}\n}\nconsole.log(res.join(' '));"
     }
   ]
 }

@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        Deque<Integer> queue = new ArrayDeque<>();\n        StringBuilder sb = new StringBuilder();\n\n        for (int i = 0; i < n; i++) {\n            String line = br.readLine().trim();\n            if (line.startsWith(\"push\")) {\n                queue.offerLast(Integer.parseInt(line.split(\" \")[1]));\n            } else if (line.equals(\"pop\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.pollFirst()).append('\\n');\n            } else if (line.equals(\"front\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.peekFirst()).append('\\n');\n            } else if (line.equals(\"size\")) {\n                sb.append(queue.size()).append('\\n');\n            } else if (line.equals(\"empty\")) {\n                sb.append(queue.isEmpty() ? 1 : 0).append('\\n');\n            }\n        }\n        System.out.print(sb.toString().trim());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n; cin.ignore();\n    queue<int> q;\n    string res=\"\";\n    for(int i=0;i<n;i++){\n        string line; getline(cin,line);\n        if(line.substr(0,4)==\"push\"){\n            q.push(stoi(line.substr(5)));\n        } else if(line==\"pop\"){\n            if(q.empty()) res+=\"-1\\n\";\n            else{res+=to_string(q.front())+\"\\n\";q.pop();}\n        } else if(line==\"front\"){\n            res+=(q.empty()?\"-1\":to_string(q.front()))+\"\\n\";\n        } else if(line==\"size\"){\n            res+=to_string(q.size())+\"\\n\";\n        } else if(line==\"empty\"){\n            res+=(q.empty()?\"1\":\"0\")+\"\\n\";\n        }\n    }\n    if(!res.empty()&&res.back()=='\\n') res.pop_back();\n    cout<<res<<\"\\n\";\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\nn=int(input())\nfrom collections import deque\nq=deque()\nout=[]\nfor _ in range(n):\n    cmd=input().split()\n    if cmd[0]=='push': q.append(int(cmd[1]))\n    elif cmd[0]=='pop': out.append(str(q.popleft() if q else -1))\n    elif cmd[0]=='front': out.append(str(q[0] if q else -1))\n    elif cmd[0]=='size': out.append(str(len(q)))\n    elif cmd[0]=='empty': out.append('1' if not q else '0')\nprint('\\n'.join(out))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst q=[],out=[];\nfor(let i=1;i<=n;i++){\n    const parts=lines[i].split(' ');\n    if(parts[0]==='push') q.push(Number(parts[1]));\n    else if(parts[0]==='pop') out.push(q.length?q.shift():-1);\n    else if(parts[0]==='front') out.push(q.length?q[0]:-1);\n    else if(parts[0]==='size') out.push(q.length);\n    else if(parts[0]==='empty') out.push(q.length?0:1);\n}\nconsole.log(out.join('\\n'));"
     }
   ]
 }

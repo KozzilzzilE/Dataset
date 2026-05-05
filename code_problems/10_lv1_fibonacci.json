@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        if (n == 0) { System.out.println(0); return; }\n        if (n == 1) { System.out.println(1); return; }\n\n        long a = 0, b = 1;\n        for (int i = 2; i <= n; i++) {\n            long tmp = a + b;\n            a = b;\n            b = tmp;\n        }\n        System.out.println(b);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n==0){cout<<0;return 0;}\n    if(n==1){cout<<1;return 0;}\n    long long a=0,b=1;\n    for(int i=2;i<=n;i++){long long t=a+b;a=b;b=t;}\n    cout<<b<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nn=int(sys.stdin.readline())\nif n==0: print(0)\nelif n==1: print(1)\nelse:\n    a,b=0,1\n    for _ in range(2,n+1): a,b=b,a+b\n    print(b)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\nif(n===0) console.log(0);\nelse{let a=0,b=1;for(let i=2;i<=n;i++){[a,b]=[b,a+b];}console.log(b);}"
     }
   ]
 }

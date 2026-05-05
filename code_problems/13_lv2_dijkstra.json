@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        int src = Integer.parseInt(br.readLine().trim());\n\n        List<int[]>[] adj = new List[n + 1];\n        for (int i = 0; i <= n; i++) adj[i] = new ArrayList<>();\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            int w = Integer.parseInt(st.nextToken());\n            adj[u].add(new int[]{v, w});\n        }\n\n        int[] dist = new int[n + 1];\n        Arrays.fill(dist, Integer.MAX_VALUE);\n        dist[src] = 0;\n\n        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));\n        pq.offer(new int[]{src, 0});\n\n        while (!pq.isEmpty()) {\n            int[] curr = pq.poll();\n            int v = curr[0], d = curr[1];\n            if (d > dist[v]) continue;\n            for (int[] e : adj[v]) {\n                int nv = e[0], nw = e[1];\n                if (dist[v] + nw < dist[nv]) {\n                    dist[nv] = dist[v] + nw;\n                    pq.offer(new int[]{nv, dist[nv]});\n                }\n            }\n        }\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 1; i <= n; i++) {\n            if (i > 1) sb.append(' ');\n            sb.append(dist[i] == Integer.MAX_VALUE ? -1 : dist[i]);\n        }\n        System.out.println(sb.toString());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m,src; cin>>n>>m>>src;\n    vector<vector<pair<int,int>>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v,w;cin>>u>>v>>w;adj[u].push_back({v,w});}\n    vector<int> dist(n+1,INT_MAX); dist[src]=0;\n    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<>> pq;\n    pq.push({0,src});\n    while(!pq.empty()){\n        auto[d,u]=pq.top();pq.pop();\n        if(d>dist[u]) continue;\n        for(auto[v,w]:adj[u]) if(dist[u]+w<dist[v]){dist[v]=dist[u]+w;pq.push({dist[v],v});}\n    }\n    for(int i=1;i<=n;i++){if(i>1) cout<<' ';cout<<(dist[i]==INT_MAX?-1:dist[i]);}\n    cout<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys,heapq\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nsrc=int(input())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v,w=map(int,input().split()); adj[u].append((v,w))\nINF=float('inf')\ndist=[INF]*(n+1); dist[src]=0\npq=[(0,src)]\nwhile pq:\n    d,u=heapq.heappop(pq)\n    if d>dist[u]: continue\n    for v,w in adj[u]:\n        if dist[u]+w<dist[v]: dist[v]=dist[u]+w; heapq.heappush(pq,(dist[v],v))\nprint(*(-1 if dist[i]==INF else dist[i] for i in range(1,n+1)))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst src=Number(lines[1]);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v,w]=lines[i].split(' ').map(Number);adj[u].push([v,w]);}\nconst dist=new Array(n+1).fill(Infinity); dist[src]=0;\nconst pq=[[0,src]];\nwhile(pq.length){\n    pq.sort((a,b)=>a[0]-b[0]);\n    const[d,u]=pq.shift();\n    if(d>dist[u]) continue;\n    for(const[v,w]of adj[u]) if(dist[u]+w<dist[v]){dist[v]=dist[u]+w;pq.push([dist[v],v]);}\n}\nconsole.log(Array.from({length:n},(_,i)=>dist[i+1]===Infinity?-1:dist[i+1]).join(' '));"
     }
   ]
 }

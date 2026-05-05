@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n\n        int max = Integer.MIN_VALUE;\n        int idx = -1;\n\n        for (int i = 0; i < n; i++) {\n            int v = Integer.parseInt(st.nextToken());\n            if (v > max) {\n                max = v;\n                idx = i;\n            }\n        }\n\n        System.out.println(idx);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    int mx=INT_MIN,idx=-1;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        if(v>mx){mx=v;idx=i;}\n    }\n    cout<<idx<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\nprint(arr.index(max(arr)))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=lines[1].split(' ').map(Number);\nlet mx=-Infinity,idx=-1;\nfor(let i=0;i<n;i++) if(arr[i]>mx){mx=arr[i];idx=i;}\nconsole.log(idx);"
     }
   ]
 }

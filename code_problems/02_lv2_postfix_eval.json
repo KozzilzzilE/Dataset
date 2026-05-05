@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n\n        Deque<Integer> stack = new ArrayDeque<>();\n        while (st.hasMoreTokens()) {\n            String token = st.nextToken();\n            if (token.equals(\"+\") || token.equals(\"-\") || token.equals(\"*\") || token.equals(\"/\")) {\n                int b = stack.pop();\n                int a = stack.pop();\n                switch (token) {\n                    case \"+\": stack.push(a + b); break;\n                    case \"-\": stack.push(a - b); break;\n                    case \"*\": stack.push(a * b); break;\n                    case \"/\": stack.push(a / b); break;\n                }\n            } else {\n                stack.push(Integer.parseInt(token));\n            }\n        }\n        System.out.println(stack.pop());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    string token;\n    stack<int> st;\n    while(cin>>token){\n        if(token==\"+\"||token==\"-\"||token==\"*\"||token==\"/\"){\n            int b=st.top();st.pop();\n            int a=st.top();st.pop();\n            if(token==\"+\") st.push(a+b);\n            else if(token==\"-\") st.push(a-b);\n            else if(token==\"*\") st.push(a*b);\n            else st.push(a/b);\n        } else {\n            st.push(stoi(token));\n        }\n    }\n    cout<<st.top()<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ntokens=sys.stdin.readline().split()\nstack=[]\nfor t in tokens:\n    if t in '+-*/':\n        b=stack.pop(); a=stack.pop()\n        if t=='+': stack.append(a+b)\n        elif t=='-': stack.append(a-b)\n        elif t=='*': stack.append(a*b)\n        else: stack.append(int(a/b))\n    else:\n        stack.append(int(t))\nprint(stack[-1])"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const tokens=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\nconst stack=[];\nfor(const t of tokens){\n    if('+-*/'.includes(t)){\n        const b=stack.pop(),a=stack.pop();\n        if(t==='+') stack.push(a+b);\n        else if(t==='-') stack.push(a-b);\n        else if(t==='*') stack.push(a*b);\n        else stack.push(Math.trunc(a/b));\n    } else stack.push(Number(t));\n}\nconsole.log(stack[stack.length-1]);"
     }
   ]
 }

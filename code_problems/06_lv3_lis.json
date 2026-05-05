@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++)\n            arr[i] = Integer.parseInt(st.nextToken());\n\n        List<Integer> tails = new ArrayList<>();\n        for (int v : arr) {\n            int lo = 0, hi = tails.size();\n            while (lo < hi) {\n                int mid = (lo + hi) / 2;\n                if (tails.get(mid) < v) lo = mid + 1;\n                else hi = mid;\n            }\n            if (lo == tails.size()) tails.add(v);\n            else tails.set(lo, v);\n        }\n        System.out.println(tails.size());\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    vector<int> tails;\n    for(int v:arr){\n        auto it=lower_bound(tails.begin(),tails.end(),v);\n        if(it==tails.end()) tails.push_back(v);\n        else *it=v;\n    }\n    cout<<tails.size()<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys,bisect\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\ntails=[]\nfor v in arr:\n    i=bisect.bisect_left(tails,v)\n    if i==len(tails): tails.append(v)\n    else: tails[i]=v\nprint(len(tails))"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\nconst n=Number(data[0]),arr=data.slice(1).map(Number);\nconst tails=[];\nfunction lb(v){let lo=0,hi=tails.length;while(lo<hi){const m=(lo+hi)>>1;if(tails[m]<v)lo=m+1;else hi=m;}return lo;}\nfor(const v of arr){const i=lb(v);if(i===tails.length)tails.push(v);else tails[i]=v;}\nconsole.log(tails.length);"
     }
   ]
 }

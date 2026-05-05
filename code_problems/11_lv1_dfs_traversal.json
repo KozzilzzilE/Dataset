@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static boolean[] visited;\n    static List<List<Integer>> adj;\n    static StringBuilder sb = new StringBuilder();\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        int start = Integer.parseInt(br.readLine().trim());\n\n        adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            adj.get(v).add(u);\n        }\n        for (int i = 1; i <= n; i++) Collections.sort(adj.get(i));\n\n        visited = new boolean[n + 1];\n        dfs(start);\n        System.out.println(sb.toString().trim());\n    }\n\n    static void dfs(int v) {\n        visited[v] = true;\n        sb.append(v).append(' ');\n        for (int next : adj.get(v)) {\n            if (!visited[next]) dfs(next);\n        }\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nvector<vector<int>> adj;\nbool visited[1001];\nstring res=\"\";\nvoid dfs(int v){\n    visited[v]=true;\n    res+=to_string(v)+\" \";\n    for(int u:adj[v]) if(!visited[u]) dfs(u);\n}\nint main(){\n    int n,m,start; cin>>n>>m>>start;\n    adj.resize(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n    dfs(start);\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n    cout<<res<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nsys.setrecursionlimit(10000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nstart=int(input())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\nfor i in range(n+1): adj[i].sort()\nvisited=[False]*(n+1)\nres=[]\ndef dfs(v):\n    visited[v]=True; res.append(v)\n    for u in adj[v]:\n        if not visited[u]: dfs(u)\ndfs(start)\nprint(*res)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst start=Number(lines[1]);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nfor(let i=1;i<=n;i++) adj[i].sort((a,b)=>a-b);\nconst visited=new Array(n+1).fill(false),res=[];\nfunction dfs(v){visited[v]=true;res.push(v);for(const u of adj[v])if(!visited[u])dfs(u);}\ndfs(start);\nconsole.log(res.join(' '));"
     }
   ]
 }

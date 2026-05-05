@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 1000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int target = Integer.parseInt(st.nextToken());\n\n        Map<Integer, Integer> map = new HashMap<>();\n        for (int i = 0; i < n; i++) {\n            int v = Integer.parseInt(st.nextToken());\n            int need = target - v;\n            if (map.containsKey(need)) {\n                System.out.println(map.get(need) + \" \" + i);\n                return;\n            }\n            map.put(v, i);\n        }\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    unordered_map<int,int> mp;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        int need=target-v;\n        if(mp.count(need)){cout<<mp[need]<<' '<<i<<'\\n';return 0;}\n        mp[v]=i;\n    }\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\ninput=sys.stdin.readline\ndata=list(map(int,input().split()))\nn,target=data[0],data[1]\narr=list(map(int,input().split()))\nseen={}\nfor i,v in enumerate(arr):\n    need=target-v\n    if need in seen:\n        print(seen[need],i)\n        break\n    seen[v]=i"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=data[0].split(' ').map(Number);\nconst arr=data[1].split(' ').map(Number);\nconst seen={};\nfor(let i=0;i<n;i++){\n    const need=target-arr[i];\n    if(need in seen){console.log(seen[need]+' '+i);break;}\n    seen[arr[i]]=i;\n}"
     }
   ]
 }

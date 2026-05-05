@@ -34,6 +34,21 @@
       "languageId": 1,
       "timeLimitMs": 2000,
       "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] parent;\n\n    static int find(int x) {\n        if (parent[x] != x) parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    static boolean union(int a, int b) {\n        a = find(a); b = find(b);\n        if (a == b) return false;\n        parent[b] = a;\n        return true;\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n\n        int[][] edges = new int[m][3];\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            edges[i][0] = Integer.parseInt(st.nextToken());\n            edges[i][1] = Integer.parseInt(st.nextToken());\n            edges[i][2] = Integer.parseInt(st.nextToken());\n        }\n        Arrays.sort(edges, Comparator.comparingInt(e -> e[2]));\n\n        parent = new int[n + 1];\n        for (int i = 1; i <= n; i++) parent[i] = i;\n\n        long total = 0;\n        for (int[] e : edges) {\n            if (union(e[0], e[1])) total += e[2];\n        }\n        System.out.println(total);\n    }\n}"
+    },
+    {
+      "languageId": 2,
+      "timeLimitMs": 1000,
+      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nbool unite(int a,int b){a=find(a);b=find(b);if(a==b)return false;parent[b]=a;return true;}\nint main(){\n    int n,m; cin>>n>>m;\n    vector<array<int,3>> edges(m);\n    for(auto&e:edges) cin>>e[0]>>e[1]>>e[2];\n    sort(edges.begin(),edges.end(),[](auto&a,auto&b){return a[2]<b[2];});\n    for(int i=1;i<=n;i++) parent[i]=i;\n    long long total=0;\n    for(auto&e:edges) if(unite(e[0],e[1])) total+=e[2];\n    cout<<total<<'\\n';\n}"
+    },
+    {
+      "languageId": 3,
+      "timeLimitMs": 3000,
+      "solutionCode": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nedges=[tuple(map(int,input().split())) for _ in range(m)]\nedges.sort(key=lambda x:x[2])\nparent=list(range(n+1))\ndef find(x):\n    if parent[x]!=x: parent[x]=find(parent[x])\n    return parent[x]\ndef union(a,b):\n    a,b=find(a),find(b)\n    if a==b: return False\n    parent[b]=a; return True\ntotal=0\nfor u,v,w in edges:\n    if union(u,v): total+=w\nprint(total)"
+    },
+    {
+      "languageId": 4,
+      "timeLimitMs": 2000,
+      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst edges=lines.slice(1).map(l=>l.split(' ').map(Number));\nedges.sort((a,b)=>a[2]-b[2]);\nconst p=Array.from({length:n+1},(_,i)=>i);\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\nfunction union(a,b){a=find(a);b=find(b);if(a===b)return false;p[b]=a;return true;}\nlet total=0;\nfor(const[u,v,w]of edges) if(union(u,v)) total+=w;\nconsole.log(total);"
     }
   ]
 }
