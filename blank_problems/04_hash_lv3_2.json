@@ -1,0 +1,228 @@
+{
+  "requests": [
+    {
+      "topicId": 4,
+      "orderNo": 3,
+      "title": "해시 - 가장 긴 연속 수열",
+      "description": "해시 셋을 이용해 O(n)으로 가장 긴 연속 수열의 길이를 구하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint[] nums = {100, 4, 200, 1, 3, 2};\nSet<Integer> set = new _____<>(Arrays.stream(nums).boxed().collect(Collectors.toList()));\nint maxLen = 0;\nfor (int num : _____) {\n    if (!set.contains(num - _____)) {\n        int cur = num, length = 1;\n        while (set.contains(cur + _____)) {\n            cur++; length++;\n        }\n        maxLen = Math.max(maxLen, _____);\n    }\n}\nSystem.out.println(\"최장 연속 수열: \" + _____);\n```",
+          "blanks": [
+            {
+              "content": "HashSet",
+              "answer": 1
+            },
+            {
+              "content": "nums",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "1",
+              "answer": 4
+            },
+            {
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "maxLen",
+              "answer": 6
+            },
+            {
+              "content": "TreeSet",
+              "answer": null
+            },
+            {
+              "content": "set",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nvector<int> nums = {100, 4, 200, 1, 3, 2};\nunordered_set<int> s(nums.begin(), nums.end());\nint maxLen = 0;\nfor (int num : _____) {\n    if (!s.count(num - _____)) {\n        int cur = num, length = 1;\n        while (s.count(cur + _____)) {\n            cur++; length++;\n        }\n        maxLen = max(maxLen, _____);\n    }\n}\ncout << \"최장 연속 수열: \" << _____;\ncout << \"\\n집합 크기: \" << _____;\n```",
+          "blanks": [
+            {
+              "content": "nums",
+              "answer": 1
+            },
+            {
+              "content": "1",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "length",
+              "answer": 4
+            },
+            {
+              "content": "maxLen",
+              "answer": 5
+            },
+            {
+              "content": "s.size()",
+              "answer": 6
+            },
+            {
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "nums.size()",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nnums = [100, 4, 200, 1, 3, 2]\nnum_set = _____(nums)\nmax_len = 0\nfor num in _____:\n    if num - 1 not in num_set:\n        cur, length = num, 1\n        while cur + _____ in num_set:\n            cur += 1; length += 1\n        max_len = max(max_len, _____)\nprint(\"최장 연속 수열:\", _____)\nprint(\"집합 크기:\", _____(num_set))\n```",
+          "blanks": [
+            {
+              "content": "set",
+              "answer": 1
+            },
+            {
+              "content": "nums",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "length",
+              "answer": 4
+            },
+            {
+              "content": "max_len",
+              "answer": 5
+            },
+            {
+              "content": "len",
+              "answer": 6
+            },
+            {
+              "content": "list",
+              "answer": null
+            },
+            {
+              "content": "num_set",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet nums = [100, 4, 200, 1, 3, 2];\nlet set = new _____(nums);\nlet maxLen = 0;\nfor (let num of _____) {\n    if (!set.has(num - _____)) {\n        let cur = num, length = 1;\n        while (set.has(cur + _____)) {\n            cur++; length++;\n        }\n        maxLen = Math.max(maxLen, _____);\n    }\n}\nconsole.log(\"최장 연속 수열:\", _____);\n```",
+          "blanks": [
+            {
+              "content": "Set",
+              "answer": 1
+            },
+            {
+              "content": "nums",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "1",
+              "answer": 4
+            },
+            {
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "maxLen",
+              "answer": 6
+            },
+            {
+              "content": "Map",
+              "answer": null
+            },
+            {
+              "content": "set",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

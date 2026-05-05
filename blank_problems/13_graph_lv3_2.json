@@ -1,0 +1,228 @@
+{
+  "requests": [
+    {
+      "topicId": 13,
+      "orderNo": 3,
+      "title": "벨만-포드 최단 경로",
+      "description": "음수 간선이 있는 그래프에서 벨만-포드 알고리즘으로 최단 경로와 음수 사이클을 탐지하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint n=5, start=1;\nint INF = Integer.MAX_VALUE / 2;\nint[][] edges = {{1,2,4},{1,3,3},{2,4,2},{3,4,1},{4,5,-5}};\nint[] dist = new int[n+1];\nArrays.fill(dist, _____); dist[start] = 0;\nfor (int i = 0; i < _____; i++) {\n    for (int[] e : edges) {\n        if (dist[e[0]] != INF && dist[e[0]] + e[2] _____ dist[e[1]]) {\n            dist[e[1]] = dist[e[0]] + _____;\n        }\n    }\n}\nboolean negativeCycle = false;\nfor (int[] e : edges) {\n    if (dist[e[0]] != INF && dist[e[0]] + e[2] _____ dist[e[1]]) {\n        negativeCycle = _____;\n    }\n}\nSystem.out.println(Arrays.toString(dist));\nSystem.out.println(\"음수 사이클: \" + negativeCycle);\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "n - 1",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "e[2]",
+              "answer": 4
+            },
+            {
+              "content": "<",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "e[1]",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint n=5, start=1;\nconst int INF = 1e9;\nvector<tuple<int,int,int>> edges = {{1,2,4},{1,3,3},{2,4,2},{3,4,1},{4,5,-5}};\nvector<int> dist(n+1, _____);\ndist[start] = 0;\nfor (int i = 0; i < _____; i++) {\n    for (auto& [u,v,w] : edges) {\n        if (dist[u] != INF && dist[u] + w _____ dist[v]) {\n            dist[v] = dist[u] + _____;\n        }\n    }\n}\nbool neg = false;\nfor (auto& [u,v,w] : edges) {\n    if (dist[u] != INF && dist[u] + w _____ dist[v]) {\n        neg = _____;\n    }\n}\ncout << neg;\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "n - 1",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "w",
+              "answer": 4
+            },
+            {
+              "content": "<",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "v",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nn, start = 5, 1\nINF = float('inf')\nedges = [(1,2,4),(1,3,3),(2,4,2),(3,4,1),(4,5,-5)]\ndist = [_____] * (n + 1)\ndist[start] = 0\nfor _ in range(_____):\n    for u, v, w in edges:\n        if dist[u] != INF and dist[u] + w _____ dist[v]:\n            dist[v] = dist[u] + _____\nneg_cycle = False\nfor u, v, w in edges:\n    if dist[u] != INF and dist[u] + w _____ dist[v]:\n        neg_cycle = _____\nprint(dist)\nprint(\"음수 사이클:\", neg_cycle)\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "n - 1",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "w",
+              "answer": 4
+            },
+            {
+              "content": "<",
+              "answer": 5
+            },
+            {
+              "content": "True",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "v",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet n=5, start=1;\nconst INF = Infinity;\nlet edges = [[1,2,4],[1,3,3],[2,4,2],[3,4,1],[4,5,-5]];\nlet dist = new Array(n+1).fill(_____); dist[start] = 0;\nfor (let i = 0; i < _____; i++) {\n    for (let [u,v,w] of edges) {\n        if (dist[u] !== INF && dist[u] + w _____ dist[v]) {\n            dist[v] = dist[u] + _____;\n        }\n    }\n}\nlet neg = false;\nfor (let [u,v,w] of edges) {\n    if (dist[u] !== INF && dist[u] + w _____ dist[v]) {\n        neg = _____;\n    }\n}\nconsole.log(dist);\nconsole.log(\"음수 사이클:\", neg);\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "n - 1",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "w",
+              "answer": 4
+            },
+            {
+              "content": "<",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "v",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "requests": [
+    {
+      "topicId": 7,
+      "orderNo": 3,
+      "title": "백트래킹 - N-Queens",
+      "description": "N×N 체스판에 N개의 퀸을 서로 공격하지 않게 배치하는 경우의 수를 백트래킹으로 구하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nstatic int n = 4, count = 0;\nstatic int[] col = new int[_____];\n\nstatic void solve(int row) {\n    if (row == _____) { count++; return; }\n    for (int c = 0; c < n; c++) {\n        col[row] = c;\n        if (isSafe(_____)) solve(row + 1);\n    }\n}\nstatic boolean isSafe(int row) {\n    for (int r = 0; r < row; r++) {\n        if (col[r] == col[row] ||\n            Math.abs(col[r] - col[row]) == _____) return _____;\n    }\n    return _____;\n}\n```",
+          "blanks": [
+            {
+              "content": "n",
+              "answer": 1
+            },
+            {
+              "content": "n",
+              "answer": 2
+            },
+            {
+              "content": "row",
+              "answer": 3
+            },
+            {
+              "content": "row - r",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": 6
+            },
+            {
+              "content": "n+1",
+              "answer": null
+            },
+            {
+              "content": "n-1",
+              "answer": null
+            },
+            {
+              "content": "c",
+              "answer": null
+            },
+            {
+              "content": "col[row]",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint n = 4, count = 0;\nint col[_____];\n\nvoid solve(int row) {\n    if (row == _____) { count++; return; }\n    for (int c = 0; c < n; c++) {\n        col[row] = c;\n        if (isSafe(_____)) solve(row + 1);\n    }\n}\nbool isSafe(int row) {\n    for (int r = 0; r < row; r++) {\n        if (col[r] == col[row] ||\n            abs(col[r] - col[row]) == _____) return _____;\n    }\n    return _____;\n}\n```",
+          "blanks": [
+            {
+              "content": "n",
+              "answer": 1
+            },
+            {
+              "content": "n",
+              "answer": 2
+            },
+            {
+              "content": "row",
+              "answer": 3
+            },
+            {
+              "content": "row - r",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": 6
+            },
+            {
+              "content": "n+1",
+              "answer": null
+            },
+            {
+              "content": "n-1",
+              "answer": null
+            },
+            {
+              "content": "c",
+              "answer": null
+            },
+            {
+              "content": "col[row]",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nn = 4\ncol = [0] * _____\ncount = 0\n\ndef solve(row):\n    global count\n    if row == _____:\n        count += 1\n        return\n    for c in range(n):\n        col[row] = c\n        if is_safe(_____): solve(row + 1)\n\ndef is_safe(row):\n    for r in range(row):\n        if col[r] == col[row] or abs(col[r] - col[row]) == _____:\n            return _____\n    return _____\n```",
+          "blanks": [
+            {
+              "content": "n",
+              "answer": 1
+            },
+            {
+              "content": "n",
+              "answer": 2
+            },
+            {
+              "content": "row",
+              "answer": 3
+            },
+            {
+              "content": "row - r",
+              "answer": 4
+            },
+            {
+              "content": "False",
+              "answer": 5
+            },
+            {
+              "content": "True",
+              "answer": 6
+            },
+            {
+              "content": "n+1",
+              "answer": null
+            },
+            {
+              "content": "n-1",
+              "answer": null
+            },
+            {
+              "content": "c",
+              "answer": null
+            },
+            {
+              "content": "col[row]",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet n = 4, count = 0;\nlet col = new Array(_____).fill(0);\n\nfunction solve(row) {\n    if (row === _____) { count++; return; }\n    for (let c = 0; c < n; c++) {\n        col[row] = c;\n        if (isSafe(_____)) solve(row + 1);\n    }\n}\nfunction isSafe(row) {\n    for (let r = 0; r < row; r++) {\n        if (col[r] === col[row] ||\n            Math.abs(col[r] - col[row]) === _____) return _____;\n    }\n    return _____;\n}\n```",
+          "blanks": [
+            {
+              "content": "n",
+              "answer": 1
+            },
+            {
+              "content": "n",
+              "answer": 2
+            },
+            {
+              "content": "row",
+              "answer": 3
+            },
+            {
+              "content": "row - r",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": 6
+            },
+            {
+              "content": "n+1",
+              "answer": null
+            },
+            {
+              "content": "n-1",
+              "answer": null
+            },
+            {
+              "content": "c",
+              "answer": null
+            },
+            {
+              "content": "col[row]",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

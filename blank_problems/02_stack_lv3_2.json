@@ -1,0 +1,228 @@
+{
+  "requests": [
+    {
+      "topicId": 2,
+      "orderNo": 3,
+      "title": "스택 - 히스토그램 최대 직사각형",
+      "description": "스택을 이용해 히스토그램에서 가장 큰 직사각형 넓이를 구하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint[] heights = {2, 1, 5, 6, 2, 3};\nDeque<Integer> stack = new ArrayDeque<>();\nlong maxArea = 0;\nfor (int i = _____; i <= heights.length; i++) {\n    int h = (i == heights.length) ? _____ : heights[i];\n    while (!stack.isEmpty() && heights[stack.peek()] > h) {\n        int height = heights[stack._____()];\n        int width = stack.isEmpty() ? i : i - stack.peek() - _____;\n        maxArea = Math.max(maxArea, (long) height * _____);\n    }\n    stack.push(_____);  \n}\nSystem.out.println(maxArea);\n```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": 3
+            },
+            {
+              "content": "1",
+              "answer": 4
+            },
+            {
+              "content": "width",
+              "answer": 5
+            },
+            {
+              "content": "i",
+              "answer": 6
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "height",
+              "answer": null
+            },
+            {
+              "content": "i-1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nvector<int> h = {2, 1, 5, 6, 2, 3};\nstack<int> st;\nlong maxArea = 0;\nfor (int i = _____; i <= (int)h.size(); i++) {\n    int cur = (i == (int)h.size()) ? _____ : h[i];\n    while (!st.empty() && h[st.top()] > cur) {\n        int height = h[st._____()];\n        st.pop();\n        int width = st.empty() ? i : i - st.top() - _____;\n        maxArea = max(maxArea, (long)height * _____);\n    }\n    st.push(_____);  \n}\ncout << maxArea;\n```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "top",
+              "answer": 3
+            },
+            {
+              "content": "1",
+              "answer": 4
+            },
+            {
+              "content": "width",
+              "answer": 5
+            },
+            {
+              "content": "i",
+              "answer": 6
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "front",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "height",
+              "answer": null
+            },
+            {
+              "content": "i-1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nheights = [2, 1, 5, 6, 2, 3]\nstack = []\nmax_area = 0\nfor i in range(_____, len(heights) + 1):\n    h = _____ if i == len(heights) else heights[i]\n    while stack and heights[stack[-1]] > h:\n        height = heights[stack._____()] \n        width = i if not stack else i - stack[_____] - 1\n        max_area = max(max_area, height * _____)\n    stack.append(_____)\nprint(max_area)\n```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "width",
+              "answer": 5
+            },
+            {
+              "content": "i",
+              "answer": 6
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "-2",
+              "answer": null
+            },
+            {
+              "content": "height",
+              "answer": null
+            },
+            {
+              "content": "i-1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet heights = [2, 1, 5, 6, 2, 3];\nlet stack = [];\nlet maxArea = 0;\nfor (let i = _____; i <= heights.length; i++) {\n    let h = (i === heights.length) ? _____ : heights[i];\n    while (stack.length && heights[stack[stack.length-1]] > h) {\n        let height = heights[stack._____()] ;\n        let width = stack.length ? i - stack[stack.length-1] - _____ : i;\n        maxArea = Math.max(maxArea, height * _____);\n    }\n    stack.push(_____);  \n}\nconsole.log(maxArea);\n```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "pop",
+              "answer": 3
+            },
+            {
+              "content": "1",
+              "answer": 4
+            },
+            {
+              "content": "width",
+              "answer": 5
+            },
+            {
+              "content": "i",
+              "answer": 6
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "shift",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "height",
+              "answer": null
+            },
+            {
+              "content": "i-1",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

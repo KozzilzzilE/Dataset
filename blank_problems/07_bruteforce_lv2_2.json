@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 7,
+      "orderNo": 2,
+      "title": "비트마스크 - 부분집합 합 탐색",
+      "description": "비트마스크를 사용해 모든 부분집합을 탐색하며 합이 target인 부분집합의 존재 여부를 확인하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint[] arr = {3, 1, 4, 2, 5};\nint target = 7, n = arr.length;\nboolean found = false;\nfor (int mask = 0; mask < (1 _____ n); mask++) {\n    int sum = 0;\n    for (int i = 0; i < n; i++) {\n        if ((mask _____ (1 << i)) != 0) sum += arr[i];\n    }\n    if (sum _____ target) { found = true; break; }\n}\nSystem.out.println(\"부분집합 존재: \" + _____);\nSystem.out.println(\"배열 크기: \" + _____);\n```",
+          "blanks": [
+            {
+              "content": "<<",
+              "answer": 1
+            },
+            {
+              "content": "&",
+              "answer": 2
+            },
+            {
+              "content": "==",
+              "answer": 3
+            },
+            {
+              "content": "found",
+              "answer": 4
+            },
+            {
+              "content": "n",
+              "answer": 5
+            },
+            {
+              "content": ">>",
+              "answer": null
+            },
+            {
+              "content": "|",
+              "answer": null
+            },
+            {
+              "content": "!=",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "arr.length",
+              "answer": null
+            },
+            {
+              "content": "^",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint arr[] = {3, 1, 4, 2, 5};\nint target = 7, n = 5;\nbool found = false;\nfor (int mask = 0; mask < (1 _____ n); mask++) {\n    int sum = 0;\n    for (int i = 0; i < n; i++) {\n        if (mask _____ (1 << i)) sum += arr[i];\n    }\n    if (sum _____ target) { found = true; break; }\n}\ncout << boolalpha << _____;\ncout << \"\\n크기: \" << _____;\n```",
+          "blanks": [
+            {
+              "content": "<<",
+              "answer": 1
+            },
+            {
+              "content": "&",
+              "answer": 2
+            },
+            {
+              "content": "==",
+              "answer": 3
+            },
+            {
+              "content": "found",
+              "answer": 4
+            },
+            {
+              "content": "n",
+              "answer": 5
+            },
+            {
+              "content": ">>",
+              "answer": null
+            },
+            {
+              "content": "|",
+              "answer": null
+            },
+            {
+              "content": "!=",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "arr.length",
+              "answer": null
+            },
+            {
+              "content": "^",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\narr = [3, 1, 4, 2, 5]\ntarget = 7\nn = len(arr)\nfound = False\nfor mask in range(1 _____ n):\n    s = sum(arr[i] for i in range(n) if mask _____ (1 << i))\n    if s _____ target:\n        found = True\n        break\nprint(\"부분집합 존재:\", _____)\nprint(\"배열 크기:\", _____)\n```",
+          "blanks": [
+            {
+              "content": "<<",
+              "answer": 1
+            },
+            {
+              "content": "&",
+              "answer": 2
+            },
+            {
+              "content": "==",
+              "answer": 3
+            },
+            {
+              "content": "found",
+              "answer": 4
+            },
+            {
+              "content": "n",
+              "answer": 5
+            },
+            {
+              "content": ">>",
+              "answer": null
+            },
+            {
+              "content": "|",
+              "answer": null
+            },
+            {
+              "content": "!=",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "len(arr)",
+              "answer": null
+            },
+            {
+              "content": "^",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet arr = [3, 1, 4, 2, 5];\nlet target = 7, n = arr.length;\nlet found = false;\nfor (let mask = 0; mask < (1 _____ n); mask++) {\n    let sum = 0;\n    for (let i = 0; i < n; i++) {\n        if (mask _____ (1 << i)) sum += arr[i];\n    }\n    if (sum _____ target) { found = true; break; }\n}\nconsole.log(\"부분집합 존재:\", _____);\nconsole.log(\"배열 크기:\", _____);\n```",
+          "blanks": [
+            {
+              "content": "<<",
+              "answer": 1
+            },
+            {
+              "content": "&",
+              "answer": 2
+            },
+            {
+              "content": "===",
+              "answer": 3
+            },
+            {
+              "content": "found",
+              "answer": 4
+            },
+            {
+              "content": "n",
+              "answer": 5
+            },
+            {
+              "content": ">>",
+              "answer": null
+            },
+            {
+              "content": "|",
+              "answer": null
+            },
+            {
+              "content": "!==",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "arr.length",
+              "answer": null
+            },
+            {
+              "content": "^",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

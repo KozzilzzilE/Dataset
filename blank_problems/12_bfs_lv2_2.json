@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 12,
+      "orderNo": 2,
+      "title": "BFS - 다중 출발점 최단 거리",
+      "description": "여러 출발점에서 동시에 BFS를 시작해 모든 노드까지의 최단 거리를 구하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint n = 6;\nint[] dist = new int[n + 1];\nArrays.fill(dist, _____);  // 미방문: -1\nQueue<Integer> queue = new LinkedList<>();\n// 출발점 0, 5 동시 시작\nfor (int src : new int[]{0, 5}) {\n    dist[src] = _____;\n    queue.add(src);\n}\nwhile (!queue._____()) {\n    int cur = queue.poll();\n    for (int next : graph.get(cur)) {\n        if (dist[next] == _____) {\n            dist[next] = dist[cur] + 1;\n            queue.add(_____);  \n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "isEmpty",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "empty",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "Integer.MAX_VALUE",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint n = 6;\nvector<int> dist(n+1, _____);\nqueue<int> q;\nfor (int src : {0, 5}) {\n    dist[src] = _____;\n    q.push(src);\n}\nwhile (!q._____()) {\n    int cur = q.front(); q.pop();\n    for (int next : graph[cur]) {\n        if (dist[next] == _____) {\n            dist[next] = dist[cur] + 1;\n            q.push(_____);  \n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "empty",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "isEmpty",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "INT_MAX",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque\nn = 6\ndist = [_____] * (n + 1)\nqueue = deque()\nfor src in [0, 5]:\n    dist[src] = _____\n    queue.append(src)\nwhile _____:\n    cur = queue.popleft()\n    for next_node in graph[cur]:\n        if dist[next_node] == _____:\n            dist[next_node] = dist[cur] + 1\n            queue.append(_____)\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "queue",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next_node",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet n = 6;\nlet dist = new Array(n+1).fill(_____);  \nlet queue = [];\nfor (let src of [0, 5]) {\n    dist[src] = _____;\n    queue.push(src);\n}\nwhile (queue._____) {\n    let cur = queue.shift();\n    for (let next of graph[cur]) {\n        if (dist[next] === _____) {\n            dist[next] = dist[cur] + 1;\n            queue.push(_____);  \n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "length",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

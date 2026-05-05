@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 3,
+      "orderNo": 2,
+      "title": "원형 큐 - 배열 기반 구현",
+      "description": "배열 기반의 원형 큐(Circular Queue)를 구현하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint[] cq = new int[5];\nint head = 0, tail = 0, size = 0;\n// enqueue(10), enqueue(20)\ncq[tail] = 10;\ntail = (tail + _____) % cq.length;\nsize++;\ncq[tail] = 20; tail = (tail + 1) % cq.length; size++;\n// dequeue\nint val = cq[_____];\nhead = (head + 1) % cq.length;\n_____--;\nSystem.out.println(val);  // 10\nboolean empty = (head == tail);\nSystem.out.println(\"포화:\",  + (size == cq._____));\nSystem.out.println(\"남은: \" + _____);\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "head",
+              "answer": 2
+            },
+            {
+              "content": "size",
+              "answer": 3
+            },
+            {
+              "content": "length",
+              "answer": 4
+            },
+            {
+              "content": "size",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "tail",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "size()",
+              "answer": null
+            },
+            {
+              "content": "rear",
+              "answer": null
+            },
+            {
+              "content": "front",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint cq[5];\nint head = 0, tail = 0, sz = 0;\ncq[tail] = 10;\ntail = (tail + _____) % 5; sz++;\ncq[tail] = 20; tail = (tail + 1) % 5; sz++;\nint val = cq[_____];\nhead = (head + 1) % 5;\n_____--;\ncout << val << \"\\n\";  // 10\nbool full = sz == _____;\ncout << \"남은: \" << _____;\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "head",
+              "answer": 2
+            },
+            {
+              "content": "sz",
+              "answer": 3
+            },
+            {
+              "content": "5",
+              "answer": 4
+            },
+            {
+              "content": "sz",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "tail",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "4",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "rear",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\ncq = [0] * 5\nhead = tail = size = 0\n# enqueue(10), enqueue(20)\ncq[tail] = 10; tail = (tail + _____) % len(cq); size += 1\ncq[tail] = 20; tail = (tail + 1) % len(cq); size += 1\n# dequeue\nval = cq[_____]; head = (head + 1) % len(cq); size -= 1\nprint(val)  # 10\nempty = (head == _____)\nprint(\"남은:\", _____)\nprint(\"최대:\", len(_____) - 1)\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "head",
+              "answer": 2
+            },
+            {
+              "content": "tail",
+              "answer": 3
+            },
+            {
+              "content": "size",
+              "answer": 4
+            },
+            {
+              "content": "cq",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "tail",
+              "answer": null
+            },
+            {
+              "content": "head",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "queue",
+              "answer": null
+            },
+            {
+              "content": "rear",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet cq = new Array(5).fill(0);\nlet head = 0, tail = 0, size = 0;\ncq[tail] = 10; tail = (tail + _____) % cq.length; size++;\ncq[tail] = 20; tail = (tail + 1) % cq.length; size++;\nlet val = cq[_____]; head = (head + 1) % cq.length; size--;\nconsole.log(val);  // 10\nlet empty = (head === _____);\nconsole.log(\"남은:\", _____);\nconsole.log(\"최대:\", cq._____ - 1);\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "head",
+              "answer": 2
+            },
+            {
+              "content": "tail",
+              "answer": 3
+            },
+            {
+              "content": "size",
+              "answer": 4
+            },
+            {
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "tail",
+              "answer": null
+            },
+            {
+              "content": "head",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "rear",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

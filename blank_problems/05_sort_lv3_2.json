@@ -1,0 +1,228 @@
+{
+  "requests": [
+    {
+      "topicId": 5,
+      "orderNo": 3,
+      "title": "퀵 정렬 (Quick Sort)",
+      "description": "피벗을 기준으로 분할하는 퀵 정렬을 구현하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nstatic void quickSort(int[] arr, int low, int high) {\n    if (low _____ high) return;\n    int pivot = partition(arr, low, _____);  \n    quickSort(arr, low, pivot - 1);\n    quickSort(arr, pivot + _____, high);\n}\nstatic int partition(int[] arr, int low, int high) {\n    int pivot = arr[_____];\n    int i = low - 1;\n    for (int j = low; j < high; j++) {\n        if (arr[j] _____ pivot) {\n            int tmp = arr[++i]; arr[i] = arr[j]; arr[j] = _____;\n        }\n    }\n    int tmp = arr[i+1]; arr[i+1] = arr[high]; arr[high] = tmp;\n    return i + 1;\n}\n```",
+          "blanks": [
+            {
+              "content": ">=",
+              "answer": 1
+            },
+            {
+              "content": "high",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "high",
+              "answer": 4
+            },
+            {
+              "content": "<=",
+              "answer": 5
+            },
+            {
+              "content": "tmp",
+              "answer": 6
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "arr[i]",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nvoid quickSort(vector<int>& arr, int low, int high) {\n    if (low _____ high) return;\n    int pivot = partition(arr, low, _____);\n    quickSort(arr, low, pivot - 1);\n    quickSort(arr, pivot + _____, high);\n}\nint partition(vector<int>& arr, int low, int high) {\n    int pivot = arr[_____];\n    int i = low - 1;\n    for (int j = low; j < high; j++) {\n        if (arr[j] _____ pivot) {\n            swap(arr[++i], arr[_____]);\n        }\n    }\n    swap(arr[i+1], arr[high]);\n    return i + 1;\n}\n```",
+          "blanks": [
+            {
+              "content": ">=",
+              "answer": 1
+            },
+            {
+              "content": "high",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "high",
+              "answer": 4
+            },
+            {
+              "content": "<=",
+              "answer": 5
+            },
+            {
+              "content": "j",
+              "answer": 6
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\ndef quick_sort(arr, low, high):\n    if low _____ high:\n        return\n    pivot_idx = partition(arr, low, _____)\n    quick_sort(arr, low, pivot_idx - 1)\n    quick_sort(arr, pivot_idx + _____, high)\n\ndef partition(arr, low, high):\n    pivot = arr[_____]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] _____ pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[_____]\n    arr[i+1], arr[high] = arr[high], arr[i+1]\n    return i + 1\n```",
+          "blanks": [
+            {
+              "content": ">=",
+              "answer": 1
+            },
+            {
+              "content": "high",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "high",
+              "answer": 4
+            },
+            {
+              "content": "<=",
+              "answer": 5
+            },
+            {
+              "content": "i",
+              "answer": 6
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nfunction quickSort(arr, low, high) {\n    if (low _____ high) return;\n    let pivot = partition(arr, low, _____);\n    quickSort(arr, low, pivot - 1);\n    quickSort(arr, pivot + _____, high);\n}\nfunction partition(arr, low, high) {\n    let pivot = arr[_____];\n    let i = low - 1;\n    for (let j = low; j < high; j++) {\n        if (arr[j] _____ pivot) {\n            [arr[++i], arr[j]] = [arr[j], arr[_____]];\n        }\n    }\n    [arr[i+1], arr[high]] = [arr[high], arr[i+1]];\n    return i + 1;\n}\n```",
+          "blanks": [
+            {
+              "content": ">=",
+              "answer": 1
+            },
+            {
+              "content": "high",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "high",
+              "answer": 4
+            },
+            {
+              "content": "<=",
+              "answer": 5
+            },
+            {
+              "content": "i",
+              "answer": 6
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "low",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

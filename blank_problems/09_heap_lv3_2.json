@@ -1,0 +1,228 @@
+{
+  "requests": [
+    {
+      "topicId": 9,
+      "orderNo": 3,
+      "title": "힙 기반 다익스트라 최단 경로",
+      "description": "우선순위 큐(힙)를 사용한 다익스트라 알고리즘으로 단일 출발 최단 경로를 구하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint n = 5, start = 1;\nint[] dist = new int[n + 1];\nArrays.fill(dist, _____); // INF 초기화\ndist[start] = 0;\nPriorityQueue<int[]> pq = new PriorityQueue<>(_____); // 거리 기준 정렬\npq.offer(new int[]{0, start});\nwhile (!pq.isEmpty()) {\n    int[] cur = pq._____();\n    int d = cur[0], u = cur[1];\n    if (d _____ dist[u]) continue;\n    for (int[] e : graph.get(u)) {\n        int nd = d + e[1];\n        if (nd _____ dist[e[0]]) {\n            dist[e[0]] = nd;\n            pq.offer(new int[]{nd, _____});\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "Integer.MAX_VALUE",
+              "answer": 1
+            },
+            {
+              "content": "Comparator.comparingInt(x -> x[0])",
+              "answer": 2
+            },
+            {
+              "content": "poll",
+              "answer": 3
+            },
+            {
+              "content": ">",
+              "answer": 4
+            },
+            {
+              "content": "<",
+              "answer": 5
+            },
+            {
+              "content": "e[0]",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "Collections.reverseOrder()",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "e[1]",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint n = 5, start = 1;\nvector<int> dist(n+1, _____);  // INF\ndist[start] = 0;\npriority_queue<pair<int,int>, vector<pair<int,int>>, _____> pq;\npq.push({0, start});\nwhile (!pq.empty()) {\n    auto [d, u] = pq._____();\n    pq.pop();\n    if (d _____ dist[u]) continue;\n    for (auto& [v, w] : graph[u]) {\n        if (d + w _____ dist[v]) {\n            dist[v] = d + w;\n            pq.push({dist[v], _____});\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "1e9",
+              "answer": 1
+            },
+            {
+              "content": "greater<pair<int,int>>",
+              "answer": 2
+            },
+            {
+              "content": "top",
+              "answer": 3
+            },
+            {
+              "content": ">",
+              "answer": 4
+            },
+            {
+              "content": "<",
+              "answer": 5
+            },
+            {
+              "content": "v",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "less<pair<int,int>>",
+              "answer": null
+            },
+            {
+              "content": "front",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "u",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nimport heapq\nn, start = 5, 1\ndist = [_____] * (n + 1)\ndist[start] = 0\npq = [(0, start)]  # (거리, 노드)\nwhile _____:\n    d, u = heapq.heappop(pq)\n    if d _____ dist[u]: continue\n    for v, w in graph[u]:\n        nd = d + w\n        if nd _____ dist[v]:\n            dist[v] = nd\n            heapq.heappush(pq, (nd, _____));\nprint(dist[_____])\n```",
+          "blanks": [
+            {
+              "content": "float('inf')",
+              "answer": 1
+            },
+            {
+              "content": "pq",
+              "answer": 2
+            },
+            {
+              "content": ">",
+              "answer": 3
+            },
+            {
+              "content": "<",
+              "answer": 4
+            },
+            {
+              "content": "v",
+              "answer": 5
+            },
+            {
+              "content": "n",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "u",
+              "answer": null
+            },
+            {
+              "content": "start",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet n = 5, start = 1;\nlet dist = new Array(n+1).fill(_____);  // INF\ndist[start] = 0;\nlet pq = [[0, start]];  // [거리, 노드]\nwhile (pq._____) {\n    pq.sort((a,b) => a[0]-b[0]);\n    let [d, u] = pq.shift();\n    if (d _____ dist[u]) continue;\n    for (let [v, w] of graph[u]) {\n        let nd = d + w;\n        if (nd _____ dist[v]) {\n            dist[v] = nd;\n            pq.push([nd, _____]);\n        }\n    }\n}\nconsole.log(dist[_____]);\n```",
+          "blanks": [
+            {
+              "content": "Infinity",
+              "answer": 1
+            },
+            {
+              "content": "length",
+              "answer": 2
+            },
+            {
+              "content": ">",
+              "answer": 3
+            },
+            {
+              "content": "<",
+              "answer": 4
+            },
+            {
+              "content": "v",
+              "answer": 5
+            },
+            {
+              "content": "n",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "u",
+              "answer": null
+            },
+            {
+              "content": "start",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

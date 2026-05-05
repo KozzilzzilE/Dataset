@@ -1,0 +1,224 @@
+{
+  "requests": [
+    {
+      "topicId": 11,
+      "orderNo": 3,
+      "title": "DFS - 위상 정렬",
+      "description": "DFS를 활용한 위상 정렬로 방향 그래프의 노드 순서를 구하는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nstatic boolean[] visited;\nstatic Deque<Integer> result = new ArrayDeque<>();\nstatic List<List<Integer>> graph;\n\nstatic void dfs(int node) {\n    visited[_____] = true;\n    for (int next : graph.get(node)) {\n        if (!visited[_____]) dfs(next);\n    }\n    result._____(_____);  // 후처리: 결과 앞에 삽입\n}\n// 메인에서 전체 노드 순회\nfor (int i = 1; i <= n; i++) {\n    if (!visited[_____]) dfs(i);\n}\nresult.forEach(System.out::println);\nSystem.out.println(\"정렬 노드 수: \" + result._____);\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "next",
+              "answer": 2
+            },
+            {
+              "content": "addFirst",
+              "answer": 3
+            },
+            {
+              "content": "node",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
+            },
+            {
+              "content": "size",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "addLast",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "length",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nbool visited[6] = {};\nvector<int> result;\nvector<vector<int>> graph(6);\n\nvoid dfs(int node) {\n    visited[_____] = true;\n    for (int next : graph[node]) {\n        if (!visited[_____]) dfs(next);\n    }\n    result.push_back(_____);  // 후처리\n}\n// 전체 순회 후 역순이 위상 정렬 결과\nfor (int i = 1; i <= 5; i++) {\n    if (!visited[_____]) dfs(i);\n}\nreverse(result._____, result.end());\nfor (int v : result) cout << v << \" \";\ncout << \"\\n크기: \" << _____;\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "next",
+              "answer": 2
+            },
+            {
+              "content": "node",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "begin()",
+              "answer": 5
+            },
+            {
+              "content": "result.size()",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "end()",
+              "answer": null
+            },
+            {
+              "content": "result.length",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nvisited = [False] * 6\nresult = []\n\ndef dfs(node):\n    visited[_____] = True\n    for next_node in graph[node]:\n        if not visited[_____]:\n            dfs(next_node)\n    result._____(_____)  # 후처리\n\nfor i in range(1, 6):\n    if not visited[_____]:\n        dfs(i)\nresult.reverse()\nprint(result)\nprint(\"노드 수:\", _____(result))\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "next_node",
+              "answer": 2
+            },
+            {
+              "content": "append",
+              "answer": 3
+            },
+            {
+              "content": "node",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
+            },
+            {
+              "content": "len",
+              "answer": 6
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "insert",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet visited = new Array(6).fill(false);\nlet result = [];\n\nfunction dfs(node) {\n    visited[_____] = true;\n    for (let next of graph[node]) {\n        if (!visited[_____]) dfs(next);\n    }\n    result.push(_____);  // 후처리\n}\nfor (let i = 1; i <= 5; i++) {\n    if (!visited[_____]) dfs(i);\n}\nresult.reverse();\nconsole.log(result);\nconsole.log(\"노드 수:\", result._____);\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "next",
+              "answer": 2
+            },
+            {
+              "content": "node",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "reverse",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

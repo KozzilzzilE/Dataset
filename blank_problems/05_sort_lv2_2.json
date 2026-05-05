@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 5,
+      "orderNo": 2,
+      "title": "합병 정렬 (Merge Sort)",
+      "description": "분할 정복 방식의 합병 정렬을 구현하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nstatic void mergeSort(int[] arr, int l, int r) {\n    if (l _____ r) return;\n    int m = (l + r) / _____;\n    mergeSort(arr, l, m);\n    mergeSort(arr, m + 1, _____);  \n    merge(arr, l, m, r);\n}\nstatic void merge(int[] arr, int l, int m, int r) {\n    int[] tmp = Arrays.copyOfRange(arr, l, r + 1);\n    int i = 0, j = m - l + 1, k = l;\n    while (i <= m-l && j <= r-l)\n        arr[k++] = tmp[i] <= tmp[j] ? tmp[_____++] : tmp[j++];\n    while (i <= m-l) arr[k++] = tmp[_____++];\n    while (j <= r-l) arr[k++] = tmp[j++];\n}\n```",
+          "blanks": [
+            {
+              "content": ">=",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "r",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "l",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "mid",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nvoid mergeSort(vector<int>& arr, int l, int r) {\n    if (l _____ r) return;\n    int m = (l + r) / _____;\n    mergeSort(arr, l, m);\n    mergeSort(arr, m+1, _____);\n    vector<int> tmp(arr.begin()+l, arr.begin()+r+1);\n    int i = 0, j = m-l+1, k = l;\n    while (i <= m-l && j <= r-l)\n        arr[k++] = tmp[i] <= tmp[j] ? tmp[_____++] : tmp[j++];\n    while (i <= m-l) arr[k++] = tmp[i++];\n    while (j <= r-l) arr[k++] = tmp[_____++];\n}\n```",
+          "blanks": [
+            {
+              "content": ">=",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "r",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "j",
+              "answer": 5
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "l",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "mid",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\ndef merge_sort(arr):\n    if len(arr) _____ 1:\n        return arr\n    mid = len(arr) _____ 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[_____:])\n    result, i, j = [], 0, 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[_____]); i += 1\n        else:\n            result.append(right[j]); j += 1\n    return result + left[i:] + right[_____:]\n```",
+          "blanks": [
+            {
+              "content": "<=",
+              "answer": 1
+            },
+            {
+              "content": "//",
+              "answer": 2
+            },
+            {
+              "content": "mid",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "j",
+              "answer": 5
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "/",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nfunction mergeSort(arr) {\n    if (arr.length _____ 1) return arr;\n    let mid = Math.floor(arr.length / _____);\n    let left = mergeSort(arr.slice(0, mid));\n    let right = mergeSort(arr.slice(_____));\n    return merge(left, _____);\n}\nfunction merge(l, r) {\n    let res = [], i = 0, j = 0;\n    while (i < l.length && j < r.length)\n        res.push(l[i] <= r[j] ? l[_____++] : r[j++]);\n    return res.concat(l.slice(i)).concat(r.slice(j));\n}\n```",
+          "blanks": [
+            {
+              "content": "<=",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "mid",
+              "answer": 3
+            },
+            {
+              "content": "right",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "left",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

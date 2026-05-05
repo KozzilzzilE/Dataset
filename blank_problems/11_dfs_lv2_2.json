@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 11,
+      "orderNo": 2,
+      "title": "DFS - 무방향 그래프 사이클 탐지",
+      "description": "DFS를 활용해 무방향 그래프에서 사이클이 존재하는지 탐지하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nstatic boolean[] visited;\nstatic List<List<Integer>> graph;\n\nstatic boolean hasCycle(int node, int parent) {\n    visited[_____] = true;\n    for (int next : graph.get(node)) {\n        if (!visited[next]) {\n            if (hasCycle(next, _____)) return true;\n        } else if (next _____ parent) {\n            return _____;\n        }\n    }\n    return _____;\n}\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "node",
+              "answer": 2
+            },
+            {
+              "content": "!=",
+              "answer": 3
+            },
+            {
+              "content": "true",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "parent",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nbool visited[6] = {};\nvector<vector<int>> graph(6);\n\nbool hasCycle(int node, int parent) {\n    visited[_____] = true;\n    for (int next : graph[node]) {\n        if (!visited[next]) {\n            if (hasCycle(next, _____)) return true;\n        } else if (next _____ parent) {\n            return _____;\n        }\n    }\n    return _____;\n}\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "node",
+              "answer": 2
+            },
+            {
+              "content": "!=",
+              "answer": 3
+            },
+            {
+              "content": "true",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "parent",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nvisited = [False] * 6\n\ndef has_cycle(node, parent):\n    visited[_____] = True\n    for next_node in graph[node]:\n        if not visited[next_node]:\n            if has_cycle(next_node, _____):\n                return True\n        elif next_node _____ parent:\n            return _____\n    return _____\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "node",
+              "answer": 2
+            },
+            {
+              "content": "!=",
+              "answer": 3
+            },
+            {
+              "content": "True",
+              "answer": 4
+            },
+            {
+              "content": "False",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "parent",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet visited = new Array(6).fill(false);\n\nfunction hasCycle(node, parent) {\n    visited[_____] = true;\n    for (let next of graph[node]) {\n        if (!visited[next]) {\n            if (hasCycle(next, _____)) return true;\n        } else if (next _____ parent) {\n            return _____;\n        }\n    }\n    return _____;\n}\n```",
+          "blanks": [
+            {
+              "content": "node",
+              "answer": 1
+            },
+            {
+              "content": "node",
+              "answer": 2
+            },
+            {
+              "content": "!==",
+              "answer": 3
+            },
+            {
+              "content": "true",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "parent",
+              "answer": null
+            },
+            {
+              "content": "===",
+              "answer": null
+            },
+            {
+              "content": "false",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 13,
+      "orderNo": 2,
+      "title": "플로이드-워셜 최단 경로",
+      "description": "모든 쌍 최단 경로를 구하는 플로이드-워셜 알고리즘 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint INF = Integer.MAX_VALUE / 2;\nint n = 4;\nint[][] dist = new int[n+1][n+1];\nfor (int[] row : dist) Arrays.fill(row, _____);\nfor (int i = 1; i <= n; i++) dist[i][i] = _____;\n// 간선 초기화 생략\nfor (int k = 1; k <= n; k++) {\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n; j++) {\n            if (dist[i][k] + dist[k][j] _____ dist[i][j]) {\n                dist[i][j] = dist[i][_____] + dist[_____][j];\n            }\n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "k",
+              "answer": 4
+            },
+            {
+              "content": "k",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "Integer.MAX_VALUE",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nconst int INF = 1e9;\nint n = 4;\nvector<vector<int>> dist(n+1, vector<int>(n+1, _____));\nfor (int i = 1; i <= n; i++) dist[i][i] = _____;\n// 간선 초기화 생략\nfor (int k = 1; k <= n; k++)\n    for (int i = 1; i <= n; i++)\n        for (int j = 1; j <= n; j++)\n            if (dist[i][k] + dist[k][j] _____ dist[i][j])\n                dist[i][j] = dist[i][_____] + dist[_____][j];\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "k",
+              "answer": 4
+            },
+            {
+              "content": "k",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "INT_MAX",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nINF = float('inf')\nn = 4\ndist = [[_____] * (n+1) for _ in range(n+1)]\nfor i in range(1, n+1):\n    dist[i][i] = _____\n# 간선 초기화 생략\nfor k in range(1, n+1):\n    for i in range(1, n+1):\n        for j in range(1, n+1):\n            if dist[i][k] + dist[k][j] _____ dist[i][j]:\n                dist[i][j] = dist[i][_____] + dist[_____][j]\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "k",
+              "answer": 4
+            },
+            {
+              "content": "k",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "None",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nconst INF = Infinity;\nlet n = 4;\nlet dist = Array.from({length: n+1}, () => new Array(n+1).fill(_____));\nfor (let i = 1; i <= n; i++) dist[i][i] = _____;\n// 간선 초기화 생략\nfor (let k = 1; k <= n; k++)\n    for (let i = 1; i <= n; i++)\n        for (let j = 1; j <= n; j++)\n            if (dist[i][k] + dist[k][j] _____ dist[i][j])\n                dist[i][j] = dist[i][_____] + dist[_____][j];\n```",
+          "blanks": [
+            {
+              "content": "INF",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "k",
+              "answer": 4
+            },
+            {
+              "content": "k",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "<=",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            },
+            {
+              "content": "j",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

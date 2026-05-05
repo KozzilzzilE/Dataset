@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 13,
+      "orderNo": 2,
+      "title": "인접 행렬 - 그래프 표현과 차수 계산",
+      "description": "인접 행렬로 무방향 그래프를 표현하고 특정 노드의 차수(degree)를 구하는 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int n = 5;\n        int[][] adj = new int[n + _____][n + 1];\n        adj[1][3] = adj[3][1] = 1;\n        adj[2][4] = adj[4][_____] = 1;\n        adj[3][5] = adj[_____][3] = 1;\n        int degree = 0;\n        for (int i = 1; i <= n; i++) {\n            if (adj[3][i] == 1) degree _____ 1;\n        }\n        System.out.println(\"3번 차수: \" + _____);\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "5",
+              "answer": 3
+            },
+            {
+              "content": "+=",
+              "answer": 4
+            },
+            {
+              "content": "degree",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "4",
+              "answer": null
+            },
+            {
+              "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nint n = 5;\nint adj[n + _____][n + 1] = {};\nadj[1][3] = adj[3][1] = 1;\nadj[2][4] = adj[4][_____] = 1;\nadj[3][5] = adj[_____][3] = 1;\nint degree = 0;\nfor(int i = 1; i <= n; i++)\n    if(adj[3][i] == 1) degree _____ 1;\ncout << \"3번 차수: \" << _____;\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "5",
+              "answer": 3
+            },
+            {
+              "content": "+=",
+              "answer": 4
+            },
+            {
+              "content": "degree",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "4",
+              "answer": null
+            },
+            {
+              "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nn = 5\nadj = [[0] * (n + 1) for _ in range(n + _____)]  \nadj[1][3] = adj[3][1] = 1\nadj[2][4] = adj[4][_____] = 1\nadj[3][5] = adj[_____][3] = 1\ndegree = 0\nfor i in range(1, n + 1):\n    if adj[3][i] == 1:\n        degree _____ 1\nprint(\"3번 차수:\", _____)\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "5",
+              "answer": 3
+            },
+            {
+              "content": "+=",
+              "answer": 4
+            },
+            {
+              "content": "degree",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "4",
+              "answer": null
+            },
+            {
+              "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nconst n = 5;\nconst adj = Array.from({length: n + _____}, () => new Array(n + 1).fill(0));\nadj[1][3] = adj[3][1] = 1;\nadj[2][4] = adj[4][_____] = 1;\nadj[3][5] = adj[_____][3] = 1;\nlet degree = 0;\nfor(let i = 1; i <= n; i++)\n    if(adj[3][i] === 1) degree _____ 1;\nconsole.log(\"3번 차수:\", _____);\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "2",
+              "answer": 2
+            },
+            {
+              "content": "5",
+              "answer": 3
+            },
+            {
+              "content": "+=",
+              "answer": 4
+            },
+            {
+              "content": "degree",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "4",
+              "answer": null
+            },
+            {
+              "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "n",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

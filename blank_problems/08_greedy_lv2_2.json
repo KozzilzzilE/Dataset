@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 8,
+      "orderNo": 2,
+      "title": "그리디 - 회의실 배정",
+      "description": "회의 종료 시간 기준으로 정렬 후 최대 회의 수를 선택하는 그리디 코드의 빈칸 5개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint[][] meetings = {{1,4},{3,5},{0,6},{5,7},{3,8},{5,9},{6,10},{8,11},{8,12},{2,13},{12,14}};\nArrays.sort(meetings, (a, b) -> a[_____] - b[1]);\nint count = 0, endTime = _____;\nfor (int[] m : meetings) {\n    if (m[0] _____ endTime) {\n        endTime = m[_____];\n        _____++;\n    }\n}\nSystem.out.println(\"최대 회의 수: \" + count);\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": ">=",
+              "answer": 3
+            },
+            {
+              "content": "1",
+              "answer": 4
+            },
+            {
+              "content": "count",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "Integer.MIN_VALUE",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nvector<pair<int,int>> meetings = {{1,4},{3,5},{0,6},{5,7},{3,8}};\nsort(meetings.begin(), meetings.end(), [](auto& a, auto& b) {\n    return a._____ < b.second;\n});\nint count = 0, endTime = _____;\nfor (auto& [s, e] : meetings) {\n    if (s _____ endTime) {\n        endTime = _____;\n        _____++;\n    }\n}\ncout << \"최대 회의 수: \" << count;\n```",
+          "blanks": [
+            {
+              "content": "second",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": ">=",
+              "answer": 3
+            },
+            {
+              "content": "e",
+              "answer": 4
+            },
+            {
+              "content": "count",
+              "answer": 5
+            },
+            {
+              "content": "first",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "INT_MIN",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nmeetings = [(1,4),(3,5),(0,6),(5,7),(3,8),(5,9)]\nmeetings.sort(key=lambda x: x[_____])\ncount, end_time = 0, _____\nfor start, end in meetings:\n    if start _____ end_time:\n        end_time = _____\n        _____ += 1\nprint(\"최대 회의 수:\", count)\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": ">=",
+              "answer": 3
+            },
+            {
+              "content": "end",
+              "answer": 4
+            },
+            {
+              "content": "count",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "start",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "float('inf')",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet meetings = [[1,4],[3,5],[0,6],[5,7],[3,8]];\nmeetings.sort((a, b) => a[_____] - b[1]);\nlet count = 0, endTime = _____;\nfor (let [s, e] of meetings) {\n    if (s _____ endTime) {\n        endTime = _____;\n        _____++;\n    }\n}\nconsole.log(\"최대 회의 수:\", count);\n```",
+          "blanks": [
+            {
+              "content": "1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": ">=",
+              "answer": 3
+            },
+            {
+              "content": "e",
+              "answer": 4
+            },
+            {
+              "content": "count",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": ">",
+              "answer": null
+            },
+            {
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "result",
+              "answer": null
+            },
+            {
+              "content": "Infinity",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 12,
+      "orderNo": 2,
+      "title": "BFS - 최단 거리 계산",
+      "description": "BFS를 사용해 시작 노드에서 각 노드까지의 최단 거리를 구하는 코드의 빈칸 5개를 채우세요.\n방문하지 않은 노드는 거리를 -1로 초기화합니다.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint[] dist = new int[n + 1];\nArrays.fill(dist, _____);\nQueue<Integer> queue = new LinkedList<>();\nqueue.add(start);\ndist[start] = _____;\nwhile (!queue._____()) {\n    int cur = queue.poll();\n    for (int next : graph.get(cur)) {\n        if (dist[next] == _____) {\n            dist[next] = dist[cur] + 1;\n            queue.add(_____);  \n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "isEmpty",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "empty",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "Integer.MAX_VALUE",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nvector<int> dist(n + 1, _____);\nqueue<int> q;\nq.push(start);\ndist[start] = _____;\nwhile (!q._____()) {\n    int cur = q.front(); q.pop();\n    for (int next : graph[cur]) {\n        if (dist[next] == _____) {\n            dist[next] = dist[cur] + 1;\n            q.push(_____);  \n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "empty",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "isEmpty",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "INT_MAX",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque\ndist = [_____] * (n + 1)\nqueue = deque([start])\ndist[start] = _____\nwhile _____:\n    cur = queue.popleft()\n    for next_node in graph[cur]:\n        if dist[next_node] == _____:\n            dist[next_node] = dist[cur] + 1\n            queue.append(_____)\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "queue",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next_node",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "False",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet dist = new Array(n + 1).fill(_____);  \nlet queue = [start];\ndist[start] = _____;\nwhile (queue._____) {\n    let cur = queue.shift();\n    for (let next of graph[cur]) {\n        if (dist[next] === _____) {\n            dist[next] = dist[cur] + 1;\n            queue.push(_____);  \n        }\n    }\n}\n```",
+          "blanks": [
+            {
+              "content": "-1",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "length",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "next",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "cur",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

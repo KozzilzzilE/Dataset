@@ -1,0 +1,212 @@
+{
+  "requests": [
+    {
+      "topicId": 2,
+      "orderNo": 2,
+      "title": "스택 - 인접 중복 문자 제거",
+      "description": "스택을 활용하여 인접한 같은 문자를 반복 제거하는 코드의 빈칸 5개를 채우세요. (예: \"abbac\" → \"c\")",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nString str = \"abbac\";\nDeque<Character> stack = new _____<>();\nfor (char c : str.toCharArray()) {\n    if (!stack.isEmpty() && stack.peek() == c) {\n        stack._____();\n    } else {\n        stack.push(_____);  \n    }\n}\nStringBuilder sb = new StringBuilder();\nwhile (!stack._____()) sb.insert(0, stack.pop());\nSystem.out.println(sb._____());\n```",
+          "blanks": [
+            {
+              "content": "ArrayDeque",
+              "answer": 1
+            },
+            {
+              "content": "pop",
+              "answer": 2
+            },
+            {
+              "content": "c",
+              "answer": 3
+            },
+            {
+              "content": "isEmpty",
+              "answer": 4
+            },
+            {
+              "content": "toString",
+              "answer": 5
+            },
+            {
+              "content": "LinkedList",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "str",
+              "answer": null
+            },
+            {
+              "content": "empty",
+              "answer": null
+            },
+            {
+              "content": "reverse",
+              "answer": null
+            },
+            {
+              "content": "length",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nstring str = \"abbac\";\nstack<char> st;\nfor (char c : _____) {\n    if (!st.empty() && st.top() == c) {\n        st._____();\n    } else {\n        st.push(_____);  \n    }\n}\nstring result = \"\";\nwhile (!st._____()) {\n    result = st.top() + result;\n    st.pop();\n}\ncout << _____;\n```",
+          "blanks": [
+            {
+              "content": "str",
+              "answer": 1
+            },
+            {
+              "content": "pop",
+              "answer": 2
+            },
+            {
+              "content": "c",
+              "answer": 3
+            },
+            {
+              "content": "empty",
+              "answer": 4
+            },
+            {
+              "content": "result",
+              "answer": 5
+            },
+            {
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "ch",
+              "answer": null
+            },
+            {
+              "content": "isEmpty",
+              "answer": null
+            },
+            {
+              "content": "answer",
+              "answer": null
+            },
+            {
+              "content": "output",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nstr_val = \"abbac\"\nstack = []\nfor c in _____:\n    if stack and stack[_____] == c:\n        stack.pop()\n    else:\n        stack.append(c)\nresult = \"\"\nwhile _____:\n    result = stack.pop() + result\nprint(_____)\nprint(\"길이:\", _____(result))\n```",
+          "blanks": [
+            {
+              "content": "str_val",
+              "answer": 1
+            },
+            {
+              "content": "-1",
+              "answer": 2
+            },
+            {
+              "content": "stack",
+              "answer": 3
+            },
+            {
+              "content": "result",
+              "answer": 4
+            },
+            {
+              "content": "len",
+              "answer": 5
+            },
+            {
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "answer",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet str = \"abbac\";\nlet stack = [];\nfor (let c of _____) {\n    if (stack.length && stack[stack.length-1] === c) {\n        stack._____();\n    } else {\n        stack.push(_____);  \n    }\n}\nlet result = \"\";\nwhile (stack._____) {\n    result = stack.pop() + _____;\n}\nconsole.log(result);\n```",
+          "blanks": [
+            {
+              "content": "str",
+              "answer": 1
+            },
+            {
+              "content": "pop",
+              "answer": 2
+            },
+            {
+              "content": "c",
+              "answer": 3
+            },
+            {
+              "content": "length",
+              "answer": 4
+            },
+            {
+              "content": "result",
+              "answer": 5
+            },
+            {
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "push",
+              "answer": null
+            },
+            {
+              "content": "ch",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "answer",
+              "answer": null
+            },
+            {
+              "content": "output",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "requests": [
+    {
+      "topicId": 12,
+      "orderNo": 3,
+      "title": "BFS - 섬의 개수 세기",
+      "description": "BFS를 사용해 2D 격자에서 연결된 육지(1)의 덩어리(섬) 개수를 세는 코드의 빈칸 6개를 채우세요.",
+      "codes": [
+        {
+          "languageId": 1,
+          "codeTemplate": "```java\nint[][] grid = {{1,1,0,0,0},{1,1,0,0,0},{0,0,1,0,0},{0,0,0,1,1}};\nint rows = grid.length, cols = grid[0]._____;\nint islands = 0;\nint[][] dirs = {{0,1},{0,-1},{1,0},{-1,0}};\nfor (int r = 0; r < rows; r++) {\n    for (int c = 0; c < cols; c++) {\n        if (grid[r][c] == _____) {\n            _____++;\n            Queue<int[]> q = new LinkedList<>();\n            q.add(new int[]{r, c});\n            grid[r][c] = _____;\n            while (!q.isEmpty()) {\n                int[] pos = q._____();\n                for (int[] d : dirs) {\n                    int nr = pos[0]+d[0], nc = pos[1]+d[1];\n                    if (nr>=0 && nr<rows && nc>=0 && nc<cols && grid[nr][nc]==1) {\n                        grid[nr][nc] = 0;\n                        q.add(new int[]{nr, _____});\n                    }\n                }\n            }\n        }\n    }\n}\nSystem.out.println(islands);\n```",
+          "blanks": [
+            {
+              "content": "length",
+              "answer": 1
+            },
+            {
+              "content": "1",
+              "answer": 2
+            },
+            {
+              "content": "islands",
+              "answer": 3
+            },
+            {
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "poll",
+              "answer": 5
+            },
+            {
+              "content": "nc",
+              "answer": 6
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "nr",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 2,
+          "codeTemplate": "```cpp\nvector<vector<int>> grid = {{1,1,0,0},{1,1,0,0},{0,0,1,0},{0,0,0,1}};\nint rows = grid.size(), cols = grid[0]._____;\nint islands = 0;\nvector<pair<int,int>> dirs = {{0,1},{0,-1},{1,0},{-1,0}};\nfor (int r = 0; r < rows; r++) {\n    for (int c = 0; c < cols; c++) {\n        if (grid[r][c] == _____) {\n            _____++;\n            queue<pair<int,int>> q;\n            q.push({r,c});\n            grid[r][c] = _____;\n            while (!q.empty()) {\n                auto [cr,cc] = q.front(); q.pop();\n                for (auto [dr,dc] : dirs) {\n                    int nr=cr+dr, nc=cc+dc;\n                    if (nr>=0 && nr<rows && nc>=0 && nc<cols && grid[nr][nc]==1) {\n                        grid[nr][nc] = 0;\n                        q.push({nr, _____});\n                    }\n                }\n            }\n        }\n    }\n}\ncout << _____;\n```",
+          "blanks": [
+            {
+              "content": "size()",
+              "answer": 1
+            },
+            {
+              "content": "1",
+              "answer": 2
+            },
+            {
+              "content": "islands",
+              "answer": 3
+            },
+            {
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "nc",
+              "answer": 5
+            },
+            {
+              "content": "islands",
+              "answer": 6
+            },
+            {
+              "content": "length",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "nr",
+              "answer": null
+            },
+            {
+              "content": "rows",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque\ngrid = [[1,1,0,0],[1,1,0,0],[0,0,1,0],[0,0,0,1]]\nrows, cols = len(grid), len(grid[_____])\nislands = 0\ndirs = [(0,1),(0,-1),(1,0),(-1,0)]\nfor r in range(rows):\n    for c in range(cols):\n        if grid[r][c] == _____:\n            _____ += 1\n            q = deque([(r,c)])\n            grid[r][c] = _____\n            while q:\n                cr, cc = q.popleft()\n                for dr, dc in dirs:\n                    nr, nc = cr+dr, cc+dc\n                    if 0<=nr<rows and 0<=nc<cols and grid[nr][nc]==1:\n                        grid[nr][nc] = 0\n                        q.append((nr, _____))\nprint(_____)\n```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "1",
+              "answer": 2
+            },
+            {
+              "content": "islands",
+              "answer": 3
+            },
+            {
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "nc",
+              "answer": 5
+            },
+            {
+              "content": "islands",
+              "answer": 6
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "nr",
+              "answer": null
+            },
+            {
+              "content": "rows",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet grid = [[1,1,0,0],[1,1,0,0],[0,0,1,0],[0,0,0,1]];\nlet rows = grid.length, cols = grid[0]._____;\nlet islands = 0;\nlet dirs = [[0,1],[0,-1],[1,0],[-1,0]];\nfor (let r = 0; r < rows; r++) {\n    for (let c = 0; c < cols; c++) {\n        if (grid[r][c] === _____) {\n            _____++;\n            let q = [[r,c]];\n            grid[r][c] = _____;\n            while (q.length) {\n                let [cr,cc] = q.shift();\n                for (let [dr,dc] of dirs) {\n                    let nr=cr+dr, nc=cc+dc;\n                    if (nr>=0&&nr<rows&&nc>=0&&nc<cols&&grid[nr][nc]===1) {\n                        grid[nr][nc]=0;\n                        q.push([nr, _____]);\n                    }\n                }\n            }\n        }\n    }\n}\nconsole.log(_____);  \n```",
+          "blanks": [
+            {
+              "content": "length",
+              "answer": 1
+            },
+            {
+              "content": "1",
+              "answer": 2
+            },
+            {
+              "content": "islands",
+              "answer": 3
+            },
+            {
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "nc",
+              "answer": 5
+            },
+            {
+              "content": "islands",
+              "answer": 6
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "nr",
+              "answer": null
+            },
+            {
+              "content": "rows",
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
