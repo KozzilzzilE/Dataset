@@ -43,7 +43,7 @@
     {
       "languageId": 3,
       "timeLimitMs": 3000,
-      "solutionCode": "import sys\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\ncur=mx=arr[0]\nfor v in arr[1:]:\n    cur=max(v,cur+v); mx=max(mx,cur)\nprint(mx)"
+      "solutionCode": "import sys\ndata=list(map(int,sys.stdin.readline().split()))\nn=data[0]; arr=data[1:]\ncur=mx=arr[0]\nfor v in arr[1:]:\n    cur=max(v,cur+v); mx=max(mx,cur)\nprint(mx)"
     },
     {
       "languageId": 4,

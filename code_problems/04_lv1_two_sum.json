@@ -43,12 +43,12 @@
     {
       "languageId": 3,
       "timeLimitMs": 3000,
-      "solutionCode": "import sys\ninput=sys.stdin.readline\ndata=list(map(int,input().split()))\nn,target=data[0],data[1]\narr=list(map(int,input().split()))\nseen={}\nfor i,v in enumerate(arr):\n    need=target-v\n    if need in seen:\n        print(seen[need],i)\n        break\n    seen[v]=i"
+      "solutionCode": "import sys\ndata=list(map(int,sys.stdin.readline().split()))\nn,target=data[0],data[1]\narr=data[2:]\nseen={}\nfor i,v in enumerate(arr):\n    need=target-v\n    if need in seen:\n        print(seen[need],i)\n        break\n    seen[v]=i"
     },
     {
       "languageId": 4,
       "timeLimitMs": 2000,
-      "solutionCode": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=data[0].split(' ').map(Number);\nconst arr=data[1].split(' ').map(Number);\nconst seen={};\nfor(let i=0;i<n;i++){\n    const need=target-arr[i];\n    if(need in seen){console.log(seen[need]+' '+i);break;}\n    seen[arr[i]]=i;\n}"
+      "solutionCode": "const data=require('fs').readFileSync(process.argv[2],'utf8').trim().split(' ').map(Number);\nconst n=data[0],target=data[1],arr=data.slice(2);\nconst seen={};\nfor(let i=0;i<n;i++){\n    const need=target-arr[i];\n    if(need in seen){console.log(seen[need]+' '+i);break;}\n    seen[arr[i]]=i;\n}"
     }
   ]
 }

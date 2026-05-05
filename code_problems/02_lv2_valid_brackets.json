@@ -52,7 +52,7 @@
     {
       "languageId": 4,
       "timeLimitMs": 2000,
-      "solutionCode": "const s=require('fs').readFileSync('/dev/stdin','utf8').replace(/\\n$/,'');\nconst stack=[],p={')':'(','}':('{',']':'['};\nfor(const c of s){\n    if('({['.includes(c)) stack.push(c);\n    else if(')}]'.includes(c)){\n        if(!stack.length||stack[stack.length-1]!==p[c]){console.log('false');process.exit();}\n        stack.pop();\n    }\n}\nconsole.log(stack.length===0?'true':'false');"
+      "solutionCode": "const s=require('fs').readFileSync('/dev/stdin','utf8').replace(/\\n$/,'');\nconst stack=[],p={')':'(','}':'{',']':'['};\nfor(const c of s){\n    if('({['.includes(c)) stack.push(c);\n    else if(')}]'.includes(c)){\n        if(!stack.length||stack[stack.length-1]!==p[c]){console.log('false');process.exit();}\n        stack.pop();\n    }\n}\nconsole.log(stack.length===0?'true':'false');"
     }
   ]
 }

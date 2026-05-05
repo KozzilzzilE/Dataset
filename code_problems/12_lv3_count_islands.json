@@ -43,7 +43,7 @@
     {
       "languageId": 3,
       "timeLimitMs": 3000,
-      "solutionCode": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nR,C=map(int,input().split())\ngrid=[input().strip() for _ in range(R)]\nvis=[[False]*C for _ in range(R)]\ndef bfs(r,c):\n    q=deque([(r,c)]); vis[r][c]=True\n    for cr,cc in q:\n        for dr,dc in[(-1,0),(1,0),(0,-1),(0,1)]:\n            nr,nc=cr+dr,cc+dc\n            if 0<=nr<R and 0<=nc<C and not vis[nr][nc] and grid[nr][nc]=='1':\n                vis[nr][nc]=True; q.append((nr,nc))\ncnt=0\nfor r in range(R):\n    for c in range(C):\n        if not vis[r][c] and grid[r][c]=='1': bfs(r,c); cnt+=1\nprint(cnt)"
+      "solutionCode": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nR,C=map(int,input().split())\ngrid=[input().strip() for _ in range(R)]\nvis=[[False]*C for _ in range(R)]\ndef bfs(r,c):\n    q=deque([(r,c)]); vis[r][c]=True\n    while q:\n        cr,cc=q.popleft()\n        for dr,dc in[(-1,0),(1,0),(0,-1),(0,1)]:\n            nr,nc=cr+dr,cc+dc\n            if 0<=nr<R and 0<=nc<C and not vis[nr][nc] and grid[nr][nc]=='1':\n                vis[nr][nc]=True; q.append((nr,nc))\ncnt=0\nfor r in range(R):\n    for c in range(C):\n        if not vis[r][c] and grid[r][c]=='1': bfs(r,c); cnt+=1\nprint(cnt)"
     },
     {
       "languageId": 4,
