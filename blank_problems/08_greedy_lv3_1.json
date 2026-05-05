@@ -62,19 +62,31 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint starts[meetings.size()]; \nfor(int i = 0; i < meetings.size(); i++) \n    starts[i] = meetings[i][_____]; \nint ends[meetings.size()]; \nfor(int i = 0; i < meetings.size(); i++) \n    ends[i] = meetings[i][1]; \nsort(starts, starts + meetings.size()); \nsort(ends, ends + meetings.size()); \nint rooms = 0, endIdx = 0; \nfor(int s : starts) { \n    if(s < ends[endIdx]) rooms_____; \n    else endIdx_____; \n}\n```",
+          "codeTemplate": "```cpp\nvector<int> starts, ends;\nfor(auto& m : meetings) {\n    starts.push_back(m[_____]);\n    ends.push_back(m[1]);\n}\nsort(starts.begin(), starts.end());\nsort(ends.begin(), ends.end());\nint rooms = 0, endIdx = _____;\nfor(int s : starts) {\n    if(s < ends[endIdx]) rooms_____;\n    else endIdx_____;\n}\ncout << _____;```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "++",
+              "content": "0",
               "answer": 2
             },
             {
               "content": "++",
               "answer": 3
+            },
+            {
+              "content": "++",
+              "answer": 4
+            },
+            {
+              "content": "rooms",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
             },
             {
               "content": "1",
@@ -85,96 +97,96 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "--",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "endIdx",
               "answer": null
             },
             {
-              "content": "INT_MAX",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
+              "content": "meetings",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nstarts = [m[_____] for m in meetings] \nends = [m[1] for m in meetings] \nstarts.sort() \nends.sort() \nrooms = 0 \nendIdx = 0 \nfor s in starts: \n    if s < ends[endIdx]: \n        rooms _____ 1 \n    else: \n        endIdx _____ 1 \n```",
+          "codeTemplate": "```python\nstarts = [m[_____] for m in meetings]\nends = [m[1] for m in meetings]\nstarts.sort()\nends.sort()\nrooms = _____\nendIdx = 0\nfor s in starts:\n    if s < ends[endIdx]:\n        rooms _____ 1\n    else:\n        endIdx _____ 1\nprint(_____)```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "+=",
+              "content": "0",
               "answer": 2
             },
             {
-              "content": "+=",
+              "content": "+= ",
               "answer": 3
+            },
+            {
+              "content": "+= ",
+              "answer": 4
+            },
+            {
+              "content": "rooms",
+              "answer": 5
             },
             {
               "content": "1",
               "answer": null
             },
             {
-              "content": "-=",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "-= ",
               "answer": null
             },
             {
-              "content": "None",
+              "content": "-= ",
               "answer": null
             },
             {
-              "content": "False",
+              "content": "endIdx",
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
-              "content": "/=",
+              "content": "meetings",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet starts = meetings.map(m => m[_____]); \nlet ends = meetings.map(m => m[1]); \nstarts.sort((a,b) => a-b); \nends.sort((a,b) => a-b); \nlet rooms = 0, endIdx = 0; \nfor(let s of starts) { \n    if(s < ends[endIdx]) rooms_____; \n    else endIdx_____; \n}\n```",
+          "codeTemplate": "```javascript\nlet starts = meetings.map(m => m[_____]);\nlet ends = meetings.map(m => m[1]);\nstarts.sort((a,b) => a-b);\nends.sort((a,b) => a-b);\nlet rooms = _____, endIdx = 0;\nfor(let s of starts) {\n    if(s < ends[endIdx]) rooms_____;\n    else endIdx_____;\n}\nconsole.log(_____);```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "++",
+              "content": "0",
               "answer": 2
             },
             {
               "content": "++",
               "answer": 3
+            },
+            {
+              "content": "++",
+              "answer": 4
+            },
+            {
+              "content": "rooms",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
             },
             {
               "content": "1",
@@ -185,27 +197,15 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "--",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "endIdx",
               "answer": null
             },
             {
-              "content": "undefined",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
+              "content": "meetings",
               "answer": null
             }
           ]

@@ -108,50 +108,50 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nsum = _____ \nfor i in range(len(arr)): \n    sum _____ arr[i] \navg = sum _____ len(arr) \nprint(_____)\n```",
+          "codeTemplate": "```python\narr = [1, 2, 3, 4, 5]\nsum = _____\nfor i in range(_____):\n    sum _____ arr[i]\navg = sum _____ len(arr)\nprint(_____)```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "+=",
+              "content": "len(arr)",
               "answer": 2
             },
             {
-              "content": "//",
+              "content": "+=",
               "answer": 3
             },
             {
-              "content": "avg",
+              "content": "/",
               "answer": 4
             },
             {
-              "content": "for arr",
-              "answer": null
-            },
-            {
-              "content": "/",
-              "answer": null
+              "content": "avg",
+              "answer": 5
             },
             {
               "content": "1",
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "False",
+              "content": "range(arr)",
               "answer": null
             },
             {
               "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "//",
+              "answer": null
+            },
+            {
+              "content": "sum",
+              "answer": null
+            },
+            {
+              "content": "arr[i]",
               "answer": null
             }
           ]

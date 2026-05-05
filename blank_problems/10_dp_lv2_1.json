@@ -108,50 +108,50 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndp = [0] * (n + 1) \ndp[1] = _____ \ndp[2] = _____ \nfor i in range(3, n + 1): \n    dp[i] = dp[i-_____] + dp[i-2] \nprint(dp[_____]) \n```",
+          "codeTemplate": "```python\nn = _____\ndp = [0] * (n + 1)\ndp[1] = _____\ndp[2] = _____\nfor i in range(_____, n + 1):\n    dp[i] = dp[i-1] + dp[i-2]\nprint(dp[n])```",
           "blanks": [
             {
-              "content": "1",
+              "content": "5",
               "answer": 1
             },
             {
-              "content": "2",
+              "content": "1",
               "answer": 2
             },
             {
-              "content": "1",
+              "content": "2",
               "answer": 3
             },
             {
-              "content": "n",
+              "content": "3",
               "answer": 4
+            },
+            {
+              "content": "n",
+              "answer": 5
+            },
+            {
+              "content": "10",
+              "answer": null
             },
             {
               "content": "0",
               "answer": null
             },
             {
-              "content": "3",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "2",
               "answer": null
             },
             {
-              "content": "True",
+              "content": "n-1",
               "answer": null
             },
             {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
+              "content": "dp[n-1]",
               "answer": null
             }
           ]

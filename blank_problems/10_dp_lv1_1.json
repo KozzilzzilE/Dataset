@@ -58,26 +58,38 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nlong dp[n+1]; \ndp[0] = _____; \nfor(int i = _____; i <= n; i++) \n    dp[i] = dp[i-1] _____ dp[i-2]; \ncout << dp[_____];\n```",
+          "codeTemplate": "```cpp\nint n = 10;\nlong dp[n+1];\ndp[_____] = 0;\ndp[1] = _____;\nfor(int i = _____; i <= n; i++)\n    dp[i] = dp[i-1] _____ dp[i-2];\ncout << dp[_____];```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "2",
+              "content": "1",
               "answer": 2
             },
             {
-              "content": "+",
+              "content": "2",
               "answer": 3
             },
             {
-              "content": "n",
+              "content": "+",
               "answer": 4
             },
             {
+              "content": "n",
+              "answer": 5
+            },
+            {
               "content": "1",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "3",
               "answer": null
             },
             {
@@ -85,19 +97,7 @@
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "INT_MAX",
-              "answer": null
-            },
-            {
-              "content": "3",
+              "content": "n-1",
               "answer": null
             },
             {
@@ -108,26 +108,38 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndp = [0] * (n + 1) \ndp[0] = _____ \nfor i in range(_____, n + 1): \n    dp[i] = dp[i-1] _____ dp[i-2] \nprint(dp[_____]) \n```",
+          "codeTemplate": "```python\nn = 10\ndp = [0] * (n + 1)\ndp[_____] = 0\ndp[1] = _____\nfor i in range(_____, n + 1):\n    dp[i] = dp[i-1] _____ dp[i-2]\nprint(dp[_____])```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "2",
+              "content": "1",
               "answer": 2
             },
             {
-              "content": "+",
+              "content": "2",
               "answer": 3
             },
             {
-              "content": "n",
+              "content": "+",
               "answer": 4
             },
             {
+              "content": "n",
+              "answer": 5
+            },
+            {
               "content": "1",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "3",
               "answer": null
             },
             {
@@ -135,19 +147,7 @@
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "False",
-              "answer": null
-            },
-            {
-              "content": "3",
+              "content": "n-1",
               "answer": null
             },
             {
@@ -158,26 +158,38 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet dp = new Array(n + 1); \ndp[0] = _____; \nfor(let i = _____; i <= n; i++) \n    dp[i] = dp[i-1] _____ dp[i-2]; \nconsole.log(dp[_____]); \n```",
+          "codeTemplate": "```javascript\nlet n = 10;\nlet dp = new Array(n + 1);\ndp[_____] = 0;\ndp[1] = _____;\nfor(let i = _____; i <= n; i++)\n    dp[i] = dp[i-1] _____ dp[i-2];\nconsole.log(dp[_____]);```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "2",
+              "content": "1",
               "answer": 2
             },
             {
-              "content": "+",
+              "content": "2",
               "answer": 3
             },
             {
-              "content": "n",
+              "content": "+",
               "answer": 4
             },
             {
+              "content": "n",
+              "answer": 5
+            },
+            {
               "content": "1",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "3",
               "answer": null
             },
             {
@@ -185,19 +197,7 @@
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "undefined",
-              "answer": null
-            },
-            {
-              "content": "3",
+              "content": "n-1",
               "answer": null
             },
             {

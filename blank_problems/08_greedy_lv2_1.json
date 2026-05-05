@@ -58,92 +58,88 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nsort(activities.begin(), activities.end(), \n    [](const vector<int>& a, const vector<int>& b) { \n        return a[_____] < b[1]; \n    }); \nint lastEnd = activities[0][_____]; \nfor(int i = 1; i < activities.size(); i++) { \n    if(activities[i][0] _____ lastEnd) { \n        count_____; \n        lastEnd = activities[i][1]; \n    } \n}\n```",
+          "codeTemplate": "```cpp\nsort(activities.begin(), activities.end(),\n    [](const vector<int>& a, const vector<int>& b) {\n        return a[_____] < b[1];\n    });\nint lastEnd = activities[_____][1];\nint count = 1;\nfor(int i = 1; i < activities._____(); i++) {\n    if(activities[i][_____] >= lastEnd) {\n        count_____;\n        lastEnd = activities[i][1];\n    }\n}```",
           "blanks": [
             {
               "content": "1",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "0",
               "answer": 2
             },
             {
-              "content": ">=",
+              "content": "size",
               "answer": 3
             },
             {
-              "content": "++",
+              "content": "0",
               "answer": 4
+            },
+            {
+              "content": "++",
+              "answer": 5
             },
             {
               "content": "0",
               "answer": null
             },
             {
-              "content": "<=",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "length",
               "answer": null
             },
             {
-              "content": "2",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "INT_MAX",
+              "content": "--",
               "answer": null
             },
             {
-              "content": ">",
-              "answer": null
-            },
-            {
-              "content": "<",
+              "content": "count",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nactivities.sort(key=lambda x: x[_____]) \nlastEnd = activities[0][_____] \nfor i in range(1, len(activities)): \n    if activities[i][0] _____ lastEnd: \n        count _____ 1 \n        lastEnd = activities[i][1] \n```",
+          "codeTemplate": "```python\nactivities.sort(key=lambda x: x[_____])\nlastEnd = activities[_____][1]\ncount = 1\nfor i in range(1, len(activities)):\n    if activities[i][_____] _____ lastEnd:\n        count _____ 1\n        lastEnd = activities[i][1]```",
           "blanks": [
             {
               "content": "1",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "0",
               "answer": 2
             },
             {
-              "content": ">=",
+              "content": "0",
               "answer": 3
             },
             {
-              "content": "+=",
+              "content": ">=",
               "answer": 4
+            },
+            {
+              "content": "+= ",
+              "answer": 5
             },
             {
               "content": "0",
               "answer": null
             },
             {
-              "content": "<=",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "2",
-              "answer": null
-            },
-            {
-              "content": "True",
+              "content": "1",
               "answer": null
             },
             {
@@ -151,57 +147,61 @@
               "answer": null
             },
             {
-              "content": "<",
+              "content": "-= ",
+              "answer": null
+            },
+            {
+              "content": "count",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nactivities.sort((a, b) => a[_____] - b[1]); \nlet lastEnd = activities[0][_____]; \nfor(let i = 1; i < activities.length; i++) { \n    if(activities[i][0] _____ lastEnd) { \n        count_____; \n        lastEnd = activities[i][1]; \n    } \n}\n```",
+          "codeTemplate": "```javascript\nactivities.sort((a, b) => a[_____] - b[1]);\nlet lastEnd = activities[_____][1];\nlet count = 1;\nfor(let i = 1; i < activities._____; i++) {\n    if(activities[i][_____] >= lastEnd) {\n        count_____;\n        lastEnd = activities[i][1];\n    }\n}```",
           "blanks": [
             {
               "content": "1",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "0",
               "answer": 2
             },
             {
-              "content": ">=",
+              "content": "length",
               "answer": 3
             },
             {
-              "content": "++",
+              "content": "0",
               "answer": 4
+            },
+            {
+              "content": "++",
+              "answer": 5
             },
             {
               "content": "0",
               "answer": null
             },
             {
-              "content": "<=",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "size",
               "answer": null
             },
             {
-              "content": "2",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "undefined",
+              "content": "--",
               "answer": null
             },
             {
-              "content": ">",
-              "answer": null
-            },
-            {
-              "content": "<",
+              "content": "count",
               "answer": null
             }
           ]

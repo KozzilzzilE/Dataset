@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint change = _____; \nfor(int coin : coins) { \n    count _____ change / coin; \n    change _____ coin; \n} \ncout << \"동전 수: \" << count;\n```",
+          "codeTemplate": "```cpp\nvector<int> coins = {500, 100, 50, 10};\nint amount = _____;\nint count = 0;\nfor(int coin : coins) {\n    count _____ amount / coin;\n    amount _____ coin;\n}\ncout << \"동전 수: \" << _____;\ncout << \" 잔돈: \" << _____;```",
           "blanks": [
             {
               "content": "1260",
@@ -69,11 +69,19 @@
               "answer": 2
             },
             {
-              "content": "%=",
+              "content": "%= ",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "count",
+              "answer": 4
+            },
+            {
+              "content": "amount",
+              "answer": 5
+            },
+            {
+              "content": "1000",
               "answer": null
             },
             {
@@ -81,34 +89,26 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
               "content": "/=",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "coin",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "total",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "0",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nchange = _____ \nfor coin in coins: \n    count _____ change // coin \n    change _____ coin \nprint(f\"동전 수: {count}\") \n```",
+          "codeTemplate": "```python\ncoins = [500, 100, 50, 10]\namount = _____\ncount = 0\nfor coin in coins:\n    count _____ amount // coin\n    amount _____ coin\nprint(f\"동전 수: {count}\")\nprint(f\"잔돈: {_____}\")\nprint(f\"총 항목: {_____(coins)}\")```",
           "blanks": [
             {
               "content": "1260",
@@ -119,11 +119,19 @@
               "answer": 2
             },
             {
-              "content": "%=",
+              "content": "%= ",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "amount",
+              "answer": 4
+            },
+            {
+              "content": "len",
+              "answer": 5
+            },
+            {
+              "content": "1000",
               "answer": null
             },
             {
@@ -131,34 +139,26 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
               "content": "/=",
               "answer": null
             },
             {
-              "content": "None",
+              "content": "coin",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "total",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "count",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet change = _____; \nfor(let coin of coins) { \n    count _____ Math.floor(change / coin); \n    change _____ coin; \n} \nconsole.log(`동전 수: ${count}`);\n```",
+          "codeTemplate": "```javascript\nlet coins = [500, 100, 50, 10];\nlet amount = _____;\nlet count = 0;\nfor(let coin of coins) {\n    count _____ Math.floor(amount / coin);\n    amount _____ coin;\n}\nconsole.log(`동전 수: ${count}`);\nconsole.log(`잔돈: ${_____}`);\nconsole.log(`길이: ${coins._____}`);```",
           "blanks": [
             {
               "content": "1260",
@@ -169,11 +169,19 @@
               "answer": 2
             },
             {
-              "content": "%=",
+              "content": "%= ",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "amount",
+              "answer": 4
+            },
+            {
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "1000",
               "answer": null
             },
             {
@@ -181,27 +189,19 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
               "content": "/=",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "coin",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "total",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "size",
               "answer": null
             }
           ]

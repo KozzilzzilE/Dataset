@@ -58,64 +58,14 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool compare(string a, string b) { \n    if(a.size() != b.size()) \n        return a.size() _____ b.size(); \n    return a._____(b) < 0; \n}\n```",
+          "codeTemplate": "```cpp\n#include <algorithm>\nbool compare(string a, string b) {\n    if(a._____ != b.size())\n        return a.size() _____ b.size();\n    return a._____(b) _____ 0;\n}\nvector<string> words = {\"banana\",\"apple\",\"cherry\"};\nsort(words.begin(), words.end(), _____);\n```",
           "blanks": [
+            {
+              "content": "size()",
+              "answer": 1
+            },
             {
               "content": "<",
-              "answer": 1
-            },
-            {
-              "content": "compare",
-              "answer": 2
-            },
-            {
-              "content": ">",
-              "answer": null
-            },
-            {
-              "content": "==",
-              "answer": null
-            },
-            {
-              "content": "<=",
-              "answer": null
-            },
-            {
-              "content": ">=",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 3,
-          "codeTemplate": "```python\nfrom functools import cmp_to_key \ndef compare(a, b): \n    if len(a) != len(b): \n        return len(a) _____ len(b) \n    if a < b: \n        return _____ \n    return 1 \nnums.sort(key=cmp_to_key(_____)) \n```",
-          "blanks": [
-            {
-              "content": "-",
-              "answer": 1
-            },
-            {
-              "content": "-1",
               "answer": 2
             },
             {
@@ -123,23 +73,73 @@
               "answer": 3
             },
             {
-              "content": "+",
+              "content": "<",
+              "answer": 4
+            },
+            {
+              "content": "compare",
+              "answer": 5
+            },
+            {
+              "content": "length",
               "answer": null
             },
             {
-              "content": "0",
+              "content": ">",
               "answer": null
             },
             {
-              "content": "*",
+              "content": "equals",
               "answer": null
             },
             {
-              "content": "/",
+              "content": "==",
               "answer": null
             },
             {
-              "content": "//",
+              "content": "compareTo",
+              "answer": null
+            },
+            {
+              "content": "cmp",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom functools import cmp_to_key\ndef compare(a, b):\n    if _____(a) != len(b):\n        return _____(a) - len(b)\n    if a _____ b:\n        return _____\n    return 1\nwords = [\"banana\",\"apple\",\"cherry\"]\nwords.sort(key=cmp_to_key(_____))```",
+          "blanks": [
+            {
+              "content": "len",
+              "answer": 1
+            },
+            {
+              "content": "len",
+              "answer": 2
+            },
+            {
+              "content": "<",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
+            },
+            {
+              "content": "compare",
+              "answer": 5
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": ">",
               "answer": null
             },
             {
@@ -147,61 +147,61 @@
               "answer": null
             },
             {
-              "content": "None",
+              "content": "cmp",
               "answer": null
             },
             {
-              "content": "False",
+              "content": "sorted",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nnums.sort((a, b) => { \n    if(a.length !== b.length) \n        return a.length _____ b.length; \n    return a.localeCompare(b); \n}); \n```",
+          "codeTemplate": "```javascript\nfunction compare(a, b) {\n    if(a._____ !== b.length)\n        return a._____ - b.length;\n    return a._____(b);\n}\nlet words = [\"banana\",\"apple\",\"cherry\"];\nwords._____(compare);\nconsole.log(_____);```",
           "blanks": [
             {
-              "content": "-",
+              "content": "length",
               "answer": 1
             },
             {
-              "content": "+",
+              "content": "length",
+              "answer": 2
+            },
+            {
+              "content": "localeCompare",
+              "answer": 3
+            },
+            {
+              "content": "sort",
+              "answer": 4
+            },
+            {
+              "content": "words",
+              "answer": 5
+            },
+            {
+              "content": "size",
               "answer": null
             },
             {
-              "content": "*",
+              "content": "size()",
               "answer": null
             },
             {
-              "content": "/",
+              "content": "compareTo",
               "answer": null
             },
             {
-              "content": "%",
+              "content": "filter",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "result",
               "answer": null
             },
             {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
+              "content": "arr",
               "answer": null
             }
           ]

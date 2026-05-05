@@ -62,34 +62,34 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint lo = 0, hi = arr.size(); \nif(arr[mid] _____ target) hi = mid; \nelse lo = mid + 1; \nreturn _____; \nif(arr[mid] _____ target) hi = mid; \nelse lo = mid + 1; \nreturn _____;\n```",
+          "codeTemplate": "```cpp\nint lowerBound(vector<int>& arr, int target) {\n    int lo = _____, hi = arr.size();\n    while(lo < hi) {\n        int mid = (lo + hi) / 2;\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return _____;\n}\nint upperBound(vector<int>& arr, int target) {\n    int lo = 0, hi = arr._____;\n    while(lo < hi) {\n        int mid = (lo + hi) / 2;\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return lo;\n}```",
           "blanks": [
             {
-              "content": ">=",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": "lo",
+              "content": "<",
               "answer": 2
             },
             {
-              "content": ">",
+              "content": "lo",
               "answer": 3
             },
             {
-              "content": "lo",
+              "content": "size()",
               "answer": 4
             },
             {
+              "content": ">",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
               "content": "<=",
-              "answer": null
-            },
-            {
-              "content": "<",
-              "answer": null
-            },
-            {
-              "content": "==",
               "answer": null
             },
             {
@@ -97,49 +97,49 @@
               "answer": null
             },
             {
+              "content": "length",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
               "content": "mid",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "start",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nlo, hi = 0, len(arr) \nif arr[mid] _____ target: \n    hi = mid \nelse: \n    lo = mid + 1 \nreturn _____ \nif arr[mid] _____ target: \n    hi = mid \nelse: \n    lo = mid + 1 \nreturn _____\n```",
+          "codeTemplate": "```python\ndef lower_bound(arr, target):\n    lo, hi = _____, len(arr)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if arr[mid] _____ target:\n            hi = mid\n        else:\n            lo = mid + 1\n    return _____\ndef upper_bound(arr, target):\n    lo, hi = 0, _____(arr)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if arr[mid] _____ target:\n            hi = mid\n        else:\n            lo = mid + 1\n    return lo```",
           "blanks": [
             {
-              "content": ">=",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": "lo",
+              "content": "<",
               "answer": 2
             },
             {
-              "content": ">",
+              "content": "lo",
               "answer": 3
             },
             {
-              "content": "lo",
+              "content": "len",
               "answer": 4
             },
             {
+              "content": ">",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
               "content": "<=",
-              "answer": null
-            },
-            {
-              "content": "<",
-              "answer": null
-            },
-            {
-              "content": "==",
               "answer": null
             },
             {
@@ -147,49 +147,49 @@
               "answer": null
             },
             {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
               "content": "mid",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "start",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet lo = 0, hi = arr.length; \nif(arr[mid] _____ target) hi = mid; \nelse lo = mid + 1; \nreturn _____; \nif(arr[mid] _____ target) hi = mid; \nelse lo = mid + 1; \nreturn _____;\n```",
+          "codeTemplate": "```javascript\nfunction lowerBound(arr, target) {\n    let lo = _____, hi = arr.length;\n    while(lo < hi) {\n        let mid = Math.floor((lo + hi) / 2);\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return _____;\n}\nfunction upperBound(arr, target) {\n    let lo = 0, hi = arr._____;\n    while(lo < hi) {\n        let mid = Math.floor((lo + hi) / 2);\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return lo;\n}```",
           "blanks": [
             {
-              "content": ">=",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": "lo",
+              "content": "<",
               "answer": 2
             },
             {
-              "content": ">",
+              "content": "lo",
               "answer": 3
             },
             {
-              "content": "lo",
+              "content": "length",
               "answer": 4
             },
             {
+              "content": ">",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
               "content": "<=",
-              "answer": null
-            },
-            {
-              "content": "<",
-              "answer": null
-            },
-            {
-              "content": "===",
               "answer": null
             },
             {
@@ -197,15 +197,15 @@
               "answer": null
             },
             {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": ">=",
+              "answer": null
+            },
+            {
               "content": "mid",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "start",
               "answer": null
             }
           ]

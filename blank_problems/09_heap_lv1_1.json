@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <queue>\npriority_queue<int, vector<int>, greater<int>> pq; \npq._____(5); \nint x = pq._____(); \npq._____(); \nbool empty = pq._____();\n```",
+          "codeTemplate": "```cpp\n#include <queue>\npriority_queue<int, vector<int>, greater<int>> pq;\npq._____(5);\npq.push(3);\nint x = pq._____();\npq._____();\nbool empty = pq._____();\ncout << _____;```",
           "blanks": [
             {
               "content": "push",
@@ -77,38 +77,38 @@
               "answer": 4
             },
             {
-              "content": "front",
+              "content": "x",
+              "answer": 5
+            },
+            {
+              "content": "add",
               "answer": null
             },
             {
-              "content": "size",
+              "content": "peek",
               "answer": null
             },
             {
-              "content": "push_back",
+              "content": "remove",
               "answer": null
             },
             {
-              "content": "enqueue",
+              "content": "isEmpty",
               "answer": null
             },
             {
-              "content": "append",
+              "content": "pq.top()",
               "answer": null
             },
             {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "back",
+              "content": "pq.size()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq \npq = [] \nheapq._____(pq, 5) \nx = pq[_____] \nheapq.heappop(pq) \nbool_empty = len(pq) == 0 \n```",
+          "codeTemplate": "```python\nimport heapq\npq = []\nheapq._____(pq, 5)\nheapq.heappush(pq, 3)\nx = pq[_____]\nheapq._____(pq)\nbool_empty = _____(pq) == 0\nprint(_____)```",
           "blanks": [
             {
               "content": "heappush",
@@ -119,11 +119,19 @@
               "answer": 2
             },
             {
-              "content": "push",
-              "answer": null
+              "content": "heappop",
+              "answer": 3
             },
             {
-              "content": "1",
+              "content": "len",
+              "answer": 4
+            },
+            {
+              "content": "x",
+              "answer": 5
+            },
+            {
+              "content": "push",
               "answer": null
             },
             {
@@ -131,65 +139,53 @@
               "answer": null
             },
             {
-              "content": "None",
+              "content": "pop",
               "answer": null
             },
             {
-              "content": "False",
+              "content": "size",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "pq[0]",
               "answer": null
             },
             {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "True",
+              "content": "heapq.top()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nclass MinHeap { \n    constructor() { this.heap = []; } \n    push(val) { \n        this.heap._____(val); \n        this._bubbleUp(this.heap.length - 1); \n    } \n    peek() { return this.heap[_____]; } \n    pop() { \n        let min = this.heap[0]; \n        this.heap[0] = this.heap[this.heap.length - 1]; \n        this.heap.pop(); \n        this._bubbleDown(0); \n        return min; \n    } \n}\n```",
+          "codeTemplate": "```javascript\nclass MinHeap {\n    constructor() { this.heap = []; }\n    push(val) {\n        this.heap._____(val);\n        this._bubbleUp(this.heap._____ - 1);\n    }\n    peek() { return this.heap[_____]; }\n    size() { return this.heap._____; }\n    pop() {\n        let min = this.heap[0];\n        this.heap[0] = this.heap[this.heap.length - 1];\n        this.heap._____();\n        this._bubbleDown(0);\n        return min;\n    }\n}```",
           "blanks": [
             {
               "content": "push",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "length",
               "answer": 2
             },
             {
-              "content": "shift",
-              "answer": null
+              "content": "0",
+              "answer": 3
             },
             {
-              "content": "1",
-              "answer": null
+              "content": "length",
+              "answer": 4
             },
             {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
+              "content": "pop",
+              "answer": 5
             },
             {
               "content": "add",
               "answer": null
             },
             {
-              "content": "unshift",
+              "content": "size",
               "answer": null
             },
             {
@@ -197,11 +193,15 @@
               "answer": null
             },
             {
-              "content": "null",
+              "content": "size",
               "answer": null
             },
             {
-              "content": "undefined",
+              "content": "shift",
+              "answer": null
+            },
+            {
+              "content": "splice",
               "answer": null
             }
           ]

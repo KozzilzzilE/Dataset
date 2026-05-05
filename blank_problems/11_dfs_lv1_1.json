@@ -58,10 +58,10 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool visited[100]; \nvoid dfs(int node) { \n    visited[node] = _____; \n    for(int next : graph[node]) { \n        if(!visited[_____]) \n            dfs(_____); \n    } \n}\n```",
+          "codeTemplate": "```cpp\nbool visited[100] = {};\nvector<vector<int>> graph(100);\nvoid dfs(int node) {\n    visited[_____] = true;\n    for(int next : graph[node]) {\n        if(!visited[_____])\n            dfs(_____); \n    }\n}\nint main() {\n    dfs(_____); \n    for(int i=0; i<100; i++)\n        if(visited[i]) cout << _____;\n}```",
           "blanks": [
             {
-              "content": "true",
+              "content": "node",
               "answer": 1
             },
             {
@@ -73,7 +73,15 @@
               "answer": 3
             },
             {
-              "content": "false",
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
+            },
+            {
+              "content": "cur",
               "answer": null
             },
             {
@@ -81,49 +89,49 @@
               "answer": null
             },
             {
+              "content": "cur",
+              "answer": null
+            },
+            {
               "content": "1",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "visited[i]",
               "answer": null
             },
             {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
+              "content": "next",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nvisited = [False] * 100 \ndef dfs(node): \n    visited[node] = _____ \n    for next in graph[node]: \n        if not visited[_____]: \n            dfs(_____) \n```",
+          "codeTemplate": "```python\nvisited = [False] * 100\ndef dfs(node):\n    visited[_____] = True\n    for next_node in graph[node]:\n        if not visited[_____]:\n            dfs(_____)\ndfs(_____)\ncount = sum(1 for v in visited if _____)\nprint(count)```",
           "blanks": [
             {
-              "content": "True",
+              "content": "node",
               "answer": 1
             },
             {
-              "content": "next",
+              "content": "next_node",
               "answer": 2
             },
             {
-              "content": "next",
+              "content": "next_node",
               "answer": 3
             },
             {
-              "content": "False",
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "v",
+              "answer": 5
+            },
+            {
+              "content": "cur",
               "answer": null
             },
             {
@@ -131,37 +139,29 @@
               "answer": null
             },
             {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
               "content": "cur",
               "answer": null
             },
             {
-              "content": "v",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "not v",
+              "answer": null
+            },
+            {
+              "content": "visited",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet visited = new Array(100).fill(false); \nfunction dfs(node) { \n    visited[node] = _____; \n    for(let next of graph[node]) { \n        if(!visited[_____]) \n            dfs(_____); \n    } \n}\n```",
+          "codeTemplate": "```javascript\nlet visited = new Array(100).fill(false);\nfunction dfs(node) {\n    visited[_____] = true;\n    for(let next of graph[node]) {\n        if(!visited[_____])\n            dfs(_____); \n    }\n}\ndfs(_____); \nconsole.log(visited.filter(v => _____).length);```",
           "blanks": [
             {
-              "content": "true",
+              "content": "node",
               "answer": 1
             },
             {
@@ -173,7 +173,15 @@
               "answer": 3
             },
             {
-              "content": "false",
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "v",
+              "answer": 5
+            },
+            {
+              "content": "cur",
               "answer": null
             },
             {
@@ -181,27 +189,19 @@
               "answer": null
             },
             {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "undefined",
-              "answer": null
-            },
-            {
               "content": "cur",
               "answer": null
             },
             {
-              "content": "v",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "!v",
+              "answer": null
+            },
+            {
+              "content": "visited",
               "answer": null
             }
           ]

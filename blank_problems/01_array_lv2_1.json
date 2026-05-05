@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = arr._____; \nint prefix[n]; \nprefix[_____] = arr[0]; \nfor(int i = _____; i < n; i++) \n    prefix[i] = prefix[i-1] _____ arr[i]; \nfor(int v : prefix) cout << v << \" \";\n```",
+          "codeTemplate": "```cpp\nvector<int> arr = {1, 2, 3, 4, 5};\nint n = arr._____;\nint prefix[n];\nprefix[_____] = arr[0];\nfor(int i = _____; i < n; i++)\n    prefix[i] = prefix[i-1] _____ arr[i];\ncout << prefix[_____];```",
           "blanks": [
             {
               "content": "size()",
@@ -77,119 +77,15 @@
               "answer": 4
             },
             {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "arr[i-1]",
-              "answer": null
+              "content": "n-1",
+              "answer": 5
             },
             {
               "content": "length",
               "answer": null
             },
             {
-              "content": "count()",
-              "answer": null
-            },
-            {
-              "content": "capacity()",
-              "answer": null
-            },
-            {
-              "content": "len()",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 3,
-          "codeTemplate": "```python\nprefix = [0] * len(arr) \nprefix[_____] = arr[0] \nfor i in range(_____, len(arr)): \n    prefix[i] = prefix[i-1] _____ arr[i] \nfor v in prefix: \n    print(v, end=\" \")\n```",
-          "blanks": [
-            {
-              "content": "0",
-              "answer": 1
-            },
-            {
               "content": "1",
-              "answer": 2
-            },
-            {
-              "content": "+",
-              "answer": 3
-            },
-            {
-              "content": "range(len(arr))",
-              "answer": null
-            },
-            {
-              "content": "prefix[i] + arr[i]",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "False",
-              "answer": null
-            },
-            {
-              "content": "2",
-              "answer": null
-            },
-            {
-              "content": "True",
-              "answer": null
-            },
-            {
-              "content": "-",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 4,
-          "codeTemplate": "```javascript\nlet prefix = new Array(arr.length); \nprefix[_____] = arr[0]; \nfor(let i = _____; i < arr.length; i++) \n    prefix[i] = prefix[i-1] _____ arr[i]; \nprefix.forEach(v => console.log(v));\n```",
-          "blanks": [
-            {
-              "content": "0",
-              "answer": 1
-            },
-            {
-              "content": "1",
-              "answer": 2
-            },
-            {
-              "content": "+",
-              "answer": 3
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "arr[i-1]",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "undefined",
               "answer": null
             },
             {
@@ -202,6 +98,110 @@
             },
             {
               "content": "*",
+              "answer": null
+            },
+            {
+              "content": "arr.size()",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\narr = [1, 2, 3, 4, 5]\nn = _____\nprefix = [0] * n\nprefix[_____] = arr[0]\nfor i in range(_____, n):\n    prefix[i] = prefix[i-1] _____ arr[i]\nprint(prefix[_____])```",
+          "blanks": [
+            {
+              "content": "len(arr)",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "+",
+              "answer": 4
+            },
+            {
+              "content": "n-1",
+              "answer": 5
+            },
+            {
+              "content": "arr.length",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "-",
+              "answer": null
+            },
+            {
+              "content": "*",
+              "answer": null
+            },
+            {
+              "content": "n+1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet arr = [1, 2, 3, 4, 5];\nlet n = _____;\nlet prefix = new Array(n);\nprefix[_____] = arr[0];\nfor(let i = _____; i < n; i++)\n    prefix[i] = prefix[i-1] _____ arr[i];\nconsole.log(prefix[_____]);```",
+          "blanks": [
+            {
+              "content": "arr.length",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "1",
+              "answer": 3
+            },
+            {
+              "content": "+",
+              "answer": 4
+            },
+            {
+              "content": "n-1",
+              "answer": 5
+            },
+            {
+              "content": "arr.size",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "-",
+              "answer": null
+            },
+            {
+              "content": "*",
+              "answer": null
+            },
+            {
+              "content": "n+1",
               "answer": null
             }
           ]

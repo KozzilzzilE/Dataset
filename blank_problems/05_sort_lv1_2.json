@@ -58,34 +58,34 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> arr = {5,3,1,4,2};\nint n = arr.size();\nfor(int i = 0; i < n-1; i++)\n    for(int j = 0; j < _____; j++)\n        if(arr[j] _____ arr[j+1]) {\n            int tmp = arr[j];\n            arr[j] = _____;\n            arr[j+1] = _____;\n        }\n```",
+          "codeTemplate": "```cpp\nvector<int> arr = {5,3,1,4,2};\nint n = arr._____;\nfor(int i = 0; i < _____; i++)\n    for(int j = 0; j < n-i-1; j++)\n        if(arr[j] _____ arr[j+1]) {\n            int tmp = arr[j];\n            arr[j] = _____;\n            arr[j+1] = _____;\n        }```",
           "blanks": [
             {
-              "content": "n - i - 1",
+              "content": "size()",
               "answer": 1
             },
             {
-              "content": ">",
+              "content": "n-1",
               "answer": 2
             },
             {
-              "content": "arr[j + 1]",
+              "content": ">",
               "answer": 3
             },
             {
-              "content": "tmp",
+              "content": "arr[j+1]",
               "answer": 4
             },
             {
-              "content": "n - i",
+              "content": "tmp",
+              "answer": 5
+            },
+            {
+              "content": "length",
               "answer": null
             },
             {
               "content": "n",
-              "answer": null
-            },
-            {
-              "content": ">=",
               "answer": null
             },
             {
@@ -97,41 +97,45 @@
               "answer": null
             },
             {
-              "content": "arr[j - 1]",
+              "content": "arr[j-1]",
               "answer": null
             },
             {
-              "content": "temp",
+              "content": "j",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [5, 3, 1, 4, 2]\nn = len(arr)\nfor i in range(_____):\n    for j in range(n - i - 1):\n        if arr[j] _____ arr[j+1]:\n            arr[j], arr[j+1] = _____, arr[j]\n```",
+          "codeTemplate": "```python\narr = [5, 3, 1, 4, 2]\nn = _____\nfor i in range(n-1):\n    for j in range(_____):\n        if arr[j] _____ arr[j+1]:\n            arr[j], arr[j+1] = arr[j+1], _____\nprint(_____)```",
           "blanks": [
             {
-              "content": "n - 1",
+              "content": "len(arr)",
               "answer": 1
             },
             {
-              "content": ">",
+              "content": "n-i-1",
               "answer": 2
             },
             {
-              "content": "arr[j + 1]",
+              "content": ">",
               "answer": 3
             },
             {
-              "content": "n",
+              "content": "arr[j]",
+              "answer": 4
+            },
+            {
+              "content": "arr",
+              "answer": 5
+            },
+            {
+              "content": "arr.length",
               "answer": null
             },
             {
-              "content": "n + 1",
-              "answer": null
-            },
-            {
-              "content": ">=",
+              "content": "n-1",
               "answer": null
             },
             {
@@ -139,33 +143,29 @@
               "answer": null
             },
             {
-              "content": "arr[j]",
+              "content": "arr[j+1]",
               "answer": null
             },
             {
-              "content": "arr[j - 1]",
+              "content": "arr[0]",
               "answer": null
             },
             {
-              "content": "arr[j + 2]",
-              "answer": null
-            },
-            {
-              "content": "arr[i]",
+              "content": "n",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [5, 3, 1, 4, 2];\nlet n = arr.length;\nfor(let i = 0; i < _____; i++) {\n    for(let j = 0; j < _____; j++) {\n        if(arr[j] _____ arr[j+1]) {\n            [arr[j], arr[j+1]] = [_____, arr[j]];\n        }\n    }\n}\n```",
+          "codeTemplate": "```javascript\nlet arr = [5, 3, 1, 4, 2];\nlet n = _____;\nfor(let i = 0; i < _____; i++) {\n    for(let j = 0; j < n-i-1; j++) {\n        if(arr[j] _____ arr[j+1]) {\n            let tmp = arr[j];\n            arr[j] = _____;\n            arr[j+1] = _____;\n        }\n    }\n}\nconsole.log(arr);```",
           "blanks": [
             {
-              "content": "n - 1",
+              "content": "arr.length",
               "answer": 1
             },
             {
-              "content": "n - i - 1",
+              "content": "n-1",
               "answer": 2
             },
             {
@@ -173,19 +173,19 @@
               "answer": 3
             },
             {
-              "content": "arr[j + 1]",
+              "content": "arr[j+1]",
               "answer": 4
             },
             {
+              "content": "tmp",
+              "answer": 5
+            },
+            {
+              "content": "arr.size",
+              "answer": null
+            },
+            {
               "content": "n",
-              "answer": null
-            },
-            {
-              "content": "n - i",
-              "answer": null
-            },
-            {
-              "content": ">=",
               "answer": null
             },
             {
@@ -197,11 +197,11 @@
               "answer": null
             },
             {
-              "content": "arr[i]",
+              "content": "arr[j-1]",
               "answer": null
             },
             {
-              "content": "arr[j - 1]",
+              "content": "j",
               "answer": null
             }
           ]

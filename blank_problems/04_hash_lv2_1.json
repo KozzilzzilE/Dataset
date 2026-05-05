@@ -58,80 +58,42 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nunordered_map<int, int> freq; \nfreq[v] = freq[v] _____ 1; \nint maxVal = -1; \nfor(auto& e : freq) { \n    if(e.second _____ maxCount) maxVal = e._____; \n}\n```",
+          "codeTemplate": "```cpp\nunordered_map<int, int> freq;\nfor(int v : nums)\n    freq[_____] _____ 1;\nint maxCount = 0;\nfor(auto& e : freq)\n    maxCount = max(maxCount, e._____());\nint maxVal = _____;\nfor(auto& e : freq)\n    if(e.second == maxCount) maxVal = e._____(0);```",
           "blanks": [
             {
-              "content": "+",
+              "content": "v",
               "answer": 1
             },
             {
-              "content": ">",
+              "content": "+=",
               "answer": 2
-            },
-            {
-              "content": "first",
-              "answer": 3
             },
             {
               "content": "second",
-              "answer": null
-            },
-            {
-              "content": "<",
-              "answer": null
-            },
-            {
-              "content": "-",
-              "answer": null
-            },
-            {
-              "content": "*",
-              "answer": null
-            },
-            {
-              "content": "/",
-              "answer": null
-            },
-            {
-              "content": "%",
-              "answer": null
-            },
-            {
-              "content": ">=",
-              "answer": null
-            },
-            {
-              "content": "<=",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 3,
-          "codeTemplate": "```python\nfreq = {} \nfreq[v] = freq._____(v, _____) + 1 \nmaxVal = -1 \nfor k, count in freq._____ : \n    if count _____ maxCount: \n        maxVal = k\n```",
-          "blanks": [
-            {
-              "content": "get",
-              "answer": 1
-            },
-            {
-              "content": "0",
-              "answer": 2
-            },
-            {
-              "content": "items",
               "answer": 3
             },
             {
-              "content": ">",
+              "content": "-1",
               "answer": 4
             },
             {
-              "content": "values",
+              "content": "first",
+              "answer": 5
+            },
+            {
+              "content": "k",
               "answer": null
             },
             {
-              "content": "<",
+              "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "first",
+              "answer": null
+            },
+            {
+              "content": "0",
               "answer": null
             },
             {
@@ -139,57 +101,49 @@
               "answer": null
             },
             {
-              "content": "fetch",
-              "answer": null
-            },
-            {
-              "content": "retrieve",
-              "answer": null
-            },
-            {
-              "content": "access",
-              "answer": null
-            },
-            {
-              "content": "1",
+              "content": "count",
               "answer": null
             }
           ]
         },
         {
-          "languageId": 4,
-          "codeTemplate": "```javascript\nlet freq = new Map(); \nfreq.set(v, (freq.get(v) || 0) _____ 1); \nlet maxVal = -1; \nfor(let [k, count] of freq) { \n    if(count _____ maxCount) maxVal = k; \n}\n```",
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import Counter\nfreq = Counter(_____)\nmaxCount = max(freq._____())\nmaxVal = _____\nfor k, cnt in freq._____():\n    if cnt _____ maxCount:\n        maxVal = k\nprint(maxVal)```",
           "blanks": [
             {
-              "content": "+",
+              "content": "nums",
               "answer": 1
             },
             {
-              "content": ">",
+              "content": "values",
               "answer": 2
             },
             {
-              "content": "+=",
+              "content": "-1",
+              "answer": 3
+            },
+            {
+              "content": "items",
+              "answer": 4
+            },
+            {
+              "content": "==",
+              "answer": 5
+            },
+            {
+              "content": "freq",
               "answer": null
             },
             {
-              "content": "<",
+              "content": "keys",
               "answer": null
             },
             {
-              "content": "-",
+              "content": "0",
               "answer": null
             },
             {
-              "content": "*",
-              "answer": null
-            },
-            {
-              "content": "/",
-              "answer": null
-            },
-            {
-              "content": "%",
+              "content": "keys",
               "answer": null
             },
             {
@@ -197,11 +151,57 @@
               "answer": null
             },
             {
-              "content": "<=",
+              "content": "Counter.values()",
               "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet freq = new Map();\nfor(let v of nums)\n    freq.set(v, (freq._____(v) || 0) _____ 1);\nlet maxCount = _____;\nfor(let [k, cnt] of freq)\n    if(cnt > maxCount) maxCount = cnt;\nlet maxVal = _____;\nfor(let [k, cnt] of freq)\n    if(cnt _____ maxCount) maxVal = k;\nconsole.log(maxVal);```",
+          "blanks": [
+            {
+              "content": "get",
+              "answer": 1
+            },
+            {
+              "content": "+",
+              "answer": 2
+            },
+            {
+              "content": "0",
+              "answer": 3
+            },
+            {
+              "content": "-1",
+              "answer": 4
             },
             {
               "content": "===",
+              "answer": 5
+            },
+            {
+              "content": "has",
+              "answer": null
+            },
+            {
+              "content": "-",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "null",
+              "answer": null
+            },
+            {
+              "content": "==",
+              "answer": null
+            },
+            {
+              "content": "freq.size",
               "answer": null
             }
           ]

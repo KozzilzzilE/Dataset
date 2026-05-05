@@ -108,10 +108,10 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\nq = _____()\nq.append(10)\nq.append(20)\nfront = q[_____]\nq._____()  \nis_empty = _____(q) == 0\n```",
+          "codeTemplate": "```python\nfrom collections import deque\nq = _____\nq.append(10)\nq.append(20)\nfront = q[_____]\nsize = _____(q)\nq._____\nis_empty = _____(q) == 0```",
           "blanks": [
             {
-              "content": "deque",
+              "content": "deque()",
               "answer": 1
             },
             {
@@ -119,15 +119,19 @@
               "answer": 2
             },
             {
-              "content": "popleft",
+              "content": "len",
               "answer": 3
             },
             {
-              "content": "len",
+              "content": "popleft()",
               "answer": 4
             },
             {
-              "content": "list",
+              "content": "len",
+              "answer": 5
+            },
+            {
+              "content": "[]",
               "answer": null
             },
             {
@@ -135,30 +139,26 @@
               "answer": null
             },
             {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "pop",
-              "answer": null
-            },
-            {
-              "content": "remove",
-              "answer": null
-            },
-            {
               "content": "size",
               "answer": null
             },
             {
-              "content": "queue",
+              "content": "pop()",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "deque",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet queue = [];\nqueue._____(10);\nqueue.push(20);\nlet front = queue[_____];\nqueue._____();\nlet isEmpty = queue._____ === 0;\n```",
+          "codeTemplate": "```javascript\nlet queue = [];\nqueue._____(10);\nqueue.push(20);\nlet front = queue[_____];\nlet size = queue._____;\nqueue._____();\nlet isEmpty = queue._____ === 0;```",
           "blanks": [
             {
               "content": "push",
@@ -169,15 +169,19 @@
               "answer": 2
             },
             {
-              "content": "shift",
+              "content": "length",
               "answer": 3
             },
             {
-              "content": "length",
+              "content": "shift",
               "answer": 4
             },
             {
-              "content": "unshift",
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "add",
               "answer": null
             },
             {
@@ -185,7 +189,7 @@
               "answer": null
             },
             {
-              "content": "1",
+              "content": "size",
               "answer": null
             },
             {
@@ -193,15 +197,11 @@
               "answer": null
             },
             {
-              "content": "splice",
-              "answer": null
-            },
-            {
-              "content": "size",
-              "answer": null
-            },
-            {
               "content": "count",
+              "answer": null
+            },
+            {
+              "content": "queue.size",
               "answer": null
             }
           ]

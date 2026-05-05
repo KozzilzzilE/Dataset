@@ -58,130 +58,126 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <algorithm>\nusing namespace std; \nint nums[] = {...}; \nsort(nums, nums + 5); \nfor(int x : nums) cout << x << \" \";\n```",
+          "codeTemplate": "```cpp\n#include <algorithm>\nvector<int> nums = {5,3,1,4,2};\nsort(nums._____, nums._____);\nfor(int x : nums)\n    cout << x << \" \";\ncout << nums._____;\ncout << nums.back() - nums._____ << endl;```",
           "blanks": [
             {
-              "content": "correct sort usage",
+              "content": "begin()",
               "answer": 1
             },
             {
-              "content": "qsort",
+              "content": "end()",
+              "answer": 2
+            },
+            {
+              "content": "size()",
+              "answer": 3
+            },
+            {
+              "content": "front()",
+              "answer": 4
+            },
+            {
+              "content": "front()",
+              "answer": 5
+            },
+            {
+              "content": "start()",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "finish()",
               "answer": null
             },
             {
-              "content": "0",
+              "content": "length",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "begin",
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "true",
-              "answer": null
-            },
-            {
-              "content": "false",
+              "content": "end",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nnums = [...] \nnums._____ \nfor x in nums: \n    print(x, end=\" \")\n```",
-          "blanks": [
-            {
-              "content": "sort()",
-              "answer": 1
-            },
-            {
-              "content": "sorted",
-              "answer": null
-            },
-            {
-              "content": "reverse()",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "True",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 4,
-          "codeTemplate": "```javascript\nlet nums = [...]; \nnums._____(function(a,b){return a-b;}); \nfor(let x of nums) console.log(x);\n```",
+          "codeTemplate": "```python\nnums = [5, 3, 1, 4, 2]\nnums._____()\nfor x in _____:\n    print(x, end=\" \")\nprint()\nprint(_____(nums))\nprint(_____(nums) - _____(nums))```",
           "blanks": [
             {
               "content": "sort",
               "answer": 1
             },
             {
-              "content": "sort()",
-              "answer": null
+              "content": "nums",
+              "answer": 2
+            },
+            {
+              "content": "len",
+              "answer": 3
+            },
+            {
+              "content": "max",
+              "answer": 4
+            },
+            {
+              "content": "min",
+              "answer": 5
             },
             {
               "content": "sorted",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "arr",
               "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            },
+            {
+              "content": "sum",
+              "answer": null
+            },
+            {
+              "content": "first",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet nums = [5, 3, 1, 4, 2];\nnums._____(function(a, b){return a - b;});\nfor(let x of nums) process.stdout.write(x + \" \");\nconsole.log();\nconsole.log(nums._____[_____]);\nconsole.log(nums._____(function(a,b){return b-a;})[0]);```",
+          "blanks": [
+            {
+              "content": "sort",
+              "answer": 1
+            },
+            {
+              "content": "length",
+              "answer": 2
             },
             {
               "content": "0",
+              "answer": 3
+            },
+            {
+              "content": "sort",
+              "answer": 4
+            },
+            {
+              "content": "sort",
+              "answer": 5
+            },
+            {
+              "content": "filter",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "size",
               "answer": null
             },
             {
@@ -189,19 +185,11 @@
               "answer": null
             },
             {
-              "content": "i",
+              "content": "reverse",
               "answer": null
             },
             {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "true",
+              "content": "map",
               "answer": null
             }
           ]

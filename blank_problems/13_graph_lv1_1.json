@@ -58,22 +58,30 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n; \nvector<vector<int>> graph(n); \nfor(int i = 0; i < n; i++) \n    graph[i] = vector<int>(); \nfor(auto& e : edges) { \n    graph[e[0]].push_back(e[1]); \n    graph[e[1]].push_back(e[0]); \n} \nvector<int> neighbors = graph[0]; \n```",
+          "codeTemplate": "```cpp\nint n = 5;\nvector<vector<int>> graph(_____); \nfor(auto& e : edges) {\n    graph[e[_____]].push_back(e[1]);\n    graph[e[1]].push_back(e[_____]);\n}\nvector<int> neighbors = graph[_____];\ncout << neighbors._____;```",
           "blanks": [
             {
-              "content": "correct graph construction",
+              "content": "n",
               "answer": 1
             },
             {
-              "content": "adjacency matrix",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
+              "content": "0",
+              "answer": 2
             },
             {
               "content": "0",
+              "answer": 3
+            },
+            {
+              "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "size()",
+              "answer": 5
+            },
+            {
+              "content": "n+1",
               "answer": null
             },
             {
@@ -81,61 +89,49 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "j",
+              "content": "length",
               "answer": null
             },
             {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "true",
-              "answer": null
-            },
-            {
-              "content": "false",
+              "content": "front()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nn = ... \ngraph = [[] for _ in range(n)] \nfor e in edges: \n    graph[e[0]]._____(e[1]) \n    graph[e[1]].append(e[0]) \nneighbors = graph[0] \n```",
+          "codeTemplate": "```python\nn = 5\ngraph = [[] for _ in range(_____)] \nfor e in edges:\n    graph[e[_____]].append(e[1])\n    graph[e[1]]._____(e[0])\nneighbors = graph[_____]\nprint(_____(neighbors))```",
           "blanks": [
             {
-              "content": "append",
+              "content": "n",
               "answer": 1
             },
             {
-              "content": "add",
-              "answer": null
+              "content": "0",
+              "answer": 2
             },
             {
-              "content": "extend",
-              "answer": null
-            },
-            {
-              "content": "push",
-              "answer": null
-            },
-            {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
+              "content": "append",
+              "answer": 3
             },
             {
               "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "len",
+              "answer": 5
+            },
+            {
+              "content": "n+1",
               "answer": null
             },
             {
@@ -143,49 +139,49 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "add",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "j",
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "graph",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet n = ... \nlet graph = Array.from({length: n}, () => []); \nfor(let e of edges) { \n    graph[e[0]]._____(e[1]); \n    graph[e[1]].push(e[0]); \n} \nlet neighbors = graph[0]; \n```",
+          "codeTemplate": "```javascript\nlet n = 5;\nlet graph = Array.from({length: _____}, () => []);\nfor(let e of edges) {\n    graph[e[_____]].push(e[1]);\n    graph[e[1]]._____(e[0]);\n}\nlet neighbors = graph[_____];\nconsole.log(neighbors._____);```",
           "blanks": [
             {
-              "content": "push",
+              "content": "n",
               "answer": 1
             },
             {
-              "content": "add",
-              "answer": null
+              "content": "0",
+              "answer": 2
             },
             {
-              "content": "unshift",
-              "answer": null
-            },
-            {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
+              "content": "push",
+              "answer": 3
             },
             {
               "content": "0",
+              "answer": 4
+            },
+            {
+              "content": "length",
+              "answer": 5
+            },
+            {
+              "content": "n+1",
               "answer": null
             },
             {
@@ -193,15 +189,19 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "add",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "j",
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "pop",
               "answer": null
             }
           ]

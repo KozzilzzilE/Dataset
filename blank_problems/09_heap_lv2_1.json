@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\npriority_queue<int> maxHeap; \nmaxHeap._____(v); \nwhile(!maxHeap._____()) { \n    sorted.push_back(maxHeap._____); \n    maxHeap._____(); \n}\n```",
+          "codeTemplate": "```cpp\npriority_queue<int> maxHeap;\nfor(int v : nums) maxHeap._____(v);\nvector<int> sorted;\nwhile(!maxHeap._____()) {\n    sorted.push_back(maxHeap._____());\n    maxHeap._____();\n}\ncout << sorted._____;```",
           "blanks": [
             {
               "content": "push",
@@ -77,69 +77,73 @@
               "answer": 4
             },
             {
-              "content": "front",
+              "content": "size()",
+              "answer": 5
+            },
+            {
+              "content": "add",
               "answer": null
             },
             {
-              "content": "back",
-              "answer": null
-            },
-            {
-              "content": "push_back",
-              "answer": null
-            },
-            {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
-            },
-            {
-              "content": "insert",
+              "content": "isEmpty",
               "answer": null
             },
             {
               "content": "peek",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "length",
+              "answer": null
+            },
+            {
+              "content": "front()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq \nmaxHeap = [] \nheapq.heappush(maxHeap, _____v) \nwhile maxHeap: \n    sorted.append(heapq.heappop(maxHeap) _____ 1) \n```",
+          "codeTemplate": "```python\nimport heapq\nmaxHeap = []\nfor v in nums:\n    heapq.heappush(maxHeap, _____)\nsorted_list = []\nwhile _____:\n    sorted_list.append(heapq.heappop(maxHeap) _____ 1)\nprint(sorted_list)\nprint(_____(sorted_list))\nprint(sorted_list[_____])```",
           "blanks": [
             {
-              "content": "-",
+              "content": "-v",
               "answer": 1
             },
             {
-              "content": "*",
+              "content": "maxHeap",
               "answer": 2
             },
             {
-              "content": "+",
-              "answer": null
+              "content": "* -",
+              "answer": 3
             },
             {
-              "content": "/",
-              "answer": null
-            },
-            {
-              "content": "//",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
+              "content": "len",
+              "answer": 4
             },
             {
               "content": "0",
+              "answer": 5
+            },
+            {
+              "content": "v",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "len(maxHeap)",
+              "answer": null
+            },
+            {
+              "content": "* 1",
+              "answer": null
+            },
+            {
+              "content": "size",
               "answer": null
             },
             {
@@ -147,25 +151,21 @@
               "answer": null
             },
             {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
+              "content": "maxHeap",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet maxHeap = new MaxHeap(); \nmaxHeap._____(v); \nwhile(maxHeap.size() > 0) { \n    sorted.push(maxHeap._____); \n    maxHeap._____(); \n}\n```",
+          "codeTemplate": "```javascript\nclass MaxHeap {\n    constructor() { this.heap = []; }\n    push(val) { this.heap._____(val); this._bubbleUp(); }\n    top() { return this.heap[_____]; }\n    pop() {\n        let max = this.heap[0];\n        this.heap[0] = this.heap[this.heap.length - 1];\n        this.heap._____();\n        this._bubbleDown(0);\n        return max;\n    }\n    size() { return this.heap._____; }\n}\nconst mh = new MaxHeap();\nnums.forEach(v => mh._____(v));```",
           "blanks": [
             {
               "content": "push",
               "answer": 1
             },
             {
-              "content": "peek",
+              "content": "0",
               "answer": 2
             },
             {
@@ -173,7 +173,19 @@
               "answer": 3
             },
             {
-              "content": "top",
+              "content": "length",
+              "answer": 4
+            },
+            {
+              "content": "push",
+              "answer": 5
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "-1",
               "answer": null
             },
             {
@@ -181,11 +193,7 @@
               "answer": null
             },
             {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
+              "content": "size",
               "answer": null
             },
             {
@@ -193,15 +201,7 @@
               "answer": null
             },
             {
-              "content": "unshift",
-              "answer": null
-            },
-            {
-              "content": "dequeue",
-              "answer": null
-            },
-            {
-              "content": "remove",
+              "content": "insert",
               "answer": null
             }
           ]

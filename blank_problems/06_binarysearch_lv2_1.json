@@ -58,14 +58,14 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nlong long sum = 0; \nfor(int h : heights) sum _____ (capacity - h); \nreturn sum _____ capacity; \nwhile(lo _____ hi) { \n    int mid = (lo + hi) / 2; \n    if(calcSum(mid) >= capacity) hi = mid _____ 1; \n}\n```",
+          "codeTemplate": "```cpp\nlong long calcSum(int h) {\n    long long sum = 0;\n    for(int height : heights)\n        if(height > h) sum _____ (height - h);\n    return sum;\n}\nint lo = _____, hi = *max_element(heights.begin(), heights.end());\nwhile(lo _____ hi) {\n    int mid = (lo + hi) / 2;\n    if(calcSum(mid) _____ m) hi = mid - 1;\n    else lo = mid + 1;\n}\ncout << _____;```",
           "blanks": [
             {
               "content": "+=",
               "answer": 1
             },
             {
-              "content": ">=",
+              "content": "0",
               "answer": 2
             },
             {
@@ -73,11 +73,19 @@
               "answer": 3
             },
             {
-              "content": "-",
+              "content": ">=",
               "answer": 4
             },
             {
+              "content": "lo",
+              "answer": 5
+            },
+            {
               "content": "-=",
+              "answer": null
+            },
+            {
+              "content": "1",
               "answer": null
             },
             {
@@ -85,37 +93,29 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
-              "content": "/=",
-              "answer": null
-            },
-            {
               "content": ">",
               "answer": null
             },
             {
-              "content": "==",
+              "content": "hi",
+              "answer": null
+            },
+            {
+              "content": "mid",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nsum = 0 \nfor h in heights: \n    sum _____ (capacity - h) \nreturn sum _____ capacity \nwhile lo _____ hi: \n    mid = (lo + hi) // 2 \n    if calcSum(mid) >= capacity: \n        hi = mid _____ 1 \n```",
+          "codeTemplate": "```python\ndef calc_sum(h):\n    return sum(height - h for height in heights if height _____ h)\nlo, hi = _____, max(heights)\nwhile lo _____ hi:\n    mid = (lo + hi) // 2\n    if calc_sum(mid) _____ m:\n        hi = mid - 1\n    else:\n        lo = mid + 1\nprint(_____)```",
           "blanks": [
             {
-              "content": "+=",
+              "content": ">",
               "answer": 1
             },
             {
-              "content": ">=",
+              "content": "0",
               "answer": 2
             },
             {
@@ -123,11 +123,19 @@
               "answer": 3
             },
             {
-              "content": "-",
+              "content": ">=",
               "answer": 4
             },
             {
-              "content": "-=",
+              "content": "lo",
+              "answer": 5
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "1",
               "answer": null
             },
             {
@@ -135,37 +143,29 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
-              "content": "/=",
-              "answer": null
-            },
-            {
               "content": ">",
               "answer": null
             },
             {
-              "content": "==",
+              "content": "hi",
+              "answer": null
+            },
+            {
+              "content": "mid",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet sum = 0; \nfor(let h of heights) sum _____ (capacity - h); \nreturn sum _____ capacity; \nwhile(lo _____ hi) { \n    let mid = Math.floor((lo + hi) / 2); \n    if(calcSum(mid) >= capacity) hi = mid _____ 1; \n}\n```",
+          "codeTemplate": "```javascript\nfunction calcSum(h) {\n    return heights.reduce((s, x) => x > h ? s _____ (x - h) : s, 0);\n}\nlet lo = _____, hi = Math.max(...heights);\nwhile(lo _____ hi) {\n    let mid = Math.floor((lo + hi) / 2);\n    if(calcSum(mid) _____ m) hi = mid - 1;\n    else lo = mid + 1;\n}\nconsole.log(_____);```",
           "blanks": [
             {
-              "content": "+=",
+              "content": "+",
               "answer": 1
             },
             {
-              "content": ">=",
+              "content": "0",
               "answer": 2
             },
             {
@@ -173,11 +173,19 @@
               "answer": 3
             },
             {
-              "content": "-",
+              "content": ">=",
               "answer": 4
             },
             {
-              "content": "-=",
+              "content": "lo",
+              "answer": 5
+            },
+            {
+              "content": "-",
+              "answer": null
+            },
+            {
+              "content": "1",
               "answer": null
             },
             {
@@ -185,23 +193,15 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
-              "content": "/=",
-              "answer": null
-            },
-            {
               "content": ">",
               "answer": null
             },
             {
-              "content": "===",
+              "content": "hi",
+              "answer": null
+            },
+            {
+              "content": "mid",
               "answer": null
             }
           ]

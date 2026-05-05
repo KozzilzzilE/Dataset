@@ -58,22 +58,34 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool found = _____; \nfor(int j = 0; j < arr.size(); j++) { \n    sum _____ arr[j]; \n    if(sum _____ target) found = true; \n} \nif(!found) cout << \"없음\";\n```",
+          "codeTemplate": "```cpp\nvector<int> arr = {1,2,3,4,5};\nint target = 9;\nbool found = _____;\nfor(int i = 0; i < arr._____; i++) {\n    int sum = 0;\n    for(int j = i; j < arr.size(); j++) {\n        sum _____ arr[j];\n        if(sum _____ target) {\n            found = _____;\n            break;\n        }\n    }\n}```",
           "blanks": [
             {
               "content": "false",
               "answer": 1
             },
             {
-              "content": "+=",
+              "content": "size()",
               "answer": 2
             },
             {
-              "content": "==",
+              "content": "+=",
               "answer": 3
             },
             {
+              "content": "==",
+              "answer": 4
+            },
+            {
               "content": "true",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "length",
               "answer": null
             },
             {
@@ -81,11 +93,7 @@
               "answer": null
             },
             {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "null",
+              "content": "!=",
               "answer": null
             },
             {
@@ -93,37 +101,41 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
-              "content": "/=",
+              "content": "arr.size()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfound = _____ \nfor j in range(len(arr)): \n    sum _____ arr[j] \n    if sum _____ target: \n        found = True \nif not found: \n    print(\"없음\")\n```",
+          "codeTemplate": "```python\narr = [1, 2, 3, 4, 5]\ntarget = 9\nfound = _____\nfor i in range(_____(arr)):\n    s = 0\n    for j in range(i, len(arr)):\n        s _____ arr[j]\n        if s _____ target:\n            found = _____\n            break\nprint(found)```",
           "blanks": [
             {
               "content": "False",
               "answer": 1
             },
             {
-              "content": "+=",
+              "content": "len",
               "answer": 2
             },
             {
-              "content": "==",
+              "content": "+=",
               "answer": 3
             },
             {
+              "content": "==",
+              "answer": 4
+            },
+            {
               "content": "True",
+              "answer": 5
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "size",
               "answer": null
             },
             {
@@ -131,11 +143,7 @@
               "answer": null
             },
             {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "None",
+              "content": "!=",
               "answer": null
             },
             {
@@ -143,37 +151,41 @@
               "answer": null
             },
             {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
-              "content": "/=",
+              "content": "arr[j]",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet found = _____; \nfor(let j = 0; j < arr.length; j++) { \n    sum _____ arr[j]; \n    if(sum _____ target) found = true; \n} \nif(!found) console.log(\"없음\");\n```",
+          "codeTemplate": "```javascript\nlet arr = [1, 2, 3, 4, 5];\nlet target = 9;\nlet found = _____;\nfor(let i = 0; i < arr._____; i++) {\n    let sum = 0;\n    for(let j = i; j < arr.length; j++) {\n        sum _____ arr[j];\n        if(sum _____ target) {\n            found = _____;\n            break;\n        }\n    }\n}```",
           "blanks": [
             {
               "content": "false",
               "answer": 1
             },
             {
-              "content": "+=",
+              "content": "length",
               "answer": 2
             },
             {
-              "content": "===",
+              "content": "+=",
               "answer": 3
             },
             {
+              "content": "===",
+              "answer": 4
+            },
+            {
               "content": "true",
+              "answer": 5
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
+              "content": "size",
               "answer": null
             },
             {
@@ -181,27 +193,15 @@
               "answer": null
             },
             {
-              "content": "0",
+              "content": "!==",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "1",
               "answer": null
             },
             {
-              "content": "undefined",
-              "answer": null
-            },
-            {
-              "content": "*=",
-              "answer": null
-            },
-            {
-              "content": "=",
-              "answer": null
-            },
-            {
-              "content": "/=",
+              "content": "arr.length",
               "answer": null
             }
           ]

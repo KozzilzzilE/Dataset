@@ -58,142 +58,42 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <unordered_map>\nunordered_map<int, int> map; \nmap[k] = v; \nint val = map[k]; \nbool exists = map.find(k) != map.end(); \nmap._____(k); \n```",
+          "codeTemplate": "```cpp\n#include <unordered_map>\nunordered_map<string, int> m;\nm._____(\"apple\", 1);\nint val = m[\"apple\"];\nbool exists = m.find(\"apple\") != m._____();\nm._____(\"apple\");\ncout << _____(m) << endl;\nm._____(\"banana\");```",
           "blanks": [
+            {
+              "content": "insert({\"apple\", 1})",
+              "answer": 1
+            },
+            {
+              "content": "end",
+              "answer": 2
+            },
             {
               "content": "erase",
-              "answer": 1
+              "answer": 3
             },
             {
-              "content": "remove",
-              "answer": null
+              "content": "m.size()",
+              "answer": 4
             },
             {
-              "content": "delete",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "true",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 3,
-          "codeTemplate": "```python\nmap_dict = {} \nmap_dict[k] = v \nval = map_dict.get(k) \nexists = k in map_dict \nif k in map_dict: \n    del map_dict[k]\n```",
-          "blanks": [
-            {
-              "content": "correct implementation",
-              "answer": 1
-            },
-            {
-              "content": "map_dict[k]",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "True",
-              "answer": null
-            },
-            {
-              "content": "False",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 4,
-          "codeTemplate": "```javascript\nlet map = new Map(); \nmap._____(k, v); \nlet val = map.get(k); \nlet exists = map.has(k); \nmap._____(k); \n```",
-          "blanks": [
-            {
-              "content": "set",
-              "answer": 1
-            },
-            {
-              "content": "delete",
-              "answer": 2
+              "content": "operator[]",
+              "answer": 5
             },
             {
               "content": "put",
               "answer": null
             },
             {
+              "content": "begin",
+              "answer": null
+            },
+            {
               "content": "remove",
               "answer": null
             },
             {
-              "content": "add",
-              "answer": null
-            },
-            {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "push",
-              "answer": null
-            },
-            {
-              "content": "pop",
-              "answer": null
-            },
-            {
-              "content": "splice",
+              "content": "count",
               "answer": null
             },
             {
@@ -201,7 +101,107 @@
               "answer": null
             },
             {
-              "content": "null",
+              "content": "find",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nm = {}\nm[_____] = 1\nval = m.get(_____, 0)\nexists = _____ in m\nif exists:\n    del m[_____]\nprint(_____(m))```",
+          "blanks": [
+            {
+              "content": "'apple'",
+              "answer": 1
+            },
+            {
+              "content": "'apple'",
+              "answer": 2
+            },
+            {
+              "content": "'apple'",
+              "answer": 3
+            },
+            {
+              "content": "'apple'",
+              "answer": 4
+            },
+            {
+              "content": "len",
+              "answer": 5
+            },
+            {
+              "content": "apple",
+              "answer": null
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "key",
+              "answer": null
+            },
+            {
+              "content": "\"apple\"",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "count",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet m = new Map();\nm._____(\"apple\", 1);\nlet val = m._____(\"apple\");\nlet exists = m._____(\"apple\");\nm._____(\"apple\");\nconsole.log(m._____);```",
+          "blanks": [
+            {
+              "content": "set",
+              "answer": 1
+            },
+            {
+              "content": "get",
+              "answer": 2
+            },
+            {
+              "content": "has",
+              "answer": 3
+            },
+            {
+              "content": "delete",
+              "answer": 4
+            },
+            {
+              "content": "size",
+              "answer": 5
+            },
+            {
+              "content": "put",
+              "answer": null
+            },
+            {
+              "content": "fetch",
+              "answer": null
+            },
+            {
+              "content": "contains",
+              "answer": null
+            },
+            {
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "length",
+              "answer": null
+            },
+            {
+              "content": "count",
               "answer": null
             }
           ]

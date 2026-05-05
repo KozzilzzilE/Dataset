@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef is_prime(n):\n    if n < _____:\n        return False\n    for i in range(_____, int(n**0.5) + 1):\n        if n % i == _____:\n            return _____\n    return True\n\nprint(is_prime(17))\n```",
+          "codeTemplate": "```python\ndef is_prime(n):\n    if n < _____:\n        return False\n    for i in range(_____, int(n**0.5) + 1):\n        if n % i == _____:\n            return _____\n    return True\n\nprimes = [x for x in range(2, _____) if is_prime(x)]\nprint(primes)```",
           "blanks": [
             {
               "content": "2",
@@ -127,11 +127,15 @@
               "answer": 4
             },
             {
-              "content": "1",
+              "content": "20",
+              "answer": 5
+            },
+            {
+              "content": "0",
               "answer": null
             },
             {
-              "content": "3",
+              "content": "1",
               "answer": null
             },
             {
@@ -143,15 +147,11 @@
               "answer": null
             },
             {
-              "content": "None",
+              "content": "10",
               "answer": null
             },
             {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "-1",
+              "content": "100",
               "answer": null
             }
           ]

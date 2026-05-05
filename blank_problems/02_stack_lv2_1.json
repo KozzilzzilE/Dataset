@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <stack>\nstack<char> st; \nfor(char c : s) st._____(c); \nstring result = \"\"; \nwhile(!st._____()) result += st._____();\n```",
+          "codeTemplate": "```cpp\n#include <stack>\nstring s = \"hello\";\nstack<char> st;\nfor(char c : s) st._____(c);\nstring result = \"\";\nwhile(!st._____()) {\n    result _____ st._____();\n    st.pop();\n}\ncout << _____ << endl;```",
           "blanks": [
             {
               "content": "push",
@@ -69,77 +69,73 @@
               "answer": 2
             },
             {
-              "content": "top",
+              "content": "+=",
               "answer": 3
             },
             {
-              "content": "pop",
+              "content": "top",
+              "answer": 4
+            },
+            {
+              "content": "result",
+              "answer": 5
+            },
+            {
+              "content": "add",
               "answer": null
             },
             {
-              "content": "pop_back",
+              "content": "isEmpty",
               "answer": null
             },
             {
-              "content": "push_back",
+              "content": "-=",
               "answer": null
             },
             {
-              "content": "enqueue",
+              "content": "peek",
               "answer": null
             },
             {
-              "content": "append",
+              "content": "s",
               "answer": null
             },
             {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "front",
-              "answer": null
-            },
-            {
-              "content": "back",
+              "content": "st.top()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nstack = [] \nfor c in s: \n    stack._____(c) \nresult = \"\" \nwhile stack: \n    result _____ stack._____() \n```",
+          "codeTemplate": "```python\ns = \"hello\"\nstack = []\nfor c in s:\n    stack._____(c)\nresult = \"\"\nwhile _____:\n    result _____ stack._____\nprint(_____)```",
           "blanks": [
             {
               "content": "append",
               "answer": 1
             },
             {
-              "content": "+=",
+              "content": "stack",
               "answer": 2
             },
             {
-              "content": "pop",
+              "content": "+=",
               "answer": 3
             },
             {
-              "content": "push",
-              "answer": null
+              "content": "pop()",
+              "answer": 4
             },
             {
-              "content": "len(stack) > 0",
-              "answer": null
+              "content": "result",
+              "answer": 5
             },
             {
               "content": "add",
               "answer": null
             },
             {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "extend",
+              "content": "len(stack)",
               "answer": null
             },
             {
@@ -147,49 +143,49 @@
               "answer": null
             },
             {
-              "content": "*=",
+              "content": "peek()",
               "answer": null
             },
             {
-              "content": "=",
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "stack[-1]",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet stack = []; \nfor(let c of s) stack._____(c); \nlet result = \"\"; \nwhile(stack.length > 0) \n    result _____ stack._____();\n```",
+          "codeTemplate": "```javascript\nlet s = \"hello\";\nlet stack = [];\nfor(let c of s) stack._____(c);\nlet result = \"\";\nwhile(stack._____ > 0) {\n    result _____ stack._____();\n}\nconsole.log(_____);```",
           "blanks": [
             {
               "content": "push",
               "answer": 1
             },
             {
-              "content": "+=",
+              "content": "length",
               "answer": 2
             },
             {
-              "content": "pop",
+              "content": "+=",
               "answer": 3
             },
             {
-              "content": "shift",
-              "answer": null
+              "content": "pop",
+              "answer": 4
             },
             {
-              "content": "unshift",
-              "answer": null
-            },
-            {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
+              "content": "result",
+              "answer": 5
             },
             {
               "content": "add",
+              "answer": null
+            },
+            {
+              "content": "size",
               "answer": null
             },
             {
@@ -197,11 +193,15 @@
               "answer": null
             },
             {
-              "content": "*=",
+              "content": "shift",
               "answer": null
             },
             {
-              "content": "=",
+              "content": "s",
+              "answer": null
+            },
+            {
+              "content": "stack[0]",
               "answer": null
             }
           ]

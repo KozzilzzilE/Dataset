@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nunordered_map<int, int> map; \nfor(int i = 0; i < nums.size(); i++) { \n    int need = target _____ nums[i]; \n    if(map.find(need) != map._____) return _____; \n    map[nums[i]] = i; \n}\n```",
+          "codeTemplate": "```cpp\nunordered_map<int, int> m;\nfor(int i = 0; i < nums.size(); i++) {\n    int need = target _____ nums[i];\n    if(m.find(need) != m._____()) {\n        return {m[need], _____};\n    }\n    m[_____] = i;\n}\nreturn {_____, -1};```",
           "blanks": [
             {
               "content": "-",
@@ -69,8 +69,16 @@
               "answer": 2
             },
             {
-              "content": "true",
+              "content": "i",
               "answer": 3
+            },
+            {
+              "content": "nums[i]",
+              "answer": 4
+            },
+            {
+              "content": "-1",
+              "answer": 5
             },
             {
               "content": "+",
@@ -81,127 +89,119 @@
               "answer": null
             },
             {
-              "content": "*",
+              "content": "i-1",
               "answer": null
             },
             {
-              "content": "/",
+              "content": "need",
               "answer": null
             },
             {
-              "content": "%",
+              "content": "0",
               "answer": null
             },
             {
-              "content": "false",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "null",
+              "content": "m.size()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nmap_dict = {} \nfor i in range(len(nums)): \n    need = target _____ nums[i] \n    if need in map_dict: \n        return _____ \n    map_dict[nums[i]] = i\n```",
+          "codeTemplate": "```python\ndef two_sum(nums, target):\n    m = {}\n    for i in range(_____(nums)):\n        need = target _____ nums[i]\n        if need in _____:\n            return [m[need], _____]\n        m[nums[i]] = _____\n    return []```",
           "blanks": [
             {
-              "content": "-",
+              "content": "len",
               "answer": 1
             },
             {
-              "content": "True",
+              "content": "-",
               "answer": 2
+            },
+            {
+              "content": "m",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
             },
             {
               "content": "+",
               "answer": null
             },
             {
-              "content": "False",
+              "content": "nums",
               "answer": null
             },
             {
-              "content": "*",
+              "content": "i-1",
               "answer": null
             },
             {
-              "content": "/",
+              "content": "need",
               "answer": null
             },
             {
-              "content": "//",
+              "content": "i+1",
               "answer": null
             },
             {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "-1",
+              "content": "size",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet map = new Map(); \nfor(let i = 0; i < nums.length; i++) { \n    let need = target _____ nums[i]; \n    if(map.has(need)) return _____; \n    map.set(nums[i], i); \n}\n```",
+          "codeTemplate": "```javascript\nfunction twoSum(nums, target) {\n    let m = new Map();\n    for(let i = 0; i < nums._____; i++) {\n        let need = target _____ nums[i];\n        if(m._____(need)) {\n            return [m.get(need), _____];\n        }\n        m.set(nums[i], _____); \n    }\n    return [];\n}```",
           "blanks": [
             {
-              "content": "-",
+              "content": "length",
               "answer": 1
             },
             {
-              "content": "true",
+              "content": "-",
               "answer": 2
+            },
+            {
+              "content": "has",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "i",
+              "answer": 5
+            },
+            {
+              "content": "size",
+              "answer": null
             },
             {
               "content": "+",
               "answer": null
             },
             {
-              "content": "false",
+              "content": "get",
               "answer": null
             },
             {
-              "content": "*",
+              "content": "i-1",
               "answer": null
             },
             {
-              "content": "/",
+              "content": "i+1",
               "answer": null
             },
             {
-              "content": "%",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "undefined",
-              "answer": null
-            },
-            {
-              "content": "0",
+              "content": "m.size()",
               "answer": null
             }
           ]

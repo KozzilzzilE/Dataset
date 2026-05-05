@@ -108,30 +108,38 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque \nq = deque() \nq._____(start) \nwhile q: \n    node = q._____ \n    for next in graph[node]: \n        if not visited[_____]: \n            visited[next] = True \n            q._____(next) \n```",
+          "codeTemplate": "```python\nfrom collections import deque\nvisited = [False] * (n + 1)\nq = deque()\nq._____(start)\nvisited[_____] = True\nwhile q:\n    node = q._____\n    for next_node in graph[node]:\n        if not visited[_____]:\n            visited[next_node] = True\n            q._____(next_node)```",
           "blanks": [
             {
               "content": "append",
               "answer": 1
             },
             {
-              "content": "popleft",
+              "content": "start",
               "answer": 2
             },
             {
-              "content": "next",
+              "content": "popleft()",
               "answer": 3
             },
             {
-              "content": "append",
+              "content": "next_node",
               "answer": 4
             },
             {
-              "content": "push",
+              "content": "append",
+              "answer": 5
+            },
+            {
+              "content": "appendleft",
               "answer": null
             },
             {
-              "content": "pop",
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "pop()",
               "answer": null
             },
             {
@@ -143,38 +151,42 @@
               "answer": null
             },
             {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "extend",
-              "answer": null
-            },
-            {
-              "content": "remove",
+              "content": "q[0]",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet q = []; \nq._____(start); \nwhile(q.length > 0) { \n    let node = q._____(); \n    for(let next of graph[node]) { \n        if(!visited[_____]) { \n            visited[next] = true; \n            q._____(next); \n        } \n    } \n}\n```",
+          "codeTemplate": "```javascript\nlet visited = new Array(n+1).fill(false);\nlet q = [];\nq._____(start);\nvisited[_____] = true;\nwhile(q.length > 0) {\n    let node = q._____();\n    for(let next of graph[node]) {\n        if(!visited[_____]) {\n            visited[next] = true;\n            q._____(next);\n        }\n    }\n}```",
           "blanks": [
             {
               "content": "push",
               "answer": 1
             },
             {
-              "content": "shift",
+              "content": "start",
               "answer": 2
             },
             {
-              "content": "next",
+              "content": "shift",
               "answer": 3
             },
             {
-              "content": "push",
+              "content": "next",
               "answer": 4
+            },
+            {
+              "content": "push",
+              "answer": 5
+            },
+            {
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "node",
+              "answer": null
             },
             {
               "content": "pop",
@@ -189,19 +201,7 @@
               "answer": null
             },
             {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
-            },
-            {
-              "content": "add",
-              "answer": null
-            },
-            {
-              "content": "dequeue",
+              "content": "q[0]",
               "answer": null
             }
           ]

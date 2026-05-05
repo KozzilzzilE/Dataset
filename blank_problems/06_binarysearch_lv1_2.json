@@ -58,30 +58,34 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint lo = 0, hi = n - 1;\nwhile (lo _____ hi) {\n    int mid = (lo + hi) / _____;\n    if (arr[mid] == target) return mid;\n    else if (arr[mid] < target) lo = _____;\n    else hi = _____;\n}\nreturn -1;\n```",
+          "codeTemplate": "```cpp\nint binary_search(vector<int>& arr, int target) {\n    int lo = _____, hi = arr.size() - 1;\n    while(lo _____ hi) {\n        int mid = (lo + hi) / _____;\n        if(arr[mid] == target) return mid;\n        else if(arr[mid] < target) lo = _____;\n        else hi = _____;\n    }\n    return -1;\n}```",
           "blanks": [
             {
-              "content": "<=",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": "2",
+              "content": "<=",
               "answer": 2
             },
             {
-              "content": "mid + 1",
+              "content": "2",
               "answer": 3
             },
             {
-              "content": "mid - 1",
+              "content": "mid + 1",
               "answer": 4
             },
             {
-              "content": "<",
+              "content": "mid - 1",
+              "answer": 5
+            },
+            {
+              "content": "1",
               "answer": null
             },
             {
-              "content": ">",
+              "content": "<",
               "answer": null
             },
             {
@@ -89,79 +93,25 @@
               "answer": null
             },
             {
-              "content": "1",
-              "answer": null
-            },
-            {
               "content": "mid",
               "answer": null
             },
             {
-              "content": "lo + 1",
+              "content": "hi - 1",
               "answer": null
             },
             {
-              "content": "hi - 1",
+              "content": "lo + 1",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef binary_search(arr, target):\n    lo, hi = _____, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // _____\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = _____\n        else:\n            hi = _____\n    return -1\n```",
+          "codeTemplate": "```python\ndef binary_search(arr, target):\n    lo, hi = _____, len(arr) - 1\n    while lo _____ hi:\n        mid = (lo + hi) // _____\n        if arr[mid] == target:\n            return _____\n        elif arr[mid] < target:\n            lo = _____\n        else:\n            hi = mid - 1\n    return -1```",
           "blanks": [
             {
               "content": "0",
-              "answer": 1
-            },
-            {
-              "content": "2",
-              "answer": 2
-            },
-            {
-              "content": "mid + 1",
-              "answer": 3
-            },
-            {
-              "content": "mid - 1",
-              "answer": 4
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "3",
-              "answer": null
-            },
-            {
-              "content": "mid",
-              "answer": null
-            },
-            {
-              "content": "lo + 1",
-              "answer": null
-            },
-            {
-              "content": "hi - 1",
-              "answer": null
-            },
-            {
-              "content": "mid + 2",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 4,
-          "codeTemplate": "```javascript\nfunction binarySearch(arr, target) {\n    let lo = 0, hi = arr.length - _____;\n    while (lo _____ hi) {\n        let mid = Math.floor((lo + hi) / _____);\n        if (arr[mid] === target) return mid;\n        else if (arr[mid] < target) lo = _____;\n        else hi = mid - 1;\n    }\n    return -1;\n}\n```",
-          "blanks": [
-            {
-              "content": "1",
               "answer": 1
             },
             {
@@ -173,11 +123,15 @@
               "answer": 3
             },
             {
-              "content": "mid + 1",
+              "content": "mid",
               "answer": 4
             },
             {
-              "content": "0",
+              "content": "mid + 1",
+              "answer": 5
+            },
+            {
+              "content": "1",
               "answer": null
             },
             {
@@ -185,15 +139,11 @@
               "answer": null
             },
             {
-              "content": ">",
-              "answer": null
-            },
-            {
               "content": "3",
               "answer": null
             },
             {
-              "content": "mid",
+              "content": "lo",
               "answer": null
             },
             {
@@ -201,7 +151,57 @@
               "answer": null
             },
             {
-              "content": "hi",
+              "content": "hi + 1",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nfunction binarySearch(arr, target) {\n    let lo = _____, hi = arr.length - 1;\n    while(lo _____ hi) {\n        let mid = Math.floor((lo + hi) / _____);\n        if(arr[mid] === target) return _____;\n        else if(arr[mid] < target) lo = _____;\n        else hi = mid - 1;\n    }\n    return -1;\n}```",
+          "blanks": [
+            {
+              "content": "0",
+              "answer": 1
+            },
+            {
+              "content": "<=",
+              "answer": 2
+            },
+            {
+              "content": "2",
+              "answer": 3
+            },
+            {
+              "content": "mid",
+              "answer": 4
+            },
+            {
+              "content": "mid + 1",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "lo",
+              "answer": null
+            },
+            {
+              "content": "mid - 1",
+              "answer": null
+            },
+            {
+              "content": "hi + 1",
               "answer": null
             }
           ]

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <stack>\nusing namespace std; \nstack<int> st; \nst._____(10); \nint x = st._____(); \nst._____(); \nbool empty = st._____();\n```",
+          "codeTemplate": "```cpp\n#include <stack>\nusing namespace std;\nstack<int> st;\nst._____(10);\nst.push(20);\nint x = st._____();\nst._____();\nbool empty = st._____();\ncout << _____ << endl;```",
           "blanks": [
             {
               "content": "push",
@@ -77,7 +77,11 @@
               "answer": 4
             },
             {
-              "content": "size",
+              "content": "x",
+              "answer": 5
+            },
+            {
+              "content": "add",
               "answer": null
             },
             {
@@ -85,57 +89,53 @@
               "answer": null
             },
             {
-              "content": "push_back",
+              "content": "remove",
               "answer": null
             },
             {
-              "content": "enqueue",
+              "content": "isEmpty",
               "answer": null
             },
             {
-              "content": "append",
+              "content": "st.top()",
               "answer": null
             },
             {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "front",
+              "content": "st.size()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nstack = [] \nstack._____(10) \nx = stack[-1] \nstack._____ \nbool_empty = len(stack) == 0 \n```",
+          "codeTemplate": "```python\nstack = []\nstack._____(10)\nstack.append(20)\nx = stack[_____]\nstack._____\nbool_empty = _____(stack) == 0\nprint(_____)```",
           "blanks": [
             {
               "content": "append",
               "answer": 1
             },
             {
-              "content": "pop()",
+              "content": "-1",
               "answer": 2
             },
             {
-              "content": "push",
-              "answer": null
+              "content": "pop()",
+              "answer": 3
             },
             {
-              "content": "stack[0]",
-              "answer": null
+              "content": "len",
+              "answer": 4
+            },
+            {
+              "content": "x",
+              "answer": 5
             },
             {
               "content": "add",
               "answer": null
             },
             {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "extend",
+              "content": "0",
               "answer": null
             },
             {
@@ -143,65 +143,65 @@
               "answer": null
             },
             {
-              "content": "del",
+              "content": "size",
               "answer": null
             },
             {
-              "content": "discard()",
+              "content": "stack[-1]",
               "answer": null
             },
             {
-              "content": "popleft()",
+              "content": "stack[0]",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet stack = []; \nstack._____(10); \nlet x = stack[stack.length - 1]; \nstack._____(); \nlet isEmpty = stack.length === 0;\n```",
+          "codeTemplate": "```javascript\nlet stack = [];\nstack._____(10);\nstack.push(20);\nlet x = stack[stack.length - _____];\nstack._____();\nlet isEmpty = stack._____ === 0;\nconsole.log(_____);\n```",
           "blanks": [
             {
               "content": "push",
               "answer": 1
             },
             {
-              "content": "pop",
+              "content": "1",
               "answer": 2
             },
             {
-              "content": "shift",
-              "answer": null
+              "content": "pop",
+              "answer": 3
             },
             {
-              "content": "top",
-              "answer": null
+              "content": "length",
+              "answer": 4
             },
             {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
+              "content": "x",
+              "answer": 5
             },
             {
               "content": "add",
               "answer": null
             },
             {
-              "content": "unshift",
+              "content": "0",
               "answer": null
             },
             {
-              "content": "dequeue",
+              "content": "shift",
               "answer": null
             },
             {
-              "content": "remove",
+              "content": "size",
               "answer": null
             },
             {
-              "content": "splice",
+              "content": "stack[0]",
+              "answer": null
+            },
+            {
+              "content": "stack.top()",
               "answer": null
             }
           ]

@@ -62,10 +62,10 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint parent[n]; \nfor(int i = 0; i < n; i++) parent[i] = i; \nint find(int x) { \n    if(parent[x] != _____) \n        parent[x] = find(parent[x]); \n    return parent[_____]; \n} \nvoid unite(int x, int y) { \n    int ra = find(x), rb = find(y); \n    if(ra != rb) \n        parent[_____] = ra; \n}\n```",
+          "codeTemplate": "```cpp\nint parent[100];\nvoid init(int n) {\n    for(int i = 0; i < n; i++) parent[i] = _____;\n}\nint find(int x) {\n    if(parent[x] != _____)\n        parent[x] = find(parent[x]);\n    return parent[_____];\n}\nvoid unite(int x, int y) {\n    int ra = find(x), rb = find(y);\n    if(ra != rb) parent[_____] = ra;\n}\nbool connected(int x, int y) { return find(x) == find(_____); }```",
           "blanks": [
             {
-              "content": "x",
+              "content": "i",
               "answer": 1
             },
             {
@@ -73,11 +73,27 @@
               "answer": 2
             },
             {
-              "content": "rb",
+              "content": "x",
               "answer": 3
             },
             {
+              "content": "rb",
+              "answer": 4
+            },
+            {
               "content": "y",
+              "answer": 5
+            },
+            {
+              "content": "0",
+              "answer": null
+            },
+            {
+              "content": "y",
+              "answer": null
+            },
+            {
+              "content": "parent[x]",
               "answer": null
             },
             {
@@ -85,37 +101,21 @@
               "answer": null
             },
             {
-              "content": "parent[a]",
-              "answer": null
-            },
-            {
-              "content": "a",
-              "answer": null
-            },
-            {
-              "content": "b",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
               "content": "1",
+              "answer": null
+            },
+            {
+              "content": "node",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nparent = list(range(n)) \ndef find(x): \n    if parent[x] != _____: \n        parent[x] = find(parent[x]) \n    return parent[_____] \ndef unite(x, y): \n    ra, rb = find(x), find(y) \n    if ra != rb: \n        parent[_____] = ra \n```",
+          "codeTemplate": "```python\ndef init(n):\n    return list(range(_____)) \ndef find(parent, x):\n    if parent[x] != _____:\n        parent[x] = find(parent, parent[x])\n    return parent[_____]\ndef unite(parent, x, y):\n    ra, rb = find(parent, x), find(parent, y)\n    if ra != rb:\n        parent[_____] = ra\ndef connected(parent, x, y):\n    return find(parent, x) == find(parent, _____)```",
           "blanks": [
             {
-              "content": "x",
+              "content": "n",
               "answer": 1
             },
             {
@@ -123,11 +123,27 @@
               "answer": 2
             },
             {
-              "content": "rb",
+              "content": "x",
               "answer": 3
             },
             {
+              "content": "rb",
+              "answer": 4
+            },
+            {
               "content": "y",
+              "answer": 5
+            },
+            {
+              "content": "n+1",
+              "answer": null
+            },
+            {
+              "content": "y",
+              "answer": null
+            },
+            {
+              "content": "parent[x]",
               "answer": null
             },
             {
@@ -135,37 +151,21 @@
               "answer": null
             },
             {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
               "content": "1",
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
+              "content": "node",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet parent = Array.from({length: n}, (_, i) => i); \nfunction find(x) { \n    if(parent[x] !== _____) \n        parent[x] = find(parent[x]); \n    return parent[_____]; \n} \nfunction unite(x, y) { \n    let ra = find(x), rb = find(y); \n    if(ra !== rb) \n        parent[_____] = ra; \n}\n```",
+          "codeTemplate": "```javascript\nfunction init(n) {\n    return Array.from({length: _____}, (_, i) => i);\n}\nfunction find(parent, x) {\n    if(parent[x] !== _____)\n        parent[x] = find(parent, parent[x]);\n    return parent[_____];\n}\nfunction unite(parent, x, y) {\n    let ra = find(parent, x), rb = find(parent, y);\n    if(ra !== rb) parent[_____] = ra;\n}\nfunction connected(parent, x, y) {\n    return find(parent, x) === find(parent, _____);\n}```",
           "blanks": [
             {
-              "content": "x",
+              "content": "n",
               "answer": 1
             },
             {
@@ -173,11 +173,27 @@
               "answer": 2
             },
             {
-              "content": "rb",
+              "content": "x",
               "answer": 3
             },
             {
+              "content": "rb",
+              "answer": 4
+            },
+            {
               "content": "y",
+              "answer": 5
+            },
+            {
+              "content": "n+1",
+              "answer": null
+            },
+            {
+              "content": "y",
+              "answer": null
+            },
+            {
+              "content": "parent[x]",
               "answer": null
             },
             {
@@ -185,27 +201,11 @@
               "answer": null
             },
             {
-              "content": "parent[a]",
-              "answer": null
-            },
-            {
-              "content": "a",
-              "answer": null
-            },
-            {
-              "content": "b",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
               "content": "1",
+              "answer": null
+            },
+            {
+              "content": "node",
               "answer": null
             }
           ]

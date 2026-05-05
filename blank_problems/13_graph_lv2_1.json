@@ -62,19 +62,27 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint dist[n]; \nfill(dist, dist+n, Integer._____); \ndist[start] = 0; \npriority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq; \npq.push({0, start}); \nwhile(!pq.empty()) { \n    auto [d, node] = pq.top(); pq.pop(); \n    if(d _____ dist[node]) continue; \n    for(auto& next : graph[node]) { \n        int nd = d + next[1]; \n        if(nd < dist[next[0]]) { \n            dist[next[0]] = nd; \n            pq.push({nd, next[0]}); \n        } \n    } \n}\n```",
+          "codeTemplate": "```cpp\nint n = 5;\nvector<int> dist(n, _____); \ndist[start] = 0;\npriority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;\npq.push({_____, start});\nwhile(!pq.empty()) {\n    auto [d, node] = pq.top(); pq.pop();\n    if(d _____ dist[node]) continue;\n    for(auto& [next, w] : graph[node]) {\n        int nd = d + _____;\n        if(nd < dist[next]) {\n            dist[next] = nd;\n            pq.push({nd, _____});\n        }\n    }\n}```",
           "blanks": [
             {
-              "content": "correct Dijkstra implementation",
+              "content": "INT_MAX",
               "answer": 1
             },
             {
-              "content": "Bellman-Ford",
-              "answer": null
+              "content": "0",
+              "answer": 2
             },
             {
-              "content": "null",
-              "answer": null
+              "content": ">",
+              "answer": 3
+            },
+            {
+              "content": "w",
+              "answer": 4
+            },
+            {
+              "content": "next",
+              "answer": 5
             },
             {
               "content": "0",
@@ -85,61 +93,49 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "<",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "d",
               "answer": null
             },
             {
-              "content": "j",
+              "content": "node",
               "answer": null
             },
             {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "true",
-              "answer": null
-            },
-            {
-              "content": "false",
+              "content": "dist[node]",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq \ndist = [float('inf')] * n \ndist[start] = 0 \npq = [(0, start)] \nwhile pq: \n    d, node = heapq.heappop(pq) \n    if d _____ dist[node]: \n        continue \n    for next_node, weight in graph[node]: \n        nd = d + weight \n        if nd < dist[next_node]: \n            dist[next_node] = nd \n            heapq.heappush(pq, (nd, next_node)) \n```",
+          "codeTemplate": "```python\nimport heapq\ndist = [float('_____')] * n\ndist[start] = 0\npq = [(_____, start)]\nwhile pq:\n    d, node = heapq.heappop(pq)\n    if d _____ dist[node]:\n        continue\n    for next_node, weight in graph[node]:\n        nd = d + _____\n        if nd < dist[next_node]:\n            dist[next_node] = nd\n            heapq.heappush(pq, (nd, _____))```",
           "blanks": [
             {
-              "content": ">",
+              "content": "inf",
               "answer": 1
             },
             {
-              "content": "<",
-              "answer": null
-            },
-            {
-              "content": ">=",
-              "answer": null
-            },
-            {
-              "content": "<=",
-              "answer": null
-            },
-            {
-              "content": "==",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
               "content": "0",
+              "answer": 2
+            },
+            {
+              "content": ">",
+              "answer": 3
+            },
+            {
+              "content": "weight",
+              "answer": 4
+            },
+            {
+              "content": "next_node",
+              "answer": 5
+            },
+            {
+              "content": "max",
               "answer": null
             },
             {
@@ -147,46 +143,46 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "<",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "d",
               "answer": null
             },
             {
-              "content": "j",
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "dist[node]",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet dist = new Array(n).fill(Infinity); \ndist[start] = 0; \nlet pq = [[0, start]]; \nwhile(pq.length > 0) { \n    pq.sort((a, b) => a[0] - b[0]); \n    let [d, node] = pq.shift(); \n    if(d _____ dist[node]) continue; \n    for(let [next, weight] of graph[node]) { \n        let nd = d + weight; \n        if(nd < dist[next]) { \n            dist[next] = nd; \n            pq.push([nd, next]); \n        } \n    } \n}\n```",
+          "codeTemplate": "```javascript\nlet dist = new Array(n).fill(_____); \ndist[start] = 0;\nlet pq = [[_____, start]];\nwhile(pq.length > 0) {\n    pq.sort((a, b) => a[0] - b[0]);\n    let [d, node] = pq.shift();\n    if(d _____ dist[node]) continue;\n    for(let [next, w] of graph[node]) {\n        let nd = d + _____;\n        if(nd < dist[next]) {\n            dist[next] = nd;\n            pq.push([nd, _____]);\n        }\n    }\n}```",
           "blanks": [
             {
-              "content": ">",
+              "content": "Infinity",
               "answer": 1
             },
             {
-              "content": "<",
-              "answer": null
+              "content": "0",
+              "answer": 2
             },
             {
-              "content": ">=",
-              "answer": null
+              "content": ">",
+              "answer": 3
             },
             {
-              "content": "<=",
-              "answer": null
+              "content": "w",
+              "answer": 4
             },
             {
-              "content": "===",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
+              "content": "next",
+              "answer": 5
             },
             {
               "content": "0",
@@ -197,15 +193,19 @@
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "<",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "d",
               "answer": null
             },
             {
-              "content": "j",
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "dist[node]",
               "answer": null
             }
           ]

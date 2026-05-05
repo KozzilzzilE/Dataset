@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nqueue<int> q; \nwhile(!q._____()) { \n    int cur = q._____(); \n    if(p _____ cur) ...; \n    q._____(cur); \n}\n```",
+          "codeTemplate": "```cpp\nqueue<int> q;\nfor(int p : priorities) q.push(p);\nint count = 0;\nwhile(!q._____()) {\n    int cur = q._____();\n    q.pop();\n    if(max_element... _____ cur) { count_____; }\n    else q._____(cur);\n}\ncout << count;```",
           "blanks": [
             {
               "content": "empty",
@@ -69,65 +69,69 @@
               "answer": 2
             },
             {
-              "content": ">",
+              "content": "==",
               "answer": 3
             },
             {
-              "content": "push",
+              "content": "++",
               "answer": 4
+            },
+            {
+              "content": "push",
+              "answer": 5
+            },
+            {
+              "content": "isEmpty",
+              "answer": null
             },
             {
               "content": "top",
               "answer": null
             },
             {
-              "content": "<",
+              "content": "!=",
               "answer": null
             },
             {
-              "content": "back",
+              "content": "--",
               "answer": null
             },
             {
-              "content": "begin",
+              "content": "add",
               "answer": null
             },
             {
-              "content": "peek",
-              "answer": null
-            },
-            {
-              "content": ">=",
-              "answer": null
-            },
-            {
-              "content": "<=",
+              "content": "size",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nq = deque() \nwhile q: \n    cur = q._____ \n    if p _____ cur: \n        break \n    q._____(cur) \n```",
+          "codeTemplate": "```python\nfrom collections import deque\nq = deque(priorities)\ncount = _____\nwhile q:\n    cur = q._____\n    if max(q) _____ cur:\n        count _____ 1\n    else:\n        q._____(cur)\nprint(count)```",
           "blanks": [
             {
-              "content": "popleft()",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": ">",
+              "content": "popleft()",
               "answer": 2
             },
             {
-              "content": "append",
+              "content": "==",
               "answer": 3
             },
             {
-              "content": "pop",
-              "answer": null
+              "content": "+=",
+              "answer": 4
             },
             {
-              "content": "<",
+              "content": "append",
+              "answer": 5
+            },
+            {
+              "content": "1",
               "answer": null
             },
             {
@@ -135,73 +139,69 @@
               "answer": null
             },
             {
-              "content": "remove()",
+              "content": "!=",
               "answer": null
             },
             {
-              "content": "dequeue()",
+              "content": "-=",
               "answer": null
             },
             {
-              "content": "shift()",
+              "content": "appendleft",
               "answer": null
             },
             {
-              "content": ">=",
-              "answer": null
-            },
-            {
-              "content": "<=",
+              "content": "q[0]",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet q = []; \nwhile(q.length > 0) { \n    let cur = q._____(); \n    if(p _____ cur) break; \n    q._____(cur); \n}\n```",
+          "codeTemplate": "```javascript\nlet q = [...priorities];\nlet count = _____;\nwhile(q._____ > 0) {\n    let cur = q._____();\n    if(Math.max(...q) === cur) count_____;\n    else q._____(cur);\n}\nconsole.log(count);```",
           "blanks": [
             {
-              "content": "shift",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": ">",
+              "content": "length",
               "answer": 2
             },
             {
-              "content": "push",
+              "content": "shift",
               "answer": 3
+            },
+            {
+              "content": "++",
+              "answer": 4
+            },
+            {
+              "content": "push",
+              "answer": 5
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
             },
             {
               "content": "pop",
               "answer": null
             },
             {
-              "content": "<",
+              "content": "--",
               "answer": null
             },
             {
-              "content": "dequeue",
+              "content": "add",
               "answer": null
             },
             {
-              "content": "unshift",
-              "answer": null
-            },
-            {
-              "content": "splice",
-              "answer": null
-            },
-            {
-              "content": ">=",
-              "answer": null
-            },
-            {
-              "content": "<=",
-              "answer": null
-            },
-            {
-              "content": "===",
+              "content": "q[0]",
               "answer": null
             }
           ]

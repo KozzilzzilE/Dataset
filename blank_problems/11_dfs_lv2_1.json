@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool visited[100]; \nvoid dfs(int node) { \n    visited[node] = true; \n    for(int next : graph[node]) { \n        if(!visited[_____]) \n            dfs(next); \n    } \n} \nint count = _____; \nfor(int i = 1; i _____ n; i++) { \n    if(!visited[i]) { \n        dfs(i); \n        _____; \n    } \n}\n```",
+          "codeTemplate": "```cpp\nbool visited[100] = {};\nvoid dfs(int node) {\n    visited[node] = true;\n    for(int next : graph[node]) {\n        if(!visited[_____]) dfs(next);\n    }\n}\nint count = _____;\nfor(int i = 1; i _____ n; i++) {\n    if(!visited[i]) {\n        dfs(i);\n        _____;\n    }\n}\ncout << _____;```",
           "blanks": [
             {
               "content": "next",
@@ -77,104 +77,8 @@
               "answer": 4
             },
             {
-              "content": "node",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "<",
-              "answer": null
-            },
-            {
-              "content": "count+=2",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "INT_MAX",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 3,
-          "codeTemplate": "```python\nvisited = [False] * 100 \ndef dfs(node): \n    visited[node] = True \n    for next in graph[node]: \n        if not visited[_____]: \n            dfs(next) \ncount = _____ \nfor i in range(1, n + 1): \n    if not visited[i]: \n        dfs(i) \n        _____ \n```",
-          "blanks": [
-            {
-              "content": "next",
-              "answer": 1
-            },
-            {
-              "content": "0",
-              "answer": 2
-            },
-            {
-              "content": "count += 1",
-              "answer": 3
-            },
-            {
-              "content": "node",
-              "answer": null
-            },
-            {
-              "content": "1",
-              "answer": null
-            },
-            {
-              "content": "count -= 1",
-              "answer": null
-            },
-            {
-              "content": "cur",
-              "answer": null
-            },
-            {
-              "content": "v",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 4,
-          "codeTemplate": "```javascript\nlet visited = new Array(100).fill(false); \nfunction dfs(node) { \n    visited[node] = true; \n    for(let next of graph[node]) { \n        if(!visited[_____]) \n            dfs(next); \n    } \n} \nlet count = _____; \nfor(let i = 1; i _____ n; i++) { \n    if(!visited[i]) { \n        dfs(i); \n        _____; \n    } \n}\n```",
-          "blanks": [
-            {
-              "content": "next",
-              "answer": 1
-            },
-            {
-              "content": "0",
-              "answer": 2
-            },
-            {
-              "content": "<=",
-              "answer": 3
-            },
-            {
-              "content": "count++",
-              "answer": 4
+              "content": "count",
+              "answer": 5
             },
             {
               "content": "node",
@@ -193,11 +97,107 @@
               "answer": null
             },
             {
-              "content": "cur",
+              "content": "visited",
               "answer": null
             },
             {
-              "content": "v",
+              "content": "i",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nvisited = [False] * (n + 1)\ndef dfs(node):\n    visited[node] = True\n    for next_node in graph[node]:\n        if not visited[_____]: dfs(next_node)\ncount = _____\nfor i in range(1, n + 1):\n    if not visited[i]:\n        dfs(i)\n        _____\nprint(_____(count, 0))\nprint(_____)```",
+          "blanks": [
+            {
+              "content": "next_node",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "count += 1",
+              "answer": 3
+            },
+            {
+              "content": "max",
+              "answer": 4
+            },
+            {
+              "content": "count",
+              "answer": 5
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "count -= 1",
+              "answer": null
+            },
+            {
+              "content": "min",
+              "answer": null
+            },
+            {
+              "content": "visited",
+              "answer": null
+            },
+            {
+              "content": "i",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 4,
+          "codeTemplate": "```javascript\nlet visited = new Array(n+1).fill(false);\nfunction dfs(node) {\n    visited[node] = true;\n    for(let next of graph[node]) {\n        if(!visited[_____]) dfs(next);\n    }\n}\nlet count = _____;\nfor(let i = 1; i _____ n; i++) {\n    if(!visited[i]) {\n        dfs(i);\n        _____;\n    }\n}\nconsole.log(_____);```",
+          "blanks": [
+            {
+              "content": "next",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "<=",
+              "answer": 3
+            },
+            {
+              "content": "count++",
+              "answer": 4
+            },
+            {
+              "content": "count",
+              "answer": 5
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "<",
+              "answer": null
+            },
+            {
+              "content": "count--",
+              "answer": null
+            },
+            {
+              "content": "visited",
               "answer": null
             },
             {

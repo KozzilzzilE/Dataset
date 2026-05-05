@@ -108,14 +108,14 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nwords = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"]\nfreq = {}\nfor w in words:\n    freq[w] = freq._____(w, _____) + 1\nfor word, cnt in freq._____():\n    if cnt >= 2:\n        print(f\"{word}: {_____}\")\n```",
+          "codeTemplate": "```python\nwords = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"]\nfreq = {}\nfor w in _____:\n    freq[w] = freq._____(w, 0) + 1\nfor word, cnt in freq._____():\n    if cnt _____ 2:\n        print(f\"{word}: {_____}\")```",
           "blanks": [
             {
-              "content": "get",
+              "content": "words",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "get",
               "answer": 2
             },
             {
@@ -123,15 +123,19 @@
               "answer": 3
             },
             {
-              "content": "cnt",
+              "content": ">=",
               "answer": 4
             },
             {
-              "content": "None",
+              "content": "cnt",
+              "answer": 5
+            },
+            {
+              "content": "freq",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "find",
               "answer": null
             },
             {
@@ -139,7 +143,7 @@
               "answer": null
             },
             {
-              "content": "values",
+              "content": ">",
               "answer": null
             },
             {
@@ -147,11 +151,7 @@
               "answer": null
             },
             {
-              "content": "setdefault",
-              "answer": null
-            },
-            {
-              "content": "-1",
+              "content": "freq[word]",
               "answer": null
             }
           ]

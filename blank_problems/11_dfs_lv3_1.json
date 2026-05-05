@@ -62,18 +62,34 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvoid dfs(int node, vector<int>& path) { \n    if(node == _____) { \n        allPaths.push_back(path); \n        return; \n    } \n    for(int next : graph[node]) { \n        visited[next] = _____; \n        path.push_back(next); \n        dfs(next, path); \n        path.pop_back(); \n    } \n}\n```",
+          "codeTemplate": "```cpp\nvector<vector<int>> allPaths;\nbool visited[100] = {};\nvoid dfs(int node, vector<int>& path, int target) {\n    if(node == _____) {\n        allPaths.push_back(path);\n        return;\n    }\n    for(int next : graph[node]) {\n        if(!visited[_____]) {\n            visited[next] = _____;\n            path.push_back(_____); \n            dfs(next, path, target);\n            path.pop_back();\n            visited[next] = _____;\n        }\n    }\n}```",
           "blanks": [
             {
-              "content": "dest",
+              "content": "target",
               "answer": 1
             },
             {
-              "content": "true",
+              "content": "next",
               "answer": 2
             },
             {
-              "content": "src",
+              "content": "true",
+              "answer": 3
+            },
+            {
+              "content": "next",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "node",
               "answer": null
             },
             {
@@ -81,53 +97,49 @@
               "answer": null
             },
             {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "true",
+              "answer": null
+            },
+            {
               "content": "1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef dfs(node, path): \n    if node == _____: \n        allPaths.append(path[:]) \n        return \n    for next in graph[node]: \n        visited[next] = _____ \n        path._____(next) \n        dfs(next, path) \n        path.pop() \n```",
+          "codeTemplate": "```python\nallPaths = []\nvisited = [False] * 100\ndef dfs(node, path, target):\n    if node == _____:\n        allPaths.append(path[:])\n        return\n    for next_node in graph[node]:\n        if not visited[_____]:\n            visited[next_node] = _____\n            path._____(next_node)\n            dfs(next_node, path, target)\n            path.pop()\n            visited[next_node] = _____```",
           "blanks": [
             {
-              "content": "dest",
+              "content": "target",
               "answer": 1
             },
             {
-              "content": "True",
+              "content": "next_node",
               "answer": 2
             },
             {
-              "content": "append",
+              "content": "True",
               "answer": 3
             },
             {
-              "content": "src",
+              "content": "append",
+              "answer": 4
+            },
+            {
+              "content": "False",
+              "answer": 5
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "node",
               "answer": null
             },
             {
@@ -139,19 +151,7 @@
               "answer": null
             },
             {
-              "content": "node",
-              "answer": null
-            },
-            {
-              "content": "end",
-              "answer": null
-            },
-            {
-              "content": "target",
-              "answer": null
-            },
-            {
-              "content": "goal",
+              "content": "True",
               "answer": null
             },
             {
@@ -162,22 +162,34 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction dfs(node, path) { \n    if(node === _____) { \n        allPaths.push([...path]); \n        return; \n    } \n    for(let next of graph[node]) { \n        visited[next] = _____; \n        path._____(next); \n        dfs(next, path); \n        path.pop(); \n    } \n}\n```",
+          "codeTemplate": "```javascript\nlet allPaths = [];\nlet visited = new Array(100).fill(false);\nfunction dfs(node, path, target) {\n    if(node === _____) {\n        allPaths.push([...path]);\n        return;\n    }\n    for(let next of graph[node]) {\n        if(!visited[_____]) {\n            visited[next] = _____;\n            path._____(next);\n            dfs(next, path, target);\n            path.pop();\n            visited[next] = _____;\n        }\n    }\n}```",
           "blanks": [
             {
-              "content": "dest",
+              "content": "target",
               "answer": 1
             },
             {
-              "content": "true",
+              "content": "next",
               "answer": 2
             },
             {
-              "content": "push",
+              "content": "true",
               "answer": 3
             },
             {
-              "content": "src",
+              "content": "push",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "node",
+              "answer": null
+            },
+            {
+              "content": "node",
               "answer": null
             },
             {
@@ -185,27 +197,15 @@
               "answer": null
             },
             {
-              "content": "pop",
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "true",
               "answer": null
             },
             {
               "content": "1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "undefined",
-              "answer": null
-            },
-            {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
               "answer": null
             }
           ]

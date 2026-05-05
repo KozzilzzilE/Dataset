@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint dist[n+1]; \nfill(dist, dist+n+1, _____); \ndist[start] = 0; \nqueue<int> q; \nq.push(start); \nwhile(!q.empty()) { \n    int node = q._____(); \n    for(int next : graph[node]) { \n        if(dist[next] == _____) { \n            dist[next] = dist[_____] + 1; \n            q.push(next); \n        } \n    } \n}\n```",
+          "codeTemplate": "```cpp\nvector<int> dist(n+1, _____);\ndist[start] = 0;\nqueue<int> q;\nq.push(start);\nwhile(!q.empty()) {\n    int node = q._____();\n    q.pop();\n    for(int next : graph[node]) {\n        if(dist[next] == _____) {\n            dist[next] = dist[_____] + 1;\n            q.push(next);\n        }\n    }\n}\ncout << dist[_____];```",
           "blanks": [
             {
               "content": "-1",
@@ -77,11 +77,19 @@
               "answer": 4
             },
             {
+              "content": "n",
+              "answer": 5
+            },
+            {
               "content": "0",
               "answer": null
             },
             {
-              "content": "back",
+              "content": "top",
+              "answer": null
+            },
+            {
+              "content": "0",
               "answer": null
             },
             {
@@ -89,19 +97,11 @@
               "answer": null
             },
             {
-              "content": "1",
+              "content": "start",
               "answer": null
             },
             {
-              "content": "INT_MIN",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "top",
+              "content": "INT_MAX",
               "answer": null
             }
           ]
@@ -158,34 +158,30 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet dist = new Array(n+1).fill(_____); \ndist[start] = 0; \nlet q = [start]; \nlet idx = 0; \nwhile(idx < q.length) { \n    let node = q[idx++]; \n    for(let next of graph[node]) { \n        if(dist[next] === _____) { \n            dist[next] = dist[_____] + 1; \n            q._____(next); \n        } \n    } \n}\n```",
+          "codeTemplate": "```javascript\nlet dist = new Array(n+1).fill(_____); \ndist[start] = 0;\nlet q = [start];\nlet idx = _____;\nwhile(idx < q.length) {\n    let node = q[_____];\n    for(let next of graph[node]) {\n        if(dist[next] === _____) {\n            dist[next] = dist[node] + 1;\n            q._____(next);\n        }\n    }\n    idx++;\n}```",
           "blanks": [
             {
               "content": "-1",
               "answer": 1
             },
             {
-              "content": "-1",
+              "content": "0",
               "answer": 2
             },
             {
-              "content": "node",
+              "content": "idx++",
               "answer": 3
             },
             {
-              "content": "push",
+              "content": "-1",
               "answer": 4
             },
             {
+              "content": "push",
+              "answer": 5
+            },
+            {
               "content": "0",
-              "answer": null
-            },
-            {
-              "content": "next",
-              "answer": null
-            },
-            {
-              "content": "unshift",
               "answer": null
             },
             {
@@ -193,15 +189,19 @@
               "answer": null
             },
             {
-              "content": "null",
+              "content": "idx",
               "answer": null
             },
             {
-              "content": "Infinity",
+              "content": "0",
               "answer": null
             },
             {
-              "content": "cur",
+              "content": "add",
+              "answer": null
+            },
+            {
+              "content": "unshift",
               "answer": null
             }
           ]

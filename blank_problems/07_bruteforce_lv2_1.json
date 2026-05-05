@@ -62,15 +62,31 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nif(cur.size() == arr.size()) { \n    perms.push_back(cur); \n    return; \n} \nfor(int i = 0; i < arr.size(); i++) { \n    if(_____(i)) continue; \n    used[i] = _____; \n    cur.push_back(arr[i]); \n    permute(arr, cur, used); \n    cur.pop_back(); \n}\n```",
+          "codeTemplate": "```cpp\nvector<vector<int>> perms;\nvector<bool> used;\nvoid permute(vector<int>& arr, vector<int>& cur) {\n    if(cur.size() == arr._____) {\n        perms.push_back(cur);\n        return;\n    }\n    for(int i = 0; i < arr.size(); i++) {\n        if(_____[i]) continue;\n        used[i] = _____;\n        cur.push_back(arr[_____]);\n        permute(arr, cur);\n        cur.pop_back();\n        used[i] = _____;\n    }\n}```",
           "blanks": [
             {
-              "content": "used",
+              "content": "size()",
               "answer": 1
             },
             {
-              "content": "true",
+              "content": "used",
               "answer": 2
+            },
+            {
+              "content": "true",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "length",
+              "answer": null
             },
             {
               "content": "visited",
@@ -81,46 +97,46 @@
               "answer": null
             },
             {
+              "content": "i-1",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
               "content": "1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nif len(cur) == len(arr): \n    perms.append(cur[:]) \n    return \nfor i in range(len(arr)): \n    if _____[i]: \n        continue \n    used[i] = _____ \n    cur.append(arr[i]) \n    permute(arr, cur, used) \n    cur.pop() \n```",
+          "codeTemplate": "```python\nperms = []\nused = [False] * len(arr)\ndef permute(cur):\n    if len(cur) == len(_____): \n        perms.append(cur[:])\n        return\n    for i in range(len(arr)):\n        if _____[i]:\n            continue\n        used[i] = _____\n        cur._____(arr[i])\n        permute(cur)\n        cur.pop()\n        used[i] = _____```",
           "blanks": [
             {
-              "content": "used",
+              "content": "arr",
               "answer": 1
             },
             {
-              "content": "True",
+              "content": "used",
               "answer": 2
+            },
+            {
+              "content": "True",
+              "answer": 3
+            },
+            {
+              "content": "append",
+              "answer": 4
+            },
+            {
+              "content": "False",
+              "answer": 5
+            },
+            {
+              "content": "cur",
+              "answer": null
             },
             {
               "content": "visited",
@@ -131,46 +147,46 @@
               "answer": null
             },
             {
-              "content": "1",
+              "content": "add",
               "answer": null
             },
             {
-              "content": "None",
+              "content": "True",
               "answer": null
             },
             {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
+              "content": "cur",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nif(cur.length === arr.length) { \n    perms.push([...cur]); \n    return; \n} \nfor(let i = 0; i < arr.length; i++) { \n    if(_____[i]) continue; \n    used[i] = _____; \n    cur.push(arr[i]); \n    permute(arr, cur, used); \n    cur.pop(); \n}\n```",
+          "codeTemplate": "```javascript\nlet perms = [];\nlet used = new Array(arr.length).fill(false);\nfunction permute(cur) {\n    if(cur.length === arr._____) {\n        perms.push([...cur]);\n        return;\n    }\n    for(let i = 0; i < arr.length; i++) {\n        if(_____[i]) continue;\n        used[i] = _____;\n        cur.push(arr[_____]);\n        permute(cur);\n        cur.pop();\n        used[i] = _____;\n    }\n}```",
           "blanks": [
             {
-              "content": "used",
+              "content": "length",
               "answer": 1
             },
             {
-              "content": "true",
+              "content": "used",
               "answer": 2
+            },
+            {
+              "content": "true",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "false",
+              "answer": 5
+            },
+            {
+              "content": "size",
+              "answer": null
             },
             {
               "content": "visited",
@@ -181,31 +197,15 @@
               "answer": null
             },
             {
+              "content": "i-1",
+              "answer": null
+            },
+            {
+              "content": "True",
+              "answer": null
+            },
+            {
               "content": "1",
-              "answer": null
-            },
-            {
-              "content": "null",
-              "answer": null
-            },
-            {
-              "content": "undefined",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "i",
-              "answer": null
-            },
-            {
-              "content": "j",
               "answer": null
             }
           ]

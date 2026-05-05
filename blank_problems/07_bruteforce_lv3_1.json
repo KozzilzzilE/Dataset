@@ -62,18 +62,30 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nif(cur.size() == r) { \n    combos.push_back(cur); \n    return; \n} \nfor(int i = start; i < arr.size(); i++) { \n    if(r - cur.size() > arr.size() - i) break; \n    cur.push_back(arr[i]); \n    combine(arr, i + 1, cur, r); \n    cur.pop_back(); \n}\n```",
+          "codeTemplate": "```cpp\nvector<vector<int>> combos;\nvoid combine(vector<int>& arr, int start, vector<int>& cur, int r) {\n    if(cur.size() == _____) {\n        combos.push_back(cur);\n        return;\n    }\n    for(int i = _____; i < arr.size(); i++) {\n        if((int)(r - cur.size()) > (int)(arr.size() - _____)) break;\n        cur.push_back(arr[_____]);\n        combine(arr, i + 1, cur, r);\n        cur._____();\n    }\n}```",
           "blanks": [
             {
-              "content": "correct combination logic",
+              "content": "r",
               "answer": 1
             },
             {
-              "content": "permutation logic",
-              "answer": null
+              "content": "start",
+              "answer": 2
             },
             {
-              "content": "null",
+              "content": "i",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "pop_back",
+              "answer": 5
+            },
+            {
+              "content": "r-1",
               "answer": null
             },
             {
@@ -81,49 +93,49 @@
               "answer": null
             },
             {
-              "content": "1",
+              "content": "i-1",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "i+1",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "pop",
               "answer": null
             },
             {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "true",
-              "answer": null
-            },
-            {
-              "content": "false",
+              "content": "remove",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nif len(cur) == r: \n    combos.append(cur[:]) \n    return \nfor i in range(start, len(arr)): \n    if r - len(cur) > len(arr) - i: \n        break \n    cur.append(arr[i]) \n    combine(arr, i + 1, cur, r) \n    cur.pop() \n```",
+          "codeTemplate": "```python\ncombos = []\ndef combine(arr, start, cur, r):\n    if len(cur) == _____:\n        combos.append(cur[:])\n        return\n    for i in range(_____, len(arr)):\n        if r - len(cur) > len(arr) - _____:\n            break\n        cur._____(arr[i])\n        combine(arr, i + 1, cur, r)\n        cur._____()```",
           "blanks": [
             {
-              "content": "correct combination logic",
+              "content": "r",
               "answer": 1
             },
             {
-              "content": "permutation logic",
-              "answer": null
+              "content": "start",
+              "answer": 2
             },
             {
-              "content": "None",
+              "content": "i",
+              "answer": 3
+            },
+            {
+              "content": "append",
+              "answer": 4
+            },
+            {
+              "content": "pop",
+              "answer": 5
+            },
+            {
+              "content": "r-1",
               "answer": null
             },
             {
@@ -131,49 +143,49 @@
               "answer": null
             },
             {
-              "content": "1",
+              "content": "i-1",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "add",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "remove",
               "answer": null
             },
             {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "True",
-              "answer": null
-            },
-            {
-              "content": "False",
+              "content": "r+1",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nif(cur.length === r) { \n    combos.push([...cur]); \n    return; \n} \nfor(let i = start; i < arr.length; i++) { \n    if(r - cur.length > arr.length - i) break; \n    cur.push(arr[i]); \n    combine(arr, i + 1, cur, r); \n    cur.pop(); \n}\n```",
+          "codeTemplate": "```javascript\nlet combos = [];\nfunction combine(arr, start, cur, r) {\n    if(cur.length === _____) {\n        combos.push([...cur]);\n        return;\n    }\n    for(let i = _____; i < arr.length; i++) {\n        if(r - cur.length > arr.length - _____) break;\n        cur.push(arr[_____]);\n        combine(arr, i + 1, cur, r);\n        cur._____();\n    }\n}```",
           "blanks": [
             {
-              "content": "correct combination logic",
+              "content": "r",
               "answer": 1
             },
             {
-              "content": "permutation logic",
-              "answer": null
+              "content": "start",
+              "answer": 2
             },
             {
-              "content": "null",
+              "content": "i",
+              "answer": 3
+            },
+            {
+              "content": "i",
+              "answer": 4
+            },
+            {
+              "content": "pop",
+              "answer": 5
+            },
+            {
+              "content": "r-1",
               "answer": null
             },
             {
@@ -181,31 +193,19 @@
               "answer": null
             },
             {
-              "content": "1",
+              "content": "i-1",
               "answer": null
             },
             {
-              "content": "-1",
+              "content": "i+1",
               "answer": null
             },
             {
-              "content": "i",
+              "content": "shift",
               "answer": null
             },
             {
-              "content": "j",
-              "answer": null
-            },
-            {
-              "content": "n",
-              "answer": null
-            },
-            {
-              "content": "true",
-              "answer": null
-            },
-            {
-              "content": "false",
+              "content": "remove",
               "answer": null
             }
           ]

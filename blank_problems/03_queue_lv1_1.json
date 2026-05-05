@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <queue>\nqueue<int> q; \nq._____(1); \nint x = q._____(); \nq._____(); \nbool empty = q._____();\n```",
+          "codeTemplate": "```cpp\n#include <queue>\nqueue<int> q;\nq._____(1);\nq.push(2);\nint x = q._____();\nq._____();\nbool empty = q._____();\ncout << _____ << endl;```",
           "blanks": [
             {
               "content": "push",
@@ -77,65 +77,65 @@
               "answer": 4
             },
             {
-              "content": "top",
-              "answer": null
-            },
-            {
-              "content": "back",
-              "answer": null
-            },
-            {
-              "content": "push_back",
-              "answer": null
-            },
-            {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
-            },
-            {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "begin",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque \nq = deque() \nq._____(1) \nx = q[0] \nq._____ \nbool_empty = len(q) == 0\n```",
-          "blanks": [
-            {
-              "content": "append",
-              "answer": 1
-            },
-            {
-              "content": "popleft()",
-              "answer": 2
-            },
-            {
-              "content": "push",
-              "answer": null
-            },
-            {
-              "content": "pop",
-              "answer": null
+              "content": "x",
+              "answer": 5
             },
             {
               "content": "add",
               "answer": null
             },
             {
-              "content": "insert",
+              "content": "top",
               "answer": null
             },
             {
-              "content": "extend",
+              "content": "remove",
+              "answer": null
+            },
+            {
+              "content": "isEmpty",
+              "answer": null
+            },
+            {
+              "content": "q.front()",
+              "answer": null
+            },
+            {
+              "content": "q.size()",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque\nq = deque()\nq._____(1)\nq.append(2)\nx = q[_____]\nq._____\nbool_empty = _____(q) == 0\nprint(_____)```",
+          "blanks": [
+            {
+              "content": "append",
+              "answer": 1
+            },
+            {
+              "content": "0",
+              "answer": 2
+            },
+            {
+              "content": "popleft()",
+              "answer": 3
+            },
+            {
+              "content": "len",
+              "answer": 4
+            },
+            {
+              "content": "x",
+              "answer": 5
+            },
+            {
+              "content": "appendleft",
+              "answer": null
+            },
+            {
+              "content": "-1",
               "answer": null
             },
             {
@@ -143,65 +143,65 @@
               "answer": null
             },
             {
-              "content": "remove()",
+              "content": "size",
               "answer": null
             },
             {
-              "content": "dequeue()",
+              "content": "q[0]",
               "answer": null
             },
             {
-              "content": "shift()",
+              "content": "deque()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet queue = []; \nqueue._____(1); \nlet x = queue[0]; \nqueue._____(); \nlet isEmpty = queue.length === 0;\n```",
+          "codeTemplate": "```javascript\nlet queue = [];\nqueue._____(1);\nqueue.push(2);\nlet x = queue[_____];\nqueue._____();\nlet isEmpty = queue._____ === 0;\nconsole.log(_____);\n```",
           "blanks": [
             {
               "content": "push",
               "answer": 1
             },
             {
-              "content": "shift",
+              "content": "0",
               "answer": 2
             },
             {
-              "content": "pop",
-              "answer": null
+              "content": "shift",
+              "answer": 3
             },
             {
-              "content": "unshift",
-              "answer": null
+              "content": "length",
+              "answer": 4
             },
             {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
-              "answer": null
+              "content": "x",
+              "answer": 5
             },
             {
               "content": "add",
               "answer": null
             },
             {
-              "content": "dequeue",
+              "content": "-1",
               "answer": null
             },
             {
-              "content": "splice",
+              "content": "pop",
               "answer": null
             },
             {
-              "content": "null",
+              "content": "size",
               "answer": null
             },
             {
-              "content": "0",
+              "content": "queue[0]",
+              "answer": null
+            },
+            {
+              "content": "queue.top()",
               "answer": null
             }
           ]

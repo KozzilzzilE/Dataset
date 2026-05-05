@@ -62,80 +62,80 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = arr._____; \ndeque<int> dq; \nfor(int i = 0; i < n; i++) { \n    while(!dq.empty() && arr[dq.back()] _____ arr[i]) dq.pop_back(); \n    dq.push_back(i); \n    if(i >= k-1) cout << arr[dq._____()];\n}\n```",
+          "codeTemplate": "```cpp\nvector<int> arr = {1,3,2,5,4};\nint k = 3, n = arr._____;\ndeque<int> dq;\nfor(int i = 0; i < n; i++) {\n    while(!dq.empty() && arr[dq.back()] _____ arr[i]) dq.pop_back();\n    dq.push_back(i);\n    if(dq.front() < i - _____ + 1) dq.pop_front();\n    if(i >= k-1) cout << arr[dq._____()];\n}\ncout << n;```",
           "blanks": [
             {
               "content": "size()",
               "answer": 1
             },
             {
-              "content": "<=",
+              "content": "<",
               "answer": 2
             },
             {
-              "content": "front",
+              "content": "k",
               "answer": 3
             },
             {
-              "content": "back",
-              "answer": null
+              "content": "front",
+              "answer": 4
             },
             {
-              "content": "pop_front",
-              "answer": null
+              "content": "n",
+              "answer": 5
             },
             {
               "content": "length",
               "answer": null
             },
             {
-              "content": "count()",
+              "content": ">",
               "answer": null
             },
             {
-              "content": "capacity()",
+              "content": "k-1",
               "answer": null
             },
             {
-              "content": "len()",
+              "content": "back",
               "answer": null
             },
             {
-              "content": "<",
+              "content": "arr.size()",
               "answer": null
             },
             {
-              "content": ">=",
+              "content": "size",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque \nn = len(arr) \ndq = deque() \nfor i in range(n): \n    while dq and arr[dq[-1]] _____ arr[i]: \n        dq.pop() \n    dq.append(i) \n    if i >= k-1: \n        print(arr[dq[_____]])\n```",
+          "codeTemplate": "```python\nfrom collections import deque\narr = [1, 3, 2, 5, 4]\nk = 3\nn = _____\ndq = deque()\nfor i in range(n):\n    while dq and arr[dq[-1]] _____ arr[i]:\n        dq.pop()\n    dq.append(i)\n    if dq[_____] < i - k + 1:\n        dq.popleft()\n    if i >= _____:\n        print(arr[dq[_____]])```",
           "blanks": [
             {
-              "content": "<=",
+              "content": "len(arr)",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "<",
               "answer": 2
             },
             {
-              "content": "-1",
-              "answer": null
+              "content": "0",
+              "answer": 3
             },
             {
-              "content": "popleft",
-              "answer": null
+              "content": "k-1",
+              "answer": 4
             },
             {
-              "content": "<",
-              "answer": null
+              "content": "0",
+              "answer": 5
             },
             {
-              "content": ">=",
+              "content": "len(arr)-1",
               "answer": null
             },
             {
@@ -143,7 +143,11 @@
               "answer": null
             },
             {
-              "content": "==",
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "k",
               "answer": null
             },
             {
@@ -151,41 +155,37 @@
               "answer": null
             },
             {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "False",
+              "content": "len(dq)",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet n = arr.length; \nlet dq = []; \nlet result = []; \nfor(let i = 0; i < n; i++) { \n    while(dq.length > 0 && arr[dq[dq.length-1]] _____ arr[i]) \n        dq.pop(); \n    dq.push(i); \n    if(i >= k-1) result.push(arr[dq[_____]]); \n}\n```",
+          "codeTemplate": "```javascript\nlet arr = [1, 3, 2, 5, 4];\nlet k = 3;\nlet n = _____;\nlet dq = [];\nfor(let i = 0; i < n; i++) {\n    while(dq.length > 0 && arr[dq[dq.length-1]] _____ arr[i])\n        dq.pop();\n    dq.push(i);\n    if(dq[_____] < i - k + 1) dq.shift();\n    if(i >= _____) console.log(arr[dq[_____]]);\n}```",
           "blanks": [
             {
-              "content": "<=",
+              "content": "arr.length",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "<",
               "answer": 2
             },
             {
-              "content": "dq[dq.length-1]",
-              "answer": null
+              "content": "0",
+              "answer": 3
             },
             {
-              "content": "arr.length - 1",
-              "answer": null
+              "content": "k-1",
+              "answer": 4
             },
             {
-              "content": "<",
-              "answer": null
+              "content": "0",
+              "answer": 5
             },
             {
-              "content": ">=",
+              "content": "arr.size",
               "answer": null
             },
             {
@@ -193,7 +193,11 @@
               "answer": null
             },
             {
-              "content": "===",
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "k",
               "answer": null
             },
             {
@@ -201,11 +205,7 @@
               "answer": null
             },
             {
-              "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "null",
+              "content": "dq.length",
               "answer": null
             }
           ]

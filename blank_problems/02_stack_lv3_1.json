@@ -108,30 +108,30 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nwhile i < len(s): \n    stack._____(s[i]) \n    if not stack: \n        return _____ \n    top = stack[-1] \n    if matching(top, s[i]): \n        return _____ \n    if not stack: \n        return _____ \n```",
+          "codeTemplate": "```python\ndef is_valid(s):\n    stack = []\n    pairs = {'(': ')', '{': '}', '[': ']'}\n    for c in s:\n        if c in _____:\n            stack._____(c)\n        elif not stack or pairs[stack[_____]] != c:\n            return _____\n        else:\n            stack.pop()\n    return _____(stack) == 0```",
           "blanks": [
             {
-              "content": "append",
+              "content": "pairs",
               "answer": 1
             },
             {
-              "content": "False",
+              "content": "append",
               "answer": 2
             },
             {
-              "content": "False",
+              "content": "-1",
               "answer": 3
             },
             {
-              "content": "pop",
-              "answer": null
+              "content": "False",
+              "answer": 4
             },
             {
-              "content": "True",
-              "answer": null
+              "content": "len",
+              "answer": 5
             },
             {
-              "content": "push",
+              "content": "stack",
               "answer": null
             },
             {
@@ -139,37 +139,37 @@
               "answer": null
             },
             {
-              "content": "insert",
-              "answer": null
-            },
-            {
-              "content": "extend",
-              "answer": null
-            },
-            {
               "content": "0",
               "answer": null
             },
             {
-              "content": "None",
+              "content": "True",
+              "answer": null
+            },
+            {
+              "content": "size",
+              "answer": null
+            },
+            {
+              "content": "pairs.values()",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nwhile(i < s.length) { \n    stack._____(s[i]); \n    if(stack.length === 0) return _____; \n    let top = stack[stack.length - 1]; \n    if(...) return _____; \n    return stack.length === 0 ? _____ : true; \n}\n```",
+          "codeTemplate": "```javascript\nfunction isValid(s) {\n    let stack = [];\n    let pairs = {'(':')', '{':'}', '[':']'};\n    for(let c of s) {\n        if(c in _____) {\n            stack._____(c);\n        } else if(stack.length === 0 || pairs[stack[_____]] !== c) {\n            return _____;\n        } else {\n            stack._____();\n        }\n    }\n    return stack.length === 0;\n}```",
           "blanks": [
             {
-              "content": "push",
+              "content": "pairs",
               "answer": 1
             },
             {
-              "content": "false",
+              "content": "push",
               "answer": 2
             },
             {
-              "content": "false",
+              "content": "stack.length-1",
               "answer": 3
             },
             {
@@ -178,18 +178,10 @@
             },
             {
               "content": "pop",
-              "answer": null
+              "answer": 5
             },
             {
-              "content": "shift",
-              "answer": null
-            },
-            {
-              "content": "enqueue",
-              "answer": null
-            },
-            {
-              "content": "append",
+              "content": "stack",
               "answer": null
             },
             {
@@ -197,11 +189,19 @@
               "answer": null
             },
             {
-              "content": "unshift",
+              "content": "0",
               "answer": null
             },
             {
               "content": "true",
+              "answer": null
+            },
+            {
+              "content": "shift",
+              "answer": null
+            },
+            {
+              "content": "stack[0]",
               "answer": null
             }
           ]

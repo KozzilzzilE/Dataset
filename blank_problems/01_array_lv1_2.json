@@ -108,26 +108,34 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [3, 7, 1, 9, 4]\nmax_val = _____\nfor x in arr:\n    if x _____ max_val:\n        max_val = _____\nprint(\"최댓값:\", _____)\n```",
+          "codeTemplate": "```python\narr = [3, 7, 1, 9, 4]\nmax_val = arr[_____]\nfor i in range(_____, len(arr)):\n    if arr[i] _____ max_val:\n        max_val = _____\nprint(\"최댓값:\", _____)```",
           "blanks": [
             {
-              "content": "arr[0]",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": ">",
+              "content": "1",
               "answer": 2
             },
             {
-              "content": "x",
+              "content": ">",
               "answer": 3
             },
             {
-              "content": "max_val",
+              "content": "arr[i]",
               "answer": 4
             },
             {
-              "content": "float('-inf')",
+              "content": "max_val",
+              "answer": 5
+            },
+            {
+              "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "0",
               "answer": null
             },
             {
@@ -139,15 +147,7 @@
               "answer": null
             },
             {
-              "content": "sum",
-              "answer": null
-            },
-            {
-              "content": "None",
-              "answer": null
-            },
-            {
-              "content": "0",
+              "content": "max_val + 1",
               "answer": null
             },
             {
