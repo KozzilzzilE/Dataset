@@ -1,0 +1,1202 @@
+[
+    {
+        "id": 1,
+        "question": "외래키(Foreign Key)는 NULL 값을 가질 수 있다.",
+        "answer": true,
+        "explanation": "외래키는 데이터베이스 설계에 따라 NULL 값을 허용할 수도, 허용하지 않을 수도 있습니다. 테이블 간의 연결이 선택적일 경우 NULL을 허용합니다."
+    },
+    {
+        "id": 2,
+        "question": "HTTP는 상태를 유지하는(Stateful) 프로토콜이다.",
+        "answer": false,
+        "explanation": "HTTP는 상태를 유지하지 않는(Stateless) 프로토콜입니다. 클라이언트의 이전 상태를 알 수 없기 때문에 쿠키(Cookie)와 세션(Session)을 사용하여 상태를 유지합니다."
+    },
+    {
+        "id": 3,
+        "question": "스택(Stack)은 FIFO(First In First Out) 구조이다.",
+        "answer": false,
+        "explanation": "스택은 나중에 들어온 데이터가 먼저 나가는 LIFO(Last In First Out) 구조입니다. FIFO 구조는 큐(Queue)입니다."
+    },
+    {
+        "id": 4,
+        "question": "TCP는 UDP보다 전송 속도가 빠르다.",
+        "answer": false,
+        "explanation": "TCP는 신뢰성 있는 전송을 위해 3-Way Handshaking 등의 과정을 거치므로, 데이터의 빠른 전송을 목적으로 하는 UDP보다 전송 속도가 느립니다."
+    },
+    {
+        "id": 5,
+        "question": "자바스크립트의 비동기 처리는 멀티 스레드로 동작한다.",
+        "answer": false,
+        "explanation": "자바스크립트는 싱글 스레드 언어입니다. 비동기 처리는 이벤트 루프(Event Loop)와 브라우저의 Web API를 통해 멀티 스레드처럼 보이게 동작하는 것입니다."
+    },
+    {
+        "id": 6,
+        "question": "기본키(Primary Key)는 테이블당 여러 개 가질 수 있다.",
+        "answer": false,
+        "explanation": "기본키는 테이블당 오직 1개만 가질 수 있습니다. 다만, 여러 개의 컬럼을 묶어서 하나의 복합키(Composite Key)로 기본키를 지정할 수는 있습니다."
+    },
+    {
+        "id": 7,
+        "question": "인덱스(Index)를 사용하면 항상 데이터 조회(SELECT) 속도가 빨라진다.",
+        "answer": false,
+        "explanation": "대부분의 경우 빨라지지만, 데이터의 삽입/수정/삭제가 빈번하거나 데이터가 적은 테이블에서는 오히려 인덱스 관리 비용 때문에 성능이 저하될 수 있습니다."
+    },
+    {
+        "id": 8,
+        "question": "교착상태(Deadlock)의 발생 조건 4가지는 상호배제, 점유대기, 비선점, 순환대기이다.",
+        "answer": true,
+        "explanation": "교착상태는 상호배제, 점유대기, 비선점, 순환대기 이 4가지 조건이 모두 충족될 때 발생합니다. 하나라도 부정하면 교착상태를 예방할 수 있습니다."
+    },
+    {
+        "id": 9,
+        "question": "뮤텍스(Mutex)는 오직 1개의 스레드만 공유 자원에 접근할 수 있게 한다.",
+        "answer": true,
+        "explanation": "뮤텍스는 Lock을 통해 한 번에 하나의 스레드만 자원에 접근할 수 있도록 하는 동기화 기법입니다. 여러 스레드의 접근을 허용하려면 세마포어(Semaphore)를 사용합니다."
+    },
+    {
+        "id": 10,
+        "question": "컨텍스트 스위칭(Context Switching)은 프로세스 간의 전환이 스레드 간의 전환보다 빠르다.",
+        "answer": false,
+        "explanation": "프로세스는 독립적인 메모리 공간을 가져 캐시 초기화 등의 비용이 크지만, 스레드는 메모리를 공유하므로 스레드 간의 컨텍스트 스위칭이 훨씬 빠릅니다."
+    },
+    {
+        "id": 11,
+        "question": "페이징(Paging) 기법은 메모리를 동일한 크기로 나누어 할당하므로 내부 단편화가 발생할 수 있다.",
+        "answer": true,
+        "explanation": "페이징은 일정한 크기의 페이지로 나누기 때문에 남는 공간이 생기는 '내부 단편화'가 발생할 수 있습니다."
+    },
+    {
+        "id": 12,
+        "question": "OSI 7계층에서 IP 프로토콜이 동작하는 계층은 전송 계층(Transport Layer)이다.",
+        "answer": false,
+        "explanation": "IP 프로토콜은 네트워크 계층(Network Layer, 3계층)에서 동작합니다. 전송 계층에서는 TCP, UDP가 동작합니다."
+    },
+    {
+        "id": 13,
+        "question": "HTTPS는 HTTP에 SSL/TLS 프로토콜을 더하여 보안을 강화한 것이다.",
+        "answer": true,
+        "explanation": "HTTPS는 통신 내용을 암호화하여 중간에 데이터를 탈취하더라도 내용을 알아볼 수 없도록 보호하는 안전한 통신 프로토콜입니다."
+    },
+    {
+        "id": 14,
+        "question": "REST API에서 리소스 생성에 사용되는 적절한 HTTP 메서드는 PUT이다.",
+        "answer": false,
+        "explanation": "새로운 리소스를 생성할 때는 주로 POST 메서드를 사용합니다. PUT은 기존 리소스를 통째로 수정/대체할 때 사용됩니다."
+    },
+    {
+        "id": 15,
+        "question": "큐(Queue)를 두 개 사용하여 스택(Stack)을 구현할 수 있다.",
+        "answer": true,
+        "explanation": "큐 두 개를 사용하여 데이터를 넣을 때 메인 큐의 데이터를 모두 보조 큐로 옮기고, 새 데이터를 넣은 뒤 다시 가져오는 방식으로 스택의 LIFO 동작을 구현할 수 있습니다."
+    },
+    {
+        "id": 16,
+        "question": "이진 탐색 트리(BST)의 시간 복잡도는 항상 O(log N)이다.",
+        "answer": false,
+        "explanation": "트리가 한쪽으로 편향된 경우(Skewed) 시간 복잡도가 최악의 경우 O(N)이 될 수 있습니다. 이를 해결하기 위해 AVL 트리나 Red-Black 트리를 사용합니다."
+    },
+    {
+        "id": 17,
+        "question": "해시 테이블(Hash Table)은 최악의 경우 검색 시간이 O(N)이 될 수 있다.",
+        "answer": true,
+        "explanation": "해시 충돌이 빈번하게 발생하여 하나의 해시 버킷에 모든 데이터가 몰릴 경우(Chaining), 검색 속도는 연결 리스트의 순차 탐색과 같은 O(N)이 됩니다."
+    },
+    {
+        "id": 18,
+        "question": "정규화(Normalization)는 데이터 중복을 최소화하여 이상 현상(Anomaly)을 방지하는 작업이다.",
+        "answer": true,
+        "explanation": "정규화는 릴레이션을 분해하여 데이터의 일관성을 유지하고 갱신 이상, 삽입 이상, 삭제 이상 현상을 방지합니다."
+    },
+    {
+        "id": 19,
+        "question": "데이터베이스 트랜잭션의 ACID 속성 중 'A'는 가용성(Availability)을 의미한다.",
+        "answer": false,
+        "explanation": "ACID의 'A'는 원자성(Atomicity)을 의미합니다. 트랜잭션의 연산은 모두 성공하거나 모두 실패해야 한다는 성질입니다."
+    },
+    {
+        "id": 20,
+        "question": "GET 요청은 멱등성(Idempotent)을 가지지만, POST 요청은 멱등성을 가지지 않는다.",
+        "answer": true,
+        "explanation": "GET은 여러 번 호출해도 서버 상태에 변화가 없고 항상 같은 결과를 반환하지만, POST는 호출할 때마다 새로운 데이터를 생성하므로 멱등성이 없습니다."
+    },
+    {
+        "id": 21,
+        "question": "쿠키(Cookie)는 서버에 저장되고 세션(Session)은 클라이언트에 저장된다.",
+        "answer": false,
+        "explanation": "반대입니다. 쿠키는 클라이언트(브라우저)에 저장되고, 세션은 서버의 메모리나 DB에 저장되며 클라이언트는 세션 ID만 쿠키로 보관합니다."
+    },
+    {
+        "id": 22,
+        "question": "스레드(Thread)는 프로세스 내의 독립적인 실행 단위이다.",
+        "answer": true,
+        "explanation": "스레드는 프로세스 안에서 동작하는 실행 흐름의 최소 단위이며, 같은 프로세스 내의 다른 스레드들과 메모리(Data, Heap 등)를 공유합니다."
+    },
+    {
+        "id": 23,
+        "question": "동적 계획법(DP)은 큰 문제를 작은 문제로 나누어 푸는 하향식(Top-Down) 접근 방식만 존재한다.",
+        "answer": false,
+        "explanation": "동적 계획법은 메모이제이션(Memoization)을 활용하는 하향식(Top-Down)과 반복문을 활용하는 상향식(Bottom-Up, 타뷸레이션) 두 가지 방식이 모두 있습니다."
+    },
+    {
+        "id": 24,
+        "question": "NoSQL은 관계형 데이터베이스보다 데이터의 스키마 변경이 유연하다.",
+        "answer": true,
+        "explanation": "NoSQL은 고정된 스키마가 없거나 유연한 구조를 가지므로, 새로운 필드를 추가하거나 데이터 구조를 변경하는 작업이 RDBMS보다 쉽습니다."
+    },
+    {
+        "id": 25,
+        "question": "가상 메모리의 페이징 기법에서 발생하는 페이지 폴트(Page Fault)는 메모리에 해당 페이지가 없을 때 발생한다.",
+        "answer": true,
+        "explanation": "요구된 페이지가 현재 주기억장치(RAM)에 적재되어 있지 않은 경우를 페이지 폴트라고 하며, 이때 OS는 디스크에서 페이지 가져옵니다."
+    },
+    {
+        "id": 26,
+        "question": "TCP 연결 종료 과정은 3-Way Handshaking을 통해 이루어진다.",
+        "answer": false,
+        "explanation": "TCP 연결 설정 과정이 3-Way Handshaking이며, 연결을 종료할 때는 4-Way Handshaking 과정을 거칩니다."
+    },
+    {
+        "id": 27,
+        "question": "ARP 프로토콜은 IP 주소를 MAC 주소로 변환해 주는 역할을 한다.",
+        "answer": true,
+        "explanation": "ARP(Address Resolution Protocol)는 논리적인 주소인 IP 주소를 기반으로 물리적인 네트워크 카드 주소인 MAC 주소를 찾아주는 역할을 합니다."
+    },
+    {
+        "id": 28,
+        "question": "객체지향 프로그래밍의 특징 중 하나인 캡슐화(Encapsulation)는 데이터와 메서드를 하나로 묶고 구현 내용을 외부로부터 숨기는 것이다.",
+        "answer": true,
+        "explanation": "캡슐화를 통해 객체의 내부 상태를 보호(정보 은닉)하고, 외부에서는 오직 공개된 메서드를 통해서만 객체와 상호작용할 수 있습니다."
+    },
+    {
+        "id": 29,
+        "question": "자바의 인터페이스(Interface)는 다중 상속을 지원하지 않는다.",
+        "answer": false,
+        "explanation": "자바의 클래스는 다중 상속을 지원하지 않지만, 인터페이스는 여러 개를 동시에 구현(implements)할 수 있어 다중 상속의 효과를 낼 수 있습니다."
+    },
+    {
+        "id": 30,
+        "question": "싱글톤(Singleton) 패턴은 클래스의 인스턴스를 하나만 생성하도록 보장하는 디자인 패턴이다.",
+        "answer": true,
+        "explanation": "싱글톤 패턴은 전역 변수를 사용하지 않고도 객체를 하나만 생성하고, 어디서든 이 인스턴스에 접근할 수 있도록 하는 패턴입니다."
+    },
+    {
+        "id": 31,
+        "question": "배열(Array)은 연속된 메모리 공간에 저장되지만, 연결 리스트(Linked List)는 흩어진 메모리 공간에 저장된다.",
+        "answer": true,
+        "explanation": "배열은 메모리에 연속적으로 할당되어 인덱스 접근이 빠르지만, 연결 리스트는 노드가 포인터로 연결되어 있어 크기 확장이 자유롭습니다."
+    },
+    {
+        "id": 32,
+        "question": "선택 정렬(Selection Sort)은 버블 정렬(Bubble Sort)보다 평균 시간 복잡도가 낮다.",
+        "answer": false,
+        "explanation": "선택 정렬과 버블 정렬 모두 평균 및 최악의 경우 시간 복잡도가 O(N^2)으로 동일하게 비효율적인 정렬 알고리즘입니다."
+    },
+    {
+        "id": 33,
+        "question": "퀵 정렬(Quick Sort)은 항상 병합 정렬(Merge Sort)보다 빠르다.",
+        "answer": false,
+        "explanation": "퀵 정렬의 평균 속도는 매우 빠르지만, 최악의 경우(이미 정렬된 경우 등)에는 시간 복잡도가 O(N^2)이 됩니다. 반면 병합 정렬은 항상 O(N log N)을 보장합니다."
+    },
+    {
+        "id": 34,
+        "question": "스케줄링에서 기아 상태(Starvation)는 우선순위가 낮은 프로세스가 자원을 할당받지 못하고 계속 대기하는 현상이다.",
+        "answer": true,
+        "explanation": "이러한 기아 상태를 해결하기 위해 대기 시간이 길어질수록 우선순위를 높여주는 에이징(Aging) 기법을 사용합니다."
+    },
+    {
+        "id": 35,
+        "question": "운영체제에서 커널(Kernel) 모드와 유저(User) 모드를 분리하는 이유는 보안과 시스템 안정성 때문이다.",
+        "answer": true,
+        "explanation": "일반 애플리케이션(유저 모드)이 치명적인 하드웨어나 시스템 자원에 직접 접근하는 것을 막고, 시스템 호출(System Call)을 통해서만 접근하도록 제한하기 위함입니다."
+    },
+    {
+        "id": 36,
+        "question": "데이터베이스 인덱스는 주로 B-Tree 또는 B+Tree 자료구조로 구현된다.",
+        "answer": true,
+        "explanation": "B-Tree 계열은 데이터 검색, 삽입, 삭제 시 최악의 경우에도 O(log N)의 일정한 성능을 보장하기 때문에 DB 인덱스로 가장 널리 쓰입니다."
+    },
+    {
+        "id": 37,
+        "question": "CORS(Cross-Origin Resource Sharing) 에러는 백엔드 서버가 브라우저의 접근을 원천적으로 차단해서 발생한다.",
+        "answer": false,
+        "explanation": "CORS는 서버가 차단하는 것이 아니라, 보안을 위해 '브라우저'에서 다른 출처(Origin)의 스크립트 실행을 막는 정책입니다. 서버가 허용 헤더를 보내주면 브라우저가 통과시킵니다."
+    },
+    {
+        "id": 38,
+        "question": "OAuth 2.0에서 인증 서버가 클라이언트에게 직접 비밀번호를 제공한다.",
+        "answer": false,
+        "explanation": "OAuth 2.0은 클라이언트가 사용자의 비밀번호를 알 수 없게 하면서, Access Token을 발급받아 사용자 대신 서비스에 접근할 수 있게 하는 권한 위임 프로토콜입니다."
+    },
+    {
+        "id": 39,
+        "question": "디자인 패턴 중 MVC(Model-View-Controller)에서 View는 Model의 데이터를 직접 변경할 수 있다.",
+        "answer": false,
+        "explanation": "View는 UI를 담당하며, 사용자의 입력이 들어오면 Controller를 거쳐서 Model의 데이터를 변경해야 합니다. 직접 Model을 수정하는 것은 원칙에 어긋납니다."
+    },
+    {
+        "id": 40,
+        "question": "가비지 컬렉터(Garbage Collector)가 있는 언어에서는 메모리 누수(Memory Leak)가 절대 발생하지 않는다.",
+        "answer": false,
+        "explanation": "참조를 해제하지 않고 계속 보관하고 있는 객체들(예: 캐시나 전역 변수)은 GC가 회수할 수 없기 때문에 메모리 누수가 발생할 수 있습니다."
+    },
+    {
+        "id": 41,
+        "question": "서브넷 마스크(Subnet Mask)는 IP 주소에서 네트워크 부분과 호스트 부분을 구분하는 데 사용된다.",
+        "answer": true,
+        "explanation": "서브넷 마스크의 1비트인 부분은 네트워크 ID, 0비트인 부분은 호스트 ID로 구분하여 네트워크를 논리적으로 나눌 수 있습니다."
+    },
+    {
+        "id": 42,
+        "question": "DNS(Domain Name System)는 기본적으로 TCP 포트 53번을 사용한다.",
+        "answer": false,
+        "explanation": "DNS의 일반적인 이름 확인 질의응답은 빠르고 오버헤드가 적은 UDP 포트 53번을 사용합니다. 단, 존 전송 등 데이터량이 많을 때는 TCP를 사용합니다."
+    },
+    {
+        "id": 43,
+        "question": "스프링 프레임워크(Spring Framework)의 DI(Dependency Injection)는 객체 간의 결합도를 높인다.",
+        "answer": false,
+        "explanation": "DI(의존성 주입)는 객체가 직접 의존 객체를 생성하지 않고 외부(컨테이너)에서 주입받으므로, 객체 간의 결합도(Coupling)를 낮추고 유연성을 높입니다."
+    },
+    {
+        "id": 44,
+        "question": "JWT(JSON Web Token)는 토큰 자체가 정보를 담고 있어 별도의 저장소 조회 없이 검증이 가능하다.",
+        "answer": true,
+        "explanation": "JWT는 페이로드에 사용자 정보를 인코딩하고, 서버의 비밀키로 서명(Signature)하여 조작 여부를 자체적으로 확인할 수 있는 토큰입니다."
+    },
+    {
+        "id": 45,
+        "question": "관계형 데이터베이스(RDBMS)에서 트랜잭션 격리 수준(Isolation Level)이 높을수록 성능이 향상된다.",
+        "answer": false,
+        "explanation": "격리 수준이 높을수록(예: Serializable) 데이터 무결성은 높아지지만, 잠금(Locking)이 심해져 동시 처리 성능은 크게 떨어집니다."
+    },
+    {
+        "id": 46,
+        "question": "자료구조 힙(Heap)은 최대값 또는 최소값을 빠르게 찾아내기 위해 만들어진 완전 이진 트리이다.",
+        "answer": true,
+        "explanation": "최대 힙(Max Heap)은 루트 노드에 최대값이, 최소 힙(Min Heap)은 루트에 최소값이 위치하여 O(1)에 찾고 O(log N)에 삽입/삭제할 수 있습니다."
+    },
+    {
+        "id": 47,
+        "question": "빅오 표기법(Big-O Notation)은 알고리즘의 최선(Best-case)의 실행 시간을 나타낸다.",
+        "answer": false,
+        "explanation": "빅오 표기법은 주로 입력값이 커질 때 실행 시간의 증가율인 점근적 상한, 즉 최악(Worst-case)의 경우를 나타냅니다."
+    },
+    {
+        "id": 48,
+        "question": "SOLID 원칙 중 단일 책임 원칙(SRP)은 하나의 클래스가 여러 개의 책임을 가져야 함을 의미한다.",
+        "answer": false,
+        "explanation": "단일 책임 원칙(SRP)은 클래스가 오직 하나의 책임을 가져야 하며, 클래스를 변경하는 이유도 단 하나여야 한다는 원칙입니다."
+    },
+    {
+        "id": 49,
+        "question": "리눅스 파일 권한에서 777은 모든 사용자에게 읽기, 쓰기, 실행 권한을 부여한다는 의미이다.",
+        "answer": true,
+        "explanation": "4(읽기) + 2(쓰기) + 1(실행) = 7이며, 소유자, 그룹, 기타 사용자 모두에게 7(모든 권한)을 준다는 뜻입니다."
+    },
+    {
+        "id": 50,
+        "question": "웹 소켓(WebSocket)은 HTTP 연결 없이 처음부터 독자적인 프로토콜로 핸드셰이크를 수행한다.",
+        "answer": false,
+        "explanation": "웹 소켓은 초기에 HTTP를 통해 핸드셰이크를 한 뒤, 통신을 웹 소켓 프로토콜(ws://)로 업그레이드(Upgrade)하여 양방향 통신을 지속합니다."
+    },
+    {
+        "id": 51,
+        "question": "캐시(Cache) 메모리는 주기억장치와 보조기억장치 사이의 속도 차이를 줄이기 위해 사용된다.",
+        "answer": false,
+        "explanation": "캐시 메모리는 CPU와 '주기억장치(RAM)' 사이의 속도 차이를 줄이기 위해 존재하는 매우 빠른 메모리입니다."
+    },
+    {
+        "id": 52,
+        "question": "데이터베이스에서 외래키(Foreign Key) 참조 무결성 제약조건은 데이터의 삭제를 방해할 수 있다.",
+        "answer": true,
+        "explanation": "부모 테이블의 데이터를 삭제하려 할 때, 자식 테이블에서 해당 데이터를 참조(외래키)하고 있으면 참조 무결성에 의해 삭제가 거부될 수 있습니다. (ON DELETE CASCADE 옵션으로 해결 가능)"
+    },
+    {
+        "id": 53,
+        "question": "OSI 7계층 중 물리 계층(Physical Layer)에서 통신 단위는 프레임(Frame)이다.",
+        "answer": false,
+        "explanation": "물리 계층의 데이터 단위는 비트(Bit)입니다. 프레임(Frame)은 2계층인 데이터 링크 계층(Data Link Layer)의 통신 단위입니다."
+    },
+    {
+        "id": 54,
+        "question": "스레싱(Thrashing)은 CPU가 유효한 작업을 수행하는 시간보다 페이지 교체에 더 많은 시간을 소모하는 현상이다.",
+        "answer": true,
+        "explanation": "다중 프로그래밍 정도가 너무 높아져 각 프로세스가 필요로 하는 최소한의 페이지 뷰어조차 메모리에 올라오지 못할 때, 계속해서 페이지 폴트가 발생하며 시스템 성능이 급격히 저하되는 현상입니다."
+    },
+    {
+        "id": 55,
+        "question": "선입선출 스케줄링(FCFS) 알고리즘은 비선점형 스케줄링 방식이다.",
+        "answer": true,
+        "explanation": "FCFS(First Come First Served)는 먼저 큐에 도착한 프로세스가 CPU를 잡으면, 해당 프로세스가 끝날 때까지 CPU를 놓지 않는 비선점형 알고리즘입니다."
+    },
+    {
+        "id": 56,
+        "question": "SQL 인젝션 공격은 Prepared Statement를 사용하여 예방할 수 있다.",
+        "answer": true,
+        "explanation": "Prepared Statement(PreparedStatement)를 사용하면 쿼리의 구조가 미리 컴파일되고, 사용자 입력은 파라미터 값으로만 처리되므로 SQL 인젝션을 효과적으로 막을 수 있습니다."
+    },
+    {
+        "id": 57,
+        "question": "자료구조 트리(Tree)에서 사이클(Cycle)이 존재할 수 있다.",
+        "answer": false,
+        "explanation": "트리는 사이클이 없는 연결 그래프(Acyclic Connected Graph)입니다. 사이클이 존재한다면 그것은 트리가 아니라 일반적인 그래프(Graph)입니다."
+    },
+    {
+        "id": 58,
+        "question": "REDIS는 디스크에 데이터를 저장하는 관계형 데이터베이스 관리 시스템(RDBMS)이다.",
+        "answer": false,
+        "explanation": "Redis는 메모리 상에 Key-Value 구조로 데이터를 저장하는 대표적인 인메모리(In-Memory) NoSQL 데이터베이스입니다."
+    },
+    {
+        "id": 59,
+        "question": "TCP 헤더에는 수신 측의 버퍼 여유 용량을 알려주는 윈도우 크기(Window Size) 필드가 존재한다.",
+        "answer": true,
+        "explanation": "TCP는 이 윈도우 크기 필드를 활용하여, 수신 측이 받을 수 있는 만큼만 데이터를 전송하는 흐름 제어(Flow Control)를 수행합니다."
+    },
+    {
+        "id": 60,
+        "question": "객체지향 설계의 SOLID 원칙 중 개방-폐쇄 원칙(OCP)은 확장에 대해서는 열려 있고, 수정에 대해서는 닫혀 있어야 한다는 의미이다.",
+        "answer": true,
+        "explanation": "새로운 기능을 추가할 때 기존 코드를 변경하지 않고도 기능을 확장할 수 있도록 인터페이스나 추상화를 활용하라는 원칙입니다."
+    },
+    {
+        "id": 61,
+        "question": "그래프 탐색 알고리즘 중 BFS(너비 우선 탐색)는 주로 큐(Queue)를 사용하여 구현한다.",
+        "answer": true,
+        "explanation": "BFS는 시작 정점으로부터 가까운 정점을 먼저 방문해야 하므로 FIFO 구조인 큐(Queue)를 사용하며, DFS(깊이 우선 탐색)는 스택(Stack)이나 재귀함수를 사용합니다."
+    },
+    {
+        "id": 62,
+        "question": "HTTP/2 프로토콜은 데이터를 텍스트(Text) 기반으로 파싱하여 전송한다.",
+        "answer": false,
+        "explanation": "HTTP/1.1은 텍스트 기반이었으나, HTTP/2는 성능 향상을 위해 헤더와 페이로드를 바이너리(Binary) 프레임 단위로 인코딩하여 전송합니다."
+    },
+    {
+        "id": 63,
+        "question": "멀티 프로세스보다 멀티 스레드의 컨텍스트 스위칭 비용이 더 크다.",
+        "answer": false,
+        "explanation": "스레드는 프로세스 내의 힙, 데이터, 코드 영역을 공유하므로, 캐시 메모리 초기화 등이 필요한 멀티 프로세스의 컨텍스트 스위칭보다 비용이 훨씬 적습니다."
+    },
+    {
+        "id": 64,
+        "question": "데이터베이스 뷰(View)는 물리적으로 데이터를 저장하고 있는 독립적인 테이블이다.",
+        "answer": false,
+        "explanation": "뷰(View)는 물리적인 데이터를 가지지 않고 쿼리문(SQL)만을 저장하고 있는 논리적인 '가상 테이블'입니다. (Materialized View 제외)"
+    },
+    {
+        "id": 65,
+        "question": "교착상태 예방 기법 중 하나인 '점유 대기 방지'는 프로세스가 자원을 요청할 때 다른 자원을 갖고 있지 않도록 보장하는 것이다.",
+        "answer": true,
+        "explanation": "점유 대기(Hold and Wait) 조건을 부정하기 위해, 프로세스는 필요한 모든 자원을 한 번에 할당받거나, 아무것도 할당받지 못하게 하는 방식입니다."
+    },
+    {
+        "id": 66,
+        "question": "L4 로드 밸런서는 IP 주소와 포트 번호만을 기준으로 트래픽을 분산시킨다.",
+        "answer": true,
+        "explanation": "L4 스위치(전송 계층)는 IP 주소, MAC 주소, 포트 번호를 바탕으로 트래픽을 분산합니다. 반면 L7 스위치(응용 계층)는 HTTP 헤더나 URI 등 내용까지 확인하여 분산할 수 있습니다."
+    },
+    {
+        "id": 67,
+        "question": "스프링(Spring)에서 @Controller와 @RestController의 차이는 응답 본문(Body)에 데이터를 쓰는 방식의 차이이다.",
+        "answer": true,
+        "explanation": "@RestController는 내부적으로 @Controller와 @ResponseBody가 합쳐진 형태로, 뷰(View) 템플릿이 아닌 JSON 등 데이터를 직접 반환할 때 사용됩니다."
+    },
+    {
+        "id": 68,
+        "question": "트라이(Trie) 자료구조는 문자열을 빠르게 탐색하기 위한 트리 형태의 자료구조이다.",
+        "answer": true,
+        "explanation": "자동 완성 기능이나 사전 검색 등에 많이 사용되며, 문자열의 길이를 L이라고 할 때 O(L)의 속도로 문자열을 탐색할 수 있습니다."
+    },
+    {
+        "id": 69,
+        "question": "RESTful API에서는 URL 경로에 동사(Verb)를 사용하여 행위를 표현하는 것을 권장한다.",
+        "answer": false,
+        "explanation": "REST API에서는 URI 경로에 명사(Resource)만을 사용하고, 해당 리소스에 대한 행위(CRUD)는 HTTP 메서드(GET, POST, PUT, DELETE)로 표현해야 합니다."
+    },
+    {
+        "id": 70,
+        "question": "세그먼테이션(Segmentation) 메모리 관리 기법은 프로세스를 논리적 단위인 세그먼트로 나누어 할당한다.",
+        "answer": true,
+        "explanation": "페이징이 물리적인 일정한 크기로 나누는 것과 달리, 세그먼테이션은 의미 있는 논리적 단위(코드, 데이터, 스택 등)로 나누어 메모리를 할당합니다."
+    },
+    {
+        "id": 71,
+        "question": "인터럽트(Interrupt)는 CPU가 프로그램을 실행하고 있을 때 발생할 수 없다.",
+        "answer": false,
+        "explanation": "인터럽트는 CPU가 정상적으로 프로그램을 실행하고 있는 도중에 입출력 완료, 타이머 예외 등 예기치 않은 이벤트가 발생했을 때 하드웨어/소프트웨어적으로 발생합니다."
+    },
+    {
+        "id": 72,
+        "question": "다형성(Polymorphism)은 오버로딩(Overloading)과 오버라이딩(Overriding)을 통해 구현할 수 있다.",
+        "answer": true,
+        "explanation": "다형성은 하나의 타입이 여러 형태의 객체를 참조할 수 있게 하거나, 동일한 이름의 메서드가 다양한 방식으로 동작하도록 하는 객체지향의 핵심 특징입니다."
+    },
+    {
+        "id": 73,
+        "question": "관계형 데이터베이스에서 기본키(Primary Key)는 자동으로 고유(Unique) 인덱스를 생성한다.",
+        "answer": true,
+        "explanation": "기본키는 데이터의 유일성과 빠른 조회를 보장하기 위해 선언 시 내부적으로 항상 고유 인덱스(Unique Index)를 자동 생성합니다."
+    },
+    {
+        "id": 74,
+        "question": "브라우저의 로컬 스토리지(Local Storage)에 저장된 데이터는 브라우저 창을 닫으면 사라진다.",
+        "answer": false,
+        "explanation": "창을 닫아도 데이터가 유지되는 것은 로컬 스토리지이며, 세션 스토리지(Session Storage)는 탭이나 창을 닫으면 데이터가 삭제됩니다."
+    },
+    {
+        "id": 75,
+        "question": "UDP는 데이터 전송의 순서를 보장하지 않으며, 데이터 유실이 발생할 수 있다.",
+        "answer": true,
+        "explanation": "UDP는 연결 설정 과정 없이 데이터를 데이터그램 단위로 독립적으로 전송하므로, 순서 보장 및 신뢰성이 없는 대신 속도가 빠릅니다."
+    },
+    {
+        "id": 76,
+        "question": "동기식(Synchronous) I/O 작업 중에는 해당 작업을 호출한 스레드가 차단(Block)된다.",
+        "answer": true,
+        "explanation": "동기식 방식에서는 I/O 작업의 결과가 반환될 때까지 스레드가 대기 상태로 전환되며, 다음 코드를 실행하지 못합니다."
+    },
+    {
+        "id": 77,
+        "question": "프로세스의 '좀비(Zombie) 상태'는 자식 프로세스가 종료되었으나 부모가 아직 그 종료 상태를 회수하지 않은 상태를 말한다.",
+        "answer": true,
+        "explanation": "자식 프로세스의 실행은 끝났지만 부모 프로세스가 `wait()` 시스템 콜을 호출하지 않아, 프로세스 테이블에 엔트리가 남아 있는 상태입니다."
+    },
+    {
+        "id": 78,
+        "question": "해시(Hash) 함수의 결과값은 입력값의 크기와 관계없이 항상 가변적인 길이를 가진다.",
+        "answer": false,
+        "explanation": "해시 함수는 임의의 길이를 가진 데이터를 입력받아, 항상 '고정된 길이'의 해시값(다이제스트)을 출력합니다."
+    },
+    {
+        "id": 79,
+        "question": "Git에서 `git merge`와 `git rebase`는 커밋 히스토리를 병합한다는 목적은 같지만 히스토리를 남기는 방식이 다르다.",
+        "answer": true,
+        "explanation": "`merge`는 병합 커밋(Merge Commit)을 남겨 두 갈래의 히스토리를 보존하지만, `rebase`는 베이스를 재설정하여 히스토리를 일직선(선형)으로 깔끔하게 만듭니다."
+    },
+    {
+        "id": 80,
+        "question": "CPU 스케줄링에서 SJF(Shortest Job First)는 기아 상태(Starvation)를 유발할 수 있다.",
+        "answer": true,
+        "explanation": "실행 시간이 짧은 프로세스만 먼저 처리하므로, 실행 시간이 매우 긴 프로세스는 계속해서 양보만 하다가 자원을 얻지 못하는 기아 상태에 빠질 수 있습니다."
+    },
+    {
+        "id": 81,
+        "question": "트랜잭션 격리 수준(Isolation Level) 중 Read Uncommitted는 Dirty Read 현상을 허용한다.",
+        "answer": true,
+        "explanation": "Read Uncommitted는 다른 트랜잭션에서 아직 커밋하지 않은 데이터를 읽을 수 있게 허용하므로, 잘못된 데이터를 읽게 되는 Dirty Read 문제가 발생합니다."
+    },
+    {
+        "id": 82,
+        "question": "TDD(Test-Driven Development)는 테스트 코드를 작성한 후, 이를 통과하기 위한 실제 코드를 작성하는 방법론이다.",
+        "answer": true,
+        "explanation": "테스트 주도 개발(TDD)은 '실패하는 테스트 코드 작성 -> 테스트 통과를 위한 최소한의 코드 작성 -> 리팩토링'의 사이클을 반복하는 개발 방법론입니다."
+    },
+    {
+        "id": 83,
+        "question": "DNS 레코드 중 CNAME은 도메인 이름을 IP 주소로 직접 매핑하는 레코드이다.",
+        "answer": false,
+        "explanation": "도메인 이름을 IP 주소로 직접 매핑하는 것은 A 레코드입니다. CNAME은 도메인 이름을 다른 도메인 이름(별칭)으로 매핑합니다."
+    },
+    {
+        "id": 84,
+        "question": "SSL/TLS 통신에서 대칭키 암호화 방식은 클라이언트와 서버가 서로 다른 키를 사용하여 암호화 및 복호화를 수행한다.",
+        "answer": false,
+        "explanation": "대칭키 암호화는 암호화와 복호화에 '동일한 키'를 사용합니다. 서로 다른 키(공개키, 개인키)를 사용하는 것은 비대칭키(공개키) 암호화 방식입니다."
+    },
+    {
+        "id": 85,
+        "question": "SOLID 원칙 중 의존성 역전 원칙(DIP)은 구체적인 클래스보다 추상화(인터페이스)에 의존해야 함을 의미한다.",
+        "answer": true,
+        "explanation": "고수준 모듈은 저수준 모듈의 구현에 의존해서는 안 되며, 둘 다 추상화된 인터페이스에 의존함으로써 결합도를 낮춰야 한다는 원칙입니다."
+    },
+    {
+        "id": 86,
+        "question": "웹 브라우저가 DOM 트리를 생성하기 전에 먼저 화면을 렌더링(Painting)한다.",
+        "answer": false,
+        "explanation": "브라우저 렌더링 과정은 HTML을 파싱하여 DOM 트리 생성 -> CSS 파싱 후 CSSOM 트리 생성 -> 렌더 트리 생성 -> 레이아웃 -> 페인팅 순서로 진행됩니다."
+    },
+    {
+        "id": 87,
+        "question": "스프링의 IoC(Inversion of Control) 컨테이너는 애플리케이션의 객체(Bean) 생성과 생명주기 관리를 대신해 준다.",
+        "answer": true,
+        "explanation": "개발자가 직접 `new` 키워드로 객체를 생성하지 않고, 제어의 역전(IoC) 컨테이너가 설정 파일(어노테이션 등)에 따라 객체의 생명주기를 대신 관리해 줍니다."
+    },
+    {
+        "id": 88,
+        "question": "큐(Queue) 자료구조에서 데이터가 삽입되는 연산을 Enqueue, 데이터를 꺼내는 연산을 Dequeue라고 한다.",
+        "answer": true,
+        "explanation": "큐의 끝(Rear)에 요소를 추가하는 것을 인큐(Enqueue), 큐의 맨 앞(Front)에서 요소를 제거하는 것을 디큐(Dequeue)라고 부릅니다."
+    },
+    {
+        "id": 89,
+        "question": "데이터베이스 테이블 조인 시, LEFT OUTER JOIN은 오른쪽 테이블에 일치하는 데이터가 없으면 기준 데이터도 결과에서 제외한다.",
+        "answer": false,
+        "explanation": "LEFT OUTER JOIN은 왼쪽(기준) 테이블의 데이터는 무조건 모두 출력하고, 오른쪽 테이블에 일치하는 데이터가 없으면 해당 컬럼들을 NULL로 채워서 반환합니다."
+    },
+    {
+        "id": 90,
+        "question": "리스트 내의 요소를 찾을 때, 이진 탐색(Binary Search)은 정렬되지 않은 배열에서도 사용할 수 있다.",
+        "answer": false,
+        "explanation": "이진 탐색은 반씩 범위를 좁혀나가며 탐색하는 알고리즘이므로, 반드시 데이터가 오름차순 또는 내림차순으로 '정렬되어 있어야만' 정상적으로 동작합니다."
+    },
+    {
+        "id": 91,
+        "question": "도커(Docker) 컨테이너는 각자 독립적인 게스트 OS(Guest OS)를 포함하여 무겁게 구동된다.",
+        "answer": false,
+        "explanation": "도커 컨테이너는 하이퍼바이저 방식(VM)과 달리 게스트 OS를 포함하지 않으며, 호스트 OS의 커널을 공유하기 때문에 매우 가볍고 빠르게 구동됩니다."
+    },
+    {
+        "id": 92,
+        "question": "가비지 컬렉션(GC)의 알고리즘 중 'Mark and Sweep'은 사용 중인 객체를 표시(Mark)하고, 표시되지 않은 객체를 지우는(Sweep) 방식이다.",
+        "answer": true,
+        "explanation": "루트 객체부터 시작하여 참조되는 객체들을 탐색하며 마킹한 뒤, 마킹되지 않은(도달 불가능한) 메모리를 해제하는 대표적인 GC 알고리즘입니다."
+    },
+    {
+        "id": 93,
+        "question": "프로세스가 생성될 때 프로세스 제어 블록(PCB)도 함께 생성되며, 프로세스 종료 시 삭제된다.",
+        "answer": true,
+        "explanation": "PCB는 운영체제가 프로세스를 제어하기 위해 프로세스 상태, 프로그램 카운터, 레지스터, 메모리 관리 정보 등을 저장해두는 자료구조입니다."
+    },
+    {
+        "id": 94,
+        "question": "IP 주소 체계 중 IPv4는 32비트로 구성되어 있고, IPv6는 128비트로 구성되어 있다.",
+        "answer": true,
+        "explanation": "IPv4 주소의 고갈 문제를 해결하기 위해 주소 공간을 128비트로 대폭 확정한 것이 IPv6 체계입니다."
+    },
+    {
+        "id": 95,
+        "question": "관계형 데이터베이스의 DDL(Data Definition Language)에는 SELECT, INSERT, UPDATE 명령어가 포함된다.",
+        "answer": false,
+        "explanation": "SELECT, INSERT, UPDATE, DELETE는 데이터를 조작하는 DML(Data Manipulation Language)입니다. DDL은 테이블의 구조를 다루는 CREATE, ALTER, DROP 등입니다."
+    },
+    {
+        "id": 96,
+        "question": "캐시 적중률(Cache Hit Ratio)이 높을수록 시스템의 전반적인 메모리 접근 속도는 향상된다.",
+        "answer": true,
+        "explanation": "캐시 적중(Cache Hit)이 자주 발생하면 느린 주기억장치(RAM)까지 갈 필요 없이 캐시 메모리에서 바로 데이터를 가져올 수 있으므로 속도가 크게 향상됩니다."
+    },
+    {
+        "id": 97,
+        "question": "정규화 중 제1 정규형(1NF)은 릴레이션의 모든 속성 값이 원자값(Atomic Value)만을 가져야 한다는 조건이다.",
+        "answer": true,
+        "explanation": "하나의 칼럼에는 콤마로 구분된 여러 값이나 리스트가 들어갈 수 없고, 반드시 하나의 원자값(단일 값)만을 가져야 한다는 것이 제1 정규형입니다."
+    },
+    {
+        "id": 98,
+        "question": "자바에서 `String` 객체는 불변(Immutable) 객체이므로 한 번 생성되면 그 값을 변경할 수 없다.",
+        "answer": true,
+        "explanation": "문자열을 수정하면 기존 객체를 수정하는 것이 아니라 새로운 String 객체를 메모리에 생성합니다. 잦은 수정이 필요할 때는 `StringBuilder`나 `StringBuffer`를 사용합니다."
+    },
+    {
+        "id": 99,
+        "question": "TCP/IP 모델의 애플리케이션 계층(Application Layer)은 OSI 7계층의 5, 6, 7계층 역할을 모두 포괄한다.",
+        "answer": true,
+        "explanation": "TCP/IP 4계층 모델의 응용 계층(Application Layer)은 OSI 7계층 모델의 세션(5), 표현(6), 응용(7) 계층의 역할을 하나로 묶어 처리합니다."
+    },
+    {
+        "id": 100,
+        "question": "소프트웨어 엔지니어링의 폭포수 모델(Waterfall Model)은 개발 중 요구사항 변경에 유연하게 대처할 수 있는 방식이다.",
+        "answer": false,
+        "explanation": "폭포수 모델은 이전 단계가 끝나야 다음 단계로 넘어가는 순차적인 방식이므로 요구사항 변경에 유연하지 못합니다. 변경에 유연한 방식은 애자일(Agile) 모델입니다."
+    },
+    { 
+        "id": 101,
+        "question": "페이지 교체 알고리즘 중 LRU(Least Recently Used)는 가장 오랫동안 사용되지 않은 페이지를 교체한다.",
+        "answer": true,
+        "explanation": "LRU는 시간적 지역성(Temporal Locality)을 가정하여, 과거에 가장 적게 사용된 페이지가 미래에도 적게 사용될 것이라 판단하고 교체합니다."
+    },
+    {
+        "id": 102,
+        "question": "클러스터형 인덱스(Clustered Index)는 테이블당 여러 개 생성할 수 있다.",
+        "answer": false,
+        "explanation": "클러스터형 인덱스는 실제 데이터 행의 물리적인 저장 순서를 결정하므로, 테이블당 오직 1개만 생성할 수 있습니다."
+    },
+    {
+        "id": 103,
+        "question": "네트워크의 NAT(Network Address Translation)는 사설 IP를 공인 IP로 변환해 주는 기술이다.",
+        "answer": true,
+        "explanation": "NAT는 한정된 IPv4 공인 주소를 절약하기 위해 내부망에서는 사설 IP를 쓰고 외부로 나갈 때 라우터가 공인 IP로 변환해 주는 기술입니다."
+    },
+    {
+        "id": 104,
+        "question": "다익스트라(Dijkstra) 알고리즘은 음수 가중치를 가진 간선이 있을 때도 항상 최단 경로를 보장한다.",
+        "answer": false,
+        "explanation": "다익스트라는 그리디 방식이므로 음수 가중치가 있으면 무한 루프나 잘못된 결과를 낼 수 있습니다. 음수 간선이 있을 때는 벨만-포드(Bellman-Ford) 알고리즘을 써야 합니다."
+    },
+    {
+        "id": 105,
+        "question": "CAP 정리에서 분산 시스템은 일관성(Consistency), 가용성(Availability), 파티션 허용성(Partition Tolerance) 세 가지를 동시에 모두 만족할 수 없다.",
+        "answer": true,
+        "explanation": "네트워크 단절(Partition)은 피할 수 없으므로 실제 시스템은 CP(일관성 우선) 또는 AP(가용성 우선) 중 하나를 선택해야 합니다."
+    },
+    {
+        "id": 106,
+        "question": "은행원 알고리즘(Banker's Algorithm)은 교착상태(Deadlock)를 '회복(Recovery)'하기 위한 알고리즘이다.",
+        "answer": false,
+        "explanation": "은행원 알고리즘은 교착상태를 회복하는 것이 아니라, 시스템이 항상 안전 상태를 유지하도록 자원 할당을 제어하는 '교착상태 회피(Avoidance)' 알고리즘입니다."
+    },
+    {
+        "id": 107,
+        "question": "포워드 프록시(Forward Proxy)는 클라이언트의 정체를 숨기고, 리버스 프록시(Reverse Proxy)는 서버의 정체를 숨긴다.",
+        "answer": true,
+        "explanation": "포워드 프록시는 사용자를 대신해 인터넷에 요청(IP 우회 등)하고, 리버스 프록시는 서버 앞단에서 로드 밸런싱이나 보안을 제공하며 서버의 실제 IP를 숨깁니다."
+    },
+    {
+        "id": 108,
+        "question": "운영체제에서 `fork()` 시스템 콜은 기존 프로세스를 대체하여 새로운 프로그램을 실행한다.",
+        "answer": false,
+        "explanation": "`fork()`는 현재 프로세스를 똑같이 복사하여 자식 프로세스를 생성합니다. 기존 프로세스를 대체하여 새 프로그램을 실행하는 것은 `exec()` 시스템 콜입니다."
+    },
+    {
+        "id": 109,
+        "question": "제2 정규형(2NF)은 부분 함수 종속을 제거하여 완전 함수 종속을 만족하는 상태이다.",
+        "answer": true,
+        "explanation": "기본키의 일부 속성에만 종속되는 일반 속성들을 분리해 내어, 기본키 전체에 종속되도록 만드는 것이 제2 정규형입니다."
+    },
+    {
+        "id": 110,
+        "question": "동적 프로그래밍에서 메모이제이션(Memoization)은 상향식(Bottom-Up) 접근 방식이다.",
+        "answer": false,
+        "explanation": "메모이제이션은 재귀를 사용해 위에서 아래로 내려가며 캐싱하는 하향식(Top-Down) 방식입니다. 상향식 방식은 반복문을 사용하는 타뷸레이션(Tabulation)입니다."
+    },
+    {
+        "id": 111,
+        "question": "DHCP는 호스트에게 IP 주소, 서브넷 마스크, 기본 게이트웨이 등을 동적으로 할당해 주는 프로토콜이다.",
+        "answer": true,
+        "explanation": "DHCP(Dynamic Host Configuration Protocol) 덕분에 사용자가 직접 IP를 설정하지 않아도 네트워크에 자동으로 연결될 수 있습니다."
+    },
+    {
+        "id": 112,
+        "question": "크루스칼(Kruskal) 알고리즘은 최소 신장 트리(MST)를 찾기 위해 정점(Vertex)을 중심으로 확장하는 알고리즘이다.",
+        "answer": false,
+        "explanation": "크루스칼은 '간선(Edge)'을 가중치 오름차순으로 정렬한 뒤 사이클을 형성하지 않는 선에서 추가하는 방식입니다. 정점을 중심으로 확장하는 것은 프림(Prim) 알고리즘입니다."
+    },
+    {
+        "id": 113,
+        "question": "블룸 필터(Bloom Filter)는 어떤 원소가 집합에 속하지 않는다는 것을 100% 확신할 수 있다.",
+        "answer": true,
+        "explanation": "블룸 필터는 '절대 없음(True Negative)'은 100% 보장하지만, '있음'이라고 판별했을 때는 해시 충돌로 인한 '거짓 양성(False Positive)'일 가능성이 존재합니다."
+    },
+    {
+        "id": 114,
+        "question": "JWT 토큰의 페이로드(Payload)는 암호화되어 있어 누구나 읽을 수 없다.",
+        "answer": false,
+        "explanation": "JWT의 페이로드는 Base64로 인코딩되어 있을 뿐 암호화되지 않습니다. 누구나 디코딩하여 내용을 볼 수 있으므로 비밀번호 같은 민감한 정보를 넣으면 안 됩니다."
+    },
+    {
+        "id": 115,
+        "question": "모니터(Monitor)는 뮤텍스와 조건 변수를 결합하여 개발자가 락(Lock)을 획득/해제하는 과정을 캡슐화한 동기화 도구이다.",
+        "answer": true,
+        "explanation": "자바의 `synchronized` 키워드처럼 시스템 내부적으로 임계구역 접근을 제어해주어, 세마포어보다 사용자가 실수할 확률을 크게 줄여줍니다."
+    },
+    {
+        "id": 116,
+        "question": "B+Tree는 B-Tree와 달리 모든 데이터를 리프(Leaf) 노드에만 저장하고, 리프 노드끼리 연결 리스트로 이어져 있다.",
+        "answer": true,
+        "explanation": "이 구조 덕분에 B+Tree는 범위 검색(Range Scan)과 순차 검색 성능이 B-Tree보다 압도적으로 좋아 대부분의 DB 인덱스로 채택됩니다."
+    },
+    {
+        "id": 117,
+        "question": "마이크로서비스 아키텍처(MSA)에서는 시스템의 모든 기능이 하나의 데이터베이스를 공유하는 것을 권장한다.",
+        "answer": false,
+        "explanation": "MSA의 핵심 원칙 중 하나는 각 서비스가 독립적인 데이터베이스(Database per service)를 가져야 결합도를 낮추고 자율성을 높일 수 있다는 점입니다."
+    },
+    {
+        "id": 118,
+        "question": "XSS(Cross-Site Scripting)는 사용자가 악성 스크립트가 포함된 웹페이지를 열었을 때 브라우저에서 스크립트가 실행되는 취약점이다.",
+        "answer": true,
+        "explanation": "해커가 게시판 등에 자바스크립트를 삽입해 두고, 다른 사용자가 읽을 때 쿠키/세션 토큰을 탈취하는 등의 공격을 수행합니다."
+    },
+    {
+        "id": 119,
+        "question": "CSRF(Cross-Site Request Forgery) 공격은 인증된 사용자가 자신의 의지와 무관하게 공격자가 의도한 행동(수정, 삭제 등)을 요청하게 만드는 공격이다.",
+        "answer": true,
+        "explanation": "서버가 클라이언트의 쿠키를 무조건 신뢰하는 점을 악용하므로, 이를 막기 위해 CSRF 토큰이나 SameSite 쿠키 속성을 사용합니다."
+    },
+    {
+        "id": 120,
+        "question": "오버라이딩(Overriding)은 동일한 이름의 메서드를 매개변수의 타입이나 개수만 다르게 하여 여러 개 정의하는 것이다.",
+        "answer": false,
+        "explanation": "이는 오버로딩(Overloading)에 대한 설명입니다. 오버라이딩은 상위 클래스에서 상속받은 메서드를 하위 클래스에서 동일한 시그니처로 재정의하는 것입니다."
+    },
+    {
+        "id": 121,
+        "question": "하드 링크(Hard Link)는 원본 파일이 삭제되면 링크된 파일도 열 수 없다.",
+        "answer": false,
+        "explanation": "하드 링크는 원본 파일과 동일한 Inode를 가리키므로 원본을 삭제해도 데이터가 유지됩니다. 원본 삭제 시 열 수 없는 것은 바로가기 형태의 심볼릭 링크(Soft Link)입니다."
+    },
+    {
+        "id": 122,
+        "question": "라우터(Router)는 OSI 7계층 중 네트워크 계층(3계층)에서 동작하는 장비이다.",
+        "answer": true,
+        "explanation": "라우터는 IP 주소를 기반으로 최적의 경로를 설정(라우팅)하여 패킷을 목적지 네트워크로 전달하는 핵심 장비입니다."
+    },
+    {
+        "id": 123,
+        "question": "BGP(Border Gateway Protocol)는 동일한 조직(AS) 내부의 라우터들끼리 경로 정보를 교환할 때 사용된다.",
+        "answer": false,
+        "explanation": "BGP는 인터넷상에서 서로 다른 조직(AS) 간에 라우팅 정보를 교환하는 EGP(외부 게이트웨이 프로토콜)의 표준입니다. 내부망에는 OSPF나 RIP를 씁니다."
+    },
+    {
+        "id": 124,
+        "question": "소프트웨어 아키텍처의 CQRS 패턴은 명령(Command) 모델과 조회(Query) 모델을 분리하는 패턴이다.",
+        "answer": true,
+        "explanation": "데이터를 생성/수정하는 쓰기 모델과 데이터를 조회하는 읽기 모델의 DB와 로직을 완전히 분리하여 각각의 확장성과 성능을 최적화하는 패턴입니다."
+    },
+    {
+        "id": 125,
+        "question": "레디스(Redis)의 영속성(Persistence) 옵션 중 AOF(Append Only File)는 메모리의 스냅샷을 주기적으로 디스크에 저장하는 방식이다.",
+        "answer": false,
+        "explanation": "스냅샷을 주기적으로 덤프하는 방식은 RDB(Redis Database)입니다. AOF는 쓰기 명령어(Log)가 실행될 때마다 파일에 순차적으로 기록하는 방식입니다."
+    },
+    {
+        "id": 126,
+        "question": "샤딩(Sharding)은 큰 테이블을 같은 스키마를 가진 여러 대의 독립된 데이터베이스 서버로 수평 분할(Horizontal Partitioning)하는 기법이다.",
+        "answer": true,
+        "explanation": "단일 DB 서버의 용량 한계와 부하를 해결하기 위해 데이터를 분산 저장하는 아키텍처 확장 기법입니다."
+    },
+    {
+        "id": 127,
+        "question": "위상 정렬(Topological Sort)은 사이클이 있는 방향 그래프에서만 수행할 수 있다.",
+        "answer": false,
+        "explanation": "위상 정렬은 순서가 정해져 있는 작업들을 정렬하는 알고리즘으로, 반드시 '사이클이 없는 방향 그래프(DAG)'에서만 수행 가능합니다."
+    },
+    {
+        "id": 128,
+        "question": "프로세스가 I/O 요청을 하면 프로세스 상태는 Running에서 Waiting(Blocked) 상태로 전이된다.",
+        "answer": true,
+        "explanation": "CPU 할당을 받아 실행 중(Running)이던 프로세스가 디스크 읽기 등의 I/O 이벤트를 대기해야 할 때는 Waiting 상태로 넘어가고, CPU를 다른 프로세스에게 양보합니다."
+    },
+    {
+        "id": 129,
+        "question": "스레드 풀(Thread Pool)을 사용하면 스레드의 잦은 생성과 파괴로 인한 오버헤드를 방지할 수 있다.",
+        "answer": true,
+        "explanation": "스레드를 미리 정해진 개수만큼 생성해두고 필요할 때 빌려준 뒤 다시 반납받는 구조이므로 리소스 소모와 지연을 줄여줍니다."
+    },
+    {
+        "id": 130,
+        "question": "SOLID 원칙 중 리스코프 치환 원칙(LSP)은 상위 타입의 객체를 하위 타입으로 교체해도 프로그램이 정상적으로 동작해야 함을 의미한다.",
+        "answer": true,
+        "explanation": "하위 클래스는 상위 클래스의 책임을 무시하거나 재정의하여 규약을 깨뜨려서는 안 되며, 언제든 상위 클래스를 대체할 수 있어야 한다는 원칙입니다."
+    },
+    {
+        "id": 131,
+        "question": "SSE(Server-Sent Events)는 클라이언트와 서버 간의 양방향 통신을 지원하는 기술이다.",
+        "answer": false,
+        "explanation": "SSE는 서버가 클라이언트에게 단방향으로 실시간 데이터를 푸시(Push)할 때 씁니다. 양방향 통신이 필요하다면 웹소켓(WebSocket)을 사용해야 합니다."
+    },
+    {
+        "id": 132,
+        "question": "도커(Docker) 이미지(Image)는 컨테이너 실행에 필요한 파일과 설정값 등을 포함하고 있으며 상태가 변하지 않는(Immutable) 속성을 가진다.",
+        "answer": true,
+        "explanation": "이미지는 읽기 전용으로 변하지 않으며, 이 이미지를 바탕으로 메모리에 올라와 실제로 실행되는 동적인 상태가 컨테이너(Container)입니다."
+    },
+    {
+        "id": 133,
+        "question": "운영체제의 선점형(Preemptive) 스케줄링에서는 우선순위가 더 높은 프로세스가 도착하면 CPU를 빼앗아 할당할 수 있다.",
+        "answer": true,
+        "explanation": "라운드 로빈(RR), SRTF 등이 선점형 스케줄링에 해당하며 시분할 시스템과 빠른 응답성을 요구하는 현대 운영체제에서 널리 쓰입니다."
+    },
+    {
+        "id": 134,
+        "question": "데이터베이스의 제3 정규형(3NF)은 이행적 함수 종속(Transitive Dependency)을 제거하는 과정이다.",
+        "answer": true,
+        "explanation": "A -> B 이고 B -> C 일 때 A -> C 가 성립하는 이행적 관계를 끊어내어 테이블을 분리하는 것이 제3 정규화입니다."
+    },
+    {
+        "id": 135,
+        "question": "플로이드-워셜(Floyd-Warshall) 알고리즘은 단일 출발점에서 모든 정점까지의 최단 경로를 구한다.",
+        "answer": false,
+        "explanation": "플로이드-워셜은 '모든 정점'에서 '모든 다른 정점'으로 가는 최단 경로를 한 번에 구하는 O(V^3) 알고리즘입니다. 단일 출발점 탐색은 다익스트라나 벨만-포드를 씁니다."
+    },
+    {
+        "id": 136,
+        "question": "REST API의 HATEOAS 규칙은 클라이언트가 서버로부터 응답받은 하이퍼링크를 통해 다음 상태로 전이할 수 있어야 함을 의미한다.",
+        "answer": true,
+        "explanation": "REST의 가장 성숙한 단계인 성숙도 모델 레벨 3을 만족하기 위한 조건으로, 응답 데이터에 관련된 행동(URI)들을 링크로 제공하는 방식입니다."
+    },
+    {
+        "id": 137,
+        "question": "리눅스의 Inode에는 파일의 실제 데이터 내용이 저장되어 있다.",
+        "answer": false,
+        "explanation": "Inode(Index Node)에는 파일의 권한, 소유자, 크기, 시간 정보와 실제 데이터 블록이 저장된 디스크 위치(포인터) 등 메타데이터가 저장됩니다. 실제 내용은 데이터 블록에 저장됩니다."
+    },
+    {
+        "id": 138,
+        "question": "TCP 연결 설정 중 SYN Flooding 공격은 서버의 연결 대기 큐(Backlog Queue)를 가득 채워 정상적인 접속을 막는 DDoS 공격이다.",
+        "answer": true,
+        "explanation": "공격자가 3-Way Handshake에서 ACK를 보내지 않고 SYN만 무수히 보내면 서버는 Half-open 상태로 자원을 고갈당하게 됩니다."
+    },
+    {
+        "id": 139,
+        "question": "엘라스틱서치(Elasticsearch)는 RDBMS의 B-Tree 인덱스 구조를 사용하여 풀텍스트 검색(Full-text Search)을 구현한다.",
+        "answer": false,
+        "explanation": "엘라스틱서치는 검색 엔진에 특화된 역인덱스(Inverted Index) 자료구조를 사용하여 책의 색인처럼 단어 기반의 매우 빠른 텍스트 검색을 지원합니다."
+    },
+    {
+        "id": 140,
+        "question": "분리 집합(Disjoint Set / Union-Find) 알고리즘은 두 노드가 같은 그래프(또는 집합)에 속해 있는지를 판별하는 데 사용된다.",
+        "answer": true,
+        "explanation": "Union 연산으로 집합을 합치고, Find 연산으로 특정 원소가 속한 집합의 루트를 찾아내어 최소 신장 트리(크루스칼) 등에서 사이클 여부를 검사할 때 활용됩니다."
+    },
+    {
+        "id": 141,
+        "question": "디자인 패턴 중 옵저버(Observer) 패턴은 객체의 상태가 변하면 이를 의존하는 다른 객체들에게 자동으로 알림을 보내는 패턴이다.",
+        "answer": true,
+        "explanation": "이벤트 기반 시스템, UI 프레임워크의 리스너, Pub/Sub 구조 등에서 객체 간의 결합도를 낮추면서 1:N 알림 관계를 구현할 때 핵심이 되는 패턴입니다."
+    },
+    {
+        "id": 142,
+        "question": "소프트웨어 테스트에서 화이트박스 테스트(White Box Test)는 내부 소스 코드를 전혀 보지 않고 기능 요구사항에만 집중하여 테스트하는 기법이다.",
+        "answer": false,
+        "explanation": "내부 코드를 보지 않고 입력/출력값에 집중하는 것은 블랙박스 테스트입니다. 화이트박스 테스트는 코드의 제어 구조, 경로, 조건문을 분석하여 꼼꼼히 테스트하는 기법입니다."
+    },
+    {
+        "id": 143,
+        "question": "비대칭키 암호화(Public Key Encryption)에서 공개키로 암호화한 데이터는 오직 그 쌍을 이루는 개인키로만 복호화할 수 있다.",
+        "answer": true,
+        "explanation": "공개키 암호화 방식(RSA 등)은 키 분배 문제를 해결하며, 서버의 개인키가 유출되지 않는 한 누군가 가로채도 복호화가 불가능하여 안전한 통신(TLS/SSL)의 근간이 됩니다."
+    },
+    {
+        "id": 144,
+        "question": "운영체제의 페이지 교체 알고리즘 중 LFU(Least Frequently Used)는 가장 오랫동안 사용되지 않은 페이지를 교체한다.",
+        "answer": false,
+        "explanation": "가장 오랫동안 사용되지 않은 것을 교체하는 것은 LRU입니다. LFU는 '참조 횟수(Frequency)'가 가장 적은 페이지를 교체하는 알고리즘입니다."
+    },
+    {
+        "id": 145,
+        "question": "자료구조 트리(Tree)는 사이클(Cycle)을 가질 수 없는 연결 그래프(Connected Graph)의 일종이다.",
+        "answer": true,
+        "explanation": "트리는 무방향이면서 사이클이 존재하지 않고, 노드가 N개일 때 간선이 N-1개인 특수한 형태의 그래프입니다."
+    },
+    {
+        "id": 146,
+        "question": "객체지향 설계 원칙 SOLID 중 인터페이스 분리 원칙(ISP)은 자신이 사용하지 않는 인터페이스에 의존하지 않아야 함을 의미한다.",
+        "answer": true,
+        "explanation": "거대한 인터페이스 하나보다 작고 구체적인 인터페이스 여러 개로 분리하여, 구현 클래스가 불필요한 메서드까지 구현하도록 강요받지 않게 하는 원칙입니다."
+    },
+    {
+        "id": 147,
+        "question": "스프링 프레임워크(Spring)에서 AOP(Aspect-Oriented Programming)는 로깅, 보안 등 여러 모듈에 흩어진 공통 관심사를 분리하여 모듈화하는 프로그래밍 패러다임이다.",
+        "answer": true,
+        "explanation": "AOP를 활용하면 비즈니스 로직(핵심 관심사)과 부가 기능(공통 관심사)을 분리하여 코드의 가독성과 유지보수성을 크게 높일 수 있습니다."
+    },
+    {
+        "id": 148,
+        "question": "RESTful API의 성숙도 모델(Richardson Maturity Model) 레벨 2에서는 HTTP 메서드 대신 오직 URI 경로로만 행위를 정의한다.",
+        "answer": false,
+        "explanation": "성숙도 모델 레벨 2는 리소스(URI) 구조화와 더불어 HTTP 메서드(GET, POST, PUT, DELETE)를 올바른 용도로 활용하는 단계입니다. 레벨 0이나 레벨 1이 하나의 메서드(보통 POST)에 의존하는 경향이 있습니다."
+    },
+    {
+        "id": 149,
+        "question": "데이터베이스 이상 현상(Anomaly) 중 데이터 갱신 시 일부 튜플만 수정되어 일관성이 깨지는 현상을 갱신 이상(Update Anomaly)이라고 한다.",
+        "answer": true,
+        "explanation": "정규화가 제대로 되지 않아 데이터가 중복 저장되어 있을 때, 데이터를 변경할 경우 하나만 바뀌고 나머지는 바뀌지 않는 문제로, 정규화(Normalization)를 통해 해결합니다."
+    },
+    {
+        "id": 150,
+        "question": "IP 주소 클래스(A, B, C)에서 멀티캐스트를 위해 예약된 클래스는 D 클래스이다.",
+        "answer": true,
+        "explanation": "IP 클래스는 A~E로 나뉘며, D 클래스(224.0.0.0 ~ 239.255.255.255)는 특정 그룹에게 패킷을 동시에 전송하는 멀티캐스팅(Multicasting) 용도로 예약되어 있습니다."
+    },
+    {
+        "id": 151,
+        "question": "애자일 방법론 중 스크럼(Scrum)에서 개발 작업을 수행하는 짧은 주기의 타임박스 단위를 스프린트(Sprint)라고 부른다.",
+        "answer": true,
+        "explanation": "일반적으로 1~4주의 짧은 주기로 스프린트를 진행하며, 주기가 끝날 때마다 동작 가능한 소프트웨어를 제공하고 회고(Retrospective)를 진행합니다."
+    },
+    {
+        "id": 152,
+        "question": "시스템 호출(System Call)은 사용자 프로그램이 직접 하드웨어 자원에 접근할 수 있게 해주는 유저 모드(User Mode)의 기능이다.",
+        "answer": false,
+        "explanation": "시스템 호출은 사용자 프로그램(유저 모드)이 커널(Kernel 모드)에게 하드웨어 제어나 특권 명령을 대신 수행해달라고 운영체제에 요청하는 인터페이스입니다."
+    },
+    {
+        "id": 153,
+        "question": "가상 메모리 기법인 세그먼테이션은 프로세스를 물리적 크기가 고정된 단위로 나누어 메모리에 적재한다.",
+        "answer": false,
+        "explanation": "물리적인 고정 크기로 나누는 것은 페이징(Paging)입니다. 세그먼테이션은 코드, 데이터, 스택 등 논리적인 의미를 가지는 가변 크기의 단위로 나눕니다."
+    },
+    {
+        "id": 154,
+        "question": "DNS 레코드 중 AAAA 레코드는 도메인 이름을 IPv6 주소로 매핑할 때 사용된다.",
+        "answer": true,
+        "explanation": "A 레코드는 도메인을 IPv4 주소(32비트)로 매핑하고, AAAA 레코드는 4배 긴 IPv6 주소(128비트)로 매핑하는 데 쓰입니다."
+    },
+    {
+        "id": 155,
+        "question": "데이터 구조 중 AVL 트리는 삽입/삭제 시 스스로 균형을 맞추어 최악의 경우에도 높이를 O(log N)으로 유지하는 이진 탐색 트리이다.",
+        "answer": true,
+        "explanation": "AVL 트리나 Red-Black 트리는 편향(Skewed) 트리가 되는 것을 막아 항상 O(log N)의 검색 성능을 보장하는 균형 이진 탐색 트리입니다."
+    },
+    {
+        "id": 156,
+        "question": "해시 함수의 암호학적 성질 중 '눈사태 효과(Avalanche Effect)'는 입력값이 조금만 달라져도 결과값이 완전히 달라지는 특성이다.",
+        "answer": true,
+        "explanation": "이 특성 덕분에 원본 데이터의 작은 변화가 해시값 전체의 비트를 무작위로 변경시켜, 해시값을 통해 원본을 유추하는 것을 사실상 불가능하게 만듭니다."
+    },
+    {
+        "id": 157,
+        "question": "비관적 락(Pessimistic Lock)은 데이터 갱신 시 충돌이 발생하지 않을 것이라고 가정하고 트랜잭션을 처리한다.",
+        "answer": false,
+        "explanation": "충돌이 안 날 것이라 가정하는 것은 낙관적 락(Optimistic Lock)입니다. 비관적 락은 충돌이 발생할 것이라 가정하여, 데이터를 읽을 때부터 미리 DB 레코드에 잠금(Lock)을 걸어둡니다."
+    },
+    {
+        "id": 158,
+        "question": "이벤트 소싱(Event Sourcing) 패턴은 데이터의 최종 상태만 DB에 저장하는 방식이다.",
+        "answer": false,
+        "explanation": "이벤트 소싱은 데이터의 최종 상태(Current State)를 덮어쓰는 것이 아니라, 상태를 변경한 '모든 이벤트의 순서(History)'를 연속적으로 저장하여 상태를 도출하는 패턴입니다."
+    },
+    {
+        "id": 159,
+        "question": "정렬 알고리즘 중 기수 정렬(Radix Sort)은 요소들 간의 직접적인 대소 비교를 수행하지 않는다.",
+        "answer": true,
+        "explanation": "기수 정렬은 데이터의 각 자릿수(1의 자리, 10의 자리 등)를 기준으로 버킷(Queue)에 담았다 빼는 방식으로 정렬하며, O(kN)의 속도를 자랑하는 비비교 정렬 알고리즘입니다."
+    },
+    {
+        "id": 160,
+        "question": "관계형 데이터베이스에서 BCNF(Boyce-Codd Normal Form)는 모든 결정자가 후보키(Candidate Key)인 정규형이다.",
+        "answer": true,
+        "explanation": "제3 정규형을 만족하면서도 발생할 수 있는 이상 현상을 해결하기 위해, 후보키가 아닌 결정자가 존재하는 함수 종속을 제거한 강력한 제3 정규형입니다."
+    },
+    {
+        "id": 161,
+        "question": "OSPF 라우팅 프로토콜은 거리 벡터(Distance Vector) 알고리즘을 사용한다.",
+        "answer": false,
+        "explanation": "OSPF는 네트워크 전체의 토폴로지 정보를 파악하고 다익스트라 알고리즘을 사용하는 링크 상태(Link State) 라우팅 프로토콜입니다. 거리 벡터를 쓰는 것은 RIP나 BGP입니다."
+    },
+    {
+        "id": 162,
+        "question": "CI/CD의 지속적 제공(Continuous Delivery)은 프로덕션 환경까지 자동으로 배포되는 것을 의미한다.",
+        "answer": false,
+        "explanation": "지속적 제공(Delivery)은 배포 가능한 상태를 만들어두되 프로덕션 배포는 수동 승인을 거치는 단계입니다. 아무 개입 없이 실서버까지 100% 자동 배포되는 것은 지속적 배포(Continuous Deployment)입니다."
+    },
+    {
+        "id": 163,
+        "question": "KMP 알고리즘은 문자열 검색 과정에서 불일치가 발생했을 때, 접두사와 접미사가 일치하는 길이를 활용하여 비교 위치를 건너뛰는 알고리즘이다.",
+        "answer": true,
+        "explanation": "미리 실패 함수(LPS 배열)를 구축하여, 문자열 탐색 시 뒤로 되돌아가지 않고 O(N+M)의 시간 복잡도로 빠르게 패턴을 찾아냅니다."
+    },
+    {
+        "id": 164,
+        "question": "트랜잭션 격리 수준 중 Serializable은 가장 낮은 단계의 격리 수준으로 동시성이 매우 높다.",
+        "answer": false,
+        "explanation": "Serializable(직렬화 가능)은 가장 '엄격하고 높은' 격리 수준으로, 트랜잭션을 순차적으로 실행하는 것과 같아 데이터 무결성은 완벽하지만 동시성 성능은 가장 떨어집니다."
+    },
+    {
+        "id": 165,
+        "question": "SSL/TLS 핸드셰이크 과정은 데이터 전송을 시작하기 전에 클라이언트와 서버 간의 세션 키를 생성하고 안전한 연결을 성립하는 과정이다.",
+        "answer": true,
+        "explanation": "핸드셰이크 과정에서는 비대칭키(공개키) 암호화를 사용하여 비밀 키를 교환하고, 이후 실제 데이터를 전송할 때는 빠른 처리 속도를 위해 교환된 대칭키를 사용합니다."
+    },
+    {
+        "id": 166,
+        "question": "힙(Heap) 메모리 영역은 프로그램 실행 시 크기가 고정되어 있으며 함수 호출 시마다 사용된다.",
+        "answer": false,
+        "explanation": "이는 스택(Stack) 메모리 영역에 대한 설명입니다. 힙(Heap) 메모리는 런타임에 동적으로 크기가 할당(예: `malloc()`, `new`)되고 해제되는 메모리 공간입니다."
+    },
+    {
+        "id": 167,
+        "question": "디자인 패턴 중 싱글톤(Singleton) 패턴을 멀티 스레드 환경에서 안전하게 사용하려면 동기화(Synchronization) 처리가 필요하다.",
+        "answer": true,
+        "explanation": "여러 스레드가 동시에 인스턴스 생성 로직에 접근하면 두 개의 인스턴스가 만들어질 수 있으므로, `synchronized`나 Double Checked Locking, LazyHolder 방식 등으로 동시성 제어를 해야 합니다."
+    },
+    {
+        "id": 168,
+        "question": "GraphQL은 REST API와 다르게 클라이언트가 필요한 데이터 구조(필드)를 직접 쿼리하여 요청할 수 있다.",
+        "answer": true,
+        "explanation": "GraphQL은 오버패칭(불필요한 데이터까지 받음)과 언더패칭(원하는 데이터를 위해 여러 API를 호출함) 문제를 해결하기 위해 단일 엔드포인트에서 맞춤형 쿼리를 지원합니다."
+    },
+    {
+        "id": 169,
+        "question": "자바스크립트의 클로저(Closure)는 함수가 자신이 생성될 당시의 렉시컬(Lexical) 환경을 기억하여, 외부 함수가 종료된 후에도 접근할 수 있는 특성이다.",
+        "answer": true,
+        "explanation": "클로저는 자바스크립트에서 정보 은닉(private 변수 에뮬레이션)이나 비동기 콜백 함수 내에서 부모 스코프의 변수를 참조할 때 필수적으로 사용되는 강력한 개념입니다."
+    },
+    {
+        "id": 170,
+        "question": "네트워크 토폴로지 중 스타형(Star) 구조는 중앙의 허브나 스위치가 고장 나도 전체 네트워크에 영향을 주지 않는다.",
+        "answer": false,
+        "explanation": "스타형 구조는 모든 노드가 중앙 장비(허브/스위치)에 연결되어 있어 관리가 쉽지만, 중앙 장비가 고장 나면 전체 네트워크가 마비된다는 치명적인 단점(SPOF)이 있습니다."
+    },
+    {
+        "id": 171,
+        "question": "NoSQL 데이터베이스인 몽고DB(MongoDB)는 데이터를 테이블(Table)이 아닌 컬렉션(Collection) 단위의 BSON 문서 구조로 저장한다.",
+        "answer": true,
+        "explanation": "몽고DB는 대표적인 도큐먼트 지향(Document-Oriented) 데이터베이스로, JSON과 유사한 BSON(Binary JSON) 포맷으로 스키마 없이 데이터를 유연하게 저장합니다."
+    },
+    {
+        "id": 172,
+        "question": "캐시 교체 알고리즘에서 벨라디의 모순(Belady's Anomaly)은 페이지 프레임의 수를 늘려주었음에도 불구하고 페이지 폴트가 오히려 증가하는 현상이다.",
+        "answer": true,
+        "explanation": "이 현상은 FIFO 알고리즘 등에서 발생할 수 있는 독특한 특성이며, LRU나 OPT 같은 알고리즘에서는 수학적으로 발생하지 않음이 증명되어 있습니다."
+    },
+    {
+        "id": 173,
+        "question": "운영체제에서 우선순위 역전(Priority Inversion)은 낮은 우선순위 프로세스가 락을 잡고 있어 높은 우선순위 프로세스가 실행되지 못하는 현상이다.",
+        "answer": true,
+        "explanation": "이를 해결하기 위해 운영체제는 낮은 우선순위 프로세스의 우선순위를 일시적으로 높여 락을 빨리 반환하게 하는 '우선순위 상속(Priority Inheritance)' 기법을 사용합니다."
+    },
+    {
+        "id": 174,
+        "question": "컴퓨터 구조에서 파이프라이닝(Pipelining)은 여러 개의 명령어를 병렬로 한 번에 실행하는 기법이다.",
+        "answer": false,
+        "explanation": "파이프라이닝은 하나의 명령어를 여러 단계(Fetch, Decode, Execute 등)로 쪼개어 컨베이어 벨트처럼 순차적으로 오버랩(중첩)시켜 처리량(Throughput)을 높이는 기법입니다. 완전히 동시에 병렬 실행하는 것은 슈퍼스칼라 구조입니다."
+    },
+    {
+        "id": 175,
+        "question": "데이터베이스의 트리거(Trigger)는 특정 테이블에 INSERT, UPDATE, DELETE 이벤트가 발생할 때 자동으로 실행되는 프로시저이다.",
+        "answer": true,
+        "explanation": "트리거를 사용하면 복잡한 데이터 무결성을 강제하거나 로깅(Audit), 연쇄 업데이트 등을 애플리케이션 코드의 개입 없이 데이터베이스 엔진 단에서 자동화할 수 있습니다."
+    },
+    {
+        "id": 176,
+        "question": "자바의 HashMap은 내부적으로 해시 충돌(Collision)이 발생했을 때 선형 탐사(Linear Probing) 방식을 사용한다.",
+        "answer": false,
+        "explanation": "자바의 HashMap은 충돌 해결 기법으로 체이닝(Separate Chaining)을 사용합니다. 같은 버킷에 데이터가 들어오면 연결 리스트로 연결하며, Java 8부터는 8개 이상 겹치면 Red-Black 트리로 변환하여 성능을 최적화합니다."
+    },
+    {
+        "id": 177,
+        "question": "분산 데이터베이스 시스템에서 투명성(Transparency) 원칙 중 위치 투명성(Location Transparency)은 사용자가 데이터의 물리적 저장 위치를 몰라도 접근할 수 있게 한다.",
+        "answer": true,
+        "explanation": "분산 DB의 6대 투명성 중 하나로, 사용자는 데이터가 어느 지역의 서버에 있는지 몰라도 논리적인 이름만으로 SQL을 날려 데이터를 사용할 수 있습니다."
+    },
+    {
+        "id": 178,
+        "question": "OAuth 2.0 인가(Authorization) 방식 중 Authorization Code Grant는 브라우저 단(클라이언트)에서 직접 Access Token을 수신하는 방식이다.",
+        "answer": false,
+        "explanation": "Authorization Code Grant는 브라우저가 임시 Code만 받고, 백엔드 서버가 이 Code와 Client Secret을 조합해 안전하게 서버 대 서버 통신으로 Access Token을 받아오는 가장 안전한 방식입니다. 브라우저가 직접 토큰을 받는 것은 Implicit Grant 방식입니다."
+    },
+    {
+        "id": 179,
+        "question": "TDD(Test Driven Development)는 단위 테스트뿐만 아니라 코드의 설계를 개선(Refactoring)하는 과정도 포함하고 있다.",
+        "answer": true,
+        "explanation": "TDD의 핵심 사이클은 Red(실패하는 테스트) -> Green(테스트 통과 코드) -> Refactor(코드 품질 및 설계 개선)의 반복이며, 리팩토링 단계가 반드시 포함됩니다."
+    },
+    {
+        "id": 180,
+        "question": "디자인 패턴 중 팩토리 메서드(Factory Method) 패턴은 객체 생성 로직을 캡슐화하여 서브클래스가 어떤 객체를 생성할지 결정하도록 위임하는 패턴이다.",
+        "answer": true,
+        "explanation": "상위 클래스는 인터페이스에만 의존하고, 실제 어떤 구체적인 인스턴스를 만들지는 하위 클래스의 팩토리 메서드에서 결정함으로써 결합도를 낮춥니다."
+    },
+    {
+        "id": 181,
+        "question": "웹 브라우저의 이벤트 위임(Event Delegation)은 하위 요소에 각각 이벤트 리스너를 달지 않고, 상위 요소에서 하위 요소의 이벤트를 제어하는 방식이다.",
+        "answer": true,
+        "explanation": "이벤트 버블링(Bubbling) 특성을 활용한 기법으로, 동적으로 생성되는 DOM 요소에 이벤트를 바인딩하기 쉽고 메모리 사용량을 크게 줄여줍니다."
+    },
+    {
+        "id": 182,
+        "question": "암호화 방식 중 블록 암호화(Block Cipher)는 데이터를 1비트씩 순차적으로 스트림 형태로 암호화한다.",
+        "answer": false,
+        "explanation": "1비트나 1바이트 단위로 순차적으로 암호화하는 것은 스트림 암호(Stream Cipher)입니다. 블록 암호는 DES, AES처럼 특정 크기(블록) 단위로 묶어서 암호화합니다."
+    },
+    {
+        "id": 183,
+        "question": "데이터베이스 쿼리 튜닝 시 EXPLAIN(실행 계획)을 확인하면 옵티마이저(Optimizer)가 쿼리를 어떤 순서와 방식으로 인덱스를 타는지 알 수 있다.",
+        "answer": true,
+        "explanation": "EXPLAIN 명령을 통해 Table Full Scan이 일어나는지, Index Scan을 제대로 활용하는지 등을 파악하여 쿼리 성능을 최적화하는 데 매우 중요합니다."
+    },
+    {
+        "id": 184,
+        "question": "자료구조 덱(Deque, Double-Ended Queue)은 큐의 양쪽 끝에서 모두 삽입과 삭제가 가능한 자료구조이다.",
+        "answer": true,
+        "explanation": "덱은 스택과 큐의 성질을 모두 가지고 있어, 앞(Front)과 뒤(Rear) 양방향에서 O(1) 시간복잡도로 데이터를 삽입/삭제할 수 있습니다."
+    },
+    {
+        "id": 185,
+        "question": "클라이언트 사이드 렌더링(CSR)은 서버에서 HTML을 완성하여 브라우저로 전송하므로 초기 로딩 속도가 매우 빠르다.",
+        "answer": false,
+        "explanation": "이는 서버 사이드 렌더링(SSR)의 특징입니다. CSR은 처음에 빈 HTML 문서와 거대한 JS 번들을 받아온 후 브라우저가 실행하면서 렌더링하므로 초기 로딩(FCP)이 SSR에 비해 느립니다."
+    },
+    {
+        "id": 186,
+        "question": "백트래킹(Backtracking) 알고리즘은 탐색 과정에서 조건에 맞지 않으면 즉시 이전 상태로 돌아가서(Pruning) 가지치기를 수행하는 기법이다.",
+        "answer": true,
+        "explanation": "모든 경우의 수를 탐색하는 완전 탐색(DFS 등) 기반에서, 유망하지 않은 경로를 미리 차단하여 탐색 시간을 대폭 줄이는 효율적인 알고리즘입니다."
+    },
+    {
+        "id": 187,
+        "question": "운영체제에서 동기화 기법인 스핀락(Spin Lock)은 락을 얻지 못하면 큐에 들어가 대기 상태(Sleep)로 전환된다.",
+        "answer": false,
+        "explanation": "큐에 들어가 대기 상태(Sleep)로 전환되는 것은 뮤텍스나 세마포어(Blocking 방식)입니다. 스핀락은 락이 풀릴 때까지 대기하지 않고 계속해서 반복문(while)을 돌며 CPU를 소모하며 대기(Busy Waiting)합니다."
+    },
+    {
+        "id": 188,
+        "question": "TCP 프로토콜의 혼잡 제어(Congestion Control) 기법 중 Slow Start는 네트워크의 패킷 처리 속도에 맞춰 윈도우 크기를 천천히 1씩 증가시키는 방식이다.",
+        "answer": false,
+        "explanation": "이름은 Slow Start지만, 윈도우 크기를 1부터 시작하되 패킷이 정상 도착할 때마다 윈도우 크기를 '지수적(2배씩)'으로 급격하게 증가시키는 기법입니다."
+    },
+    {
+        "id": 189,
+        "question": "스프링 프레임워크의 @Transactional 어노테이션은 런타임 예외(RuntimeException)가 발생하면 기본적으로 롤백(Rollback)을 수행한다.",
+        "answer": true,
+        "explanation": "스프링 선언적 트랜잭션은 RuntimeException이나 Error 같은 언체크(Unchecked) 예외가 발생하면 롤백하지만, 체크(Checked) 예외(Exception)가 발생하면 기본적으로 커밋합니다."
+    },
+    {
+        "id": 190,
+        "question": "데이터베이스의 파티셔닝(Partitioning)은 논리적으로는 하나의 테이블이지만 물리적으로는 여러 개의 테이블 파일로 분산 저장하는 기법이다.",
+        "answer": true,
+        "explanation": "Range, Hash, List 등의 기준으로 테이블을 물리적으로 쪼개어 저장함으로써, 대용량 테이블의 관리 편의성을 높이고 쿼리 성능을 향상시킵니다."
+    },
+    {
+        "id": 191,
+        "question": "오픈소스 라이선스 중 GPL은 해당 소스를 사용하여 만든 소프트웨어의 코드를 외부에 공개하지 않아도 된다.",
+        "answer": false,
+        "explanation": "GPL(General Public License)은 가장 엄격한 카피레프트(Copyleft) 라이선스 중 하나로, GPL 코드를 일부라도 사용하면 개발한 프로그램의 소스 코드를 반드시 전체 공개해야 합니다."
+    },
+    {
+        "id": 192,
+        "question": "리눅스의 루트(root) 디렉토리는 `/` 기호로 표시되며, 시스템의 최상위 계층을 의미한다.",
+        "answer": true,
+        "explanation": "모든 디렉토리와 파일은 이 `/` 밑에 계층적인 트리 구조로 위치하게 됩니다. `~`는 현재 사용자의 홈 디렉토리를 의미합니다."
+    },
+    {
+        "id": 193,
+        "question": "안드로이드 컴포즈(Jetpack Compose)는 선언형(Declarative) UI 프레임워크로, 상태(State)가 변경되면 UI가 자동으로 재구성(Recomposition)된다.",
+        "answer": true,
+        "explanation": "기존 XML 기반의 명령형 방식과 달리, Compose는 '어떻게' 그릴지가 아니라 상태에 따라 화면이 '무엇'을 보여줘야 할지를 선언하는 방식입니다."
+    },
+    {
+        "id": 194,
+        "question": "SOLID 원칙 중 단일 책임 원칙(SRP)이 지켜지지 않으면 코드 수정 시 연쇄적인 변경(Side Effect)이 발생할 확률이 높다.",
+        "answer": true,
+        "explanation": "하나의 클래스가 여러 책임을 지고 있으면 잦은 변경이 일어나고 코드가 복잡해져 유지보수가 매우 어려워집니다."
+    },
+    {
+        "id": 195,
+        "question": "빅데이터 처리에서 아파치 하둡(Hadoop)의 HDFS는 작은 파일 여러 개를 저장하는 데 최적화된 분산 파일 시스템이다.",
+        "answer": false,
+        "explanation": "HDFS(Hadoop Distributed File System)는 메타데이터를 메모리에 올리는 네임노드 구조 특성상, 작은 파일이 너무 많으면 네임노드에 과부하가 걸려 비효율적이며 거대한 대용량 파일을 분산 저장하는 데 최적화되어 있습니다."
+    },
+    {
+        "id": 196,
+        "question": "웹 접근성(Web Accessibility)에서 `alt` 속성은 이미지가 로딩되지 않거나 시각 장애인이 스크린 리더를 사용할 때 이미지를 대체하는 텍스트 역할을 한다.",
+        "answer": true,
+        "explanation": "HTML `<img>` 태그의 `alt`(Alternative Text) 속성은 웹 접근성을 지키기 위한 필수 항목 중 하나입니다."
+    },
+    {
+        "id": 197,
+        "question": "운영체제에서 고아 프로세스(Orphan Process)는 부모 프로세스가 먼저 종료되어 자식 프로세스의 관리를 `init(또는 systemd)` 프로세스가 넘겨받은 상태를 말한다.",
+        "answer": true,
+        "explanation": "부모가 없어진 자식 프로세스는 리눅스 시스템에서 가장 최상위인 PID 1번 프로세스가 입양하여 대신 자원을 회수해 줍니다."
+    },
+    {
+        "id": 198,
+        "question": "TCP 세그먼트 헤더에는 목적지 IP 주소가 포함되어 라우팅을 수행한다.",
+        "answer": false,
+        "explanation": "TCP 헤더에는 출발지/목적지 '포트(Port) 번호'만 들어있어 프로세스를 식별할 뿐, IP 주소는 그 바깥에 있는 'IP 패킷 헤더(네트워크 계층)'에 포함되어 라우팅을 수행합니다."
+    },
+    {
+        "id": 199,
+        "question": "자바의 ArrayList는 데이터 추가 시 내부 배열의 용량이 가득 차면, 용량을 기존의 1.5배(또는 특정 비율)로 늘린 새로운 배열을 만들어 복사한다.",
+        "answer": true,
+        "explanation": "동적 배열(Dynamic Array)인 ArrayList는 고정 크기 배열의 한계를 극복하기 위해 `Arrays.copyOf()` 연산을 통해 크기를 스스로 확장합니다."
+    },
+    {
+        "id": 200,
+        "question": "오픈ID 커넥트(OIDC)는 OAuth 2.0 프로토콜 위에서 작동하며 '권한 인가'가 아닌 '사용자 인증'에 초점을 맞춘 프로토콜이다.",
+        "answer": true,
+        "explanation": "OAuth 2.0이 권한 위임(Access Token)을 목적이었다면, OIDC는 그 위에 ID Token(JWT) 구조를 덧붙여 클라이언트가 사용자의 신원(Identity)을 확실히 알 수 있도록 한 인증용 표준입니다."
+    }
+]
