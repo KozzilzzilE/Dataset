@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    queue<int> q;\n    for(int i=1;i<=n;i++) q.push(i);\n    while(q.size()>1){\n        for(int i=1;i<k;i++){q.push(q.front());q.pop();}\n        q.pop();\n    }\n    cout<<q.front()<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<queue>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    queue<int> q;\n    for(int i=1;i<=n;i++) q.push(i);\n    while(q.size()>1){\n        for(int i=1;i<k;i++){q.push(q.front());q.pop();}\n        q.pop();\n    }\n    cout<<q.front()<<'\\n';\n}"
     },
     {
       "languageId": 3,

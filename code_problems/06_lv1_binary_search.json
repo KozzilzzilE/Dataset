@@ -42,7 +42,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=0,hi=n-1;\n    while(lo<=hi){\n        int mid=lo+(hi-lo)/2;\n        if(arr[mid]==target){cout<<mid+1<<'\\n';return 0;}\n        else if(arr[mid]<target) lo=mid+1;\n        else hi=mid-1;\n    }\n    cout<<-1<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=0,hi=n-1;\n    while(lo<=hi){\n        int mid=lo+(hi-lo)/2;\n        if(arr[mid]==target){cout<<mid+1<<'\\n';return 0;}\n        else if(arr[mid]<target) lo=mid+1;\n        else hi=mid-1;\n    }\n    cout<<-1<<'\\n';\n}"
     },
     {
       "languageId": 3,

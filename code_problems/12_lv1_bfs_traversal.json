@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m,start; cin>>n>>m>>start;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n    vector<bool> vis(n+1,false);\n    queue<int> q; q.push(start); vis[start]=true;\n    string res=\"\";\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        res+=to_string(v)+\" \";\n        for(int u:adj[v]) if(!vis[u]){vis[u]=true;q.push(u);}\n    }\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n    cout<<res<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,m,start; cin>>n>>m>>start;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n    vector<bool> vis(n+1,false);\n    queue<int> q; q.push(start); vis[start]=true;\n    string res=\"\";\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        res+=to_string(v)+\" \";\n        for(int u:adj[v]) if(!vis[u]){vis[u]=true;q.push(u);}\n    }\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n    cout<<res<<'\\n';\n}"
     },
     {
       "languageId": 3,

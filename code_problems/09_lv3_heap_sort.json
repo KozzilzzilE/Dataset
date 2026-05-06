@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nvoid heapify(vector<int>&a,int i,int sz){\n    int lg=i,l=2*i+1,r=2*i+2;\n    if(l<sz&&a[l]>a[lg]) lg=l;\n    if(r<sz&&a[r]>a[lg]) lg=r;\n    if(lg!=i){swap(a[i],a[lg]);heapify(a,lg,sz);}\n}\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    for(int i=n/2-1;i>=0;i--) heapify(arr,i,n);\n    for(int i=n-1;i>0;i--){swap(arr[0],arr[i]);heapify(arr,0,i);}\n    for(int i=0;i<n;i++){if(i) cout<<' ';cout<<arr[i];}\n    cout<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nvoid heapify(vector<int>&a,int i,int sz){\n    int lg=i,l=2*i+1,r=2*i+2;\n    if(l<sz&&a[l]>a[lg]) lg=l;\n    if(r<sz&&a[r]>a[lg]) lg=r;\n    if(lg!=i){swap(a[i],a[lg]);heapify(a,lg,sz);}\n}\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    for(int i=n/2-1;i>=0;i--) heapify(arr,i,n);\n    for(int i=n-1;i>0;i--){swap(arr[0],arr[i]);heapify(arr,0,i);}\n    for(int i=0;i<n;i++){if(i) cout<<' ';cout<<arr[i];}\n    cout<<'\\n';\n}"
     },
     {
       "languageId": 3,

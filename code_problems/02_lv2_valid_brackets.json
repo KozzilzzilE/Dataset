@@ -42,7 +42,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    string s; getline(cin,s);\n    stack<char> st;\n    for(char c:s){\n        if(c=='('||c=='{'||c=='[') st.push(c);\n        else{\n            if(st.empty()){cout<<\"false\\n\";return 0;}\n            char t=st.top();st.pop();\n            if(c==')'&&t!='('){cout<<\"false\\n\";return 0;}\n            if(c=='}'&&t!='{'){cout<<\"false\\n\";return 0;}\n            if(c==']'&&t!='['){cout<<\"false\\n\";return 0;}\n        }\n    }\n    cout<<(st.empty()?\"true\":\"false\")<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\n#include<stack>\nusing namespace std;\nint main(){\n    string s; getline(cin,s);\n    stack<char> st;\n    for(char c:s){\n        if(c=='('||c=='{'||c=='[') st.push(c);\n        else{\n            if(st.empty()){cout<<\"false\\n\";return 0;}\n            char t=st.top();st.pop();\n            if(c==')'&&t!='('){cout<<\"false\\n\";return 0;}\n            if(c=='}'&&t!='{'){cout<<\"false\\n\";return 0;}\n            if(c==']'&&t!='['){cout<<\"false\\n\";return 0;}\n        }\n    }\n    cout<<(st.empty()?\"true\":\"false\")<<'\\n';\n}"
     },
     {
       "languageId": 3,

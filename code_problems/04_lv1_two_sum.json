@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    unordered_map<int,int> mp;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        int need=target-v;\n        if(mp.count(need)){cout<<mp[need]<<' '<<i<<'\\n';return 0;}\n        mp[v]=i;\n    }\n}"
+      "solutionCode": "#include<iostream>\n#include<unordered_map>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    unordered_map<int,int> mp;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        int need=target-v;\n        if(mp.count(need)){cout<<mp[need]<<' '<<i<<'\\n';return 0;}\n        mp[v]=i;\n    }\n}"
     },
     {
       "languageId": 3,

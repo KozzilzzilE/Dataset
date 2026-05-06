@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; double C; cin>>n>>C;\n    vector<pair<double,double>> items(n);\n    for(auto&[w,v]:items) cin>>w>>v;\n    sort(items.begin(),items.end(),[](auto&a,auto&b){return a.second/a.first>b.second/b.first;});\n    double total=0,remain=C;\n    for(auto&[w,v]:items){\n        if(remain<=0) break;\n        double take=min(w,remain);\n        total+=take*(v/w); remain-=take;\n    }\n    printf(\"%.2f\\n\",total);\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<algorithm>\n#include<utility>\nusing namespace std;\nint main(){\n    int n; double C; cin>>n>>C;\n    vector<pair<double,double>> items(n);\n    for(auto&[w,v]:items) cin>>w>>v;\n    sort(items.begin(),items.end(),[](auto&a,auto&b){return a.second/a.first>b.second/b.first;});\n    double total=0,remain=C;\n    for(auto&[w,v]:items){\n        if(remain<=0) break;\n        double take=min(w,remain);\n        total+=take*(v/w); remain-=take;\n    }\n    printf(\"%.2f\\n\",total);\n}"
     },
     {
       "languageId": 3,

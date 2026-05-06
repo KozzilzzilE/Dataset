@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=lower_bound(arr.begin(),arr.end(),target)-arr.begin();\n    if(lo==n||arr[lo]!=target){cout<<\"-1 -1\\n\";return 0;}\n    int hi=upper_bound(arr.begin(),arr.end(),target)-arr.begin();\n    cout<<lo+1<<' '<<hi<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=lower_bound(arr.begin(),arr.end(),target)-arr.begin();\n    if(lo==n||arr[lo]!=target){cout<<\"-1 -1\\n\";return 0;}\n    int hi=upper_bound(arr.begin(),arr.end(),target)-arr.begin();\n    cout<<lo+1<<' '<<hi<<'\\n';\n}"
     },
     {
       "languageId": 3,

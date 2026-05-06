@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,loc,val; cin>>n>>loc>>val;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    arr.insert(arr.begin()+loc,val);\n    for(int i=0;i<(int)arr.size();i++){\n        if(i) cout<<' ';\n        cout<<arr[i];\n    }\n    cout<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,loc,val; cin>>n>>loc>>val;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    arr.insert(arr.begin()+loc,val);\n    for(int i=0;i<(int)arr.size();i++){\n        if(i) cout<<' ';\n        cout<<arr[i];\n    }\n    cout<<'\\n';\n}"
     },
     {
       "languageId": 3,

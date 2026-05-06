@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<pair<int,int>> acts(n);\n    for(auto&[s,e]:acts) cin>>s>>e;\n    sort(acts.begin(),acts.end(),[](auto&a,auto&b){return a.second<b.second;});\n    int cnt=0,last=0;\n    for(auto&[s,e]:acts) if(s>=last){cnt++;last=e;}\n    cout<<cnt<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<algorithm>\n#include<utility>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<pair<int,int>> acts(n);\n    for(auto&[s,e]:acts) cin>>s>>e;\n    sort(acts.begin(),acts.end(),[](auto&a,auto&b){return a.second<b.second;});\n    int cnt=0,last=0;\n    for(auto&[s,e]:acts) if(s>=last){cnt++;last=e;}\n    cout<<cnt<<'\\n';\n}"
     },
     {
       "languageId": 3,

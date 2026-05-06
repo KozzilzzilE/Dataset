@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint R,C;\nvector<string> grid;\nbool vis[200][200];\nint dr[]={-1,1,0,0},dc[]={0,0,-1,1};\nvoid bfs(int r,int c){\n    queue<pair<int,int>> q; q.push({r,c}); vis[r][c]=true;\n    while(!q.empty()){\n        auto[cr,cc]=q.front();q.pop();\n        for(int d=0;d<4;d++){\n            int nr=cr+dr[d],nc=cc+dc[d];\n            if(nr>=0&&nr<R&&nc>=0&&nc<C&&!vis[nr][nc]&&grid[nr][nc]=='1'){\n                vis[nr][nc]=true; q.push({nr,nc});\n            }\n        }\n    }\n}\nint main(){\n    cin>>R>>C;\n    grid.resize(R);\n    for(auto&row:grid) cin>>row;\n    int cnt=0;\n    for(int r=0;r<R;r++) for(int c=0;c<C;c++) if(!vis[r][c]&&grid[r][c]=='1'){bfs(r,c);cnt++;}\n    cout<<cnt<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<utility>\nusing namespace std;\nint R,C;\nvector<string> grid;\nbool vis[200][200];\nint dr[]={-1,1,0,0},dc[]={0,0,-1,1};\nvoid bfs(int r,int c){\n    queue<pair<int,int>> q; q.push({r,c}); vis[r][c]=true;\n    while(!q.empty()){\n        auto[cr,cc]=q.front();q.pop();\n        for(int d=0;d<4;d++){\n            int nr=cr+dr[d],nc=cc+dc[d];\n            if(nr>=0&&nr<R&&nc>=0&&nc<C&&!vis[nr][nc]&&grid[nr][nc]=='1'){\n                vis[nr][nc]=true; q.push({nr,nc});\n            }\n        }\n    }\n}\nint main(){\n    cin>>R>>C;\n    grid.resize(R);\n    for(auto&row:grid) cin>>row;\n    int cnt=0;\n    for(int r=0;r<R;r++) for(int c=0;c<C;c++) if(!vis[r][c]&&grid[r][c]=='1'){bfs(r,c);cnt++;}\n    cout<<cnt<<'\\n';\n}"
     },
     {
       "languageId": 3,

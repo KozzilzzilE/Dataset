@@ -42,7 +42,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    string res=\"\";\n    for(char c:s){\n        if(res.empty()||res.back()!=c) res+=c;\n    }\n    cout<<res<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    string res=\"\";\n    for(char c:s){\n        if(res.empty()||res.back()!=c) res+=c;\n    }\n    cout<<res<<'\\n';\n}"
     },
     {
       "languageId": 3,

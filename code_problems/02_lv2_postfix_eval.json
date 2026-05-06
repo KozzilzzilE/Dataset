@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    string token;\n    stack<int> st;\n    while(cin>>token){\n        if(token==\"+\"||token==\"-\"||token==\"*\"||token==\"/\"){\n            int b=st.top();st.pop();\n            int a=st.top();st.pop();\n            if(token==\"+\") st.push(a+b);\n            else if(token==\"-\") st.push(a-b);\n            else if(token==\"*\") st.push(a*b);\n            else st.push(a/b);\n        } else {\n            st.push(stoi(token));\n        }\n    }\n    cout<<st.top()<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\n#include<stack>\nusing namespace std;\nint main(){\n    string token;\n    stack<int> st;\n    while(cin>>token){\n        if(token==\"+\"||token==\"-\"||token==\"*\"||token==\"/\"){\n            int b=st.top();st.pop();\n            int a=st.top();st.pop();\n            if(token==\"+\") st.push(a+b);\n            else if(token==\"-\") st.push(a-b);\n            else if(token==\"*\") st.push(a*b);\n            else st.push(a/b);\n        } else {\n            st.push(stoi(token));\n        }\n    }\n    cout<<st.top()<<'\\n';\n}"
     },
     {
       "languageId": 3,

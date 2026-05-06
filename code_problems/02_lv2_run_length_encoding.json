@@ -42,7 +42,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    for(char&c:s) c=tolower(c);\n    string res=\"\";\n    int cnt=1;\n    for(int i=1;i<(int)s.size();i++){\n        if(s[i]==s[i-1]) cnt++;\n        else{res+=to_string(cnt)+s[i-1];cnt=1;}\n    }\n    res+=to_string(cnt)+s.back();\n    cout<<res<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    for(char&c:s) c=tolower(c);\n    string res=\"\";\n    int cnt=1;\n    for(int i=1;i<(int)s.size();i++){\n        if(s[i]==s[i-1]) cnt++;\n        else{res+=to_string(cnt)+s[i-1];cnt=1;}\n    }\n    res+=to_string(cnt)+s.back();\n    cout<<res<<'\\n';\n}"
     },
     {
       "languageId": 3,

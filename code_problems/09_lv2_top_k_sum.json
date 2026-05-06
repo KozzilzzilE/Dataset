@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    priority_queue<long long,vector<long long>,greater<long long>> pq;\n    for(int i=0;i<n;i++){\n        long long x; cin>>x; pq.push(x);\n        if((int)pq.size()>k) pq.pop();\n    }\n    long long sum=0;\n    while(!pq.empty()){sum+=pq.top();pq.pop();}\n    cout<<sum<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<queue>\n#include<functional>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    priority_queue<long long,vector<long long>,greater<long long>> pq;\n    for(int i=0;i<n;i++){\n        long long x; cin>>x; pq.push(x);\n        if((int)pq.size()>k) pq.pop();\n    }\n    long long sum=0;\n    while(!pq.empty()){sum+=pq.top();pq.pop();}\n    cout<<sum<<'\\n';\n}"
     },
     {
       "languageId": 3,

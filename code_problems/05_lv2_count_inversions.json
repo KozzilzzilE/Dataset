@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nlong long cnt=0;\nvoid merge(vector<int>&a,int l,int m,int r){\n    vector<int> L(a.begin()+l,a.begin()+m+1),R(a.begin()+m+1,a.begin()+r+1);\n    int i=0,j=0,k=l;\n    while(i<(int)L.size()&&j<(int)R.size()){\n        if(L[i]<=R[j]) a[k++]=L[i++];\n        else{cnt+=L.size()-i;a[k++]=R[j++];}\n    }\n    while(i<(int)L.size()) a[k++]=L[i++];\n    while(j<(int)R.size()) a[k++]=R[j++];\n}\nvoid ms(vector<int>&a,int l,int r){\n    if(l>=r) return;\n    int m=(l+r)/2; ms(a,l,m); ms(a,m+1,r); merge(a,l,m,r);\n}\nint main(){\n    int n; cin>>n;\n    vector<int> a(n); for(int&x:a) cin>>x;\n    ms(a,0,n-1);\n    cout<<cnt<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\nusing namespace std;\nlong long cnt=0;\nvoid merge(vector<int>&a,int l,int m,int r){\n    vector<int> L(a.begin()+l,a.begin()+m+1),R(a.begin()+m+1,a.begin()+r+1);\n    int i=0,j=0,k=l;\n    while(i<(int)L.size()&&j<(int)R.size()){\n        if(L[i]<=R[j]) a[k++]=L[i++];\n        else{cnt+=L.size()-i;a[k++]=R[j++];}\n    }\n    while(i<(int)L.size()) a[k++]=L[i++];\n    while(j<(int)R.size()) a[k++]=R[j++];\n}\nvoid ms(vector<int>&a,int l,int r){\n    if(l>=r) return;\n    int m=(l+r)/2; ms(a,l,m); ms(a,m+1,r); merge(a,l,m,r);\n}\nint main(){\n    int n; cin>>n;\n    vector<int> a(n); for(int&x:a) cin>>x;\n    ms(a,0,n-1);\n    cout<<cnt<<'\\n';\n}"
     },
     {
       "languageId": 3,

@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    vector<int> tails;\n    for(int v:arr){\n        auto it=lower_bound(tails.begin(),tails.end(),v);\n        if(it==tails.end()) tails.push_back(v);\n        else *it=v;\n    }\n    cout<<tails.size()<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    vector<int> tails;\n    for(int v:arr){\n        auto it=lower_bound(tails.begin(),tails.end(),v);\n        if(it==tails.end()) tails.push_back(v);\n        else *it=v;\n    }\n    cout<<tails.size()<<'\\n';\n}"
     },
     {
       "languageId": 3,

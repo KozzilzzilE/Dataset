@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> adj(n+1); vector<int> ind(n+1,0);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);ind[v]++;}\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=1;i<=n;i++) if(ind[i]==0) pq.push(i);\n    string res=\"\";\n    while(!pq.empty()){\n        int v=pq.top();pq.pop();\n        if(!res.empty()) res+=\" \";\n        res+=to_string(v);\n        for(int u:adj[v]) if(--ind[u]==0) pq.push(u);\n    }\n    cout<<res<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<functional>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> adj(n+1); vector<int> ind(n+1,0);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);ind[v]++;}\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=1;i<=n;i++) if(ind[i]==0) pq.push(i);\n    string res=\"\";\n    while(!pq.empty()){\n        int v=pq.top();pq.pop();\n        if(!res.empty()) res+=\" \";\n        res+=to_string(v);\n        for(int u:adj[v]) if(--ind[u]==0) pq.push(u);\n    }\n    cout<<res<<'\\n';\n}"
     },
     {
       "languageId": 3,

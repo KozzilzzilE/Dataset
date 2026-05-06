@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n==0){cout<<0;return 0;}\n    string res=\"\";\n    while(n>0){res=(char)('0'+n%2)+res;n/=2;}\n    cout<<res<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<string>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n==0){cout<<0;return 0;}\n    string res=\"\";\n    while(n>0){res=(char)('0'+n%2)+res;n/=2;}\n    cout<<res<<'\\n';\n}"
     },
     {
       "languageId": 3,

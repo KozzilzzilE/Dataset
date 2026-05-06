@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    map<int,int> freq;\n    for(int x:arr) freq[x]++;\n    sort(arr.begin(),arr.end(),[&](int a,int b){\n        if(freq[a]!=freq[b]) return freq[a]>freq[b];\n        return a<b;\n    });\n    for(int i=0;i<n;i++){if(i) cout<<' ';cout<<arr[i];}\n    cout<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<map>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    map<int,int> freq;\n    for(int x:arr) freq[x]++;\n    sort(arr.begin(),arr.end(),[&](int a,int b){\n        if(freq[a]!=freq[b]) return freq[a]>freq[b];\n        return a<b;\n    });\n    for(int i=0;i<n;i++){if(i) cout<<' ';cout<<arr[i];}\n    cout<<'\\n';\n}"
     },
     {
       "languageId": 3,

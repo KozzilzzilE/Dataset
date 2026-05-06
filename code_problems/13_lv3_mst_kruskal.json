@@ -38,7 +38,7 @@
     {
       "languageId": 2,
       "timeLimitMs": 1000,
-      "solutionCode": "#include<bits/stdc++.h>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nbool unite(int a,int b){a=find(a);b=find(b);if(a==b)return false;parent[b]=a;return true;}\nint main(){\n    int n,m; cin>>n>>m;\n    vector<array<int,3>> edges(m);\n    for(auto&e:edges) cin>>e[0]>>e[1]>>e[2];\n    sort(edges.begin(),edges.end(),[](auto&a,auto&b){return a[2]<b[2];});\n    for(int i=1;i<=n;i++) parent[i]=i;\n    long long total=0;\n    for(auto&e:edges) if(unite(e[0],e[1])) total+=e[2];\n    cout<<total<<'\\n';\n}"
+      "solutionCode": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nbool unite(int a,int b){a=find(a);b=find(b);if(a==b)return false;parent[b]=a;return true;}\nint main(){\n    int n,m; cin>>n>>m;\n    vector<array<int,3>> edges(m);\n    for(auto&e:edges) cin>>e[0]>>e[1]>>e[2];\n    sort(edges.begin(),edges.end(),[](auto&a,auto&b){return a[2]<b[2];});\n    for(int i=1;i<=n;i++) parent[i]=i;\n    long long total=0;\n    for(auto&e:edges) if(unite(e[0],e[1])) total+=e[2];\n    cout<<total<<'\\n';\n}"
     },
     {
       "languageId": 3,
