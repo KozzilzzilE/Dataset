@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 6,
-      "orderNo": 3,
+      "orderNo": 5,
       "title": "Lower Bound / Upper Bound",
       "description": "정렬된 배열에서 Lower Bound와 Upper Bound를 구하는 코드의 빈칸 6개를 채우세요.",
       "codes": [

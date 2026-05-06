@@ -5,5 +5,5 @@
   "point": "HashMap 내부 구조",
   "detail": "### HashMap 내부 구조\n\nHashMap은 내부적으로 **배열 기반 구조**를 사용하며, 배열의 각 위치를 **버킷(bucket)** 이라고 합니다.\n\n데이터가 저장될 때 해시 함수 결과에 따라 특정 버킷에 배치됩니다.\n\n### Load Factor와 리사이징\n\n| 항목 | 내용 |\n|------|------|\n| **기본 Load Factor** | `0.75` |\n| **리사이징 기준** | 데이터 수 > 배열 크기 × Load Factor |\n| **리사이징 시 작업** | 재해싱(rehashing) — 모든 데이터를 새 배열에 재배치 |\n\n### Java HashMap 주요 특성\n\n| 항목 | 내용 |\n|------|------|\n| 키 중복 |  허용 안 함 (덮어씀) |\n| 값 중복 |  허용 |\n| 순서 보장 |  (순서 필요 시 `LinkedHashMap`) |\n| 평균 조회 | **O(1)** |",
   "imgUrl": null,
-  "codes": null
+  "codes": []
 }

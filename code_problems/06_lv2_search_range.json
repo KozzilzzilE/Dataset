@@ -6,7 +6,7 @@
   "description": "오름차순 정렬된 정수 배열에서 target의 첫 번째 위치와 마지막 위치를 출력하세요.\n\n위치는 1-based 인덱스입니다. target이 없으면 -1 -1을 출력합니다.\n\n첫 번째 줄에 n과 target, 두 번째 줄에 n개의 정수가 주어집니다.",
   "constraints": "1 ≤ n ≤ 10^5\n-10^9 ≤ arr[i], target ≤ 10^9\n배열은 오름차순 정렬되어 있습니다.",
   "lineSolution": "lower_bound와 upper_bound 이진 탐색을 각각 사용하여 첫 번째와 마지막 위치를 구합니다.",
-  "solutionText": "### 💡 핵심 아이디어\n\n두 번의 이진 탐색으로 첫 번째와 마지막 위치를 각각 구합니다.\n- **Lower bound**: target 이상인 첫 번째 인덱스\n- **Upper bound**: target 초과인 첫 번째 인덱스 - 1\n\n---\n\n### 🔍 알고리즘\n\n1. `lowerBound(target)`: arr[mid] < target이면 lo = mid+1, 아니면 hi = mid\n2. `upperBound(target)`: arr[mid] <= target이면 lo = mid+1, 아니면 hi = mid\n3. `lb == n` 또는 `arr[lb] != target`이면 -1 -1 출력\n4. 그 외 `lb+1`과 `ub` 출력 (1-based)\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(log n)** | 이진 탐색 2회 |\n| 공간 | **O(1)** | 포인터만 사용 |",
+  "solutionText": "###  핵심 아이디어\n\n두 번의 이진 탐색으로 첫 번째와 마지막 위치를 각각 구합니다.\n- **Lower bound**: target 이상인 첫 번째 인덱스\n- **Upper bound**: target 초과인 첫 번째 인덱스 - 1\n\n---\n\n###  알고리즘\n\n1. `lowerBound(target)`: arr[mid] < target이면 lo = mid+1, 아니면 hi = mid\n2. `upperBound(target)`: arr[mid] <= target이면 lo = mid+1, 아니면 hi = mid\n3. `lb == n` 또는 `arr[lb] != target`이면 -1 -1 출력\n4. 그 외 `lb+1`과 `ub` 출력 (1-based)\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(log n)** | 이진 탐색 2회 |\n| 공간 | **O(1)** | 포인터만 사용 |",
   "testCases": [
     {
       "input": "7 3\n1 2 3 3 3 5 7",

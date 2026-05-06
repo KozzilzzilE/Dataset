@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 11,
-      "orderNo": 3,
+      "orderNo": 6,
       "title": "DFS - 위상 정렬",
       "description": "DFS를 활용한 위상 정렬로 방향 그래프의 노드 순서를 구하는 코드의 빈칸 6개를 채우세요.",
       "codes": [

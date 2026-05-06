@@ -2,206 +2,202 @@
   "requests": [
     {
       "topicId": 8,
-      "orderNo": 2,
-      "title": "그리디 - 활동 선택 문제",
-      "description": "종료 시간 기준으로 최대한 많은 활동을 선택하는 코드의 빈칸 5개를 채우세요.",
+      "orderNo": 3,
+      "title": "그리디 - 최소 동전 개수",
+      "description": "그리디 알고리즘으로 거스름돈을 최소 동전 수로 반환하는 코드의 빈칸 5개를 채우세요.",
       "codes": [
         {
           "languageId": 1,
-          "codeTemplate": "```java\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        int[][] activities = {{1,4},{3,5},{0,6},{5,7},{3,8},{5,9},{6,10},{8,11}};\n        // 종료 시간 기준 정렬\n        Arrays.sort(activities, (a, b) -> a[_____] - b[1]);\n        int count = 1;\n        int lastEnd = activities[0][_____];\n        for (int i = 1; i < activities._____; i++) {\n            if (activities[i][0] _____ lastEnd) {\n                count_____;\n                lastEnd = activities[i][1];\n            }\n        }\n        System.out.println(count);\n    }\n}\n```",
+          "codeTemplate": "```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] coins = {500, 100, 50, 10};\n        int amount = 1260;\n        int count = 0;\n        for (int coin : _____) {\n            count _____ amount / coin;\n            amount _____ coin;\n        }\n        System.out.println(_____);\n    }\n}\n```",
           "blanks": [
             {
-              "content": "1",
+              "content": "coins",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "+=",
               "answer": 2
             },
             {
-              "content": "length",
+              "content": "%= ",
               "answer": 3
             },
             {
-              "content": ">=",
+              "content": "count",
               "answer": 4
             },
             {
-              "content": "++",
-              "answer": 5
-            },
-            {
-              "content": "0",
+              "content": "-=",
               "answer": null
             },
             {
-              "content": "0",
+              "content": "amount",
               "answer": null
             },
             {
-              "content": "size()",
+              "content": "*=",
               "answer": null
             },
             {
-              "content": ">",
+              "content": "/=",
               "answer": null
             },
             {
-              "content": "--",
+              "content": "coin",
               "answer": null
             },
             {
-              "content": "<=",
+              "content": "coins.length",
               "answer": null
             }
           ]
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nsort(activities.begin(), activities.end(),\n    [](const vector<int>& a, const vector<int>& b) {\n        return a[_____] < b[1];\n    });\nint lastEnd = activities[_____][1];\nint count = 1;\nfor(int i = 1; i < activities._____(); i++) {\n    if(activities[i][_____] >= lastEnd) {\n        count_____;\n        lastEnd = activities[i][1];\n    }\n}```",
+          "codeTemplate": "```cpp\n#include <iostream>\nusing namespace std;\nint main() {\n    int coins[] = {500,100,50,10};\n    int amount = 1260, count = 0;\n    for (int i = 0; i < _____; i++) {\n        count _____ amount / coins[i];\n        amount _____ coins[i];\n    }\n    cout << _____;\n}\n```",
           "blanks": [
             {
-              "content": "1",
+              "content": "4",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "+=",
               "answer": 2
             },
             {
-              "content": "size",
+              "content": "%=",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "count",
               "answer": 4
             },
             {
-              "content": "++",
-              "answer": 5
-            },
-            {
-              "content": "0",
+              "content": "amount",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "-=",
               "answer": null
             },
             {
-              "content": "length",
+              "content": "*=",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "/=",
               "answer": null
             },
             {
-              "content": "--",
+              "content": "coins[i]",
               "answer": null
             },
             {
-              "content": "count",
+              "content": "sizeof(coins)",
+              "answer": null
+            },
+            {
+              "content": "i",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nactivities.sort(key=lambda x: x[_____])\nlastEnd = activities[_____][1]\ncount = 1\nfor i in range(1, len(activities)):\n    if activities[i][_____] _____ lastEnd:\n        count _____ 1\n        lastEnd = activities[i][1]```",
+          "codeTemplate": "```python\ncoins = [500, 100, 50, 10]\namount = 1260\ncount = 0\nfor coin in _____:\n    count _____ amount // coin\n    amount _____ coin\nprint(_____)\n```",
           "blanks": [
             {
-              "content": "1",
+              "content": "coins",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "+=",
               "answer": 2
             },
             {
-              "content": "0",
+              "content": "%=",
               "answer": 3
             },
             {
-              "content": ">=",
+              "content": "count",
               "answer": 4
             },
             {
-              "content": "+= ",
-              "answer": 5
-            },
-            {
-              "content": "0",
+              "content": "range(len(coins))",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "-=",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "*=",
               "answer": null
             },
             {
-              "content": ">",
+              "content": "/=",
               "answer": null
             },
             {
-              "content": "-= ",
+              "content": "amount",
               "answer": null
             },
             {
-              "content": "count",
+              "content": "coin",
+              "answer": null
+            },
+            {
+              "content": "sorted(coins)",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nactivities.sort((a, b) => a[_____] - b[1]);\nlet lastEnd = activities[_____][1];\nlet count = 1;\nfor(let i = 1; i < activities._____; i++) {\n    if(activities[i][_____] >= lastEnd) {\n        count_____;\n        lastEnd = activities[i][1];\n    }\n}```",
+          "codeTemplate": "```javascript\nconst coins = [500,100,50,10];\nlet amount = 1260, count = 0;\nfor (const coin of _____) {\n    count _____ Math.floor(amount / coin);\n    amount _____ coin;\n}\nconsole.log(_____)\n```",
           "blanks": [
             {
-              "content": "1",
+              "content": "coins",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "+=",
               "answer": 2
             },
             {
-              "content": "length",
+              "content": "%=",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "count",
               "answer": 4
             },
             {
-              "content": "++",
-              "answer": 5
-            },
-            {
-              "content": "0",
+              "content": "[500,100]",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "-=",
               "answer": null
             },
             {
-              "content": "size",
+              "content": "*=",
               "answer": null
             },
             {
-              "content": "1",
+              "content": "/=",
               "answer": null
             },
             {
-              "content": "--",
+              "content": "amount",
               "answer": null
             },
             {
-              "content": "count",
+              "content": "coin",
+              "answer": null
+            },
+            {
+              "content": "coins.length",
               "answer": null
             }
           ]

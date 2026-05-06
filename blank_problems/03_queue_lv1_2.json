@@ -3,39 +3,35 @@
     {
       "topicId": 3,
       "orderNo": 2,
-      "title": "큐 기본 연산 (FIFO)",
-      "description": "큐에서 enqueue, dequeue 연산을 수행하고 FIFO 특성을 확인하는 코드의 빈칸 5개를 채우세요.",
+      "title": "덱(Deque) 기본 연산",
+      "description": "Deque를 사용하여 앞뒤에 요소를 삽입·삭제하는 코드의 빈칸 5개를 채우세요.",
       "codes": [
         {
           "languageId": 1,
-          "codeTemplate": "```java\nimport java.util.Queue;\nimport java.util._____;\n\npublic class Main {\n    public static void main(String[] args) {\n        Queue<Integer> queue = new LinkedList<>();\n        queue._____(10);\n        queue.offer(20);\n        queue.offer(30);\n        System.out.println(queue._____());  // 10 (조회만)\n        System.out.println(queue._____());  // 10 (제거)\n        System.out.println(queue._____());  // false\n    }\n}\n```",
+          "codeTemplate": "```java\nimport java.util.*;\npublic class Main {\n    public static void main(String[] args) {\n        Deque<Integer> dq = new _____;\n        dq._____(10);\n        dq._____(20);\n        System.out.println(dq._____());\n        System.out.println(dq._____());\n    }\n}\n```",
           "blanks": [
             {
-              "content": "LinkedList",
+              "content": "ArrayDeque<>()",
               "answer": 1
             },
             {
-              "content": "offer",
+              "content": "addFirst",
               "answer": 2
             },
             {
-              "content": "peek",
+              "content": "addLast",
               "answer": 3
             },
             {
-              "content": "poll",
+              "content": "peekFirst",
               "answer": 4
             },
             {
-              "content": "isEmpty",
+              "content": "removeLast",
               "answer": 5
             },
             {
-              "content": "Stack",
-              "answer": null
-            },
-            {
-              "content": "ArrayDeque",
+              "content": "LinkedList<>()",
               "answer": null
             },
             {
@@ -43,53 +39,49 @@
               "answer": null
             },
             {
-              "content": "pop",
+              "content": "offer",
               "answer": null
             },
             {
-              "content": "remove",
+              "content": "peekLast",
               "answer": null
             },
             {
-              "content": "size",
+              "content": "pollFirst",
+              "answer": null
+            },
+            {
+              "content": "isEmpty",
               "answer": null
             }
           ]
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <queue>\nusing namespace std;\nqueue<int> q;\nq._____(10);\nq.push(20);\ncout << q._____();\nq._____();\ncout << (q._____() ? \"empty\" : \"not empty\");\ncout << q._____();\n```",
+          "codeTemplate": "```cpp\n#include <deque>\n#include <iostream>\nusing namespace std;\nint main() {\n    deque<int> dq;\n    dq._____(10);\n    dq._____(20);\n    cout << dq._____();\n    dq._____();\n    cout << dq._____();\n}\n```",
           "blanks": [
             {
-              "content": "push",
+              "content": "push_front",
               "answer": 1
             },
             {
-              "content": "front",
+              "content": "push_back",
               "answer": 2
             },
             {
-              "content": "pop",
+              "content": "front",
               "answer": 3
             },
             {
-              "content": "empty",
+              "content": "pop_front",
               "answer": 4
             },
             {
-              "content": "size",
+              "content": "back",
               "answer": 5
             },
             {
-              "content": "top",
-              "answer": null
-            },
-            {
-              "content": "back",
-              "answer": null
-            },
-            {
-              "content": "peek",
+              "content": "push",
               "answer": null
             },
             {
@@ -97,45 +89,11 @@
               "answer": null
             },
             {
-              "content": "dequeue",
+              "content": "top",
               "answer": null
             },
             {
-              "content": "count",
-              "answer": null
-            }
-          ]
-        },
-        {
-          "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\nq = _____\nq.append(10)\nq.append(20)\nfront = q[_____]\nsize = _____(q)\nq._____\nis_empty = _____(q) == 0```",
-          "blanks": [
-            {
-              "content": "deque()",
-              "answer": 1
-            },
-            {
-              "content": "0",
-              "answer": 2
-            },
-            {
-              "content": "len",
-              "answer": 3
-            },
-            {
-              "content": "popleft()",
-              "answer": 4
-            },
-            {
-              "content": "len",
-              "answer": 5
-            },
-            {
-              "content": "[]",
-              "answer": null
-            },
-            {
-              "content": "-1",
+              "content": "pop_back",
               "answer": null
             },
             {
@@ -143,33 +101,75 @@
               "answer": null
             },
             {
-              "content": "pop()",
+              "content": "empty",
+              "answer": null
+            }
+          ]
+        },
+        {
+          "languageId": 3,
+          "codeTemplate": "```python\nfrom collections import deque\ndq = deque()\ndq._____(10)\ndq._____(20)\nprint(dq[_____])\ndq._____()\nprint(dq[_____])\n```",
+          "blanks": [
+            {
+              "content": "appendleft",
+              "answer": 1
+            },
+            {
+              "content": "append",
+              "answer": 2
+            },
+            {
+              "content": "0",
+              "answer": 3
+            },
+            {
+              "content": "popleft",
+              "answer": 4
+            },
+            {
+              "content": "-1",
+              "answer": 5
+            },
+            {
+              "content": "push",
               "answer": null
             },
             {
-              "content": "count",
+              "content": "add",
               "answer": null
             },
             {
-              "content": "deque",
+              "content": "1",
+              "answer": null
+            },
+            {
+              "content": "pop",
+              "answer": null
+            },
+            {
+              "content": "len(dq)",
+              "answer": null
+            },
+            {
+              "content": "rotate",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet queue = [];\nqueue._____(10);\nqueue.push(20);\nlet front = queue[_____];\nlet size = queue._____;\nqueue._____();\nlet isEmpty = queue._____ === 0;```",
+          "codeTemplate": "```javascript\nconst dq = [];\ndq._____(10);\ndq._____(20);\nconsole.log(dq[_____]);\ndq._____();\nconsole.log(dq[dq._____ - 1]);\n```",
           "blanks": [
             {
-              "content": "push",
+              "content": "unshift",
               "answer": 1
             },
             {
-              "content": "0",
+              "content": "push",
               "answer": 2
             },
             {
-              "content": "length",
+              "content": "0",
               "answer": 3
             },
             {
@@ -185,7 +185,15 @@
               "answer": null
             },
             {
+              "content": "pop",
+              "answer": null
+            },
+            {
               "content": "-1",
+              "answer": null
+            },
+            {
+              "content": "splice",
               "answer": null
             },
             {
@@ -193,15 +201,7 @@
               "answer": null
             },
             {
-              "content": "pop",
-              "answer": null
-            },
-            {
-              "content": "count",
-              "answer": null
-            },
-            {
-              "content": "queue.size",
+              "content": "concat",
               "answer": null
             }
           ]

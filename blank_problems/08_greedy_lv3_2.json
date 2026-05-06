@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 8,
-      "orderNo": 3,
+      "orderNo": 6,
       "title": "그리디 - 작업 스케줄링 최대 이익",
       "description": "마감 기한과 이익이 있는 작업을 이익 내림차순으로 정렬 후 최적 배정하는 코드의 빈칸 6개를 채우세요.",
       "codes": [

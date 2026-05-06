@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 4,
-      "orderNo": 2,
+      "orderNo": 4,
       "title": "해시맵 - 문자 빈도 Top-K",
       "description": "해시맵으로 문자 빈도를 세고 가장 많이 등장한 K개를 출력하는 코드의 빈칸 5개를 채우세요.",
       "codes": [

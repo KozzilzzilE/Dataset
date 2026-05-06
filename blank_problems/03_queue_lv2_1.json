@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 3,
-      "orderNo": 2,
+      "orderNo": 3,
       "title": "큐로 프린터 우선순위 시뮬레이션",
       "description": "큐를 사용해 우선순위 프린터를 시뮬레이션하는 코드의 빈칸 5개를 채우세요.",
       "codes": [

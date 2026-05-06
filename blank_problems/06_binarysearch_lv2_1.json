@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 6,
-      "orderNo": 2,
+      "orderNo": 3,
       "title": "이진 탐색으로 조건 만족하는 최솟값 찾기",
       "description": "이진 탐색으로 조건을 만족하는 최솟값을 찾는 파라메트릭 서치 코드의 빈칸 5개를 채우세요.",
       "codes": [

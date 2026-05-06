@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 6,
-      "orderNo": 3,
+      "orderNo": 6,
       "title": "파라메트릭 서치 - 최적값 탐색",
       "description": "이진 탐색으로 최적의 값을 탐색하는 파라메트릭 서치 코드의 빈칸 6개를 채우세요.\n(예: 나무를 H 높이로 잘라 M 이상 얻을 수 있는 최대 H를 구하기)",
       "codes": [

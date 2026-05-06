@@ -2,49 +2,37 @@
   "requests": [
     {
       "topicId": 12,
-      "orderNo": 3,
-      "title": "BFS - 섬의 개수 세기",
-      "description": "BFS를 사용해 2D 격자에서 연결된 육지(1)의 덩어리(섬) 개수를 세는 코드의 빈칸 6개를 채우세요.",
+      "orderNo": 6,
+      "title": "BFS - 나이트의 최소 이동 횟수",
+      "description": "체스 나이트가 (0,0)에서 목표 좌표까지 이동하는 최소 횟수를 BFS로 구하는 코드의 빈칸 6개를 채우세요.",
       "codes": [
         {
           "languageId": 1,
-          "codeTemplate": "```java\nint[][] grid = {{1,1,0,0,0},{1,1,0,0,0},{0,0,1,0,0},{0,0,0,1,1}};\nint rows = grid.length, cols = grid[0]._____;\nint islands = 0;\nint[][] dirs = {{0,1},{0,-1},{1,0},{-1,0}};\nfor (int r = 0; r < rows; r++) {\n    for (int c = 0; c < cols; c++) {\n        if (grid[r][c] == _____) {\n            _____++;\n            Queue<int[]> q = new LinkedList<>();\n            q.add(new int[]{r, c});\n            grid[r][c] = _____;\n            while (!q.isEmpty()) {\n                int[] pos = q._____();\n                for (int[] d : dirs) {\n                    int nr = pos[0]+d[0], nc = pos[1]+d[1];\n                    if (nr>=0 && nr<rows && nc>=0 && nc<cols && grid[nr][nc]==1) {\n                        grid[nr][nc] = 0;\n                        q.add(new int[]{nr, _____});\n                    }\n                }\n            }\n        }\n    }\n}\nSystem.out.println(islands);\n```",
+          "codeTemplate": "```java\nimport java.util.*;\npublic class Main {\n    public static int knight(int tx, int ty) {\n        int[][] moves = {{2,1},{2,-1},{-2,1},{-2,-1},{1,2},{1,-2},{-1,2},{-1,-2}};\n        boolean[][] visited = new boolean[20][20];\n        Queue<int[]> q = new LinkedList<>();\n        q.offer(new int[]{10,10,_____});\n        visited[10][10] = true;\n        while (!q.isEmpty()) {\n            int[] cur = q._____();\n            if (cur[0]-10==tx && cur[1]-10==ty) return cur[_____];\n            for (int[] mv : moves) {\n                int nx=cur[0]+mv[0], ny=cur[1]+mv[1];\n                if(nx<0||nx>=20||ny<0||ny>=20||_____[nx][ny]) continue;\n                visited[nx][ny]=true;\n                q.offer(new int[]{nx,ny,cur[2]+_____});\n            }\n        }\n        return _____;\n    }\n    public static void main(String[] args) { System.out.println(knight(3,4)); }\n}\n```",
           "blanks": [
             {
-              "content": "length",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "poll",
               "answer": 2
             },
             {
-              "content": "islands",
+              "content": "2",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "visited",
               "answer": 4
             },
             {
-              "content": "poll",
+              "content": "1",
               "answer": 5
             },
             {
-              "content": "nc",
+              "content": "-1",
               "answer": 6
-            },
-            {
-              "content": "size",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "count",
-              "answer": null
             },
             {
               "content": "1",
@@ -55,169 +43,181 @@
               "answer": null
             },
             {
-              "content": "nr",
+              "content": "3",
+              "answer": null
+            },
+            {
+              "content": "dist",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "0",
               "answer": null
             }
           ]
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<vector<int>> grid = {{1,1,0,0},{1,1,0,0},{0,0,1,0},{0,0,0,1}};\nint rows = grid.size(), cols = grid[0]._____;\nint islands = 0;\nvector<pair<int,int>> dirs = {{0,1},{0,-1},{1,0},{-1,0}};\nfor (int r = 0; r < rows; r++) {\n    for (int c = 0; c < cols; c++) {\n        if (grid[r][c] == _____) {\n            _____++;\n            queue<pair<int,int>> q;\n            q.push({r,c});\n            grid[r][c] = _____;\n            while (!q.empty()) {\n                auto [cr,cc] = q.front(); q.pop();\n                for (auto [dr,dc] : dirs) {\n                    int nr=cr+dr, nc=cc+dc;\n                    if (nr>=0 && nr<rows && nc>=0 && nc<cols && grid[nr][nc]==1) {\n                        grid[nr][nc] = 0;\n                        q.push({nr, _____});\n                    }\n                }\n            }\n        }\n    }\n}\ncout << _____;\n```",
+          "codeTemplate": "```cpp\n#include <queue>\n#include <vector>\n#include <iostream>\nusing namespace std;\nint knight(int tx, int ty) {\n    int dx[]={2,2,-2,-2,1,1,-1,-1};\n    int dy[]={1,-1,1,-1,2,-2,2,-2};\n    vector<vector<bool>> vis(20,vector<bool>(20,false));\n    queue<tuple<int,int,int>> q;\n    q.push({10,10,_____}); vis[10][10]=true;\n    while(!q.empty()) {\n        auto [x,y,d]=q._____();\n        q.pop();\n        if(x-10==tx&&y-10==ty) return _____;\n        for(int i=0;i<8;i++) {\n            int nx=x+dx[i], ny=y+dy[i];\n            if(nx<0||nx>=20||ny<0||ny>=20||_____[nx][ny]) continue;\n            vis[nx][ny]=true;\n            q.push({nx,ny,d+_____});\n        }\n    }\n    return _____;\n}\nint main(){ cout<<knight(3,4); }\n```",
           "blanks": [
             {
-              "content": "size()",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "front",
               "answer": 2
             },
             {
-              "content": "islands",
+              "content": "d",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "vis",
               "answer": 4
             },
             {
-              "content": "nc",
+              "content": "1",
               "answer": 5
             },
             {
-              "content": "islands",
+              "content": "-1",
               "answer": 6
-            },
-            {
-              "content": "length",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "count",
-              "answer": null
             },
             {
               "content": "1",
               "answer": null
             },
             {
-              "content": "nr",
+              "content": "back",
               "answer": null
             },
             {
-              "content": "rows",
+              "content": "d+1",
+              "answer": null
+            },
+            {
+              "content": "dist",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "0",
               "answer": null
             }
           ]
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\ngrid = [[1,1,0,0],[1,1,0,0],[0,0,1,0],[0,0,0,1]]\nrows, cols = len(grid), len(grid[_____])\nislands = 0\ndirs = [(0,1),(0,-1),(1,0),(-1,0)]\nfor r in range(rows):\n    for c in range(cols):\n        if grid[r][c] == _____:\n            _____ += 1\n            q = deque([(r,c)])\n            grid[r][c] = _____\n            while q:\n                cr, cc = q.popleft()\n                for dr, dc in dirs:\n                    nr, nc = cr+dr, cc+dc\n                    if 0<=nr<rows and 0<=nc<cols and grid[nr][nc]==1:\n                        grid[nr][nc] = 0\n                        q.append((nr, _____))\nprint(_____)\n```",
+          "codeTemplate": "```python\nfrom collections import deque\ndef knight(tx, ty):\n    moves=[(2,1),(2,-1),(-2,1),(-2,-1),(1,2),(1,-2),(-1,2),(-1,-2)]\n    vis=[[False]*20 for _ in range(20)]\n    q=deque([(10,10,_____)]); vis[10][10]=True\n    while q:\n        x,y,d=q._____\n        if x-10==tx and y-10==ty: return _____\n        for dx,dy in moves:\n            nx,ny=x+dx,y+dy\n            if 0<=nx<20 and 0<=ny<20 and not _____[nx][ny]:\n                vis[nx][ny]=True\n                q.append((nx,ny,d+_____))\n    return _____\nprint(knight(3,4))\n```",
           "blanks": [
             {
               "content": "0",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "popleft()",
               "answer": 2
             },
             {
-              "content": "islands",
+              "content": "d",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "vis",
               "answer": 4
             },
             {
-              "content": "nc",
+              "content": "1",
               "answer": 5
             },
             {
-              "content": "islands",
-              "answer": 6
-            },
-            {
               "content": "-1",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "count",
-              "answer": null
+              "answer": 6
             },
             {
               "content": "1",
               "answer": null
             },
             {
-              "content": "nr",
+              "content": "pop()",
               "answer": null
             },
             {
-              "content": "rows",
+              "content": "d+1",
+              "answer": null
+            },
+            {
+              "content": "dist",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "False",
               "answer": null
             }
           ]
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet grid = [[1,1,0,0],[1,1,0,0],[0,0,1,0],[0,0,0,1]];\nlet rows = grid.length, cols = grid[0]._____;\nlet islands = 0;\nlet dirs = [[0,1],[0,-1],[1,0],[-1,0]];\nfor (let r = 0; r < rows; r++) {\n    for (let c = 0; c < cols; c++) {\n        if (grid[r][c] === _____) {\n            _____++;\n            let q = [[r,c]];\n            grid[r][c] = _____;\n            while (q.length) {\n                let [cr,cc] = q.shift();\n                for (let [dr,dc] of dirs) {\n                    let nr=cr+dr, nc=cc+dc;\n                    if (nr>=0&&nr<rows&&nc>=0&&nc<cols&&grid[nr][nc]===1) {\n                        grid[nr][nc]=0;\n                        q.push([nr, _____]);\n                    }\n                }\n            }\n        }\n    }\n}\nconsole.log(_____);  \n```",
+          "codeTemplate": "```javascript\nfunction knight(tx, ty) {\n    const moves=[[2,1],[2,-1],[-2,1],[-2,-1],[1,2],[1,-2],[-1,2],[-1,-2]];\n    const vis=Array.from({length:20},()=>new Array(20).fill(false));\n    const q=[[10,10,_____]]; vis[10][10]=true;\n    while(q.length>0) {\n        const [x,y,d]=q._____();\n        if(x-10===tx&&y-10===ty) return _____;\n        for(const [dx,dy] of moves) {\n            const nx=x+dx, ny=y+dy;\n            if(nx<0||nx>=20||ny<0||ny>=20||_____[nx][ny]) continue;\n            vis[nx][ny]=true;\n            q.push([nx,ny,d+_____]);\n        }\n    }\n    return _____;\n}\nconsole.log(knight(3,4));\n```",
           "blanks": [
             {
-              "content": "length",
+              "content": "0",
               "answer": 1
             },
             {
-              "content": "1",
+              "content": "shift",
               "answer": 2
             },
             {
-              "content": "islands",
+              "content": "d",
               "answer": 3
             },
             {
-              "content": "0",
+              "content": "vis",
               "answer": 4
             },
             {
-              "content": "nc",
+              "content": "1",
               "answer": 5
             },
             {
-              "content": "islands",
+              "content": "-1",
               "answer": 6
-            },
-            {
-              "content": "size",
-              "answer": null
-            },
-            {
-              "content": "0",
-              "answer": null
-            },
-            {
-              "content": "count",
-              "answer": null
             },
             {
               "content": "1",
               "answer": null
             },
             {
-              "content": "nr",
+              "content": "pop",
               "answer": null
             },
             {
-              "content": "rows",
+              "content": "d+1",
+              "answer": null
+            },
+            {
+              "content": "dist",
+              "answer": null
+            },
+            {
+              "content": "2",
+              "answer": null
+            },
+            {
+              "content": "false",
               "answer": null
             }
           ]

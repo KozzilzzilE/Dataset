@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 12,
-      "orderNo": 3,
+      "orderNo": 5,
       "title": "BFS로 섬의 개수 세기",
       "description": "BFS를 사용하여 격자에서 섬의 개수를 세는 코드의 빈칸 6개를 채우세요.",
       "codes": [

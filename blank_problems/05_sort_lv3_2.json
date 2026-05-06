@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 5,
-      "orderNo": 3,
+      "orderNo": 6,
       "title": "퀵 정렬 (Quick Sort)",
       "description": "피벗을 기준으로 분할하는 퀵 정렬을 구현하는 코드의 빈칸 6개를 채우세요.",
       "codes": [

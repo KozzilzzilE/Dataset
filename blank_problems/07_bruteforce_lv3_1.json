@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 7,
-      "orderNo": 3,
+      "orderNo": 5,
       "title": "조합 탐색",
       "description": "재귀로 n개 중 r개를 선택하는 모든 조합을 생성하는 코드의 빈칸 6개를 채우세요.",
       "codes": [

@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 3,
-      "orderNo": 3,
+      "orderNo": 6,
       "title": "덱 - 슬라이딩 윈도우 최솟값",
       "description": "덱(Deque)을 활용해 크기 k인 슬라이딩 윈도우에서 각 구간의 최솟값을 구하는 코드의 빈칸 6개를 채우세요.",
       "codes": [

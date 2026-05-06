@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 6,
-      "orderNo": 2,
+      "orderNo": 4,
       "title": "이진 탐색 - 삽입 위치 찾기",
       "description": "정렬된 배열에서 target을 삽입할 위치(lower bound)를 이진 탐색으로 구하는 코드의 빈칸 5개를 채우세요.",
       "codes": [

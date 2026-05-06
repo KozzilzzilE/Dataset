@@ -6,7 +6,7 @@
   "description": "n개의 정수를 힙 정렬로 오름차순 정렬하여 출력하세요.\n\n첫 번째 줄에 n, 두 번째 줄에 n개의 정수가 주어집니다.",
   "constraints": "1 ≤ n ≤ 10^5\n-10^9 ≤ arr[i] ≤ 10^9",
   "lineSolution": "최대 힙을 구성한 뒤, 루트(최댓값)를 배열 끝과 교환하고 힙 크기를 줄이는 과정을 n-1번 반복합니다.",
-  "solutionText": "### 💡 핵심 아이디어\n\n1단계 (Build Heap): 배열을 최대 힙으로 변환합니다.\n2단계 (Sort): 루트(최댓값)를 배열 마지막과 교환하고, 힙 크기를 1 줄인 뒤 루트를 heapify합니다.\n\n---\n\n### 🔍 알고리즘\n\n1. `buildHeap`: n/2-1부터 0까지 `heapify`를 호출합니다.\n2. i = n-1부터 1까지: arr[0]과 arr[i]를 교환 후 `heapify(arr, 0, i)` 합니다.\n3. `heapify(arr, i, size)`: i, 2i+1, 2i+2 중 최댓값을 루트로 만듭니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n log n)** | buildHeap O(n) + n회 heapify O(log n) |\n| 공간 | **O(1)** | 제자리 정렬 |",
+  "solutionText": "###  핵심 아이디어\n\n1단계 (Build Heap): 배열을 최대 힙으로 변환합니다.\n2단계 (Sort): 루트(최댓값)를 배열 마지막과 교환하고, 힙 크기를 1 줄인 뒤 루트를 heapify합니다.\n\n---\n\n###  알고리즘\n\n1. `buildHeap`: n/2-1부터 0까지 `heapify`를 호출합니다.\n2. i = n-1부터 1까지: arr[0]과 arr[i]를 교환 후 `heapify(arr, 0, i)` 합니다.\n3. `heapify(arr, i, size)`: i, 2i+1, 2i+2 중 최댓값을 루트로 만듭니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n log n)** | buildHeap O(n) + n회 heapify O(log n) |\n| 공간 | **O(1)** | 제자리 정렬 |",
   "testCases": [
     {
       "input": "5\n3 1 4 1 5",

@@ -6,7 +6,7 @@
   "description": "무방향 그래프에서 연결 요소(connected component)의 수를 출력하세요.\n\n첫 번째 줄에 노드 수 n과 간선 수 m이 주어집니다.\n이후 m개의 줄에 각 간선의 두 노드가 주어집니다.",
   "constraints": "1 ≤ n ≤ 10^4\n0 ≤ m ≤ 10^5",
   "lineSolution": "Union-Find를 사용해 간선으로 연결된 노드를 합치고, 루트가 자신인 노드의 수를 셉니다.",
-  "solutionText": "### 💡 핵심 아이디어\n\nUnion-Find로 모든 간선을 처리한 뒤, `find(i) == i`인 노드의 수가 연결 요소의 수입니다.\n\n---\n\n### 🔍 알고리즘\n\n1. parent[i] = i로 초기화합니다.\n2. 각 간선 (u, v)에 대해 union(u, v)를 수행합니다.\n3. i = 1..n에서 `find(i) == i`인 개수를 셉니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(m α(n))** | Union-Find 경로 압축 |\n| 공간 | **O(n)** | parent 배열 |",
+  "solutionText": "###  핵심 아이디어\n\nUnion-Find로 모든 간선을 처리한 뒤, `find(i) == i`인 노드의 수가 연결 요소의 수입니다.\n\n---\n\n###  알고리즘\n\n1. parent[i] = i로 초기화합니다.\n2. 각 간선 (u, v)에 대해 union(u, v)를 수행합니다.\n3. i = 1..n에서 `find(i) == i`인 개수를 셉니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(m α(n))** | Union-Find 경로 압축 |\n| 공간 | **O(n)** | parent 배열 |",
   "testCases": [
     {
       "input": "5 3\n1 2\n2 3\n4 5",

@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 9,
-      "orderNo": 2,
+      "orderNo": 3,
       "title": "PriorityQueue 최대 힙",
       "description": "PriorityQueue로 최대 힙을 구성하고 힙 정렬을 수행하는 코드의 빈칸 5개를 채우세요.",
       "codes": [

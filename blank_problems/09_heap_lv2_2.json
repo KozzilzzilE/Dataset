@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 9,
-      "orderNo": 2,
+      "orderNo": 4,
       "title": "힙 - K번째 최솟값 스트리밍",
       "description": "최대 힙을 활용해 데이터 스트림에서 K번째로 작은 값을 유지하는 코드의 빈칸 5개를 채우세요.",
       "codes": [

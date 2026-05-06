@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 7,
-      "orderNo": 3,
+      "orderNo": 6,
       "title": "백트래킹 - N-Queens",
       "description": "N×N 체스판에 N개의 퀸을 서로 공격하지 않게 배치하는 경우의 수를 백트래킹으로 구하는 코드의 빈칸 6개를 채우세요.",
       "codes": [

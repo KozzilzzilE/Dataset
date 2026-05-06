@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 7,
-      "orderNo": 2,
+      "orderNo": 4,
       "title": "비트마스크 - 부분집합 합 탐색",
       "description": "비트마스크를 사용해 모든 부분집합을 탐색하며 합이 target인 부분집합의 존재 여부를 확인하는 코드의 빈칸 5개를 채우세요.",
       "codes": [

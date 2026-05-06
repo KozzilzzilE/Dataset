@@ -6,7 +6,7 @@
   "description": "빈 큐에 n개의 연산을 순서대로 수행한 결과를 출력하세요.\n\n연산은 다음과 같습니다:\n- `push x`: x를 큐에 넣습니다.\n- `pop`: 큐의 앞 원소를 제거하고 출력합니다. 큐가 비어있으면 -1을 출력합니다.\n- `front`: 큐의 앞 원소를 출력합니다. 비어있으면 -1을 출력합니다.\n- `size`: 큐의 크기를 출력합니다.\n- `empty`: 큐가 비어있으면 1, 아니면 0을 출력합니다.\n\n첫 번째 줄에 n, 이후 n개의 줄에 연산이 주어집니다.",
   "constraints": "1 ≤ n ≤ 10^4\n-10^9 ≤ x ≤ 10^9",
   "lineSolution": "LinkedList(또는 ArrayDeque) 기반 큐를 사용해 각 연산을 처리합니다.",
-  "solutionText": "### 💡 핵심 아이디어\n\nJava의 LinkedList나 ArrayDeque를 이용해 큐 연산을 직접 구현합니다.\n각 명령어를 파싱하여 해당 연산을 수행합니다.\n\n---\n\n### 📊 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 각 연산 O(1) |\n| 공간 | **O(n)** | 큐 크기 |",
+  "solutionText": "###  핵심 아이디어\n\nJava의 LinkedList나 ArrayDeque를 이용해 큐 연산을 직접 구현합니다.\n각 명령어를 파싱하여 해당 연산을 수행합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 각 연산 O(1) |\n| 공간 | **O(n)** | 큐 크기 |",
   "testCases": [
     {
       "input": "8\npush 1\npush 2\nfront\nsize\npop\npop\npop\nempty",

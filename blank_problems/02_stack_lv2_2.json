@@ -2,7 +2,7 @@
   "requests": [
     {
       "topicId": 2,
-      "orderNo": 2,
+      "orderNo": 4,
       "title": "스택 - 인접 중복 문자 제거",
       "description": "스택을 활용하여 인접한 같은 문자를 반복 제거하는 코드의 빈칸 5개를 채우세요. (예: \"abbac\" → \"c\")",
       "codes": [
