@@ -48,7 +48,7 @@
     {
       "languageId": 4,
       "timeLimitMs": 2000,
-      "solutionCode": "const data=require('fs').readFileSync(process.argv[2],'utf8').trim().split(' ').map(Number);\nconst n=data[0],arr=data.slice(1);\nlet mx=arr[0],idx=0;\nfor(let i=1;i<n;i++) if(arr[i]>mx){mx=arr[i];idx=i;}\nconsole.log(idx);"
+      "solutionCode": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ').map(Number);\nconst n=data[0],arr=data.slice(1);\nlet mx=arr[0],idx=0;\nfor(let i=1;i<n;i++) if(arr[i]>mx){mx=arr[i];idx=i;}\nconsole.log(idx);"
     }
   ]
 }
