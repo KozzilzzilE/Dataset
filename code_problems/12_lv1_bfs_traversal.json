@@ -1,54 +1,58 @@
 {
-  "topicId": 12,
-  "title": "BFS 그래프 탐색",
-  "difficulty": "easy",
-  "difficultyOrder": 1,
-  "description": "무방향 그래프와 시작 노드가 주어졌을 때, 너비 우선 탐색(BFS) 순서를 출력하세요.\n\n인접한 노드 중 번호가 작은 노드를 먼저 방문합니다.\n\n첫 번째 줄에 노드 수 n과 간선 수 m이 주어집니다.\n두 번째 줄에 시작 노드 번호, 이후 m개의 줄에 각 간선의 두 노드가 주어집니다.",
-  "constraints": "1 ≤ n ≤ 1000\n0 ≤ m ≤ n*(n-1)/2\n그래프는 연결 그래프입니다.",
-  "lineSolution": "큐를 사용해 시작 노드부터 인접 노드를 오름차순으로 큐에 넣으며 탐색합니다.",
-  "solutionText": "###  핵심 아이디어\n\nBFS는 큐를 사용해 가까운(같은 거리) 노드를 먼저 방문합니다.\n인접 리스트를 정렬해두면 같은 레벨에서 번호가 작은 노드를 먼저 처리합니다.\n\n---\n\n###  알고리즘\n\n1. 인접 리스트를 오름차순 정렬합니다.\n2. 시작 노드를 큐에 넣고 방문 표시합니다.\n3. 큐가 빌 때까지: 노드를 꺼내 출력하고 미방문 이웃을 모두 큐에 추가합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O((V+E) log V)** | 정렬 포함 |\n| 공간 | **O(V+E)** | 인접 리스트 + 큐 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "4 5\n1\n1 2\n1 3\n2 4\n3 4\n1 4",
-      "output": "1 2 3 4"
-    },
-    {
-      "input": "5 4\n1\n1 2\n2 3\n3 4\n4 5",
-      "output": "1 2 3 4 5"
-    },
-    {
-      "input": "5 4\n1\n1 2\n1 3\n1 4\n1 5",
-      "output": "1 2 3 4 5"
-    },
-    {
-      "input": "5 5\n3\n1 2\n2 3\n3 4\n4 5\n1 5",
-      "output": "3 2 4 1 5"
-    },
-    {
-      "input": "6 8\n1\n1 2\n1 3\n2 4\n2 5\n3 5\n3 6\n4 5\n5 6",
-      "output": "1 2 3 4 5 6"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        int start = Integer.parseInt(br.readLine().trim());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            adj.get(v).add(u);\n        }\n        for (int i = 1; i <= n; i++) Collections.sort(adj.get(i));\n\n        boolean[] visited = new boolean[n + 1];\n        Queue<Integer> queue = new LinkedList<>();\n        queue.offer(start);\n        visited[start] = true;\n\n        StringBuilder sb = new StringBuilder();\n        while (!queue.isEmpty()) {\n            int v = queue.poll();\n            sb.append(v).append(' ');\n            for (int next : adj.get(v)) {\n                if (!visited[next]) {\n                    visited[next] = true;\n                    queue.offer(next);\n                }\n            }\n        }\n        System.out.println(sb.toString().trim());\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,m,start; cin>>n>>m>>start;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n    vector<bool> vis(n+1,false);\n    queue<int> q; q.push(start); vis[start]=true;\n    string res=\"\";\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        res+=to_string(v)+\" \";\n        for(int u:adj[v]) if(!vis[u]){vis[u]=true;q.push(u);}\n    }\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n    cout<<res<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nstart=int(input())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\nfor i in range(n+1): adj[i].sort()\nvis=[False]*(n+1)\nq=deque([start]); vis[start]=True; res=[]\nwhile q:\n    v=q.popleft(); res.append(v)\n    for u in adj[v]:\n        if not vis[u]: vis[u]=True; q.append(u)\nprint(*res)"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst start=Number(lines[1]);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nfor(let i=1;i<=n;i++) adj[i].sort((a,b)=>a-b);\nconst vis=new Array(n+1).fill(false),q=[start],res=[];vis[start]=true;\nlet head=0;\nwhile(head<q.length){const v=q[head++];res.push(v);for(const u of adj[v])if(!vis[u]){vis[u]=true;q.push(u);}}\nconsole.log(res.join(' '));"
+      "topicId": 12,
+      "title": "BFS 그래프 탐색",
+      "difficulty": "easy",
+      "difficultyOrder": 1,
+      "description": "무방향 그래프와 시작 노드가 주어졌을 때, 너비 우선 탐색(BFS) 순서를 출력하세요.\n\n인접한 노드 중 번호가 작은 노드를 먼저 방문합니다.\n\n첫 번째 줄에 노드 수 n과 간선 수 m이 주어집니다.\n두 번째 줄에 시작 노드 번호, 이후 m개의 줄에 각 간선의 두 노드가 주어집니다.",
+      "constraints": "1 ≤ n ≤ 1000\n0 ≤ m ≤ n*(n-1)/2\n그래프는 연결 그래프입니다.",
+      "lineSolution": "큐를 사용해 시작 노드부터 인접 노드를 오름차순으로 큐에 넣으며 탐색합니다.",
+      "solutionText": "###  핵심 아이디어\n\nBFS는 큐를 사용해 가까운(같은 거리) 노드를 먼저 방문합니다.\n인접 리스트를 정렬해두면 같은 레벨에서 번호가 작은 노드를 먼저 처리합니다.\n\n---\n\n###  알고리즘\n\n1. 인접 리스트를 오름차순 정렬합니다.\n2. 시작 노드를 큐에 넣고 방문 표시합니다.\n3. 큐가 빌 때까지: 노드를 꺼내 출력하고 미방문 이웃을 모두 큐에 추가합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O((V+E) log V)** | 정렬 포함 |\n| 공간 | **O(V+E)** | 인접 리스트 + 큐 |",
+      "testCases": [
+        {
+          "input": "4 5\n1\n1 2\n1 3\n2 4\n3 4\n1 4",
+          "output": "1 2 3 4"
+        },
+        {
+          "input": "5 4\n1\n1 2\n2 3\n3 4\n4 5",
+          "output": "1 2 3 4 5"
+        },
+        {
+          "input": "5 4\n1\n1 2\n1 3\n1 4\n1 5",
+          "output": "1 2 3 4 5"
+        },
+        {
+          "input": "5 5\n3\n1 2\n2 3\n3 4\n4 5\n1 5",
+          "output": "3 2 4 1 5"
+        },
+        {
+          "input": "6 8\n1\n1 2\n1 3\n2 4\n2 5\n3 5\n3 6\n4 5\n5 6",
+          "output": "1 2 3 4 5 6"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        int start = Integer.parseInt(br.readLine().trim());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            adj.get(v).add(u);\n        }\n        for (int i = 1; i <= n; i++) Collections.sort(adj.get(i));\n\n        boolean[] visited = new boolean[n + 1];\n        Queue<Integer> queue = new LinkedList<>();\n        queue.offer(start);\n        visited[start] = true;\n\n        StringBuilder sb = new StringBuilder();\n        while (!queue.isEmpty()) {\n            int v = queue.poll();\n            sb.append(v).append(' ');\n            for (int next : adj.get(v)) {\n                if (!visited[next]) {\n                    visited[next] = true;\n                    queue.offer(next);\n                }\n            }\n        }\n        System.out.println(sb.toString().trim());\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,m,start; cin>>n>>m>>start;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n    vector<bool> vis(n+1,false);\n    queue<int> q; q.push(start); vis[start]=true;\n    string res=\"\";\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        res+=to_string(v)+\" \";\n        for(int u:adj[v]) if(!vis[u]){vis[u]=true;q.push(u);}\n    }\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n    cout<<res<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nstart=int(input())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\nfor i in range(n+1): adj[i].sort()\nvis=[False]*(n+1)\nq=deque([start]); vis[start]=True; res=[]\nwhile q:\n    v=q.popleft(); res.append(v)\n    for u in adj[v]:\n        if not vis[u]: vis[u]=True; q.append(u)\nprint(*res)"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst start=Number(lines[1]);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nfor(let i=1;i<=n;i++) adj[i].sort((a,b)=>a-b);\nconst vis=new Array(n+1).fill(false),q=[start],res=[];vis[start]=true;\nlet head=0;\nwhile(head<q.length){const v=q[head++];res.push(v);for(const u of adj[v])if(!vis[u]){vis[u]=true;q.push(u);}}\nconsole.log(res.join(' '));"
+        }
+      ]
     }
   ]
 }

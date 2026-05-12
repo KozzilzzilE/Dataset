@@ -1,54 +1,58 @@
 {
-  "topicId": 13,
-  "title": "위상 정렬",
-  "difficulty": "medium",
-  "difficultyOrder": 2,
-  "description": "방향 그래프(DAG)가 주어졌을 때, 위상 정렬 결과를 출력하세요.\n\n같은 순서가 될 수 있는 노드가 여러 개일 경우 번호가 작은 노드를 먼저 선택합니다.\n\n첫 번째 줄에 노드 수 n과 간선 수 m이 주어집니다.\n이후 m개의 줄에 방향 간선 (u → v)가 주어집니다.",
-  "constraints": "1 ≤ n ≤ 10^4\n0 ≤ m ≤ 10^5\n그래프는 DAG입니다 (사이클 없음).",
-  "lineSolution": "진입 차수가 0인 노드를 최소 힙에 넣고, Kahn 알고리즘으로 위상 정렬합니다.",
-  "solutionText": "###  핵심 아이디어\n\nKahn 알고리즘: 진입 차수(in-degree)가 0인 노드부터 처리합니다.\n최소 힙을 사용해 동일 우선순위에서 번호 작은 노드를 먼저 선택합니다.\n\n---\n\n###  알고리즘\n\n1. 각 노드의 진입 차수를 계산합니다.\n2. 진입 차수 0인 노드를 최소 힙에 넣습니다.\n3. 힙에서 노드를 꺼내 출력하고, 이웃의 진입 차수를 1 감소시킵니다.\n4. 진입 차수가 0이 된 이웃을 힙에 추가합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O((V+E) log V)** | 힙 연산 |\n| 공간 | **O(V+E)** | 인접 리스트 + 힙 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "4 4\n1 2\n1 3\n2 4\n3 4",
-      "output": "1 2 3 4"
-    },
-    {
-      "input": "3 2\n1 3\n2 3",
-      "output": "1 2 3"
-    },
-    {
-      "input": "5 5\n1 2\n1 3\n3 4\n2 5\n4 5",
-      "output": "1 2 3 4 5"
-    },
-    {
-      "input": "4 3\n4 1\n4 2\n4 3",
-      "output": "4 1 2 3"
-    },
-    {
-      "input": "6 6\n1 4\n2 4\n3 5\n4 6\n5 6\n2 3",
-      "output": "1 2 3 4 5 6"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 2000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n        int[] indegree = new int[n + 1];\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            indegree[v]++;\n        }\n\n        PriorityQueue<Integer> pq = new PriorityQueue<>();\n        for (int i = 1; i <= n; i++) {\n            if (indegree[i] == 0) pq.offer(i);\n        }\n\n        StringBuilder sb = new StringBuilder();\n        while (!pq.isEmpty()) {\n            int v = pq.poll();\n            if (sb.length() > 0) sb.append(' ');\n            sb.append(v);\n            for (int next : adj.get(v)) {\n                if (--indegree[next] == 0) pq.offer(next);\n            }\n        }\n        System.out.println(sb.toString());\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<functional>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> adj(n+1); vector<int> ind(n+1,0);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);ind[v]++;}\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=1;i<=n;i++) if(ind[i]==0) pq.push(i);\n    string res=\"\";\n    while(!pq.empty()){\n        int v=pq.top();pq.pop();\n        if(!res.empty()) res+=\" \";\n        res+=to_string(v);\n        for(int u:adj[v]) if(--ind[u]==0) pq.push(u);\n    }\n    cout<<res<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\nimport heapq\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nind=[0]*(n+1)\nfor _ in range(m):\n    u,v=map(int,input().split()); adj[u].append(v); ind[v]+=1\npq=[i for i in range(1,n+1) if ind[i]==0]; heapq.heapify(pq)\nres=[]\nwhile pq:\n    v=heapq.heappop(pq); res.append(v)\n    for u in adj[v]:\n        ind[u]-=1\n        if ind[u]==0: heapq.heappush(pq,u)\nprint(*res)"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]),ind=new Array(n+1).fill(0);\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);ind[v]++;}\nconst q=[];\nfor(let i=1;i<=n;i++) if(ind[i]===0) q.push(i);\nq.sort((a,b)=>a-b);\nconst res=[];let head=0;\nwhile(head<q.length){\n    const v=q[head++];res.push(v);\n    for(const u of adj[v]){if(--ind[u]===0){let lo=head,hi=q.length;while(lo<hi){const m=(lo+hi)>>1;if(q[m]<u)lo=m+1;else hi=m;}q.splice(lo,0,u);}}\n}\nconsole.log(res.join(' '));"
+      "topicId": 13,
+      "title": "위상 정렬",
+      "difficulty": "medium",
+      "difficultyOrder": 2,
+      "description": "방향 그래프(DAG)가 주어졌을 때, 위상 정렬 결과를 출력하세요.\n\n같은 순서가 될 수 있는 노드가 여러 개일 경우 번호가 작은 노드를 먼저 선택합니다.\n\n첫 번째 줄에 노드 수 n과 간선 수 m이 주어집니다.\n이후 m개의 줄에 방향 간선 (u → v)가 주어집니다.",
+      "constraints": "1 ≤ n ≤ 10^4\n0 ≤ m ≤ 10^5\n그래프는 DAG입니다 (사이클 없음).",
+      "lineSolution": "진입 차수가 0인 노드를 최소 힙에 넣고, Kahn 알고리즘으로 위상 정렬합니다.",
+      "solutionText": "###  핵심 아이디어\n\nKahn 알고리즘: 진입 차수(in-degree)가 0인 노드부터 처리합니다.\n최소 힙을 사용해 동일 우선순위에서 번호 작은 노드를 먼저 선택합니다.\n\n---\n\n###  알고리즘\n\n1. 각 노드의 진입 차수를 계산합니다.\n2. 진입 차수 0인 노드를 최소 힙에 넣습니다.\n3. 힙에서 노드를 꺼내 출력하고, 이웃의 진입 차수를 1 감소시킵니다.\n4. 진입 차수가 0이 된 이웃을 힙에 추가합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O((V+E) log V)** | 힙 연산 |\n| 공간 | **O(V+E)** | 인접 리스트 + 힙 |",
+      "testCases": [
+        {
+          "input": "4 4\n1 2\n1 3\n2 4\n3 4",
+          "output": "1 2 3 4"
+        },
+        {
+          "input": "3 2\n1 3\n2 3",
+          "output": "1 2 3"
+        },
+        {
+          "input": "5 5\n1 2\n1 3\n3 4\n2 5\n4 5",
+          "output": "1 2 3 4 5"
+        },
+        {
+          "input": "4 3\n4 1\n4 2\n4 3",
+          "output": "4 1 2 3"
+        },
+        {
+          "input": "6 6\n1 4\n2 4\n3 5\n4 6\n5 6\n2 3",
+          "output": "1 2 3 4 5 6"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 2000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n        int[] indegree = new int[n + 1];\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            indegree[v]++;\n        }\n\n        PriorityQueue<Integer> pq = new PriorityQueue<>();\n        for (int i = 1; i <= n; i++) {\n            if (indegree[i] == 0) pq.offer(i);\n        }\n\n        StringBuilder sb = new StringBuilder();\n        while (!pq.isEmpty()) {\n            int v = pq.poll();\n            if (sb.length() > 0) sb.append(' ');\n            sb.append(v);\n            for (int next : adj.get(v)) {\n                if (--indegree[next] == 0) pq.offer(next);\n            }\n        }\n        System.out.println(sb.toString());\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<functional>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> adj(n+1); vector<int> ind(n+1,0);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);ind[v]++;}\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=1;i<=n;i++) if(ind[i]==0) pq.push(i);\n    string res=\"\";\n    while(!pq.empty()){\n        int v=pq.top();pq.pop();\n        if(!res.empty()) res+=\" \";\n        res+=to_string(v);\n        for(int u:adj[v]) if(--ind[u]==0) pq.push(u);\n    }\n    cout<<res<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\nimport heapq\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nind=[0]*(n+1)\nfor _ in range(m):\n    u,v=map(int,input().split()); adj[u].append(v); ind[v]+=1\npq=[i for i in range(1,n+1) if ind[i]==0]; heapq.heapify(pq)\nres=[]\nwhile pq:\n    v=heapq.heappop(pq); res.append(v)\n    for u in adj[v]:\n        ind[u]-=1\n        if ind[u]==0: heapq.heappush(pq,u)\nprint(*res)"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]),ind=new Array(n+1).fill(0);\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);ind[v]++;}\nconst q=[];\nfor(let i=1;i<=n;i++) if(ind[i]===0) q.push(i);\nq.sort((a,b)=>a-b);\nconst res=[];let head=0;\nwhile(head<q.length){\n    const v=q[head++];res.push(v);\n    for(const u of adj[v]){if(--ind[u]===0){let lo=head,hi=q.length;while(lo<hi){const m=(lo+hi)>>1;if(q[m]<u)lo=m+1;else hi=m;}q.splice(lo,0,u);}}\n}\nconsole.log(res.join(' '));"
+        }
+      ]
     }
   ]
 }

@@ -1,54 +1,58 @@
 {
-  "topicId": 11,
-  "title": "이진 트리 최대 깊이",
-  "difficulty": "medium",
-  "difficultyOrder": 2,
-  "description": "이진 트리가 배열로 주어졌을 때, 트리의 최대 깊이를 출력하세요.\n\n배열은 1-indexed 레벨 순서 표현이며, 0은 빈 노드(null)를 의미합니다.\n노드 i의 왼쪽 자식은 인덱스 2i, 오른쪽 자식은 2i+1입니다.\n\n첫 번째 줄에 배열 크기 n, 두 번째 줄에 n개의 값이 주어집니다.",
-  "constraints": "1 ≤ n ≤ 10^3\n0 ≤ arr[i] ≤ 10^9 (0은 빈 노드)",
-  "lineSolution": "재귀 DFS로 각 노드의 왼쪽/오른쪽 서브트리 깊이 중 큰 값에 1을 더합니다.",
-  "solutionText": "###  핵심 아이디어\n\n`depth(i) = 1 + max(depth(2i), depth(2i+1))`\n빈 노드(arr[i]==0 또는 i>n)이면 깊이 0을 반환합니다.\n\n---\n\n###  알고리즘\n\n1. 루트(인덱스 1)부터 재귀 DFS를 시작합니다.\n2. 인덱스가 n을 초과하거나 arr[i]==0이면 0 반환.\n3. 그 외에는 `1 + max(depth(2i), depth(2i+1))`을 반환합니다.\n\n---\n\n### ️ 주의사항\n\n- 0은 빈 노드를 의미하므로 값이 0인 노드는 존재하지 않는 것으로 처리합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 각 노드 1회 방문 |\n| 공간 | **O(log n)** | 재귀 스택 깊이 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "7\n1 2 3 4 5 6 7",
-      "output": "3"
-    },
-    {
-      "input": "1\n5",
-      "output": "1"
-    },
-    {
-      "input": "4\n1 2 3 4",
-      "output": "3"
-    },
-    {
-      "input": "7\n1 2 3 0 0 6 7",
-      "output": "3"
-    },
-    {
-      "input": "3\n1 2 0",
-      "output": "2"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] arr;\n    static int n;\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        n = Integer.parseInt(br.readLine().trim());\n        arr = new int[n + 1];\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        for (int i = 1; i <= n; i++) arr[i] = Integer.parseInt(st.nextToken());\n        System.out.println(depth(1));\n    }\n\n    static int depth(int i) {\n        if (i > n || arr[i] == 0) return 0;\n        return 1 + Math.max(depth(2 * i), depth(2 * i + 1));\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<algorithm>\nusing namespace std;\nint arr[100001],n;\nint depth(int i){\n    if(i>n||arr[i]==0) return 0;\n    return 1+max(depth(2*i),depth(2*i+1));\n}\nint main(){\n    cin>>n;\n    for(int i=1;i<=n;i++) cin>>arr[i];\n    cout<<depth(1)<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn=int(input())\narr=[0]+list(map(int,input().split()))\ndef depth(i):\n    if i>n or arr[i]==0: return 0\n    return 1+max(depth(2*i),depth(2*i+1))\nprint(depth(1))"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=[0,...lines[1].split(' ').map(Number)];\nfunction depth(i){if(i>n||arr[i]===0)return 0;return 1+Math.max(depth(2*i),depth(2*i+1));}\nconsole.log(depth(1));"
+      "topicId": 11,
+      "title": "이진 트리 최대 깊이",
+      "difficulty": "medium",
+      "difficultyOrder": 2,
+      "description": "이진 트리가 배열로 주어졌을 때, 트리의 최대 깊이를 출력하세요.\n\n배열은 1-indexed 레벨 순서 표현이며, 0은 빈 노드(null)를 의미합니다.\n노드 i의 왼쪽 자식은 인덱스 2i, 오른쪽 자식은 2i+1입니다.\n\n첫 번째 줄에 배열 크기 n, 두 번째 줄에 n개의 값이 주어집니다.",
+      "constraints": "1 ≤ n ≤ 10^3\n0 ≤ arr[i] ≤ 10^9 (0은 빈 노드)",
+      "lineSolution": "재귀 DFS로 각 노드의 왼쪽/오른쪽 서브트리 깊이 중 큰 값에 1을 더합니다.",
+      "solutionText": "###  핵심 아이디어\n\n`depth(i) = 1 + max(depth(2i), depth(2i+1))`\n빈 노드(arr[i]==0 또는 i>n)이면 깊이 0을 반환합니다.\n\n---\n\n###  알고리즘\n\n1. 루트(인덱스 1)부터 재귀 DFS를 시작합니다.\n2. 인덱스가 n을 초과하거나 arr[i]==0이면 0 반환.\n3. 그 외에는 `1 + max(depth(2i), depth(2i+1))`을 반환합니다.\n\n---\n\n### ️ 주의사항\n\n- 0은 빈 노드를 의미하므로 값이 0인 노드는 존재하지 않는 것으로 처리합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 각 노드 1회 방문 |\n| 공간 | **O(log n)** | 재귀 스택 깊이 |",
+      "testCases": [
+        {
+          "input": "7\n1 2 3 4 5 6 7",
+          "output": "3"
+        },
+        {
+          "input": "1\n5",
+          "output": "1"
+        },
+        {
+          "input": "4\n1 2 3 4",
+          "output": "3"
+        },
+        {
+          "input": "7\n1 2 3 0 0 6 7",
+          "output": "3"
+        },
+        {
+          "input": "3\n1 2 0",
+          "output": "2"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] arr;\n    static int n;\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        n = Integer.parseInt(br.readLine().trim());\n        arr = new int[n + 1];\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        for (int i = 1; i <= n; i++) arr[i] = Integer.parseInt(st.nextToken());\n        System.out.println(depth(1));\n    }\n\n    static int depth(int i) {\n        if (i > n || arr[i] == 0) return 0;\n        return 1 + Math.max(depth(2 * i), depth(2 * i + 1));\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<algorithm>\nusing namespace std;\nint arr[100001],n;\nint depth(int i){\n    if(i>n||arr[i]==0) return 0;\n    return 1+max(depth(2*i),depth(2*i+1));\n}\nint main(){\n    cin>>n;\n    for(int i=1;i<=n;i++) cin>>arr[i];\n    cout<<depth(1)<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn=int(input())\narr=[0]+list(map(int,input().split()))\ndef depth(i):\n    if i>n or arr[i]==0: return 0\n    return 1+max(depth(2*i),depth(2*i+1))\nprint(depth(1))"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=[0,...lines[1].split(' ').map(Number)];\nfunction depth(i){if(i>n||arr[i]===0)return 0;return 1+Math.max(depth(2*i),depth(2*i+1));}\nconsole.log(depth(1));"
+        }
+      ]
     }
   ]
 }

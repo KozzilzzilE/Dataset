@@ -1,54 +1,58 @@
 {
-  "topicId": 3,
-  "title": "큐 연산 시뮬레이션",
-  "difficulty": "easy",
-  "difficultyOrder": 1,
-  "description": "빈 큐에 n개의 연산을 순서대로 수행한 결과를 출력하세요.\n\n연산은 다음과 같습니다:\n- `push x`: x를 큐에 넣습니다.\n- `pop`: 큐의 앞 원소를 제거하고 출력합니다. 큐가 비어있으면 -1을 출력합니다.\n- `front`: 큐의 앞 원소를 출력합니다. 비어있으면 -1을 출력합니다.\n- `size`: 큐의 크기를 출력합니다.\n- `empty`: 큐가 비어있으면 1, 아니면 0을 출력합니다.\n\n첫 번째 줄에 n, 이후 n개의 줄에 연산이 주어집니다.",
-  "constraints": "1 ≤ n ≤ 10^4\n-10^9 ≤ x ≤ 10^9",
-  "lineSolution": "LinkedList(또는 ArrayDeque) 기반 큐를 사용해 각 연산을 처리합니다.",
-  "solutionText": "###  핵심 아이디어\n\nJava의 LinkedList나 ArrayDeque를 이용해 큐 연산을 직접 구현합니다.\n각 명령어를 파싱하여 해당 연산을 수행합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 각 연산 O(1) |\n| 공간 | **O(n)** | 큐 크기 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "8\npush 1\npush 2\nfront\nsize\npop\npop\npop\nempty",
-      "output": "1\n2\n1\n2\n-1\n1"
-    },
-    {
-      "input": "4\npush 10\npop\nempty\nsize",
-      "output": "10\n1\n0"
-    },
-    {
-      "input": "3\npop\nfront\nsize",
-      "output": "-1\n-1\n0"
-    },
-    {
-      "input": "5\npush 5\npush 3\npush 1\npop\nfront",
-      "output": "5\n3"
-    },
-    {
-      "input": "6\npush 7\npush 8\nsize\npop\nsize\nempty",
-      "output": "2\n7\n1\n0"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        Deque<Integer> queue = new ArrayDeque<>();\n        StringBuilder sb = new StringBuilder();\n\n        for (int i = 0; i < n; i++) {\n            String line = br.readLine().trim();\n            if (line.startsWith(\"push\")) {\n                queue.offerLast(Integer.parseInt(line.split(\" \")[1]));\n            } else if (line.equals(\"pop\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.pollFirst()).append('\\n');\n            } else if (line.equals(\"front\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.peekFirst()).append('\\n');\n            } else if (line.equals(\"size\")) {\n                sb.append(queue.size()).append('\\n');\n            } else if (line.equals(\"empty\")) {\n                sb.append(queue.isEmpty() ? 1 : 0).append('\\n');\n            }\n        }\n        System.out.print(sb.toString().trim());\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<string>\n#include<queue>\nusing namespace std;\nint main(){\n    int n; cin>>n; cin.ignore();\n    queue<int> q;\n    string res=\"\";\n    for(int i=0;i<n;i++){\n        string line; getline(cin,line);\n        if(line.substr(0,4)==\"push\"){\n            q.push(stoi(line.substr(5)));\n        } else if(line==\"pop\"){\n            if(q.empty()) res+=\"-1\\n\";\n            else{res+=to_string(q.front())+\"\\n\";q.pop();}\n        } else if(line==\"front\"){\n            if(q.empty()) res+=\"-1\\n\";\n            else res+=to_string(q.front())+\"\\n\";\n        } else if(line==\"size\"){\n            res+=to_string(q.size())+\"\\n\";\n        } else if(line==\"empty\"){\n            res+=(q.empty()?string(\"1\"):string(\"0\"))+\"\\n\";\n        }\n    }\n    if(!res.empty()&&res.back()=='\\n') res.pop_back();\n    cout<<res<<\"\\n\";\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\ninput=sys.stdin.readline\nn=int(input())\nfrom collections import deque\nq=deque()\nout=[]\nfor _ in range(n):\n    cmd=input().split()\n    if cmd[0]=='push': q.append(int(cmd[1]))\n    elif cmd[0]=='pop': out.append(str(q.popleft() if q else -1))\n    elif cmd[0]=='front': out.append(str(q[0] if q else -1))\n    elif cmd[0]=='size': out.append(str(len(q)))\n    elif cmd[0]=='empty': out.append('1' if not q else '0')\nprint('\\n'.join(out))"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst q=[],out=[];\nfor(let i=1;i<=n;i++){\n    const parts=lines[i].split(' ');\n    if(parts[0]==='push') q.push(Number(parts[1]));\n    else if(parts[0]==='pop') out.push(q.length?q.shift():-1);\n    else if(parts[0]==='front') out.push(q.length?q[0]:-1);\n    else if(parts[0]==='size') out.push(q.length);\n    else if(parts[0]==='empty') out.push(q.length?0:1);\n}\nconsole.log(out.join('\\n'));"
+      "topicId": 3,
+      "title": "큐 연산 시뮬레이션",
+      "difficulty": "easy",
+      "difficultyOrder": 1,
+      "description": "빈 큐에 n개의 연산을 순서대로 수행한 결과를 출력하세요.\n\n연산은 다음과 같습니다:\n- `push x`: x를 큐에 넣습니다.\n- `pop`: 큐의 앞 원소를 제거하고 출력합니다. 큐가 비어있으면 -1을 출력합니다.\n- `front`: 큐의 앞 원소를 출력합니다. 비어있으면 -1을 출력합니다.\n- `size`: 큐의 크기를 출력합니다.\n- `empty`: 큐가 비어있으면 1, 아니면 0을 출력합니다.\n\n첫 번째 줄에 n, 이후 n개의 줄에 연산이 주어집니다.",
+      "constraints": "1 ≤ n ≤ 10^4\n-10^9 ≤ x ≤ 10^9",
+      "lineSolution": "LinkedList(또는 ArrayDeque) 기반 큐를 사용해 각 연산을 처리합니다.",
+      "solutionText": "###  핵심 아이디어\n\nJava의 LinkedList나 ArrayDeque를 이용해 큐 연산을 직접 구현합니다.\n각 명령어를 파싱하여 해당 연산을 수행합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 각 연산 O(1) |\n| 공간 | **O(n)** | 큐 크기 |",
+      "testCases": [
+        {
+          "input": "8\npush 1\npush 2\nfront\nsize\npop\npop\npop\nempty",
+          "output": "1\n2\n1\n2\n-1\n1"
+        },
+        {
+          "input": "4\npush 10\npop\nempty\nsize",
+          "output": "10\n1\n0"
+        },
+        {
+          "input": "3\npop\nfront\nsize",
+          "output": "-1\n-1\n0"
+        },
+        {
+          "input": "5\npush 5\npush 3\npush 1\npop\nfront",
+          "output": "5\n3"
+        },
+        {
+          "input": "6\npush 7\npush 8\nsize\npop\nsize\nempty",
+          "output": "2\n7\n1\n0"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n\n        Deque<Integer> queue = new ArrayDeque<>();\n        StringBuilder sb = new StringBuilder();\n\n        for (int i = 0; i < n; i++) {\n            String line = br.readLine().trim();\n            if (line.startsWith(\"push\")) {\n                queue.offerLast(Integer.parseInt(line.split(\" \")[1]));\n            } else if (line.equals(\"pop\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.pollFirst()).append('\\n');\n            } else if (line.equals(\"front\")) {\n                sb.append(queue.isEmpty() ? -1 : queue.peekFirst()).append('\\n');\n            } else if (line.equals(\"size\")) {\n                sb.append(queue.size()).append('\\n');\n            } else if (line.equals(\"empty\")) {\n                sb.append(queue.isEmpty() ? 1 : 0).append('\\n');\n            }\n        }\n        System.out.print(sb.toString().trim());\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<string>\n#include<queue>\nusing namespace std;\nint main(){\n    int n; cin>>n; cin.ignore();\n    queue<int> q;\n    string res=\"\";\n    for(int i=0;i<n;i++){\n        string line; getline(cin,line);\n        if(line.substr(0,4)==\"push\"){\n            q.push(stoi(line.substr(5)));\n        } else if(line==\"pop\"){\n            if(q.empty()) res+=\"-1\\n\";\n            else{res+=to_string(q.front())+\"\\n\";q.pop();}\n        } else if(line==\"front\"){\n            if(q.empty()) res+=\"-1\\n\";\n            else res+=to_string(q.front())+\"\\n\";\n        } else if(line==\"size\"){\n            res+=to_string(q.size())+\"\\n\";\n        } else if(line==\"empty\"){\n            res+=(q.empty()?string(\"1\"):string(\"0\"))+\"\\n\";\n        }\n    }\n    if(!res.empty()&&res.back()=='\\n') res.pop_back();\n    cout<<res<<\"\\n\";\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\ninput=sys.stdin.readline\nn=int(input())\nfrom collections import deque\nq=deque()\nout=[]\nfor _ in range(n):\n    cmd=input().split()\n    if cmd[0]=='push': q.append(int(cmd[1]))\n    elif cmd[0]=='pop': out.append(str(q.popleft() if q else -1))\n    elif cmd[0]=='front': out.append(str(q[0] if q else -1))\n    elif cmd[0]=='size': out.append(str(len(q)))\n    elif cmd[0]=='empty': out.append('1' if not q else '0')\nprint('\\n'.join(out))"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst q=[],out=[];\nfor(let i=1;i<=n;i++){\n    const parts=lines[i].split(' ');\n    if(parts[0]==='push') q.push(Number(parts[1]));\n    else if(parts[0]==='pop') out.push(q.length?q.shift():-1);\n    else if(parts[0]==='front') out.push(q.length?q[0]:-1);\n    else if(parts[0]==='size') out.push(q.length);\n    else if(parts[0]==='empty') out.push(q.length?0:1);\n}\nconsole.log(out.join('\\n'));"
+        }
+      ]
     }
   ]
 }

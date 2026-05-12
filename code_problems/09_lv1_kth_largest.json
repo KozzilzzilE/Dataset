@@ -1,54 +1,58 @@
 {
-  "topicId": 9,
-  "title": "K번째로 큰 수",
-  "difficulty": "easy",
-  "difficultyOrder": 1,
-  "description": "n개의 정수와 k가 주어졌을 때, 배열에서 k번째로 큰 수를 출력하세요.\n\n예를 들어 [3, 1, 5, 7, 2]에서 2번째로 큰 수는 5입니다.\n\n첫 번째 줄에 n과 k, 두 번째 줄에 n개의 정수가 주어집니다.",
-  "constraints": "1 ≤ k ≤ n ≤ 10^5\n-10^9 ≤ arr[i] ≤ 10^9",
-  "lineSolution": "크기 k의 최소 힙을 유지하며 n개를 순회하면 힙의 루트가 k번째로 큰 수입니다.",
-  "solutionText": "###  핵심 아이디어\n\n크기 k의 **최소 힙**을 유지합니다.\n힙에 k개가 넘으면 최솟값(루트)을 제거합니다.\n모든 원소를 처리하면 힙의 루트 = **상위 k개 중 가장 작은 값 = k번째로 큰 수**.\n\n---\n\n###  알고리즘\n\n1. 최소 힙(PriorityQueue)을 준비합니다.\n2. 각 원소를 힙에 삽입합니다.\n3. 힙의 크기가 k를 초과하면 `poll()`로 최솟값을 제거합니다.\n4. 모든 원소 처리 후 `peek()`이 답입니다.\n\n---\n\n### ️ 주의사항\n\n- 최대 힙으로 전체 정렬 후 k번째를 찾으면 O(n log n) — 최소 힙으로 O(n log k)가 더 효율적입니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n log k)** | n번 삽입, 힙 크기 k |\n| 공간 | **O(k)** | 힙에 k개만 유지 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "5 2\n3 1 5 7 2",
-      "output": "5"
-    },
-    {
-      "input": "7 3\n4 7 1 9 2 6 3",
-      "output": "6"
-    },
-    {
-      "input": "1 1\n42",
-      "output": "42"
-    },
-    {
-      "input": "5 1\n3 1 5 7 2",
-      "output": "7"
-    },
-    {
-      "input": "6 4\n10 20 30 40 50 60",
-      "output": "30"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int k = Integer.parseInt(st.nextToken());\n\n        PriorityQueue<Integer> minHeap = new PriorityQueue<>();\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) {\n            minHeap.offer(Integer.parseInt(st.nextToken()));\n            if (minHeap.size() > k) minHeap.poll();\n        }\n        System.out.println(minHeap.peek());\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<vector>\n#include<queue>\n#include<functional>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=0;i<n;i++){\n        int v; cin>>v; pq.push(v);\n        if((int)pq.size()>k) pq.pop();\n    }\n    cout<<pq.top()<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys,heapq\ninput=sys.stdin.readline\nn,k=map(int,input().split())\narr=list(map(int,input().split()))\nh=[]\nfor v in arr:\n    heapq.heappush(h,v)\n    if len(h)>k: heapq.heappop(h)\nprint(h[0])"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,k]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number).sort((a,b)=>b-a);\nconsole.log(arr[k-1]);"
+      "topicId": 9,
+      "title": "K번째로 큰 수",
+      "difficulty": "easy",
+      "difficultyOrder": 1,
+      "description": "n개의 정수와 k가 주어졌을 때, 배열에서 k번째로 큰 수를 출력하세요.\n\n예를 들어 [3, 1, 5, 7, 2]에서 2번째로 큰 수는 5입니다.\n\n첫 번째 줄에 n과 k, 두 번째 줄에 n개의 정수가 주어집니다.",
+      "constraints": "1 ≤ k ≤ n ≤ 10^5\n-10^9 ≤ arr[i] ≤ 10^9",
+      "lineSolution": "크기 k의 최소 힙을 유지하며 n개를 순회하면 힙의 루트가 k번째로 큰 수입니다.",
+      "solutionText": "###  핵심 아이디어\n\n크기 k의 **최소 힙**을 유지합니다.\n힙에 k개가 넘으면 최솟값(루트)을 제거합니다.\n모든 원소를 처리하면 힙의 루트 = **상위 k개 중 가장 작은 값 = k번째로 큰 수**.\n\n---\n\n###  알고리즘\n\n1. 최소 힙(PriorityQueue)을 준비합니다.\n2. 각 원소를 힙에 삽입합니다.\n3. 힙의 크기가 k를 초과하면 `poll()`로 최솟값을 제거합니다.\n4. 모든 원소 처리 후 `peek()`이 답입니다.\n\n---\n\n### ️ 주의사항\n\n- 최대 힙으로 전체 정렬 후 k번째를 찾으면 O(n log n) — 최소 힙으로 O(n log k)가 더 효율적입니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n log k)** | n번 삽입, 힙 크기 k |\n| 공간 | **O(k)** | 힙에 k개만 유지 |",
+      "testCases": [
+        {
+          "input": "5 2\n3 1 5 7 2",
+          "output": "5"
+        },
+        {
+          "input": "7 3\n4 7 1 9 2 6 3",
+          "output": "6"
+        },
+        {
+          "input": "1 1\n42",
+          "output": "42"
+        },
+        {
+          "input": "5 1\n3 1 5 7 2",
+          "output": "7"
+        },
+        {
+          "input": "6 4\n10 20 30 40 50 60",
+          "output": "30"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int k = Integer.parseInt(st.nextToken());\n\n        PriorityQueue<Integer> minHeap = new PriorityQueue<>();\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) {\n            minHeap.offer(Integer.parseInt(st.nextToken()));\n            if (minHeap.size() > k) minHeap.poll();\n        }\n        System.out.println(minHeap.peek());\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<vector>\n#include<queue>\n#include<functional>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=0;i<n;i++){\n        int v; cin>>v; pq.push(v);\n        if((int)pq.size()>k) pq.pop();\n    }\n    cout<<pq.top()<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys,heapq\ninput=sys.stdin.readline\nn,k=map(int,input().split())\narr=list(map(int,input().split()))\nh=[]\nfor v in arr:\n    heapq.heappush(h,v)\n    if len(h)>k: heapq.heappop(h)\nprint(h[0])"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,k]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number).sort((a,b)=>b-a);\nconsole.log(arr[k-1]);"
+        }
+      ]
     }
   ]
 }

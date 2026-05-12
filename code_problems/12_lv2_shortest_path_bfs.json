@@ -1,54 +1,58 @@
 {
-  "topicId": 12,
-  "title": "무가중치 그래프 최단 경로",
-  "difficulty": "medium",
-  "difficultyOrder": 2,
-  "description": "무방향 무가중치 그래프에서 출발 노드와 도착 노드가 주어졌을 때, 두 노드 사이의 최단 경로 길이(간선 수)를 출력하세요.\n\n경로가 없으면 -1을 출력합니다.\n\n첫 번째 줄에 노드 수 n과 간선 수 m, 두 번째 줄에 출발 노드 src와 도착 노드 dst가 주어집니다.\n이후 m개의 줄에 각 간선의 두 노드가 주어집니다.",
-  "constraints": "1 ≤ n ≤ 10^3\n0 ≤ m ≤ n*(n-1)/2",
-  "lineSolution": "BFS를 사용해 출발 노드부터 레벨별로 탐색하며 도착 노드까지의 거리를 구합니다.",
-  "solutionText": "###  핵심 아이디어\n\nBFS는 가중치가 모두 같을 때 최단 경로를 보장합니다.\n각 노드를 큐에 넣을 때 현재까지의 거리를 함께 저장합니다.\n\n---\n\n###  알고리즘\n\n1. dist[] 배열을 -1로 초기화하고 src = 0으로 설정합니다.\n2. BFS로 순회하며 미방문 이웃을 큐에 추가하고 dist[next] = dist[curr]+1로 갱신합니다.\n3. dist[dst]를 출력합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(V+E)** | BFS 탐색 |\n| 공간 | **O(V+E)** | 인접 리스트 + 큐 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "5 5\n1 5\n1 2\n2 3\n3 4\n4 5\n1 3",
-      "output": "3"
-    },
-    {
-      "input": "4 4\n1 4\n1 2\n1 3\n2 4\n3 4",
-      "output": "2"
-    },
-    {
-      "input": "4 2\n1 4\n1 2\n3 4",
-      "output": "-1"
-    },
-    {
-      "input": "3 3\n1 1\n1 2\n2 3\n1 3",
-      "output": "0"
-    },
-    {
-      "input": "6 6\n1 6\n1 2\n1 3\n2 4\n3 5\n4 6\n5 6",
-      "output": "3"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        st = new StringTokenizer(br.readLine());\n        int src = Integer.parseInt(st.nextToken());\n        int dst = Integer.parseInt(st.nextToken());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            adj.get(v).add(u);\n        }\n\n        int[] dist = new int[n + 1];\n        Arrays.fill(dist, -1);\n        dist[src] = 0;\n        Queue<Integer> queue = new LinkedList<>();\n        queue.offer(src);\n\n        while (!queue.isEmpty()) {\n            int v = queue.poll();\n            for (int next : adj.get(v)) {\n                if (dist[next] == -1) {\n                    dist[next] = dist[v] + 1;\n                    queue.offer(next);\n                }\n            }\n        }\n        System.out.println(dist[dst]);\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<vector>\n#include<queue>\nusing namespace std;\nint main(){\n    int n,m,src,dst; cin>>n>>m>>src>>dst;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    vector<int> dist(n+1,-1); dist[src]=0;\n    queue<int> q; q.push(src);\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        for(int u:adj[v]) if(dist[u]==-1){dist[u]=dist[v]+1;q.push(u);}\n    }\n    cout<<dist[dst]<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nsrc,dst=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\ndist=[-1]*(n+1); dist[src]=0\nq=deque([src])\nwhile q:\n    v=q.popleft()\n    for u in adj[v]:\n        if dist[u]==-1: dist[u]=dist[v]+1; q.append(u)\nprint(dist[dst])"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst [src,dst]=lines[1].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nconst dist=new Array(n+1).fill(-1); dist[src]=0;\nconst q=[src]; let head=0;\nwhile(head<q.length){const v=q[head++];for(const u of adj[v])if(dist[u]===-1){dist[u]=dist[v]+1;q.push(u);}}\nconsole.log(dist[dst]);"
+      "topicId": 12,
+      "title": "무가중치 그래프 최단 경로",
+      "difficulty": "medium",
+      "difficultyOrder": 2,
+      "description": "무방향 무가중치 그래프에서 출발 노드와 도착 노드가 주어졌을 때, 두 노드 사이의 최단 경로 길이(간선 수)를 출력하세요.\n\n경로가 없으면 -1을 출력합니다.\n\n첫 번째 줄에 노드 수 n과 간선 수 m, 두 번째 줄에 출발 노드 src와 도착 노드 dst가 주어집니다.\n이후 m개의 줄에 각 간선의 두 노드가 주어집니다.",
+      "constraints": "1 ≤ n ≤ 10^3\n0 ≤ m ≤ n*(n-1)/2",
+      "lineSolution": "BFS를 사용해 출발 노드부터 레벨별로 탐색하며 도착 노드까지의 거리를 구합니다.",
+      "solutionText": "###  핵심 아이디어\n\nBFS는 가중치가 모두 같을 때 최단 경로를 보장합니다.\n각 노드를 큐에 넣을 때 현재까지의 거리를 함께 저장합니다.\n\n---\n\n###  알고리즘\n\n1. dist[] 배열을 -1로 초기화하고 src = 0으로 설정합니다.\n2. BFS로 순회하며 미방문 이웃을 큐에 추가하고 dist[next] = dist[curr]+1로 갱신합니다.\n3. dist[dst]를 출력합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(V+E)** | BFS 탐색 |\n| 공간 | **O(V+E)** | 인접 리스트 + 큐 |",
+      "testCases": [
+        {
+          "input": "5 5\n1 5\n1 2\n2 3\n3 4\n4 5\n1 3",
+          "output": "3"
+        },
+        {
+          "input": "4 4\n1 4\n1 2\n1 3\n2 4\n3 4",
+          "output": "2"
+        },
+        {
+          "input": "4 2\n1 4\n1 2\n3 4",
+          "output": "-1"
+        },
+        {
+          "input": "3 3\n1 1\n1 2\n2 3\n1 3",
+          "output": "0"
+        },
+        {
+          "input": "6 6\n1 6\n1 2\n1 3\n2 4\n3 5\n4 6\n5 6",
+          "output": "3"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n        st = new StringTokenizer(br.readLine());\n        int src = Integer.parseInt(st.nextToken());\n        int dst = Integer.parseInt(st.nextToken());\n\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            adj.get(u).add(v);\n            adj.get(v).add(u);\n        }\n\n        int[] dist = new int[n + 1];\n        Arrays.fill(dist, -1);\n        dist[src] = 0;\n        Queue<Integer> queue = new LinkedList<>();\n        queue.offer(src);\n\n        while (!queue.isEmpty()) {\n            int v = queue.poll();\n            for (int next : adj.get(v)) {\n                if (dist[next] == -1) {\n                    dist[next] = dist[v] + 1;\n                    queue.offer(next);\n                }\n            }\n        }\n        System.out.println(dist[dst]);\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<vector>\n#include<queue>\nusing namespace std;\nint main(){\n    int n,m,src,dst; cin>>n>>m>>src>>dst;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    vector<int> dist(n+1,-1); dist[src]=0;\n    queue<int> q; q.push(src);\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        for(int u:adj[v]) if(dist[u]==-1){dist[u]=dist[v]+1;q.push(u);}\n    }\n    cout<<dist[dst]<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nsrc,dst=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\ndist=[-1]*(n+1); dist[src]=0\nq=deque([src])\nwhile q:\n    v=q.popleft()\n    for u in adj[v]:\n        if dist[u]==-1: dist[u]=dist[v]+1; q.append(u)\nprint(dist[dst])"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst [src,dst]=lines[1].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nconst dist=new Array(n+1).fill(-1); dist[src]=0;\nconst q=[src]; let head=0;\nwhile(head<q.length){const v=q[head++];for(const u of adj[v])if(dist[u]===-1){dist[u]=dist[v]+1;q.push(u);}}\nconsole.log(dist[dst]);"
+        }
+      ]
     }
   ]
 }

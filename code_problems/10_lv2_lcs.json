@@ -1,54 +1,58 @@
 {
-  "topicId": 10,
-  "title": "최장 공통 부분 수열 (LCS)",
-  "difficulty": "medium",
-  "difficultyOrder": 2,
-  "description": "두 문자열 A와 B가 주어졌을 때, 두 문자열의 최장 공통 부분 수열(LCS)의 길이를 출력하세요.\n\n부분 수열은 원래 문자열의 순서를 유지하며 일부 문자를 선택한 것입니다.\n\n첫 번째 줄에 문자열 A, 두 번째 줄에 문자열 B가 주어집니다.",
-  "constraints": "1 ≤ |A|, |B| ≤ 1000\n영소문자로만 구성됩니다.",
-  "lineSolution": "dp[i][j] = A[0..i-1]과 B[0..j-1]의 LCS 길이로 정의하고, 문자가 같으면 dp[i-1][j-1]+1, 다르면 max(dp[i-1][j], dp[i][j-1])로 채웁니다.",
-  "solutionText": "###  핵심 아이디어\n\n2차원 DP 테이블 `dp[i][j]` = A의 첫 i글자와 B의 첫 j글자의 LCS 길이\n- `A[i-1] == B[j-1]`: `dp[i][j] = dp[i-1][j-1] + 1`\n- 다르면: `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`\n\n---\n\n###  알고리즘\n\n1. (|A|+1) × (|B|+1) 크기의 dp 배열을 0으로 초기화합니다.\n2. i = 1...|A|, j = 1...|B|를 순회하며 점화식을 적용합니다.\n3. dp[|A|][|B|]를 출력합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(nm)** | 2중 반복문 |\n| 공간 | **O(nm)** | DP 테이블 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "abcde\nace",
-      "output": "3"
-    },
-    {
-      "input": "abc\nabc",
-      "output": "3"
-    },
-    {
-      "input": "abc\ndef",
-      "output": "0"
-    },
-    {
-      "input": "abcbdab\nbdcab",
-      "output": "4"
-    },
-    {
-      "input": "aggtab\ngxtxayb",
-      "output": "4"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 2000,
-      "solutionCode": "import java.io.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String a = br.readLine().trim();\n        String b = br.readLine().trim();\n        int m = a.length(), n = b.length();\n\n        int[][] dp = new int[m + 1][n + 1];\n        for (int i = 1; i <= m; i++) {\n            for (int j = 1; j <= n; j++) {\n                if (a.charAt(i - 1) == b.charAt(j - 1)) {\n                    dp[i][j] = dp[i - 1][j - 1] + 1;\n                } else {\n                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);\n                }\n            }\n        }\n        System.out.println(dp[m][n]);\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<string>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    string a,b; cin>>a>>b;\n    int m=a.size(),n=b.size();\n    vector<vector<int>> dp(m+1,vector<int>(n+1,0));\n    for(int i=1;i<=m;i++)\n        for(int j=1;j<=n;j++)\n            dp[i][j]=(a[i-1]==b[j-1])?dp[i-1][j-1]+1:max(dp[i-1][j],dp[i][j-1]);\n    cout<<dp[m][n]<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\ninput=sys.stdin.readline\na=input().strip(); b=input().strip()\nm,n=len(a),len(b)\ndp=[[0]*(n+1) for _ in range(m+1)]\nfor i in range(1,m+1):\n    for j in range(1,n+1):\n        if a[i-1]==b[j-1]: dp[i][j]=dp[i-1][j-1]+1\n        else: dp[i][j]=max(dp[i-1][j],dp[i][j-1])\nprint(dp[m][n])"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst a=lines[0],b=lines[1],m=a.length,n=b.length;\nconst dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));\nfor(let i=1;i<=m;i++)\n    for(let j=1;j<=n;j++)\n        dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);\nconsole.log(dp[m][n]);"
+      "topicId": 10,
+      "title": "최장 공통 부분 수열 (LCS)",
+      "difficulty": "medium",
+      "difficultyOrder": 2,
+      "description": "두 문자열 A와 B가 주어졌을 때, 두 문자열의 최장 공통 부분 수열(LCS)의 길이를 출력하세요.\n\n부분 수열은 원래 문자열의 순서를 유지하며 일부 문자를 선택한 것입니다.\n\n첫 번째 줄에 문자열 A, 두 번째 줄에 문자열 B가 주어집니다.",
+      "constraints": "1 ≤ |A|, |B| ≤ 1000\n영소문자로만 구성됩니다.",
+      "lineSolution": "dp[i][j] = A[0..i-1]과 B[0..j-1]의 LCS 길이로 정의하고, 문자가 같으면 dp[i-1][j-1]+1, 다르면 max(dp[i-1][j], dp[i][j-1])로 채웁니다.",
+      "solutionText": "###  핵심 아이디어\n\n2차원 DP 테이블 `dp[i][j]` = A의 첫 i글자와 B의 첫 j글자의 LCS 길이\n- `A[i-1] == B[j-1]`: `dp[i][j] = dp[i-1][j-1] + 1`\n- 다르면: `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`\n\n---\n\n###  알고리즘\n\n1. (|A|+1) × (|B|+1) 크기의 dp 배열을 0으로 초기화합니다.\n2. i = 1...|A|, j = 1...|B|를 순회하며 점화식을 적용합니다.\n3. dp[|A|][|B|]를 출력합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(nm)** | 2중 반복문 |\n| 공간 | **O(nm)** | DP 테이블 |",
+      "testCases": [
+        {
+          "input": "abcde\nace",
+          "output": "3"
+        },
+        {
+          "input": "abc\nabc",
+          "output": "3"
+        },
+        {
+          "input": "abc\ndef",
+          "output": "0"
+        },
+        {
+          "input": "abcbdab\nbdcab",
+          "output": "4"
+        },
+        {
+          "input": "aggtab\ngxtxayb",
+          "output": "4"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 2000,
+          "code": "import java.io.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String a = br.readLine().trim();\n        String b = br.readLine().trim();\n        int m = a.length(), n = b.length();\n\n        int[][] dp = new int[m + 1][n + 1];\n        for (int i = 1; i <= m; i++) {\n            for (int j = 1; j <= n; j++) {\n                if (a.charAt(i - 1) == b.charAt(j - 1)) {\n                    dp[i][j] = dp[i - 1][j - 1] + 1;\n                } else {\n                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);\n                }\n            }\n        }\n        System.out.println(dp[m][n]);\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<string>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    string a,b; cin>>a>>b;\n    int m=a.size(),n=b.size();\n    vector<vector<int>> dp(m+1,vector<int>(n+1,0));\n    for(int i=1;i<=m;i++)\n        for(int j=1;j<=n;j++)\n            dp[i][j]=(a[i-1]==b[j-1])?dp[i-1][j-1]+1:max(dp[i-1][j],dp[i][j-1]);\n    cout<<dp[m][n]<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\ninput=sys.stdin.readline\na=input().strip(); b=input().strip()\nm,n=len(a),len(b)\ndp=[[0]*(n+1) for _ in range(m+1)]\nfor i in range(1,m+1):\n    for j in range(1,n+1):\n        if a[i-1]==b[j-1]: dp[i][j]=dp[i-1][j-1]+1\n        else: dp[i][j]=max(dp[i-1][j],dp[i][j-1])\nprint(dp[m][n])"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst a=lines[0],b=lines[1],m=a.length,n=b.length;\nconst dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));\nfor(let i=1;i<=m;i++)\n    for(let j=1;j<=n;j++)\n        dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);\nconsole.log(dp[m][n]);"
+        }
+      ]
     }
   ]
 }

@@ -1,54 +1,58 @@
 {
-  "topicId": 1,
-  "title": "배열 오른쪽 회전",
-  "difficulty": "medium",
-  "difficultyOrder": 2,
-  "description": "크기 n인 정수 배열을 오른쪽으로 k칸 회전한 결과를 출력하세요.\n\n오른쪽으로 1칸 회전하면 마지막 원소가 첫 번째로 이동합니다.\n\n첫 번째 줄에 n과 k, 두 번째 줄에 n개의 정수가 주어집니다.",
-  "constraints": "1 ≤ n ≤ 10^3\n0 ≤ k ≤ 10^6\n-10^9 ≤ arr[i] ≤ 10^9",
-  "lineSolution": "k를 n으로 나눈 나머지만큼 실제로 회전하며, 새 배열의 인덱스 (i+k)%n 위치에 원소를 배치합니다.",
-  "solutionText": "###  핵심 아이디어\n\nk가 n보다 클 수 있으므로 `k = k % n`으로 실제 회전량을 줄입니다.\n새 배열의 `(i + k) % n` 위치에 원래 배열의 i번째 원소를 넣습니다.\n\n---\n\n###  알고리즘\n\n1. `k = k % n` 처리합니다.\n2. 새 배열 result를 만들어 `result[(i+k)%n] = arr[i]`로 채웁니다.\n3. result를 출력합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 배열 한 번 순회 |\n| 공간 | **O(n)** | 결과 배열 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "5 2\n1 2 3 4 5",
-      "output": "4 5 1 2 3"
-    },
-    {
-      "input": "5 0\n1 2 3 4 5",
-      "output": "1 2 3 4 5"
-    },
-    {
-      "input": "5 5\n1 2 3 4 5",
-      "output": "1 2 3 4 5"
-    },
-    {
-      "input": "4 1\n10 20 30 40",
-      "output": "40 10 20 30"
-    },
-    {
-      "input": "3 7\n1 2 3",
-      "output": "3 1 2"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int k = Integer.parseInt(st.nextToken()) % n;\n\n        int[] arr = new int[n];\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        int[] result = new int[n];\n        for (int i = 0; i < n; i++) result[(i + k) % n] = arr[i];\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(result[i]);\n        }\n        System.out.println(sb.toString());\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k; k%=n;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    vector<int> res(n);\n    for(int i=0;i<n;i++) res[(i+k)%n]=arr[i];\n    for(int i=0;i<n;i++){if(i) cout<<' '; cout<<res[i];}\n    cout<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\ninput=sys.stdin.readline\nn,k=map(int,input().split())\narr=list(map(int,input().split()))\nk%=n\nprint(*arr[-k:]+arr[:-k] if k else arr)"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nlet [n,k]=lines[0].split(' ').map(Number); k%=n;\nconst arr=lines[1].split(' ').map(Number);\nconst res=[...arr.slice(n-k),...arr.slice(0,n-k)];\nconsole.log(res.join(' '));"
+      "topicId": 1,
+      "title": "배열 오른쪽 회전",
+      "difficulty": "medium",
+      "difficultyOrder": 2,
+      "description": "크기 n인 정수 배열을 오른쪽으로 k칸 회전한 결과를 출력하세요.\n\n오른쪽으로 1칸 회전하면 마지막 원소가 첫 번째로 이동합니다.\n\n첫 번째 줄에 n과 k, 두 번째 줄에 n개의 정수가 주어집니다.",
+      "constraints": "1 ≤ n ≤ 10^3\n0 ≤ k ≤ 10^6\n-10^9 ≤ arr[i] ≤ 10^9",
+      "lineSolution": "k를 n으로 나눈 나머지만큼 실제로 회전하며, 새 배열의 인덱스 (i+k)%n 위치에 원소를 배치합니다.",
+      "solutionText": "###  핵심 아이디어\n\nk가 n보다 클 수 있으므로 `k = k % n`으로 실제 회전량을 줄입니다.\n새 배열의 `(i + k) % n` 위치에 원래 배열의 i번째 원소를 넣습니다.\n\n---\n\n###  알고리즘\n\n1. `k = k % n` 처리합니다.\n2. 새 배열 result를 만들어 `result[(i+k)%n] = arr[i]`로 채웁니다.\n3. result를 출력합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 배열 한 번 순회 |\n| 공간 | **O(n)** | 결과 배열 |",
+      "testCases": [
+        {
+          "input": "5 2\n1 2 3 4 5",
+          "output": "4 5 1 2 3"
+        },
+        {
+          "input": "5 0\n1 2 3 4 5",
+          "output": "1 2 3 4 5"
+        },
+        {
+          "input": "5 5\n1 2 3 4 5",
+          "output": "1 2 3 4 5"
+        },
+        {
+          "input": "4 1\n10 20 30 40",
+          "output": "40 10 20 30"
+        },
+        {
+          "input": "3 7\n1 2 3",
+          "output": "3 1 2"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int k = Integer.parseInt(st.nextToken()) % n;\n\n        int[] arr = new int[n];\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        int[] result = new int[n];\n        for (int i = 0; i < n; i++) result[(i + k) % n] = arr[i];\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(result[i]);\n        }\n        System.out.println(sb.toString());\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k; k%=n;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    vector<int> res(n);\n    for(int i=0;i<n;i++) res[(i+k)%n]=arr[i];\n    for(int i=0;i<n;i++){if(i) cout<<' '; cout<<res[i];}\n    cout<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\ninput=sys.stdin.readline\nn,k=map(int,input().split())\narr=list(map(int,input().split()))\nk%=n\nprint(*arr[-k:]+arr[:-k] if k else arr)"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nlet [n,k]=lines[0].split(' ').map(Number); k%=n;\nconst arr=lines[1].split(' ').map(Number);\nconst res=[...arr.slice(n-k),...arr.slice(0,n-k)];\nconsole.log(res.join(' '));"
+        }
+      ]
     }
   ]
 }

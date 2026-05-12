@@ -1,58 +1,62 @@
 {
-  "topicId": 2,
-  "title": "스택을 이용한 회문 검사",
-  "difficulty": "easy",
-  "difficultyOrder": 1,
-  "description": "문자열이 주어졌을 때 스택을 이용하여 회문(palindrome)인지 판별하세요.\n\n회문이면 \"YES\", 아니면 \"NO\"를 출력합니다.\n\n입력 문자열은 소문자 알파벳으로만 구성됩니다.",
-  "constraints": "1 ≤ 문자열 길이 ≤ 10^4\n문자열은 소문자 알파벳으로만 구성됩니다.",
-  "lineSolution": "스택에 문자열 전체를 push한 뒤, 원본 문자열과 한 글자씩 비교하며 pop합니다.",
-  "solutionText": "###  핵심 아이디어\n\n스택은 **LIFO** 구조이므로, 문자열을 전부 push한 뒤 순서대로 pop하면 **역순 문자열**이 됩니다.\n역순과 원본이 같으면 회문입니다.\n\n---\n\n###  알고리즘\n\n1. 문자열의 모든 문자를 스택에 push합니다.\n2. 문자열을 처음부터 순회하며 pop한 값과 비교합니다.\n3. 다른 문자가 나오면 즉시 \"NO\" 출력 후 종료합니다.\n4. 모두 같으면 \"YES\"를 출력합니다.\n\n---\n\n### ️ 주의사항\n\n- 길이가 1인 문자열은 항상 회문입니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 문자열 2회 순회 |\n| 공간 | **O(n)** | 스택에 n개 문자 저장 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "madam",
-      "output": "YES"
-    },
-    {
-      "input": "racecar",
-      "output": "YES"
-    },
-    {
-      "input": "hello",
-      "output": "NO"
-    },
-    {
-      "input": "a",
-      "output": "YES"
-    },
-    {
-      "input": "level",
-      "output": "YES"
-    },
-    {
-      "input": "world",
-      "output": "NO"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n\n        Deque<Character> stack = new ArrayDeque<>();\n        for (char c : s.toCharArray()) stack.push(c);\n\n        for (char c : s.toCharArray()) {\n            if (stack.pop() != c) {\n                System.out.println(\"NO\");\n                return;\n            }\n        }\n        System.out.println(\"YES\");\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<string>\n#include<algorithm>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    string r=s; reverse(r.begin(),r.end());\n    cout<<(s==r?\"YES\":\"NO\")<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\ns=sys.stdin.readline().strip()\nprint('YES' if s==s[::-1] else 'NO')"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim();\nconsole.log(s===s.split('').reverse().join('')?'YES':'NO');"
+      "topicId": 2,
+      "title": "스택을 이용한 회문 검사",
+      "difficulty": "easy",
+      "difficultyOrder": 1,
+      "description": "문자열이 주어졌을 때 스택을 이용하여 회문(palindrome)인지 판별하세요.\n\n회문이면 \"YES\", 아니면 \"NO\"를 출력합니다.\n\n입력 문자열은 소문자 알파벳으로만 구성됩니다.",
+      "constraints": "1 ≤ 문자열 길이 ≤ 10^4\n문자열은 소문자 알파벳으로만 구성됩니다.",
+      "lineSolution": "스택에 문자열 전체를 push한 뒤, 원본 문자열과 한 글자씩 비교하며 pop합니다.",
+      "solutionText": "###  핵심 아이디어\n\n스택은 **LIFO** 구조이므로, 문자열을 전부 push한 뒤 순서대로 pop하면 **역순 문자열**이 됩니다.\n역순과 원본이 같으면 회문입니다.\n\n---\n\n###  알고리즘\n\n1. 문자열의 모든 문자를 스택에 push합니다.\n2. 문자열을 처음부터 순회하며 pop한 값과 비교합니다.\n3. 다른 문자가 나오면 즉시 \"NO\" 출력 후 종료합니다.\n4. 모두 같으면 \"YES\"를 출력합니다.\n\n---\n\n### ️ 주의사항\n\n- 길이가 1인 문자열은 항상 회문입니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 문자열 2회 순회 |\n| 공간 | **O(n)** | 스택에 n개 문자 저장 |",
+      "testCases": [
+        {
+          "input": "madam",
+          "output": "YES"
+        },
+        {
+          "input": "racecar",
+          "output": "YES"
+        },
+        {
+          "input": "hello",
+          "output": "NO"
+        },
+        {
+          "input": "a",
+          "output": "YES"
+        },
+        {
+          "input": "level",
+          "output": "YES"
+        },
+        {
+          "input": "world",
+          "output": "NO"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim();\n\n        Deque<Character> stack = new ArrayDeque<>();\n        for (char c : s.toCharArray()) stack.push(c);\n\n        for (char c : s.toCharArray()) {\n            if (stack.pop() != c) {\n                System.out.println(\"NO\");\n                return;\n            }\n        }\n        System.out.println(\"YES\");\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<string>\n#include<algorithm>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    string r=s; reverse(r.begin(),r.end());\n    cout<<(s==r?\"YES\":\"NO\")<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\ns=sys.stdin.readline().strip()\nprint('YES' if s==s[::-1] else 'NO')"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim();\nconsole.log(s===s.split('').reverse().join('')?'YES':'NO');"
+        }
+      ]
     }
   ]
 }

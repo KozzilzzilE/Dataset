@@ -1,54 +1,58 @@
 {
-  "topicId": 1,
-  "title": "배열에서 최댓값 찾기",
-  "difficulty": "easy",
-  "difficultyOrder": 1,
-  "description": "정수 배열이 주어졌을 때 배열에서 가장 큰 값의 인덱스를 출력하세요.\n\n배열의 길이는 입력의 첫 번째 숫자로 주어집니다.\n\n최댓값이 여러 개인 경우 가장 앞에 있는 인덱스를 출력합니다.",
-  "constraints": "1 ≤ nums.length ≤ 10^4\n-10^9 ≤ nums[i] ≤ 10^9",
-  "lineSolution": "배열을 한 번 순회하며 최댓값과 인덱스를 갱신합니다.",
-  "solutionText": "###  핵심 아이디어\n\n배열을 **한 번 순회**하면서 현재까지의 최댓값과 해당 인덱스를 저장합니다.\n\n---\n\n###  알고리즘\n\n1. `max = Integer.MIN_VALUE`, `idx = -1` 로 초기화합니다.\n2. 배열을 순회하면서 현재 값이 `max` 보다 크면 `max`와 `idx`를 갱신합니다.\n3. 최댓값이 여러 개인 경우 **처음 등장한 인덱스**를 반환합니다. (`>` 조건 사용)\n4. 최종 `idx` 를 출력합니다.\n\n---\n\n### ️ 주의사항\n\n- `max`를 `Integer.MIN_VALUE` 로 초기화해야 **음수만 있는 배열**도 올바르게 처리됩니다.\n- 동일한 최댓값이 여러 개일 때 **첫 번째 인덱스**를 반환하려면 `>=` 가 아닌 `>` 조건을 사용해야 합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 배열을 한 번 순회 |\n| 공간 | **O(1)** | 변수 2개만 사용 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "5 3 7 2 9 5",
-      "output": "3"
-    },
-    {
-      "input": "4 1 2 3 4",
-      "output": "3"
-    },
-    {
-      "input": "3 9 5 2",
-      "output": "0"
-    },
-    {
-      "input": "6 1 8 3 4 7 2",
-      "output": "1"
-    },
-    {
-      "input": "2 -5 -1",
-      "output": "1"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n\n        int max = Integer.MIN_VALUE;\n        int idx = -1;\n\n        for (int i = 0; i < n; i++) {\n            int v = Integer.parseInt(st.nextToken());\n            if (v > max) {\n                max = v;\n                idx = i;\n            }\n        }\n\n        System.out.println(idx);\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<climits>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    int mx=INT_MIN,idx=-1;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        if(v>mx){mx=v;idx=i;}\n    }\n    cout<<idx<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\ndata=list(map(int,sys.stdin.readline().split()))\nn=data[0]; arr=data[1:]\nmx=arr[0]; idx=0\nfor i in range(1,n):\n    if arr[i]>mx: mx=arr[i]; idx=i\nprint(idx)"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ').map(Number);\nconst n=data[0],arr=data.slice(1);\nlet mx=arr[0],idx=0;\nfor(let i=1;i<n;i++) if(arr[i]>mx){mx=arr[i];idx=i;}\nconsole.log(idx);"
+      "topicId": 1,
+      "title": "배열에서 최댓값 찾기",
+      "difficulty": "easy",
+      "difficultyOrder": 1,
+      "description": "정수 배열이 주어졌을 때 배열에서 가장 큰 값의 인덱스를 출력하세요.\n\n배열의 길이는 입력의 첫 번째 숫자로 주어집니다.\n\n최댓값이 여러 개인 경우 가장 앞에 있는 인덱스를 출력합니다.",
+      "constraints": "1 ≤ nums.length ≤ 10^4\n-10^9 ≤ nums[i] ≤ 10^9",
+      "lineSolution": "배열을 한 번 순회하며 최댓값과 인덱스를 갱신합니다.",
+      "solutionText": "###  핵심 아이디어\n\n배열을 **한 번 순회**하면서 현재까지의 최댓값과 해당 인덱스를 저장합니다.\n\n---\n\n###  알고리즘\n\n1. `max = Integer.MIN_VALUE`, `idx = -1` 로 초기화합니다.\n2. 배열을 순회하면서 현재 값이 `max` 보다 크면 `max`와 `idx`를 갱신합니다.\n3. 최댓값이 여러 개인 경우 **처음 등장한 인덱스**를 반환합니다. (`>` 조건 사용)\n4. 최종 `idx` 를 출력합니다.\n\n---\n\n### ️ 주의사항\n\n- `max`를 `Integer.MIN_VALUE` 로 초기화해야 **음수만 있는 배열**도 올바르게 처리됩니다.\n- 동일한 최댓값이 여러 개일 때 **첫 번째 인덱스**를 반환하려면 `>=` 가 아닌 `>` 조건을 사용해야 합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 배열을 한 번 순회 |\n| 공간 | **O(1)** | 변수 2개만 사용 |",
+      "testCases": [
+        {
+          "input": "5 3 7 2 9 5",
+          "output": "3"
+        },
+        {
+          "input": "4 1 2 3 4",
+          "output": "3"
+        },
+        {
+          "input": "3 9 5 2",
+          "output": "0"
+        },
+        {
+          "input": "6 1 8 3 4 7 2",
+          "output": "1"
+        },
+        {
+          "input": "2 -5 -1",
+          "output": "1"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n\n        int max = Integer.MIN_VALUE;\n        int idx = -1;\n\n        for (int i = 0; i < n; i++) {\n            int v = Integer.parseInt(st.nextToken());\n            if (v > max) {\n                max = v;\n                idx = i;\n            }\n        }\n\n        System.out.println(idx);\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<climits>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    int mx=INT_MIN,idx=-1;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        if(v>mx){mx=v;idx=i;}\n    }\n    cout<<idx<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\ndata=list(map(int,sys.stdin.readline().split()))\nn=data[0]; arr=data[1:]\nmx=arr[0]; idx=0\nfor i in range(1,n):\n    if arr[i]>mx: mx=arr[i]; idx=i\nprint(idx)"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ').map(Number);\nconst n=data[0],arr=data.slice(1);\nlet mx=arr[0],idx=0;\nfor(let i=1;i<n;i++) if(arr[i]>mx){mx=arr[i];idx=i;}\nconsole.log(idx);"
+        }
+      ]
     }
   ]
 }

@@ -1,54 +1,58 @@
 {
-  "topicId": 13,
-  "title": "연결 요소의 수",
-  "difficulty": "easy",
-  "difficultyOrder": 1,
-  "description": "무방향 그래프에서 연결 요소(connected component)의 수를 출력하세요.\n\n첫 번째 줄에 노드 수 n과 간선 수 m이 주어집니다.\n이후 m개의 줄에 각 간선의 두 노드가 주어집니다.",
-  "constraints": "1 ≤ n ≤ 10^4\n0 ≤ m ≤ 10^5",
-  "lineSolution": "Union-Find를 사용해 간선으로 연결된 노드를 합치고, 루트가 자신인 노드의 수를 셉니다.",
-  "solutionText": "###  핵심 아이디어\n\nUnion-Find로 모든 간선을 처리한 뒤, `find(i) == i`인 노드의 수가 연결 요소의 수입니다.\n\n---\n\n###  알고리즘\n\n1. parent[i] = i로 초기화합니다.\n2. 각 간선 (u, v)에 대해 union(u, v)를 수행합니다.\n3. i = 1..n에서 `find(i) == i`인 개수를 셉니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(m α(n))** | Union-Find 경로 압축 |\n| 공간 | **O(n)** | parent 배열 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "5 3\n1 2\n2 3\n4 5",
-      "output": "2"
-    },
-    {
-      "input": "4 0",
-      "output": "4"
-    },
-    {
-      "input": "6 5\n1 2\n2 3\n3 4\n4 5\n5 6",
-      "output": "1"
-    },
-    {
-      "input": "5 2\n1 3\n2 4",
-      "output": "3"
-    },
-    {
-      "input": "7 4\n1 2\n3 4\n5 6\n1 3",
-      "output": "3"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] parent;\n\n    static int find(int x) {\n        if (parent[x] != x) parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    static void union(int a, int b) {\n        parent[find(a)] = find(b);\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n\n        parent = new int[n + 1];\n        for (int i = 1; i <= n; i++) parent[i] = i;\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            union(u, v);\n        }\n\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            if (find(i) == i) count++;\n        }\n        System.out.println(count);\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<algorithm>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nvoid unite(int a,int b){parent[find(a)]=find(b);}\nint main(){\n    int n,m; cin>>n>>m;\n    for(int i=1;i<=n;i++) parent[i]=i;\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;unite(u,v);}\n    int cnt=0;\n    for(int i=1;i<=n;i++) if(find(i)==i) cnt++;\n    cout<<cnt<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nparent=list(range(n+1))\ndef find(x):\n    if parent[x]!=x: parent[x]=find(parent[x])\n    return parent[x]\ndef union(a,b): parent[find(a)]=find(b)\nfor _ in range(m):\n    u,v=map(int,input().split()); union(u,v)\nprint(sum(1 for i in range(1,n+1) if find(i)==i))"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst p=Array.from({length:n+1},(_,i)=>i);\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\nfunction union(a,b){p[find(a)]=find(b);}\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);union(u,v);}\nlet cnt=0;\nfor(let i=1;i<=n;i++) if(find(i)===i) cnt++;\nconsole.log(cnt);"
+      "topicId": 13,
+      "title": "연결 요소의 수",
+      "difficulty": "easy",
+      "difficultyOrder": 1,
+      "description": "무방향 그래프에서 연결 요소(connected component)의 수를 출력하세요.\n\n첫 번째 줄에 노드 수 n과 간선 수 m이 주어집니다.\n이후 m개의 줄에 각 간선의 두 노드가 주어집니다.",
+      "constraints": "1 ≤ n ≤ 10^4\n0 ≤ m ≤ 10^5",
+      "lineSolution": "Union-Find를 사용해 간선으로 연결된 노드를 합치고, 루트가 자신인 노드의 수를 셉니다.",
+      "solutionText": "###  핵심 아이디어\n\nUnion-Find로 모든 간선을 처리한 뒤, `find(i) == i`인 노드의 수가 연결 요소의 수입니다.\n\n---\n\n###  알고리즘\n\n1. parent[i] = i로 초기화합니다.\n2. 각 간선 (u, v)에 대해 union(u, v)를 수행합니다.\n3. i = 1..n에서 `find(i) == i`인 개수를 셉니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(m α(n))** | Union-Find 경로 압축 |\n| 공간 | **O(n)** | parent 배열 |",
+      "testCases": [
+        {
+          "input": "5 3\n1 2\n2 3\n4 5",
+          "output": "2"
+        },
+        {
+          "input": "4 0",
+          "output": "4"
+        },
+        {
+          "input": "6 5\n1 2\n2 3\n3 4\n4 5\n5 6",
+          "output": "1"
+        },
+        {
+          "input": "5 2\n1 3\n2 4",
+          "output": "3"
+        },
+        {
+          "input": "7 4\n1 2\n3 4\n5 6\n1 3",
+          "output": "3"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    static int[] parent;\n\n    static int find(int x) {\n        if (parent[x] != x) parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    static void union(int a, int b) {\n        parent[find(a)] = find(b);\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int m = Integer.parseInt(st.nextToken());\n\n        parent = new int[n + 1];\n        for (int i = 1; i <= n; i++) parent[i] = i;\n\n        for (int i = 0; i < m; i++) {\n            st = new StringTokenizer(br.readLine());\n            int u = Integer.parseInt(st.nextToken());\n            int v = Integer.parseInt(st.nextToken());\n            union(u, v);\n        }\n\n        int count = 0;\n        for (int i = 1; i <= n; i++) {\n            if (find(i) == i) count++;\n        }\n        System.out.println(count);\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<algorithm>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nvoid unite(int a,int b){parent[find(a)]=find(b);}\nint main(){\n    int n,m; cin>>n>>m;\n    for(int i=1;i<=n;i++) parent[i]=i;\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;unite(u,v);}\n    int cnt=0;\n    for(int i=1;i<=n;i++) if(find(i)==i) cnt++;\n    cout<<cnt<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nparent=list(range(n+1))\ndef find(x):\n    if parent[x]!=x: parent[x]=find(parent[x])\n    return parent[x]\ndef union(a,b): parent[find(a)]=find(b)\nfor _ in range(m):\n    u,v=map(int,input().split()); union(u,v)\nprint(sum(1 for i in range(1,n+1) if find(i)==i))"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst p=Array.from({length:n+1},(_,i)=>i);\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\nfunction union(a,b){p[find(a)]=find(b);}\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);union(u,v);}\nlet cnt=0;\nfor(let i=1;i<=n;i++) if(find(i)===i) cnt++;\nconsole.log(cnt);"
+        }
+      ]
     }
   ]
 }

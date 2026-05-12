@@ -1,58 +1,62 @@
 {
-  "topicId": 2,
-  "title": "런길이 압축",
-  "difficulty": "medium",
-  "difficultyOrder": 2,
-  "description": "문자열이 주어졌을 때 런길이(Run-Length) 압축을 수행하여 출력하세요.\n\n런길이 압축은 연속된 같은 문자를 \"횟수 + 문자\"로 표현합니다.\n예를 들어 \"aaaAbBb\"는 'a'가 4개, 'b'가 3개이므로 \"4a3b\"가 됩니다.\n\n대소문자를 구별하지 않으며, 출력은 소문자로 합니다.",
-  "constraints": "1 ≤ 문자열 길이 ≤ 10^5\n문자열은 영문 대소문자로만 구성됩니다.",
-  "lineSolution": "소문자로 변환 후 이전 문자와 비교하며 연속 횟수를 세어 압축합니다.",
-  "solutionText": "###  핵심 아이디어\n\n문자열을 소문자로 통일한 뒤, **인접한 문자가 달라지는 순간** 지금까지의 횟수와 문자를 기록합니다.\n\n---\n\n###  알고리즘\n\n1. 입력 문자열을 모두 소문자로 변환합니다.\n2. 순서대로 순회하면서 이전 문자와 현재 문자를 비교합니다.\n3. 같으면 count를 증가시키고, 다르면 `count + 이전문자`를 결과에 추가하고 count를 1로 초기화합니다.\n4. 순회가 끝난 뒤 마지막 그룹을 결과에 추가합니다.\n\n---\n\n### ️ 주의사항\n\n- 반복 횟수가 1인 경우에도 \"1a\"처럼 횟수를 표시합니다.\n- 대소문자는 같은 문자로 취급합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 문자열을 한 번 순회 |\n| 공간 | **O(n)** | 결과 문자열 저장 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "aaaAbBb",
-      "output": "4a3b"
-    },
-    {
-      "input": "aAaA",
-      "output": "4a"
-    },
-    {
-      "input": "aabb",
-      "output": "2a2b"
-    },
-    {
-      "input": "abcd",
-      "output": "1a1b1c1d"
-    },
-    {
-      "input": "AAABBB",
-      "output": "3a3b"
-    },
-    {
-      "input": "AaAaBbBb",
-      "output": "4a4b"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim().toLowerCase();\n\n        StringBuilder sb = new StringBuilder();\n        int count = 1;\n\n        for (int i = 1; i < s.length(); i++) {\n            if (s.charAt(i) == s.charAt(i - 1)) {\n                count++;\n            } else {\n                sb.append(count).append(s.charAt(i - 1));\n                count = 1;\n            }\n        }\n        sb.append(count).append(s.charAt(s.length() - 1));\n\n        System.out.println(sb.toString());\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<string>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    for(char&c:s) c=tolower(c);\n    string res=\"\";\n    int cnt=1;\n    for(int i=1;i<(int)s.size();i++){\n        if(s[i]==s[i-1]) cnt++;\n        else{res+=to_string(cnt)+s[i-1];cnt=1;}\n    }\n    res+=to_string(cnt)+s.back();\n    cout<<res<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\ns=sys.stdin.readline().strip().lower()\nres=[]\ni=0\nwhile i<len(s):\n    j=i\n    while j<len(s) and s[j]==s[i]: j+=1\n    res.append(str(j-i)+s[i])\n    i=j\nprint(''.join(res))"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim().toLowerCase();\nlet res='',i=0;\nwhile(i<s.length){\n    let j=i;\n    while(j<s.length&&s[j]===s[i])j++;\n    res+=(j-i)+s[i];i=j;\n}\nconsole.log(res);"
+      "topicId": 2,
+      "title": "런길이 압축",
+      "difficulty": "medium",
+      "difficultyOrder": 2,
+      "description": "문자열이 주어졌을 때 런길이(Run-Length) 압축을 수행하여 출력하세요.\n\n런길이 압축은 연속된 같은 문자를 \"횟수 + 문자\"로 표현합니다.\n예를 들어 \"aaaAbBb\"는 'a'가 4개, 'b'가 3개이므로 \"4a3b\"가 됩니다.\n\n대소문자를 구별하지 않으며, 출력은 소문자로 합니다.",
+      "constraints": "1 ≤ 문자열 길이 ≤ 10^5\n문자열은 영문 대소문자로만 구성됩니다.",
+      "lineSolution": "소문자로 변환 후 이전 문자와 비교하며 연속 횟수를 세어 압축합니다.",
+      "solutionText": "###  핵심 아이디어\n\n문자열을 소문자로 통일한 뒤, **인접한 문자가 달라지는 순간** 지금까지의 횟수와 문자를 기록합니다.\n\n---\n\n###  알고리즘\n\n1. 입력 문자열을 모두 소문자로 변환합니다.\n2. 순서대로 순회하면서 이전 문자와 현재 문자를 비교합니다.\n3. 같으면 count를 증가시키고, 다르면 `count + 이전문자`를 결과에 추가하고 count를 1로 초기화합니다.\n4. 순회가 끝난 뒤 마지막 그룹을 결과에 추가합니다.\n\n---\n\n### ️ 주의사항\n\n- 반복 횟수가 1인 경우에도 \"1a\"처럼 횟수를 표시합니다.\n- 대소문자는 같은 문자로 취급합니다.\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 문자열을 한 번 순회 |\n| 공간 | **O(n)** | 결과 문자열 저장 |",
+      "testCases": [
+        {
+          "input": "aaaAbBb",
+          "output": "4a3b"
+        },
+        {
+          "input": "aAaA",
+          "output": "4a"
+        },
+        {
+          "input": "aabb",
+          "output": "2a2b"
+        },
+        {
+          "input": "abcd",
+          "output": "1a1b1c1d"
+        },
+        {
+          "input": "AAABBB",
+          "output": "3a3b"
+        },
+        {
+          "input": "AaAaBbBb",
+          "output": "4a4b"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String s = br.readLine().trim().toLowerCase();\n\n        StringBuilder sb = new StringBuilder();\n        int count = 1;\n\n        for (int i = 1; i < s.length(); i++) {\n            if (s.charAt(i) == s.charAt(i - 1)) {\n                count++;\n            } else {\n                sb.append(count).append(s.charAt(i - 1));\n                count = 1;\n            }\n        }\n        sb.append(count).append(s.charAt(s.length() - 1));\n\n        System.out.println(sb.toString());\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<string>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    for(char&c:s) c=tolower(c);\n    string res=\"\";\n    int cnt=1;\n    for(int i=1;i<(int)s.size();i++){\n        if(s[i]==s[i-1]) cnt++;\n        else{res+=to_string(cnt)+s[i-1];cnt=1;}\n    }\n    res+=to_string(cnt)+s.back();\n    cout<<res<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\ns=sys.stdin.readline().strip().lower()\nres=[]\ni=0\nwhile i<len(s):\n    j=i\n    while j<len(s) and s[j]==s[i]: j+=1\n    res.append(str(j-i)+s[i])\n    i=j\nprint(''.join(res))"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim().toLowerCase();\nlet res='',i=0;\nwhile(i<s.length){\n    let j=i;\n    while(j<s.length&&s[j]===s[i])j++;\n    res+=(j-i)+s[i];i=j;\n}\nconsole.log(res);"
+        }
+      ]
     }
   ]
 }

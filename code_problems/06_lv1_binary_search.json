@@ -1,58 +1,62 @@
 {
-  "topicId": 6,
-  "title": "이진 탐색",
-  "difficulty": "easy",
-  "difficultyOrder": 1,
-  "description": "오름차순으로 정렬된 정수 배열과 탐색할 값 target이 주어졌을 때, 이진 탐색으로 target의 1-based 인덱스를 출력하세요.\n\ntarget이 배열에 없으면 -1을 출력합니다.\n\n첫 번째 줄에 배열의 크기 n과 target이 주어지고,\n두 번째 줄에 정렬된 n개의 정수가 주어집니다.",
-  "constraints": "1 ≤ n ≤ 10^6\n-10^9 ≤ arr[i], target ≤ 10^9\n배열은 오름차순 정렬되어 있습니다.\ntarget은 배열에 최대 1번 등장합니다.",
-  "lineSolution": "lo, hi 두 포인터를 유지하며 중간값과 target을 비교해 탐색 범위를 절반씩 줄입니다.",
-  "solutionText": "###  핵심 아이디어\n\n정렬된 배열에서 중간 원소와 target을 비교하여 탐색 범위를 매번 절반으로 줄입니다.\n\n---\n\n###  알고리즘\n\n1. `lo = 0`, `hi = n - 1`로 초기화합니다.\n2. `lo <= hi`인 동안 반복합니다.\n   - `mid = (lo + hi) / 2`\n   - `arr[mid] == target`: `mid + 1` 출력 후 종료\n   - `arr[mid] < target`: `lo = mid + 1`\n   - `arr[mid] > target`: `hi = mid - 1`\n3. 반복 종료 후 -1을 출력합니다.\n\n---\n\n### ️ 주의사항\n\n- 출력은 **1-based 인덱스**입니다.\n- `mid = (lo + hi) / 2` 사용 시 오버플로우 주의 → `lo + (hi - lo) / 2`도 가능\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(log n)** | 탐색 범위 매번 절반 |\n| 공간 | **O(1)** | 포인터 변수만 사용 |",
-  "testCases": [
+  "requests": [
     {
-      "input": "5 28\n8 11 15 20 28",
-      "output": "5"
-    },
-    {
-      "input": "8 15\n8 11 12 15 16 19 20 23",
-      "output": "4"
-    },
-    {
-      "input": "5 99\n1 3 5 7 9",
-      "output": "-1"
-    },
-    {
-      "input": "1 5\n5",
-      "output": "1"
-    },
-    {
-      "input": "6 1\n1 3 5 7 9 11",
-      "output": "1"
-    },
-    {
-      "input": "6 11\n1 3 5 7 9 11",
-      "output": "6"
-    }
-  ],
-  "languageSettings": [
-    {
-      "languageId": 1,
-      "timeLimitMs": 1000,
-      "solutionCode": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int target = Integer.parseInt(st.nextToken());\n\n        st = new StringTokenizer(br.readLine());\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        int lo = 0, hi = n - 1;\n        while (lo <= hi) {\n            int mid = lo + (hi - lo) / 2;\n            if (arr[mid] == target) {\n                System.out.println(mid + 1);\n                return;\n            } else if (arr[mid] < target) {\n                lo = mid + 1;\n            } else {\n                hi = mid - 1;\n            }\n        }\n        System.out.println(-1);\n    }\n}"
-    },
-    {
-      "languageId": 2,
-      "timeLimitMs": 1000,
-      "solutionCode": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=0,hi=n-1;\n    while(lo<=hi){\n        int mid=lo+(hi-lo)/2;\n        if(arr[mid]==target){cout<<mid+1<<'\\n';return 0;}\n        else if(arr[mid]<target) lo=mid+1;\n        else hi=mid-1;\n    }\n    cout<<-1<<'\\n';\n}"
-    },
-    {
-      "languageId": 3,
-      "timeLimitMs": 3000,
-      "solutionCode": "import sys\ninput=sys.stdin.readline\nn,target=map(int,input().split())\narr=list(map(int,input().split()))\nlo,hi=0,n-1\nwhile lo<=hi:\n    mid=(lo+hi)//2\n    if arr[mid]==target: print(mid+1); exit()\n    elif arr[mid]<target: lo=mid+1\n    else: hi=mid-1\nprint(-1)"
-    },
-    {
-      "languageId": 4,
-      "timeLimitMs": 2000,
-      "solutionCode": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nlet lo=0,hi=n-1;\nwhile(lo<=hi){\n    const mid=(lo+hi)>>1;\n    if(arr[mid]===target){console.log(mid+1);process.exit();}\n    else if(arr[mid]<target) lo=mid+1;\n    else hi=mid-1;\n}\nconsole.log(-1);"
+      "topicId": 6,
+      "title": "이진 탐색",
+      "difficulty": "easy",
+      "difficultyOrder": 1,
+      "description": "오름차순으로 정렬된 정수 배열과 탐색할 값 target이 주어졌을 때, 이진 탐색으로 target의 1-based 인덱스를 출력하세요.\n\ntarget이 배열에 없으면 -1을 출력합니다.\n\n첫 번째 줄에 배열의 크기 n과 target이 주어지고,\n두 번째 줄에 정렬된 n개의 정수가 주어집니다.",
+      "constraints": "1 ≤ n ≤ 10^6\n-10^9 ≤ arr[i], target ≤ 10^9\n배열은 오름차순 정렬되어 있습니다.\ntarget은 배열에 최대 1번 등장합니다.",
+      "lineSolution": "lo, hi 두 포인터를 유지하며 중간값과 target을 비교해 탐색 범위를 절반씩 줄입니다.",
+      "solutionText": "###  핵심 아이디어\n\n정렬된 배열에서 중간 원소와 target을 비교하여 탐색 범위를 매번 절반으로 줄입니다.\n\n---\n\n###  알고리즘\n\n1. `lo = 0`, `hi = n - 1`로 초기화합니다.\n2. `lo <= hi`인 동안 반복합니다.\n   - `mid = (lo + hi) / 2`\n   - `arr[mid] == target`: `mid + 1` 출력 후 종료\n   - `arr[mid] < target`: `lo = mid + 1`\n   - `arr[mid] > target`: `hi = mid - 1`\n3. 반복 종료 후 -1을 출력합니다.\n\n---\n\n### ️ 주의사항\n\n- 출력은 **1-based 인덱스**입니다.\n- `mid = (lo + hi) / 2` 사용 시 오버플로우 주의 → `lo + (hi - lo) / 2`도 가능\n\n---\n\n###  복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(log n)** | 탐색 범위 매번 절반 |\n| 공간 | **O(1)** | 포인터 변수만 사용 |",
+      "testCases": [
+        {
+          "input": "5 28\n8 11 15 20 28",
+          "output": "5"
+        },
+        {
+          "input": "8 15\n8 11 12 15 16 19 20 23",
+          "output": "4"
+        },
+        {
+          "input": "5 99\n1 3 5 7 9",
+          "output": "-1"
+        },
+        {
+          "input": "1 5\n5",
+          "output": "1"
+        },
+        {
+          "input": "6 1\n1 3 5 7 9 11",
+          "output": "1"
+        },
+        {
+          "input": "6 11\n1 3 5 7 9 11",
+          "output": "6"
+        }
+      ],
+      "languageSettings": [
+        {
+          "languageId": 1,
+          "timeLimitMs": 1000,
+          "code": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        int target = Integer.parseInt(st.nextToken());\n\n        st = new StringTokenizer(br.readLine());\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());\n\n        int lo = 0, hi = n - 1;\n        while (lo <= hi) {\n            int mid = lo + (hi - lo) / 2;\n            if (arr[mid] == target) {\n                System.out.println(mid + 1);\n                return;\n            } else if (arr[mid] < target) {\n                lo = mid + 1;\n            } else {\n                hi = mid - 1;\n            }\n        }\n        System.out.println(-1);\n    }\n}"
+        },
+        {
+          "languageId": 2,
+          "timeLimitMs": 1000,
+          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=0,hi=n-1;\n    while(lo<=hi){\n        int mid=lo+(hi-lo)/2;\n        if(arr[mid]==target){cout<<mid+1<<'\\n';return 0;}\n        else if(arr[mid]<target) lo=mid+1;\n        else hi=mid-1;\n    }\n    cout<<-1<<'\\n';\n}"
+        },
+        {
+          "languageId": 3,
+          "timeLimitMs": 3000,
+          "code": "import sys\ninput=sys.stdin.readline\nn,target=map(int,input().split())\narr=list(map(int,input().split()))\nlo,hi=0,n-1\nwhile lo<=hi:\n    mid=(lo+hi)//2\n    if arr[mid]==target: print(mid+1); exit()\n    elif arr[mid]<target: lo=mid+1\n    else: hi=mid-1\nprint(-1)"
+        },
+        {
+          "languageId": 4,
+          "timeLimitMs": 2000,
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nlet lo=0,hi=n-1;\nwhile(lo<=hi){\n    const mid=(lo+hi)>>1;\n    if(arr[mid]===target){console.log(mid+1);process.exit();}\n    else if(arr[mid]<target) lo=mid+1;\n    else hi=mid-1;\n}\nconsole.log(-1);"
+        }
+      ]
     }
   ]
 }
