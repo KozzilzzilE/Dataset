@@ -3,7 +3,7 @@
   "pageNo": 4,
   "title": "히프 정렬",
   "point": "힙 정렬 O(n log n), 우선순위 큐 구현 비교, LPT 스케줄링",
-  "detail": "### 힙 정렬 (Heap Sort)\n\n최대 힙을 이용하여 정렬:\n1. n개 요소를 모두 힙에 삽입 — O(n log n)\n2. 하나씩 힙에서 꺼내 배열 뒤에서부터 저장 — O(n log n)\n\n```\nheap_sort(array[], n):\n  heap = create_max_heap()\n  \n  // 삽입 단계\n  for i = 0 to n-1:\n    insert(heap, array[i])\n  \n  // 추출 단계 (오름차순 정렬)\n  for i = n-1 down to 0:\n    array[i] = delete_max(heap)\n```"\n\n### 우선순위 큐 구현 방법 비교\n\n| 구현 방법 | 삽입 | 삭제(최대) |\n|---------|------|----------|\n| 순서 없는 배열 | O(1) | O(n) |\n| 순서 없는 연결 리스트 | O(1) | O(n) |\n| 정렬된 배열 | O(n) | O(1) |\n| 정렬된 연결 리스트 | O(n) | O(1) |\n| **힙** | **O(log n)** | **O(log n)** |\n\n→ n=1000일 때 O(n)=1000번, O(log n)≈10번 — 100배 차이!\n\n### LPT 스케줄링 응용\n\nm개의 기계에 n개의 작업을 배분할 때,  \n**최소 힙**으로 기계의 종료 시간을 관리:\n1. 가장 긴 작업부터 처리 (LPT: Longest Processing Time)\n2. 종료 시간이 가장 빠른 기계(최소 힙 루트)에 배정\n3. 해당 기계의 종료 시간 업데이트 후 힙에 재삽입",
+  "detail": "### 힙 정렬 (Heap Sort)\n\n최대 힙을 이용하여 정렬:\n1. n개 요소를 모두 힙에 삽입 — O(n log n)\n2. 하나씩 힙에서 꺼내 배열 뒤에서부터 저장 — O(n log n)\n\n```\nheap_sort(array[], n):\n  heap = create_max_heap()\n  \n  // 삽입 단계\n  for i = 0 to n-1:\n    insert(heap, array[i])\n  \n  // 추출 단계 (오름차순 정렬)\n  for i = n-1 down to 0:\n    array[i] = delete_max(heap)\n```\n\n### 우선순위 큐 구현 방법 비교\n\n| 구현 방법 | 삽입 | 삭제(최대) |\n|---------|------|----------|\n| 순서 없는 배열 | O(1) | O(n) |\n| 순서 없는 연결 리스트 | O(1) | O(n) |\n| 정렬된 배열 | O(n) | O(1) |\n| 정렬된 연결 리스트 | O(n) | O(1) |\n| **힙** | **O(log n)** | **O(log n)** |\n\n→ n=1000일 때 O(n)=1000번, O(log n)≈10번 — 100배 차이!\n\n### LPT 스케줄링 응용\n\nm개의 기계에 n개의 작업을 배분할 때,  \n**최소 힙**으로 기계의 종료 시간을 관리:\n1. 가장 긴 작업부터 처리 (LPT: Longest Processing Time)\n2. 종료 시간이 가장 빠른 기계(최소 힙 루트)에 배정\n3. 해당 기계의 종료 시간 업데이트 후 힙에 재삽입",
   "imgUrl": null,
   "codes": [
     {
