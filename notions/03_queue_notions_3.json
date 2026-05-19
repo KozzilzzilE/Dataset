@@ -2,8 +2,8 @@
   "topicId": 3,
   "pageNo": 3,
   "title": "원형큐의 구현",
-  "point": "원형큐 C 구현 코드",
-  "detail": "### 원형 큐 C 구현\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\n#define MAX_QUEUE_SIZE 5\ntypedef int element;\n\ntypedef struct {\n    element data[MAX_QUEUE_SIZE];\n    int front, rear;\n} QueueType;\n\nvoid init_queue(QueueType *q) {\n    q->front = q->rear = 0;\n}\n\nint is_empty(QueueType *q) {\n    return (q->front == q->rear);\n}\n\nint is_full(QueueType *q) {\n    return ((q->rear + 1) % MAX_QUEUE_SIZE == q->front);\n}\n\nvoid enqueue(QueueType *q, element item) {\n    if (is_full(q)) {\n        fprintf(stderr, \"큐가 포화상태\\n\");\n        return;\n    }\n    q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;\n    q->data[q->rear] = item;\n}\n\nelement dequeue(QueueType *q) {\n    if (is_empty(q)) {\n        fprintf(stderr, \"큐가 공백상태\\n\");\n        exit(1);\n    }\n    q->front = (q->front + 1) % MAX_QUEUE_SIZE;\n    return q->data[q->front];\n}\n```\n\n### 실행 예시\n\n```\nenqueue(10) → QUEUE(front=0 rear=1) = 10\nenqueue(20) → QUEUE(front=0 rear=2) = 10 | 20\nenqueue(30) → QUEUE(front=0 rear=3) = 10 | 20 | 30\ndequeue()   → 10 꺼냄, QUEUE(front=1 rear=3) = 20 | 30\n```",
+  "point": "원형 인덱스로 선형큐 한계 극복, 4언어 코드",
+  "detail": "### 원형 큐 구현\n\n선형 큐의 문제: front가 앞으로 이동해도 이미 빠진 공간을 재사용하지 못함 → rear가 끝에 닿으면 실제로 비어있어도 포화로 판단\n\n**해결**: 인덱스를 **나머지 연산으로 순환**시킨다.\n\n---\n\n### 인덱스 갱신\n\n```\nenqueue: rear = (rear + 1) % capacity\ndequeue: front = (front + 1) % capacity\n```\n\n---\n\n### 공백 / 포화 판단\n\n| 상태 | 조건 |\n|------|------|\n| 공백 | `front == rear` |\n| 포화 | `(rear + 1) % capacity == front` |\n\n> 포화 시 한 자리를 비워두는 것이 핵심 — front와 rear가 같을 때를 공백으로 예약해야 구별 가능\n\n---\n\n### 핵심 연산\n\n| 연산 | 동작 |\n|------|------|\n| `enqueue(x)` | `rear = (rear+1) % cap` → `arr[rear] = x` |\n| `dequeue()` | `front = (front+1) % cap` → `arr[front]` 반환 |\n\n**시간복잡도:** 모든 연산 **O(1)**",
   "codes": [
     {
       "languageId": 1,
