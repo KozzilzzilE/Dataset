@@ -5,5 +5,22 @@
   "point": "O(n log n) 힙정렬, O(dn) 기수정렬, 실전 선택 기준",
   "detail": "### 힙 정렬 (Heap Sort, 12.8)\n\n최대힙을 활용한 정렬:\n1. 모든 원소를 최대힙에 삽입 (O(n log n))\n2. 루트(최댓값)를 하나씩 삭제하여 배열 뒤에서부터 저장\n\n```\n[9, 7, 6, 5, 3, 1] → 힙 구성 후 반복 삭제\n→ 오름차순 정렬 완성\n```\n\n- 시간복잡도: **O(n log n)** (항상)\n- 제자리 정렬 (in-place)\n- **불안정** 정렬\n- 퀵정렬보다 느리지만 최악 성능이 보장됨\n\n### 기수 정렬 (Radix Sort, 12.9)\n\n비교 연산 없이 자릿수(digit) 단위로 정렬:\n\n```\n원본: [324, 459, 657, 839, 436, 720, 355]\n1의 자리: → [720, 324, 355, 436, 657, 459, 839]\n10의 자리: → [720, 324, 436, 839, 355, 457, 459]\n100의 자리: → [324, 355, 436, 457, 459, 657, 720, 839]\n```\n\n- 시간복잡도: **O(dn)** (d=자릿수, n=원소 수)\n- 정수나 고정 길이 문자열에 적합\n- 안정 정렬\n\n### 정렬 알고리즘 최종 비교 (12.10)\n\n| 알고리즘 | 최선 | 평균 | 최악 | 안정 | 메모리 |\n|----------|------|------|------|------|--------|\n| 선택 정렬 | O(n²) | O(n²) | O(n²) | ✗ | O(1) |\n| 삽입 정렬 | **O(n)** | O(n²) | O(n²) | ✓ | O(1) |\n| 버블 정렬 | O(n²) | O(n²) | O(n²) | ✓ | O(1) |\n| 합병 정렬 | O(n log n) | O(n log n) | O(n log n) | ✓ | O(n) |\n| 퀵 정렬 | O(n log n) | O(n log n) | O(n²) | ✗ | O(log n) |\n| 힙 정렬 | O(n log n) | O(n log n) | O(n log n) | ✗ | O(1) |\n| 기수 정렬 | O(dn) | O(dn) | O(dn) | ✓ | O(n) |\n\n**실전 선택**: 일반 용도 → 퀵정렬, 안정성 필요 → 합병정렬, 최악 보장 → 힙정렬",
   "imgUrl": null,
-  "codes": []
+  "codes": [
+    {
+      "languageId": 1,
+      "content": "```java\nimport java.util.PriorityQueue;\nimport java.util.Collections;\n\npublic class HeapSort {\n    public static void heapSort(int[] arr) {\n        PriorityQueue<Integer> maxHeap = \n            new PriorityQueue<>(Collections.reverseOrder());\n        \n        // Insert all elements into max heap\n        for (int num : arr) {\n            maxHeap.offer(num);\n        }\n        \n        // Extract max elements to sorted array\n        for (int i = arr.length - 1; i >= 0; i--) {\n            arr[i] = maxHeap.poll();\n        }\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <iostream>\n#include <queue>\nusing namespace std;\n\nvoid heapSort(int arr[], int n) {\n    priority_queue<int> maxHeap;  // Max heap by default\n    \n    // Insert all elements\n    for (int i = 0; i < n; i++) {\n        maxHeap.push(arr[i]);\n    }\n    \n    // Extract max elements in descending order\n    for (int i = n - 1; i >= 0; i--) {\n        arr[i] = maxHeap.top();\n        maxHeap.pop();\n    }\n}\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\nimport heapq\n\ndef heap_sort(arr):\n    # Python heapq is min-heap, so negate for max-heap\n    max_heap = [-x for x in arr]\n    heapq.heapify(max_heap)\n    \n    result = []\n    while max_heap:\n        result.append(-heapq.heappop(max_heap))\n    \n    # Reverse to get ascending order\n    return result[::-1]\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nclass MaxHeap {\n    constructor() {\n        this.heap = [];\n    }\n    \n    push(val) {\n        this.heap.push(val);\n        this.bubbleUp(this.heap.length - 1);\n    }\n    \n    pop() {\n        if (this.heap.length === 0) return null;\n        const max = this.heap[0];\n        this.heap[0] = this.heap[this.heap.length - 1];\n        this.heap.pop();\n        this.bubbleDown(0);\n        return max;\n    }\n    \n    bubbleUp(idx) {\n        while (idx > 0) {\n            const parentIdx = Math.floor((idx - 1) / 2);\n            if (this.heap[idx] > this.heap[parentIdx]) {\n                [this.heap[idx], this.heap[parentIdx]] = \n                    [this.heap[parentIdx], this.heap[idx]];\n                idx = parentIdx;\n            } else break;\n        }\n    }\n    \n    bubbleDown(idx) {\n        const n = this.heap.length;\n        while (2 * idx + 1 < n) {\n            let largestIdx = idx;\n            const left = 2 * idx + 1;\n            const right = 2 * idx + 2;\n            if (this.heap[left] > this.heap[largestIdx])\n                largestIdx = left;\n            if (right < n && this.heap[right] > this.heap[largestIdx])\n                largestIdx = right;\n            if (largestIdx !== idx) {\n                [this.heap[idx], this.heap[largestIdx]] = \n                    [this.heap[largestIdx], this.heap[idx]];\n                idx = largestIdx;\n            } else break;\n        }\n    }\n}\n\nfunction heapSort(arr) {\n    const maxHeap = new MaxHeap();\n    arr.forEach(num => maxHeap.push(num));\n    for (let i = arr.length - 1; i >= 0; i--) {\n        arr[i] = maxHeap.pop();\n    }\n    return arr;\n}\n```"
+    }
+  ]
 }

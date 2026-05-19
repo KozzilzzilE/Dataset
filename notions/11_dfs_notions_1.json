@@ -3,7 +3,7 @@
   "pageNo": 1,
   "title": "깊이 우선 탐색",
   "point": "깊이 우선 탐색, 재귀/스택, visited 배열",
-  "detail": "### DFS(깊이 우선 탐색)란?\n\nDFS(Depth First Search)는 **한 방향으로 계속 가다가 막히면 돌아와 다른 방향으로** 탐색하는 방법이다.\n\n### 기본 아이디어\n\n```\n시작 정점 v → 방문 표시\n→ v에 인접한 정점 u 중 미방문 정점 선택\n  → u에서 DFS 재귀 호출\n  → 돌아와서 다음 인접 정점 탐색\n```\n\n### DFS 알고리즘 (의사 코드)\n\n```\ndepth_first_search(v):\n  v를 방문되었다고 표시\n  for all u ∈ (v에 인접한 정점) do\n    if (u가 아직 방문되지 않았으면)\n      then depth_first_search(u)\n```\n\n### 탐색 예시\n\n```\n그래프:  0 - 1 - 2\n         |       |\n         3 - - - 4\n\nDFS(0): 0 → 1 → 2 → 4 → 3\n```\n\n- 0 방문 → 1 방문 → 2 방문 → 4 방문(막힘) → 3 방문\n\n### visited 배열\n\n```c\nint visited[MAX_VERTICES];  // 전역 배열, FALSE로 초기화\n\nvoid dfs(int v) {\n    visited[v] = TRUE;      // 방문 표시\n    printf(\"%d \", v);\n    // 인접 정점 탐색...\n}\n```\n\n### 구현 방법 2가지\n\n1. **재귀 호출** (순환 알고리즘)\n2. **명시적 스택** 사용 (반복문)",
+  "detail": "### DFS(깊이 우선 탐색)란?\n\nDFS(Depth First Search)는 **한 방향으로 계속 가다가 막히면 돌아와 다른 방향으로** 탐색하는 방법이다.\n\n### 기본 아이디어\n\n```\n시작 정점 v → 방문 표시\n→ v에 인접한 정점 u 중 미방문 정점 선택\n  → u에서 DFS 재귀 호출\n  → 돌아와서 다음 인접 정점 탐색\n```\n\n### DFS 알고리즘 (의사 코드)\n\n```\ndepth_first_search(v):\n  v를 방문되었다고 표시\n  for all u ∈ (v에 인접한 정점) do\n    if (u가 아직 방문되지 않았으면)\n      then depth_first_search(u)\n```\n\n### 탐색 예시\n\n```\n그래프:  0 - 1 - 2\n         |       |\n         3 - - - 4\n\nDFS(0): 0 → 1 → 2 → 4 → 3\n```\n\n- 0 방문 → 1 방문 → 2 방문 → 4 방문(막힘) → 3 방문\n\n### visited 배열 개념\n\n```\nvisited[] = 모든 정점에 대해 FALSE로 초기화\n\ndfs(v):\n  visited[v] = TRUE        // 정점 v 방문 표시\n  print(v)\n  for each u in adjacent[v]:\n    if not visited[u]:\n      dfs(u)               // 재귀 호출\n```"\n\n### 구현 방법 2가지\n\n1. **재귀 호출** (순환 알고리즘)\n2. **명시적 스택** 사용 (반복문)",
   "codes": [],
   "imgUrl": "capstoneimg/notions_11_1.jpeg"
 }

@@ -5,5 +5,22 @@
   "point": "스택 응용: 괄호검사, 후위표기식, 미로",
   "detail": "### 스택의 주요 응용\n\n#### 1. 괄호 검사\n\n수식에서 괄호가 올바르게 사용되었는지 검사\n\n- 열린 괄호 `(`, `[`, `{` → 스택에 push\n- 닫힌 괄호 `)`, `]`, `}` → pop한 값과 비교\n- 수식 끝에 스택이 비어있으면 올바른 괄호\n\n#### 2. 후위 표기식(Postfix) 계산\n\n중위 표기식 `(2+3)*4` → 후위 `2 3 + 4 *`\n\n- 피연산자 → 스택에 push\n- 연산자 → 스택에서 두 개 pop 후 연산, 결과 push\n\n#### 3. 미로 문제\n\n스택을 이용한 백트래킹:\n- 현재 위치를 스택에 push\n- 이동 불가하면 스택에서 pop하여 이전 위치로 복귀\n\n### 배열 vs 연결 리스트 구현 비교\n\n| 구분 | 배열 | 연결 리스트 |\n|------|------|------------|\n| 구현 복잡도 | 간단 | 복잡 |\n| 성능 | 우수 | 보통 |\n| 스택 크기 | **고정** | **가변** |\n| 메모리 | 정적 할당 | 동적 할당 |\n\n→ 크기가 예측 가능하면 배열, 가변이면 연결 리스트",
   "imgUrl": null,
-  "codes": []
+  "codes": [
+    {
+      "languageId": 1,
+      "content": "```java\nimport java.util.Stack;\n\npublic class BracketValidator {\n    public static boolean isValid(String expr) {\n        Stack<Character> stack = new Stack<>();\n        for (char ch : expr.toCharArray()) {\n            if (ch == '(' || ch == '[' || ch == '{') {\n                stack.push(ch);\n            } else if (ch == ')' || ch == ']' || ch == '}') {\n                if (stack.isEmpty()) return false;\n                char top = stack.pop();\n                if (!isMatching(top, ch)) return false;\n            }\n        }\n        return stack.isEmpty();\n    }\n    \n    private static boolean isMatching(char open, char close) {\n        return (open == '(' && close == ')') ||\n               (open == '[' && close == ']') ||\n               (open == '{' && close == '}');\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <iostream>\n#include <stack>\n#include <string>\nusing namespace std;\n\nbool isMatching(char open, char close) {\n    return (open == '(' && close == ')') ||\n           (open == '[' && close == ']') ||\n           (open == '{' && close == '}');\n}\n\nbool isValid(string expr) {\n    stack<char> st;\n    for (char ch : expr) {\n        if (ch == '(' || ch == '[' || ch == '{') {\n            st.push(ch);\n        } else if (ch == ')' || ch == ']' || ch == '}') {\n            if (st.empty()) return false;\n            char top = st.top();\n            st.pop();\n            if (!isMatching(top, ch)) return false;\n        }\n    }\n    return st.empty();\n}\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\ndef is_valid_brackets(expr):\n    stack = []\n    pairs = {'(': ')', '[': ']', '{': '}'}\n    \n    for ch in expr:\n        if ch in pairs:  # Opening bracket\n            stack.append(ch)\n        elif ch in pairs.values():  # Closing bracket\n            if not stack:\n                return False\n            if pairs[stack.pop()] != ch:\n                return False\n    \n    return len(stack) == 0\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nfunction isValidBrackets(expr) {\n    const stack = [];\n    const pairs = { '(': ')', '[': ']', '{': '}' };\n    \n    for (const ch of expr) {\n        if (ch in pairs) {  // Opening bracket\n            stack.push(ch);\n        } else if (Object.values(pairs).includes(ch)) {  // Closing\n            if (stack.length === 0) return false;\n            if (pairs[stack.pop()] !== ch) return false;\n        }\n    }\n    \n    return stack.length === 0;\n}\n```"
+    }
+  ]
 }

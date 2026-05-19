@@ -5,5 +5,22 @@
   "point": "중위→후위 변환, 연산자 우선순위 스택 처리",
   "detail": "### 수식 표기법\n\n| 표기법 | 예시 | 특징 |\n|--------|------|------|\n| 중위(infix) | `A + B * C` | 사람이 읽기 쉬움 |\n| 후위(postfix) | `A B C * +` | 컴퓨터가 계산하기 쉬움 |\n| 전위(prefix) | `+ A * B C` | - |\n\n### 중위 → 후위 변환 알고리즘\n\n1. **피연산자**는 그대로 출력\n2. **연산자**는 스택에 push (단, 스택 top의 우선순위 ≥ 현재이면 먼저 pop하여 출력)\n3. `(`는 스택에 push, `)`를 만나면 `(`까지 pop하여 출력\n4. 수식 끝: 스택의 모든 연산자 pop하여 출력\n\n```\n중위: A + B * C\n처리: A 출력 → + 스택 push → B 출력 → * 스택 push (우선순위 높음)\n      C 출력 → 끝: * pop 출력, + pop 출력\n후위: A B C * +\n```\n\n### 연산자 우선순위\n\n| 연산자 | 우선순위 |\n|--------|----------|\n| `*`, `/` | 높음 |\n| `+`, `-` | 낮음 |\n| `(` | 스택 내: 최저 |\n\n### 후위표기식 계산 알고리즘\n\n1. **피연산자** → 스택에 push\n2. **연산자** → 피연산자 2개를 pop, 연산 후 결과를 push\n3. 최종 스택의 값이 결과\n\n```\n후위: 3 4 * 2 +\n처리: 3 push → 4 push → * → pop(4,3), 3*4=12 push → 2 push → + → pop(2,12), 14 push\n결과: 14\n```",
   "imgUrl": null,
-  "codes": []
+  "codes": [
+    {
+      "languageId": 1,
+      "content": "```java\nimport java.util.Stack;\n\npublic class PostfixEvaluator {\n    public static int evaluate(String postfix) {\n        Stack<Integer> stack = new Stack<>();\n        String[] tokens = postfix.split(\" \");\n        \n        for (String token : tokens) {\n            if (isOperator(token)) {\n                int b = stack.pop();\n                int a = stack.pop();\n                int result = applyOp(a, b, token.charAt(0));\n                stack.push(result);\n            } else {\n                stack.push(Integer.parseInt(token));\n            }\n        }\n        return stack.pop();\n    }\n    \n    private static boolean isOperator(String token) {\n        return token.equals(\"+\") || token.equals(\"-\") || \n               token.equals(\"*\") || token.equals(\"/\");\n    }\n    \n    private static int applyOp(int a, int b, char op) {\n        switch(op) {\n            case '+': return a + b;\n            case '-': return a - b;\n            case '*': return a * b;\n            case '/': return a / b;\n        }\n        return 0;\n    }\n}\n```"
+    },
+    {
+      "languageId": 2,
+      "content": "```cpp\n#include <iostream>\n#include <stack>\n#include <string>\n#include <sstream>\nusing namespace std;\n\nbool isOperator(string token) {\n    return token == \"+\" || token == \"-\" || \n           token == \"*\" || token == \"/\";\n}\n\nint applyOp(int a, int b, char op) {\n    switch(op) {\n        case '+': return a + b;\n        case '-': return a - b;\n        case '*': return a * b;\n        case '/': return a / b;\n    }\n    return 0;\n}\n\nint evaluatePostfix(string postfix) {\n    stack<int> st;\n    stringstream ss(postfix);\n    string token;\n    \n    while (ss >> token) {\n        if (isOperator(token)) {\n            int b = st.top(); st.pop();\n            int a = st.top(); st.pop();\n            st.push(applyOp(a, b, token[0]));\n        } else {\n            st.push(stoi(token));\n        }\n    }\n    return st.top();\n}\n```"
+    },
+    {
+      "languageId": 3,
+      "content": "```python\ndef evaluate_postfix(postfix):\n    stack = []\n    tokens = postfix.split()\n    operators = {'+', '-', '*', '/'}\n    \n    for token in tokens:\n        if token in operators:\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+':\n                result = a + b\n            elif token == '-':\n                result = a - b\n            elif token == '*':\n                result = a * b\n            elif token == '/':\n                result = a // b  # Integer division\n            stack.append(result)\n        else:\n            stack.append(int(token))\n    \n    return stack[0]\n```"
+    },
+    {
+      "languageId": 4,
+      "content": "```javascript\nfunction evaluatePostfix(postfix) {\n    const stack = [];\n    const tokens = postfix.split(' ');\n    const operators = {'+': true, '-': true, '*': true, '/': true};\n    \n    for (const token of tokens) {\n        if (token in operators) {\n            const b = stack.pop();\n            const a = stack.pop();\n            let result;\n            switch(token) {\n                case '+': result = a + b; break;\n                case '-': result = a - b; break;\n                case '*': result = a * b; break;\n                case '/': result = Math.floor(a / b); break;\n            }\n            stack.push(result);\n        } else {\n            stack.push(parseInt(token));\n        }\n    }\n    return stack[0];\n}\n```"
+    }
+  ]
 }
