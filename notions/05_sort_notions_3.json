@@ -1,9 +1,9 @@
 {
   "topicId": 5,
   "pageNo": 3,
-  "title": "정렬 코드",
-  "point": "병합 정렬 구현",
-  "detail": "### 코드 설명 — 병합 정렬\n\n병합 정렬은 **분할 정복(Divide and Conquer)** 방식을 사용합니다.\n\n1. 배열을 절반으로 **분할**합니다.\n2. 각 절반을 재귀적으로 정렬합니다.\n3. 정렬된 두 배열을 **병합**합니다.\n\n### 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n log n)** | 항상 보장 |\n| 공간 | **O(n)** | 임시 배열 필요 |\n| 안정 정렬 | **** | 동일 값 순서 유지 |\n\n### 자주 나오는 실수\n\n- `merge` 함수에서 **임시 배열(`tmp`)** 을 사용하지 않고 원본에 바로 쓰면 값이 덮어써집니다.\n- `mid = (left + right) / 2` 계산 시 `left`, `right`가 클 경우 오버플로우가 발생할 수 있습니다. `left + (right - left) / 2` 를 사용하는 것이 안전합니다.",
+  "title": "합병 정렬",
+  "point": "합병 정렬 구현",
+  "detail": "### 합병 정렬 (Merge Sort)\n\n**분할 정복(Divide and Conquer)** 방식:\n1. 배열을 절반으로 분할\n2. 각 절반을 재귀적으로 정렬\n3. 두 정렬된 배열을 합병(merge)\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\nvoid merge(int list[], int left, int mid, int right) {\n    int i = left, j = mid + 1, k = left;\n    int *temp = (int*)malloc((right + 1) * sizeof(int));\n\n    while (i <= mid && j <= right) {\n        if (list[i] <= list[j])\n            temp[k++] = list[i++];\n        else\n            temp[k++] = list[j++];\n    }\n    while (i <= mid)   temp[k++] = list[i++];\n    while (j <= right) temp[k++] = list[j++];\n\n    for (i = left; i <= right; i++)\n        list[i] = temp[i];\n    free(temp);\n}\n\nvoid merge_sort(int list[], int left, int right) {\n    if (left < right) {\n        int mid = (left + right) / 2;\n        merge_sort(list, left, mid);\n        merge_sort(list, mid + 1, right);\n        merge(list, left, mid, right);\n    }\n}\n\nint main(void) {\n    int list[] = {27, 10, 12, 20, 25, 13, 15};\n    int n = 7;\n    merge_sort(list, 0, n - 1);\n    for (int i = 0; i < n; i++)\n        printf(\"%d \", list[i]);\n    return 0;\n}\n// 출력: 10 12 13 15 20 25 27\n```\n\n### 합병 정렬 과정\n\n```\n[27, 10, 12, 20, 25, 13, 15]\n    ↓ 분할\n[27, 10, 12]  [20, 25, 13, 15]\n    ↓ 분할 반복\n[27][10, 12]  [20, 25][13, 15]\n    ↓ 합병\n[10, 27][12]  → [10, 12, 27]\n    ↓ 합병\n[10, 12, 13, 15, 20, 25, 27]\n```",
   "imgUrl": null,
   "codes": [
     {

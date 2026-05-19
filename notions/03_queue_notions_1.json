@@ -1,8 +1,9 @@
 {
   "topicId": 3,
   "pageNo": 1,
-  "title": "큐란?",
-  "point": "FIFO 구조",
-  "detail": "### 큐(Queue)란?\n\n큐는 **먼저 넣은 데이터가 먼저 나오는 자료구조**입니다.\n\n### 핵심 특성\n\n- **FIFO (First In First Out)** 구조\n- 데이터를 한쪽 끝 (`rear`) 에서 넣고, 반대쪽 끝 (`front`) 에서 꺼냅니다.\n\n### 주요 연산\n\n| 연산 | 설명 |\n|------|------|\n| `enqueue` | 큐의 뒤(`rear`)에 데이터 삽입 |\n| `dequeue` | 큐의 앞(`front`)에서 데이터 제거 |\n\n### 예시\n\n은행 대기줄이나 맛집 줄 서기를 떠올리면 이해하기 쉽습니다.\n**먼저 줄을 선 사람이 먼저 서비스를 받습니다.**",
-  "codes": []
+  "title": "큐 추상 데이터 타입",
+  "point": "FIFO(선입선출), front/rear, enqueue/dequeue",
+  "detail": "### 큐(Queue)란?\n\n큐는 **선입선출(FIFO: First-In First-Out)** 구조의 자료구조다.  \n매표소에서 줄을 서는 것처럼, 먼저 들어온 것이 먼저 나간다.\n\n### 큐의 구조\n\n```\nenqueue →  [ ][ ][ C ][ B ][ A ]  → dequeue\n               rear           front\n```\n\n- **front**: 삭제가 일어나는 쪽 (전단)\n- **rear**: 삽입이 일어나는 쪽 (후단)\n- 스택과 달리 **삽입과 삭제가 서로 다른 쪽**에서 발생\n\n### 큐 ADT\n\n```\nADT Queue\n  객체: 0개 이상의 요소로 구성된 선형 리스트\n  연산:\n    create(max_size) ::= 공백 큐 생성\n    is_empty(q)      ::= 비어있으면 TRUE 반환\n    is_full(q)       ::= 가득 찼으면 TRUE 반환\n    enqueue(q, e)    ::= 큐 끝에 e 추가 (가득 차면 오류)\n    dequeue(q)       ::= 큐 맨 앞 요소 제거 후 반환 (비어있으면 오류)\n    peek(q)          ::= 큐 맨 앞 요소를 제거하지 않고 반환\n```\n\n### 실생활 예시\n\n- **프린터 버퍼**: CPU가 빠르게 데이터를 보내면 큐에 저장 → 프린터가 순서대로 처리\n- **키보드 버퍼**: 키 입력을 큐에 저장 → 앱이 순서대로 읽음\n- **CPU 스케줄링**: 작업들을 큐에 넣고 순서대로 처리\n- **네트워크 패킷**: 전송 순서 보장",
+  "codes": [],
+  "imgUrl": "capstoneimg/notions_3_1.jpeg"
 }

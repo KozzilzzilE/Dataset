@@ -1,0 +1,9 @@
+{
+  "topicId": 2,
+  "pageNo": 6,
+  "title": "스택의 응용: 미로 문제",
+  "point": "스택 기반 DFS로 경로 탐색, mark 배열로 방문 추적",
+  "detail": "### 미로 탐색\n\n스택을 이용하여 미로에서 출구까지의 경로를 탐색한다.  \n기본적으로 **깊이 우선 탐색(DFS)**과 동일한 구조다.\n\n### 알고리즘\n\n```\n1. 시작 위치를 스택에 push, mark\n2. while 스택이 비지 않은 동안:\n   a. 스택에서 현재 위치 pop\n   b. 출구이면 성공\n   c. 이동 가능한 인접 칸이 있으면:\n      - 현재 위치를 스택에 push (돌아오기 위해)\n      - 이동 가능한 방향으로 이동\n      - 새 위치를 mark\n   d. 모든 방향이 막혀 있으면 스택에서 pop (백트래킹)\n3. 스택이 비어 있으면 실패 (경로 없음)\n```\n\n### mark 배열\n\n이미 방문한 위치를 기록하여 무한루프를 방지한다.\n\n```c\nint mark[ROWS][COLS] = {0};  // 0: 미방문, 1: 방문\n\nvoid push_loc(StackType *s, int r, int c) {\n    if (r < 0 || c < 0) return;\n    if (maze[r][c] == 0 && mark[r][c] == 0) {\n        element pos = {r, c};\n        push(s, pos);\n    }\n}\n```\n\n### 4방향 탐색\n\n```c\n// 상, 하, 좌, 우\nint dr[] = {-1, 1, 0, 0};\nint dc[] = { 0, 0,-1, 1};\nfor (int d = 0; d < 4; d++) {\n    push_loc(&s, here.r+dr[d], here.c+dc[d]);\n}\n```\n\n### 스택의 역할\n\n- **경로 저장**: 갔다가 막히면 되돌아올 위치를 보관\n- **백트래킹**: 스택에서 pop하면 이전 분기점으로 복귀",
+  "imgUrl": null,
+  "codes": []
+}

@@ -1,9 +1,9 @@
 {
   "topicId": 11,
   "pageNo": 3,
-  "title": "DFS 코드",
-  "point": "재귀 구현",
-  "detail": "### 코드 설명\n\n- 그래프를 **인접 리스트**로 표현합니다.\n- `visited[]` 배열로 방문 여부를 관리합니다.\n- 재귀 호출로 연결된 노드를 깊이 우선으로 탐색합니다.\n\n### 주의사항\n\n- 그래프가 **비연결 그래프**일 경우 모든 노드를 탐색하려면 모든 노드에서 DFS를 시작해야 합니다.\n- 재귀 깊이가 매우 깊으면 **스택 오버플로우**가 발생할 수 있습니다. 이때는 `Stack` 자료구조로 직접 구현합니다.\n\n### 복잡도 분석\n\n| 구분 | 복잡도 |\n|------|--------|\n| 시간 | **O(V + E)** |\n| 공간 | **O(V)** |",
+  "title": "깊이 우선 탐색: 구현",
+  "point": "인접 행렬 DFS C 코드 (dfs_mat)",
+  "detail": "### DFS C 구현 (인접 행렬)\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\n#define TRUE 1\n#define FALSE 0\n#define MAX_VERTICES 50\n\ntypedef struct {\n    int n;  // 정점의 개수\n    int adj_mat[MAX_VERTICES][MAX_VERTICES];\n} GraphType;\n\nint visited[MAX_VERTICES];\n\nvoid init(GraphType *g) {\n    g->n = 0;\n    for (int r = 0; r < MAX_VERTICES; r++)\n        for (int c = 0; c < MAX_VERTICES; c++)\n            g->adj_mat[r][c] = 0;\n}\n\nvoid insert_vertex(GraphType *g, int v) { g->n++; }\n\nvoid insert_edge(GraphType *g, int s, int e) {\n    g->adj_mat[s][e] = 1;\n    g->adj_mat[e][s] = 1;\n}\n\n// 인접 행렬 버전 DFS\nvoid dfs_mat(GraphType *g, int v) {\n    visited[v] = TRUE;\n    printf(\"정점 %d -> \", v);\n\n    for (int w = 0; w < g->n; w++)\n        if (g->adj_mat[v][w] && !visited[w])\n            dfs_mat(g, w);\n}\n\nint main(void) {\n    GraphType *g = (GraphType*)malloc(sizeof(GraphType));\n    init(g);\n    for (int i = 0; i < 4; i++) insert_vertex(g, i);\n    insert_edge(g, 0, 1);\n    insert_edge(g, 0, 2);\n    insert_edge(g, 1, 2);\n    insert_edge(g, 2, 3);\n\n    dfs_mat(g, 0);\n    // 출력: 정점 0 -> 정점 1 -> 정점 2 -> 정점 3 ->\n    free(g);\n    return 0;\n}\n```\n\n### 명시적 스택을 이용한 DFS (반복문)\n\n```\nDFS-iterative(G, v):\n  스택 S 생성\n  S.push(v)\n  while S가 비어있지 않으면:\n    v = S.pop()\n    if v가 방문되지 않았으면:\n      v 방문 표시\n      for u ∈ v의 인접 정점:\n        if u 미방문: S.push(u)\n```",
   "imgUrl": null,
   "codes": [
     {

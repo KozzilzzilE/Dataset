@@ -1,8 +1,9 @@
 {
   "topicId": 2,
   "pageNo": 2,
-  "title": "스택 심화",
-  "point": "push/pop O(1)",
-  "detail": "### 스택 구현 원리\n\n배열 기반 스택에서는 **`top` 인덱스**를 통해 현재 스택의 가장 위 위치를 관리합니다.\n\n- **`push`** : `top`을 1 증가시킨 후 해당 위치에 값을 저장합니다.\n- **`pop`** : 현재 `top` 위치의 값을 반환한 뒤 `top`을 1 감소시킵니다.\n\n배열의 특정 인덱스에 직접 접근하므로 **push / pop의 시간복잡도는 O(1)** 입니다.\n\n### 예외 상황\n\n| 상황 | 설명 | 확인 메서드 |\n|------|------|------------|\n| **언더플로우** | 빈 스택에서 `pop` / `peek` 수행 | `isEmpty()` |\n| **오버플로우** | 가득 찬 스택에서 `push` 수행 | `isFull()` |\n\n### 복잡도 분석\n\n| 연산 | 시간복잡도 |\n|------|-----------|\n| `push` | **O(1)** |\n| `pop` | **O(1)** |\n| `peek` | **O(1)** |",
-  "codes": []
+  "title": "스택의 구현",
+  "point": "top 변수, 배열 구현, push/pop O(1)",
+  "detail": "### 배열로 스택 구현\n\n```c\n#define MAX_STACK_SIZE 100\ntypedef int element;\nelement stack[MAX_STACK_SIZE];\nint top = -1;  // 공백 상태: top == -1\n```\n\n- `top = -1`: 공백 상태 (0이 아님! list[0]에 데이터가 있을 수 있으므로)\n- `top = MAX_STACK_SIZE - 1`: 포화 상태\n\n### is_empty / is_full\n\n```\nis_empty(S):\n  if top == -1  → return TRUE\n  else          → return FALSE\n\nis_full(S):\n  if top >= (MAX_STACK_SIZE - 1)  → return TRUE\n  else                            → return FALSE\n```\n\n### push 연산\n\n```\npush(S, x):\n  if is_full(s)  → error \"overflow\"\n  else           → top ← top + 1\n                   stack[top] ← x\n```\n\ntop을 **먼저 증가**시킨 후 데이터를 저장 (순서 중요!)\n\n### pop 연산\n\n```\npop(S):\n  if is_empty(S)  → error \"underflow\"\n  else            → e ← stack[top]\n                    top ← top - 1\n                    return e\n```\n\n### 시간복잡도\n\n| 연산 | 시간복잡도 |\n|------|-----------|\n| push | **O(1)** |\n| pop  | **O(1)** |\n| peek | **O(1)** |\n\n스택의 모든 연산은 O(1) — top만 조작하기 때문이다.",
+  "codes": [],
+  "imgUrl": "capstoneimg/notions_2_2.jpeg"
 }

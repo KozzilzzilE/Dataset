@@ -1,9 +1,9 @@
 {
   "topicId": 4,
   "pageNo": 3,
-  "title": "해시 코드",
-  "point": "두 수의 합 찾기 (Java)",
-  "detail": "### 코드 설명 — Two Sum\n\n**두 수의 합 문제**를 HashMap을 이용해 O(n)에 해결합니다.\n\n1. 현재 값의 **보수 (`target - nums[i]`)** 를 계산합니다.\n2. 보수가 HashMap에 **이미 존재하면** 두 인덱스를 반환합니다.\n3. 존재하지 않으면 현재 값을 HashMap에 저장합니다.\n\n### 복잡도 분석\n\n| 구분 | 복잡도 | 이유 |\n|------|--------|------|\n| 시간 | **O(n)** | 배열 한 번 순회, HashMap 조회 O(1) |\n| 공간 | **O(n)** | HashMap에 최대 n개 저장 |\n\n### 자주 나오는 실수\n\n- 값을 **먼저 map에 저장하면** 같은 인덱스를 두 번 사용하는 오류 발생\n- 반드시 **보수 확인 후 저장** 순서를 지켜야 합니다.",
+  "title": "해시 함수",
+  "point": "해시 함수 설계, 나눗셈법/중간 제곱법",
+  "detail": "### 해시 함수 설계 원칙\n\n- 계산이 **빠르고 간단**해야 한다\n- 키들을 **균등하게 분포**시켜야 한다\n\n### 나눗셈법 (Division Method)\n\n```c\nint hash_function(int key, int M) {\n    return key % M;\n}\n// M은 보통 소수(prime)를 선택\n```\n\n### 문자열 해시 함수\n\n```c\nint hash_function(char *key, int M) {\n    int hash = 0;\n    while (*key) {\n        hash = (hash * 31 + *key) % M;\n        key++;\n    }\n    return hash;\n}\n```\n\n### 중간 제곱법 (Mid-Square Method)\n\n키를 제곱한 후 중간 몇 자리를 해시 주소로 사용\n\n### 개방 주소법 탐색 코드 (선형 탐사)\n\n```c\n// 삽입\nint hash_insert(element item, element ht[]) {\n    int i, hash_value;\n    hash_value = i = hash_function(item.key);\n    while (ht[i].key != -1) {  // 빈 슬롯 탐색\n        i = (i + 1) % TABLE_SIZE;\n        if (i == hash_value) return -1;  // 테이블이 가득 참\n    }\n    ht[i] = item;\n    return i;\n}\n\n// 탐색\nelement hash_search(int key, element ht[]) {\n    int i, hash_value;\n    hash_value = i = hash_function(key);\n    while (ht[i].key != -1) {\n        if (ht[i].key == key) return ht[i];\n        i = (i + 1) % TABLE_SIZE;\n        if (i == hash_value) break;\n    }\n    // 탐색 실패\n}\n```",
   "imgUrl": null,
   "codes": [
     {

@@ -1,9 +1,9 @@
 {
   "topicId": 3,
   "pageNo": 3,
-  "title": "큐 코드",
-  "point": "원형 배열 구현",
-  "detail": "### 코드 설명\n\n- **`front`, `rear`** 두 인덱스와 배열을 이용해 원형 큐를 구현합니다.\n- **`enqueue`** : `rear = (rear + 1) % capacity` 로 rear를 이동 후 값을 저장합니다.\n- **`dequeue`** : `front = (front + 1) % capacity` 로 front를 이동 후 값을 반환합니다.\n\n### 복잡도 분석\n\n| 연산 | 시간복잡도 | 이유 |\n|------|-----------|------|\n| `enqueue` | **O(1)** | 인덱스 연산만 수행 |\n| `dequeue` | **O(1)** | 인덱스 연산만 수행 |\n| `peek` | **O(1)** | front 위치 직접 접근 |\n\n### 자주 나오는 실수\n\n`front`와 `rear`가 같을 때 큐가 **비었는지, 가득 찼는지** 구분하지 못하는 경우가 있습니다.\n**`size` 변수를 별도로 관리**하거나 한 칸을 비워 두는 방식으로 해결합니다.",
+  "title": "원형큐의 구현",
+  "point": "원형큐 C 구현 코드",
+  "detail": "### 원형 큐 C 구현\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\n#define MAX_QUEUE_SIZE 5\ntypedef int element;\n\ntypedef struct {\n    element data[MAX_QUEUE_SIZE];\n    int front, rear;\n} QueueType;\n\nvoid init_queue(QueueType *q) {\n    q->front = q->rear = 0;\n}\n\nint is_empty(QueueType *q) {\n    return (q->front == q->rear);\n}\n\nint is_full(QueueType *q) {\n    return ((q->rear + 1) % MAX_QUEUE_SIZE == q->front);\n}\n\nvoid enqueue(QueueType *q, element item) {\n    if (is_full(q)) {\n        fprintf(stderr, \"큐가 포화상태\\n\");\n        return;\n    }\n    q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;\n    q->data[q->rear] = item;\n}\n\nelement dequeue(QueueType *q) {\n    if (is_empty(q)) {\n        fprintf(stderr, \"큐가 공백상태\\n\");\n        exit(1);\n    }\n    q->front = (q->front + 1) % MAX_QUEUE_SIZE;\n    return q->data[q->front];\n}\n```\n\n### 실행 예시\n\n```\nenqueue(10) → QUEUE(front=0 rear=1) = 10\nenqueue(20) → QUEUE(front=0 rear=2) = 10 | 20\nenqueue(30) → QUEUE(front=0 rear=3) = 10 | 20 | 30\ndequeue()   → 10 꺼냄, QUEUE(front=1 rear=3) = 20 | 30\n```",
   "codes": [
     {
       "languageId": 1,
@@ -21,5 +21,6 @@
       "languageId": 4,
       "content": "```javascript\nclass CircularQueue {\n    constructor(capacity) {\n        this.capacity = capacity;\n        this.arr = new Array(capacity);\n        this.front = 0;\n        this.rear = -1;\n        this.size = 0;\n    }\n\n    isEmpty() {\n        return this.size === 0;\n    }\n\n    isFull() {\n        return this.size === this.capacity;\n    }\n\n    enqueue(value) {\n        if (this.isFull()) throw new Error(\"Queue Overflow\");\n        this.rear = (this.rear + 1) % this.capacity;\n        this.arr[this.rear] = value;\n        this.size++;\n    }\n\n    dequeue() {\n        if (this.isEmpty()) throw new Error(\"Queue Underflow\");\n        const value = this.arr[this.front];\n        this.front = (this.front + 1) % this.capacity;\n        this.size--;\n        return value;\n    }\n\n    peek() {\n        if (this.isEmpty()) throw new Error(\"Queue is Empty\");\n        return this.arr[this.front];\n    }\n}\n```"
     }
-  ]
+  ],
+  "imgUrl": "capstoneimg/notions_3_3.jpeg"
 }

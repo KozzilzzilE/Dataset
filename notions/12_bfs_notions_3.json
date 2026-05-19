@@ -1,9 +1,9 @@
 {
   "topicId": 12,
   "pageNo": 3,
-  "title": "BFS 코드",
-  "point": "큐 반복문 구현",
-  "detail": "### 코드 설명\n\n- 그래프를 **인접 리스트**로 표현합니다.\n- `visited[]` 배열로 방문 여부를 관리합니다.\n- **큐(Queue)** 를 이용해 연결된 노드를 너비 우선으로 탐색합니다.\n\n### 주의사항\n\n- 큐에 넣을 때 **바로 방문 처리**를 해야 중복 삽입을 방지할 수 있습니다.\n- 그래프가 **비연결 그래프**일 경우 모든 노드에서 BFS를 시작해야 합니다.\n\n### 복잡도 분석\n\n| 구분 | 복잡도 |\n|------|--------|\n| 시간 | **O(V + E)** |\n| 공간 | **O(V)** |",
+  "title": "너비 우선 탐색: 구현",
+  "point": "인접 행렬 BFS C 코드 (bfs_mat)",
+  "detail": "### BFS C 구현 (인접 행렬)\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\n#define TRUE 1\n#define FALSE 0\n#define MAX_VERTICES 50\n#define MAX_QUEUE_SIZE 10\n\ntypedef int element;\ntypedef struct {\n    element queue[MAX_QUEUE_SIZE];\n    int front, rear;\n} QueueType;\n\nvoid queue_init(QueueType *q) { q->front = q->rear = 0; }\nint is_empty(QueueType *q)    { return q->front == q->rear; }\nint is_full(QueueType *q)     { return (q->rear+1)%MAX_QUEUE_SIZE == q->front; }\nvoid enqueue(QueueType *q, element item) {\n    q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;\n    q->queue[q->rear] = item;\n}\nelement dequeue(QueueType *q) {\n    q->front = (q->front + 1) % MAX_QUEUE_SIZE;\n    return q->queue[q->front];\n}\n\ntypedef struct {\n    int n;\n    int adj_mat[MAX_VERTICES][MAX_VERTICES];\n} GraphType;\nint visited[MAX_VERTICES];\n\nvoid bfs_mat(GraphType *g, int v) {\n    QueueType q;\n    queue_init(&q);\n\n    visited[v] = TRUE;\n    printf(\"%d 방문 -> \", v);\n    enqueue(&q, v);\n\n    while (!is_empty(&q)) {\n        v = dequeue(&q);\n        for (int w = 0; w < g->n; w++) {\n            if (g->adj_mat[v][w] && !visited[w]) {\n                visited[w] = TRUE;\n                printf(\"%d 방문 -> \", w);\n                enqueue(&q, w);\n            }\n        }\n    }\n}\n// 출력 예시: 0 방문 -> 2 방문 -> 4 방문 -> 1 방문 -> 3 방문 -> 5 방문 ->\n```",
   "imgUrl": null,
   "codes": [
     {
