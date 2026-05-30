@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<algorithm>\nusing namespace std;\nint arr[100001],n;\nint depth(int i){\n    if(i>n||arr[i]==0) return 0;\n    return 1+max(depth(2*i),depth(2*i+1));\n}\nint main(){\n    cin>>n;\n    for(int i=1;i<=n;i++) cin>>arr[i];\n    cout<<depth(1)<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<algorithm>\n\nusing namespace std;\n\nint arr[100001],n;\n\nint depth(int i){\n\n    if(i>n||arr[i]==0) return 0;\n\n    return 1+max(depth(2*i),depth(2*i+1));\n\n}\n\nint main(){\n\n    cin>>n;\n\n    for(int i=1;i<=n;i++) cin>>arr[i];\n\n    cout<<depth(1)<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn=int(input())\narr=[0]+list(map(int,input().split()))\ndef depth(i):\n    if i>n or arr[i]==0: return 0\n    return 1+max(depth(2*i),depth(2*i+1))\nprint(depth(1))"
+          "code": "import sys\n\nsys.setrecursionlimit(100000)\n\ninput=sys.stdin.readline\n\nn=int(input())\n\narr=[0]+list(map(int,input().split()))\n\ndef depth(i):\n\n    if i>n or arr[i]==0: return 0\n\n    return 1+max(depth(2*i),depth(2*i+1))\n\nprint(depth(1))"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=[0,...lines[1].split(' ').map(Number)];\nfunction depth(i){if(i>n||arr[i]===0)return 0;return 1+Math.max(depth(2*i),depth(2*i+1));}\nconsole.log(depth(1));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst n=Number(lines[0]);\n\nconst arr=[0,...lines[1].split(' ').map(Number)];\n\nfunction depth(i){if(i>n||arr[i]===0)return 0;return 1+Math.max(depth(2*i),depth(2*i+1));}\n\nconsole.log(depth(1));"
         }
       ]
     }

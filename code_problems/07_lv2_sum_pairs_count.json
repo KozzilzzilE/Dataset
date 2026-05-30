@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    long long n,k; cin>>n>>k;\n    vector<long long> arr(n); for(auto&x:arr) cin>>x;\n    int cnt=0;\n    for(int i=0;i<n-1;i++)\n        for(int j=i+1;j<n;j++)\n            if(arr[i]+arr[j]==k) cnt++;\n    cout<<cnt<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\nusing namespace std;\n\nint main(){\n\n    long long n,k; cin>>n>>k;\n\n    vector<long long> arr(n); for(auto&x:arr) cin>>x;\n\n    int cnt=0;\n\n    for(int i=0;i<n-1;i++)\n\n        for(int j=i+1;j<n;j++)\n\n            if(arr[i]+arr[j]==k) cnt++;\n\n    cout<<cnt<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\ndata=list(map(int,input().split()))\nn,k=data[0],data[1]\narr=list(map(int,input().split()))\ncnt=0\nfor i in range(n-1):\n    for j in range(i+1,n):\n        if arr[i]+arr[j]==k: cnt+=1\nprint(cnt)"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\ndata=list(map(int,input().split()))\n\nn,k=data[0],data[1]\n\narr=list(map(int,input().split()))\n\ncnt=0\n\nfor i in range(n-1):\n\n    for j in range(i+1,n):\n\n        if arr[i]+arr[j]==k: cnt+=1\n\nprint(cnt)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,k]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nlet cnt=0;\nfor(let i=0;i<n-1;i++) for(let j=i+1;j<n;j++) if(arr[i]+arr[j]===k) cnt++;\nconsole.log(cnt);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,k]=lines[0].split(' ').map(Number);\n\nconst arr=lines[1].split(' ').map(Number);\n\nlet cnt=0;\n\nfor(let i=0;i<n-1;i++) for(let j=i+1;j<n;j++) if(arr[i]+arr[j]===k) cnt++;\n\nconsole.log(cnt);"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n==0){cout<<0;return 0;}\n    if(n==1){cout<<1;return 0;}\n    long long a=0,b=1;\n    for(int i=2;i<=n;i++){long long t=a+b;a=b;b=t;}\n    cout<<b<<'\\n';\n}"
+          "code": "#include<iostream>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    if(n==0){cout<<0;return 0;}\n\n    if(n==1){cout<<1;return 0;}\n\n    long long a=0,b=1;\n\n    for(int i=2;i<=n;i++){long long t=a+b;a=b;b=t;}\n\n    cout<<b<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nn=int(sys.stdin.readline())\nif n==0: print(0)\nelif n==1: print(1)\nelse:\n    a,b=0,1\n    for _ in range(2,n+1): a,b=b,a+b\n    print(b)"
+          "code": "import sys\n\nn=int(sys.stdin.readline())\n\nif n==0: print(0)\n\nelif n==1: print(1)\n\nelse:\n\n    a,b=0,1\n\n    for _ in range(2,n+1): a,b=b,a+b\n\n    print(b)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\nif(n===0) console.log(0);\nelse{let a=0,b=1;for(let i=2;i<=n;i++){[a,b]=[b,a+b];}console.log(b);}"
+          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\n\nif(n===0) console.log(0);\n\nelse{let a=0,b=1;for(let i=2;i<=n;i++){[a,b]=[b,a+b];}console.log(b);}"
         }
       ]
     }

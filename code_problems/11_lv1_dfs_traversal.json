@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nvector<vector<int>> adj;\nbool visited[1001];\nstring res=\"\";\nvoid dfs(int v){\n    visited[v]=true;\n    res+=to_string(v)+\" \";\n    for(int u:adj[v]) if(!visited[u]) dfs(u);\n}\nint main(){\n    int n,m,start; cin>>n>>m>>start;\n    adj.resize(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n    dfs(start);\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n    cout<<res<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\n#include<vector>\n\n#include<algorithm>\n\nusing namespace std;\n\nvector<vector<int>> adj;\n\nbool visited[1001];\n\nstring res=\"\";\n\nvoid dfs(int v){\n\n    visited[v]=true;\n\n    res+=to_string(v)+\" \";\n\n    for(int u:adj[v]) if(!visited[u]) dfs(u);\n\n}\n\nint main(){\n\n    int n,m,start; cin>>n>>m>>start;\n\n    adj.resize(n+1);\n\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n\n    dfs(start);\n\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n\n    cout<<res<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nsys.setrecursionlimit(10000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nstart=int(input())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\nfor i in range(n+1): adj[i].sort()\nvisited=[False]*(n+1)\nres=[]\ndef dfs(v):\n    visited[v]=True; res.append(v)\n    for u in adj[v]:\n        if not visited[u]: dfs(u)\ndfs(start)\nprint(*res)"
+          "code": "import sys\n\nsys.setrecursionlimit(10000)\n\ninput=sys.stdin.readline\n\nn,m=map(int,input().split())\n\nstart=int(input())\n\nadj=[[] for _ in range(n+1)]\n\nfor _ in range(m):\n\n    u,v=map(int,input().split())\n\n    adj[u].append(v); adj[v].append(u)\n\nfor i in range(n+1): adj[i].sort()\n\nvisited=[False]*(n+1)\n\nres=[]\n\ndef dfs(v):\n\n    visited[v]=True; res.append(v)\n\n    for u in adj[v]:\n\n        if not visited[u]: dfs(u)\n\ndfs(start)\n\nprint(*res)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst start=Number(lines[1]);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nfor(let i=1;i<=n;i++) adj[i].sort((a,b)=>a-b);\nconst visited=new Array(n+1).fill(false),res=[];\nfunction dfs(v){visited[v]=true;res.push(v);for(const u of adj[v])if(!visited[u])dfs(u);}\ndfs(start);\nconsole.log(res.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,m]=lines[0].split(' ').map(Number);\n\nconst start=Number(lines[1]);\n\nconst adj=Array.from({length:n+1},()=>[]);\n\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\n\nfor(let i=1;i<=n;i++) adj[i].sort((a,b)=>a-b);\n\nconst visited=new Array(n+1).fill(false),res=[];\n\nfunction dfs(v){visited[v]=true;res.push(v);for(const u of adj[v])if(!visited[u])dfs(u);}\n\ndfs(start);\n\nconsole.log(res.join(' '));"
         }
       ]
     }

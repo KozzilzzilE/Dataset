@@ -44,17 +44,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\n#include<stack>\nusing namespace std;\nint main(){\n    string s; getline(cin,s);\n    stack<char> st;\n    for(char c:s){\n        if(c=='('||c=='{'||c=='[') st.push(c);\n        else{\n            if(st.empty()){cout<<\"false\\n\";return 0;}\n            char t=st.top();st.pop();\n            if(c==')'&&t!='('){cout<<\"false\\n\";return 0;}\n            if(c=='}'&&t!='{'){cout<<\"false\\n\";return 0;}\n            if(c==']'&&t!='['){cout<<\"false\\n\";return 0;}\n        }\n    }\n    cout<<(st.empty()?\"true\":\"false\")<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\n#include<stack>\n\nusing namespace std;\n\nint main(){\n\n    string s; getline(cin,s);\n\n    stack<char> st;\n\n    for(char c:s){\n\n        if(c=='('||c=='{'||c=='[') st.push(c);\n\n        else{\n\n            if(st.empty()){cout<<\"false\\n\";return 0;}\n\n            char t=st.top();st.pop();\n\n            if(c==')'&&t!='('){cout<<\"false\\n\";return 0;}\n\n            if(c=='}'&&t!='{'){cout<<\"false\\n\";return 0;}\n\n            if(c==']'&&t!='['){cout<<\"false\\n\";return 0;}\n\n        }\n\n    }\n\n    cout<<(st.empty()?\"true\":\"false\")<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ns=sys.stdin.readline().rstrip('\\n')\nstack=[]\npairs={')':'(','}':'{',']':'['}\nfor c in s:\n    if c in '({[': stack.append(c)\n    elif c in ')}]':\n        if not stack or stack[-1]!=pairs[c]:\n            print('false'); exit()\n        stack.pop()\nprint('true' if not stack else 'false')"
+          "code": "import sys\n\ns=sys.stdin.readline().rstrip('\\n')\n\nstack=[]\n\npairs={')':'(','}':'{',']':'['}\n\nfor c in s:\n\n    if c in '({[': stack.append(c)\n\n    elif c in ')}]':\n\n        if not stack or stack[-1]!=pairs[c]:\n\n            print('false'); exit()\n\n        stack.pop()\n\nprint('true' if not stack else 'false')"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').replace(/\\n$/,'');\nconst stack=[],p={')':'(','}':'{',']':'['};\nfor(const c of s){\n    if('({['.includes(c)) stack.push(c);\n    else if(')}]'.includes(c)){\n        if(!stack.length||stack[stack.length-1]!==p[c]){console.log('false');process.exit();}\n        stack.pop();\n    }\n}\nconsole.log(stack.length===0?'true':'false');"
+          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').replace(/\\n$/,'');\n\nconst stack=[],p={')':'(','}':'{',']':'['};\n\nfor(const c of s){\n\n    if('({['.includes(c)) stack.push(c);\n\n    else if(')}]'.includes(c)){\n\n        if(!stack.length||stack[stack.length-1]!==p[c]){console.log('false');process.exit();}\n\n        stack.pop();\n\n    }\n\n}\n\nconsole.log(stack.length===0?'true':'false');"
         }
       ]
     }

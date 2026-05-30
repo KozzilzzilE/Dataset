@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<algorithm>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nvoid unite(int a,int b){parent[find(a)]=find(b);}\nint main(){\n    int n,m; cin>>n>>m;\n    for(int i=1;i<=n;i++) parent[i]=i;\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;unite(u,v);}\n    int cnt=0;\n    for(int i=1;i<=n;i++) if(find(i)==i) cnt++;\n    cout<<cnt<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<algorithm>\n\nusing namespace std;\n\nint parent[100001];\n\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\n\nvoid unite(int a,int b){parent[find(a)]=find(b);}\n\nint main(){\n\n    int n,m; cin>>n>>m;\n\n    for(int i=1;i<=n;i++) parent[i]=i;\n\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;unite(u,v);}\n\n    int cnt=0;\n\n    for(int i=1;i<=n;i++) if(find(i)==i) cnt++;\n\n    cout<<cnt<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nparent=list(range(n+1))\ndef find(x):\n    if parent[x]!=x: parent[x]=find(parent[x])\n    return parent[x]\ndef union(a,b): parent[find(a)]=find(b)\nfor _ in range(m):\n    u,v=map(int,input().split()); union(u,v)\nprint(sum(1 for i in range(1,n+1) if find(i)==i))"
+          "code": "import sys\n\nsys.setrecursionlimit(100000)\n\ninput=sys.stdin.readline\n\nn,m=map(int,input().split())\n\nparent=list(range(n+1))\n\ndef find(x):\n\n    if parent[x]!=x: parent[x]=find(parent[x])\n\n    return parent[x]\n\ndef union(a,b): parent[find(a)]=find(b)\n\nfor _ in range(m):\n\n    u,v=map(int,input().split()); union(u,v)\n\nprint(sum(1 for i in range(1,n+1) if find(i)==i))"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst p=Array.from({length:n+1},(_,i)=>i);\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\nfunction union(a,b){p[find(a)]=find(b);}\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);union(u,v);}\nlet cnt=0;\nfor(let i=1;i<=n;i++) if(find(i)===i) cnt++;\nconsole.log(cnt);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,m]=lines[0].split(' ').map(Number);\n\nconst p=Array.from({length:n+1},(_,i)=>i);\n\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\n\nfunction union(a,b){p[find(a)]=find(b);}\n\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);union(u,v);}\n\nlet cnt=0;\n\nfor(let i=1;i<=n;i++) if(find(i)===i) cnt++;\n\nconsole.log(cnt);"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,C; cin>>n>>C;\n    vector<int> dp(C+1,0);\n    for(int i=0;i<n;i++){\n        int w,v; cin>>w>>v;\n        for(int j=C;j>=w;j--) dp[j]=max(dp[j],dp[j-w]+v);\n    }\n    cout<<dp[C]<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    int n,C; cin>>n>>C;\n\n    vector<int> dp(C+1,0);\n\n    for(int i=0;i<n;i++){\n\n        int w,v; cin>>w>>v;\n\n        for(int j=C;j>=w;j--) dp[j]=max(dp[j],dp[j-w]+v);\n\n    }\n\n    cout<<dp[C]<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn,C=map(int,input().split())\ndp=[0]*(C+1)\nfor _ in range(n):\n    w,v=map(int,input().split())\n    for j in range(C,w-1,-1): dp[j]=max(dp[j],dp[j-w]+v)\nprint(dp[C])"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn,C=map(int,input().split())\n\ndp=[0]*(C+1)\n\nfor _ in range(n):\n\n    w,v=map(int,input().split())\n\n    for j in range(C,w-1,-1): dp[j]=max(dp[j],dp[j-w]+v)\n\nprint(dp[C])"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,C]=lines[0].split(' ').map(Number);\nconst dp=new Array(C+1).fill(0);\nfor(let i=1;i<=n;i++){\n    const[w,v]=lines[i].split(' ').map(Number);\n    for(let j=C;j>=w;j--) dp[j]=Math.max(dp[j],dp[j-w]+v);\n}\nconsole.log(dp[C]);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,C]=lines[0].split(' ').map(Number);\n\nconst dp=new Array(C+1).fill(0);\n\nfor(let i=1;i<=n;i++){\n\n    const[w,v]=lines[i].split(' ').map(Number);\n\n    for(let j=C;j>=w;j--) dp[j]=Math.max(dp[j],dp[j-w]+v);\n\n}\n\nconsole.log(dp[C]);"
         }
       ]
     }

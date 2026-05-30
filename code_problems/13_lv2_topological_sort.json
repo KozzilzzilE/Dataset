@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<functional>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> adj(n+1); vector<int> ind(n+1,0);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);ind[v]++;}\n    priority_queue<int,vector<int>,greater<int>> pq;\n    for(int i=1;i<=n;i++) if(ind[i]==0) pq.push(i);\n    string res=\"\";\n    while(!pq.empty()){\n        int v=pq.top();pq.pop();\n        if(!res.empty()) res+=\" \";\n        res+=to_string(v);\n        for(int u:adj[v]) if(--ind[u]==0) pq.push(u);\n    }\n    cout<<res<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\n#include<vector>\n\n#include<queue>\n\n#include<functional>\n\nusing namespace std;\n\nint main(){\n\n    int n,m; cin>>n>>m;\n\n    vector<vector<int>> adj(n+1); vector<int> ind(n+1,0);\n\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);ind[v]++;}\n\n    priority_queue<int,vector<int>,greater<int>> pq;\n\n    for(int i=1;i<=n;i++) if(ind[i]==0) pq.push(i);\n\n    string res=\"\";\n\n    while(!pq.empty()){\n\n        int v=pq.top();pq.pop();\n\n        if(!res.empty()) res+=\" \";\n\n        res+=to_string(v);\n\n        for(int u:adj[v]) if(--ind[u]==0) pq.push(u);\n\n    }\n\n    cout<<res<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nimport heapq\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nind=[0]*(n+1)\nfor _ in range(m):\n    u,v=map(int,input().split()); adj[u].append(v); ind[v]+=1\npq=[i for i in range(1,n+1) if ind[i]==0]; heapq.heapify(pq)\nres=[]\nwhile pq:\n    v=heapq.heappop(pq); res.append(v)\n    for u in adj[v]:\n        ind[u]-=1\n        if ind[u]==0: heapq.heappush(pq,u)\nprint(*res)"
+          "code": "import sys\n\nimport heapq\n\ninput=sys.stdin.readline\n\nn,m=map(int,input().split())\n\nadj=[[] for _ in range(n+1)]\n\nind=[0]*(n+1)\n\nfor _ in range(m):\n\n    u,v=map(int,input().split()); adj[u].append(v); ind[v]+=1\n\npq=[i for i in range(1,n+1) if ind[i]==0]; heapq.heapify(pq)\n\nres=[]\n\nwhile pq:\n\n    v=heapq.heappop(pq); res.append(v)\n\n    for u in adj[v]:\n\n        ind[u]-=1\n\n        if ind[u]==0: heapq.heappush(pq,u)\n\nprint(*res)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]),ind=new Array(n+1).fill(0);\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);ind[v]++;}\nconst q=[];\nfor(let i=1;i<=n;i++) if(ind[i]===0) q.push(i);\nq.sort((a,b)=>a-b);\nconst res=[];let head=0;\nwhile(head<q.length){\n    const v=q[head++];res.push(v);\n    for(const u of adj[v]){if(--ind[u]===0){let lo=head,hi=q.length;while(lo<hi){const m=(lo+hi)>>1;if(q[m]<u)lo=m+1;else hi=m;}q.splice(lo,0,u);}}\n}\nconsole.log(res.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,m]=lines[0].split(' ').map(Number);\n\nconst adj=Array.from({length:n+1},()=>[]),ind=new Array(n+1).fill(0);\n\nfor(let i=1;i<=m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);ind[v]++;}\n\nconst q=[];\n\nfor(let i=1;i<=n;i++) if(ind[i]===0) q.push(i);\n\nq.sort((a,b)=>a-b);\n\nconst res=[];let head=0;\n\nwhile(head<q.length){\n\n    const v=q[head++];res.push(v);\n\n    for(const u of adj[v]){if(--ind[u]===0){let lo=head,hi=q.length;while(lo<hi){const m=(lo+hi)>>1;if(q[m]<u)lo=m+1;else hi=m;}q.splice(lo,0,u);}}\n\n}\n\nconsole.log(res.join(' '));"
         }
       ]
     }

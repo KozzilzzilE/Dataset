@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint parent[100001];\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nbool unite(int a,int b){a=find(a);b=find(b);if(a==b)return false;parent[b]=a;return true;}\nint main(){\n    int n,m; cin>>n>>m;\n    vector<array<int,3>> edges(m);\n    for(auto&e:edges) cin>>e[0]>>e[1]>>e[2];\n    sort(edges.begin(),edges.end(),[](auto&a,auto&b){return a[2]<b[2];});\n    for(int i=1;i<=n;i++) parent[i]=i;\n    long long total=0;\n    for(auto&e:edges) if(unite(e[0],e[1])) total+=e[2];\n    cout<<total<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<algorithm>\n\nusing namespace std;\n\nint parent[100001];\n\nint find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\n\nbool unite(int a,int b){a=find(a);b=find(b);if(a==b)return false;parent[b]=a;return true;}\n\nint main(){\n\n    int n,m; cin>>n>>m;\n\n    vector<array<int,3>> edges(m);\n\n    for(auto&e:edges) cin>>e[0]>>e[1]>>e[2];\n\n    sort(edges.begin(),edges.end(),[](auto&a,auto&b){return a[2]<b[2];});\n\n    for(int i=1;i<=n;i++) parent[i]=i;\n\n    long long total=0;\n\n    for(auto&e:edges) if(unite(e[0],e[1])) total+=e[2];\n\n    cout<<total<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nedges=[tuple(map(int,input().split())) for _ in range(m)]\nedges.sort(key=lambda x:x[2])\nparent=list(range(n+1))\ndef find(x):\n    if parent[x]!=x: parent[x]=find(parent[x])\n    return parent[x]\ndef union(a,b):\n    a,b=find(a),find(b)\n    if a==b: return False\n    parent[b]=a; return True\ntotal=0\nfor u,v,w in edges:\n    if union(u,v): total+=w\nprint(total)"
+          "code": "import sys\n\nsys.setrecursionlimit(100000)\n\ninput=sys.stdin.readline\n\nn,m=map(int,input().split())\n\nedges=[tuple(map(int,input().split())) for _ in range(m)]\n\nedges.sort(key=lambda x:x[2])\n\nparent=list(range(n+1))\n\ndef find(x):\n\n    if parent[x]!=x: parent[x]=find(parent[x])\n\n    return parent[x]\n\ndef union(a,b):\n\n    a,b=find(a),find(b)\n\n    if a==b: return False\n\n    parent[b]=a; return True\n\ntotal=0\n\nfor u,v,w in edges:\n\n    if union(u,v): total+=w\n\nprint(total)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst edges=lines.slice(1).map(l=>l.split(' ').map(Number));\nedges.sort((a,b)=>a[2]-b[2]);\nconst p=Array.from({length:n+1},(_,i)=>i);\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\nfunction union(a,b){a=find(a);b=find(b);if(a===b)return false;p[b]=a;return true;}\nlet total=0;\nfor(const[u,v,w]of edges) if(union(u,v)) total+=w;\nconsole.log(total);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,m]=lines[0].split(' ').map(Number);\n\nconst edges=lines.slice(1).map(l=>l.split(' ').map(Number));\n\nedges.sort((a,b)=>a[2]-b[2]);\n\nconst p=Array.from({length:n+1},(_,i)=>i);\n\nfunction find(x){return p[x]===x?x:p[x]=find(p[x]);}\n\nfunction union(a,b){a=find(a);b=find(b);if(a===b)return false;p[b]=a;return true;}\n\nlet total=0;\n\nfor(const[u,v,w]of edges) if(union(u,v)) total+=w;\n\nconsole.log(total);"
         }
       ]
     }

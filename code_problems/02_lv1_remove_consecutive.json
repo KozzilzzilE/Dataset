@@ -44,17 +44,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    string res=\"\";\n    for(char c:s){\n        if(res.empty()||res.back()!=c) res+=c;\n    }\n    cout<<res<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\nusing namespace std;\n\nint main(){\n\n    string s; cin>>s;\n\n    string res=\"\";\n\n    for(char c:s){\n\n        if(res.empty()||res.back()!=c) res+=c;\n\n    }\n\n    cout<<res<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ns=sys.stdin.readline().strip()\nres=[]\nfor c in s:\n    if not res or res[-1]!=c:\n        res.append(c)\nprint(''.join(res))"
+          "code": "import sys\n\ns=sys.stdin.readline().strip()\n\nres=[]\n\nfor c in s:\n\n    if not res or res[-1]!=c:\n\n        res.append(c)\n\nprint(''.join(res))"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim();\nlet res='';\nfor(const c of s) if(res[res.length-1]!==c) res+=c;\nconsole.log(res);"
+          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim();\n\nlet res='';\n\nfor(const c of s) if(res[res.length-1]!==c) res+=c;\n\nconsole.log(res);"
         }
       ]
     }

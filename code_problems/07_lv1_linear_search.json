@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    for(int i=0;i<n;i++) if(arr[i]==target){cout<<i+1<<'\\n';return 0;}\n    cout<<-1<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\nusing namespace std;\n\nint main(){\n\n    int n,target; cin>>n>>target;\n\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n\n    for(int i=0;i<n;i++) if(arr[i]==target){cout<<i+1<<'\\n';return 0;}\n\n    cout<<-1<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn,target=map(int,input().split())\narr=list(map(int,input().split()))\nfor i,v in enumerate(arr):\n    if v==target: print(i+1); exit()\nprint(-1)"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn,target=map(int,input().split())\n\narr=list(map(int,input().split()))\n\nfor i,v in enumerate(arr):\n\n    if v==target: print(i+1); exit()\n\nprint(-1)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nconst i=arr.indexOf(target);\nconsole.log(i===-1?-1:i+1);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,target]=lines[0].split(' ').map(Number);\n\nconst arr=lines[1].split(' ').map(Number);\n\nconst i=arr.indexOf(target);\n\nconsole.log(i===-1?-1:i+1);"
         }
       ]
     }

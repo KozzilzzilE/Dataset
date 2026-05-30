@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n==1){cout<<1;return 0;}\n    if(n==2){cout<<2;return 0;}\n    vector<long long> dp(n+1);\n    dp[1]=1;dp[2]=2;\n    for(int i=3;i<=n;i++) dp[i]=dp[i-1]+dp[i-2];\n    cout<<dp[n]<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    if(n==1){cout<<1;return 0;}\n\n    if(n==2){cout<<2;return 0;}\n\n    vector<long long> dp(n+1);\n\n    dp[1]=1;dp[2]=2;\n\n    for(int i=3;i<=n;i++) dp[i]=dp[i-1]+dp[i-2];\n\n    cout<<dp[n]<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nn=int(sys.stdin.readline())\nif n==1: print(1)\nelif n==2: print(2)\nelse:\n    a,b=1,2\n    for _ in range(3,n+1): a,b=b,a+b\n    print(b)"
+          "code": "import sys\n\nn=int(sys.stdin.readline())\n\nif n==1: print(1)\n\nelif n==2: print(2)\n\nelse:\n\n    a,b=1,2\n\n    for _ in range(3,n+1): a,b=b,a+b\n\n    print(b)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\nif(n===1){console.log(1);}\nelse if(n===2){console.log(2);}\nelse{\n    let a=1,b=2;\n    for(let i=3;i<=n;i++){[a,b]=[b,a+b];}\n    console.log(b);\n}"
+          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\n\nif(n===1){console.log(1);}\n\nelse if(n===2){console.log(2);}\n\nelse{\n\n    let a=1,b=2;\n\n    for(let i=3;i<=n;i++){[a,b]=[b,a+b];}\n\n    console.log(b);\n\n}"
         }
       ]
     }

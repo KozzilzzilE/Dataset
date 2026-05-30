@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\n#include<stack>\nusing namespace std;\nint main(){\n    string token;\n    stack<int> st;\n    while(cin>>token){\n        if(token==\"+\"||token==\"-\"||token==\"*\"||token==\"/\"){\n            int b=st.top();st.pop();\n            int a=st.top();st.pop();\n            if(token==\"+\") st.push(a+b);\n            else if(token==\"-\") st.push(a-b);\n            else if(token==\"*\") st.push(a*b);\n            else st.push(a/b);\n        } else {\n            st.push(stoi(token));\n        }\n    }\n    cout<<st.top()<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\n#include<stack>\n\nusing namespace std;\n\nint main(){\n\n    string token;\n\n    stack<int> st;\n\n    while(cin>>token){\n\n        if(token==\"+\"||token==\"-\"||token==\"*\"||token==\"/\"){\n\n            int b=st.top();st.pop();\n\n            int a=st.top();st.pop();\n\n            if(token==\"+\") st.push(a+b);\n\n            else if(token==\"-\") st.push(a-b);\n\n            else if(token==\"*\") st.push(a*b);\n\n            else st.push(a/b);\n\n        } else {\n\n            st.push(stoi(token));\n\n        }\n\n    }\n\n    cout<<st.top()<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ntokens=sys.stdin.readline().split()\nstack=[]\nfor t in tokens:\n    if t in '+-*/':\n        b=stack.pop(); a=stack.pop()\n        if t=='+': stack.append(a+b)\n        elif t=='-': stack.append(a-b)\n        elif t=='*': stack.append(a*b)\n        else: stack.append(int(a/b))\n    else:\n        stack.append(int(t))\nprint(stack[-1])"
+          "code": "import sys\n\ntokens=sys.stdin.readline().split()\n\nstack=[]\n\nfor t in tokens:\n\n    if t in '+-*/':\n\n        b=stack.pop(); a=stack.pop()\n\n        if t=='+': stack.append(a+b)\n\n        elif t=='-': stack.append(a-b)\n\n        elif t=='*': stack.append(a*b)\n\n        else: stack.append(int(a/b))\n\n    else:\n\n        stack.append(int(t))\n\nprint(stack[-1])"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const tokens=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\nconst stack=[];\nfor(const t of tokens){\n    if('+-*/'.includes(t)){\n        const b=stack.pop(),a=stack.pop();\n        if(t==='+') stack.push(a+b);\n        else if(t==='-') stack.push(a-b);\n        else if(t==='*') stack.push(a*b);\n        else stack.push(Math.trunc(a/b));\n    } else stack.push(Number(t));\n}\nconsole.log(stack[stack.length-1]);"
+          "code": "const tokens=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\n\nconst stack=[];\n\nfor(const t of tokens){\n\n    if('+-*/'.includes(t)){\n\n        const b=stack.pop(),a=stack.pop();\n\n        if(t==='+') stack.push(a+b);\n\n        else if(t==='-') stack.push(a-b);\n\n        else if(t==='*') stack.push(a*b);\n\n        else stack.push(Math.trunc(a/b));\n\n    } else stack.push(Number(t));\n\n}\n\nconsole.log(stack[stack.length-1]);"
         }
       ]
     }

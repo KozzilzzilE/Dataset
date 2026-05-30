@@ -44,17 +44,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=0,hi=n-1;\n    while(lo<=hi){\n        int mid=lo+(hi-lo)/2;\n        if(arr[mid]==target){cout<<mid+1<<'\\n';return 0;}\n        else if(arr[mid]<target) lo=mid+1;\n        else hi=mid-1;\n    }\n    cout<<-1<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\nusing namespace std;\n\nint main(){\n\n    int n,target; cin>>n>>target;\n\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n\n    int lo=0,hi=n-1;\n\n    while(lo<=hi){\n\n        int mid=lo+(hi-lo)/2;\n\n        if(arr[mid]==target){cout<<mid+1<<'\\n';return 0;}\n\n        else if(arr[mid]<target) lo=mid+1;\n\n        else hi=mid-1;\n\n    }\n\n    cout<<-1<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn,target=map(int,input().split())\narr=list(map(int,input().split()))\nlo,hi=0,n-1\nwhile lo<=hi:\n    mid=(lo+hi)//2\n    if arr[mid]==target: print(mid+1); exit()\n    elif arr[mid]<target: lo=mid+1\n    else: hi=mid-1\nprint(-1)"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn,target=map(int,input().split())\n\narr=list(map(int,input().split()))\n\nlo,hi=0,n-1\n\nwhile lo<=hi:\n\n    mid=(lo+hi)//2\n\n    if arr[mid]==target: print(mid+1); exit()\n\n    elif arr[mid]<target: lo=mid+1\n\n    else: hi=mid-1\n\nprint(-1)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nlet lo=0,hi=n-1;\nwhile(lo<=hi){\n    const mid=(lo+hi)>>1;\n    if(arr[mid]===target){console.log(mid+1);process.exit();}\n    else if(arr[mid]<target) lo=mid+1;\n    else hi=mid-1;\n}\nconsole.log(-1);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,target]=lines[0].split(' ').map(Number);\n\nconst arr=lines[1].split(' ').map(Number);\n\nlet lo=0,hi=n-1;\n\nwhile(lo<=hi){\n\n    const mid=(lo+hi)>>1;\n\n    if(arr[mid]===target){console.log(mid+1);process.exit();}\n\n    else if(arr[mid]<target) lo=mid+1;\n\n    else hi=mid-1;\n\n}\n\nconsole.log(-1);"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<queue>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    queue<int> q;\n    for(int i=1;i<=n;i++) q.push(i);\n    while(q.size()>1){\n        for(int i=1;i<k;i++){q.push(q.front());q.pop();}\n        q.pop();\n    }\n    cout<<q.front()<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<queue>\n\nusing namespace std;\n\nint main(){\n\n    int n,k; cin>>n>>k;\n\n    queue<int> q;\n\n    for(int i=1;i<=n;i++) q.push(i);\n\n    while(q.size()>1){\n\n        for(int i=1;i<k;i++){q.push(q.front());q.pop();}\n\n        q.pop();\n\n    }\n\n    cout<<q.front()<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nfrom collections import deque\nn,k=map(int,sys.stdin.readline().split())\nq=deque(range(1,n+1))\nwhile len(q)>1:\n    q.rotate(-(k-1))\n    q.popleft()\nprint(q[0])"
+          "code": "import sys\n\nfrom collections import deque\n\nn,k=map(int,sys.stdin.readline().split())\n\nq=deque(range(1,n+1))\n\nwhile len(q)>1:\n\n    q.rotate(-(k-1))\n\n    q.popleft()\n\nprint(q[0])"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const [n,k]=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ').map(Number);\nconst q=Array.from({length:n},(_,i)=>i+1);\nlet idx=0;\nwhile(q.length>1){\n    idx=(idx+k-1)%q.length;\n    q.splice(idx,1);\n    if(idx===q.length) idx=0;\n}\nconsole.log(q[0]);"
+          "code": "const [n,k]=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ').map(Number);\n\nconst q=Array.from({length:n},(_,i)=>i+1);\n\nlet idx=0;\n\nwhile(q.length>1){\n\n    idx=(idx+k-1)%q.length;\n\n    q.splice(idx,1);\n\n    if(idx===q.length) idx=0;\n\n}\n\nconsole.log(q[0]);"
         }
       ]
     }

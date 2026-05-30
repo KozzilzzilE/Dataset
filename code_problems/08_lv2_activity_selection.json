@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<algorithm>\n#include<utility>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<pair<int,int>> acts(n);\n    for(auto&[s,e]:acts) cin>>s>>e;\n    sort(acts.begin(),acts.end(),[](auto&a,auto&b){return a.second<b.second;});\n    int cnt=0,last=0;\n    for(auto&[s,e]:acts) if(s>=last){cnt++;last=e;}\n    cout<<cnt<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<algorithm>\n\n#include<utility>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    vector<pair<int,int>> acts(n);\n\n    for(auto&[s,e]:acts) cin>>s>>e;\n\n    sort(acts.begin(),acts.end(),[](auto&a,auto&b){return a.second<b.second;});\n\n    int cnt=0,last=0;\n\n    for(auto&[s,e]:acts) if(s>=last){cnt++;last=e;}\n\n    cout<<cnt<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn=int(input())\nacts=[tuple(map(int,input().split())) for _ in range(n)]\nacts.sort(key=lambda x:x[1])\ncnt=last=0\nfor s,e in acts:\n    if s>=last: cnt+=1;last=e\nprint(cnt)"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn=int(input())\n\nacts=[tuple(map(int,input().split())) for _ in range(n)]\n\nacts.sort(key=lambda x:x[1])\n\ncnt=last=0\n\nfor s,e in acts:\n\n    if s>=last: cnt+=1;last=e\n\nprint(cnt)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst acts=lines.slice(1).map(l=>l.split(' ').map(Number));\nacts.sort((a,b)=>a[1]-b[1]);\nlet cnt=0,last=0;\nfor(const[s,e]of acts) if(s>=last){cnt++;last=e;}\nconsole.log(cnt);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst n=Number(lines[0]);\n\nconst acts=lines.slice(1).map(l=>l.split(' ').map(Number));\n\nacts.sort((a,b)=>a[1]-b[1]);\n\nlet cnt=0,last=0;\n\nfor(const[s,e]of acts) if(s>=last){cnt++;last=e;}\n\nconsole.log(cnt);"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k; k%=n;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    vector<int> res(n);\n    for(int i=0;i<n;i++) res[(i+k)%n]=arr[i];\n    for(int i=0;i<n;i++){if(i) cout<<' '; cout<<res[i];}\n    cout<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\nusing namespace std;\n\nint main(){\n\n    int n,k; cin>>n>>k; k%=n;\n\n    vector<int> arr(n);\n\n    for(int&x:arr) cin>>x;\n\n    vector<int> res(n);\n\n    for(int i=0;i<n;i++) res[(i+k)%n]=arr[i];\n\n    for(int i=0;i<n;i++){if(i) cout<<' '; cout<<res[i];}\n\n    cout<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn,k=map(int,input().split())\narr=list(map(int,input().split()))\nk%=n\nprint(*arr[-k:]+arr[:-k] if k else arr)"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn,k=map(int,input().split())\n\narr=list(map(int,input().split()))\n\nk%=n\n\nprint(*arr[-k:]+arr[:-k] if k else arr)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nlet [n,k]=lines[0].split(' ').map(Number); k%=n;\nconst arr=lines[1].split(' ').map(Number);\nconst res=[...arr.slice(n-k),...arr.slice(0,n-k)];\nconsole.log(res.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nlet [n,k]=lines[0].split(' ').map(Number); k%=n;\n\nconst arr=lines[1].split(' ').map(Number);\n\nconst res=[...arr.slice(n-k),...arr.slice(0,n-k)];\n\nconsole.log(res.join(' '));"
         }
       ]
     }

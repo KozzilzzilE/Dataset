@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<algorithm>\n#include<climits>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    long long cur=LLONG_MIN,mx=LLONG_MIN;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        cur=(cur==LLONG_MIN)?v:max((long long)v,cur+v);\n        mx=max(mx,cur);\n    }\n    cout<<mx<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<algorithm>\n\n#include<climits>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    long long cur=LLONG_MIN,mx=LLONG_MIN;\n\n    for(int i=0;i<n;i++){\n\n        int v; cin>>v;\n\n        cur=(cur==LLONG_MIN)?v:max((long long)v,cur+v);\n\n        mx=max(mx,cur);\n\n    }\n\n    cout<<mx<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ndata=list(map(int,sys.stdin.readline().split()))\nn=data[0]; arr=data[1:]\ncur=mx=arr[0]\nfor v in arr[1:]:\n    cur=max(v,cur+v); mx=max(mx,cur)\nprint(mx)"
+          "code": "import sys\n\ndata=list(map(int,sys.stdin.readline().split()))\n\nn=data[0]; arr=data[1:]\n\ncur=mx=arr[0]\n\nfor v in arr[1:]:\n\n    cur=max(v,cur+v); mx=max(mx,cur)\n\nprint(mx)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\nconst n=Number(data[0]),arr=data.slice(1).map(Number);\nlet cur=arr[0],mx=arr[0];\nfor(let i=1;i<n;i++){cur=Math.max(arr[i],cur+arr[i]);mx=Math.max(mx,cur);}\nconsole.log(mx);"
+          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\n\nconst n=Number(data[0]),arr=data.slice(1).map(Number);\n\nlet cur=arr[0],mx=arr[0];\n\nfor(let i=1;i<n;i++){cur=Math.max(arr[i],cur+arr[i]);mx=Math.max(mx,cur);}\n\nconsole.log(mx);"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<unordered_map>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    unordered_map<int,int> mp;\n    for(int i=0;i<n;i++){\n        int v; cin>>v;\n        int need=target-v;\n        if(mp.count(need)){cout<<mp[need]<<' '<<i<<'\\n';return 0;}\n        mp[v]=i;\n    }\n}"
+          "code": "#include<iostream>\n\n#include<unordered_map>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    int n,target; cin>>n>>target;\n\n    unordered_map<int,int> mp;\n\n    for(int i=0;i<n;i++){\n\n        int v; cin>>v;\n\n        int need=target-v;\n\n        if(mp.count(need)){cout<<mp[need]<<' '<<i<<'\\n';return 0;}\n\n        mp[v]=i;\n\n    }\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ndata=list(map(int,sys.stdin.readline().split()))\nn,target=data[0],data[1]\narr=data[2:]\nseen={}\nfor i,v in enumerate(arr):\n    need=target-v\n    if need in seen:\n        print(seen[need],i)\n        break\n    seen[v]=i"
+          "code": "import sys\n\ndata=list(map(int,sys.stdin.readline().split()))\n\nn,target=data[0],data[1]\n\narr=data[2:]\n\nseen={}\n\nfor i,v in enumerate(arr):\n\n    need=target-v\n\n    if need in seen:\n\n        print(seen[need],i)\n\n        break\n\n    seen[v]=i"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ').map(Number);\nconst n=data[0],target=data[1],arr=data.slice(2);\nconst seen={};\nfor(let i=0;i<n;i++){\n    const need=target-arr[i];\n    if(need in seen){console.log(seen[need]+' '+i);break;}\n    seen[arr[i]]=i;\n}"
+          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ').map(Number);\n\nconst n=data[0],target=data[1],arr=data.slice(2);\n\nconst seen={};\n\nfor(let i=0;i<n;i++){\n\n    const need=target-arr[i];\n\n    if(need in seen){console.log(seen[need]+' '+i);break;}\n\n    seen[arr[i]]=i;\n\n}"
         }
       ]
     }

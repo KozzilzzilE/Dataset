@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<map>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    map<int,int> freq;\n    for(int x:arr) freq[x]++;\n    sort(arr.begin(),arr.end(),[&](int a,int b){\n        if(freq[a]!=freq[b]) return freq[a]>freq[b];\n        return a<b;\n    });\n    for(int i=0;i<n;i++){if(i) cout<<' ';cout<<arr[i];}\n    cout<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<map>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n\n    map<int,int> freq;\n\n    for(int x:arr) freq[x]++;\n\n    sort(arr.begin(),arr.end(),[&](int a,int b){\n\n        if(freq[a]!=freq[b]) return freq[a]>freq[b];\n\n        return a<b;\n\n    });\n\n    for(int i=0;i<n;i++){if(i) cout<<' ';cout<<arr[i];}\n\n    cout<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nfrom collections import Counter\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\ncnt=Counter(arr)\narr.sort(key=lambda x:(-cnt[x],x))\nprint(*arr)"
+          "code": "import sys\n\nfrom collections import Counter\n\ninput=sys.stdin.readline\n\nn=int(input())\n\narr=list(map(int,input().split()))\n\ncnt=Counter(arr)\n\narr.sort(key=lambda x:(-cnt[x],x))\n\nprint(*arr)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=lines[1].split(' ').map(Number);\nconst freq={};\nfor(const v of arr) freq[v]=(freq[v]||0)+1;\narr.sort((a,b)=>freq[b]!==freq[a]?freq[b]-freq[a]:a-b);\nconsole.log(arr.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst n=Number(lines[0]);\n\nconst arr=lines[1].split(' ').map(Number);\n\nconst freq={};\n\nfor(const v of arr) freq[v]=(freq[v]||0)+1;\n\narr.sort((a,b)=>freq[b]!==freq[a]?freq[b]-freq[a]:a-b);\n\nconsole.log(arr.join(' '));"
         }
       ]
     }

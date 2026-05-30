@@ -44,17 +44,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\n#include<algorithm>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    string r=s; reverse(r.begin(),r.end());\n    cout<<(s==r?\"YES\":\"NO\")<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    string s; cin>>s;\n\n    string r=s; reverse(r.begin(),r.end());\n\n    cout<<(s==r?\"YES\":\"NO\")<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ns=sys.stdin.readline().strip()\nprint('YES' if s==s[::-1] else 'NO')"
+          "code": "import sys\n\ns=sys.stdin.readline().strip()\n\nprint('YES' if s==s[::-1] else 'NO')"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim();\nconsole.log(s===s.split('').reverse().join('')?'YES':'NO');"
+          "code": "const s=require('fs').readFileSync('/dev/stdin','utf8').trim();\n\nconsole.log(s===s.split('').reverse().join('')?'YES':'NO');"
         }
       ]
     }

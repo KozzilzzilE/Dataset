@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n==0){cout<<0;return 0;}\n    string res=\"\";\n    while(n>0){res=(char)('0'+n%2)+res;n/=2;}\n    cout<<res<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    if(n==0){cout<<0;return 0;}\n\n    string res=\"\";\n\n    while(n>0){res=(char)('0'+n%2)+res;n/=2;}\n\n    cout<<res<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nn=int(sys.stdin.readline())\nprint(bin(n)[2:])"
+          "code": "import sys\n\nn=int(sys.stdin.readline())\n\nprint(bin(n)[2:])"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\nconsole.log(n.toString(2));"
+          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\n\nconsole.log(n.toString(2));"
         }
       ]
     }

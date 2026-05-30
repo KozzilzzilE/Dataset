@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<deque>\nusing namespace std;\nint main(){\n    int n,k; cin>>n>>k;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    deque<int> dq;\n    bool first=true;\n    for(int i=0;i<n;i++){\n        if(!dq.empty()&&dq.front()==i-k) dq.pop_front();\n        while(!dq.empty()&&arr[dq.back()]<=arr[i]) dq.pop_back();\n        dq.push_back(i);\n        if(i>=k-1){if(!first) cout<<' '; cout<<arr[dq.front()]; first=false;}\n    }\n    cout<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<deque>\n\nusing namespace std;\n\nint main(){\n\n    int n,k; cin>>n>>k;\n\n    vector<int> arr(n);\n\n    for(int&x:arr) cin>>x;\n\n    deque<int> dq;\n\n    bool first=true;\n\n    for(int i=0;i<n;i++){\n\n        if(!dq.empty()&&dq.front()==i-k) dq.pop_front();\n\n        while(!dq.empty()&&arr[dq.back()]<=arr[i]) dq.pop_back();\n\n        dq.push_back(i);\n\n        if(i>=k-1){if(!first) cout<<' '; cout<<arr[dq.front()]; first=false;}\n\n    }\n\n    cout<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,k=map(int,input().split())\narr=list(map(int,input().split()))\ndq=deque()\nres=[]\nfor i in range(n):\n    if dq and dq[0]==i-k: dq.popleft()\n    while dq and arr[dq[-1]]<=arr[i]: dq.pop()\n    dq.append(i)\n    if i>=k-1: res.append(arr[dq[0]])\nprint(*res)"
+          "code": "import sys\n\nfrom collections import deque\n\ninput=sys.stdin.readline\n\nn,k=map(int,input().split())\n\narr=list(map(int,input().split()))\n\ndq=deque()\n\nres=[]\n\nfor i in range(n):\n\n    if dq and dq[0]==i-k: dq.popleft()\n\n    while dq and arr[dq[-1]]<=arr[i]: dq.pop()\n\n    dq.append(i)\n\n    if i>=k-1: res.append(arr[dq[0]])\n\nprint(*res)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,k]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nconst dq=[],res=[];\nfor(let i=0;i<n;i++){\n    if(dq.length&&dq[0]===i-k) dq.shift();\n    while(dq.length&&arr[dq[dq.length-1]]<=arr[i]) dq.pop();\n    dq.push(i);\n    if(i>=k-1) res.push(arr[dq[0]]);\n}\nconsole.log(res.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,k]=lines[0].split(' ').map(Number);\n\nconst arr=lines[1].split(' ').map(Number);\n\nconst dq=[],res=[];\n\nfor(let i=0;i<n;i++){\n\n    if(dq.length&&dq[0]===i-k) dq.shift();\n\n    while(dq.length&&arr[dq[dq.length-1]]<=arr[i]) dq.pop();\n\n    dq.push(i);\n\n    if(i>=k-1) res.push(arr[dq[0]]);\n\n}\n\nconsole.log(res.join(' '));"
         }
       ]
     }

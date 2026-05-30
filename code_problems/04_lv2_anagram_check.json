@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\n#include<algorithm>\nusing namespace std;\nint main(){\n    string a,b; cin>>a>>b;\n    if(a.size()!=b.size()){cout<<\"NO\\n\";return 0;}\n    sort(a.begin(),a.end()); sort(b.begin(),b.end());\n    cout<<(a==b?\"YES\":\"NO\")<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    string a,b; cin>>a>>b;\n\n    if(a.size()!=b.size()){cout<<\"NO\\n\";return 0;}\n\n    sort(a.begin(),a.end()); sort(b.begin(),b.end());\n\n    cout<<(a==b?\"YES\":\"NO\")<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\na=sys.stdin.readline().strip()\nb=sys.stdin.readline().strip()\nprint('YES' if sorted(a)==sorted(b) else 'NO')"
+          "code": "import sys\n\na=sys.stdin.readline().strip()\n\nb=sys.stdin.readline().strip()\n\nprint('YES' if sorted(a)==sorted(b) else 'NO')"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst a=lines[0],b=lines[1];\nconst s=x=>x.split('').sort().join('');\nconsole.log(s(a)===s(b)?'YES':'NO');"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst a=lines[0],b=lines[1];\n\nconst s=x=>x.split('').sort().join('');\n\nconsole.log(s(a)===s(b)?'YES':'NO');"
         }
       ]
     }

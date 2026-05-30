@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    if(n<2){cout<<\"false\\n\";return 0;}\n    for(int i=2;(long long)i*i<=n;i++)\n        if(n%i==0){cout<<\"false\\n\";return 0;}\n    cout<<\"true\\n\";\n}"
+          "code": "#include<iostream>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    if(n<2){cout<<\"false\\n\";return 0;}\n\n    for(int i=2;(long long)i*i<=n;i++)\n\n        if(n%i==0){cout<<\"false\\n\";return 0;}\n\n    cout<<\"true\\n\";\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nn=int(sys.stdin.readline())\nif n<2:print('false')\nelse:\n    ok=True\n    i=2\n    while i*i<=n:\n        if n%i==0:ok=False;break\n        i+=1\n    print('true' if ok else 'false')"
+          "code": "import sys\n\nn=int(sys.stdin.readline())\n\nif n<2:print('false')\n\nelse:\n\n    ok=True\n\n    i=2\n\n    while i*i<=n:\n\n        if n%i==0:ok=False;break\n\n        i+=1\n\n    print('true' if ok else 'false')"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\nfunction isPrime(n){\n    if(n<2)return false;\n    for(let i=2;i*i<=n;i++) if(n%i===0)return false;\n    return true;\n}\nconsole.log(String(isPrime(n)));"
+          "code": "const n=Number(require('fs').readFileSync('/dev/stdin','utf8').trim());\n\nfunction isPrime(n){\n\n    if(n<2)return false;\n\n    for(let i=2;i*i<=n;i++) if(n%i===0)return false;\n\n    return true;\n\n}\n\nconsole.log(String(isPrime(n)));"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<queue>\nusing namespace std;\nint main(){\n    int n,m,src,dst; cin>>n>>m>>src>>dst;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    vector<int> dist(n+1,-1); dist[src]=0;\n    queue<int> q; q.push(src);\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        for(int u:adj[v]) if(dist[u]==-1){dist[u]=dist[v]+1;q.push(u);}\n    }\n    cout<<dist[dst]<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<queue>\n\nusing namespace std;\n\nint main(){\n\n    int n,m,src,dst; cin>>n>>m>>src>>dst;\n\n    vector<vector<int>> adj(n+1);\n\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n\n    vector<int> dist(n+1,-1); dist[src]=0;\n\n    queue<int> q; q.push(src);\n\n    while(!q.empty()){\n\n        int v=q.front();q.pop();\n\n        for(int u:adj[v]) if(dist[u]==-1){dist[u]=dist[v]+1;q.push(u);}\n\n    }\n\n    cout<<dist[dst]<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nsrc,dst=map(int,input().split())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\ndist=[-1]*(n+1); dist[src]=0\nq=deque([src])\nwhile q:\n    v=q.popleft()\n    for u in adj[v]:\n        if dist[u]==-1: dist[u]=dist[v]+1; q.append(u)\nprint(dist[dst])"
+          "code": "import sys\n\nfrom collections import deque\n\ninput=sys.stdin.readline\n\nn,m=map(int,input().split())\n\nsrc,dst=map(int,input().split())\n\nadj=[[] for _ in range(n+1)]\n\nfor _ in range(m):\n\n    u,v=map(int,input().split())\n\n    adj[u].append(v); adj[v].append(u)\n\ndist=[-1]*(n+1); dist[src]=0\n\nq=deque([src])\n\nwhile q:\n\n    v=q.popleft()\n\n    for u in adj[v]:\n\n        if dist[u]==-1: dist[u]=dist[v]+1; q.append(u)\n\nprint(dist[dst])"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst [src,dst]=lines[1].split(' ').map(Number);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nconst dist=new Array(n+1).fill(-1); dist[src]=0;\nconst q=[src]; let head=0;\nwhile(head<q.length){const v=q[head++];for(const u of adj[v])if(dist[u]===-1){dist[u]=dist[v]+1;q.push(u);}}\nconsole.log(dist[dst]);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,m]=lines[0].split(' ').map(Number);\n\nconst [src,dst]=lines[1].split(' ').map(Number);\n\nconst adj=Array.from({length:n+1},()=>[]);\n\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\n\nconst dist=new Array(n+1).fill(-1); dist[src]=0;\n\nconst q=[src]; let head=0;\n\nwhile(head<q.length){const v=q[head++];for(const u of adj[v])if(dist[u]===-1){dist[u]=dist[v]+1;q.push(u);}}\n\nconsole.log(dist[dst]);"
         }
       ]
     }

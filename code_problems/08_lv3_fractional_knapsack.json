@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<algorithm>\n#include<utility>\nusing namespace std;\nint main(){\n    int n; double C; cin>>n>>C;\n    vector<pair<double,double>> items(n);\n    for(auto&[w,v]:items) cin>>w>>v;\n    sort(items.begin(),items.end(),[](auto&a,auto&b){return a.second/a.first>b.second/b.first;});\n    double total=0,remain=C;\n    for(auto&[w,v]:items){\n        if(remain<=0) break;\n        double take=min(w,remain);\n        total+=take*(v/w); remain-=take;\n    }\n    printf(\"%.2f\\n\",total);\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<algorithm>\n\n#include<utility>\n\nusing namespace std;\n\nint main(){\n\n    int n; double C; cin>>n>>C;\n\n    vector<pair<double,double>> items(n);\n\n    for(auto&[w,v]:items) cin>>w>>v;\n\n    sort(items.begin(),items.end(),[](auto&a,auto&b){return a.second/a.first>b.second/b.first;});\n\n    double total=0,remain=C;\n\n    for(auto&[w,v]:items){\n\n        if(remain<=0) break;\n\n        double take=min(w,remain);\n\n        total+=take*(v/w); remain-=take;\n\n    }\n\n    printf(\"%.2f\\n\",total);\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn,C=map(float,input().split())\nn=int(n)\nitems=[tuple(map(float,input().split())) for _ in range(n)]\nitems.sort(key=lambda x:-x[1]/x[0])\ntotal=remain=0.0; remain=C\nfor w,v in items:\n    if remain<=0: break\n    take=min(w,remain); total+=take*(v/w); remain-=take\nprint(f'{total:.2f}')"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn,C=map(float,input().split())\n\nn=int(n)\n\nitems=[tuple(map(float,input().split())) for _ in range(n)]\n\nitems.sort(key=lambda x:-x[1]/x[0])\n\ntotal=remain=0.0; remain=C\n\nfor w,v in items:\n\n    if remain<=0: break\n\n    take=min(w,remain); total+=take*(v/w); remain-=take\n\nprint(f'{total:.2f}')"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,C]=lines[0].split(' ').map(Number);\nconst items=lines.slice(1).map(l=>l.split(' ').map(Number));\nitems.sort((a,b)=>b[1]/b[0]-a[1]/a[0]);\nlet total=0,remain=C;\nfor(const[w,v]of items){\n    if(remain<=0)break;\n    const take=Math.min(w,remain);total+=take*(v/w);remain-=take;\n}\nconsole.log(total.toFixed(2));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,C]=lines[0].split(' ').map(Number);\n\nconst items=lines.slice(1).map(l=>l.split(' ').map(Number));\n\nitems.sort((a,b)=>b[1]/b[0]-a[1]/a[0]);\n\nlet total=0,remain=C;\n\nfor(const[w,v]of items){\n\n    if(remain<=0)break;\n\n    const take=Math.min(w,remain);total+=take*(v/w);remain-=take;\n\n}\n\nconsole.log(total.toFixed(2));"
         }
       ]
     }

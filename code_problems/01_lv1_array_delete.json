@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\nint main(){\n    int n,loc; cin>>n>>loc;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    arr.erase(arr.begin()+loc);\n    for(int i=0;i<(int)arr.size();i++){\n        if(i) cout<<' ';\n        cout<<arr[i];\n    }\n    cout<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\nusing namespace std;\n\nint main(){\n\n    int n,loc; cin>>n>>loc;\n\n    vector<int> arr(n);\n\n    for(int&x:arr) cin>>x;\n\n    arr.erase(arr.begin()+loc);\n\n    for(int i=0;i<(int)arr.size();i++){\n\n        if(i) cout<<' ';\n\n        cout<<arr[i];\n\n    }\n\n    cout<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn,loc=map(int,input().split())\narr=list(map(int,input().split()))\narr.pop(loc)\nprint(*arr)"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn,loc=map(int,input().split())\n\narr=list(map(int,input().split()))\n\narr.pop(loc)\n\nprint(*arr)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,loc]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\narr.splice(loc,1);\nconsole.log(arr.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,loc]=lines[0].split(' ').map(Number);\n\nconst arr=lines[1].split(' ').map(Number);\n\narr.splice(loc,1);\n\nconsole.log(arr.join(' '));"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    vector<int> tails;\n    for(int v:arr){\n        auto it=lower_bound(tails.begin(),tails.end(),v);\n        if(it==tails.end()) tails.push_back(v);\n        else *it=v;\n    }\n    cout<<tails.size()<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n\n    vector<int> tails;\n\n    for(int v:arr){\n\n        auto it=lower_bound(tails.begin(),tails.end(),v);\n\n        if(it==tails.end()) tails.push_back(v);\n\n        else *it=v;\n\n    }\n\n    cout<<tails.size()<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys,bisect\ndata=list(map(int,sys.stdin.readline().split()))\nn=data[0]; arr=data[1:]\ntails=[]\nfor v in arr:\n    i=bisect.bisect_left(tails,v)\n    if i==len(tails): tails.append(v)\n    else: tails[i]=v\nprint(len(tails))"
+          "code": "import sys,bisect\n\ndata=list(map(int,sys.stdin.readline().split()))\n\nn=data[0]; arr=data[1:]\n\ntails=[]\n\nfor v in arr:\n\n    i=bisect.bisect_left(tails,v)\n\n    if i==len(tails): tails.append(v)\n\n    else: tails[i]=v\n\nprint(len(tails))"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\nconst n=Number(data[0]),arr=data.slice(1).map(Number);\nconst tails=[];\nfunction lb(v){let lo=0,hi=tails.length;while(lo<hi){const m=(lo+hi)>>1;if(tails[m]<v)lo=m+1;else hi=m;}return lo;}\nfor(const v of arr){const i=lb(v);if(i===tails.length)tails.push(v);else tails[i]=v;}\nconsole.log(tails.length);"
+          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\n\nconst n=Number(data[0]),arr=data.slice(1).map(Number);\n\nconst tails=[];\n\nfunction lb(v){let lo=0,hi=tails.length;while(lo<hi){const m=(lo+hi)>>1;if(tails[m]<v)lo=m+1;else hi=m;}return lo;}\n\nfor(const v of arr){const i=lb(v);if(i===tails.length)tails.push(v);else tails[i]=v;}\n\nconsole.log(tails.length);"
         }
       ]
     }

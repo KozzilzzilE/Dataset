@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\n#include<vector>\n#include<queue>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,m,start; cin>>n>>m>>start;\n    vector<vector<int>> adj(n+1);\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n    vector<bool> vis(n+1,false);\n    queue<int> q; q.push(start); vis[start]=true;\n    string res=\"\";\n    while(!q.empty()){\n        int v=q.front();q.pop();\n        res+=to_string(v)+\" \";\n        for(int u:adj[v]) if(!vis[u]){vis[u]=true;q.push(u);}\n    }\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n    cout<<res<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\n#include<vector>\n\n#include<queue>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    int n,m,start; cin>>n>>m>>start;\n\n    vector<vector<int>> adj(n+1);\n\n    for(int i=0;i<m;i++){int u,v;cin>>u>>v;adj[u].push_back(v);adj[v].push_back(u);}\n\n    for(int i=1;i<=n;i++) sort(adj[i].begin(),adj[i].end());\n\n    vector<bool> vis(n+1,false);\n\n    queue<int> q; q.push(start); vis[start]=true;\n\n    string res=\"\";\n\n    while(!q.empty()){\n\n        int v=q.front();q.pop();\n\n        res+=to_string(v)+\" \";\n\n        for(int u:adj[v]) if(!vis[u]){vis[u]=true;q.push(u);}\n\n    }\n\n    if(!res.empty()&&res.back()==' ') res.pop_back();\n\n    cout<<res<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nfrom collections import deque\ninput=sys.stdin.readline\nn,m=map(int,input().split())\nstart=int(input())\nadj=[[] for _ in range(n+1)]\nfor _ in range(m):\n    u,v=map(int,input().split())\n    adj[u].append(v); adj[v].append(u)\nfor i in range(n+1): adj[i].sort()\nvis=[False]*(n+1)\nq=deque([start]); vis[start]=True; res=[]\nwhile q:\n    v=q.popleft(); res.append(v)\n    for u in adj[v]:\n        if not vis[u]: vis[u]=True; q.append(u)\nprint(*res)"
+          "code": "import sys\n\nfrom collections import deque\n\ninput=sys.stdin.readline\n\nn,m=map(int,input().split())\n\nstart=int(input())\n\nadj=[[] for _ in range(n+1)]\n\nfor _ in range(m):\n\n    u,v=map(int,input().split())\n\n    adj[u].append(v); adj[v].append(u)\n\nfor i in range(n+1): adj[i].sort()\n\nvis=[False]*(n+1)\n\nq=deque([start]); vis[start]=True; res=[]\n\nwhile q:\n\n    v=q.popleft(); res.append(v)\n\n    for u in adj[v]:\n\n        if not vis[u]: vis[u]=True; q.append(u)\n\nprint(*res)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,m]=lines[0].split(' ').map(Number);\nconst start=Number(lines[1]);\nconst adj=Array.from({length:n+1},()=>[]);\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\nfor(let i=1;i<=n;i++) adj[i].sort((a,b)=>a-b);\nconst vis=new Array(n+1).fill(false),q=[start],res=[];vis[start]=true;\nlet head=0;\nwhile(head<q.length){const v=q[head++];res.push(v);for(const u of adj[v])if(!vis[u]){vis[u]=true;q.push(u);}}\nconsole.log(res.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,m]=lines[0].split(' ').map(Number);\n\nconst start=Number(lines[1]);\n\nconst adj=Array.from({length:n+1},()=>[]);\n\nfor(let i=2;i<2+m;i++){const[u,v]=lines[i].split(' ').map(Number);adj[u].push(v);adj[v].push(u);}\n\nfor(let i=1;i<=n;i++) adj[i].sort((a,b)=>a-b);\n\nconst vis=new Array(n+1).fill(false),q=[start],res=[];vis[start]=true;\n\nlet head=0;\n\nwhile(head<q.length){const v=q[head++];res.push(v);for(const u of adj[v])if(!vis[u]){vis[u]=true;q.push(u);}}\n\nconsole.log(res.join(' '));"
         }
       ]
     }

@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<stack>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    stack<int> st;\n    for(int i=0;i<n;i++){int v;cin>>v;st.push(v);}\n    bool first=true;\n    while(!st.empty()){\n        if(!first) cout<<' ';\n        cout<<st.top(); st.pop();\n        first=false;\n    }\n    cout<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<stack>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    stack<int> st;\n\n    for(int i=0;i<n;i++){int v;cin>>v;st.push(v);}\n\n    bool first=true;\n\n    while(!st.empty()){\n\n        if(!first) cout<<' ';\n\n        cout<<st.top(); st.pop();\n\n        first=false;\n\n    }\n\n    cout<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ndata=sys.stdin.readline().split()\nn=int(data[0]); arr=data[1:]\nprint(*arr[::-1])"
+          "code": "import sys\n\ndata=sys.stdin.readline().split()\n\nn=int(data[0]); arr=data[1:]\n\nprint(*arr[::-1])"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\nconst n=Number(data[0]);\nconst arr=data.slice(1,n+1).reverse();\nconsole.log(arr.join(' '));"
+          "code": "const data=require('fs').readFileSync('/dev/stdin','utf8').trim().split(' ');\n\nconst n=Number(data[0]);\n\nconst arr=data.slice(1,n+1).reverse();\n\nconsole.log(arr.join(' '));"
         }
       ]
     }

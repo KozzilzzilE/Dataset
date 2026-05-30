@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<string>\nusing namespace std;\nint arr[100001],n;\nstring res=\"\";\nvoid inorder(int i){\n    if(i>n||arr[i]==0) return;\n    inorder(2*i);\n    if(!res.empty()) res+=\" \";\n    res+=to_string(arr[i]);\n    inorder(2*i+1);\n}\nint main(){\n    cin>>n;\n    for(int i=1;i<=n;i++) cin>>arr[i];\n    inorder(1);\n    cout<<res<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<string>\n\nusing namespace std;\n\nint arr[100001],n;\n\nstring res=\"\";\n\nvoid inorder(int i){\n\n    if(i>n||arr[i]==0) return;\n\n    inorder(2*i);\n\n    if(!res.empty()) res+=\" \";\n\n    res+=to_string(arr[i]);\n\n    inorder(2*i+1);\n\n}\n\nint main(){\n\n    cin>>n;\n\n    for(int i=1;i<=n;i++) cin>>arr[i];\n\n    inorder(1);\n\n    cout<<res<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\nsys.setrecursionlimit(100000)\ninput=sys.stdin.readline\nn=int(input())\narr=[0]+list(map(int,input().split()))\nres=[]\ndef inorder(i):\n    if i>n or arr[i]==0: return\n    inorder(2*i); res.append(arr[i]); inorder(2*i+1)\ninorder(1)\nprint(*res)"
+          "code": "import sys\n\nsys.setrecursionlimit(100000)\n\ninput=sys.stdin.readline\n\nn=int(input())\n\narr=[0]+list(map(int,input().split()))\n\nres=[]\n\ndef inorder(i):\n\n    if i>n or arr[i]==0: return\n\n    inorder(2*i); res.append(arr[i]); inorder(2*i+1)\n\ninorder(1)\n\nprint(*res)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=[0,...lines[1].split(' ').map(Number)];\nconst res=[];\nfunction inorder(i){if(i>n||arr[i]===0)return;inorder(2*i);res.push(arr[i]);inorder(2*i+1);}\ninorder(1);\nconsole.log(res.join(' '));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst n=Number(lines[0]);\n\nconst arr=[0,...lines[1].split(' ').map(Number)];\n\nconst res=[];\n\nfunction inorder(i){if(i>n||arr[i]===0)return;inorder(2*i);res.push(arr[i]);inorder(2*i+1);}\n\ninorder(1);\n\nconsole.log(res.join(' '));"
         }
       ]
     }

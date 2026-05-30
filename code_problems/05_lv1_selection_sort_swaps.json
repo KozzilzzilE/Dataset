@@ -44,17 +44,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> arr(n);\n    for(int&x:arr) cin>>x;\n    int swaps=0;\n    for(int i=0;i<n-1;i++){\n        int mi=i;\n        for(int j=i+1;j<n;j++) if(arr[j]<arr[mi]) mi=j;\n        if(mi!=i){swap(arr[i],arr[mi]);swaps++;}\n    }\n    cout<<swaps<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    int n; cin>>n;\n\n    vector<int> arr(n);\n\n    for(int&x:arr) cin>>x;\n\n    int swaps=0;\n\n    for(int i=0;i<n-1;i++){\n\n        int mi=i;\n\n        for(int j=i+1;j<n;j++) if(arr[j]<arr[mi]) mi=j;\n\n        if(mi!=i){swap(arr[i],arr[mi]);swaps++;}\n\n    }\n\n    cout<<swaps<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys\ninput=sys.stdin.readline\nn=int(input())\narr=list(map(int,input().split()))\nswaps=0\nfor i in range(n-1):\n    mi=i\n    for j in range(i+1,n):\n        if arr[j]<arr[mi]: mi=j\n    if mi!=i: arr[i],arr[mi]=arr[mi],arr[i]; swaps+=1\nprint(swaps)"
+          "code": "import sys\n\ninput=sys.stdin.readline\n\nn=int(input())\n\narr=list(map(int,input().split()))\n\nswaps=0\n\nfor i in range(n-1):\n\n    mi=i\n\n    for j in range(i+1,n):\n\n        if arr[j]<arr[mi]: mi=j\n\n    if mi!=i: arr[i],arr[mi]=arr[mi],arr[i]; swaps+=1\n\nprint(swaps)"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst n=Number(lines[0]);\nconst arr=lines[1].split(' ').map(Number);\nlet swaps=0;\nfor(let i=0;i<n-1;i++){\n    let mi=i;\n    for(let j=i+1;j<n;j++) if(arr[j]<arr[mi]) mi=j;\n    if(mi!==i){[arr[i],arr[mi]]=[arr[mi],arr[i]];swaps++;}\n}\nconsole.log(swaps);"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst n=Number(lines[0]);\n\nconst arr=lines[1].split(' ').map(Number);\n\nlet swaps=0;\n\nfor(let i=0;i<n-1;i++){\n\n    let mi=i;\n\n    for(let j=i+1;j<n;j++) if(arr[j]<arr[mi]) mi=j;\n\n    if(mi!==i){[arr[i],arr[mi]]=[arr[mi],arr[i]];swaps++;}\n\n}\n\nconsole.log(swaps);"
         }
       ]
     }

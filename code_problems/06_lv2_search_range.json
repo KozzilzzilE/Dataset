@@ -40,17 +40,17 @@
         {
           "languageId": 2,
           "timeLimitMs": 1000,
-          "code": "#include<iostream>\n#include<vector>\n#include<algorithm>\nusing namespace std;\nint main(){\n    int n,target; cin>>n>>target;\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n    int lo=lower_bound(arr.begin(),arr.end(),target)-arr.begin();\n    if(lo==n||arr[lo]!=target){cout<<\"-1 -1\\n\";return 0;}\n    int hi=upper_bound(arr.begin(),arr.end(),target)-arr.begin();\n    cout<<lo+1<<' '<<hi<<'\\n';\n}"
+          "code": "#include<iostream>\n\n#include<vector>\n\n#include<algorithm>\n\nusing namespace std;\n\nint main(){\n\n    int n,target; cin>>n>>target;\n\n    vector<int> arr(n); for(int&x:arr) cin>>x;\n\n    int lo=lower_bound(arr.begin(),arr.end(),target)-arr.begin();\n\n    if(lo==n||arr[lo]!=target){cout<<\"-1 -1\\n\";return 0;}\n\n    int hi=upper_bound(arr.begin(),arr.end(),target)-arr.begin();\n\n    cout<<lo+1<<' '<<hi<<'\\n';\n\n}"
         },
         {
           "languageId": 3,
           "timeLimitMs": 3000,
-          "code": "import sys,bisect\ninput=sys.stdin.readline\nn,target=map(int,input().split())\narr=list(map(int,input().split()))\nlb=bisect.bisect_left(arr,target)\nif lb==n or arr[lb]!=target: print('-1 -1')\nelse: print(lb+1, bisect.bisect_right(arr,target))"
+          "code": "import sys,bisect\n\ninput=sys.stdin.readline\n\nn,target=map(int,input().split())\n\narr=list(map(int,input().split()))\n\nlb=bisect.bisect_left(arr,target)\n\nif lb==n or arr[lb]!=target: print('-1 -1')\n\nelse: print(lb+1, bisect.bisect_right(arr,target))"
         },
         {
           "languageId": 4,
           "timeLimitMs": 2000,
-          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\nconst [n,target]=lines[0].split(' ').map(Number);\nconst arr=lines[1].split(' ').map(Number);\nfunction lb(t){let lo=0,hi=n;while(lo<hi){const m=(lo+hi)>>1;if(arr[m]<t)lo=m+1;else hi=m;}return lo;}\nfunction ub(t){let lo=0,hi=n;while(lo<hi){const m=(lo+hi)>>1;if(arr[m]<=t)lo=m+1;else hi=m;}return lo;}\nconst l=lb(target);\nif(l===n||arr[l]!==target) console.log('-1 -1');\nelse console.log((l+1)+' '+ub(target));"
+          "code": "const lines=require('fs').readFileSync('/dev/stdin','utf8').trim().split('\\n');\n\nconst [n,target]=lines[0].split(' ').map(Number);\n\nconst arr=lines[1].split(' ').map(Number);\n\nfunction lb(t){let lo=0,hi=n;while(lo<hi){const m=(lo+hi)>>1;if(arr[m]<t)lo=m+1;else hi=m;}return lo;}\n\nfunction ub(t){let lo=0,hi=n;while(lo<hi){const m=(lo+hi)>>1;if(arr[m]<=t)lo=m+1;else hi=m;}return lo;}\n\nconst l=lb(target);\n\nif(l===n||arr[l]!==target) console.log('-1 -1');\n\nelse console.log((l+1)+' '+ub(target));"
         }
       ]
     }
