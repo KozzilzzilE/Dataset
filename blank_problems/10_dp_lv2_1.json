@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint main() {\n    vector<int> nums = {3,1,4,1,5,9,2,6};\n    int n = nums.size();\n    vector<int> dp(n, 1);\n    for (int i=0;i<n;i++)\n        for (int j=0;j<_____; j++)\n            if (nums[j] _____ nums[i])\n                dp[i] = max(dp[i], dp[j]+_____); \n    cout << *max_element(dp._____, dp.end());\n}\n```",
+          "codeTemplate": "```cpp\n\n#include <iostream>\n\n#include <vector>\n\n#include <algorithm>\n\nusing namespace std;\n\nint main() {\n\n    vector<int> nums = {3,1,4,1,5,9,2,6};\n\n    int n = nums.size();\n\n    vector<int> dp(n, 1);\n\n    for (int i=0;i<n;i++)\n\n        for (int j=0;j<_____; j++)\n\n            if (nums[j] _____ nums[i])\n\n                dp[i] = max(dp[i], dp[j]+_____); \n\n    cout << *max_element(dp._____, dp.end());\n\n}\n\n```",
           "blanks": [
             {
               "content": "i",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nnums = [3,1,4,1,5,9,2,6]\nn = len(nums)\ndp = [1] * n\nfor i in range(n):\n    for j in range(_____):\n        if nums[j] _____ nums[i]:\n            dp[i] = max(dp[i], dp[j]+_____)\nprint(_____(dp))\n```",
+          "codeTemplate": "```python\n\nnums = [3,1,4,1,5,9,2,6]\n\nn = len(nums)\n\ndp = [1] * n\n\nfor i in range(n):\n\n    for j in range(_____):\n\n        if nums[j] _____ nums[i]:\n\n            dp[i] = max(dp[i], dp[j]+_____)\n\nprint(_____(dp))\n\n```",
           "blanks": [
             {
               "content": "i",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst nums = [3,1,4,1,5,9,2,6];\nconst n = nums.length;\nconst dp = new Array(n).fill(1);\nfor (let i=0;i<n;i++)\n    for (let j=0;j<_____; j++)\n        if (nums[j] _____ nums[i])\n            dp[i] = Math.max(dp[i], dp[j]+_____);\nlet ans = 0;\nfor (const x of dp) if (x > ans) ans = _____;\nconsole.log(_____);\n```",
+          "codeTemplate": "```javascript\n\nconst nums = [3,1,4,1,5,9,2,6];\n\nconst n = nums.length;\n\nconst dp = new Array(n).fill(1);\n\nfor (let i=0;i<n;i++)\n\n    for (let j=0;j<_____; j++)\n\n        if (nums[j] _____ nums[i])\n\n            dp[i] = Math.max(dp[i], dp[j]+_____);\n\nlet ans = 0;\n\nfor (const x of dp) if (x > ans) ans = _____;\n\nconsole.log(_____);\n\n```",
           "blanks": [
             {
               "content": "i",

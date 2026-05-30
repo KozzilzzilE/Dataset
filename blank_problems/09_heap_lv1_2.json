@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <queue>\n#include <vector>\nusing namespace std;\n// 최소 힙: greater<int> 비교자 사용\npriority_queue<int, vector<int>, _____> pq;\npq._____(5);\npq.push(3);\ncout << pq._____();\npq._____();\ncout << pq._____();\n```",
+          "codeTemplate": "```cpp\n\n#include <queue>\n\n#include <vector>\n\nusing namespace std;\n\n// 최소 힙: greater<int> 비교자 사용\n\npriority_queue<int, vector<int>, _____> pq;\n\npq._____(5);\n\npq.push(3);\n\ncout << pq._____();\n\npq._____();\n\ncout << pq._____();\n\n```",
           "blanks": [
             {
               "content": "greater<int>",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport _____\nheap = []\nheapq.heappush(heap, 5)\nheapq.heappush(heap, 3)\nheapq.heappush(heap, 7)\nprint(heap[_____])              # 3 (최솟값 조회)\nmin_val = heapq._____(heap)     # 3 (제거)\nprint(_____(heap))              # 남은 개수\nprint(heap[_____])              # 다음 최솟값```",
+          "codeTemplate": "```python\n\nimport _____\n\nheap = []\n\nheapq.heappush(heap, 5)\n\nheapq.heappush(heap, 3)\n\nheapq.heappush(heap, 7)\n\nprint(heap[_____])              # 3 (최솟값 조회)\n\nmin_val = heapq._____(heap)     # 3 (제거)\n\nprint(_____(heap))              # 남은 개수\n\nprint(heap[_____])              # 다음 최솟값```",
           "blanks": [
             {
               "content": "heapq",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\n// JS: 배열 + 정렬로 최소 힙 시뮬레이션\nlet heap = [];\nheap._____(5, 3, 7);\nheap.sort((a, b) => _____);\nlet min = heap._____(0, 1)[_____];\nconsole.log(min);         // 3\nconsole.log(heap._____);  // 남은 개수\n```",
+          "codeTemplate": "```javascript\n\n// JS: 배열 + 정렬로 최소 힙 시뮬레이션\n\nlet heap = [];\n\nheap._____(5, 3, 7);\n\nheap.sort((a, b) => _____);\n\nlet min = heap._____(0, 1)[_____];\n\nconsole.log(min);         // 3\n\nconsole.log(heap._____);  // 남은 개수\n\n```",
           "blanks": [
             {
               "content": "push",

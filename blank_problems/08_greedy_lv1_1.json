@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> coins = {500, 100, 50, 10};\nint amount = _____;\nint count = 0;\nfor(int coin : coins) {\n    count _____ amount / coin;\n    amount _____ coin;\n}\ncout << \"동전 수: \" << _____;\ncout << \" 잔돈: \" << _____;```",
+          "codeTemplate": "```cpp\n\nvector<int> coins = {500, 100, 50, 10};\n\nint amount = _____;\n\nint count = 0;\n\nfor(int coin : coins) {\n\n    count _____ amount / coin;\n\n    amount _____ coin;\n\n}\n\ncout << \"동전 수: \" << _____;\n\ncout << \" 잔돈: \" << _____;```",
           "blanks": [
             {
               "content": "1260",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ncoins = [500, 100, 50, 10]\namount = _____\ncount = 0\nfor coin in coins:\n    count _____ amount // coin\n    amount _____ coin\nprint(f\"동전 수: {count}\")\nprint(f\"잔돈: {_____}\")\nprint(f\"총 항목: {_____(coins)}\")```",
+          "codeTemplate": "```python\n\ncoins = [500, 100, 50, 10]\n\namount = _____\n\ncount = 0\n\nfor coin in coins:\n\n    count _____ amount // coin\n\n    amount _____ coin\n\nprint(f\"동전 수: {count}\")\n\nprint(f\"잔돈: {_____}\")\n\nprint(f\"총 항목: {_____(coins)}\")```",
           "blanks": [
             {
               "content": "1260",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet coins = [500, 100, 50, 10];\nlet amount = _____;\nlet count = 0;\nfor(let coin of coins) {\n    count _____ Math.floor(amount / coin);\n    amount _____ coin;\n}\nconsole.log(`동전 수: ${count}`);\nconsole.log(`잔돈: ${_____}`);\nconsole.log(`길이: ${coins._____}`);```",
+          "codeTemplate": "```javascript\n\nlet coins = [500, 100, 50, 10];\n\nlet amount = _____;\n\nlet count = 0;\n\nfor(let coin of coins) {\n\n    count _____ Math.floor(amount / coin);\n\n    amount _____ coin;\n\n}\n\nconsole.log(`동전 수: ${count}`);\n\nconsole.log(`잔돈: ${_____}`);\n\nconsole.log(`길이: ${coins._____}`);```",
           "blanks": [
             {
               "content": "1260",

@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = 5;\nvector<int> dist(n, _____); \ndist[start] = 0;\npriority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;\npq.push({_____, start});\nwhile(!pq.empty()) {\n    auto [d, node] = pq.top(); pq.pop();\n    if(d _____ dist[node]) continue;\n    for(auto& [next, w] : graph[node]) {\n        int nd = d + _____;\n        if(nd < dist[next]) {\n            dist[next] = nd;\n            pq.push({nd, _____});\n        }\n    }\n}```",
+          "codeTemplate": "```cpp\n\nint n = 5;\n\nvector<int> dist(n, _____); \n\ndist[start] = 0;\n\npriority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;\n\npq.push({_____, start});\n\nwhile(!pq.empty()) {\n\n    auto [d, node] = pq.top(); pq.pop();\n\n    if(d _____ dist[node]) continue;\n\n    for(auto& [next, w] : graph[node]) {\n\n        int nd = d + _____;\n\n        if(nd < dist[next]) {\n\n            dist[next] = nd;\n\n            pq.push({nd, _____});\n\n        }\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "INT_MAX",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq\ndist = [float('_____')] * n\ndist[start] = 0\npq = [(_____, start)]\nwhile pq:\n    d, node = heapq.heappop(pq)\n    if d _____ dist[node]:\n        continue\n    for next_node, weight in graph[node]:\n        nd = d + _____\n        if nd < dist[next_node]:\n            dist[next_node] = nd\n            heapq.heappush(pq, (nd, _____))```",
+          "codeTemplate": "```python\n\nimport heapq\n\ndist = [float('_____')] * n\n\ndist[start] = 0\n\npq = [(_____, start)]\n\nwhile pq:\n\n    d, node = heapq.heappop(pq)\n\n    if d _____ dist[node]:\n\n        continue\n\n    for next_node, weight in graph[node]:\n\n        nd = d + _____\n\n        if nd < dist[next_node]:\n\n            dist[next_node] = nd\n\n            heapq.heappush(pq, (nd, _____))```",
           "blanks": [
             {
               "content": "inf",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet dist = new Array(n).fill(_____); \ndist[start] = 0;\nlet pq = [[_____, start]];\nwhile(pq.length > 0) {\n    pq.sort((a, b) => a[0] - b[0]);\n    let [d, node] = pq.shift();\n    if(d _____ dist[node]) continue;\n    for(let [next, w] of graph[node]) {\n        let nd = d + _____;\n        if(nd < dist[next]) {\n            dist[next] = nd;\n            pq.push([nd, _____]);\n        }\n    }\n}```",
+          "codeTemplate": "```javascript\n\nlet dist = new Array(n).fill(_____); \n\ndist[start] = 0;\n\nlet pq = [[_____, start]];\n\nwhile(pq.length > 0) {\n\n    pq.sort((a, b) => a[0] - b[0]);\n\n    let [d, node] = pq.shift();\n\n    if(d _____ dist[node]) continue;\n\n    for(let [next, w] of graph[node]) {\n\n        let nd = d + _____;\n\n        if(nd < dist[next]) {\n\n            dist[next] = nd;\n\n            pq.push([nd, _____]);\n\n        }\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "Infinity",

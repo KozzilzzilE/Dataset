@@ -12,15 +12,15 @@
     },
     {
       "languageId": 2,
-      "content": "```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> arr = {1, 2, 3};\n    int n = arr.size();\n    int target = 3;\n\n    for (int mask = 0; mask < (1 << n); mask++) {\n        int sum = 0;\n        for (int j = 0; j < n; j++) {\n            if ((mask & (1 << j)) != 0)\n                sum += arr[j];\n        }\n        if (sum == target) {\n            cout << \"{ \";\n            for (int j = 0; j < n; j++)\n                if ((mask & (1 << j)) != 0)\n                    cout << arr[j] << \" \";\n            cout << \"}\\n\";\n        }\n    }\n    // 출력: { 3 }  { 1 2 }\n    return 0;\n}\n```"
+      "content": "```cpp\n\n#include <iostream>\n\n#include <vector>\n\nusing namespace std;\n\nint main() {\n\n    vector<int> arr = {1, 2, 3};\n\n    int n = arr.size();\n\n    int target = 3;\n\n    for (int mask = 0; mask < (1 << n); mask++) {\n\n        int sum = 0;\n\n        for (int j = 0; j < n; j++) {\n\n            if ((mask & (1 << j)) != 0)\n\n                sum += arr[j];\n\n        }\n\n        if (sum == target) {\n\n            cout << \"{ \";\n\n            for (int j = 0; j < n; j++)\n\n                if ((mask & (1 << j)) != 0)\n\n                    cout << arr[j] << \" \";\n\n            cout << \"}\\n\";\n\n        }\n\n    }\n\n    // 출력: { 3 }  { 1 2 }\n\n    return 0;\n\n}\n\n```"
     },
     {
       "languageId": 3,
-      "content": "```python\ndef main():\n    arr = [1, 2, 3]\n    n = len(arr)\n    target = 3\n\n    for mask in range(1 << n):\n        total = 0\n        for j in range(n):\n            if mask & (1 << j):\n                total += arr[j]\n        if total == target:\n            subset = [arr[j] for j in range(n) if mask & (1 << j)]\n            print(\"{ \" + \" \".join(map(str, subset)) + \" }\")\n    # 출력: { 3 }  { 1 2 }\n\nmain()\n```"
+      "content": "```python\n\ndef main():\n\n    arr = [1, 2, 3]\n\n    n = len(arr)\n\n    target = 3\n\n    for mask in range(1 << n):\n\n        total = 0\n\n        for j in range(n):\n\n            if mask & (1 << j):\n\n                total += arr[j]\n\n        if total == target:\n\n            subset = [arr[j] for j in range(n) if mask & (1 << j)]\n\n            print(\"{ \" + \" \".join(map(str, subset)) + \" }\")\n\n    # 출력: { 3 }  { 1 2 }\n\nmain()\n\n```"
     },
     {
       "languageId": 4,
-      "content": "```javascript\nfunction main() {\n    const arr = [1, 2, 3];\n    const n = arr.length;\n    const target = 3;\n\n    for (let mask = 0; mask < (1 << n); mask++) {\n        let sum = 0;\n        for (let j = 0; j < n; j++) {\n            if ((mask & (1 << j)) !== 0)\n                sum += arr[j];\n        }\n        if (sum === target) {\n            let result = \"{ \";\n            for (let j = 0; j < n; j++)\n                if ((mask & (1 << j)) !== 0)\n                    result += arr[j] + \" \";\n            console.log(result + \"}\");\n        }\n    }\n    // 출력: { 3 }  { 1 2 }\n}\n\nmain();\n```"
+      "content": "```javascript\n\nfunction main() {\n\n    const arr = [1, 2, 3];\n\n    const n = arr.length;\n\n    const target = 3;\n\n    for (let mask = 0; mask < (1 << n); mask++) {\n\n        let sum = 0;\n\n        for (let j = 0; j < n; j++) {\n\n            if ((mask & (1 << j)) !== 0)\n\n                sum += arr[j];\n\n        }\n\n        if (sum === target) {\n\n            let result = \"{ \";\n\n            for (let j = 0; j < n; j++)\n\n                if ((mask & (1 << j)) !== 0)\n\n                    result += arr[j] + \" \";\n\n            console.log(result + \"}\");\n\n        }\n\n    }\n\n    // 출력: { 3 }  { 1 2 }\n\n}\n\nmain();\n\n```"
     }
   ]
 }

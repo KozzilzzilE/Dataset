@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nqueue<int> q; \nq.push(_____); \nwhile(!q._____()) { \n    int node = q._____(); \n    for(int next : graph[node]) { \n        if(!visited[_____]) { \n            visited[next] = true; \n            q._____(next); \n        } \n    } \n}\n```",
+          "codeTemplate": "```cpp\n\nqueue<int> q; \n\nq.push(_____); \n\nwhile(!q._____()) { \n\n    int node = q._____(); \n\n    for(int next : graph[node]) { \n\n        if(!visited[_____]) { \n\n            visited[next] = true; \n\n            q._____(next); \n\n        } \n\n    } \n\n}\n\n```",
           "blanks": [
             {
               "content": "start",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\nvisited = [False] * (n + 1)\nq = deque()\nq._____(start)\nvisited[_____] = True\nwhile q:\n    node = q._____\n    for next_node in graph[node]:\n        if not visited[_____]:\n            visited[next_node] = True\n            q._____(next_node)```",
+          "codeTemplate": "```python\n\nfrom collections import deque\n\nvisited = [False] * (n + 1)\n\nq = deque()\n\nq._____(start)\n\nvisited[_____] = True\n\nwhile q:\n\n    node = q._____\n\n    for next_node in graph[node]:\n\n        if not visited[_____]:\n\n            visited[next_node] = True\n\n            q._____(next_node)```",
           "blanks": [
             {
               "content": "append",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet visited = new Array(n+1).fill(false);\nlet q = [];\nq._____(start);\nvisited[_____] = true;\nwhile(q.length > 0) {\n    let node = q._____();\n    for(let next of graph[node]) {\n        if(!visited[_____]) {\n            visited[next] = true;\n            q._____(next);\n        }\n    }\n}```",
+          "codeTemplate": "```javascript\n\nlet visited = new Array(n+1).fill(false);\n\nlet q = [];\n\nq._____(start);\n\nvisited[_____] = true;\n\nwhile(q.length > 0) {\n\n    let node = q._____();\n\n    for(let next of graph[node]) {\n\n        if(!visited[_____]) {\n\n            visited[next] = true;\n\n            q._____(next);\n\n        }\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "push",

@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> arr = {3, 1, 2, 4, 6, 2, 5};\nint k = 3, n = arr.size();\nvector<int> result;\ndeque<int> dq;\nfor (int i = 0; i < n; i++) {\n    while (!dq.empty() && dq.front() < i - k + _____)\n        dq._____();\n    while (!dq.empty() && arr[dq.back()] _____ arr[i])\n        dq.pop_back();\n    dq.push_back(_____);  \n    if (i >= k - 1)\n        result.push_back(arr[dq._____()]);\n}\nfor (int v : result) cout << v << \" \";\ncout << \"크기: \" << _____;\n```",
+          "codeTemplate": "```cpp\n\nvector<int> arr = {3, 1, 2, 4, 6, 2, 5};\n\nint k = 3, n = arr.size();\n\nvector<int> result;\n\ndeque<int> dq;\n\nfor (int i = 0; i < n; i++) {\n\n    while (!dq.empty() && dq.front() < i - k + _____)\n\n        dq._____();\n\n    while (!dq.empty() && arr[dq.back()] _____ arr[i])\n\n        dq.pop_back();\n\n    dq.push_back(_____);  \n\n    if (i >= k - 1)\n\n        result.push_back(arr[dq._____()]);\n\n}\n\nfor (int v : result) cout << v << \" \";\n\ncout << \"크기: \" << _____;\n\n```",
           "blanks": [
             {
               "content": "1",
@@ -116,7 +116,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [3, 1, 2, 4, 6, 2, 5]\nk = 3\nn = len(arr)\nresult = []\nfrom collections import deque\ndq = deque()\nfor i in range(n):\n    while dq and dq[_____] < i - k + 1:\n        dq.popleft()\n    while dq and arr[dq[-1]] _____ arr[i]:\n        dq.pop()\n    dq.append(_____)\n    if i >= k - _____:\n        result.append(arr[dq[_____]])\nprint(result)\n```",
+          "codeTemplate": "```python\n\narr = [3, 1, 2, 4, 6, 2, 5]\n\nk = 3\n\nn = len(arr)\n\nresult = []\n\nfrom collections import deque\n\ndq = deque()\n\nfor i in range(n):\n\n    while dq and dq[_____] < i - k + 1:\n\n        dq.popleft()\n\n    while dq and arr[dq[-1]] _____ arr[i]:\n\n        dq.pop()\n\n    dq.append(_____)\n\n    if i >= k - _____:\n\n        result.append(arr[dq[_____]])\n\nprint(result)\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -166,7 +166,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [3, 1, 2, 4, 6, 2, 5];\nlet k = 3, n = arr.length;\nlet result = [];\nlet dq = [];\nfor (let i = 0; i < n; i++) {\n    while (dq.length && dq[_____] < i - k + 1)\n        dq.shift();\n    while (dq.length && arr[dq[dq.length-1]] _____ arr[i])\n        dq.pop();\n    dq.push(_____);  \n    if (i >= k - 1)\n        result.push(arr[dq[_____]]);\n}\nconsole.log(result);\nconsole.log(\"구간 수:\", result._____)\n```",
+          "codeTemplate": "```javascript\n\nlet arr = [3, 1, 2, 4, 6, 2, 5];\n\nlet k = 3, n = arr.length;\n\nlet result = [];\n\nlet dq = [];\n\nfor (let i = 0; i < n; i++) {\n\n    while (dq.length && dq[_____] < i - k + 1)\n\n        dq.shift();\n\n    while (dq.length && arr[dq[dq.length-1]] _____ arr[i])\n\n        dq.pop();\n\n    dq.push(_____);  \n\n    if (i >= k - 1)\n\n        result.push(arr[dq[_____]]);\n\n}\n\nconsole.log(result);\n\nconsole.log(\"구간 수:\", result._____)\n\n```",
           "blanks": [
             {
               "content": "0",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <map>\n#include <string>\nusing namespace std;\nmap<string, int> freq;\nstring words[] = {\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"};\nfor (auto& w : words) _____[w]_____;\nfor (auto& p : freq) {\n    if (p._____ >= 2)\n        cout << p.first << \": \" << p._____;\n}\ncout << freq._____;\n```",
+          "codeTemplate": "```cpp\n\n#include <map>\n\n#include <string>\n\nusing namespace std;\n\nmap<string, int> freq;\n\nstring words[] = {\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"};\n\nfor (auto& w : words) _____[w]_____;\n\nfor (auto& p : freq) {\n\n    if (p._____ >= 2)\n\n        cout << p.first << \": \" << p._____;\n\n}\n\ncout << freq._____;\n\n```",
           "blanks": [
             {
               "content": "freq",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nwords = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"]\nfreq = {}\nfor w in _____:\n    freq[w] = freq._____(w, 0) + 1\nfor word, cnt in freq._____():\n    if cnt _____ 2:\n        print(f\"{word}: {_____}\")```",
+          "codeTemplate": "```python\n\nwords = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"]\n\nfreq = {}\n\nfor w in _____:\n\n    freq[w] = freq._____(w, 0) + 1\n\nfor word, cnt in freq._____():\n\n    if cnt _____ 2:\n\n        print(f\"{word}: {_____}\")```",
           "blanks": [
             {
               "content": "words",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst words = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"];\nconst freq = _____;\nfor (const w of words) {\n    freq[w] = (freq[w] _____ 0) + 1;\n}\nfor (const [word, cnt] of Object._____(freq)) {\n    if (cnt >= 2)\n        console.log(`${word}: ${_____}`);\n}\nconsole.log(Object._____(freq).length);\n```",
+          "codeTemplate": "```javascript\n\nconst words = [\"apple\",\"banana\",\"apple\",\"cherry\",\"banana\",\"apple\"];\n\nconst freq = _____;\n\nfor (const w of words) {\n\n    freq[w] = (freq[w] _____ 0) + 1;\n\n}\n\nfor (const [word, cnt] of Object._____(freq)) {\n\n    if (cnt >= 2)\n\n        console.log(`${word}: ${_____}`);\n\n}\n\nconsole.log(Object._____(freq).length);\n\n```",
           "blanks": [
             {
               "content": "{}",

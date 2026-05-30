@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> h = {2, 1, 5, 6, 2, 3};\nstack<int> st;\nlong maxArea = 0;\nfor (int i = _____; i <= (int)h.size(); i++) {\n    int cur = (i == (int)h.size()) ? _____ : h[i];\n    while (!st.empty() && h[st.top()] > cur) {\n        int height = h[st._____()];\n        st.pop();\n        int width = st.empty() ? i : i - st.top() - _____;\n        maxArea = max(maxArea, (long)height * _____);\n    }\n    st.push(_____);  \n}\ncout << maxArea;\n```",
+          "codeTemplate": "```cpp\n\nvector<int> h = {2, 1, 5, 6, 2, 3};\n\nstack<int> st;\n\nlong maxArea = 0;\n\nfor (int i = _____; i <= (int)h.size(); i++) {\n\n    int cur = (i == (int)h.size()) ? _____ : h[i];\n\n    while (!st.empty() && h[st.top()] > cur) {\n\n        int height = h[st._____()];\n\n        st.pop();\n\n        int width = st.empty() ? i : i - st.top() - _____;\n\n        maxArea = max(maxArea, (long)height * _____);\n\n    }\n\n    st.push(_____);  \n\n}\n\ncout << maxArea;\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -116,7 +116,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nheights = [2, 1, 5, 6, 2, 3]\nstack = []\nmax_area = 0\nfor i in range(_____, len(heights) + 1):\n    h = _____ if i == len(heights) else heights[i]\n    while stack and heights[stack[-1]] > h:\n        height = heights[stack._____()] \n        width = i if not stack else i - stack[_____] - 1\n        max_area = max(max_area, height * _____)\n    stack.append(_____)\nprint(max_area)\n```",
+          "codeTemplate": "```python\n\nheights = [2, 1, 5, 6, 2, 3]\n\nstack = []\n\nmax_area = 0\n\nfor i in range(_____, len(heights) + 1):\n\n    h = _____ if i == len(heights) else heights[i]\n\n    while stack and heights[stack[-1]] > h:\n\n        height = heights[stack._____()] \n\n        width = i if not stack else i - stack[_____] - 1\n\n        max_area = max(max_area, height * _____)\n\n    stack.append(_____)\n\nprint(max_area)\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -170,7 +170,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet heights = [2, 1, 5, 6, 2, 3];\nlet stack = [];\nlet maxArea = 0;\nfor (let i = _____; i <= heights.length; i++) {\n    let h = (i === heights.length) ? _____ : heights[i];\n    while (stack.length && heights[stack[stack.length-1]] > h) {\n        let height = heights[stack._____()] ;\n        let width = stack.length ? i - stack[stack.length-1] - _____ : i;\n        maxArea = Math.max(maxArea, height * _____);\n    }\n    stack.push(_____);  \n}\nconsole.log(maxArea);\n```",
+          "codeTemplate": "```javascript\n\nlet heights = [2, 1, 5, 6, 2, 3];\n\nlet stack = [];\n\nlet maxArea = 0;\n\nfor (let i = _____; i <= heights.length; i++) {\n\n    let h = (i === heights.length) ? _____ : heights[i];\n\n    while (stack.length && heights[stack[stack.length-1]] > h) {\n\n        let height = heights[stack._____()] ;\n\n        let width = stack.length ? i - stack[stack.length-1] - _____ : i;\n\n        maxArea = Math.max(maxArea, height * _____);\n\n    }\n\n    stack.push(_____);  \n\n}\n\nconsole.log(maxArea);\n\n```",
           "blanks": [
             {
               "content": "0",

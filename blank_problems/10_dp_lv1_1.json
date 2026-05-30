@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = 10;\nlong dp[n+1];\ndp[_____] = 0;\ndp[1] = _____;\nfor(int i = _____; i <= n; i++)\n    dp[i] = dp[i-1] _____ dp[i-2];\ncout << dp[_____];```",
+          "codeTemplate": "```cpp\n\nint n = 10;\n\nlong dp[n+1];\n\ndp[_____] = 0;\n\ndp[1] = _____;\n\nfor(int i = _____; i <= n; i++)\n\n    dp[i] = dp[i-1] _____ dp[i-2];\n\ncout << dp[_____];```",
           "blanks": [
             {
               "content": "0",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nn = 10\ndp = [0] * (n + 1)\ndp[_____] = 0\ndp[1] = _____\nfor i in range(_____, n + 1):\n    dp[i] = dp[i-1] _____ dp[i-2]\nprint(dp[_____])```",
+          "codeTemplate": "```python\n\nn = 10\n\ndp = [0] * (n + 1)\n\ndp[_____] = 0\n\ndp[1] = _____\n\nfor i in range(_____, n + 1):\n\n    dp[i] = dp[i-1] _____ dp[i-2]\n\nprint(dp[_____])```",
           "blanks": [
             {
               "content": "0",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet n = 10;\nlet dp = new Array(n + 1);\ndp[_____] = 0;\ndp[1] = _____;\nfor(let i = _____; i <= n; i++)\n    dp[i] = dp[i-1] _____ dp[i-2];\nconsole.log(dp[_____]);```",
+          "codeTemplate": "```javascript\n\nlet n = 10;\n\nlet dp = new Array(n + 1);\n\ndp[_____] = 0;\n\ndp[1] = _____;\n\nfor(let i = _____; i <= n; i++)\n\n    dp[i] = dp[i-1] _____ dp[i-2];\n\nconsole.log(dp[_____]);```",
           "blanks": [
             {
               "content": "0",

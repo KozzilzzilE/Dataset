@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nstring str = \"aabbbcccc\";\nmap<char, int> freq;\nfor (char c : _____) freq[c]++;\nvector<pair<char,int>> v(freq.begin(), freq.end());\nsort(v.begin(), v.end(), [](auto& a, auto& b) {\n    return a._____ > b.second;\n});\nfor (int i = 0; i < _____; i++) {\n    cout << v[i].first << \": \" << v[i]._____ << \"\\n\";\n}\ncout << \"종류: \" << freq._____;\n```",
+          "codeTemplate": "```cpp\n\nstring str = \"aabbbcccc\";\n\nmap<char, int> freq;\n\nfor (char c : _____) freq[c]++;\n\nvector<pair<char,int>> v(freq.begin(), freq.end());\n\nsort(v.begin(), v.end(), [](auto& a, auto& b) {\n\n    return a._____ > b.second;\n\n});\n\nfor (int i = 0; i < _____; i++) {\n\n    cout << v[i].first << \": \" << v[i]._____ << \"\\n\";\n\n}\n\ncout << \"종류: \" << freq._____;\n\n```",
           "blanks": [
             {
               "content": "str",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import Counter\nstr_val = \"aabbbcccc\"\nfreq = _____(str_val)\ntop_k = freq.most_common(_____)\nfor char, count in top_k:\n    print(f\"{_____}: {count}\")\nprint(\"종류:\", len(_____))\nprint(\"총 문자:\", sum(freq._____()))\n```",
+          "codeTemplate": "```python\n\nfrom collections import Counter\n\nstr_val = \"aabbbcccc\"\n\nfreq = _____(str_val)\n\ntop_k = freq.most_common(_____)\n\nfor char, count in top_k:\n\n    print(f\"{_____}: {count}\")\n\nprint(\"종류:\", len(_____))\n\nprint(\"총 문자:\", sum(freq._____()))\n\n```",
           "blanks": [
             {
               "content": "Counter",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet str = \"aabbbcccc\";\nlet freq = {};\nfor (let c of _____) freq[c] = (freq[c] _____ 0) + 1;\nlet sorted = Object.entries(freq).sort((a, b) => b[_____] - a[1]);\nsorted.slice(0, _____).forEach(([k, v]) => {\n    console.log(`${_____}: ${v}`);\n});\n```",
+          "codeTemplate": "```javascript\n\nlet str = \"aabbbcccc\";\n\nlet freq = {};\n\nfor (let c of _____) freq[c] = (freq[c] _____ 0) + 1;\n\nlet sorted = Object.entries(freq).sort((a, b) => b[_____] - a[1]);\n\nsorted.slice(0, _____).forEach(([k, v]) => {\n\n    console.log(`${_____}: ${v}`);\n\n});\n\n```",
           "blanks": [
             {
               "content": "str",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> arr = {5,3,1,4,2};\nint n = arr._____;\nfor(int i = 0; i < _____; i++)\n    for(int j = 0; j < n-i-1; j++)\n        if(arr[j] _____ arr[j+1]) {\n            int tmp = arr[j];\n            arr[j] = _____;\n            arr[j+1] = _____;\n        }```",
+          "codeTemplate": "```cpp\n\nvector<int> arr = {5,3,1,4,2};\n\nint n = arr._____;\n\nfor(int i = 0; i < _____; i++)\n\n    for(int j = 0; j < n-i-1; j++)\n\n        if(arr[j] _____ arr[j+1]) {\n\n            int tmp = arr[j];\n\n            arr[j] = _____;\n\n            arr[j+1] = _____;\n\n        }```",
           "blanks": [
             {
               "content": "size()",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [5, 3, 1, 4, 2]\nn = _____\nfor i in range(n-1):\n    for j in range(_____):\n        if arr[j] _____ arr[j+1]:\n            arr[j], arr[j+1] = arr[j+1], _____\nprint(_____)```",
+          "codeTemplate": "```python\n\narr = [5, 3, 1, 4, 2]\n\nn = _____\n\nfor i in range(n-1):\n\n    for j in range(_____):\n\n        if arr[j] _____ arr[j+1]:\n\n            arr[j], arr[j+1] = arr[j+1], _____\n\nprint(_____)```",
           "blanks": [
             {
               "content": "len(arr)",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [5, 3, 1, 4, 2];\nlet n = _____;\nfor(let i = 0; i < _____; i++) {\n    for(let j = 0; j < n-i-1; j++) {\n        if(arr[j] _____ arr[j+1]) {\n            let tmp = arr[j];\n            arr[j] = _____;\n            arr[j+1] = _____;\n        }\n    }\n}\nconsole.log(arr);```",
+          "codeTemplate": "```javascript\n\nlet arr = [5, 3, 1, 4, 2];\n\nlet n = _____;\n\nfor(let i = 0; i < _____; i++) {\n\n    for(let j = 0; j < n-i-1; j++) {\n\n        if(arr[j] _____ arr[j+1]) {\n\n            let tmp = arr[j];\n\n            arr[j] = _____;\n\n            arr[j+1] = _____;\n\n        }\n\n    }\n\n}\n\nconsole.log(arr);```",
           "blanks": [
             {
               "content": "arr.length",

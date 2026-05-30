@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvoid mergeSort(vector<int>& arr, vector<int>& tmp, int l, int r) {\n    if(l _____ r) return;\n    int mid = (l + r) _____;\n    mergeSort(arr, tmp, l, mid);\n    mergeSort(arr, tmp, mid+1, r);\n    for(int i = l; i _____ r; i++) tmp[i] = arr[i];\n    int i = l, j = mid+1, k = l;\n    while(i <= mid && j <= r)\n        if(tmp[i] _____ tmp[j]) arr[k++] = tmp[i++];\n        else arr[k++] = tmp[j++];\n    while(i <= mid) arr[k++] = tmp[_____++];\n}```",
+          "codeTemplate": "```cpp\n\nvoid mergeSort(vector<int>& arr, vector<int>& tmp, int l, int r) {\n\n    if(l _____ r) return;\n\n    int mid = (l + r) _____;\n\n    mergeSort(arr, tmp, l, mid);\n\n    mergeSort(arr, tmp, mid+1, r);\n\n    for(int i = l; i _____ r; i++) tmp[i] = arr[i];\n\n    int i = l, j = mid+1, k = l;\n\n    while(i <= mid && j <= r)\n\n        if(tmp[i] _____ tmp[j]) arr[k++] = tmp[i++];\n\n        else arr[k++] = tmp[j++];\n\n    while(i <= mid) arr[k++] = tmp[_____++];\n\n}```",
           "blanks": [
             {
               "content": ">=",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef merge_sort(arr, tmp, l, r):\n    if l _____ r:\n        return\n    mid = (l + r) _____\n    merge_sort(arr, tmp, l, mid)\n    merge_sort(arr, tmp, mid+1, r)\n    for i in range(l, r+1): tmp[i] = arr[i]\n    i, j, k = l, mid+1, l\n    while i _____ mid and j <= r:\n        if tmp[i] _____ tmp[j]:\n            arr[k] = tmp[i]; i _____; k += 1\n        else:\n            arr[k] = tmp[j]; j += 1; k += 1```",
+          "codeTemplate": "```python\n\ndef merge_sort(arr, tmp, l, r):\n\n    if l _____ r:\n\n        return\n\n    mid = (l + r) _____\n\n    merge_sort(arr, tmp, l, mid)\n\n    merge_sort(arr, tmp, mid+1, r)\n\n    for i in range(l, r+1): tmp[i] = arr[i]\n\n    i, j, k = l, mid+1, l\n\n    while i _____ mid and j <= r:\n\n        if tmp[i] _____ tmp[j]:\n\n            arr[k] = tmp[i]; i _____; k += 1\n\n        else:\n\n            arr[k] = tmp[j]; j += 1; k += 1```",
           "blanks": [
             {
               "content": ">=",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction mergeSort(arr, tmp, l, r) {\n    if(l _____ r) return;\n    let mid = Math.floor((l + r) / _____);\n    mergeSort(arr, tmp, l, mid);\n    mergeSort(arr, tmp, mid+1, r);\n    for(let i = l; i _____ r; i++) tmp[i] = arr[i];\n    let i = l, j = mid+1, k = l;\n    while(i <= mid && j <= r)\n        if(tmp[i] _____ tmp[j]) arr[k++] = tmp[i++];\n        else arr[k++] = tmp[j++];\n    while(i _____ mid) arr[k++] = tmp[i++];\n}```",
+          "codeTemplate": "```javascript\n\nfunction mergeSort(arr, tmp, l, r) {\n\n    if(l _____ r) return;\n\n    let mid = Math.floor((l + r) / _____);\n\n    mergeSort(arr, tmp, l, mid);\n\n    mergeSort(arr, tmp, mid+1, r);\n\n    for(let i = l; i _____ r; i++) tmp[i] = arr[i];\n\n    let i = l, j = mid+1, k = l;\n\n    while(i <= mid && j <= r)\n\n        if(tmp[i] _____ tmp[j]) arr[k++] = tmp[i++];\n\n        else arr[k++] = tmp[j++];\n\n    while(i _____ mid) arr[k++] = tmp[i++];\n\n}```",
           "blanks": [
             {
               "content": ">=",

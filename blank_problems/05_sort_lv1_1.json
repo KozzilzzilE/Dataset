@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <algorithm>\nvector<int> nums = {5,3,1,4,2};\nsort(nums._____, nums._____);\nfor(int x : nums)\n    cout << x << \" \";\ncout << nums._____;\ncout << nums.back() - nums._____ << endl;```",
+          "codeTemplate": "```cpp\n\n#include <algorithm>\n\nvector<int> nums = {5,3,1,4,2};\n\nsort(nums._____, nums._____);\n\nfor(int x : nums)\n\n    cout << x << \" \";\n\ncout << nums._____;\n\ncout << nums.back() - nums._____ << endl;```",
           "blanks": [
             {
               "content": "begin()",
@@ -104,7 +104,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nnums = [5, 3, 1, 4, 2]\nnums._____()\nfor x in _____:\n    print(x, end=\" \")\nprint()\nprint(_____(nums))\nprint(_____(nums) - _____(nums))```",
+          "codeTemplate": "```python\n\nnums = [5, 3, 1, 4, 2]\n\nnums._____()\n\nfor x in _____:\n\n    print(x, end=\" \")\n\nprint()\n\nprint(_____(nums))\n\nprint(_____(nums) - _____(nums))```",
           "blanks": [
             {
               "content": "sort",
@@ -150,7 +150,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet nums = [5, 3, 1, 4, 2];\nnums._____(function(a, b){return a - b;});\nfor(let x of nums) process.stdout.write(x + \" \");\nconsole.log();\nconsole.log(nums._____[_____]);\nconsole.log(nums._____(function(a,b){return b-a;})[0]);```",
+          "codeTemplate": "```javascript\n\nlet nums = [5, 3, 1, 4, 2];\n\nnums._____(function(a, b){return a - b;});\n\nfor(let x of nums) process.stdout.write(x + \" \");\n\nconsole.log();\n\nconsole.log(nums._____[_____]);\n\nconsole.log(nums._____(function(a,b){return b-a;})[0]);```",
           "blanks": [
             {
               "content": "sort",

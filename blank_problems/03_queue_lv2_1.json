@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nqueue<int> q;\nfor(int p : priorities) q.push(p);\nint count = 0;\nwhile(!q._____()) {\n    int cur = q._____();\n    q.pop();\n    if(max_element... _____ cur) { count_____; }\n    else q._____(cur);\n}\ncout << count;```",
+          "codeTemplate": "```cpp\n\nqueue<int> q;\n\nfor(int p : priorities) q.push(p);\n\nint count = 0;\n\nwhile(!q._____()) {\n\n    int cur = q._____();\n\n    q.pop();\n\n    if(max_element... _____ cur) { count_____; }\n\n    else q._____(cur);\n\n}\n\ncout << count;```",
           "blanks": [
             {
               "content": "empty",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\nq = deque(priorities)\ncount = _____\nwhile q:\n    cur = q._____\n    if max(q) _____ cur:\n        count _____ 1\n    else:\n        q._____(cur)\nprint(count)```",
+          "codeTemplate": "```python\n\nfrom collections import deque\n\nq = deque(priorities)\n\ncount = _____\n\nwhile q:\n\n    cur = q._____\n\n    if max(q) _____ cur:\n\n        count _____ 1\n\n    else:\n\n        q._____(cur)\n\nprint(count)```",
           "blanks": [
             {
               "content": "0",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet q = [...priorities];\nlet count = _____;\nwhile(q._____ > 0) {\n    let cur = q._____();\n    if(Math.max(...q) === cur) count_____;\n    else q._____(cur);\n}\nconsole.log(count);```",
+          "codeTemplate": "```javascript\n\nlet q = [...priorities];\n\nlet count = _____;\n\nwhile(q._____ > 0) {\n\n    let cur = q._____();\n\n    if(Math.max(...q) === cur) count_____;\n\n    else q._____(cur);\n\n}\n\nconsole.log(count);```",
           "blanks": [
             {
               "content": "0",

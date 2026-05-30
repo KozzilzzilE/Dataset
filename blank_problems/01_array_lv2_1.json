@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> arr = {1, 2, 3, 4, 5};\nint n = arr._____;\nint prefix[n];\nprefix[_____] = arr[0];\nfor(int i = _____; i < n; i++)\n    prefix[i] = prefix[i-1] _____ arr[i];\ncout << prefix[_____];```",
+          "codeTemplate": "```cpp\n\nvector<int> arr = {1, 2, 3, 4, 5};\n\nint n = arr._____;\n\nint prefix[n];\n\nprefix[_____] = arr[0];\n\nfor(int i = _____; i < n; i++)\n\n    prefix[i] = prefix[i-1] _____ arr[i];\n\ncout << prefix[_____];```",
           "blanks": [
             {
               "content": "size()",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [1, 2, 3, 4, 5]\nn = _____\nprefix = [0] * n\nprefix[_____] = arr[0]\nfor i in range(_____, n):\n    prefix[i] = prefix[i-1] _____ arr[i]\nprint(prefix[_____])```",
+          "codeTemplate": "```python\n\narr = [1, 2, 3, 4, 5]\n\nn = _____\n\nprefix = [0] * n\n\nprefix[_____] = arr[0]\n\nfor i in range(_____, n):\n\n    prefix[i] = prefix[i-1] _____ arr[i]\n\nprint(prefix[_____])```",
           "blanks": [
             {
               "content": "len(arr)",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [1, 2, 3, 4, 5];\nlet n = _____;\nlet prefix = new Array(n);\nprefix[_____] = arr[0];\nfor(let i = _____; i < n; i++)\n    prefix[i] = prefix[i-1] _____ arr[i];\nconsole.log(prefix[_____]);```",
+          "codeTemplate": "```javascript\n\nlet arr = [1, 2, 3, 4, 5];\n\nlet n = _____;\n\nlet prefix = new Array(n);\n\nprefix[_____] = arr[0];\n\nfor(let i = _____; i < n; i++)\n\n    prefix[i] = prefix[i-1] _____ arr[i];\n\nconsole.log(prefix[_____]);```",
           "blanks": [
             {
               "content": "arr.length",

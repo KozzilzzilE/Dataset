@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint arr[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};\nint n = 9;\nint maxSum = arr[_____], curSum = arr[0];\nint start = 0, end = 0, ts = 0;\nfor (int i = _____; i < n; i++) {\n    if (curSum + arr[i] _____ arr[i]) {\n        curSum += arr[i];\n    } else {\n        curSum = arr[i];\n        ts = _____;\n    }\n    if (curSum _____ maxSum) {\n        maxSum = curSum;\n        start = ts; end = _____;\n    }\n}\ncout << maxSum << \" [\" << start << \",\" << end << \"]\";\n```",
+          "codeTemplate": "```cpp\n\nint arr[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};\n\nint n = 9;\n\nint maxSum = arr[_____], curSum = arr[0];\n\nint start = 0, end = 0, ts = 0;\n\nfor (int i = _____; i < n; i++) {\n\n    if (curSum + arr[i] _____ arr[i]) {\n\n        curSum += arr[i];\n\n    } else {\n\n        curSum = arr[i];\n\n        ts = _____;\n\n    }\n\n    if (curSum _____ maxSum) {\n\n        maxSum = curSum;\n\n        start = ts; end = _____;\n\n    }\n\n}\n\ncout << maxSum << \" [\" << start << \",\" << end << \"]\";\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -116,7 +116,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\nmax_sum = arr[_____]\ncur_sum = arr[0]\nstart = end = temp_start = 0\nfor i in range(_____, len(arr)):\n    if cur_sum + arr[i] _____ arr[i]:\n        cur_sum += arr[i]\n    else:\n        cur_sum = arr[i]\n        temp_start = _____\n    if cur_sum _____ max_sum:\n        max_sum = cur_sum\n        start, end = temp_start, _____\nprint(max_sum, [start, end])\n```",
+          "codeTemplate": "```python\n\narr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\n\nmax_sum = arr[_____]\n\ncur_sum = arr[0]\n\nstart = end = temp_start = 0\n\nfor i in range(_____, len(arr)):\n\n    if cur_sum + arr[i] _____ arr[i]:\n\n        cur_sum += arr[i]\n\n    else:\n\n        cur_sum = arr[i]\n\n        temp_start = _____\n\n    if cur_sum _____ max_sum:\n\n        max_sum = cur_sum\n\n        start, end = temp_start, _____\n\nprint(max_sum, [start, end])\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -170,7 +170,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];\nlet maxSum = arr[_____], curSum = arr[0];\nlet start = 0, end = 0, tempStart = 0;\nfor (let i = _____; i < arr.length; i++) {\n    if (curSum + arr[i] _____ arr[i]) {\n        curSum += arr[i];\n    } else {\n        curSum = arr[i];\n        tempStart = _____;\n    }\n    if (curSum _____ maxSum) {\n        maxSum = curSum;\n        start = tempStart; end = _____;\n    }\n}\nconsole.log(maxSum, [start, end]);\n```",
+          "codeTemplate": "```javascript\n\nlet arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];\n\nlet maxSum = arr[_____], curSum = arr[0];\n\nlet start = 0, end = 0, tempStart = 0;\n\nfor (let i = _____; i < arr.length; i++) {\n\n    if (curSum + arr[i] _____ arr[i]) {\n\n        curSum += arr[i];\n\n    } else {\n\n        curSum = arr[i];\n\n        tempStart = _____;\n\n    }\n\n    if (curSum _____ maxSum) {\n\n        maxSum = curSum;\n\n        start = tempStart; end = _____;\n\n    }\n\n}\n\nconsole.log(maxSum, [start, end]);\n\n```",
           "blanks": [
             {
               "content": "0",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint arr[] = {1, 3, 5, 7, 9};\nint n = 5, target = 6;\nint lo = 0, hi = _____;\nwhile (lo _____ hi) {\n    int mid = (lo + hi) / 2;\n    if (arr[mid] < target) lo = mid + _____;\n    else hi = _____;\n}\ncout << \"삽입 위치: \" << _____;\n```",
+          "codeTemplate": "```cpp\n\nint arr[] = {1, 3, 5, 7, 9};\n\nint n = 5, target = 6;\n\nint lo = 0, hi = _____;\n\nwhile (lo _____ hi) {\n\n    int mid = (lo + hi) / 2;\n\n    if (arr[mid] < target) lo = mid + _____;\n\n    else hi = _____;\n\n}\n\ncout << \"삽입 위치: \" << _____;\n\n```",
           "blanks": [
             {
               "content": "n",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [1, 3, 5, 7, 9]\ntarget = 6\nlo, hi = 0, len(_____)\nwhile lo _____ hi:\n    mid = (lo + hi) _____ 2\n    if arr[mid] < target:\n        lo = mid + 1\n    else:\n        hi = _____\nprint(\"삽입 위치:\", _____)\n```",
+          "codeTemplate": "```python\n\narr = [1, 3, 5, 7, 9]\n\ntarget = 6\n\nlo, hi = 0, len(_____)\n\nwhile lo _____ hi:\n\n    mid = (lo + hi) _____ 2\n\n    if arr[mid] < target:\n\n        lo = mid + 1\n\n    else:\n\n        hi = _____\n\nprint(\"삽입 위치:\", _____)\n\n```",
           "blanks": [
             {
               "content": "arr",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [1, 3, 5, 7, 9];\nlet target = 6;\nlet lo = 0, hi = arr._____;\nwhile (lo _____ hi) {\n    let mid = Math.floor((lo + hi) / 2);\n    if (arr[mid] < target) lo = mid + _____;\n    else hi = _____;\n}\nconsole.log(\"삽입 위치:\", _____);\n```",
+          "codeTemplate": "```javascript\n\nlet arr = [1, 3, 5, 7, 9];\n\nlet target = 6;\n\nlet lo = 0, hi = arr._____;\n\nwhile (lo _____ hi) {\n\n    let mid = Math.floor((lo + hi) / 2);\n\n    if (arr[mid] < target) lo = mid + _____;\n\n    else hi = _____;\n\n}\n\nconsole.log(\"삽입 위치:\", _____);\n\n```",
           "blanks": [
             {
               "content": "length",

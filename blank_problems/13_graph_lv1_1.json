@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = 5;\nvector<vector<int>> graph(_____); \nfor(auto& e : edges) {\n    graph[e[_____]].push_back(e[1]);\n    graph[e[1]].push_back(e[_____]);\n}\nvector<int> neighbors = graph[_____];\ncout << neighbors._____;```",
+          "codeTemplate": "```cpp\n\nint n = 5;\n\nvector<vector<int>> graph(_____); \n\nfor(auto& e : edges) {\n\n    graph[e[_____]].push_back(e[1]);\n\n    graph[e[1]].push_back(e[_____]);\n\n}\n\nvector<int> neighbors = graph[_____];\n\ncout << neighbors._____;```",
           "blanks": [
             {
               "content": "n",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nn = 5\ngraph = [[] for _ in range(_____)] \nfor e in edges:\n    graph[e[_____]].append(e[1])\n    graph[e[1]]._____(e[0])\nneighbors = graph[_____]\nprint(_____(neighbors))```",
+          "codeTemplate": "```python\n\nn = 5\n\ngraph = [[] for _ in range(_____)] \n\nfor e in edges:\n\n    graph[e[_____]].append(e[1])\n\n    graph[e[1]]._____(e[0])\n\nneighbors = graph[_____]\n\nprint(_____(neighbors))```",
           "blanks": [
             {
               "content": "n",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet n = 5;\nlet graph = Array.from({length: _____}, () => []);\nfor(let e of edges) {\n    graph[e[_____]].push(e[1]);\n    graph[e[1]]._____(e[0]);\n}\nlet neighbors = graph[_____];\nconsole.log(neighbors._____);```",
+          "codeTemplate": "```javascript\n\nlet n = 5;\n\nlet graph = Array.from({length: _____}, () => []);\n\nfor(let e of edges) {\n\n    graph[e[_____]].push(e[1]);\n\n    graph[e[1]]._____(e[0]);\n\n}\n\nlet neighbors = graph[_____];\n\nconsole.log(neighbors._____);```",
           "blanks": [
             {
               "content": "n",

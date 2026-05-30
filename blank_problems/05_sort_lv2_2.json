@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvoid mergeSort(vector<int>& arr, int l, int r) {\n    if (l _____ r) return;\n    int m = (l + r) / _____;\n    mergeSort(arr, l, m);\n    mergeSort(arr, m+1, _____);\n    vector<int> tmp(arr.begin()+l, arr.begin()+r+1);\n    int i = 0, j = m-l+1, k = l;\n    while (i <= m-l && j <= r-l)\n        arr[k++] = tmp[i] <= tmp[j] ? tmp[_____++] : tmp[j++];\n    while (i <= m-l) arr[k++] = tmp[i++];\n    while (j <= r-l) arr[k++] = tmp[_____++];\n}\n```",
+          "codeTemplate": "```cpp\n\nvoid mergeSort(vector<int>& arr, int l, int r) {\n\n    if (l _____ r) return;\n\n    int m = (l + r) / _____;\n\n    mergeSort(arr, l, m);\n\n    mergeSort(arr, m+1, _____);\n\n    vector<int> tmp(arr.begin()+l, arr.begin()+r+1);\n\n    int i = 0, j = m-l+1, k = l;\n\n    while (i <= m-l && j <= r-l)\n\n        arr[k++] = tmp[i] <= tmp[j] ? tmp[_____++] : tmp[j++];\n\n    while (i <= m-l) arr[k++] = tmp[i++];\n\n    while (j <= r-l) arr[k++] = tmp[_____++];\n\n}\n\n```",
           "blanks": [
             {
               "content": ">=",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef merge_sort(arr):\n    if len(arr) _____ 1:\n        return arr\n    mid = len(arr) _____ 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[_____:])\n    result, i, j = [], 0, 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[_____]); i += 1\n        else:\n            result.append(right[j]); j += 1\n    return result + left[i:] + right[_____:]\n```",
+          "codeTemplate": "```python\n\ndef merge_sort(arr):\n\n    if len(arr) _____ 1:\n\n        return arr\n\n    mid = len(arr) _____ 2\n\n    left = merge_sort(arr[:mid])\n\n    right = merge_sort(arr[_____:])\n\n    result, i, j = [], 0, 0\n\n    while i < len(left) and j < len(right):\n\n        if left[i] <= right[j]:\n\n            result.append(left[_____]); i += 1\n\n        else:\n\n            result.append(right[j]); j += 1\n\n    return result + left[i:] + right[_____:]\n\n```",
           "blanks": [
             {
               "content": "<=",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction mergeSort(arr) {\n    if (arr.length _____ 1) return arr;\n    let mid = Math.floor(arr.length / _____);\n    let left = mergeSort(arr.slice(0, mid));\n    let right = mergeSort(arr.slice(_____));\n    return merge(left, _____);\n}\nfunction merge(l, r) {\n    let res = [], i = 0, j = 0;\n    while (i < l.length && j < r.length)\n        res.push(l[i] <= r[j] ? l[_____++] : r[j++]);\n    return res.concat(l.slice(i)).concat(r.slice(j));\n}\n```",
+          "codeTemplate": "```javascript\n\nfunction mergeSort(arr) {\n\n    if (arr.length _____ 1) return arr;\n\n    let mid = Math.floor(arr.length / _____);\n\n    let left = mergeSort(arr.slice(0, mid));\n\n    let right = mergeSort(arr.slice(_____));\n\n    return merge(left, _____);\n\n}\n\nfunction merge(l, r) {\n\n    let res = [], i = 0, j = 0;\n\n    while (i < l.length && j < r.length)\n\n        res.push(l[i] <= r[j] ? l[_____++] : r[j++]);\n\n    return res.concat(l.slice(i)).concat(r.slice(j));\n\n}\n\n```",
           "blanks": [
             {
               "content": "<=",

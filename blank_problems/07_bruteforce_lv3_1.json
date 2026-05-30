@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<vector<int>> combos;\nvoid combine(vector<int>& arr, int start, vector<int>& cur, int r) {\n    if(cur.size() == _____) {\n        combos.push_back(cur);\n        return;\n    }\n    for(int i = _____; i < arr.size(); i++) {\n        if((int)(r - cur.size()) > (int)(arr.size() - _____)) break;\n        cur.push_back(arr[_____]);\n        combine(arr, i + 1, cur, r);\n        cur._____();\n    }\n}```",
+          "codeTemplate": "```cpp\n\nvector<vector<int>> combos;\n\nvoid combine(vector<int>& arr, int start, vector<int>& cur, int r) {\n\n    if(cur.size() == _____) {\n\n        combos.push_back(cur);\n\n        return;\n\n    }\n\n    for(int i = _____; i < arr.size(); i++) {\n\n        if((int)(r - cur.size()) > (int)(arr.size() - _____)) break;\n\n        cur.push_back(arr[_____]);\n\n        combine(arr, i + 1, cur, r);\n\n        cur._____();\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "r",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ncombos = []\ndef combine(arr, start, cur, r):\n    if len(cur) == _____:\n        combos.append(cur[:])\n        return\n    for i in range(_____, len(arr)):\n        if r - len(cur) > len(arr) - _____:\n            break\n        cur._____(arr[i])\n        combine(arr, i + 1, cur, r)\n        cur._____()```",
+          "codeTemplate": "```python\n\ncombos = []\n\ndef combine(arr, start, cur, r):\n\n    if len(cur) == _____:\n\n        combos.append(cur[:])\n\n        return\n\n    for i in range(_____, len(arr)):\n\n        if r - len(cur) > len(arr) - _____:\n\n            break\n\n        cur._____(arr[i])\n\n        combine(arr, i + 1, cur, r)\n\n        cur._____()```",
           "blanks": [
             {
               "content": "r",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet combos = [];\nfunction combine(arr, start, cur, r) {\n    if(cur.length === _____) {\n        combos.push([...cur]);\n        return;\n    }\n    for(let i = _____; i < arr.length; i++) {\n        if(r - cur.length > arr.length - _____) break;\n        cur.push(arr[_____]);\n        combine(arr, i + 1, cur, r);\n        cur._____();\n    }\n}```",
+          "codeTemplate": "```javascript\n\nlet combos = [];\n\nfunction combine(arr, start, cur, r) {\n\n    if(cur.length === _____) {\n\n        combos.push([...cur]);\n\n        return;\n\n    }\n\n    for(let i = _____; i < arr.length; i++) {\n\n        if(r - cur.length > arr.length - _____) break;\n\n        cur.push(arr[_____]);\n\n        combine(arr, i + 1, cur, r);\n\n        cur._____();\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "r",

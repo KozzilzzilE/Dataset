@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\npriority_queue<int> maxHeap;\nfor(int v : nums) maxHeap._____(v);\nvector<int> sorted;\nwhile(!maxHeap._____()) {\n    sorted.push_back(maxHeap._____());\n    maxHeap._____();\n}\ncout << sorted._____;```",
+          "codeTemplate": "```cpp\n\npriority_queue<int> maxHeap;\n\nfor(int v : nums) maxHeap._____(v);\n\nvector<int> sorted;\n\nwhile(!maxHeap._____()) {\n\n    sorted.push_back(maxHeap._____());\n\n    maxHeap._____();\n\n}\n\ncout << sorted._____;```",
           "blanks": [
             {
               "content": "push",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq\nmaxHeap = []\nfor v in nums:\n    heapq.heappush(maxHeap, _____)\nsorted_list = []\nwhile _____:\n    sorted_list.append(heapq.heappop(maxHeap) _____ 1)\nprint(sorted_list)\nprint(_____(sorted_list))\nprint(sorted_list[_____])```",
+          "codeTemplate": "```python\n\nimport heapq\n\nmaxHeap = []\n\nfor v in nums:\n\n    heapq.heappush(maxHeap, _____)\n\nsorted_list = []\n\nwhile _____:\n\n    sorted_list.append(heapq.heappop(maxHeap) _____ 1)\n\nprint(sorted_list)\n\nprint(_____(sorted_list))\n\nprint(sorted_list[_____])```",
           "blanks": [
             {
               "content": "-v",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nclass MaxHeap {\n    constructor() { this.heap = []; }\n    push(val) { this.heap._____(val); this._bubbleUp(); }\n    top() { return this.heap[_____]; }\n    pop() {\n        let max = this.heap[0];\n        this.heap[0] = this.heap[this.heap.length - 1];\n        this.heap._____();\n        this._bubbleDown(0);\n        return max;\n    }\n    size() { return this.heap._____; }\n}\nconst mh = new MaxHeap();\nnums.forEach(v => mh._____(v));```",
+          "codeTemplate": "```javascript\n\nclass MaxHeap {\n\n    constructor() { this.heap = []; }\n\n    push(val) { this.heap._____(val); this._bubbleUp(); }\n\n    top() { return this.heap[_____]; }\n\n    pop() {\n\n        let max = this.heap[0];\n\n        this.heap[0] = this.heap[this.heap.length - 1];\n\n        this.heap._____();\n\n        this._bubbleDown(0);\n\n        return max;\n\n    }\n\n    size() { return this.heap._____; }\n\n}\n\nconst mh = new MaxHeap();\n\nnums.forEach(v => mh._____(v));```",
           "blanks": [
             {
               "content": "push",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <algorithm>\nusing namespace std;\npair<int,int> acts[] = {{1,4},{3,5},{0,6},{5,7},{3,9}};\nsort(acts, acts+5, [](auto& a, auto& b){ return a._____ < b._____; });\nint count = 0, lastEnd = _____;\nfor (auto& a : acts) {\n    if (a.first _____ lastEnd) {\n        count++;\n        lastEnd = _____;\n    }\n}\ncout << count;\n```",
+          "codeTemplate": "```cpp\n\n#include <algorithm>\n\nusing namespace std;\n\npair<int,int> acts[] = {{1,4},{3,5},{0,6},{5,7},{3,9}};\n\nsort(acts, acts+5, [](auto& a, auto& b){ return a._____ < b._____; });\n\nint count = 0, lastEnd = _____;\n\nfor (auto& a : acts) {\n\n    if (a.first _____ lastEnd) {\n\n        count++;\n\n        lastEnd = _____;\n\n    }\n\n}\n\ncout << count;\n\n```",
           "blanks": [
             {
               "content": "second",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nacts = [(1,4),(3,5),(0,6),(5,7),(3,9)]\nacts.sort(key=lambda x: _____)\ncount, last_end = _____, 0\nfor start, end in acts:\n    if start _____ last_end:\n        count += 1\n        last_end = _____\nprint(_____)\n```",
+          "codeTemplate": "```python\n\nacts = [(1,4),(3,5),(0,6),(5,7),(3,9)]\n\nacts.sort(key=lambda x: _____)\n\ncount, last_end = _____, 0\n\nfor start, end in acts:\n\n    if start _____ last_end:\n\n        count += 1\n\n        last_end = _____\n\nprint(_____)\n\n```",
           "blanks": [
             {
               "content": "x[1]",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst acts = [[1,4],[3,5],[0,6],[5,7],[3,9]];\nacts.sort((a, b) => a[_____] - b[_____]);\nlet count = 0, lastEnd = _____;\nfor (const [s, e] of acts) {\n    if (s _____ lastEnd) {\n        count++;\n        lastEnd = _____;\n    }\n}\nconsole.log(count);\n```",
+          "codeTemplate": "```javascript\n\nconst acts = [[1,4],[3,5],[0,6],[5,7],[3,9]];\n\nacts.sort((a, b) => a[_____] - b[_____]);\n\nlet count = 0, lastEnd = _____;\n\nfor (const [s, e] of acts) {\n\n    if (s _____ lastEnd) {\n\n        count++;\n\n        lastEnd = _____;\n\n    }\n\n}\n\nconsole.log(count);\n\n```",
           "blanks": [
             {
               "content": "1",

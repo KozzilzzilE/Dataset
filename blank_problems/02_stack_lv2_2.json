@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nstring str = \"abbac\";\nstack<char> st;\nfor (char c : _____) {\n    if (!st.empty() && st.top() == c) {\n        st._____();\n    } else {\n        st.push(_____);  \n    }\n}\nstring result = \"\";\nwhile (!st._____()) {\n    result = st.top() + result;\n    st.pop();\n}\ncout << _____;\n```",
+          "codeTemplate": "```cpp\n\nstring str = \"abbac\";\n\nstack<char> st;\n\nfor (char c : _____) {\n\n    if (!st.empty() && st.top() == c) {\n\n        st._____();\n\n    } else {\n\n        st.push(_____);  \n\n    }\n\n}\n\nstring result = \"\";\n\nwhile (!st._____()) {\n\n    result = st.top() + result;\n\n    st.pop();\n\n}\n\ncout << _____;\n\n```",
           "blanks": [
             {
               "content": "str",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nstr_val = \"abbac\"\nstack = []\nfor c in _____:\n    if stack and stack[_____] == c:\n        stack.pop()\n    else:\n        stack.append(c)\nresult = \"\"\nwhile _____:\n    result = stack.pop() + result\nprint(_____)\nprint(\"길이:\", _____(result))\n```",
+          "codeTemplate": "```python\n\nstr_val = \"abbac\"\n\nstack = []\n\nfor c in _____:\n\n    if stack and stack[_____] == c:\n\n        stack.pop()\n\n    else:\n\n        stack.append(c)\n\nresult = \"\"\n\nwhile _____:\n\n    result = stack.pop() + result\n\nprint(_____)\n\nprint(\"길이:\", _____(result))\n\n```",
           "blanks": [
             {
               "content": "str_val",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet str = \"abbac\";\nlet stack = [];\nfor (let c of _____) {\n    if (stack.length && stack[stack.length-1] === c) {\n        stack._____();\n    } else {\n        stack.push(_____);  \n    }\n}\nlet result = \"\";\nwhile (stack._____) {\n    result = stack.pop() + _____;\n}\nconsole.log(result);\n```",
+          "codeTemplate": "```javascript\n\nlet str = \"abbac\";\n\nlet stack = [];\n\nfor (let c of _____) {\n\n    if (stack.length && stack[stack.length-1] === c) {\n\n        stack._____();\n\n    } else {\n\n        stack.push(_____);  \n\n    }\n\n}\n\nlet result = \"\";\n\nwhile (stack._____) {\n\n    result = stack.pop() + _____;\n\n}\n\nconsole.log(result);\n\n```",
           "blanks": [
             {
               "content": "str",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nunordered_map<int, int> m;\nfor(int i = 0; i < nums.size(); i++) {\n    int need = target _____ nums[i];\n    if(m.find(need) != m._____()) {\n        return {m[need], _____};\n    }\n    m[_____] = i;\n}\nreturn {_____, -1};```",
+          "codeTemplate": "```cpp\n\nunordered_map<int, int> m;\n\nfor(int i = 0; i < nums.size(); i++) {\n\n    int need = target _____ nums[i];\n\n    if(m.find(need) != m._____()) {\n\n        return {m[need], _____};\n\n    }\n\n    m[_____] = i;\n\n}\n\nreturn {_____, -1};```",
           "blanks": [
             {
               "content": "-",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef two_sum(nums, target):\n    m = {}\n    for i in range(_____(nums)):\n        need = target _____ nums[i]\n        if need in _____:\n            return [m[need], _____]\n        m[nums[i]] = _____\n    return []```",
+          "codeTemplate": "```python\n\ndef two_sum(nums, target):\n\n    m = {}\n\n    for i in range(_____(nums)):\n\n        need = target _____ nums[i]\n\n        if need in _____:\n\n            return [m[need], _____]\n\n        m[nums[i]] = _____\n\n    return []```",
           "blanks": [
             {
               "content": "len",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction twoSum(nums, target) {\n    let m = new Map();\n    for(let i = 0; i < nums._____; i++) {\n        let need = target _____ nums[i];\n        if(m._____(need)) {\n            return [m.get(need), _____];\n        }\n        m.set(nums[i], _____); \n    }\n    return [];\n}```",
+          "codeTemplate": "```javascript\n\nfunction twoSum(nums, target) {\n\n    let m = new Map();\n\n    for(let i = 0; i < nums._____; i++) {\n\n        let need = target _____ nums[i];\n\n        if(m._____(need)) {\n\n            return [m.get(need), _____];\n\n        }\n\n        m.set(nums[i], _____); \n\n    }\n\n    return [];\n\n}```",
           "blanks": [
             {
               "content": "length",

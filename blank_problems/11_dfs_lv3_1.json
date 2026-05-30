@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<vector<int>> allPaths;\nbool visited[100] = {};\nvoid dfs(int node, vector<int>& path, int target) {\n    if(node == _____) {\n        allPaths.push_back(path);\n        return;\n    }\n    for(int next : graph[node]) {\n        if(!visited[_____]) {\n            visited[next] = _____;\n            path.push_back(_____); \n            dfs(next, path, target);\n            path.pop_back();\n            visited[next] = _____;\n        }\n    }\n}```",
+          "codeTemplate": "```cpp\n\nvector<vector<int>> allPaths;\n\nbool visited[100] = {};\n\nvoid dfs(int node, vector<int>& path, int target) {\n\n    if(node == _____) {\n\n        allPaths.push_back(path);\n\n        return;\n\n    }\n\n    for(int next : graph[node]) {\n\n        if(!visited[_____]) {\n\n            visited[next] = _____;\n\n            path.push_back(_____); \n\n            dfs(next, path, target);\n\n            path.pop_back();\n\n            visited[next] = _____;\n\n        }\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "target",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nallPaths = []\nvisited = [False] * 100\ndef dfs(node, path, target):\n    if node == _____:\n        allPaths.append(path[:])\n        return\n    for next_node in graph[node]:\n        if not visited[_____]:\n            visited[next_node] = _____\n            path._____(next_node)\n            dfs(next_node, path, target)\n            path.pop()\n            visited[next_node] = _____```",
+          "codeTemplate": "```python\n\nallPaths = []\n\nvisited = [False] * 100\n\ndef dfs(node, path, target):\n\n    if node == _____:\n\n        allPaths.append(path[:])\n\n        return\n\n    for next_node in graph[node]:\n\n        if not visited[_____]:\n\n            visited[next_node] = _____\n\n            path._____(next_node)\n\n            dfs(next_node, path, target)\n\n            path.pop()\n\n            visited[next_node] = _____```",
           "blanks": [
             {
               "content": "target",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet allPaths = [];\nlet visited = new Array(100).fill(false);\nfunction dfs(node, path, target) {\n    if(node === _____) {\n        allPaths.push([...path]);\n        return;\n    }\n    for(let next of graph[node]) {\n        if(!visited[_____]) {\n            visited[next] = _____;\n            path._____(next);\n            dfs(next, path, target);\n            path.pop();\n            visited[next] = _____;\n        }\n    }\n}```",
+          "codeTemplate": "```javascript\n\nlet allPaths = [];\n\nlet visited = new Array(100).fill(false);\n\nfunction dfs(node, path, target) {\n\n    if(node === _____) {\n\n        allPaths.push([...path]);\n\n        return;\n\n    }\n\n    for(let next of graph[node]) {\n\n        if(!visited[_____]) {\n\n            visited[next] = _____;\n\n            path._____(next);\n\n            dfs(next, path, target);\n\n            path.pop();\n\n            visited[next] = _____;\n\n        }\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "target",

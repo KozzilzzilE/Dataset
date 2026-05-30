@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint sum = _____; \nfor(int i = 0; i < arr._____) \n    sum _____ arr[i]; \nint avg = sum _____ arr.size(); \ncout << _____;\n```",
+          "codeTemplate": "```cpp\n\nint sum = _____; \n\nfor(int i = 0; i < arr._____) \n\n    sum _____ arr[i]; \n\nint avg = sum _____ arr.size(); \n\ncout << _____;\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [1, 2, 3, 4, 5]\nsum = _____\nfor i in range(_____):\n    sum _____ arr[i]\navg = sum _____ len(arr)\nprint(_____)```",
+          "codeTemplate": "```python\n\narr = [1, 2, 3, 4, 5]\n\nsum = _____\n\nfor i in range(_____):\n\n    sum _____ arr[i]\n\navg = sum _____ len(arr)\n\nprint(_____)```",
           "blanks": [
             {
               "content": "0",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet sum = _____; \nfor(let i = 0; i < arr._____) \n    sum _____ arr[i]; \nlet avg = sum _____ arr.length; \nconsole.log(_____); \n```",
+          "codeTemplate": "```javascript\n\nlet sum = _____; \n\nfor(let i = 0; i < arr._____) \n\n    sum _____ arr[i]; \n\nlet avg = sum _____ arr.length; \n\nconsole.log(_____); \n\n```",
           "blanks": [
             {
               "content": "0",

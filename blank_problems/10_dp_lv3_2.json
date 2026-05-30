@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\nint main() {\n    string a=\"kitten\", b=\"sitting\";\n    int m=a.size(), n=b.size();\n    vector<vector<int>> dp(m+1,vector<int>(n+1,0));\n    for(int i=0;i<=m;i++) dp[i][0]=_____;\n    for(int j=0;j<=n;j++) dp[0][j]=_____;\n    for(int i=1;i<=m;i++)\n        for(int j=1;j<=n;j++)\n            if(a[i-1]==b[j-1]) dp[i][j]=dp[i-1][_____];\n            else dp[i][j]=1+min({dp[i-1][j],dp[i][j-1],dp[_____][j-1]});\n    cout<<dp[_____][n];\n}\n```",
+          "codeTemplate": "```cpp\n\n#include <iostream>\n\n#include <string>\n\n#include <algorithm>\n\nusing namespace std;\n\nint main() {\n\n    string a=\"kitten\", b=\"sitting\";\n\n    int m=a.size(), n=b.size();\n\n    vector<vector<int>> dp(m+1,vector<int>(n+1,0));\n\n    for(int i=0;i<=m;i++) dp[i][0]=_____;\n\n    for(int j=0;j<=n;j++) dp[0][j]=_____;\n\n    for(int i=1;i<=m;i++)\n\n        for(int j=1;j<=n;j++)\n\n            if(a[i-1]==b[j-1]) dp[i][j]=dp[i-1][_____];\n\n            else dp[i][j]=1+min({dp[i-1][j],dp[i][j-1],dp[_____][j-1]});\n\n    cout<<dp[_____][n];\n\n}\n\n```",
           "blanks": [
             {
               "content": "i",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\na, b = \"kitten\", \"sitting\"\nm, n = len(a), len(b)\ndp = [[0]*(n+1) for _ in range(m+1)]\nfor i in range(m+1): dp[i][0] = _____\nfor j in range(n+1): dp[0][j] = _____\nfor i in range(1, m+1):\n    for j in range(1, n+1):\n        if a[i-1] == b[j-1]:\n            dp[i][j] = dp[i-1][_____]\n        else:\n            dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[_____][j-1])\nprint(dp[_____][n])\n```",
+          "codeTemplate": "```python\n\na, b = \"kitten\", \"sitting\"\n\nm, n = len(a), len(b)\n\ndp = [[0]*(n+1) for _ in range(m+1)]\n\nfor i in range(m+1): dp[i][0] = _____\n\nfor j in range(n+1): dp[0][j] = _____\n\nfor i in range(1, m+1):\n\n    for j in range(1, n+1):\n\n        if a[i-1] == b[j-1]:\n\n            dp[i][j] = dp[i-1][_____]\n\n        else:\n\n            dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[_____][j-1])\n\nprint(dp[_____][n])\n\n```",
           "blanks": [
             {
               "content": "i",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst a='kitten', b='sitting';\nconst m=a.length, n=b.length;\nconst dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));\nfor(let i=0;i<=m;i++) dp[i][0]=_____;\nfor(let j=0;j<=n;j++) dp[0][j]=_____;\nfor(let i=1;i<=m;i++)\n    for(let j=1;j<=n;j++)\n        if(a[i-1]===b[j-1]) dp[i][j]=dp[i-1][_____];\n        else dp[i][j]=1+Math.min(dp[i-1][j],dp[i][j-1],dp[_____][j-1]);\nconsole.log(dp[_____][n]);\n```",
+          "codeTemplate": "```javascript\n\nconst a='kitten', b='sitting';\n\nconst m=a.length, n=b.length;\n\nconst dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));\n\nfor(let i=0;i<=m;i++) dp[i][0]=_____;\n\nfor(let j=0;j<=n;j++) dp[0][j]=_____;\n\nfor(let i=1;i<=m;i++)\n\n    for(let j=1;j<=n;j++)\n\n        if(a[i-1]===b[j-1]) dp[i][j]=dp[i-1][_____];\n\n        else dp[i][j]=1+Math.min(dp[i-1][j],dp[i][j-1],dp[_____][j-1]);\n\nconsole.log(dp[_____][n]);\n\n```",
           "blanks": [
             {
               "content": "i",

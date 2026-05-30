@@ -12,15 +12,15 @@
     },
     {
       "languageId": 2,
-      "content": "```cpp\n#include <iostream>\nusing namespace std;\n\nvoid selectionSort(int arr[], int n) {\n    for (int i = 0; i < n - 1; i++) {\n        int minIdx = i;\n        for (int j = i + 1; j < n; j++) {\n            if (arr[j] < arr[minIdx]) {\n                minIdx = j;\n            }\n        }\n        // Swap\n        swap(arr[i], arr[minIdx]);\n    }\n}\n```"
+      "content": "```cpp\n\n#include <iostream>\n\nusing namespace std;\n\nvoid selectionSort(int arr[], int n) {\n\n    for (int i = 0; i < n - 1; i++) {\n\n        int minIdx = i;\n\n        for (int j = i + 1; j < n; j++) {\n\n            if (arr[j] < arr[minIdx]) {\n\n                minIdx = j;\n\n            }\n\n        }\n\n        // Swap\n\n        swap(arr[i], arr[minIdx]);\n\n    }\n\n}\n\n```"
     },
     {
       "languageId": 3,
-      "content": "```python\ndef selection_sort(arr):\n    n = len(arr)\n    for i in range(n - 1):\n        min_idx = i\n        for j in range(i + 1, n):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        # Swap\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr\n```"
+      "content": "```python\n\ndef selection_sort(arr):\n\n    n = len(arr)\n\n    for i in range(n - 1):\n\n        min_idx = i\n\n        for j in range(i + 1, n):\n\n            if arr[j] < arr[min_idx]:\n\n                min_idx = j\n\n        # Swap\n\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n\n    return arr\n\n```"
     },
     {
       "languageId": 4,
-      "content": "```javascript\nfunction selectionSort(arr) {\n    const n = arr.length;\n    for (let i = 0; i < n - 1; i++) {\n        let minIdx = i;\n        for (let j = i + 1; j < n; j++) {\n            if (arr[j] < arr[minIdx]) {\n                minIdx = j;\n            }\n        }\n        // Swap\n        [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];\n    }\n    return arr;\n}\n```"
+      "content": "```javascript\n\nfunction selectionSort(arr) {\n\n    const n = arr.length;\n\n    for (let i = 0; i < n - 1; i++) {\n\n        let minIdx = i;\n\n        for (let j = i + 1; j < n; j++) {\n\n            if (arr[j] < arr[minIdx]) {\n\n                minIdx = j;\n\n            }\n\n        }\n\n        // Swap\n\n        [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];\n\n    }\n\n    return arr;\n\n}\n\n```"
     }
   ]
 }

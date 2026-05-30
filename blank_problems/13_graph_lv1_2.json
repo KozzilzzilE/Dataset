@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = 5;\nint adj[n + _____][n + 1] = {};\nadj[1][3] = adj[3][1] = 1;\nadj[2][4] = adj[4][_____] = 1;\nadj[3][5] = adj[_____][3] = 1;\nint degree = 0;\nfor(int i = 1; i <= n; i++)\n    if(adj[3][i] == 1) degree _____ 1;\ncout << \"3번 차수: \" << _____;\n```",
+          "codeTemplate": "```cpp\n\nint n = 5;\n\nint adj[n + _____][n + 1] = {};\n\nadj[1][3] = adj[3][1] = 1;\n\nadj[2][4] = adj[4][_____] = 1;\n\nadj[3][5] = adj[_____][3] = 1;\n\nint degree = 0;\n\nfor(int i = 1; i <= n; i++)\n\n    if(adj[3][i] == 1) degree _____ 1;\n\ncout << \"3번 차수: \" << _____;\n\n```",
           "blanks": [
             {
               "content": "1",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nn = 5\nadj = [[0] * (n + 1) for _ in range(n + _____)]  \nadj[1][3] = adj[3][1] = 1\nadj[2][4] = adj[4][_____] = 1\nadj[3][5] = adj[_____][3] = 1\ndegree = 0\nfor i in range(1, n + 1):\n    if adj[3][i] == 1:\n        degree _____ 1\nprint(\"3번 차수:\", _____)\n```",
+          "codeTemplate": "```python\n\nn = 5\n\nadj = [[0] * (n + 1) for _ in range(n + _____)]  \n\nadj[1][3] = adj[3][1] = 1\n\nadj[2][4] = adj[4][_____] = 1\n\nadj[3][5] = adj[_____][3] = 1\n\ndegree = 0\n\nfor i in range(1, n + 1):\n\n    if adj[3][i] == 1:\n\n        degree _____ 1\n\nprint(\"3번 차수:\", _____)\n\n```",
           "blanks": [
             {
               "content": "1",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst n = 5;\nconst adj = Array.from({length: n + _____}, () => new Array(n + 1).fill(0));\nadj[1][3] = adj[3][1] = 1;\nadj[2][4] = adj[4][_____] = 1;\nadj[3][5] = adj[_____][3] = 1;\nlet degree = 0;\nfor(let i = 1; i <= n; i++)\n    if(adj[3][i] === 1) degree _____ 1;\nconsole.log(\"3번 차수:\", _____);\n```",
+          "codeTemplate": "```javascript\n\nconst n = 5;\n\nconst adj = Array.from({length: n + _____}, () => new Array(n + 1).fill(0));\n\nadj[1][3] = adj[3][1] = 1;\n\nadj[2][4] = adj[4][_____] = 1;\n\nadj[3][5] = adj[_____][3] = 1;\n\nlet degree = 0;\n\nfor(let i = 1; i <= n; i++)\n\n    if(adj[3][i] === 1) degree _____ 1;\n\nconsole.log(\"3번 차수:\", _____);\n\n```",
           "blanks": [
             {
               "content": "1",

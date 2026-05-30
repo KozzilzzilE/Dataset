@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint arr[] = {1, 3, 5, 7, 9};\nint target = 10;\nint left = _____, right = 4;\nwhile (left _____ right) {\n    int sum = arr[left] + arr[right];\n    if (sum == target) {\n        cout << left << \", \" << right << \"\\n\";\n        left++; right--;\n    } else if (sum _____ target) {\n        _____++;\n    } else {\n        _____--;\n    }\n}\n```",
+          "codeTemplate": "```cpp\n\nint arr[] = {1, 3, 5, 7, 9};\n\nint target = 10;\n\nint left = _____, right = 4;\n\nwhile (left _____ right) {\n\n    int sum = arr[left] + arr[right];\n\n    if (sum == target) {\n\n        cout << left << \", \" << right << \"\\n\";\n\n        left++; right--;\n\n    } else if (sum _____ target) {\n\n        _____++;\n\n    } else {\n\n        _____--;\n\n    }\n\n}\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [1, 3, 5, 7, 9]\ntarget = 10\nleft, right = _____, len(arr) - 1\nwhile left _____ right:\n    s = arr[left] + arr[right]\n    if s == target:\n        print(left, right)\n        left += 1; right -= 1\n    elif s _____ target:\n        left += 1\n    else:\n        _____ -= 1\nprint(\"포인터 이동 완료:\", _____)\n```",
+          "codeTemplate": "```python\n\narr = [1, 3, 5, 7, 9]\n\ntarget = 10\n\nleft, right = _____, len(arr) - 1\n\nwhile left _____ right:\n\n    s = arr[left] + arr[right]\n\n    if s == target:\n\n        print(left, right)\n\n        left += 1; right -= 1\n\n    elif s _____ target:\n\n        left += 1\n\n    else:\n\n        _____ -= 1\n\nprint(\"포인터 이동 완료:\", _____)\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [1, 3, 5, 7, 9];\nlet target = 10;\nlet left = _____, right = arr.length - 1;\nwhile (left _____ right) {\n    let sum = arr[left] + arr[right];\n    if (sum === target) {\n        console.log(left, right);\n        left++; right--;\n    } else if (sum _____ target) {\n        _____++;\n    } else {\n        _____--;\n    }\n}\n```",
+          "codeTemplate": "```javascript\n\nlet arr = [1, 3, 5, 7, 9];\n\nlet target = 10;\n\nlet left = _____, right = arr.length - 1;\n\nwhile (left _____ right) {\n\n    let sum = arr[left] + arr[right];\n\n    if (sum === target) {\n\n        console.log(left, right);\n\n        left++; right--;\n\n    } else if (sum _____ target) {\n\n        _____++;\n\n    } else {\n\n        _____--;\n\n    }\n\n}\n\n```",
           "blanks": [
             {
               "content": "0",

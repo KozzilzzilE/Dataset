@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\npriority_queue<int, vector<int>, greater<int>> minHeap;\nfor(int v : nums) {\n    minHeap._____(v);\n    if(minHeap._____ > k) minHeap._____();\n}\nreturn minHeap._____();\ncout << minHeap._____;```",
+          "codeTemplate": "```cpp\n\npriority_queue<int, vector<int>, greater<int>> minHeap;\n\nfor(int v : nums) {\n\n    minHeap._____(v);\n\n    if(minHeap._____ > k) minHeap._____();\n\n}\n\nreturn minHeap._____();\n\ncout << minHeap._____;```",
           "blanks": [
             {
               "content": "push",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq\nminHeap = []\nfor v in nums:\n    heapq._____(minHeap, v)\n    if len(minHeap) _____ k:\n        heapq._____(minHeap)\nreturn minHeap[_____]\nprint(_____(minHeap))```",
+          "codeTemplate": "```python\n\nimport heapq\n\nminHeap = []\n\nfor v in nums:\n\n    heapq._____(minHeap, v)\n\n    if len(minHeap) _____ k:\n\n        heapq._____(minHeap)\n\nreturn minHeap[_____]\n\nprint(_____(minHeap))```",
           "blanks": [
             {
               "content": "heappush",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet minHeap = new MinHeap();\nfor(let v of nums) {\n    minHeap._____(v);\n    if(minHeap.size() _____ k) minHeap._____();\n}\nreturn minHeap._____();\nconsole.log(minHeap._____());```",
+          "codeTemplate": "```javascript\n\nlet minHeap = new MinHeap();\n\nfor(let v of nums) {\n\n    minHeap._____(v);\n\n    if(minHeap.size() _____ k) minHeap._____();\n\n}\n\nreturn minHeap._____();\n\nconsole.log(minHeap._____());```",
           "blanks": [
             {
               "content": "push",

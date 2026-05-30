@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <deque>\n#include <iostream>\nusing namespace std;\nint main() {\n    deque<int> dq;\n    dq._____(10);\n    dq._____(20);\n    cout << dq._____();\n    dq._____();\n    cout << dq._____();\n}\n```",
+          "codeTemplate": "```cpp\n\n#include <deque>\n\n#include <iostream>\n\nusing namespace std;\n\nint main() {\n\n    deque<int> dq;\n\n    dq._____(10);\n\n    dq._____(20);\n\n    cout << dq._____();\n\n    dq._____();\n\n    cout << dq._____();\n\n}\n\n```",
           "blanks": [
             {
               "content": "push_front",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\ndq = deque()\ndq._____(10)\ndq._____(20)\nprint(dq[_____])\ndq._____()\nprint(dq[_____])\n```",
+          "codeTemplate": "```python\n\nfrom collections import deque\n\ndq = deque()\n\ndq._____(10)\n\ndq._____(20)\n\nprint(dq[_____])\n\ndq._____()\n\nprint(dq[_____])\n\n```",
           "blanks": [
             {
               "content": "appendleft",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst dq = [];\ndq._____(10);\ndq._____(20);\nconsole.log(dq[_____]);\ndq._____();\nconsole.log(dq[dq._____ - 1]);\n```",
+          "codeTemplate": "```javascript\n\nconst dq = [];\n\ndq._____(10);\n\ndq._____(20);\n\nconsole.log(dq[_____]);\n\ndq._____();\n\nconsole.log(dq[dq._____ - 1]);\n\n```",
           "blanks": [
             {
               "content": "unshift",

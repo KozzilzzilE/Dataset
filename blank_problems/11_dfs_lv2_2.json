@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool visited[6] = {};\nvector<vector<int>> graph(6);\n\nbool hasCycle(int node, int parent) {\n    visited[_____] = true;\n    for (int next : graph[node]) {\n        if (!visited[next]) {\n            if (hasCycle(next, _____)) return true;\n        } else if (next _____ parent) {\n            return _____;\n        }\n    }\n    return _____;\n}\n```",
+          "codeTemplate": "```cpp\n\nbool visited[6] = {};\n\nvector<vector<int>> graph(6);\n\nbool hasCycle(int node, int parent) {\n\n    visited[_____] = true;\n\n    for (int next : graph[node]) {\n\n        if (!visited[next]) {\n\n            if (hasCycle(next, _____)) return true;\n\n        } else if (next _____ parent) {\n\n            return _____;\n\n        }\n\n    }\n\n    return _____;\n\n}\n\n```",
           "blanks": [
             {
               "content": "node",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nvisited = [False] * 6\n\ndef has_cycle(node, parent):\n    visited[_____] = True\n    for next_node in graph[node]:\n        if not visited[next_node]:\n            if has_cycle(next_node, _____):\n                return True\n        elif next_node _____ parent:\n            return _____\n    return _____\n```",
+          "codeTemplate": "```python\n\nvisited = [False] * 6\n\ndef has_cycle(node, parent):\n\n    visited[_____] = True\n\n    for next_node in graph[node]:\n\n        if not visited[next_node]:\n\n            if has_cycle(next_node, _____):\n\n                return True\n\n        elif next_node _____ parent:\n\n            return _____\n\n    return _____\n\n```",
           "blanks": [
             {
               "content": "node",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet visited = new Array(6).fill(false);\n\nfunction hasCycle(node, parent) {\n    visited[_____] = true;\n    for (let next of graph[node]) {\n        if (!visited[next]) {\n            if (hasCycle(next, _____)) return true;\n        } else if (next _____ parent) {\n            return _____;\n        }\n    }\n    return _____;\n}\n```",
+          "codeTemplate": "```javascript\n\nlet visited = new Array(6).fill(false);\n\nfunction hasCycle(node, parent) {\n\n    visited[_____] = true;\n\n    for (let next of graph[node]) {\n\n        if (!visited[next]) {\n\n            if (hasCycle(next, _____)) return true;\n\n        } else if (next _____ parent) {\n\n            return _____;\n\n        }\n\n    }\n\n    return _____;\n\n}\n\n```",
           "blanks": [
             {
               "content": "node",

@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = 4, count = 0;\nint col[_____];\n\nvoid solve(int row) {\n    if (row == _____) { count++; return; }\n    for (int c = 0; c < n; c++) {\n        col[row] = c;\n        if (isSafe(_____)) solve(row + 1);\n    }\n}\nbool isSafe(int row) {\n    for (int r = 0; r < row; r++) {\n        if (col[r] == col[row] ||\n            abs(col[r] - col[row]) == _____) return _____;\n    }\n    return _____;\n}\n```",
+          "codeTemplate": "```cpp\n\nint n = 4, count = 0;\n\nint col[_____];\n\nvoid solve(int row) {\n\n    if (row == _____) { count++; return; }\n\n    for (int c = 0; c < n; c++) {\n\n        col[row] = c;\n\n        if (isSafe(_____)) solve(row + 1);\n\n    }\n\n}\n\nbool isSafe(int row) {\n\n    for (int r = 0; r < row; r++) {\n\n        if (col[r] == col[row] ||\n\n            abs(col[r] - col[row]) == _____) return _____;\n\n    }\n\n    return _____;\n\n}\n\n```",
           "blanks": [
             {
               "content": "n",
@@ -116,7 +116,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nn = 4\ncol = [0] * _____\ncount = 0\n\ndef solve(row):\n    global count\n    if row == _____:\n        count += 1\n        return\n    for c in range(n):\n        col[row] = c\n        if is_safe(_____): solve(row + 1)\n\ndef is_safe(row):\n    for r in range(row):\n        if col[r] == col[row] or abs(col[r] - col[row]) == _____:\n            return _____\n    return _____\n```",
+          "codeTemplate": "```python\n\nn = 4\n\ncol = [0] * _____\n\ncount = 0\n\ndef solve(row):\n\n    global count\n\n    if row == _____:\n\n        count += 1\n\n        return\n\n    for c in range(n):\n\n        col[row] = c\n\n        if is_safe(_____): solve(row + 1)\n\ndef is_safe(row):\n\n    for r in range(row):\n\n        if col[r] == col[row] or abs(col[r] - col[row]) == _____:\n\n            return _____\n\n    return _____\n\n```",
           "blanks": [
             {
               "content": "n",
@@ -170,7 +170,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet n = 4, count = 0;\nlet col = new Array(_____).fill(0);\n\nfunction solve(row) {\n    if (row === _____) { count++; return; }\n    for (let c = 0; c < n; c++) {\n        col[row] = c;\n        if (isSafe(_____)) solve(row + 1);\n    }\n}\nfunction isSafe(row) {\n    for (let r = 0; r < row; r++) {\n        if (col[r] === col[row] ||\n            Math.abs(col[r] - col[row]) === _____) return _____;\n    }\n    return _____;\n}\n```",
+          "codeTemplate": "```javascript\n\nlet n = 4, count = 0;\n\nlet col = new Array(_____).fill(0);\n\nfunction solve(row) {\n\n    if (row === _____) { count++; return; }\n\n    for (let c = 0; c < n; c++) {\n\n        col[row] = c;\n\n        if (isSafe(_____)) solve(row + 1);\n\n    }\n\n}\n\nfunction isSafe(row) {\n\n    for (let r = 0; r < row; r++) {\n\n        if (col[r] === col[row] ||\n\n            Math.abs(col[r] - col[row]) === _____) return _____;\n\n    }\n\n    return _____;\n\n}\n\n```",
           "blanks": [
             {
               "content": "n",

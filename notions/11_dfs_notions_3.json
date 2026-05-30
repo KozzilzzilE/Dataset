@@ -12,15 +12,15 @@
     },
     {
       "languageId": 2,
-      "content": "```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> graph[6];\nbool visited[6];\n\nvoid dfs(int node) {\n    visited[node] = true;\n    cout << node << \" \";\n\n    for (int next : graph[node]) {\n        if (!visited[next]) {\n            dfs(next);\n        }\n    }\n}\n\nint main() {\n    graph[1].push_back(2); graph[2].push_back(1);\n    graph[1].push_back(3); graph[3].push_back(1);\n    graph[2].push_back(4); graph[4].push_back(2);\n    graph[2].push_back(5); graph[5].push_back(2);\n\n    dfs(1); // 출력: 1 2 4 5 3\n    return 0;\n}\n```"
+      "content": "```cpp\n\n#include <iostream>\n\n#include <vector>\n\nusing namespace std;\n\nvector<int> graph[6];\n\nbool visited[6];\n\nvoid dfs(int node) {\n\n    visited[node] = true;\n\n    cout << node << \" \";\n\n    for (int next : graph[node]) {\n\n        if (!visited[next]) {\n\n            dfs(next);\n\n        }\n\n    }\n\n}\n\nint main() {\n\n    graph[1].push_back(2); graph[2].push_back(1);\n\n    graph[1].push_back(3); graph[3].push_back(1);\n\n    graph[2].push_back(4); graph[4].push_back(2);\n\n    graph[2].push_back(5); graph[5].push_back(2);\n\n    dfs(1); // 출력: 1 2 4 5 3\n\n    return 0;\n\n}\n\n```"
     },
     {
       "languageId": 3,
-      "content": "```python\nimport sys\nsys.setrecursionlimit(10000)\n\ngraph = [[] for _ in range(6)]\nvisited = [False] * 6\n\ndef dfs(node):\n    visited[node] = True\n    print(node, end=\" \")\n\n    for next_node in graph[node]:\n        if not visited[next_node]:\n            dfs(next_node)\n\ndef main():\n    graph[1].append(2); graph[2].append(1)\n    graph[1].append(3); graph[3].append(1)\n    graph[2].append(4); graph[4].append(2)\n    graph[2].append(5); graph[5].append(2)\n\n    dfs(1)  # 출력: 1 2 4 5 3\n\nmain()\n```"
+      "content": "```python\n\nimport sys\n\nsys.setrecursionlimit(10000)\n\ngraph = [[] for _ in range(6)]\n\nvisited = [False] * 6\n\ndef dfs(node):\n\n    visited[node] = True\n\n    print(node, end=\" \")\n\n    for next_node in graph[node]:\n\n        if not visited[next_node]:\n\n            dfs(next_node)\n\ndef main():\n\n    graph[1].append(2); graph[2].append(1)\n\n    graph[1].append(3); graph[3].append(1)\n\n    graph[2].append(4); graph[4].append(2)\n\n    graph[2].append(5); graph[5].append(2)\n\n    dfs(1)  # 출력: 1 2 4 5 3\n\nmain()\n\n```"
     },
     {
       "languageId": 4,
-      "content": "```javascript\nconst graph = Array.from({ length: 6 }, () => []);\nconst visited = new Array(6).fill(false);\n\nfunction dfs(node) {\n    visited[node] = true;\n    process.stdout.write(node + \" \");\n\n    for (const next of graph[node]) {\n        if (!visited[next]) {\n            dfs(next);\n        }\n    }\n}\n\nfunction main() {\n    graph[1].push(2); graph[2].push(1);\n    graph[1].push(3); graph[3].push(1);\n    graph[2].push(4); graph[4].push(2);\n    graph[2].push(5); graph[5].push(2);\n\n    dfs(1); // 출력: 1 2 4 5 3\n}\n\nmain();\n```"
+      "content": "```javascript\n\nconst graph = Array.from({ length: 6 }, () => []);\n\nconst visited = new Array(6).fill(false);\n\nfunction dfs(node) {\n\n    visited[node] = true;\n\n    process.stdout.write(node + \" \");\n\n    for (const next of graph[node]) {\n\n        if (!visited[next]) {\n\n            dfs(next);\n\n        }\n\n    }\n\n}\n\nfunction main() {\n\n    graph[1].push(2); graph[2].push(1);\n\n    graph[1].push(3); graph[3].push(1);\n\n    graph[2].push(4); graph[4].push(2);\n\n    graph[2].push(5); graph[5].push(2);\n\n    dfs(1); // 출력: 1 2 4 5 3\n\n}\n\nmain();\n\n```"
     }
   ]
 }

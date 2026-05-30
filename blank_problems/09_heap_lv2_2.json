@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint k = 3;\nvector<int> stream = {10, 4, 7, 2, 8, 1, 9};\npriority_queue<int> maxHeap;\nfor (int x : _____) {\n    maxHeap.push(x);\n    if ((int)maxHeap._____ > k) maxHeap.pop();\n}\ncout << \"K번째 최솟값: \" << maxHeap._____;\ncout << \"\\n힙 크기: \" << maxHeap._____;\ncout << \"\\n비었는지: \" << maxHeap._____;\n```",
+          "codeTemplate": "```cpp\n\nint k = 3;\n\nvector<int> stream = {10, 4, 7, 2, 8, 1, 9};\n\npriority_queue<int> maxHeap;\n\nfor (int x : _____) {\n\n    maxHeap.push(x);\n\n    if ((int)maxHeap._____ > k) maxHeap.pop();\n\n}\n\ncout << \"K번째 최솟값: \" << maxHeap._____;\n\ncout << \"\\n힙 크기: \" << maxHeap._____;\n\ncout << \"\\n비었는지: \" << maxHeap._____;\n\n```",
           "blanks": [
             {
               "content": "stream",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq\nk = 3\nstream = [10, 4, 7, 2, 8, 1, 9]\nheap = []\nfor x in _____:\n    heapq.heappush(_____, -x)  # 최대힙: 음수 저장\n    if len(heap) > k:\n        heapq._____(heap)\nprint(\"K번째 최솟값:\", _____(heap[0]))\nprint(\"힙 크기:\", _____(heap))\n```",
+          "codeTemplate": "```python\n\nimport heapq\n\nk = 3\n\nstream = [10, 4, 7, 2, 8, 1, 9]\n\nheap = []\n\nfor x in _____:\n\n    heapq.heappush(_____, -x)  # 최대힙: 음수 저장\n\n    if len(heap) > k:\n\n        heapq._____(heap)\n\nprint(\"K번째 최솟값:\", _____(heap[0]))\n\nprint(\"힙 크기:\", _____(heap))\n\n```",
           "blanks": [
             {
               "content": "stream",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet k = 3;\nlet stream = [10, 4, 7, 2, 8, 1, 9];\nlet heap = [];\nfor (let x of _____) {\n    heap.push(x);\n    heap.sort((a, b) => _____ - _____);\n    if (heap.length > k) heap.shift();\n}\nconsole.log(\"K번째 최솟값:\", heap[_____]);\nconsole.log(\"힙 크기:\", heap._____);\n```",
+          "codeTemplate": "```javascript\n\nlet k = 3;\n\nlet stream = [10, 4, 7, 2, 8, 1, 9];\n\nlet heap = [];\n\nfor (let x of _____) {\n\n    heap.push(x);\n\n    heap.sort((a, b) => _____ - _____);\n\n    if (heap.length > k) heap.shift();\n\n}\n\nconsole.log(\"K번째 최솟값:\", heap[_____]);\n\nconsole.log(\"힙 크기:\", heap._____);\n\n```",
           "blanks": [
             {
               "content": "stream",

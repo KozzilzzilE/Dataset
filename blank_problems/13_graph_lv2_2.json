@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nconst int INF = 1e9;\nint n = 4;\nvector<vector<int>> dist(n+1, vector<int>(n+1, _____));\nfor (int i = 1; i <= n; i++) dist[i][i] = _____;\n// 간선 초기화 생략\nfor (int k = 1; k <= n; k++)\n    for (int i = 1; i <= n; i++)\n        for (int j = 1; j <= n; j++)\n            if (dist[i][k] + dist[k][j] _____ dist[i][j])\n                dist[i][j] = dist[i][_____] + dist[_____][j];\n```",
+          "codeTemplate": "```cpp\n\nconst int INF = 1e9;\n\nint n = 4;\n\nvector<vector<int>> dist(n+1, vector<int>(n+1, _____));\n\nfor (int i = 1; i <= n; i++) dist[i][i] = _____;\n\n// 간선 초기화 생략\n\nfor (int k = 1; k <= n; k++)\n\n    for (int i = 1; i <= n; i++)\n\n        for (int j = 1; j <= n; j++)\n\n            if (dist[i][k] + dist[k][j] _____ dist[i][j])\n\n                dist[i][j] = dist[i][_____] + dist[_____][j];\n\n```",
           "blanks": [
             {
               "content": "INF",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nINF = float('inf')\nn = 4\ndist = [[_____] * (n+1) for _ in range(n+1)]\nfor i in range(1, n+1):\n    dist[i][i] = _____\n# 간선 초기화 생략\nfor k in range(1, n+1):\n    for i in range(1, n+1):\n        for j in range(1, n+1):\n            if dist[i][k] + dist[k][j] _____ dist[i][j]:\n                dist[i][j] = dist[i][_____] + dist[_____][j]\n```",
+          "codeTemplate": "```python\n\nINF = float('inf')\n\nn = 4\n\ndist = [[_____] * (n+1) for _ in range(n+1)]\n\nfor i in range(1, n+1):\n\n    dist[i][i] = _____\n\n# 간선 초기화 생략\n\nfor k in range(1, n+1):\n\n    for i in range(1, n+1):\n\n        for j in range(1, n+1):\n\n            if dist[i][k] + dist[k][j] _____ dist[i][j]:\n\n                dist[i][j] = dist[i][_____] + dist[_____][j]\n\n```",
           "blanks": [
             {
               "content": "INF",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst INF = Infinity;\nlet n = 4;\nlet dist = Array.from({length: n+1}, () => new Array(n+1).fill(_____));\nfor (let i = 1; i <= n; i++) dist[i][i] = _____;\n// 간선 초기화 생략\nfor (let k = 1; k <= n; k++)\n    for (let i = 1; i <= n; i++)\n        for (let j = 1; j <= n; j++)\n            if (dist[i][k] + dist[k][j] _____ dist[i][j])\n                dist[i][j] = dist[i][_____] + dist[_____][j];\n```",
+          "codeTemplate": "```javascript\n\nconst INF = Infinity;\n\nlet n = 4;\n\nlet dist = Array.from({length: n+1}, () => new Array(n+1).fill(_____));\n\nfor (let i = 1; i <= n; i++) dist[i][i] = _____;\n\n// 간선 초기화 생략\n\nfor (let k = 1; k <= n; k++)\n\n    for (let i = 1; i <= n; i++)\n\n        for (let j = 1; j <= n; j++)\n\n            if (dist[i][k] + dist[k][j] _____ dist[i][j])\n\n                dist[i][j] = dist[i][_____] + dist[_____][j];\n\n```",
           "blanks": [
             {
               "content": "INF",

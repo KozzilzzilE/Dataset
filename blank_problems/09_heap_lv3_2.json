@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint n = 5, start = 1;\nvector<int> dist(n+1, _____);  // INF\ndist[start] = 0;\npriority_queue<pair<int,int>, vector<pair<int,int>>, _____> pq;\npq.push({0, start});\nwhile (!pq.empty()) {\n    auto [d, u] = pq._____();\n    pq.pop();\n    if (d _____ dist[u]) continue;\n    for (auto& [v, w] : graph[u]) {\n        if (d + w _____ dist[v]) {\n            dist[v] = d + w;\n            pq.push({dist[v], _____});\n        }\n    }\n}\n```",
+          "codeTemplate": "```cpp\n\nint n = 5, start = 1;\n\nvector<int> dist(n+1, _____);  // INF\n\ndist[start] = 0;\n\npriority_queue<pair<int,int>, vector<pair<int,int>>, _____> pq;\n\npq.push({0, start});\n\nwhile (!pq.empty()) {\n\n    auto [d, u] = pq._____();\n\n    pq.pop();\n\n    if (d _____ dist[u]) continue;\n\n    for (auto& [v, w] : graph[u]) {\n\n        if (d + w _____ dist[v]) {\n\n            dist[v] = d + w;\n\n            pq.push({dist[v], _____});\n\n        }\n\n    }\n\n}\n\n```",
           "blanks": [
             {
               "content": "1e9",
@@ -116,7 +116,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq\nn, start = 5, 1\ndist = [_____] * (n + 1)\ndist[start] = 0\npq = [(0, start)]  # (거리, 노드)\nwhile _____:\n    d, u = heapq.heappop(pq)\n    if d _____ dist[u]: continue\n    for v, w in graph[u]:\n        nd = d + w\n        if nd _____ dist[v]:\n            dist[v] = nd\n            heapq.heappush(pq, (nd, _____));\nprint(dist[_____])\n```",
+          "codeTemplate": "```python\n\nimport heapq\n\nn, start = 5, 1\n\ndist = [_____] * (n + 1)\n\ndist[start] = 0\n\npq = [(0, start)]  # (거리, 노드)\n\nwhile _____:\n\n    d, u = heapq.heappop(pq)\n\n    if d _____ dist[u]: continue\n\n    for v, w in graph[u]:\n\n        nd = d + w\n\n        if nd _____ dist[v]:\n\n            dist[v] = nd\n\n            heapq.heappush(pq, (nd, _____));\n\nprint(dist[_____])\n\n```",
           "blanks": [
             {
               "content": "float('inf')",
@@ -170,7 +170,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet n = 5, start = 1;\nlet dist = new Array(n+1).fill(_____);  // INF\ndist[start] = 0;\nlet pq = [[0, start]];  // [거리, 노드]\nwhile (pq._____) {\n    pq.sort((a,b) => a[0]-b[0]);\n    let [d, u] = pq.shift();\n    if (d _____ dist[u]) continue;\n    for (let [v, w] of graph[u]) {\n        let nd = d + w;\n        if (nd _____ dist[v]) {\n            dist[v] = nd;\n            pq.push([nd, _____]);\n        }\n    }\n}\nconsole.log(dist[_____]);\n```",
+          "codeTemplate": "```javascript\n\nlet n = 5, start = 1;\n\nlet dist = new Array(n+1).fill(_____);  // INF\n\ndist[start] = 0;\n\nlet pq = [[0, start]];  // [거리, 노드]\n\nwhile (pq._____) {\n\n    pq.sort((a,b) => a[0]-b[0]);\n\n    let [d, u] = pq.shift();\n\n    if (d _____ dist[u]) continue;\n\n    for (let [v, w] of graph[u]) {\n\n        let nd = d + w;\n\n        if (nd _____ dist[v]) {\n\n            dist[v] = nd;\n\n            pq.push([nd, _____]);\n\n        }\n\n    }\n\n}\n\nconsole.log(dist[_____]);\n\n```",
           "blanks": [
             {
               "content": "Infinity",

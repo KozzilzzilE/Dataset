@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <unordered_map>\nunordered_map<string, int> m;\nm._____(\"apple\", 1);\nint val = m[\"apple\"];\nbool exists = m.find(\"apple\") != m._____();\nm._____(\"apple\");\ncout << _____(m) << endl;\nm._____(\"banana\");```",
+          "codeTemplate": "```cpp\n\n#include <unordered_map>\n\nunordered_map<string, int> m;\n\nm._____(\"apple\", 1);\n\nint val = m[\"apple\"];\n\nbool exists = m.find(\"apple\") != m._____();\n\nm._____(\"apple\");\n\ncout << _____(m) << endl;\n\nm._____(\"banana\");```",
           "blanks": [
             {
               "content": "insert({\"apple\", 1})",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nm = {}\nm[_____] = 1\nval = m.get(_____, 0)\nexists = _____ in m\nif exists:\n    del m[_____]\nprint(_____(m))```",
+          "codeTemplate": "```python\n\nm = {}\n\nm[_____] = 1\n\nval = m.get(_____, 0)\n\nexists = _____ in m\n\nif exists:\n\n    del m[_____]\n\nprint(_____(m))```",
           "blanks": [
             {
               "content": "'apple'",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet m = new Map();\nm._____(\"apple\", 1);\nlet val = m._____(\"apple\");\nlet exists = m._____(\"apple\");\nm._____(\"apple\");\nconsole.log(m._____);```",
+          "codeTemplate": "```javascript\n\nlet m = new Map();\n\nm._____(\"apple\", 1);\n\nlet val = m._____(\"apple\");\n\nlet exists = m._____(\"apple\");\n\nm._____(\"apple\");\n\nconsole.log(m._____);```",
           "blanks": [
             {
               "content": "set",

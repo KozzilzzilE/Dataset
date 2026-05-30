@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <queue>\npriority_queue<int, vector<int>, greater<int>> pq;\npq._____(5);\npq.push(3);\nint x = pq._____();\npq._____();\nbool empty = pq._____();\ncout << _____;```",
+          "codeTemplate": "```cpp\n\n#include <queue>\n\npriority_queue<int, vector<int>, greater<int>> pq;\n\npq._____(5);\n\npq.push(3);\n\nint x = pq._____();\n\npq._____();\n\nbool empty = pq._____();\n\ncout << _____;```",
           "blanks": [
             {
               "content": "push",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nimport heapq\npq = []\nheapq._____(pq, 5)\nheapq.heappush(pq, 3)\nx = pq[_____]\nheapq._____(pq)\nbool_empty = _____(pq) == 0\nprint(_____)```",
+          "codeTemplate": "```python\n\nimport heapq\n\npq = []\n\nheapq._____(pq, 5)\n\nheapq.heappush(pq, 3)\n\nx = pq[_____]\n\nheapq._____(pq)\n\nbool_empty = _____(pq) == 0\n\nprint(_____)```",
           "blanks": [
             {
               "content": "heappush",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nclass MinHeap {\n    constructor() { this.heap = []; }\n    push(val) {\n        this.heap._____(val);\n        this._bubbleUp(this.heap._____ - 1);\n    }\n    peek() { return this.heap[_____]; }\n    size() { return this.heap._____; }\n    pop() {\n        let min = this.heap[0];\n        this.heap[0] = this.heap[this.heap.length - 1];\n        this.heap._____();\n        this._bubbleDown(0);\n        return min;\n    }\n}```",
+          "codeTemplate": "```javascript\n\nclass MinHeap {\n\n    constructor() { this.heap = []; }\n\n    push(val) {\n\n        this.heap._____(val);\n\n        this._bubbleUp(this.heap._____ - 1);\n\n    }\n\n    peek() { return this.heap[_____]; }\n\n    size() { return this.heap._____; }\n\n    pop() {\n\n        let min = this.heap[0];\n\n        this.heap[0] = this.heap[this.heap.length - 1];\n\n        this.heap._____();\n\n        this._bubbleDown(0);\n\n        return min;\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "push",

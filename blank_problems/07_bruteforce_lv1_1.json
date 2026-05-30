@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> arr = {1,2,3,4,5};\nint target = 9;\nbool found = _____;\nfor(int i = 0; i < arr._____; i++) {\n    int sum = 0;\n    for(int j = i; j < arr.size(); j++) {\n        sum _____ arr[j];\n        if(sum _____ target) {\n            found = _____;\n            break;\n        }\n    }\n}```",
+          "codeTemplate": "```cpp\n\nvector<int> arr = {1,2,3,4,5};\n\nint target = 9;\n\nbool found = _____;\n\nfor(int i = 0; i < arr._____; i++) {\n\n    int sum = 0;\n\n    for(int j = i; j < arr.size(); j++) {\n\n        sum _____ arr[j];\n\n        if(sum _____ target) {\n\n            found = _____;\n\n            break;\n\n        }\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "false",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [1, 2, 3, 4, 5]\ntarget = 9\nfound = _____\nfor i in range(_____(arr)):\n    s = 0\n    for j in range(i, len(arr)):\n        s _____ arr[j]\n        if s _____ target:\n            found = _____\n            break\nprint(found)```",
+          "codeTemplate": "```python\n\narr = [1, 2, 3, 4, 5]\n\ntarget = 9\n\nfound = _____\n\nfor i in range(_____(arr)):\n\n    s = 0\n\n    for j in range(i, len(arr)):\n\n        s _____ arr[j]\n\n        if s _____ target:\n\n            found = _____\n\n            break\n\nprint(found)```",
           "blanks": [
             {
               "content": "False",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [1, 2, 3, 4, 5];\nlet target = 9;\nlet found = _____;\nfor(let i = 0; i < arr._____; i++) {\n    let sum = 0;\n    for(let j = i; j < arr.length; j++) {\n        sum _____ arr[j];\n        if(sum _____ target) {\n            found = _____;\n            break;\n        }\n    }\n}```",
+          "codeTemplate": "```javascript\n\nlet arr = [1, 2, 3, 4, 5];\n\nlet target = 9;\n\nlet found = _____;\n\nfor(let i = 0; i < arr._____; i++) {\n\n    let sum = 0;\n\n    for(let j = i; j < arr.length; j++) {\n\n        sum _____ arr[j];\n\n        if(sum _____ target) {\n\n            found = _____;\n\n            break;\n\n        }\n\n    }\n\n}```",
           "blanks": [
             {
               "content": "false",

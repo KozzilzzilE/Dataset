@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool visited[100] = {};\nvector<vector<int>> graph(100);\nvoid dfs(int node) {\n    visited[_____] = true;\n    for(int next : graph[node]) {\n        if(!visited[_____])\n            dfs(_____); \n    }\n}\nint main() {\n    dfs(_____); \n    for(int i=0; i<100; i++)\n        if(visited[i]) cout << _____;\n}```",
+          "codeTemplate": "```cpp\n\nbool visited[100] = {};\n\nvector<vector<int>> graph(100);\n\nvoid dfs(int node) {\n\n    visited[_____] = true;\n\n    for(int next : graph[node]) {\n\n        if(!visited[_____])\n\n            dfs(_____); \n\n    }\n\n}\n\nint main() {\n\n    dfs(_____); \n\n    for(int i=0; i<100; i++)\n\n        if(visited[i]) cout << _____;\n\n}```",
           "blanks": [
             {
               "content": "node",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nvisited = [False] * 100\ndef dfs(node):\n    visited[_____] = True\n    for next_node in graph[node]:\n        if not visited[_____]:\n            dfs(_____)\ndfs(_____)\ncount = sum(1 for v in visited if _____)\nprint(count)```",
+          "codeTemplate": "```python\n\nvisited = [False] * 100\n\ndef dfs(node):\n\n    visited[_____] = True\n\n    for next_node in graph[node]:\n\n        if not visited[_____]:\n\n            dfs(_____)\n\ndfs(_____)\n\ncount = sum(1 for v in visited if _____)\n\nprint(count)```",
           "blanks": [
             {
               "content": "node",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet visited = new Array(100).fill(false);\nfunction dfs(node) {\n    visited[_____] = true;\n    for(let next of graph[node]) {\n        if(!visited[_____])\n            dfs(_____); \n    }\n}\ndfs(_____); \nconsole.log(visited.filter(v => _____).length);```",
+          "codeTemplate": "```javascript\n\nlet visited = new Array(100).fill(false);\n\nfunction dfs(node) {\n\n    visited[_____] = true;\n\n    for(let next of graph[node]) {\n\n        if(!visited[_____])\n\n            dfs(_____); \n\n    }\n\n}\n\ndfs(_____); \n\nconsole.log(visited.filter(v => _____).length);```",
           "blanks": [
             {
               "content": "node",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nstring a = \"ABCBDAB\", b = \"BDCAB\";\nint m = a._____, n = b.size();\nvector<vector<int>> dp(m+1, vector<int>(n+1, 0));\nfor (int i = 1; i <= m; i++) {\n    for (int j = 1; j <= n; j++) {\n        if (a[i-1] _____ b[j-1]) {\n            dp[i][j] = dp[i-1][j-1] + _____;\n        } else {\n            dp[i][j] = max(dp[i-1][j], dp[i][_____]);\n        }\n    }\n}\ncout << \"LCS 길이: \" << dp[m][_____];\n```",
+          "codeTemplate": "```cpp\n\nstring a = \"ABCBDAB\", b = \"BDCAB\";\n\nint m = a._____, n = b.size();\n\nvector<vector<int>> dp(m+1, vector<int>(n+1, 0));\n\nfor (int i = 1; i <= m; i++) {\n\n    for (int j = 1; j <= n; j++) {\n\n        if (a[i-1] _____ b[j-1]) {\n\n            dp[i][j] = dp[i-1][j-1] + _____;\n\n        } else {\n\n            dp[i][j] = max(dp[i-1][j], dp[i][_____]);\n\n        }\n\n    }\n\n}\n\ncout << \"LCS 길이: \" << dp[m][_____];\n\n```",
           "blanks": [
             {
               "content": "size()",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\na, b = \"ABCBDAB\", \"BDCAB\"\nm, n = len(a), len(_____)\ndp = [[0] * (n + 1) for _ in range(m + 1)]\nfor i in range(1, m + 1):\n    for j in range(1, n + 1):\n        if a[i-1] _____ b[j-1]:\n            dp[i][j] = dp[i-1][j-1] + _____\n        else:\n            dp[i][j] = max(dp[i-1][j], dp[i][_____])\nprint(\"LCS 길이:\", dp[m][_____])\n```",
+          "codeTemplate": "```python\n\na, b = \"ABCBDAB\", \"BDCAB\"\n\nm, n = len(a), len(_____)\n\ndp = [[0] * (n + 1) for _ in range(m + 1)]\n\nfor i in range(1, m + 1):\n\n    for j in range(1, n + 1):\n\n        if a[i-1] _____ b[j-1]:\n\n            dp[i][j] = dp[i-1][j-1] + _____\n\n        else:\n\n            dp[i][j] = max(dp[i-1][j], dp[i][_____])\n\nprint(\"LCS 길이:\", dp[m][_____])\n\n```",
           "blanks": [
             {
               "content": "b",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet a = \"ABCBDAB\", b = \"BDCAB\";\nlet m = a.length, n = b._____;\nlet dp = Array.from({length: m+1}, () => new Array(n+1).fill(0));\nfor (let i = 1; i <= m; i++) {\n    for (let j = 1; j <= n; j++) {\n        if (a[i-1] _____ b[j-1]) {\n            dp[i][j] = dp[i-1][j-1] + _____;\n        } else {\n            dp[i][j] = Math.max(dp[i-1][j], dp[i][_____]);\n        }\n    }\n}\nconsole.log(\"LCS 길이:\", dp[m][_____]);\n```",
+          "codeTemplate": "```javascript\n\nlet a = \"ABCBDAB\", b = \"BDCAB\";\n\nlet m = a.length, n = b._____;\n\nlet dp = Array.from({length: m+1}, () => new Array(n+1).fill(0));\n\nfor (let i = 1; i <= m; i++) {\n\n    for (let j = 1; j <= n; j++) {\n\n        if (a[i-1] _____ b[j-1]) {\n\n            dp[i][j] = dp[i-1][j-1] + _____;\n\n        } else {\n\n            dp[i][j] = Math.max(dp[i-1][j], dp[i][_____]);\n\n        }\n\n    }\n\n}\n\nconsole.log(\"LCS 길이:\", dp[m][_____]);\n\n```",
           "blanks": [
             {
               "content": "length",

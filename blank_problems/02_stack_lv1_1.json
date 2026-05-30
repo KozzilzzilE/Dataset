@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <stack>\nusing namespace std;\nstack<int> st;\nst._____(10);\nst.push(20);\nint x = st._____();\nst._____();\nbool empty = st._____();\ncout << _____ << endl;```",
+          "codeTemplate": "```cpp\n\n#include <stack>\n\nusing namespace std;\n\nstack<int> st;\n\nst._____(10);\n\nst.push(20);\n\nint x = st._____();\n\nst._____();\n\nbool empty = st._____();\n\ncout << _____ << endl;```",
           "blanks": [
             {
               "content": "push",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nstack = []\nstack._____(10)\nstack.append(20)\nx = stack[_____]\nstack._____\nbool_empty = _____(stack) == 0\nprint(_____)```",
+          "codeTemplate": "```python\n\nstack = []\n\nstack._____(10)\n\nstack.append(20)\n\nx = stack[_____]\n\nstack._____\n\nbool_empty = _____(stack) == 0\n\nprint(_____)```",
           "blanks": [
             {
               "content": "append",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet stack = [];\nstack._____(10);\nstack.push(20);\nlet x = stack[stack.length - _____];\nstack._____();\nlet isEmpty = stack._____ === 0;\nconsole.log(_____);\n```",
+          "codeTemplate": "```javascript\n\nlet stack = [];\n\nstack._____(10);\n\nstack.push(20);\n\nlet x = stack[stack.length - _____];\n\nstack._____();\n\nlet isEmpty = stack._____ === 0;\n\nconsole.log(_____);\n\n```",
           "blanks": [
             {
               "content": "push",

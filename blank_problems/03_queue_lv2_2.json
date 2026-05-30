@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint cq[5];\nint head = 0, tail = 0, sz = 0;\ncq[tail] = 10;\ntail = (tail + _____) % 5; sz++;\ncq[tail] = 20; tail = (tail + 1) % 5; sz++;\nint val = cq[_____];\nhead = (head + 1) % 5;\n_____--;\ncout << val << \"\\n\";  // 10\nbool full = sz == _____;\ncout << \"남은: \" << _____;\n```",
+          "codeTemplate": "```cpp\n\nint cq[5];\n\nint head = 0, tail = 0, sz = 0;\n\ncq[tail] = 10;\n\ntail = (tail + _____) % 5; sz++;\n\ncq[tail] = 20; tail = (tail + 1) % 5; sz++;\n\nint val = cq[_____];\n\nhead = (head + 1) % 5;\n\n_____--;\n\ncout << val << \"\\n\";  // 10\n\nbool full = sz == _____;\n\ncout << \"남은: \" << _____;\n\n```",
           "blanks": [
             {
               "content": "1",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ncq = [0] * 5\nhead = tail = size = 0\n# enqueue(10), enqueue(20)\ncq[tail] = 10; tail = (tail + _____) % len(cq); size += 1\ncq[tail] = 20; tail = (tail + 1) % len(cq); size += 1\n# dequeue\nval = cq[_____]; head = (head + 1) % len(cq); size -= 1\nprint(val)  # 10\nempty = (head == _____)\nprint(\"남은:\", _____)\nprint(\"최대:\", len(_____) - 1)\n```",
+          "codeTemplate": "```python\n\ncq = [0] * 5\n\nhead = tail = size = 0\n\n# enqueue(10), enqueue(20)\n\ncq[tail] = 10; tail = (tail + _____) % len(cq); size += 1\n\ncq[tail] = 20; tail = (tail + 1) % len(cq); size += 1\n\n# dequeue\n\nval = cq[_____]; head = (head + 1) % len(cq); size -= 1\n\nprint(val)  # 10\n\nempty = (head == _____)\n\nprint(\"남은:\", _____)\n\nprint(\"최대:\", len(_____) - 1)\n\n```",
           "blanks": [
             {
               "content": "1",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet cq = new Array(5).fill(0);\nlet head = 0, tail = 0, size = 0;\ncq[tail] = 10; tail = (tail + _____) % cq.length; size++;\ncq[tail] = 20; tail = (tail + 1) % cq.length; size++;\nlet val = cq[_____]; head = (head + 1) % cq.length; size--;\nconsole.log(val);  // 10\nlet empty = (head === _____);\nconsole.log(\"남은:\", _____);\nconsole.log(\"최대:\", cq._____ - 1);\n```",
+          "codeTemplate": "```javascript\n\nlet cq = new Array(5).fill(0);\n\nlet head = 0, tail = 0, size = 0;\n\ncq[tail] = 10; tail = (tail + _____) % cq.length; size++;\n\ncq[tail] = 20; tail = (tail + 1) % cq.length; size++;\n\nlet val = cq[_____]; head = (head + 1) % cq.length; size--;\n\nconsole.log(val);  // 10\n\nlet empty = (head === _____);\n\nconsole.log(\"남은:\", _____);\n\nconsole.log(\"최대:\", cq._____ - 1);\n\n```",
           "blanks": [
             {
               "content": "1",

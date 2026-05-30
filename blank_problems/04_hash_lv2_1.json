@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <unordered_map>\n#include <vector>\n#include <iostream>\nusing namespace std;\nint main() {\n    vector<int> nums = {2,7,11,15};\n    int target = _____;\n    unordered_map<int,int> mp;\n    for (int i = 0; i < (int)nums.size(); i++) {\n        int need = _____ - nums[i];\n        if (mp._____(need)) {\n            cout << mp[need] << \" \" << i;\n            break;\n        }\n        mp[_____] = i;\n    }\n}\n```",
+          "codeTemplate": "```cpp\n\n#include <unordered_map>\n\n#include <vector>\n\n#include <iostream>\n\nusing namespace std;\n\nint main() {\n\n    vector<int> nums = {2,7,11,15};\n\n    int target = _____;\n\n    unordered_map<int,int> mp;\n\n    for (int i = 0; i < (int)nums.size(); i++) {\n\n        int need = _____ - nums[i];\n\n        if (mp._____(need)) {\n\n            cout << mp[need] << \" \" << i;\n\n            break;\n\n        }\n\n        mp[_____] = i;\n\n    }\n\n}\n\n```",
           "blanks": [
             {
               "content": "9",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef two_sum(nums, target):\n    mp = {}\n    for i, v in _____:\n        need = _____ - v\n        if need in _____:\n            return [mp[need], i]\n        mp[_____] = i\n    return []\nprint(two_sum([2,7,11,15], _____))\n```",
+          "codeTemplate": "```python\n\ndef two_sum(nums, target):\n\n    mp = {}\n\n    for i, v in _____:\n\n        need = _____ - v\n\n        if need in _____:\n\n            return [mp[need], i]\n\n        mp[_____] = i\n\n    return []\n\nprint(two_sum([2,7,11,15], _____))\n\n```",
           "blanks": [
             {
               "content": "enumerate(nums)",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction twoSum(nums, target) {\n    const mp = new _____();\n    for (let i = 0; i < nums.length; i++) {\n        const need = _____ - nums[i];\n        if (mp._____(need)) {\n            return [mp.get(need), i];\n        }\n        mp._____(nums[i], i);\n    }\n    return [];\n}\nconsole.log(twoSum([2,7,11,15], _____));\n```",
+          "codeTemplate": "```javascript\n\nfunction twoSum(nums, target) {\n\n    const mp = new _____();\n\n    for (let i = 0; i < nums.length; i++) {\n\n        const need = _____ - nums[i];\n\n        if (mp._____(need)) {\n\n            return [mp.get(need), i];\n\n        }\n\n        mp._____(nums[i], i);\n\n    }\n\n    return [];\n\n}\n\nconsole.log(twoSum([2,7,11,15], _____));\n\n```",
           "blanks": [
             {
               "content": "Map",

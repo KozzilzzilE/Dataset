@@ -12,15 +12,15 @@
     },
     {
       "languageId": 2,
-      "content": "```cpp\n#include <iostream>\n#include <stack>\n#include <string>\nusing namespace std;\n\nbool isMatching(char open, char close) {\n    return (open == '(' && close == ')') ||\n           (open == '[' && close == ']') ||\n           (open == '{' && close == '}');\n}\n\nbool isValid(string expr) {\n    stack<char> st;\n    for (char ch : expr) {\n        if (ch == '(' || ch == '[' || ch == '{') {\n            st.push(ch);\n        } else if (ch == ')' || ch == ']' || ch == '}') {\n            if (st.empty()) return false;\n            char top = st.top();\n            st.pop();\n            if (!isMatching(top, ch)) return false;\n        }\n    }\n    return st.empty();\n}\n```"
+      "content": "```cpp\n\n#include <iostream>\n\n#include <stack>\n\n#include <string>\n\nusing namespace std;\n\nbool isMatching(char open, char close) {\n\n    return (open == '(' && close == ')') ||\n\n           (open == '[' && close == ']') ||\n\n           (open == '{' && close == '}');\n\n}\n\nbool isValid(string expr) {\n\n    stack<char> st;\n\n    for (char ch : expr) {\n\n        if (ch == '(' || ch == '[' || ch == '{') {\n\n            st.push(ch);\n\n        } else if (ch == ')' || ch == ']' || ch == '}') {\n\n            if (st.empty()) return false;\n\n            char top = st.top();\n\n            st.pop();\n\n            if (!isMatching(top, ch)) return false;\n\n        }\n\n    }\n\n    return st.empty();\n\n}\n\n```"
     },
     {
       "languageId": 3,
-      "content": "```python\ndef is_valid_brackets(expr):\n    stack = []\n    pairs = {'(': ')', '[': ']', '{': '}'}\n    \n    for ch in expr:\n        if ch in pairs:  # Opening bracket\n            stack.append(ch)\n        elif ch in pairs.values():  # Closing bracket\n            if not stack:\n                return False\n            if pairs[stack.pop()] != ch:\n                return False\n    \n    return len(stack) == 0\n```"
+      "content": "```python\n\ndef is_valid_brackets(expr):\n\n    stack = []\n\n    pairs = {'(': ')', '[': ']', '{': '}'}\n\n    \n\n    for ch in expr:\n\n        if ch in pairs:  # Opening bracket\n\n            stack.append(ch)\n\n        elif ch in pairs.values():  # Closing bracket\n\n            if not stack:\n\n                return False\n\n            if pairs[stack.pop()] != ch:\n\n                return False\n\n    \n\n    return len(stack) == 0\n\n```"
     },
     {
       "languageId": 4,
-      "content": "```javascript\nfunction isValidBrackets(expr) {\n    const stack = [];\n    const pairs = { '(': ')', '[': ']', '{': '}' };\n    \n    for (const ch of expr) {\n        if (ch in pairs) {  // Opening bracket\n            stack.push(ch);\n        } else if (Object.values(pairs).includes(ch)) {  // Closing\n            if (stack.length === 0) return false;\n            if (pairs[stack.pop()] !== ch) return false;\n        }\n    }\n    \n    return stack.length === 0;\n}\n```"
+      "content": "```javascript\n\nfunction isValidBrackets(expr) {\n\n    const stack = [];\n\n    const pairs = { '(': ')', '[': ']', '{': '}' };\n\n    \n\n    for (const ch of expr) {\n\n        if (ch in pairs) {  // Opening bracket\n\n            stack.push(ch);\n\n        } else if (Object.values(pairs).includes(ch)) {  // Closing\n\n            if (stack.length === 0) return false;\n\n            if (pairs[stack.pop()] !== ch) return false;\n\n        }\n\n    }\n\n    \n\n    return stack.length === 0;\n\n}\n\n```"
     }
   ]
 }

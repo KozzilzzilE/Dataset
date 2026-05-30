@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> arr = {1,3,2,5,4};\nint k = 3, n = arr._____;\ndeque<int> dq;\nfor(int i = 0; i < n; i++) {\n    while(!dq.empty() && arr[dq.back()] _____ arr[i]) dq.pop_back();\n    dq.push_back(i);\n    if(dq.front() < i - _____ + 1) dq.pop_front();\n    if(i >= k-1) cout << arr[dq._____()];\n}\ncout << n;```",
+          "codeTemplate": "```cpp\n\nvector<int> arr = {1,3,2,5,4};\n\nint k = 3, n = arr._____;\n\ndeque<int> dq;\n\nfor(int i = 0; i < n; i++) {\n\n    while(!dq.empty() && arr[dq.back()] _____ arr[i]) dq.pop_back();\n\n    dq.push_back(i);\n\n    if(dq.front() < i - _____ + 1) dq.pop_front();\n\n    if(i >= k-1) cout << arr[dq._____()];\n\n}\n\ncout << n;```",
           "blanks": [
             {
               "content": "size()",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\narr = [1, 3, 2, 5, 4]\nk = 3\nn = _____\ndq = deque()\nfor i in range(n):\n    while dq and arr[dq[-1]] _____ arr[i]:\n        dq.pop()\n    dq.append(i)\n    if dq[_____] < i - k + 1:\n        dq.popleft()\n    if i >= _____:\n        print(arr[dq[_____]])```",
+          "codeTemplate": "```python\n\nfrom collections import deque\n\narr = [1, 3, 2, 5, 4]\n\nk = 3\n\nn = _____\n\ndq = deque()\n\nfor i in range(n):\n\n    while dq and arr[dq[-1]] _____ arr[i]:\n\n        dq.pop()\n\n    dq.append(i)\n\n    if dq[_____] < i - k + 1:\n\n        dq.popleft()\n\n    if i >= _____:\n\n        print(arr[dq[_____]])```",
           "blanks": [
             {
               "content": "len(arr)",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet arr = [1, 3, 2, 5, 4];\nlet k = 3;\nlet n = _____;\nlet dq = [];\nfor(let i = 0; i < n; i++) {\n    while(dq.length > 0 && arr[dq[dq.length-1]] _____ arr[i])\n        dq.pop();\n    dq.push(i);\n    if(dq[_____] < i - k + 1) dq.shift();\n    if(i >= _____) console.log(arr[dq[_____]]);\n}```",
+          "codeTemplate": "```javascript\n\nlet arr = [1, 3, 2, 5, 4];\n\nlet k = 3;\n\nlet n = _____;\n\nlet dq = [];\n\nfor(let i = 0; i < n; i++) {\n\n    while(dq.length > 0 && arr[dq[dq.length-1]] _____ arr[i])\n\n        dq.pop();\n\n    dq.push(i);\n\n    if(dq[_____] < i - k + 1) dq.shift();\n\n    if(i >= _____) console.log(arr[dq[_____]]);\n\n}```",
           "blanks": [
             {
               "content": "arr.length",

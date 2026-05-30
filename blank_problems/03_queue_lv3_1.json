@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nqueue<int> q; \nq._____(start); \nbool visited[100] = {}; \nvisited[start] = _____; \nint node = q._____(); \nfor(int next : graph[_____]) \n    visited[next] = _____;\n```",
+          "codeTemplate": "```cpp\n\nqueue<int> q; \n\nq._____(start); \n\nbool visited[100] = {}; \n\nvisited[start] = _____; \n\nint node = q._____(); \n\nfor(int next : graph[_____]) \n\n    visited[next] = _____;\n\n```",
           "blanks": [
             {
               "content": "push",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nq = deque() \nq._____(start) \nvisited = [False] * n \nvisited[start] = _____ \nwhile q: \n    node = q._____ \n    for next in graph[node]: \n        if not visited[next]: \n            visited[next] = _____ \n            q._____(next) \n```",
+          "codeTemplate": "```python\n\nq = deque() \n\nq._____(start) \n\nvisited = [False] * n \n\nvisited[start] = _____ \n\nwhile q: \n\n    node = q._____ \n\n    for next in graph[node]: \n\n        if not visited[next]: \n\n            visited[next] = _____ \n\n            q._____(next) \n\n```",
           "blanks": [
             {
               "content": "append",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet q = []; \nq._____(start); \nlet visited = new Array(n).fill(false); \nvisited[start] = _____; \nwhile(q.length > 0) { \n    let node = q._____(); \n    for(let next of graph[node]) { \n        if(!visited[next]) { \n            visited[next] = _____; \n            q._____(next); \n        } \n    } \n}\n```",
+          "codeTemplate": "```javascript\n\nlet q = []; \n\nq._____(start); \n\nlet visited = new Array(n).fill(false); \n\nvisited[start] = _____; \n\nwhile(q.length > 0) { \n\n    let node = q._____(); \n\n    for(let next of graph[node]) { \n\n        if(!visited[next]) { \n\n            visited[next] = _____; \n\n            q._____(next); \n\n        } \n\n    } \n\n}\n\n```",
           "blanks": [
             {
               "content": "push",

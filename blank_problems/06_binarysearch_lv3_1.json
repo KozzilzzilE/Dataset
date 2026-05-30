@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint lowerBound(vector<int>& arr, int target) {\n    int lo = _____, hi = arr.size();\n    while(lo < hi) {\n        int mid = (lo + hi) / 2;\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return _____;\n}\nint upperBound(vector<int>& arr, int target) {\n    int lo = 0, hi = arr._____;\n    while(lo < hi) {\n        int mid = (lo + hi) / 2;\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return lo;\n}```",
+          "codeTemplate": "```cpp\n\nint lowerBound(vector<int>& arr, int target) {\n\n    int lo = _____, hi = arr.size();\n\n    while(lo < hi) {\n\n        int mid = (lo + hi) / 2;\n\n        if(arr[mid] _____ target) hi = mid;\n\n        else lo = mid + 1;\n\n    }\n\n    return _____;\n\n}\n\nint upperBound(vector<int>& arr, int target) {\n\n    int lo = 0, hi = arr._____;\n\n    while(lo < hi) {\n\n        int mid = (lo + hi) / 2;\n\n        if(arr[mid] _____ target) hi = mid;\n\n        else lo = mid + 1;\n\n    }\n\n    return lo;\n\n}```",
           "blanks": [
             {
               "content": "0",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef lower_bound(arr, target):\n    lo, hi = _____, len(arr)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if arr[mid] _____ target:\n            hi = mid\n        else:\n            lo = mid + 1\n    return _____\ndef upper_bound(arr, target):\n    lo, hi = 0, _____(arr)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if arr[mid] _____ target:\n            hi = mid\n        else:\n            lo = mid + 1\n    return lo```",
+          "codeTemplate": "```python\n\ndef lower_bound(arr, target):\n\n    lo, hi = _____, len(arr)\n\n    while lo < hi:\n\n        mid = (lo + hi) // 2\n\n        if arr[mid] _____ target:\n\n            hi = mid\n\n        else:\n\n            lo = mid + 1\n\n    return _____\n\ndef upper_bound(arr, target):\n\n    lo, hi = 0, _____(arr)\n\n    while lo < hi:\n\n        mid = (lo + hi) // 2\n\n        if arr[mid] _____ target:\n\n            hi = mid\n\n        else:\n\n            lo = mid + 1\n\n    return lo```",
           "blanks": [
             {
               "content": "0",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction lowerBound(arr, target) {\n    let lo = _____, hi = arr.length;\n    while(lo < hi) {\n        let mid = Math.floor((lo + hi) / 2);\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return _____;\n}\nfunction upperBound(arr, target) {\n    let lo = 0, hi = arr._____;\n    while(lo < hi) {\n        let mid = Math.floor((lo + hi) / 2);\n        if(arr[mid] _____ target) hi = mid;\n        else lo = mid + 1;\n    }\n    return lo;\n}```",
+          "codeTemplate": "```javascript\n\nfunction lowerBound(arr, target) {\n\n    let lo = _____, hi = arr.length;\n\n    while(lo < hi) {\n\n        let mid = Math.floor((lo + hi) / 2);\n\n        if(arr[mid] _____ target) hi = mid;\n\n        else lo = mid + 1;\n\n    }\n\n    return _____;\n\n}\n\nfunction upperBound(arr, target) {\n\n    let lo = 0, hi = arr._____;\n\n    while(lo < hi) {\n\n        let mid = Math.floor((lo + hi) / 2);\n\n        if(arr[mid] _____ target) hi = mid;\n\n        else lo = mid + 1;\n\n    }\n\n    return lo;\n\n}```",
           "blanks": [
             {
               "content": "0",

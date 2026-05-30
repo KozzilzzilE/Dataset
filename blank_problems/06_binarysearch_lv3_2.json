@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> trees = {20, 15, 10, 17};\nint M = 7;\nlong lo = 0, hi = _____;\nfor (int t : trees) hi = max(hi, (long)_____); // 최대 높이\nlong ans = 0;\nwhile (lo _____ hi) {\n    long mid = (lo + hi) / 2;\n    long cut = 0;\n    for (int t : trees) if (t > mid) cut += t - _____;\n    if (cut _____ M) { ans = mid; lo = mid + 1; }\n    else hi = mid - _____;\n}\ncout << ans;\n```",
+          "codeTemplate": "```cpp\n\nvector<int> trees = {20, 15, 10, 17};\n\nint M = 7;\n\nlong lo = 0, hi = _____;\n\nfor (int t : trees) hi = max(hi, (long)_____); // 최대 높이\n\nlong ans = 0;\n\nwhile (lo _____ hi) {\n\n    long mid = (lo + hi) / 2;\n\n    long cut = 0;\n\n    for (int t : trees) if (t > mid) cut += t - _____;\n\n    if (cut _____ M) { ans = mid; lo = mid + 1; }\n\n    else hi = mid - _____;\n\n}\n\ncout << ans;\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -116,7 +116,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ntrees = [20, 15, 10, 17]\nM = 7\nlo, hi = 0, _____\nfor t in trees:\n    hi = max(hi, _____)\nans = 0\nwhile lo _____ hi:\n    mid = (lo + hi) // 2\n    cut = sum(t - mid for t in trees if t > mid)\n    if cut _____ M:\n        ans = mid\n        lo = mid + _____\n    else:\n        hi = mid - _____\nprint(ans)\n```",
+          "codeTemplate": "```python\n\ntrees = [20, 15, 10, 17]\n\nM = 7\n\nlo, hi = 0, _____\n\nfor t in trees:\n\n    hi = max(hi, _____)\n\nans = 0\n\nwhile lo _____ hi:\n\n    mid = (lo + hi) // 2\n\n    cut = sum(t - mid for t in trees if t > mid)\n\n    if cut _____ M:\n\n        ans = mid\n\n        lo = mid + _____\n\n    else:\n\n        hi = mid - _____\n\nprint(ans)\n\n```",
           "blanks": [
             {
               "content": "0",
@@ -170,7 +170,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet trees = [20, 15, 10, 17];\nlet M = 7;\nlet lo = 0, hi = _____;\nfor (let t of trees) hi = Math.max(hi, _____);  // 최대 높이\nlet ans = 0;\nwhile (lo _____ hi) {\n    let mid = Math.floor((lo + hi) / 2);\n    let cut = trees.reduce((s, t) => s + (t > mid ? t - mid : 0), 0);\n    if (cut _____ M) { ans = mid; lo = mid + 1; }\n    else hi = mid - _____;\n}\nconsole.log(_____);  \n```",
+          "codeTemplate": "```javascript\n\nlet trees = [20, 15, 10, 17];\n\nlet M = 7;\n\nlet lo = 0, hi = _____;\n\nfor (let t of trees) hi = Math.max(hi, _____);  // 최대 높이\n\nlet ans = 0;\n\nwhile (lo _____ hi) {\n\n    let mid = Math.floor((lo + hi) / 2);\n\n    let cut = trees.reduce((s, t) => s + (t > mid ? t - mid : 0), 0);\n\n    if (cut _____ M) { ans = mid; lo = mid + 1; }\n\n    else hi = mid - _____;\n\n}\n\nconsole.log(_____);  \n\n```",
           "blanks": [
             {
               "content": "0",

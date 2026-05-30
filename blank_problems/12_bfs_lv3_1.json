@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool visited[R][C] = {};\nvoid bfs(int sr, int sc) {\n    queue<pair<int,int>> q;\n    q.push({sr, sc});\n    visited[sr][sc] = _____;\n    while(!q.empty()) {\n        auto [r, c] = q.front(); q.pop();\n        for(auto [dr, dc] : dirs) {\n            int nr = r+dr, nc = c+dc;\n            if(nr>=0 && nr<R && nc>=0 && nc<C\n                && grid[nr][nc]=='1' && !visited[_____][_____]) {\n                visited[nr][nc] = true;\n                q.push({nr, _____});\n            }\n        }\n    }\n}\nint count = _____;\n```",
+          "codeTemplate": "```cpp\n\nbool visited[R][C] = {};\n\nvoid bfs(int sr, int sc) {\n\n    queue<pair<int,int>> q;\n\n    q.push({sr, sc});\n\n    visited[sr][sc] = _____;\n\n    while(!q.empty()) {\n\n        auto [r, c] = q.front(); q.pop();\n\n        for(auto [dr, dc] : dirs) {\n\n            int nr = r+dr, nc = c+dc;\n\n            if(nr>=0 && nr<R && nc>=0 && nc<C\n\n                && grid[nr][nc]=='1' && !visited[_____][_____]) {\n\n                visited[nr][nc] = true;\n\n                q.push({nr, _____});\n\n            }\n\n        }\n\n    }\n\n}\n\nint count = _____;\n\n```",
           "blanks": [
             {
               "content": "true",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\nvisited = [[False]*C for _ in range(R)]\ndef bfs(sr, sc):\n    q = deque([(sr, sc)])\n    visited[sr][sc] = _____\n    while q:\n        r, c = q._____\n        for dr, dc in dirs:\n            nr, nc = r+dr, c+dc\n            if 0<=nr<R and 0<=nc<C and grid[nr][nc]=='1' and not visited[_____][_____]:\n                visited[nr][nc] = True\n                q.append((_____,nc))\ncount = 0```",
+          "codeTemplate": "```python\n\nfrom collections import deque\n\nvisited = [[False]*C for _ in range(R)]\n\ndef bfs(sr, sc):\n\n    q = deque([(sr, sc)])\n\n    visited[sr][sc] = _____\n\n    while q:\n\n        r, c = q._____\n\n        for dr, dc in dirs:\n\n            nr, nc = r+dr, c+dc\n\n            if 0<=nr<R and 0<=nc<C and grid[nr][nc]=='1' and not visited[_____][_____]:\n\n                visited[nr][nc] = True\n\n                q.append((_____,nc))\n\ncount = 0```",
           "blanks": [
             {
               "content": "True",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet visited = Array.from({length: R}, () => new Array(C).fill(false));\nfunction bfs(sr, sc) {\n    let q = [[sr, sc]];\n    visited[sr][sc] = _____;\n    let idx = 0;\n    while(idx < q._____) {\n        let [r, c] = q[_____];\n        for(let [dr, dc] of dirs) {\n            let nr = r+dr, nc = c+dc;\n            if(nr>=0 && nr<R && nc>=0 && nc<C\n                && grid[nr][nc]==='1' && !visited[nr][nc]) {\n                visited[nr][nc] = true;\n                q._____([ nr, nc]);\n            }\n        }\n        idx++;\n    }\n}\nlet count = _____;```",
+          "codeTemplate": "```javascript\n\nlet visited = Array.from({length: R}, () => new Array(C).fill(false));\n\nfunction bfs(sr, sc) {\n\n    let q = [[sr, sc]];\n\n    visited[sr][sc] = _____;\n\n    let idx = 0;\n\n    while(idx < q._____) {\n\n        let [r, c] = q[_____];\n\n        for(let [dr, dc] of dirs) {\n\n            let nr = r+dr, nc = c+dc;\n\n            if(nr>=0 && nr<R && nc>=0 && nc<C\n\n                && grid[nr][nc]==='1' && !visited[nr][nc]) {\n\n                visited[nr][nc] = true;\n\n                q._____([ nr, nc]);\n\n            }\n\n        }\n\n        idx++;\n\n    }\n\n}\n\nlet count = _____;```",
           "blanks": [
             {
               "content": "true",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nwhile(!s.empty()) { \n    st._____(s[i]); \n    if(st._____()) return _____; \n    char top = st._____(); \n    if(...) return _____; \n    return !st._____(); \n}\n```",
+          "codeTemplate": "```cpp\n\nwhile(!s.empty()) { \n\n    st._____(s[i]); \n\n    if(st._____()) return _____; \n\n    char top = st._____(); \n\n    if(...) return _____; \n\n    return !st._____(); \n\n}\n\n```",
           "blanks": [
             {
               "content": "push",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef is_valid(s):\n    stack = []\n    pairs = {'(': ')', '{': '}', '[': ']'}\n    for c in s:\n        if c in _____:\n            stack._____(c)\n        elif not stack or pairs[stack[_____]] != c:\n            return _____\n        else:\n            stack.pop()\n    return _____(stack) == 0```",
+          "codeTemplate": "```python\n\ndef is_valid(s):\n\n    stack = []\n\n    pairs = {'(': ')', '{': '}', '[': ']'}\n\n    for c in s:\n\n        if c in _____:\n\n            stack._____(c)\n\n        elif not stack or pairs[stack[_____]] != c:\n\n            return _____\n\n        else:\n\n            stack.pop()\n\n    return _____(stack) == 0```",
           "blanks": [
             {
               "content": "pairs",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction isValid(s) {\n    let stack = [];\n    let pairs = {'(':')', '{':'}', '[':']'};\n    for(let c of s) {\n        if(c in _____) {\n            stack._____(c);\n        } else if(stack.length === 0 || pairs[stack[_____]] !== c) {\n            return _____;\n        } else {\n            stack._____();\n        }\n    }\n    return stack.length === 0;\n}```",
+          "codeTemplate": "```javascript\n\nfunction isValid(s) {\n\n    let stack = [];\n\n    let pairs = {'(':')', '{':'}', '[':']'};\n\n    for(let c of s) {\n\n        if(c in _____) {\n\n            stack._____(c);\n\n        } else if(stack.length === 0 || pairs[stack[_____]] !== c) {\n\n            return _____;\n\n        } else {\n\n            stack._____();\n\n        }\n\n    }\n\n    return stack.length === 0;\n\n}```",
           "blanks": [
             {
               "content": "pairs",

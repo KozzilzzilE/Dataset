@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <climits>\nusing namespace std;\nint arr[] = {3, 7, 1, 9, 4};\nint n = _____;\nint max_val = _____;\nfor (int i = 0; i < n; i++) {\n    if (arr[i] _____ max_val)\n        max_val = _____;\n}\ncout << \"최댓값: \" << _____;\n```",
+          "codeTemplate": "```cpp\n\n#include <climits>\n\nusing namespace std;\n\nint arr[] = {3, 7, 1, 9, 4};\n\nint n = _____;\n\nint max_val = _____;\n\nfor (int i = 0; i < n; i++) {\n\n    if (arr[i] _____ max_val)\n\n        max_val = _____;\n\n}\n\ncout << \"최댓값: \" << _____;\n\n```",
           "blanks": [
             {
               "content": "5",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\narr = [3, 7, 1, 9, 4]\nmax_val = arr[_____]\nfor i in range(_____, len(arr)):\n    if arr[i] _____ max_val:\n        max_val = _____\nprint(\"최댓값:\", _____)```",
+          "codeTemplate": "```python\n\narr = [3, 7, 1, 9, 4]\n\nmax_val = arr[_____]\n\nfor i in range(_____, len(arr)):\n\n    if arr[i] _____ max_val:\n\n        max_val = _____\n\nprint(\"최댓값:\", _____)```",
           "blanks": [
             {
               "content": "0",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nconst arr = [3, 7, 1, 9, 4];\nlet max = _____;\nfor (let i = 0; i < _____; i++) {\n    if (arr[i] _____ max) {\n        max = _____;\n    }\n}\nconsole.log(\"최댓값:\", _____);\n```",
+          "codeTemplate": "```javascript\n\nconst arr = [3, 7, 1, 9, 4];\n\nlet max = _____;\n\nfor (let i = 0; i < _____; i++) {\n\n    if (arr[i] _____ max) {\n\n        max = _____;\n\n    }\n\n}\n\nconsole.log(\"최댓값:\", _____);\n\n```",
           "blanks": [
             {
               "content": "arr[0]",

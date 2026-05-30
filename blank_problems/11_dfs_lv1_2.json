@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool visited[6] = {};\nvector<vector<int>> graph(6);\n\nint dfs(int node) {\n    visited[_____] = true;\n    int count = _____;\n    for(int next : graph[node]) {\n        if(!visited[_____]) {\n            count _____ dfs(next);\n        }\n    }\n    return _____;\n}\n```",
+          "codeTemplate": "```cpp\n\nbool visited[6] = {};\n\nvector<vector<int>> graph(6);\n\nint dfs(int node) {\n\n    visited[_____] = true;\n\n    int count = _____;\n\n    for(int next : graph[node]) {\n\n        if(!visited[_____]) {\n\n            count _____ dfs(next);\n\n        }\n\n    }\n\n    return _____;\n\n}\n\n```",
           "blanks": [
             {
               "content": "node",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nvisited = [False] * 6\n\ndef dfs(node):\n    visited[_____] = True\n    count = _____\n    for next_node in graph[node]:\n        if not visited[_____]:\n            count _____ dfs(next_node)\n    return _____\n```",
+          "codeTemplate": "```python\n\nvisited = [False] * 6\n\ndef dfs(node):\n\n    visited[_____] = True\n\n    count = _____\n\n    for next_node in graph[node]:\n\n        if not visited[_____]:\n\n            count _____ dfs(next_node)\n\n    return _____\n\n```",
           "blanks": [
             {
               "content": "node",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet visited = new Array(6).fill(false);\n\nfunction dfs(node) {\n    visited[_____] = true;\n    let count = _____;\n    for(let next of graph[node]) {\n        if(!visited[_____]) {\n            count _____ dfs(next);\n        }\n    }\n    return _____;\n}\n```",
+          "codeTemplate": "```javascript\n\nlet visited = new Array(6).fill(false);\n\nfunction dfs(node) {\n\n    visited[_____] = true;\n\n    let count = _____;\n\n    for(let next of graph[node]) {\n\n        if(!visited[_____]) {\n\n            count _____ dfs(next);\n\n        }\n\n    }\n\n    return _____;\n\n}\n\n```",
           "blanks": [
             {
               "content": "node",

@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <queue>\nqueue<int> q;\nq._____(1);\nq.push(2);\nint x = q._____();\nq._____();\nbool empty = q._____();\ncout << _____ << endl;```",
+          "codeTemplate": "```cpp\n\n#include <queue>\n\nqueue<int> q;\n\nq._____(1);\n\nq.push(2);\n\nint x = q._____();\n\nq._____();\n\nbool empty = q._____();\n\ncout << _____ << endl;```",
           "blanks": [
             {
               "content": "push",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\nq = deque()\nq._____(1)\nq.append(2)\nx = q[_____]\nq._____\nbool_empty = _____(q) == 0\nprint(_____)```",
+          "codeTemplate": "```python\n\nfrom collections import deque\n\nq = deque()\n\nq._____(1)\n\nq.append(2)\n\nx = q[_____]\n\nq._____\n\nbool_empty = _____(q) == 0\n\nprint(_____)```",
           "blanks": [
             {
               "content": "append",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet queue = [];\nqueue._____(1);\nqueue.push(2);\nlet x = queue[_____];\nqueue._____();\nlet isEmpty = queue._____ === 0;\nconsole.log(_____);\n```",
+          "codeTemplate": "```javascript\n\nlet queue = [];\n\nqueue._____(1);\n\nqueue.push(2);\n\nlet x = queue[_____];\n\nqueue._____();\n\nlet isEmpty = queue._____ === 0;\n\nconsole.log(_____);\n\n```",
           "blanks": [
             {
               "content": "push",

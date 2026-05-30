@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> dist(n + 1, _____);\nqueue<int> q;\nq.push(start);\ndist[start] = _____;\nwhile (!q._____()) {\n    int cur = q.front(); q.pop();\n    for (int next : graph[cur]) {\n        if (dist[next] == _____) {\n            dist[next] = dist[cur] + 1;\n            q.push(_____);  \n        }\n    }\n}\n```",
+          "codeTemplate": "```cpp\n\nvector<int> dist(n + 1, _____);\n\nqueue<int> q;\n\nq.push(start);\n\ndist[start] = _____;\n\nwhile (!q._____()) {\n\n    int cur = q.front(); q.pop();\n\n    for (int next : graph[cur]) {\n\n        if (dist[next] == _____) {\n\n            dist[next] = dist[cur] + 1;\n\n            q.push(_____);  \n\n        }\n\n    }\n\n}\n\n```",
           "blanks": [
             {
               "content": "-1",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nfrom collections import deque\ndist = [_____] * (n + 1)\nqueue = deque([start])\ndist[start] = _____\nwhile _____:\n    cur = queue.popleft()\n    for next_node in graph[cur]:\n        if dist[next_node] == _____:\n            dist[next_node] = dist[cur] + 1\n            queue.append(_____)\n```",
+          "codeTemplate": "```python\n\nfrom collections import deque\n\ndist = [_____] * (n + 1)\n\nqueue = deque([start])\n\ndist[start] = _____\n\nwhile _____:\n\n    cur = queue.popleft()\n\n    for next_node in graph[cur]:\n\n        if dist[next_node] == _____:\n\n            dist[next_node] = dist[cur] + 1\n\n            queue.append(_____)\n\n```",
           "blanks": [
             {
               "content": "-1",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet dist = new Array(n + 1).fill(_____);  \nlet queue = [start];\ndist[start] = _____;\nwhile (queue._____) {\n    let cur = queue.shift();\n    for (let next of graph[cur]) {\n        if (dist[next] === _____) {\n            dist[next] = dist[cur] + 1;\n            queue.push(_____);  \n        }\n    }\n}\n```",
+          "codeTemplate": "```javascript\n\nlet dist = new Array(n + 1).fill(_____);  \n\nlet queue = [start];\n\ndist[start] = _____;\n\nwhile (queue._____) {\n\n    let cur = queue.shift();\n\n    for (let next of graph[cur]) {\n\n        if (dist[next] === _____) {\n\n            dist[next] = dist[cur] + 1;\n\n            queue.push(_____);  \n\n        }\n\n    }\n\n}\n\n```",
           "blanks": [
             {
               "content": "-1",

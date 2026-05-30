@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nbool isPrime(int n) {\n    if (n < _____) return false;\n    for (int i = _____; i * i <= n; i++) {\n        if (n % i == _____) return false;\n    }\n    return _____;\n}\nint main() {\n    cout << isPrime(_____);\n}\n```",
+          "codeTemplate": "```cpp\n\nbool isPrime(int n) {\n\n    if (n < _____) return false;\n\n    for (int i = _____; i * i <= n; i++) {\n\n        if (n % i == _____) return false;\n\n    }\n\n    return _____;\n\n}\n\nint main() {\n\n    cout << isPrime(_____);\n\n}\n\n```",
           "blanks": [
             {
               "content": "2",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef is_prime(n):\n    if n < _____:\n        return False\n    for i in range(_____, int(n**0.5) + 1):\n        if n % i == _____:\n            return _____\n    return True\n\nprimes = [x for x in range(2, _____) if is_prime(x)]\nprint(primes)```",
+          "codeTemplate": "```python\n\ndef is_prime(n):\n\n    if n < _____:\n\n        return False\n\n    for i in range(_____, int(n**0.5) + 1):\n\n        if n % i == _____:\n\n            return _____\n\n    return True\n\nprimes = [x for x in range(2, _____) if is_prime(x)]\n\nprint(primes)```",
           "blanks": [
             {
               "content": "2",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction isPrime(n) {\n    if (n < _____) return false;\n    for (let i = _____; i * i <= n; i++) {\n        if (n % i === _____) return false;\n    }\n    return _____;\n}\nconsole.log(isPrime(_____));\n```",
+          "codeTemplate": "```javascript\n\nfunction isPrime(n) {\n\n    if (n < _____) return false;\n\n    for (let i = _____; i * i <= n; i++) {\n\n        if (n % i === _____) return false;\n\n    }\n\n    return _____;\n\n}\n\nconsole.log(isPrime(_____));\n\n```",
           "blanks": [
             {
               "content": "2",

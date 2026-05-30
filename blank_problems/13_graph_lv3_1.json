@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nint parent[100];\nvoid init(int n) {\n    for(int i = 0; i < n; i++) parent[i] = _____;\n}\nint find(int x) {\n    if(parent[x] != _____)\n        parent[x] = find(parent[x]);\n    return parent[_____];\n}\nvoid unite(int x, int y) {\n    int ra = find(x), rb = find(y);\n    if(ra != rb) parent[_____] = ra;\n}\nbool connected(int x, int y) { return find(x) == find(_____); }```",
+          "codeTemplate": "```cpp\n\nint parent[100];\n\nvoid init(int n) {\n\n    for(int i = 0; i < n; i++) parent[i] = _____;\n\n}\n\nint find(int x) {\n\n    if(parent[x] != _____)\n\n        parent[x] = find(parent[x]);\n\n    return parent[_____];\n\n}\n\nvoid unite(int x, int y) {\n\n    int ra = find(x), rb = find(y);\n\n    if(ra != rb) parent[_____] = ra;\n\n}\n\nbool connected(int x, int y) { return find(x) == find(_____); }```",
           "blanks": [
             {
               "content": "i",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef init(n):\n    return list(range(_____)) \ndef find(parent, x):\n    if parent[x] != _____:\n        parent[x] = find(parent, parent[x])\n    return parent[_____]\ndef unite(parent, x, y):\n    ra, rb = find(parent, x), find(parent, y)\n    if ra != rb:\n        parent[_____] = ra\ndef connected(parent, x, y):\n    return find(parent, x) == find(parent, _____)```",
+          "codeTemplate": "```python\n\ndef init(n):\n\n    return list(range(_____)) \n\ndef find(parent, x):\n\n    if parent[x] != _____:\n\n        parent[x] = find(parent, parent[x])\n\n    return parent[_____]\n\ndef unite(parent, x, y):\n\n    ra, rb = find(parent, x), find(parent, y)\n\n    if ra != rb:\n\n        parent[_____] = ra\n\ndef connected(parent, x, y):\n\n    return find(parent, x) == find(parent, _____)```",
           "blanks": [
             {
               "content": "n",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction init(n) {\n    return Array.from({length: _____}, (_, i) => i);\n}\nfunction find(parent, x) {\n    if(parent[x] !== _____)\n        parent[x] = find(parent, parent[x]);\n    return parent[_____];\n}\nfunction unite(parent, x, y) {\n    let ra = find(parent, x), rb = find(parent, y);\n    if(ra !== rb) parent[_____] = ra;\n}\nfunction connected(parent, x, y) {\n    return find(parent, x) === find(parent, _____);\n}```",
+          "codeTemplate": "```javascript\n\nfunction init(n) {\n\n    return Array.from({length: _____}, (_, i) => i);\n\n}\n\nfunction find(parent, x) {\n\n    if(parent[x] !== _____)\n\n        parent[x] = find(parent, parent[x]);\n\n    return parent[_____];\n\n}\n\nfunction unite(parent, x, y) {\n\n    let ra = find(parent, x), rb = find(parent, y);\n\n    if(ra !== rb) parent[_____] = ra;\n\n}\n\nfunction connected(parent, x, y) {\n\n    return find(parent, x) === find(parent, _____);\n\n}```",
           "blanks": [
             {
               "content": "n",

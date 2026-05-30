@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <stack>\nstring s = \"hello\";\nstack<char> st;\nfor(char c : s) st._____(c);\nstring result = \"\";\nwhile(!st._____()) {\n    result _____ st._____();\n    st.pop();\n}\ncout << _____ << endl;```",
+          "codeTemplate": "```cpp\n\n#include <stack>\n\nstring s = \"hello\";\n\nstack<char> st;\n\nfor(char c : s) st._____(c);\n\nstring result = \"\";\n\nwhile(!st._____()) {\n\n    result _____ st._____();\n\n    st.pop();\n\n}\n\ncout << _____ << endl;```",
           "blanks": [
             {
               "content": "push",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ns = \"hello\"\nstack = []\nfor c in s:\n    stack._____(c)\nresult = \"\"\nwhile _____:\n    result _____ stack._____\nprint(_____)```",
+          "codeTemplate": "```python\n\ns = \"hello\"\n\nstack = []\n\nfor c in s:\n\n    stack._____(c)\n\nresult = \"\"\n\nwhile _____:\n\n    result _____ stack._____\n\nprint(_____)```",
           "blanks": [
             {
               "content": "append",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet s = \"hello\";\nlet stack = [];\nfor(let c of s) stack._____(c);\nlet result = \"\";\nwhile(stack._____ > 0) {\n    result _____ stack._____();\n}\nconsole.log(_____);```",
+          "codeTemplate": "```javascript\n\nlet s = \"hello\";\n\nlet stack = [];\n\nfor(let c of s) stack._____(c);\n\nlet result = \"\";\n\nwhile(stack._____ > 0) {\n\n    result _____ stack._____();\n\n}\n\nconsole.log(_____);```",
           "blanks": [
             {
               "content": "push",

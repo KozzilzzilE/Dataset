@@ -62,7 +62,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\nvector<int> starts, ends;\nfor(auto& m : meetings) {\n    starts.push_back(m[_____]);\n    ends.push_back(m[1]);\n}\nsort(starts.begin(), starts.end());\nsort(ends.begin(), ends.end());\nint rooms = 0, endIdx = _____;\nfor(int s : starts) {\n    if(s < ends[endIdx]) rooms_____;\n    else endIdx_____;\n}\ncout << _____;```",
+          "codeTemplate": "```cpp\n\nvector<int> starts, ends;\n\nfor(auto& m : meetings) {\n\n    starts.push_back(m[_____]);\n\n    ends.push_back(m[1]);\n\n}\n\nsort(starts.begin(), starts.end());\n\nsort(ends.begin(), ends.end());\n\nint rooms = 0, endIdx = _____;\n\nfor(int s : starts) {\n\n    if(s < ends[endIdx]) rooms_____;\n\n    else endIdx_____;\n\n}\n\ncout << _____;```",
           "blanks": [
             {
               "content": "0",
@@ -112,7 +112,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\nstarts = [m[_____] for m in meetings]\nends = [m[1] for m in meetings]\nstarts.sort()\nends.sort()\nrooms = _____\nendIdx = 0\nfor s in starts:\n    if s < ends[endIdx]:\n        rooms _____ 1\n    else:\n        endIdx _____ 1\nprint(_____)```",
+          "codeTemplate": "```python\n\nstarts = [m[_____] for m in meetings]\n\nends = [m[1] for m in meetings]\n\nstarts.sort()\n\nends.sort()\n\nrooms = _____\n\nendIdx = 0\n\nfor s in starts:\n\n    if s < ends[endIdx]:\n\n        rooms _____ 1\n\n    else:\n\n        endIdx _____ 1\n\nprint(_____)```",
           "blanks": [
             {
               "content": "0",
@@ -162,7 +162,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nlet starts = meetings.map(m => m[_____]);\nlet ends = meetings.map(m => m[1]);\nstarts.sort((a,b) => a-b);\nends.sort((a,b) => a-b);\nlet rooms = _____, endIdx = 0;\nfor(let s of starts) {\n    if(s < ends[endIdx]) rooms_____;\n    else endIdx_____;\n}\nconsole.log(_____);```",
+          "codeTemplate": "```javascript\n\nlet starts = meetings.map(m => m[_____]);\n\nlet ends = meetings.map(m => m[1]);\n\nstarts.sort((a,b) => a-b);\n\nends.sort((a,b) => a-b);\n\nlet rooms = _____, endIdx = 0;\n\nfor(let s of starts) {\n\n    if(s < ends[endIdx]) rooms_____;\n\n    else endIdx_____;\n\n}\n\nconsole.log(_____);```",
           "blanks": [
             {
               "content": "0",

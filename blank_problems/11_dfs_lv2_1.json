@@ -58,7 +58,7 @@
         },
         {
           "languageId": 2,
-          "codeTemplate": "```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid dfs(vector<int>& nums, vector<bool>& used, vector<int>& path) {\n    if (path.size() == nums._____()) {\n        for(int x:path) cout<<x<<\" \"; cout<<\"\\n\";\n        return;\n    }\n    for (int i=0;i<(int)nums.size();i++) {\n        if (_____[i]) continue;\n        used[i]=_____;\n        path.push_back(nums[i]);\n        dfs(nums,used,path);\n        used[i]=false;\n        path._____();\n    }\n}\nint main() {\n    vector<int> nums={1,2,3};\n    vector<bool> used(nums.size(),_____); vector<int> path;\n    dfs(nums,used,path);\n}\n```",
+          "codeTemplate": "```cpp\n\n#include <iostream>\n\n#include <vector>\n\nusing namespace std;\n\nvoid dfs(vector<int>& nums, vector<bool>& used, vector<int>& path) {\n\n    if (path.size() == nums._____()) {\n\n        for(int x:path) cout<<x<<\" \"; cout<<\"\\n\";\n\n        return;\n\n    }\n\n    for (int i=0;i<(int)nums.size();i++) {\n\n        if (_____[i]) continue;\n\n        used[i]=_____;\n\n        path.push_back(nums[i]);\n\n        dfs(nums,used,path);\n\n        used[i]=false;\n\n        path._____();\n\n    }\n\n}\n\nint main() {\n\n    vector<int> nums={1,2,3};\n\n    vector<bool> used(nums.size(),_____); vector<int> path;\n\n    dfs(nums,used,path);\n\n}\n\n```",
           "blanks": [
             {
               "content": "size",
@@ -108,7 +108,7 @@
         },
         {
           "languageId": 3,
-          "codeTemplate": "```python\ndef dfs(nums, used, path):\n    if len(path) == len(_____):\n        print(path)\n        return\n    for i in range(len(nums)):\n        if _____[i]: continue\n        used[i] = _____\n        path.append(nums[i])\n        dfs(nums, used, path)\n        used[i] = False\n        path._____\n    \nnums = [1,2,3]\ndfs(nums, [_____]*len(nums), [])\n```",
+          "codeTemplate": "```python\n\ndef dfs(nums, used, path):\n\n    if len(path) == len(_____):\n\n        print(path)\n\n        return\n\n    for i in range(len(nums)):\n\n        if _____[i]: continue\n\n        used[i] = _____\n\n        path.append(nums[i])\n\n        dfs(nums, used, path)\n\n        used[i] = False\n\n        path._____\n\n    \n\nnums = [1,2,3]\n\ndfs(nums, [_____]*len(nums), [])\n\n```",
           "blanks": [
             {
               "content": "nums",
@@ -158,7 +158,7 @@
         },
         {
           "languageId": 4,
-          "codeTemplate": "```javascript\nfunction dfs(nums, used, path) {\n    if (path.length === nums._____) {\n        console.log([...path]);\n        return;\n    }\n    for (let i=0;i<nums.length;i++) {\n        if (_____[i]) continue;\n        used[i]=_____;\n        path.push(nums[i]);\n        dfs(nums,used,path);\n        used[i]=false;\n        path._____();\n    }\n}\nconst nums=[1,2,3];\ndfs(nums, new Array(nums.length).fill(_____), []);\n```",
+          "codeTemplate": "```javascript\n\nfunction dfs(nums, used, path) {\n\n    if (path.length === nums._____) {\n\n        console.log([...path]);\n\n        return;\n\n    }\n\n    for (let i=0;i<nums.length;i++) {\n\n        if (_____[i]) continue;\n\n        used[i]=_____;\n\n        path.push(nums[i]);\n\n        dfs(nums,used,path);\n\n        used[i]=false;\n\n        path._____();\n\n    }\n\n}\n\nconst nums=[1,2,3];\n\ndfs(nums, new Array(nums.length).fill(_____), []);\n\n```",
           "blanks": [
             {
               "content": "length",
